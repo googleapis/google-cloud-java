@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [Test Case Results][google.cloud.dialogflow.cx.v3.TestCaseResult].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/cx/v3/test_case.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class TestCasesGrpc {
 
@@ -1141,8 +1138,9 @@ public final class TestCasesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.ListTestCasesResponse listTestCases(
-        com.google.cloud.dialogflow.cx.v3.ListTestCasesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.ListTestCasesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTestCasesMethod(), getCallOptions(), request);
     }
 
@@ -1154,8 +1152,9 @@ public final class TestCasesGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty batchDeleteTestCases(
-        com.google.cloud.dialogflow.cx.v3.BatchDeleteTestCasesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.BatchDeleteTestCasesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchDeleteTestCasesMethod(), getCallOptions(), request);
     }
 
@@ -1167,8 +1166,9 @@ public final class TestCasesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.TestCase getTestCase(
-        com.google.cloud.dialogflow.cx.v3.GetTestCaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.GetTestCaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTestCaseMethod(), getCallOptions(), request);
     }
 
@@ -1180,8 +1180,9 @@ public final class TestCasesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.TestCase createTestCase(
-        com.google.cloud.dialogflow.cx.v3.CreateTestCaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.CreateTestCaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTestCaseMethod(), getCallOptions(), request);
     }
 
@@ -1193,8 +1194,9 @@ public final class TestCasesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.TestCase updateTestCase(
-        com.google.cloud.dialogflow.cx.v3.UpdateTestCaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.UpdateTestCaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateTestCaseMethod(), getCallOptions(), request);
     }
 
@@ -1213,8 +1215,9 @@ public final class TestCasesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation runTestCase(
-        com.google.cloud.dialogflow.cx.v3.RunTestCaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.RunTestCaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRunTestCaseMethod(), getCallOptions(), request);
     }
 
@@ -1233,8 +1236,9 @@ public final class TestCasesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation batchRunTestCases(
-        com.google.cloud.dialogflow.cx.v3.BatchRunTestCasesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.BatchRunTestCasesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchRunTestCasesMethod(), getCallOptions(), request);
     }
 
@@ -1246,8 +1250,9 @@ public final class TestCasesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.CalculateCoverageResponse calculateCoverage(
-        com.google.cloud.dialogflow.cx.v3.CalculateCoverageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.CalculateCoverageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCalculateCoverageMethod(), getCallOptions(), request);
     }
 
@@ -1268,8 +1273,9 @@ public final class TestCasesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importTestCases(
-        com.google.cloud.dialogflow.cx.v3.ImportTestCasesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.ImportTestCasesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportTestCasesMethod(), getCallOptions(), request);
     }
 
@@ -1289,8 +1295,9 @@ public final class TestCasesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportTestCases(
-        com.google.cloud.dialogflow.cx.v3.ExportTestCasesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.ExportTestCasesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportTestCasesMethod(), getCallOptions(), request);
     }
 
@@ -1303,8 +1310,9 @@ public final class TestCasesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.ListTestCaseResultsResponse listTestCaseResults(
-        com.google.cloud.dialogflow.cx.v3.ListTestCaseResultsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.ListTestCaseResultsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTestCaseResultsMethod(), getCallOptions(), request);
     }
 
@@ -1316,8 +1324,9 @@ public final class TestCasesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.TestCaseResult getTestCaseResult(
-        com.google.cloud.dialogflow.cx.v3.GetTestCaseResultRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.GetTestCaseResultRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTestCaseResultMethod(), getCallOptions(), request);
     }
   }

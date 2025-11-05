@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing conversion sources for a merchant account.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/conversions/v1/conversionsources.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ConversionSourcesServiceGrpc {
 
@@ -684,8 +681,9 @@ public final class ConversionSourcesServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.conversions.v1.ConversionSource createConversionSource(
-        com.google.shopping.merchant.conversions.v1.CreateConversionSourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.conversions.v1.CreateConversionSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateConversionSourceMethod(), getCallOptions(), request);
     }
 
@@ -698,8 +696,9 @@ public final class ConversionSourcesServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.conversions.v1.ConversionSource updateConversionSource(
-        com.google.shopping.merchant.conversions.v1.UpdateConversionSourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.conversions.v1.UpdateConversionSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateConversionSourceMethod(), getCallOptions(), request);
     }
 
@@ -714,8 +713,9 @@ public final class ConversionSourcesServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteConversionSource(
-        com.google.shopping.merchant.conversions.v1.DeleteConversionSourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.conversions.v1.DeleteConversionSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteConversionSourceMethod(), getCallOptions(), request);
     }
 
@@ -728,8 +728,9 @@ public final class ConversionSourcesServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.conversions.v1.ConversionSource undeleteConversionSource(
-        com.google.shopping.merchant.conversions.v1.UndeleteConversionSourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.conversions.v1.UndeleteConversionSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUndeleteConversionSourceMethod(), getCallOptions(), request);
     }
 
@@ -741,8 +742,9 @@ public final class ConversionSourcesServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.conversions.v1.ConversionSource getConversionSource(
-        com.google.shopping.merchant.conversions.v1.GetConversionSourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.conversions.v1.GetConversionSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetConversionSourceMethod(), getCallOptions(), request);
     }
 
@@ -755,8 +757,9 @@ public final class ConversionSourcesServiceGrpc {
      */
     public com.google.shopping.merchant.conversions.v1.ListConversionSourcesResponse
         listConversionSources(
-            com.google.shopping.merchant.conversions.v1.ListConversionSourcesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.shopping.merchant.conversions.v1.ListConversionSourcesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListConversionSourcesMethod(), getCallOptions(), request);
     }
   }

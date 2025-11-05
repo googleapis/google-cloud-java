@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * inventories for a merchant.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/lfp/v1/lfpinventory.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class LfpInventoryServiceGrpc {
 
@@ -261,8 +258,9 @@ public final class LfpInventoryServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.lfp.v1.LfpInventory insertLfpInventory(
-        com.google.shopping.merchant.lfp.v1.InsertLfpInventoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.lfp.v1.InsertLfpInventoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getInsertLfpInventoryMethod(), getCallOptions(), request);
     }
   }

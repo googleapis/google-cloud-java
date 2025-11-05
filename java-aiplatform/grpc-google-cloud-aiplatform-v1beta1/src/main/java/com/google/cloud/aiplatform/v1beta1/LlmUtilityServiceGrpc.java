@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for LLM related utility functions.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1beta1/llm_utility_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class LlmUtilityServiceGrpc {
 
@@ -243,8 +240,9 @@ public final class LlmUtilityServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ComputeTokensResponse computeTokens(
-        com.google.cloud.aiplatform.v1beta1.ComputeTokensRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.ComputeTokensRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getComputeTokensMethod(), getCallOptions(), request);
     }
   }

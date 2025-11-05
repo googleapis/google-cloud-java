@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Enable Retail Search on Cloud Console before using this feature.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/retail/v2beta/completion_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CompletionServiceGrpc {
 
@@ -348,8 +345,9 @@ public final class CompletionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2beta.CompleteQueryResponse completeQuery(
-        com.google.cloud.retail.v2beta.CompleteQueryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2beta.CompleteQueryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCompleteQueryMethod(), getCallOptions(), request);
     }
 
@@ -366,8 +364,9 @@ public final class CompletionServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importCompletionData(
-        com.google.cloud.retail.v2beta.ImportCompletionDataRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2beta.ImportCompletionDataRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportCompletionDataMethod(), getCallOptions(), request);
     }
   }

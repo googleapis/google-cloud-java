@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * This service helps to insert/update/delete CSS Products.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/css/v1/css_product_inputs.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CssProductInputsServiceGrpc {
 
@@ -432,8 +429,9 @@ public final class CssProductInputsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.css.v1.CssProductInput insertCssProductInput(
-        com.google.shopping.css.v1.InsertCssProductInputRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.css.v1.InsertCssProductInputRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getInsertCssProductInputMethod(), getCallOptions(), request);
     }
 
@@ -447,8 +445,9 @@ public final class CssProductInputsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.css.v1.CssProductInput updateCssProductInput(
-        com.google.shopping.css.v1.UpdateCssProductInputRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.css.v1.UpdateCssProductInputRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateCssProductInputMethod(), getCallOptions(), request);
     }
 
@@ -462,8 +461,9 @@ public final class CssProductInputsServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteCssProductInput(
-        com.google.shopping.css.v1.DeleteCssProductInputRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.css.v1.DeleteCssProductInputRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteCssProductInputMethod(), getCallOptions(), request);
     }
   }

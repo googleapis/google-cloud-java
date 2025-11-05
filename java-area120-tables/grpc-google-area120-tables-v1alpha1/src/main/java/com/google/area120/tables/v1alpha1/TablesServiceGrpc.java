@@ -32,9 +32,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *   resources, named `workspaces/&#42;`.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/area120/tables/v1alpha1/tables.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class TablesServiceGrpc {
 
@@ -1095,8 +1092,8 @@ public final class TablesServiceGrpc {
      * </pre>
      */
     public com.google.area120.tables.v1alpha1.Table getTable(
-        com.google.area120.tables.v1alpha1.GetTableRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.area120.tables.v1alpha1.GetTableRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTableMethod(), getCallOptions(), request);
     }
 
@@ -1108,8 +1105,9 @@ public final class TablesServiceGrpc {
      * </pre>
      */
     public com.google.area120.tables.v1alpha1.ListTablesResponse listTables(
-        com.google.area120.tables.v1alpha1.ListTablesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.area120.tables.v1alpha1.ListTablesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTablesMethod(), getCallOptions(), request);
     }
 
@@ -1121,8 +1119,9 @@ public final class TablesServiceGrpc {
      * </pre>
      */
     public com.google.area120.tables.v1alpha1.Workspace getWorkspace(
-        com.google.area120.tables.v1alpha1.GetWorkspaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.area120.tables.v1alpha1.GetWorkspaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetWorkspaceMethod(), getCallOptions(), request);
     }
 
@@ -1134,8 +1133,9 @@ public final class TablesServiceGrpc {
      * </pre>
      */
     public com.google.area120.tables.v1alpha1.ListWorkspacesResponse listWorkspaces(
-        com.google.area120.tables.v1alpha1.ListWorkspacesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.area120.tables.v1alpha1.ListWorkspacesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListWorkspacesMethod(), getCallOptions(), request);
     }
 
@@ -1147,8 +1147,8 @@ public final class TablesServiceGrpc {
      * </pre>
      */
     public com.google.area120.tables.v1alpha1.Row getRow(
-        com.google.area120.tables.v1alpha1.GetRowRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.area120.tables.v1alpha1.GetRowRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRowMethod(), getCallOptions(), request);
     }
 
@@ -1160,8 +1160,8 @@ public final class TablesServiceGrpc {
      * </pre>
      */
     public com.google.area120.tables.v1alpha1.ListRowsResponse listRows(
-        com.google.area120.tables.v1alpha1.ListRowsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.area120.tables.v1alpha1.ListRowsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRowsMethod(), getCallOptions(), request);
     }
 
@@ -1173,8 +1173,9 @@ public final class TablesServiceGrpc {
      * </pre>
      */
     public com.google.area120.tables.v1alpha1.Row createRow(
-        com.google.area120.tables.v1alpha1.CreateRowRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.area120.tables.v1alpha1.CreateRowRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateRowMethod(), getCallOptions(), request);
     }
 
@@ -1186,8 +1187,9 @@ public final class TablesServiceGrpc {
      * </pre>
      */
     public com.google.area120.tables.v1alpha1.BatchCreateRowsResponse batchCreateRows(
-        com.google.area120.tables.v1alpha1.BatchCreateRowsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.area120.tables.v1alpha1.BatchCreateRowsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchCreateRowsMethod(), getCallOptions(), request);
     }
 
@@ -1199,8 +1201,9 @@ public final class TablesServiceGrpc {
      * </pre>
      */
     public com.google.area120.tables.v1alpha1.Row updateRow(
-        com.google.area120.tables.v1alpha1.UpdateRowRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.area120.tables.v1alpha1.UpdateRowRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateRowMethod(), getCallOptions(), request);
     }
 
@@ -1212,8 +1215,9 @@ public final class TablesServiceGrpc {
      * </pre>
      */
     public com.google.area120.tables.v1alpha1.BatchUpdateRowsResponse batchUpdateRows(
-        com.google.area120.tables.v1alpha1.BatchUpdateRowsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.area120.tables.v1alpha1.BatchUpdateRowsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchUpdateRowsMethod(), getCallOptions(), request);
     }
 
@@ -1225,8 +1229,9 @@ public final class TablesServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteRow(
-        com.google.area120.tables.v1alpha1.DeleteRowRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.area120.tables.v1alpha1.DeleteRowRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteRowMethod(), getCallOptions(), request);
     }
 
@@ -1238,8 +1243,9 @@ public final class TablesServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty batchDeleteRows(
-        com.google.area120.tables.v1alpha1.BatchDeleteRowsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.area120.tables.v1alpha1.BatchDeleteRowsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchDeleteRowsMethod(), getCallOptions(), request);
     }
   }

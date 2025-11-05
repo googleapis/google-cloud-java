@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service describing handlers for resources
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/oracledatabase/v1/oracledatabase.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class OracleDatabaseGrpc {
 
@@ -4872,8 +4869,9 @@ public final class OracleDatabaseGrpc {
      */
     public com.google.cloud.oracledatabase.v1.ListCloudExadataInfrastructuresResponse
         listCloudExadataInfrastructures(
-            com.google.cloud.oracledatabase.v1.ListCloudExadataInfrastructuresRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.oracledatabase.v1.ListCloudExadataInfrastructuresRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCloudExadataInfrastructuresMethod(), getCallOptions(), request);
     }
 
@@ -4886,8 +4884,9 @@ public final class OracleDatabaseGrpc {
      */
     public com.google.cloud.oracledatabase.v1.CloudExadataInfrastructure
         getCloudExadataInfrastructure(
-            com.google.cloud.oracledatabase.v1.GetCloudExadataInfrastructureRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.oracledatabase.v1.GetCloudExadataInfrastructureRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCloudExadataInfrastructureMethod(), getCallOptions(), request);
     }
 
@@ -4899,8 +4898,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createCloudExadataInfrastructure(
-        com.google.cloud.oracledatabase.v1.CreateCloudExadataInfrastructureRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.CreateCloudExadataInfrastructureRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCloudExadataInfrastructureMethod(), getCallOptions(), request);
     }
 
@@ -4912,8 +4912,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteCloudExadataInfrastructure(
-        com.google.cloud.oracledatabase.v1.DeleteCloudExadataInfrastructureRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.DeleteCloudExadataInfrastructureRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteCloudExadataInfrastructureMethod(), getCallOptions(), request);
     }
 
@@ -4925,8 +4926,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.cloud.oracledatabase.v1.ListCloudVmClustersResponse listCloudVmClusters(
-        com.google.cloud.oracledatabase.v1.ListCloudVmClustersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.ListCloudVmClustersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCloudVmClustersMethod(), getCallOptions(), request);
     }
 
@@ -4938,8 +4940,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.cloud.oracledatabase.v1.CloudVmCluster getCloudVmCluster(
-        com.google.cloud.oracledatabase.v1.GetCloudVmClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.GetCloudVmClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCloudVmClusterMethod(), getCallOptions(), request);
     }
 
@@ -4951,8 +4954,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createCloudVmCluster(
-        com.google.cloud.oracledatabase.v1.CreateCloudVmClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.CreateCloudVmClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCloudVmClusterMethod(), getCallOptions(), request);
     }
 
@@ -4964,8 +4968,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteCloudVmCluster(
-        com.google.cloud.oracledatabase.v1.DeleteCloudVmClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.DeleteCloudVmClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteCloudVmClusterMethod(), getCallOptions(), request);
     }
 
@@ -4977,8 +4982,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.cloud.oracledatabase.v1.ListEntitlementsResponse listEntitlements(
-        com.google.cloud.oracledatabase.v1.ListEntitlementsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.ListEntitlementsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEntitlementsMethod(), getCallOptions(), request);
     }
 
@@ -4990,8 +4996,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.cloud.oracledatabase.v1.ListDbServersResponse listDbServers(
-        com.google.cloud.oracledatabase.v1.ListDbServersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.ListDbServersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDbServersMethod(), getCallOptions(), request);
     }
 
@@ -5003,8 +5010,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.cloud.oracledatabase.v1.ListDbNodesResponse listDbNodes(
-        com.google.cloud.oracledatabase.v1.ListDbNodesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.ListDbNodesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDbNodesMethod(), getCallOptions(), request);
     }
 
@@ -5017,8 +5025,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.cloud.oracledatabase.v1.ListGiVersionsResponse listGiVersions(
-        com.google.cloud.oracledatabase.v1.ListGiVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.ListGiVersionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListGiVersionsMethod(), getCallOptions(), request);
     }
 
@@ -5031,8 +5040,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.cloud.oracledatabase.v1.ListMinorVersionsResponse listMinorVersions(
-        com.google.cloud.oracledatabase.v1.ListMinorVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.ListMinorVersionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMinorVersionsMethod(), getCallOptions(), request);
     }
 
@@ -5044,8 +5054,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.cloud.oracledatabase.v1.ListDbSystemShapesResponse listDbSystemShapes(
-        com.google.cloud.oracledatabase.v1.ListDbSystemShapesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.ListDbSystemShapesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDbSystemShapesMethod(), getCallOptions(), request);
     }
 
@@ -5058,8 +5069,9 @@ public final class OracleDatabaseGrpc {
      */
     public com.google.cloud.oracledatabase.v1.ListAutonomousDatabasesResponse
         listAutonomousDatabases(
-            com.google.cloud.oracledatabase.v1.ListAutonomousDatabasesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.oracledatabase.v1.ListAutonomousDatabasesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAutonomousDatabasesMethod(), getCallOptions(), request);
     }
 
@@ -5071,8 +5083,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.cloud.oracledatabase.v1.AutonomousDatabase getAutonomousDatabase(
-        com.google.cloud.oracledatabase.v1.GetAutonomousDatabaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.GetAutonomousDatabaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAutonomousDatabaseMethod(), getCallOptions(), request);
     }
 
@@ -5084,8 +5097,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createAutonomousDatabase(
-        com.google.cloud.oracledatabase.v1.CreateAutonomousDatabaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.CreateAutonomousDatabaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAutonomousDatabaseMethod(), getCallOptions(), request);
     }
 
@@ -5097,8 +5111,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateAutonomousDatabase(
-        com.google.cloud.oracledatabase.v1.UpdateAutonomousDatabaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.UpdateAutonomousDatabaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAutonomousDatabaseMethod(), getCallOptions(), request);
     }
 
@@ -5110,8 +5125,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteAutonomousDatabase(
-        com.google.cloud.oracledatabase.v1.DeleteAutonomousDatabaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.DeleteAutonomousDatabaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAutonomousDatabaseMethod(), getCallOptions(), request);
     }
 
@@ -5123,8 +5139,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation restoreAutonomousDatabase(
-        com.google.cloud.oracledatabase.v1.RestoreAutonomousDatabaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.RestoreAutonomousDatabaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRestoreAutonomousDatabaseMethod(), getCallOptions(), request);
     }
 
@@ -5137,8 +5154,9 @@ public final class OracleDatabaseGrpc {
      */
     public com.google.cloud.oracledatabase.v1.GenerateAutonomousDatabaseWalletResponse
         generateAutonomousDatabaseWallet(
-            com.google.cloud.oracledatabase.v1.GenerateAutonomousDatabaseWalletRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.oracledatabase.v1.GenerateAutonomousDatabaseWalletRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateAutonomousDatabaseWalletMethod(), getCallOptions(), request);
     }
 
@@ -5152,8 +5170,9 @@ public final class OracleDatabaseGrpc {
      */
     public com.google.cloud.oracledatabase.v1.ListAutonomousDbVersionsResponse
         listAutonomousDbVersions(
-            com.google.cloud.oracledatabase.v1.ListAutonomousDbVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.oracledatabase.v1.ListAutonomousDbVersionsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAutonomousDbVersionsMethod(), getCallOptions(), request);
     }
 
@@ -5166,8 +5185,9 @@ public final class OracleDatabaseGrpc {
      */
     public com.google.cloud.oracledatabase.v1.ListAutonomousDatabaseCharacterSetsResponse
         listAutonomousDatabaseCharacterSets(
-            com.google.cloud.oracledatabase.v1.ListAutonomousDatabaseCharacterSetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.oracledatabase.v1.ListAutonomousDatabaseCharacterSetsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAutonomousDatabaseCharacterSetsMethod(), getCallOptions(), request);
     }
 
@@ -5180,8 +5200,9 @@ public final class OracleDatabaseGrpc {
      */
     public com.google.cloud.oracledatabase.v1.ListAutonomousDatabaseBackupsResponse
         listAutonomousDatabaseBackups(
-            com.google.cloud.oracledatabase.v1.ListAutonomousDatabaseBackupsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.oracledatabase.v1.ListAutonomousDatabaseBackupsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAutonomousDatabaseBackupsMethod(), getCallOptions(), request);
     }
 
@@ -5193,8 +5214,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation stopAutonomousDatabase(
-        com.google.cloud.oracledatabase.v1.StopAutonomousDatabaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.StopAutonomousDatabaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getStopAutonomousDatabaseMethod(), getCallOptions(), request);
     }
 
@@ -5206,8 +5228,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation startAutonomousDatabase(
-        com.google.cloud.oracledatabase.v1.StartAutonomousDatabaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.StartAutonomousDatabaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getStartAutonomousDatabaseMethod(), getCallOptions(), request);
     }
 
@@ -5219,8 +5242,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation restartAutonomousDatabase(
-        com.google.cloud.oracledatabase.v1.RestartAutonomousDatabaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.RestartAutonomousDatabaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRestartAutonomousDatabaseMethod(), getCallOptions(), request);
     }
 
@@ -5233,8 +5257,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation switchoverAutonomousDatabase(
-        com.google.cloud.oracledatabase.v1.SwitchoverAutonomousDatabaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.SwitchoverAutonomousDatabaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSwitchoverAutonomousDatabaseMethod(), getCallOptions(), request);
     }
 
@@ -5247,8 +5272,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation failoverAutonomousDatabase(
-        com.google.cloud.oracledatabase.v1.FailoverAutonomousDatabaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.FailoverAutonomousDatabaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFailoverAutonomousDatabaseMethod(), getCallOptions(), request);
     }
 
@@ -5260,8 +5286,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.cloud.oracledatabase.v1.ListOdbNetworksResponse listOdbNetworks(
-        com.google.cloud.oracledatabase.v1.ListOdbNetworksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.ListOdbNetworksRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListOdbNetworksMethod(), getCallOptions(), request);
     }
 
@@ -5273,8 +5300,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.cloud.oracledatabase.v1.OdbNetwork getOdbNetwork(
-        com.google.cloud.oracledatabase.v1.GetOdbNetworkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.GetOdbNetworkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetOdbNetworkMethod(), getCallOptions(), request);
     }
 
@@ -5286,8 +5314,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createOdbNetwork(
-        com.google.cloud.oracledatabase.v1.CreateOdbNetworkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.CreateOdbNetworkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateOdbNetworkMethod(), getCallOptions(), request);
     }
 
@@ -5299,8 +5328,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteOdbNetwork(
-        com.google.cloud.oracledatabase.v1.DeleteOdbNetworkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.DeleteOdbNetworkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteOdbNetworkMethod(), getCallOptions(), request);
     }
 
@@ -5312,8 +5342,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.cloud.oracledatabase.v1.ListOdbSubnetsResponse listOdbSubnets(
-        com.google.cloud.oracledatabase.v1.ListOdbSubnetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.ListOdbSubnetsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListOdbSubnetsMethod(), getCallOptions(), request);
     }
 
@@ -5325,8 +5356,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.cloud.oracledatabase.v1.OdbSubnet getOdbSubnet(
-        com.google.cloud.oracledatabase.v1.GetOdbSubnetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.GetOdbSubnetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetOdbSubnetMethod(), getCallOptions(), request);
     }
 
@@ -5338,8 +5370,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createOdbSubnet(
-        com.google.cloud.oracledatabase.v1.CreateOdbSubnetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.CreateOdbSubnetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateOdbSubnetMethod(), getCallOptions(), request);
     }
 
@@ -5351,8 +5384,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteOdbSubnet(
-        com.google.cloud.oracledatabase.v1.DeleteOdbSubnetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.DeleteOdbSubnetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteOdbSubnetMethod(), getCallOptions(), request);
     }
 
@@ -5365,8 +5399,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.cloud.oracledatabase.v1.ListExadbVmClustersResponse listExadbVmClusters(
-        com.google.cloud.oracledatabase.v1.ListExadbVmClustersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.ListExadbVmClustersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListExadbVmClustersMethod(), getCallOptions(), request);
     }
 
@@ -5378,8 +5413,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.cloud.oracledatabase.v1.ExadbVmCluster getExadbVmCluster(
-        com.google.cloud.oracledatabase.v1.GetExadbVmClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.GetExadbVmClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetExadbVmClusterMethod(), getCallOptions(), request);
     }
 
@@ -5391,8 +5427,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createExadbVmCluster(
-        com.google.cloud.oracledatabase.v1.CreateExadbVmClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.CreateExadbVmClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateExadbVmClusterMethod(), getCallOptions(), request);
     }
 
@@ -5404,8 +5441,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteExadbVmCluster(
-        com.google.cloud.oracledatabase.v1.DeleteExadbVmClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.DeleteExadbVmClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteExadbVmClusterMethod(), getCallOptions(), request);
     }
 
@@ -5418,8 +5456,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateExadbVmCluster(
-        com.google.cloud.oracledatabase.v1.UpdateExadbVmClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.UpdateExadbVmClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateExadbVmClusterMethod(), getCallOptions(), request);
     }
 
@@ -5431,8 +5470,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation removeVirtualMachineExadbVmCluster(
-        com.google.cloud.oracledatabase.v1.RemoveVirtualMachineExadbVmClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.RemoveVirtualMachineExadbVmClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRemoveVirtualMachineExadbVmClusterMethod(), getCallOptions(), request);
     }
 
@@ -5446,8 +5486,9 @@ public final class OracleDatabaseGrpc {
      */
     public com.google.cloud.oracledatabase.v1.ListExascaleDbStorageVaultsResponse
         listExascaleDbStorageVaults(
-            com.google.cloud.oracledatabase.v1.ListExascaleDbStorageVaultsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.oracledatabase.v1.ListExascaleDbStorageVaultsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListExascaleDbStorageVaultsMethod(), getCallOptions(), request);
     }
 
@@ -5459,8 +5500,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.cloud.oracledatabase.v1.ExascaleDbStorageVault getExascaleDbStorageVault(
-        com.google.cloud.oracledatabase.v1.GetExascaleDbStorageVaultRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.GetExascaleDbStorageVaultRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetExascaleDbStorageVaultMethod(), getCallOptions(), request);
     }
 
@@ -5472,8 +5514,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createExascaleDbStorageVault(
-        com.google.cloud.oracledatabase.v1.CreateExascaleDbStorageVaultRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.CreateExascaleDbStorageVaultRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateExascaleDbStorageVaultMethod(), getCallOptions(), request);
     }
 
@@ -5485,8 +5528,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteExascaleDbStorageVault(
-        com.google.cloud.oracledatabase.v1.DeleteExascaleDbStorageVaultRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.DeleteExascaleDbStorageVaultRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteExascaleDbStorageVaultMethod(), getCallOptions(), request);
     }
 
@@ -5500,8 +5544,9 @@ public final class OracleDatabaseGrpc {
      */
     public com.google.cloud.oracledatabase.v1.ListDbSystemInitialStorageSizesResponse
         listDbSystemInitialStorageSizes(
-            com.google.cloud.oracledatabase.v1.ListDbSystemInitialStorageSizesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.oracledatabase.v1.ListDbSystemInitialStorageSizesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDbSystemInitialStorageSizesMethod(), getCallOptions(), request);
     }
 
@@ -5513,8 +5558,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.cloud.oracledatabase.v1.ListDatabasesResponse listDatabases(
-        com.google.cloud.oracledatabase.v1.ListDatabasesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.ListDatabasesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDatabasesMethod(), getCallOptions(), request);
     }
 
@@ -5526,8 +5572,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.cloud.oracledatabase.v1.Database getDatabase(
-        com.google.cloud.oracledatabase.v1.GetDatabaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.GetDatabaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDatabaseMethod(), getCallOptions(), request);
     }
 
@@ -5540,8 +5587,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.cloud.oracledatabase.v1.ListPluggableDatabasesResponse listPluggableDatabases(
-        com.google.cloud.oracledatabase.v1.ListPluggableDatabasesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.ListPluggableDatabasesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPluggableDatabasesMethod(), getCallOptions(), request);
     }
 
@@ -5553,8 +5601,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.cloud.oracledatabase.v1.PluggableDatabase getPluggableDatabase(
-        com.google.cloud.oracledatabase.v1.GetPluggableDatabaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.GetPluggableDatabaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPluggableDatabaseMethod(), getCallOptions(), request);
     }
 
@@ -5566,8 +5615,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.cloud.oracledatabase.v1.ListDbSystemsResponse listDbSystems(
-        com.google.cloud.oracledatabase.v1.ListDbSystemsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.ListDbSystemsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDbSystemsMethod(), getCallOptions(), request);
     }
 
@@ -5579,8 +5629,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.cloud.oracledatabase.v1.DbSystem getDbSystem(
-        com.google.cloud.oracledatabase.v1.GetDbSystemRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.GetDbSystemRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDbSystemMethod(), getCallOptions(), request);
     }
 
@@ -5592,8 +5643,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createDbSystem(
-        com.google.cloud.oracledatabase.v1.CreateDbSystemRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.CreateDbSystemRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDbSystemMethod(), getCallOptions(), request);
     }
 
@@ -5605,8 +5657,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteDbSystem(
-        com.google.cloud.oracledatabase.v1.DeleteDbSystemRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.DeleteDbSystemRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDbSystemMethod(), getCallOptions(), request);
     }
 
@@ -5618,8 +5671,9 @@ public final class OracleDatabaseGrpc {
      * </pre>
      */
     public com.google.cloud.oracledatabase.v1.ListDbVersionsResponse listDbVersions(
-        com.google.cloud.oracledatabase.v1.ListDbVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.oracledatabase.v1.ListDbVersionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDbVersionsMethod(), getCallOptions(), request);
     }
 
@@ -5632,8 +5686,9 @@ public final class OracleDatabaseGrpc {
      */
     public com.google.cloud.oracledatabase.v1.ListDatabaseCharacterSetsResponse
         listDatabaseCharacterSets(
-            com.google.cloud.oracledatabase.v1.ListDatabaseCharacterSetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.oracledatabase.v1.ListDatabaseCharacterSetsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDatabaseCharacterSetsMethod(), getCallOptions(), request);
     }
   }

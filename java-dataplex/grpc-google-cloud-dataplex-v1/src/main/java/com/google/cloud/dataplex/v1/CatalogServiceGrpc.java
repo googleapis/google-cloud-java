@@ -28,9 +28,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * including Cloud Storage and BigQuery.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dataplex/v1/catalog.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CatalogServiceGrpc {
 
@@ -2381,8 +2378,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createEntryType(
-        com.google.cloud.dataplex.v1.CreateEntryTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CreateEntryTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEntryTypeMethod(), getCallOptions(), request);
     }
 
@@ -2394,8 +2392,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateEntryType(
-        com.google.cloud.dataplex.v1.UpdateEntryTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.UpdateEntryTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateEntryTypeMethod(), getCallOptions(), request);
     }
 
@@ -2407,8 +2406,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteEntryType(
-        com.google.cloud.dataplex.v1.DeleteEntryTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.DeleteEntryTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteEntryTypeMethod(), getCallOptions(), request);
     }
 
@@ -2420,8 +2420,8 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListEntryTypesResponse listEntryTypes(
-        com.google.cloud.dataplex.v1.ListEntryTypesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListEntryTypesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEntryTypesMethod(), getCallOptions(), request);
     }
 
@@ -2433,8 +2433,8 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.EntryType getEntryType(
-        com.google.cloud.dataplex.v1.GetEntryTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GetEntryTypeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEntryTypeMethod(), getCallOptions(), request);
     }
 
@@ -2446,8 +2446,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createAspectType(
-        com.google.cloud.dataplex.v1.CreateAspectTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CreateAspectTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAspectTypeMethod(), getCallOptions(), request);
     }
 
@@ -2459,8 +2460,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateAspectType(
-        com.google.cloud.dataplex.v1.UpdateAspectTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.UpdateAspectTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAspectTypeMethod(), getCallOptions(), request);
     }
 
@@ -2472,8 +2474,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteAspectType(
-        com.google.cloud.dataplex.v1.DeleteAspectTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.DeleteAspectTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAspectTypeMethod(), getCallOptions(), request);
     }
 
@@ -2485,8 +2488,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListAspectTypesResponse listAspectTypes(
-        com.google.cloud.dataplex.v1.ListAspectTypesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListAspectTypesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAspectTypesMethod(), getCallOptions(), request);
     }
 
@@ -2498,8 +2502,8 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.AspectType getAspectType(
-        com.google.cloud.dataplex.v1.GetAspectTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GetAspectTypeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAspectTypeMethod(), getCallOptions(), request);
     }
 
@@ -2511,8 +2515,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createEntryGroup(
-        com.google.cloud.dataplex.v1.CreateEntryGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CreateEntryGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEntryGroupMethod(), getCallOptions(), request);
     }
 
@@ -2524,8 +2529,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateEntryGroup(
-        com.google.cloud.dataplex.v1.UpdateEntryGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.UpdateEntryGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateEntryGroupMethod(), getCallOptions(), request);
     }
 
@@ -2537,8 +2543,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteEntryGroup(
-        com.google.cloud.dataplex.v1.DeleteEntryGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.DeleteEntryGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteEntryGroupMethod(), getCallOptions(), request);
     }
 
@@ -2550,8 +2557,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListEntryGroupsResponse listEntryGroups(
-        com.google.cloud.dataplex.v1.ListEntryGroupsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListEntryGroupsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEntryGroupsMethod(), getCallOptions(), request);
     }
 
@@ -2563,8 +2571,8 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.EntryGroup getEntryGroup(
-        com.google.cloud.dataplex.v1.GetEntryGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GetEntryGroupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEntryGroupMethod(), getCallOptions(), request);
     }
 
@@ -2576,8 +2584,8 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Entry createEntry(
-        com.google.cloud.dataplex.v1.CreateEntryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CreateEntryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEntryMethod(), getCallOptions(), request);
     }
 
@@ -2589,8 +2597,8 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Entry updateEntry(
-        com.google.cloud.dataplex.v1.UpdateEntryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.UpdateEntryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateEntryMethod(), getCallOptions(), request);
     }
 
@@ -2602,8 +2610,8 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Entry deleteEntry(
-        com.google.cloud.dataplex.v1.DeleteEntryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.DeleteEntryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteEntryMethod(), getCallOptions(), request);
     }
 
@@ -2620,8 +2628,8 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListEntriesResponse listEntries(
-        com.google.cloud.dataplex.v1.ListEntriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListEntriesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEntriesMethod(), getCallOptions(), request);
     }
 
@@ -2638,8 +2646,8 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Entry getEntry(
-        com.google.cloud.dataplex.v1.GetEntryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GetEntryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEntryMethod(), getCallOptions(), request);
     }
 
@@ -2656,8 +2664,8 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Entry lookupEntry(
-        com.google.cloud.dataplex.v1.LookupEntryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.LookupEntryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getLookupEntryMethod(), getCallOptions(), request);
     }
 
@@ -2669,8 +2677,8 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.SearchEntriesResponse searchEntries(
-        com.google.cloud.dataplex.v1.SearchEntriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.SearchEntriesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchEntriesMethod(), getCallOptions(), request);
     }
 
@@ -2683,8 +2691,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createMetadataJob(
-        com.google.cloud.dataplex.v1.CreateMetadataJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CreateMetadataJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateMetadataJobMethod(), getCallOptions(), request);
     }
 
@@ -2696,8 +2705,8 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.MetadataJob getMetadataJob(
-        com.google.cloud.dataplex.v1.GetMetadataJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GetMetadataJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetMetadataJobMethod(), getCallOptions(), request);
     }
 
@@ -2709,8 +2718,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListMetadataJobsResponse listMetadataJobs(
-        com.google.cloud.dataplex.v1.ListMetadataJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListMetadataJobsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMetadataJobsMethod(), getCallOptions(), request);
     }
 
@@ -2726,8 +2736,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty cancelMetadataJob(
-        com.google.cloud.dataplex.v1.CancelMetadataJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CancelMetadataJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCancelMetadataJobMethod(), getCallOptions(), request);
     }
 
@@ -2739,8 +2750,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.EntryLink createEntryLink(
-        com.google.cloud.dataplex.v1.CreateEntryLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CreateEntryLinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEntryLinkMethod(), getCallOptions(), request);
     }
 
@@ -2752,8 +2764,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.EntryLink deleteEntryLink(
-        com.google.cloud.dataplex.v1.DeleteEntryLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.DeleteEntryLinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteEntryLinkMethod(), getCallOptions(), request);
     }
 
@@ -2765,8 +2778,8 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.EntryLink getEntryLink(
-        com.google.cloud.dataplex.v1.GetEntryLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GetEntryLinkRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEntryLinkMethod(), getCallOptions(), request);
     }
   }

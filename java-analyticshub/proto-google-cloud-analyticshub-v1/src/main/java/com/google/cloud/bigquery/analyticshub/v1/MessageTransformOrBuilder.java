@@ -81,7 +81,7 @@ public interface MessageTransformOrBuilder
    * <code>bool enabled = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.bigquery.analyticshub.v1.MessageTransform.enabled is deprecated. See
-   *     google/cloud/bigquery/analyticshub/v1/pubsub.proto;l=456
+   *     google/cloud/bigquery/analyticshub/v1/pubsub.proto;l=466
    * @return The enabled.
    */
   @java.lang.Deprecated

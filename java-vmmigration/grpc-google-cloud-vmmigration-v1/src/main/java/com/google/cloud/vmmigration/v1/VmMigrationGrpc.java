@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * VM Migration Service
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/vmmigration/v1/vmmigration.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class VmMigrationGrpc {
 
@@ -4980,8 +4977,8 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.cloud.vmmigration.v1.ListSourcesResponse listSources(
-        com.google.cloud.vmmigration.v1.ListSourcesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.ListSourcesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSourcesMethod(), getCallOptions(), request);
     }
 
@@ -4993,8 +4990,8 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.cloud.vmmigration.v1.Source getSource(
-        com.google.cloud.vmmigration.v1.GetSourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.GetSourceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSourceMethod(), getCallOptions(), request);
     }
 
@@ -5006,8 +5003,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createSource(
-        com.google.cloud.vmmigration.v1.CreateSourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.CreateSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSourceMethod(), getCallOptions(), request);
     }
 
@@ -5019,8 +5017,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateSource(
-        com.google.cloud.vmmigration.v1.UpdateSourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.UpdateSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSourceMethod(), getCallOptions(), request);
     }
 
@@ -5032,8 +5031,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteSource(
-        com.google.cloud.vmmigration.v1.DeleteSourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.DeleteSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSourceMethod(), getCallOptions(), request);
     }
 
@@ -5049,8 +5049,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.cloud.vmmigration.v1.FetchInventoryResponse fetchInventory(
-        com.google.cloud.vmmigration.v1.FetchInventoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.FetchInventoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchInventoryMethod(), getCallOptions(), request);
     }
 
@@ -5067,8 +5068,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.cloud.vmmigration.v1.FetchStorageInventoryResponse fetchStorageInventory(
-        com.google.cloud.vmmigration.v1.FetchStorageInventoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.FetchStorageInventoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchStorageInventoryMethod(), getCallOptions(), request);
     }
 
@@ -5080,8 +5082,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.cloud.vmmigration.v1.ListUtilizationReportsResponse listUtilizationReports(
-        com.google.cloud.vmmigration.v1.ListUtilizationReportsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.ListUtilizationReportsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListUtilizationReportsMethod(), getCallOptions(), request);
     }
 
@@ -5093,8 +5096,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.cloud.vmmigration.v1.UtilizationReport getUtilizationReport(
-        com.google.cloud.vmmigration.v1.GetUtilizationReportRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.GetUtilizationReportRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetUtilizationReportMethod(), getCallOptions(), request);
     }
 
@@ -5106,8 +5110,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createUtilizationReport(
-        com.google.cloud.vmmigration.v1.CreateUtilizationReportRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.CreateUtilizationReportRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateUtilizationReportMethod(), getCallOptions(), request);
     }
 
@@ -5119,8 +5124,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteUtilizationReport(
-        com.google.cloud.vmmigration.v1.DeleteUtilizationReportRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.DeleteUtilizationReportRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteUtilizationReportMethod(), getCallOptions(), request);
     }
 
@@ -5133,8 +5139,9 @@ public final class VmMigrationGrpc {
      */
     public com.google.cloud.vmmigration.v1.ListDatacenterConnectorsResponse
         listDatacenterConnectors(
-            com.google.cloud.vmmigration.v1.ListDatacenterConnectorsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.vmmigration.v1.ListDatacenterConnectorsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDatacenterConnectorsMethod(), getCallOptions(), request);
     }
 
@@ -5146,8 +5153,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.cloud.vmmigration.v1.DatacenterConnector getDatacenterConnector(
-        com.google.cloud.vmmigration.v1.GetDatacenterConnectorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.GetDatacenterConnectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDatacenterConnectorMethod(), getCallOptions(), request);
     }
 
@@ -5159,8 +5167,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createDatacenterConnector(
-        com.google.cloud.vmmigration.v1.CreateDatacenterConnectorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.CreateDatacenterConnectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDatacenterConnectorMethod(), getCallOptions(), request);
     }
 
@@ -5172,8 +5181,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteDatacenterConnector(
-        com.google.cloud.vmmigration.v1.DeleteDatacenterConnectorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.DeleteDatacenterConnectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDatacenterConnectorMethod(), getCallOptions(), request);
     }
 
@@ -5186,8 +5196,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation upgradeAppliance(
-        com.google.cloud.vmmigration.v1.UpgradeApplianceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.UpgradeApplianceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpgradeApplianceMethod(), getCallOptions(), request);
     }
 
@@ -5199,8 +5210,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createMigratingVm(
-        com.google.cloud.vmmigration.v1.CreateMigratingVmRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.CreateMigratingVmRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateMigratingVmMethod(), getCallOptions(), request);
     }
 
@@ -5212,8 +5224,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.cloud.vmmigration.v1.ListMigratingVmsResponse listMigratingVms(
-        com.google.cloud.vmmigration.v1.ListMigratingVmsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.ListMigratingVmsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMigratingVmsMethod(), getCallOptions(), request);
     }
 
@@ -5225,8 +5238,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.cloud.vmmigration.v1.MigratingVm getMigratingVm(
-        com.google.cloud.vmmigration.v1.GetMigratingVmRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.GetMigratingVmRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetMigratingVmMethod(), getCallOptions(), request);
     }
 
@@ -5238,8 +5252,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateMigratingVm(
-        com.google.cloud.vmmigration.v1.UpdateMigratingVmRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.UpdateMigratingVmRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateMigratingVmMethod(), getCallOptions(), request);
     }
 
@@ -5251,8 +5266,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteMigratingVm(
-        com.google.cloud.vmmigration.v1.DeleteMigratingVmRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.DeleteMigratingVmRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteMigratingVmMethod(), getCallOptions(), request);
     }
 
@@ -5265,8 +5281,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation startMigration(
-        com.google.cloud.vmmigration.v1.StartMigrationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.StartMigrationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getStartMigrationMethod(), getCallOptions(), request);
     }
 
@@ -5281,8 +5298,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation resumeMigration(
-        com.google.cloud.vmmigration.v1.ResumeMigrationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.ResumeMigrationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getResumeMigrationMethod(), getCallOptions(), request);
     }
 
@@ -5296,8 +5314,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation pauseMigration(
-        com.google.cloud.vmmigration.v1.PauseMigrationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.PauseMigrationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPauseMigrationMethod(), getCallOptions(), request);
     }
 
@@ -5310,8 +5329,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation finalizeMigration(
-        com.google.cloud.vmmigration.v1.FinalizeMigrationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.FinalizeMigrationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFinalizeMigrationMethod(), getCallOptions(), request);
     }
 
@@ -5323,8 +5343,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation extendMigration(
-        com.google.cloud.vmmigration.v1.ExtendMigrationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.ExtendMigrationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExtendMigrationMethod(), getCallOptions(), request);
     }
 
@@ -5336,8 +5357,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createCloneJob(
-        com.google.cloud.vmmigration.v1.CreateCloneJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.CreateCloneJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCloneJobMethod(), getCallOptions(), request);
     }
 
@@ -5349,8 +5371,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation cancelCloneJob(
-        com.google.cloud.vmmigration.v1.CancelCloneJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.CancelCloneJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCancelCloneJobMethod(), getCallOptions(), request);
     }
 
@@ -5363,8 +5386,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.cloud.vmmigration.v1.ListCloneJobsResponse listCloneJobs(
-        com.google.cloud.vmmigration.v1.ListCloneJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.ListCloneJobsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCloneJobsMethod(), getCallOptions(), request);
     }
 
@@ -5376,8 +5400,8 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.cloud.vmmigration.v1.CloneJob getCloneJob(
-        com.google.cloud.vmmigration.v1.GetCloneJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.GetCloneJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCloneJobMethod(), getCallOptions(), request);
     }
 
@@ -5391,8 +5415,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createCutoverJob(
-        com.google.cloud.vmmigration.v1.CreateCutoverJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.CreateCutoverJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCutoverJobMethod(), getCallOptions(), request);
     }
 
@@ -5404,8 +5429,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation cancelCutoverJob(
-        com.google.cloud.vmmigration.v1.CancelCutoverJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.CancelCutoverJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCancelCutoverJobMethod(), getCallOptions(), request);
     }
 
@@ -5418,8 +5444,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.cloud.vmmigration.v1.ListCutoverJobsResponse listCutoverJobs(
-        com.google.cloud.vmmigration.v1.ListCutoverJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.ListCutoverJobsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCutoverJobsMethod(), getCallOptions(), request);
     }
 
@@ -5431,8 +5458,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.cloud.vmmigration.v1.CutoverJob getCutoverJob(
-        com.google.cloud.vmmigration.v1.GetCutoverJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.GetCutoverJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCutoverJobMethod(), getCallOptions(), request);
     }
 
@@ -5444,8 +5472,8 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.cloud.vmmigration.v1.ListGroupsResponse listGroups(
-        com.google.cloud.vmmigration.v1.ListGroupsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.ListGroupsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListGroupsMethod(), getCallOptions(), request);
     }
 
@@ -5457,8 +5485,8 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.cloud.vmmigration.v1.Group getGroup(
-        com.google.cloud.vmmigration.v1.GetGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.GetGroupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetGroupMethod(), getCallOptions(), request);
     }
 
@@ -5470,8 +5498,8 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createGroup(
-        com.google.cloud.vmmigration.v1.CreateGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.CreateGroupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateGroupMethod(), getCallOptions(), request);
     }
 
@@ -5483,8 +5511,8 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateGroup(
-        com.google.cloud.vmmigration.v1.UpdateGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.UpdateGroupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateGroupMethod(), getCallOptions(), request);
     }
 
@@ -5496,8 +5524,8 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteGroup(
-        com.google.cloud.vmmigration.v1.DeleteGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.DeleteGroupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteGroupMethod(), getCallOptions(), request);
     }
 
@@ -5509,8 +5537,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation addGroupMigration(
-        com.google.cloud.vmmigration.v1.AddGroupMigrationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.AddGroupMigrationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAddGroupMigrationMethod(), getCallOptions(), request);
     }
 
@@ -5522,8 +5551,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation removeGroupMigration(
-        com.google.cloud.vmmigration.v1.RemoveGroupMigrationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.RemoveGroupMigrationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRemoveGroupMigrationMethod(), getCallOptions(), request);
     }
 
@@ -5537,8 +5567,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.cloud.vmmigration.v1.ListTargetProjectsResponse listTargetProjects(
-        com.google.cloud.vmmigration.v1.ListTargetProjectsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.ListTargetProjectsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTargetProjectsMethod(), getCallOptions(), request);
     }
 
@@ -5552,8 +5583,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.cloud.vmmigration.v1.TargetProject getTargetProject(
-        com.google.cloud.vmmigration.v1.GetTargetProjectRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.GetTargetProjectRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTargetProjectMethod(), getCallOptions(), request);
     }
 
@@ -5567,8 +5599,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createTargetProject(
-        com.google.cloud.vmmigration.v1.CreateTargetProjectRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.CreateTargetProjectRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTargetProjectMethod(), getCallOptions(), request);
     }
 
@@ -5582,8 +5615,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateTargetProject(
-        com.google.cloud.vmmigration.v1.UpdateTargetProjectRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.UpdateTargetProjectRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateTargetProjectMethod(), getCallOptions(), request);
     }
 
@@ -5597,8 +5631,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteTargetProject(
-        com.google.cloud.vmmigration.v1.DeleteTargetProjectRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.DeleteTargetProjectRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTargetProjectMethod(), getCallOptions(), request);
     }
 
@@ -5610,8 +5645,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.cloud.vmmigration.v1.ListReplicationCyclesResponse listReplicationCycles(
-        com.google.cloud.vmmigration.v1.ListReplicationCyclesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.ListReplicationCyclesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListReplicationCyclesMethod(), getCallOptions(), request);
     }
 
@@ -5623,8 +5659,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.cloud.vmmigration.v1.ReplicationCycle getReplicationCycle(
-        com.google.cloud.vmmigration.v1.GetReplicationCycleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.GetReplicationCycleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetReplicationCycleMethod(), getCallOptions(), request);
     }
 
@@ -5636,8 +5673,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.cloud.vmmigration.v1.ListImageImportsResponse listImageImports(
-        com.google.cloud.vmmigration.v1.ListImageImportsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.ListImageImportsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListImageImportsMethod(), getCallOptions(), request);
     }
 
@@ -5649,8 +5687,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.cloud.vmmigration.v1.ImageImport getImageImport(
-        com.google.cloud.vmmigration.v1.GetImageImportRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.GetImageImportRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetImageImportMethod(), getCallOptions(), request);
     }
 
@@ -5662,8 +5701,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createImageImport(
-        com.google.cloud.vmmigration.v1.CreateImageImportRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.CreateImageImportRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateImageImportMethod(), getCallOptions(), request);
     }
 
@@ -5675,8 +5715,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteImageImport(
-        com.google.cloud.vmmigration.v1.DeleteImageImportRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.DeleteImageImportRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteImageImportMethod(), getCallOptions(), request);
     }
 
@@ -5688,8 +5729,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.cloud.vmmigration.v1.ListImageImportJobsResponse listImageImportJobs(
-        com.google.cloud.vmmigration.v1.ListImageImportJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.ListImageImportJobsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListImageImportJobsMethod(), getCallOptions(), request);
     }
 
@@ -5701,8 +5743,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.cloud.vmmigration.v1.ImageImportJob getImageImportJob(
-        com.google.cloud.vmmigration.v1.GetImageImportJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.GetImageImportJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetImageImportJobMethod(), getCallOptions(), request);
     }
 
@@ -5714,8 +5757,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation cancelImageImportJob(
-        com.google.cloud.vmmigration.v1.CancelImageImportJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.CancelImageImportJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCancelImageImportJobMethod(), getCallOptions(), request);
     }
 
@@ -5727,8 +5771,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createDiskMigrationJob(
-        com.google.cloud.vmmigration.v1.CreateDiskMigrationJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.CreateDiskMigrationJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDiskMigrationJobMethod(), getCallOptions(), request);
     }
 
@@ -5740,8 +5785,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.cloud.vmmigration.v1.ListDiskMigrationJobsResponse listDiskMigrationJobs(
-        com.google.cloud.vmmigration.v1.ListDiskMigrationJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.ListDiskMigrationJobsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDiskMigrationJobsMethod(), getCallOptions(), request);
     }
 
@@ -5753,8 +5799,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.cloud.vmmigration.v1.DiskMigrationJob getDiskMigrationJob(
-        com.google.cloud.vmmigration.v1.GetDiskMigrationJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.GetDiskMigrationJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDiskMigrationJobMethod(), getCallOptions(), request);
     }
 
@@ -5766,8 +5813,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateDiskMigrationJob(
-        com.google.cloud.vmmigration.v1.UpdateDiskMigrationJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.UpdateDiskMigrationJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDiskMigrationJobMethod(), getCallOptions(), request);
     }
 
@@ -5779,8 +5827,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteDiskMigrationJob(
-        com.google.cloud.vmmigration.v1.DeleteDiskMigrationJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.DeleteDiskMigrationJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDiskMigrationJobMethod(), getCallOptions(), request);
     }
 
@@ -5792,8 +5841,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation runDiskMigrationJob(
-        com.google.cloud.vmmigration.v1.RunDiskMigrationJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.RunDiskMigrationJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRunDiskMigrationJobMethod(), getCallOptions(), request);
     }
 
@@ -5805,8 +5855,9 @@ public final class VmMigrationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation cancelDiskMigrationJob(
-        com.google.cloud.vmmigration.v1.CancelDiskMigrationJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmmigration.v1.CancelDiskMigrationJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCancelDiskMigrationJobMethod(), getCallOptions(), request);
     }
   }

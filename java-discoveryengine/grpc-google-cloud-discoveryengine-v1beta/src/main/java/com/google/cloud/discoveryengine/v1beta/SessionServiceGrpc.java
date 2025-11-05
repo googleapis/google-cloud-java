@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing Sessions and Session-related resources.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1beta/session_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SessionServiceGrpc {
 
@@ -562,8 +559,9 @@ public final class SessionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1beta.Session createSession(
-        com.google.cloud.discoveryengine.v1beta.CreateSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.CreateSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSessionMethod(), getCallOptions(), request);
     }
 
@@ -577,8 +575,9 @@ public final class SessionServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteSession(
-        com.google.cloud.discoveryengine.v1beta.DeleteSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.DeleteSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSessionMethod(), getCallOptions(), request);
     }
 
@@ -593,8 +592,9 @@ public final class SessionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1beta.Session updateSession(
-        com.google.cloud.discoveryengine.v1beta.UpdateSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.UpdateSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSessionMethod(), getCallOptions(), request);
     }
 
@@ -606,8 +606,9 @@ public final class SessionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1beta.Session getSession(
-        com.google.cloud.discoveryengine.v1beta.GetSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.GetSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSessionMethod(), getCallOptions(), request);
     }
 
@@ -620,8 +621,9 @@ public final class SessionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1beta.ListSessionsResponse listSessions(
-        com.google.cloud.discoveryengine.v1beta.ListSessionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.ListSessionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSessionsMethod(), getCallOptions(), request);
     }
   }

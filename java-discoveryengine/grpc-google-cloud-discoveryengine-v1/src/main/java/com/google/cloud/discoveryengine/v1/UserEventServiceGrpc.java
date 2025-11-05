@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for ingesting end user actions on a website to Discovery Engine API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1/user_event_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class UserEventServiceGrpc {
 
@@ -488,8 +485,9 @@ public final class UserEventServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1.UserEvent writeUserEvent(
-        com.google.cloud.discoveryengine.v1.WriteUserEventRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.WriteUserEventRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getWriteUserEventMethod(), getCallOptions(), request);
     }
 
@@ -504,8 +502,9 @@ public final class UserEventServiceGrpc {
      * </pre>
      */
     public com.google.api.HttpBody collectUserEvent(
-        com.google.cloud.discoveryengine.v1.CollectUserEventRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.CollectUserEventRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCollectUserEventMethod(), getCallOptions(), request);
     }
 
@@ -520,8 +519,9 @@ public final class UserEventServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation purgeUserEvents(
-        com.google.cloud.discoveryengine.v1.PurgeUserEventsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.PurgeUserEventsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPurgeUserEventsMethod(), getCallOptions(), request);
     }
 
@@ -538,8 +538,9 @@ public final class UserEventServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importUserEvents(
-        com.google.cloud.discoveryengine.v1.ImportUserEventsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.ImportUserEventsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportUserEventsMethod(), getCallOptions(), request);
     }
   }

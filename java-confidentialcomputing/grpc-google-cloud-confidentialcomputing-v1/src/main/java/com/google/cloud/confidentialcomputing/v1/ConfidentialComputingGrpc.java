@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service describing handlers for resources
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/confidentialcomputing/v1/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ConfidentialComputingGrpc {
 
@@ -507,8 +504,9 @@ public final class ConfidentialComputingGrpc {
      * </pre>
      */
     public com.google.cloud.confidentialcomputing.v1.Challenge createChallenge(
-        com.google.cloud.confidentialcomputing.v1.CreateChallengeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.confidentialcomputing.v1.CreateChallengeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateChallengeMethod(), getCallOptions(), request);
     }
 
@@ -521,8 +519,9 @@ public final class ConfidentialComputingGrpc {
      * </pre>
      */
     public com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse verifyAttestation(
-        com.google.cloud.confidentialcomputing.v1.VerifyAttestationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.confidentialcomputing.v1.VerifyAttestationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getVerifyAttestationMethod(), getCallOptions(), request);
     }
 
@@ -536,8 +535,9 @@ public final class ConfidentialComputingGrpc {
      */
     public com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse
         verifyConfidentialSpace(
-            com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getVerifyConfidentialSpaceMethod(), getCallOptions(), request);
     }
 
@@ -551,8 +551,9 @@ public final class ConfidentialComputingGrpc {
      */
     public com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeResponse
         verifyConfidentialGke(
-            com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getVerifyConfidentialGkeMethod(), getCallOptions(), request);
     }
   }

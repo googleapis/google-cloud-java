@@ -270,4 +270,25 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void refineText(
+      RefineTextRequest request, StreamObserver<RefineTextResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RefineTextResponse) {
+      requests.add(request);
+      responseObserver.onNext(((RefineTextResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RefineText, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RefineTextResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

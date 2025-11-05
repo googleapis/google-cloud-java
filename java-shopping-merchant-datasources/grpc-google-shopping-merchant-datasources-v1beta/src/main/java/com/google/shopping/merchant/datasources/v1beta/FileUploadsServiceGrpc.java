@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to manage data source file uploads.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/datasources/v1beta/fileuploads.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class FileUploadsServiceGrpc {
 
@@ -246,8 +243,9 @@ public final class FileUploadsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.datasources.v1beta.FileUpload getFileUpload(
-        com.google.shopping.merchant.datasources.v1beta.GetFileUploadRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.datasources.v1beta.GetFileUploadRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetFileUploadMethod(), getCallOptions(), request);
     }
   }

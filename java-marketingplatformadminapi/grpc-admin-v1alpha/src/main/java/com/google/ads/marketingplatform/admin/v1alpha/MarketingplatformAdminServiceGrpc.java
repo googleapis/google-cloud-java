@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service Interface for the Google Marketing Platform Admin API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/marketingplatform/admin/v1alpha/marketingplatform_admin.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class MarketingplatformAdminServiceGrpc {
 
@@ -908,8 +905,9 @@ public final class MarketingplatformAdminServiceGrpc {
      * </pre>
      */
     public com.google.ads.marketingplatform.admin.v1alpha.Organization getOrganization(
-        com.google.ads.marketingplatform.admin.v1alpha.GetOrganizationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.ads.marketingplatform.admin.v1alpha.GetOrganizationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetOrganizationMethod(), getCallOptions(), request);
     }
 
@@ -922,8 +920,9 @@ public final class MarketingplatformAdminServiceGrpc {
      */
     public com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsResponse
         listOrganizations(
-            com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListOrganizationsMethod(), getCallOptions(), request);
     }
 
@@ -939,8 +938,9 @@ public final class MarketingplatformAdminServiceGrpc {
     public com.google.ads.marketingplatform.admin.v1alpha.FindSalesPartnerManagedClientsResponse
         findSalesPartnerManagedClients(
             com.google.ads.marketingplatform.admin.v1alpha.FindSalesPartnerManagedClientsRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFindSalesPartnerManagedClientsMethod(), getCallOptions(), request);
     }
 
@@ -954,9 +954,9 @@ public final class MarketingplatformAdminServiceGrpc {
      */
     public com.google.ads.marketingplatform.admin.v1alpha.ListAnalyticsAccountLinksResponse
         listAnalyticsAccountLinks(
-            com.google.ads.marketingplatform.admin.v1alpha.ListAnalyticsAccountLinksRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.ads.marketingplatform.admin.v1alpha.ListAnalyticsAccountLinksRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAnalyticsAccountLinksMethod(), getCallOptions(), request);
     }
 
@@ -974,8 +974,9 @@ public final class MarketingplatformAdminServiceGrpc {
     public com.google.ads.marketingplatform.admin.v1alpha.AnalyticsAccountLink
         createAnalyticsAccountLink(
             com.google.ads.marketingplatform.admin.v1alpha.CreateAnalyticsAccountLinkRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAnalyticsAccountLinkMethod(), getCallOptions(), request);
     }
 
@@ -990,8 +991,9 @@ public final class MarketingplatformAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteAnalyticsAccountLink(
-        com.google.ads.marketingplatform.admin.v1alpha.DeleteAnalyticsAccountLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.ads.marketingplatform.admin.v1alpha.DeleteAnalyticsAccountLinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAnalyticsAccountLinkMethod(), getCallOptions(), request);
     }
 
@@ -1004,8 +1006,9 @@ public final class MarketingplatformAdminServiceGrpc {
      */
     public com.google.ads.marketingplatform.admin.v1alpha.SetPropertyServiceLevelResponse
         setPropertyServiceLevel(
-            com.google.ads.marketingplatform.admin.v1alpha.SetPropertyServiceLevelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.ads.marketingplatform.admin.v1alpha.SetPropertyServiceLevelRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetPropertyServiceLevelMethod(), getCallOptions(), request);
     }
 
@@ -1025,8 +1028,9 @@ public final class MarketingplatformAdminServiceGrpc {
      */
     public com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageResponse
         reportPropertyUsage(
-            com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReportPropertyUsageMethod(), getCallOptions(), request);
     }
   }

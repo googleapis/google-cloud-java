@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [ServingConfig][google.cloud.discoveryengine.v1.ServingConfig].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1/serving_config_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ServingConfigServiceGrpc {
 
@@ -254,8 +251,9 @@ public final class ServingConfigServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1.ServingConfig updateServingConfig(
-        com.google.cloud.discoveryengine.v1.UpdateServingConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.UpdateServingConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateServingConfigMethod(), getCallOptions(), request);
     }
   }

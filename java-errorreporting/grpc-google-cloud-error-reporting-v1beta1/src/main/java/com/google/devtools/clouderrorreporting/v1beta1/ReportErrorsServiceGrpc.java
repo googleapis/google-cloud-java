@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * An API for reporting error events.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/devtools/clouderrorreporting/v1beta1/report_errors_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ReportErrorsServiceGrpc {
 
@@ -292,8 +289,9 @@ public final class ReportErrorsServiceGrpc {
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse
         reportErrorEvent(
-            com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReportErrorEventMethod(), getCallOptions(), request);
     }
   }

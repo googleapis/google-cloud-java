@@ -29,9 +29,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * 3. GlossaryTerm
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dataplex/v1/business_glossary.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class BusinessGlossaryServiceGrpc {
 
@@ -1373,8 +1370,8 @@ public final class BusinessGlossaryServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createGlossary(
-        com.google.cloud.dataplex.v1.CreateGlossaryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CreateGlossaryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateGlossaryMethod(), getCallOptions(), request);
     }
 
@@ -1386,8 +1383,8 @@ public final class BusinessGlossaryServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateGlossary(
-        com.google.cloud.dataplex.v1.UpdateGlossaryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.UpdateGlossaryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateGlossaryMethod(), getCallOptions(), request);
     }
 
@@ -1400,8 +1397,8 @@ public final class BusinessGlossaryServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteGlossary(
-        com.google.cloud.dataplex.v1.DeleteGlossaryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.DeleteGlossaryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteGlossaryMethod(), getCallOptions(), request);
     }
 
@@ -1413,8 +1410,8 @@ public final class BusinessGlossaryServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Glossary getGlossary(
-        com.google.cloud.dataplex.v1.GetGlossaryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GetGlossaryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetGlossaryMethod(), getCallOptions(), request);
     }
 
@@ -1426,8 +1423,8 @@ public final class BusinessGlossaryServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListGlossariesResponse listGlossaries(
-        com.google.cloud.dataplex.v1.ListGlossariesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListGlossariesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListGlossariesMethod(), getCallOptions(), request);
     }
 
@@ -1439,8 +1436,9 @@ public final class BusinessGlossaryServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.GlossaryCategory createGlossaryCategory(
-        com.google.cloud.dataplex.v1.CreateGlossaryCategoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CreateGlossaryCategoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateGlossaryCategoryMethod(), getCallOptions(), request);
     }
 
@@ -1452,8 +1450,9 @@ public final class BusinessGlossaryServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.GlossaryCategory updateGlossaryCategory(
-        com.google.cloud.dataplex.v1.UpdateGlossaryCategoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.UpdateGlossaryCategoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateGlossaryCategoryMethod(), getCallOptions(), request);
     }
 
@@ -1467,8 +1466,9 @@ public final class BusinessGlossaryServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteGlossaryCategory(
-        com.google.cloud.dataplex.v1.DeleteGlossaryCategoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.DeleteGlossaryCategoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteGlossaryCategoryMethod(), getCallOptions(), request);
     }
 
@@ -1480,8 +1480,9 @@ public final class BusinessGlossaryServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.GlossaryCategory getGlossaryCategory(
-        com.google.cloud.dataplex.v1.GetGlossaryCategoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GetGlossaryCategoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetGlossaryCategoryMethod(), getCallOptions(), request);
     }
 
@@ -1493,8 +1494,9 @@ public final class BusinessGlossaryServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListGlossaryCategoriesResponse listGlossaryCategories(
-        com.google.cloud.dataplex.v1.ListGlossaryCategoriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListGlossaryCategoriesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListGlossaryCategoriesMethod(), getCallOptions(), request);
     }
 
@@ -1506,8 +1508,9 @@ public final class BusinessGlossaryServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.GlossaryTerm createGlossaryTerm(
-        com.google.cloud.dataplex.v1.CreateGlossaryTermRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CreateGlossaryTermRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateGlossaryTermMethod(), getCallOptions(), request);
     }
 
@@ -1519,8 +1522,9 @@ public final class BusinessGlossaryServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.GlossaryTerm updateGlossaryTerm(
-        com.google.cloud.dataplex.v1.UpdateGlossaryTermRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.UpdateGlossaryTermRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateGlossaryTermMethod(), getCallOptions(), request);
     }
 
@@ -1532,8 +1536,9 @@ public final class BusinessGlossaryServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteGlossaryTerm(
-        com.google.cloud.dataplex.v1.DeleteGlossaryTermRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.DeleteGlossaryTermRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteGlossaryTermMethod(), getCallOptions(), request);
     }
 
@@ -1545,8 +1550,9 @@ public final class BusinessGlossaryServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.GlossaryTerm getGlossaryTerm(
-        com.google.cloud.dataplex.v1.GetGlossaryTermRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GetGlossaryTermRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetGlossaryTermMethod(), getCallOptions(), request);
     }
 
@@ -1558,8 +1564,9 @@ public final class BusinessGlossaryServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListGlossaryTermsResponse listGlossaryTerms(
-        com.google.cloud.dataplex.v1.ListGlossaryTermsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListGlossaryTermsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListGlossaryTermsMethod(), getCallOptions(), request);
     }
   }

@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for generating and preparing datasets for Gen AI evaluation.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1/data_foundry_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DataFoundryServiceGrpc {
 
@@ -246,8 +243,9 @@ public final class DataFoundryServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.GenerateSyntheticDataResponse generateSyntheticData(
-        com.google.cloud.aiplatform.v1.GenerateSyntheticDataRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.GenerateSyntheticDataRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateSyntheticDataMethod(), getCallOptions(), request);
     }
   }

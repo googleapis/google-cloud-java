@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing Assistant configuration and assisting users.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1/assistant_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AssistantServiceGrpc {
 

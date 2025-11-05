@@ -12765,6 +12765,70 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         : restrictedExportConfig_;
   }
 
+  public static final int STORED_PROCEDURE_CONFIG_FIELD_NUMBER = 20;
+  private com.google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig storedProcedureConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, stored procedure configuration will be propagated and
+   * enforced on the linked dataset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig stored_procedure_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the storedProcedureConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasStoredProcedureConfig() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, stored procedure configuration will be propagated and
+   * enforced on the linked dataset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig stored_procedure_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The storedProcedureConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig
+      getStoredProcedureConfig() {
+    return storedProcedureConfig_ == null
+        ? com.google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig.getDefaultInstance()
+        : storedProcedureConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, stored procedure configuration will be propagated and
+   * enforced on the linked dataset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig stored_procedure_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.analyticshub.v1.StoredProcedureConfigOrBuilder
+      getStoredProcedureConfigOrBuilder() {
+    return storedProcedureConfig_ == null
+        ? com.google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig.getDefaultInstance()
+        : storedProcedureConfig_;
+  }
+
   public static final int DISCOVERY_TYPE_FIELD_NUMBER = 14;
   private int discoveryType_ = 0;
 
@@ -12783,7 +12847,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasDiscoveryType() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -12888,7 +12952,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasCommercialInfo() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -12951,7 +13015,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasLogLinkedDatasetQueryUserEmail() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -12991,7 +13055,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasAllowOnlyMetadataSharing() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -13072,7 +13136,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(13, getRestrictedExportConfig());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeEnum(14, discoveryType_);
     }
     if (resourceType_
@@ -13085,14 +13149,17 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           16, (com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource) source_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(17, getCommercialInfo());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeBool(18, logLinkedDatasetQueryUserEmail_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeBool(19, allowOnlyMetadataSharing_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(20, getStoredProcedureConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -13155,7 +13222,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(13, getRestrictedExportConfig());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(14, discoveryType_);
     }
     if (resourceType_
@@ -13169,16 +13236,20 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               16, (com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource) source_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, getCommercialInfo());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               18, logLinkedDatasetQueryUserEmail_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(19, allowOnlyMetadataSharing_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(20, getStoredProcedureConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -13216,6 +13287,10 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     if (hasRestrictedExportConfig() != other.hasRestrictedExportConfig()) return false;
     if (hasRestrictedExportConfig()) {
       if (!getRestrictedExportConfig().equals(other.getRestrictedExportConfig())) return false;
+    }
+    if (hasStoredProcedureConfig() != other.hasStoredProcedureConfig()) return false;
+    if (hasStoredProcedureConfig()) {
+      if (!getStoredProcedureConfig().equals(other.getStoredProcedureConfig())) return false;
     }
     if (hasDiscoveryType() != other.hasDiscoveryType()) return false;
     if (hasDiscoveryType()) {
@@ -13289,6 +13364,10 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     if (hasRestrictedExportConfig()) {
       hash = (37 * hash) + RESTRICTED_EXPORT_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getRestrictedExportConfig().hashCode();
+    }
+    if (hasStoredProcedureConfig()) {
+      hash = (37 * hash) + STORED_PROCEDURE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getStoredProcedureConfig().hashCode();
     }
     if (hasDiscoveryType()) {
       hash = (37 * hash) + DISCOVERY_TYPE_FIELD_NUMBER;
@@ -13469,6 +13548,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         getDataProviderFieldBuilder();
         getPublisherFieldBuilder();
         getRestrictedExportConfigFieldBuilder();
+        getStoredProcedureConfigFieldBuilder();
         getCommercialInfoFieldBuilder();
       }
     }
@@ -13507,6 +13587,11 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       if (restrictedExportConfigBuilder_ != null) {
         restrictedExportConfigBuilder_.dispose();
         restrictedExportConfigBuilder_ = null;
+      }
+      storedProcedureConfig_ = null;
+      if (storedProcedureConfigBuilder_ != null) {
+        storedProcedureConfigBuilder_.dispose();
+        storedProcedureConfigBuilder_ = null;
       }
       discoveryType_ = 0;
       resourceType_ = 0;
@@ -13608,24 +13693,31 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.discoveryType_ = discoveryType_;
+        result.storedProcedureConfig_ =
+            storedProcedureConfigBuilder_ == null
+                ? storedProcedureConfig_
+                : storedProcedureConfigBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.resourceType_ = resourceType_;
-      }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.commercialInfo_ =
-            commercialInfoBuilder_ == null ? commercialInfo_ : commercialInfoBuilder_.build();
+        result.discoveryType_ = discoveryType_;
         to_bitField0_ |= 0x00000010;
       }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.resourceType_ = resourceType_;
+      }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.logLinkedDatasetQueryUserEmail_ = logLinkedDatasetQueryUserEmail_;
+        result.commercialInfo_ =
+            commercialInfoBuilder_ == null ? commercialInfo_ : commercialInfoBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.allowOnlyMetadataSharing_ = allowOnlyMetadataSharing_;
+        result.logLinkedDatasetQueryUserEmail_ = logLinkedDatasetQueryUserEmail_;
         to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.allowOnlyMetadataSharing_ = allowOnlyMetadataSharing_;
+        to_bitField0_ |= 0x00000080;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -13741,6 +13833,9 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasRestrictedExportConfig()) {
         mergeRestrictedExportConfig(other.getRestrictedExportConfig());
+      }
+      if (other.hasStoredProcedureConfig()) {
+        mergeStoredProcedureConfig(other.getStoredProcedureConfig());
       }
       if (other.hasDiscoveryType()) {
         setDiscoveryType(other.getDiscoveryType());
@@ -13894,13 +13989,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             case 112:
               {
                 discoveryType_ = input.readEnum();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 112
             case 120:
               {
                 resourceType_ = input.readEnum();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 120
             case 130:
@@ -13912,21 +14007,28 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
             case 138:
               {
                 input.readMessage(getCommercialInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 138
             case 144:
               {
                 logLinkedDatasetQueryUserEmail_ = input.readBool();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 144
             case 152:
               {
                 allowOnlyMetadataSharing_ = input.readBool();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 152
+            case 162:
+              {
+                input.readMessage(
+                    getStoredProcedureConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 162
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -16273,6 +16375,235 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       return restrictedExportConfigBuilder_;
     }
 
+    private com.google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig storedProcedureConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig,
+            com.google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig.Builder,
+            com.google.cloud.bigquery.analyticshub.v1.StoredProcedureConfigOrBuilder>
+        storedProcedureConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, stored procedure configuration will be propagated and
+     * enforced on the linked dataset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig stored_procedure_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the storedProcedureConfig field is set.
+     */
+    public boolean hasStoredProcedureConfig() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, stored procedure configuration will be propagated and
+     * enforced on the linked dataset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig stored_procedure_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The storedProcedureConfig.
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig
+        getStoredProcedureConfig() {
+      if (storedProcedureConfigBuilder_ == null) {
+        return storedProcedureConfig_ == null
+            ? com.google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig.getDefaultInstance()
+            : storedProcedureConfig_;
+      } else {
+        return storedProcedureConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, stored procedure configuration will be propagated and
+     * enforced on the linked dataset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig stored_procedure_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setStoredProcedureConfig(
+        com.google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig value) {
+      if (storedProcedureConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        storedProcedureConfig_ = value;
+      } else {
+        storedProcedureConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, stored procedure configuration will be propagated and
+     * enforced on the linked dataset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig stored_procedure_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setStoredProcedureConfig(
+        com.google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig.Builder builderForValue) {
+      if (storedProcedureConfigBuilder_ == null) {
+        storedProcedureConfig_ = builderForValue.build();
+      } else {
+        storedProcedureConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, stored procedure configuration will be propagated and
+     * enforced on the linked dataset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig stored_procedure_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeStoredProcedureConfig(
+        com.google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig value) {
+      if (storedProcedureConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0)
+            && storedProcedureConfig_ != null
+            && storedProcedureConfig_
+                != com.google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig
+                    .getDefaultInstance()) {
+          getStoredProcedureConfigBuilder().mergeFrom(value);
+        } else {
+          storedProcedureConfig_ = value;
+        }
+      } else {
+        storedProcedureConfigBuilder_.mergeFrom(value);
+      }
+      if (storedProcedureConfig_ != null) {
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, stored procedure configuration will be propagated and
+     * enforced on the linked dataset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig stored_procedure_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearStoredProcedureConfig() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      storedProcedureConfig_ = null;
+      if (storedProcedureConfigBuilder_ != null) {
+        storedProcedureConfigBuilder_.dispose();
+        storedProcedureConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, stored procedure configuration will be propagated and
+     * enforced on the linked dataset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig stored_procedure_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig.Builder
+        getStoredProcedureConfigBuilder() {
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return getStoredProcedureConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, stored procedure configuration will be propagated and
+     * enforced on the linked dataset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig stored_procedure_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.StoredProcedureConfigOrBuilder
+        getStoredProcedureConfigOrBuilder() {
+      if (storedProcedureConfigBuilder_ != null) {
+        return storedProcedureConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return storedProcedureConfig_ == null
+            ? com.google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig.getDefaultInstance()
+            : storedProcedureConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, stored procedure configuration will be propagated and
+     * enforced on the linked dataset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig stored_procedure_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig,
+            com.google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig.Builder,
+            com.google.cloud.bigquery.analyticshub.v1.StoredProcedureConfigOrBuilder>
+        getStoredProcedureConfigFieldBuilder() {
+      if (storedProcedureConfigBuilder_ == null) {
+        storedProcedureConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig,
+                com.google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig.Builder,
+                com.google.cloud.bigquery.analyticshub.v1.StoredProcedureConfigOrBuilder>(
+                getStoredProcedureConfig(), getParentForChildren(), isClean());
+        storedProcedureConfig_ = null;
+      }
+      return storedProcedureConfigBuilder_;
+    }
+
     private int discoveryType_ = 0;
 
     /**
@@ -16290,7 +16621,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasDiscoveryType() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -16327,7 +16658,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setDiscoveryTypeValue(int value) {
       discoveryType_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -16372,7 +16703,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       discoveryType_ = value.getNumber();
       onChanged();
       return this;
@@ -16392,7 +16723,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDiscoveryType() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       discoveryType_ = 0;
       onChanged();
       return this;
@@ -16434,7 +16765,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setResourceTypeValue(int value) {
       resourceType_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -16480,7 +16811,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       resourceType_ = value.getNumber();
       onChanged();
       return this;
@@ -16500,7 +16831,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResourceType() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       resourceType_ = 0;
       onChanged();
       return this;
@@ -16528,7 +16859,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the commercialInfo field is set.
      */
     public boolean hasCommercialInfo() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -16577,7 +16908,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       } else {
         commercialInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -16601,7 +16932,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       } else {
         commercialInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -16621,7 +16952,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeCommercialInfo(
         com.google.cloud.bigquery.analyticshub.v1.Listing.CommercialInfo value) {
       if (commercialInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00020000) != 0)
             && commercialInfo_ != null
             && commercialInfo_
                 != com.google.cloud.bigquery.analyticshub.v1.Listing.CommercialInfo
@@ -16634,7 +16965,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         commercialInfoBuilder_.mergeFrom(value);
       }
       if (commercialInfo_ != null) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       return this;
@@ -16653,7 +16984,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCommercialInfo() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       commercialInfo_ = null;
       if (commercialInfoBuilder_ != null) {
         commercialInfoBuilder_.dispose();
@@ -16677,7 +17008,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.bigquery.analyticshub.v1.Listing.CommercialInfo.Builder
         getCommercialInfoBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return getCommercialInfoFieldBuilder().getBuilder();
     }
@@ -16752,7 +17083,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasLogLinkedDatasetQueryUserEmail() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -16792,7 +17123,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     public Builder setLogLinkedDatasetQueryUserEmail(boolean value) {
 
       logLinkedDatasetQueryUserEmail_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -16812,7 +17143,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLogLinkedDatasetQueryUserEmail() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       logLinkedDatasetQueryUserEmail_ = false;
       onChanged();
       return this;
@@ -16836,7 +17167,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasAllowOnlyMetadataSharing() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -16876,7 +17207,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     public Builder setAllowOnlyMetadataSharing(boolean value) {
 
       allowOnlyMetadataSharing_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -16896,7 +17227,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAllowOnlyMetadataSharing() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       allowOnlyMetadataSharing_ = false;
       onChanged();
       return this;

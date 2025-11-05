@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service for managing Vertex AI's machine learning PersistentResource.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1beta1/persistent_resource_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class PersistentResourceServiceGrpc {
 
@@ -665,8 +662,9 @@ public final class PersistentResourceServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createPersistentResource(
-        com.google.cloud.aiplatform.v1beta1.CreatePersistentResourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.CreatePersistentResourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreatePersistentResourceMethod(), getCallOptions(), request);
     }
 
@@ -678,8 +676,9 @@ public final class PersistentResourceServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.PersistentResource getPersistentResource(
-        com.google.cloud.aiplatform.v1beta1.GetPersistentResourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.GetPersistentResourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPersistentResourceMethod(), getCallOptions(), request);
     }
 
@@ -692,8 +691,9 @@ public final class PersistentResourceServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1beta1.ListPersistentResourcesResponse
         listPersistentResources(
-            com.google.cloud.aiplatform.v1beta1.ListPersistentResourcesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.aiplatform.v1beta1.ListPersistentResourcesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPersistentResourcesMethod(), getCallOptions(), request);
     }
 
@@ -705,8 +705,9 @@ public final class PersistentResourceServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deletePersistentResource(
-        com.google.cloud.aiplatform.v1beta1.DeletePersistentResourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.DeletePersistentResourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeletePersistentResourceMethod(), getCallOptions(), request);
     }
 
@@ -718,8 +719,9 @@ public final class PersistentResourceServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updatePersistentResource(
-        com.google.cloud.aiplatform.v1beta1.UpdatePersistentResourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.UpdatePersistentResourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdatePersistentResourceMethod(), getCallOptions(), request);
     }
 
@@ -731,8 +733,9 @@ public final class PersistentResourceServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation rebootPersistentResource(
-        com.google.cloud.aiplatform.v1beta1.RebootPersistentResourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.RebootPersistentResourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRebootPersistentResourceMethod(), getCallOptions(), request);
     }
   }

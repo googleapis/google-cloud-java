@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to support user API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/accounts/v1/user.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class UserServiceGrpc {
 
@@ -537,8 +534,9 @@ public final class UserServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1.User getUser(
-        com.google.shopping.merchant.accounts.v1.GetUserRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.GetUserRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetUserMethod(), getCallOptions(), request);
     }
 
@@ -551,8 +549,9 @@ public final class UserServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1.User createUser(
-        com.google.shopping.merchant.accounts.v1.CreateUserRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.CreateUserRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateUserMethod(), getCallOptions(), request);
     }
 
@@ -567,8 +566,9 @@ public final class UserServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteUser(
-        com.google.shopping.merchant.accounts.v1.DeleteUserRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.DeleteUserRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteUserMethod(), getCallOptions(), request);
     }
 
@@ -581,8 +581,9 @@ public final class UserServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1.User updateUser(
-        com.google.shopping.merchant.accounts.v1.UpdateUserRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.UpdateUserRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateUserMethod(), getCallOptions(), request);
     }
 
@@ -594,8 +595,9 @@ public final class UserServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1.ListUsersResponse listUsers(
-        com.google.shopping.merchant.accounts.v1.ListUsersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.ListUsersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListUsersMethod(), getCallOptions(), request);
     }
   }

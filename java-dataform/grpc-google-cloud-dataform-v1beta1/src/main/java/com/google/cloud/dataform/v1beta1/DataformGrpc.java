@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * tables in BigQuery.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dataform/v1beta1/dataform.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DataformGrpc {
 
@@ -4485,8 +4482,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.ListRepositoriesResponse listRepositories(
-        com.google.cloud.dataform.v1beta1.ListRepositoriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.ListRepositoriesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRepositoriesMethod(), getCallOptions(), request);
     }
 
@@ -4498,8 +4496,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.Repository getRepository(
-        com.google.cloud.dataform.v1beta1.GetRepositoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.GetRepositoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRepositoryMethod(), getCallOptions(), request);
     }
 
@@ -4511,8 +4510,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.Repository createRepository(
-        com.google.cloud.dataform.v1beta1.CreateRepositoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.CreateRepositoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateRepositoryMethod(), getCallOptions(), request);
     }
 
@@ -4528,8 +4528,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.Repository updateRepository(
-        com.google.cloud.dataform.v1beta1.UpdateRepositoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.UpdateRepositoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateRepositoryMethod(), getCallOptions(), request);
     }
 
@@ -4541,8 +4542,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteRepository(
-        com.google.cloud.dataform.v1beta1.DeleteRepositoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.DeleteRepositoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteRepositoryMethod(), getCallOptions(), request);
     }
 
@@ -4556,8 +4558,9 @@ public final class DataformGrpc {
      */
     public com.google.cloud.dataform.v1beta1.CommitRepositoryChangesResponse
         commitRepositoryChanges(
-            com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCommitRepositoryChangesMethod(), getCallOptions(), request);
     }
 
@@ -4570,8 +4573,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.ReadRepositoryFileResponse readRepositoryFile(
-        com.google.cloud.dataform.v1beta1.ReadRepositoryFileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.ReadRepositoryFileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReadRepositoryFileMethod(), getCallOptions(), request);
     }
 
@@ -4585,8 +4589,9 @@ public final class DataformGrpc {
      */
     public com.google.cloud.dataform.v1beta1.QueryRepositoryDirectoryContentsResponse
         queryRepositoryDirectoryContents(
-            com.google.cloud.dataform.v1beta1.QueryRepositoryDirectoryContentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.dataform.v1beta1.QueryRepositoryDirectoryContentsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getQueryRepositoryDirectoryContentsMethod(), getCallOptions(), request);
     }
 
@@ -4599,8 +4604,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryResponse fetchRepositoryHistory(
-        com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchRepositoryHistoryMethod(), getCallOptions(), request);
     }
 
@@ -4613,8 +4619,9 @@ public final class DataformGrpc {
      */
     public com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusResponse
         computeRepositoryAccessTokenStatus(
-            com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getComputeRepositoryAccessTokenStatusMethod(), getCallOptions(), request);
     }
 
@@ -4626,8 +4633,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.FetchRemoteBranchesResponse fetchRemoteBranches(
-        com.google.cloud.dataform.v1beta1.FetchRemoteBranchesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.FetchRemoteBranchesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchRemoteBranchesMethod(), getCallOptions(), request);
     }
 
@@ -4639,8 +4647,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.ListWorkspacesResponse listWorkspaces(
-        com.google.cloud.dataform.v1beta1.ListWorkspacesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.ListWorkspacesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListWorkspacesMethod(), getCallOptions(), request);
     }
 
@@ -4652,8 +4661,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.Workspace getWorkspace(
-        com.google.cloud.dataform.v1beta1.GetWorkspaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.GetWorkspaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetWorkspaceMethod(), getCallOptions(), request);
     }
 
@@ -4665,8 +4675,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.Workspace createWorkspace(
-        com.google.cloud.dataform.v1beta1.CreateWorkspaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.CreateWorkspaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateWorkspaceMethod(), getCallOptions(), request);
     }
 
@@ -4678,8 +4689,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteWorkspace(
-        com.google.cloud.dataform.v1beta1.DeleteWorkspaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.DeleteWorkspaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteWorkspaceMethod(), getCallOptions(), request);
     }
 
@@ -4691,8 +4703,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.InstallNpmPackagesResponse installNpmPackages(
-        com.google.cloud.dataform.v1beta1.InstallNpmPackagesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.InstallNpmPackagesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getInstallNpmPackagesMethod(), getCallOptions(), request);
     }
 
@@ -4704,8 +4717,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.PullGitCommitsResponse pullGitCommits(
-        com.google.cloud.dataform.v1beta1.PullGitCommitsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.PullGitCommitsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPullGitCommitsMethod(), getCallOptions(), request);
     }
 
@@ -4717,8 +4731,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.PushGitCommitsResponse pushGitCommits(
-        com.google.cloud.dataform.v1beta1.PushGitCommitsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.PushGitCommitsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPushGitCommitsMethod(), getCallOptions(), request);
     }
 
@@ -4730,8 +4745,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.FetchFileGitStatusesResponse fetchFileGitStatuses(
-        com.google.cloud.dataform.v1beta1.FetchFileGitStatusesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.FetchFileGitStatusesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchFileGitStatusesMethod(), getCallOptions(), request);
     }
 
@@ -4743,8 +4759,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.FetchGitAheadBehindResponse fetchGitAheadBehind(
-        com.google.cloud.dataform.v1beta1.FetchGitAheadBehindRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.FetchGitAheadBehindRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchGitAheadBehindMethod(), getCallOptions(), request);
     }
 
@@ -4756,8 +4773,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.CommitWorkspaceChangesResponse commitWorkspaceChanges(
-        com.google.cloud.dataform.v1beta1.CommitWorkspaceChangesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.CommitWorkspaceChangesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCommitWorkspaceChangesMethod(), getCallOptions(), request);
     }
 
@@ -4769,8 +4787,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.ResetWorkspaceChangesResponse resetWorkspaceChanges(
-        com.google.cloud.dataform.v1beta1.ResetWorkspaceChangesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.ResetWorkspaceChangesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getResetWorkspaceChangesMethod(), getCallOptions(), request);
     }
 
@@ -4782,8 +4801,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.FetchFileDiffResponse fetchFileDiff(
-        com.google.cloud.dataform.v1beta1.FetchFileDiffRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.FetchFileDiffRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchFileDiffMethod(), getCallOptions(), request);
     }
 
@@ -4795,8 +4815,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.QueryDirectoryContentsResponse queryDirectoryContents(
-        com.google.cloud.dataform.v1beta1.QueryDirectoryContentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.QueryDirectoryContentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getQueryDirectoryContentsMethod(), getCallOptions(), request);
     }
 
@@ -4808,8 +4829,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.SearchFilesResponse searchFiles(
-        com.google.cloud.dataform.v1beta1.SearchFilesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.SearchFilesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchFilesMethod(), getCallOptions(), request);
     }
 
@@ -4821,8 +4843,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.MakeDirectoryResponse makeDirectory(
-        com.google.cloud.dataform.v1beta1.MakeDirectoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.MakeDirectoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getMakeDirectoryMethod(), getCallOptions(), request);
     }
 
@@ -4834,8 +4857,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.RemoveDirectoryResponse removeDirectory(
-        com.google.cloud.dataform.v1beta1.RemoveDirectoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.RemoveDirectoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRemoveDirectoryMethod(), getCallOptions(), request);
     }
 
@@ -4848,8 +4872,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.MoveDirectoryResponse moveDirectory(
-        com.google.cloud.dataform.v1beta1.MoveDirectoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.MoveDirectoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getMoveDirectoryMethod(), getCallOptions(), request);
     }
 
@@ -4861,8 +4886,8 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.ReadFileResponse readFile(
-        com.google.cloud.dataform.v1beta1.ReadFileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.ReadFileRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReadFileMethod(), getCallOptions(), request);
     }
 
@@ -4874,8 +4899,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.RemoveFileResponse removeFile(
-        com.google.cloud.dataform.v1beta1.RemoveFileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.RemoveFileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRemoveFileMethod(), getCallOptions(), request);
     }
 
@@ -4887,8 +4913,8 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.MoveFileResponse moveFile(
-        com.google.cloud.dataform.v1beta1.MoveFileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.MoveFileRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getMoveFileMethod(), getCallOptions(), request);
     }
 
@@ -4900,8 +4926,8 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.WriteFileResponse writeFile(
-        com.google.cloud.dataform.v1beta1.WriteFileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.WriteFileRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getWriteFileMethod(), getCallOptions(), request);
     }
 
@@ -4913,8 +4939,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.ListReleaseConfigsResponse listReleaseConfigs(
-        com.google.cloud.dataform.v1beta1.ListReleaseConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.ListReleaseConfigsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListReleaseConfigsMethod(), getCallOptions(), request);
     }
 
@@ -4926,8 +4953,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.ReleaseConfig getReleaseConfig(
-        com.google.cloud.dataform.v1beta1.GetReleaseConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.GetReleaseConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetReleaseConfigMethod(), getCallOptions(), request);
     }
 
@@ -4939,8 +4967,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.ReleaseConfig createReleaseConfig(
-        com.google.cloud.dataform.v1beta1.CreateReleaseConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.CreateReleaseConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateReleaseConfigMethod(), getCallOptions(), request);
     }
 
@@ -4956,8 +4985,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.ReleaseConfig updateReleaseConfig(
-        com.google.cloud.dataform.v1beta1.UpdateReleaseConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.UpdateReleaseConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateReleaseConfigMethod(), getCallOptions(), request);
     }
 
@@ -4969,8 +4999,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteReleaseConfig(
-        com.google.cloud.dataform.v1beta1.DeleteReleaseConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.DeleteReleaseConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteReleaseConfigMethod(), getCallOptions(), request);
     }
 
@@ -4982,8 +5013,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.ListCompilationResultsResponse listCompilationResults(
-        com.google.cloud.dataform.v1beta1.ListCompilationResultsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.ListCompilationResultsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCompilationResultsMethod(), getCallOptions(), request);
     }
 
@@ -4995,8 +5027,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.CompilationResult getCompilationResult(
-        com.google.cloud.dataform.v1beta1.GetCompilationResultRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.GetCompilationResultRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCompilationResultMethod(), getCallOptions(), request);
     }
 
@@ -5008,8 +5041,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.CompilationResult createCompilationResult(
-        com.google.cloud.dataform.v1beta1.CreateCompilationResultRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.CreateCompilationResultRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCompilationResultMethod(), getCallOptions(), request);
     }
 
@@ -5022,8 +5056,9 @@ public final class DataformGrpc {
      */
     public com.google.cloud.dataform.v1beta1.QueryCompilationResultActionsResponse
         queryCompilationResultActions(
-            com.google.cloud.dataform.v1beta1.QueryCompilationResultActionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.dataform.v1beta1.QueryCompilationResultActionsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getQueryCompilationResultActionsMethod(), getCallOptions(), request);
     }
 
@@ -5035,8 +5070,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.ListWorkflowConfigsResponse listWorkflowConfigs(
-        com.google.cloud.dataform.v1beta1.ListWorkflowConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.ListWorkflowConfigsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListWorkflowConfigsMethod(), getCallOptions(), request);
     }
 
@@ -5048,8 +5084,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.WorkflowConfig getWorkflowConfig(
-        com.google.cloud.dataform.v1beta1.GetWorkflowConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.GetWorkflowConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetWorkflowConfigMethod(), getCallOptions(), request);
     }
 
@@ -5061,8 +5098,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.WorkflowConfig createWorkflowConfig(
-        com.google.cloud.dataform.v1beta1.CreateWorkflowConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.CreateWorkflowConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateWorkflowConfigMethod(), getCallOptions(), request);
     }
 
@@ -5078,8 +5116,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.WorkflowConfig updateWorkflowConfig(
-        com.google.cloud.dataform.v1beta1.UpdateWorkflowConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.UpdateWorkflowConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateWorkflowConfigMethod(), getCallOptions(), request);
     }
 
@@ -5091,8 +5130,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteWorkflowConfig(
-        com.google.cloud.dataform.v1beta1.DeleteWorkflowConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.DeleteWorkflowConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteWorkflowConfigMethod(), getCallOptions(), request);
     }
 
@@ -5105,8 +5145,9 @@ public final class DataformGrpc {
      */
     public com.google.cloud.dataform.v1beta1.ListWorkflowInvocationsResponse
         listWorkflowInvocations(
-            com.google.cloud.dataform.v1beta1.ListWorkflowInvocationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.dataform.v1beta1.ListWorkflowInvocationsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListWorkflowInvocationsMethod(), getCallOptions(), request);
     }
 
@@ -5118,8 +5159,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.WorkflowInvocation getWorkflowInvocation(
-        com.google.cloud.dataform.v1beta1.GetWorkflowInvocationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.GetWorkflowInvocationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetWorkflowInvocationMethod(), getCallOptions(), request);
     }
 
@@ -5131,8 +5173,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.WorkflowInvocation createWorkflowInvocation(
-        com.google.cloud.dataform.v1beta1.CreateWorkflowInvocationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.CreateWorkflowInvocationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateWorkflowInvocationMethod(), getCallOptions(), request);
     }
 
@@ -5144,8 +5187,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteWorkflowInvocation(
-        com.google.cloud.dataform.v1beta1.DeleteWorkflowInvocationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.DeleteWorkflowInvocationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteWorkflowInvocationMethod(), getCallOptions(), request);
     }
 
@@ -5158,8 +5202,9 @@ public final class DataformGrpc {
      */
     public com.google.cloud.dataform.v1beta1.CancelWorkflowInvocationResponse
         cancelWorkflowInvocation(
-            com.google.cloud.dataform.v1beta1.CancelWorkflowInvocationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.dataform.v1beta1.CancelWorkflowInvocationRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCancelWorkflowInvocationMethod(), getCallOptions(), request);
     }
 
@@ -5172,8 +5217,9 @@ public final class DataformGrpc {
      */
     public com.google.cloud.dataform.v1beta1.QueryWorkflowInvocationActionsResponse
         queryWorkflowInvocationActions(
-            com.google.cloud.dataform.v1beta1.QueryWorkflowInvocationActionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.dataform.v1beta1.QueryWorkflowInvocationActionsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getQueryWorkflowInvocationActionsMethod(), getCallOptions(), request);
     }
 
@@ -5185,8 +5231,8 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.Config getConfig(
-        com.google.cloud.dataform.v1beta1.GetConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.GetConfigRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetConfigMethod(), getCallOptions(), request);
     }
 
@@ -5202,8 +5248,9 @@ public final class DataformGrpc {
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.Config updateConfig(
-        com.google.cloud.dataform.v1beta1.UpdateConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataform.v1beta1.UpdateConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateConfigMethod(), getCallOptions(), request);
     }
   }

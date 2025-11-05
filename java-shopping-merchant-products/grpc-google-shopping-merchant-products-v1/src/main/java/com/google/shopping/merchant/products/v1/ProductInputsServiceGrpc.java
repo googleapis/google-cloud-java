@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to use ProductInput resource.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/products/v1/productinputs.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ProductInputsServiceGrpc {
 
@@ -442,8 +439,9 @@ public final class ProductInputsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.products.v1.ProductInput insertProductInput(
-        com.google.shopping.merchant.products.v1.InsertProductInputRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.products.v1.InsertProductInputRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getInsertProductInputMethod(), getCallOptions(), request);
     }
 
@@ -457,8 +455,9 @@ public final class ProductInputsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.products.v1.ProductInput updateProductInput(
-        com.google.shopping.merchant.products.v1.UpdateProductInputRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.products.v1.UpdateProductInputRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateProductInputMethod(), getCallOptions(), request);
     }
 
@@ -472,8 +471,9 @@ public final class ProductInputsServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteProductInput(
-        com.google.shopping.merchant.products.v1.DeleteProductInputRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.products.v1.DeleteProductInputRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteProductInputMethod(), getCallOptions(), request);
     }
   }

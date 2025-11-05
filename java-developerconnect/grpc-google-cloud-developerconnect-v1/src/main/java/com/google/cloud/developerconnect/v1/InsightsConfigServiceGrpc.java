@@ -31,9 +31,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * the InsightsConfig.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/developerconnect/v1/insights_config.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class InsightsConfigServiceGrpc {
 
@@ -604,8 +601,9 @@ public final class InsightsConfigServiceGrpc {
      * </pre>
      */
     public com.google.cloud.developerconnect.v1.ListInsightsConfigsResponse listInsightsConfigs(
-        com.google.cloud.developerconnect.v1.ListInsightsConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.ListInsightsConfigsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListInsightsConfigsMethod(), getCallOptions(), request);
     }
 
@@ -617,8 +615,9 @@ public final class InsightsConfigServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createInsightsConfig(
-        com.google.cloud.developerconnect.v1.CreateInsightsConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.CreateInsightsConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateInsightsConfigMethod(), getCallOptions(), request);
     }
 
@@ -630,8 +629,9 @@ public final class InsightsConfigServiceGrpc {
      * </pre>
      */
     public com.google.cloud.developerconnect.v1.InsightsConfig getInsightsConfig(
-        com.google.cloud.developerconnect.v1.GetInsightsConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.GetInsightsConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetInsightsConfigMethod(), getCallOptions(), request);
     }
 
@@ -643,8 +643,9 @@ public final class InsightsConfigServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateInsightsConfig(
-        com.google.cloud.developerconnect.v1.UpdateInsightsConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.UpdateInsightsConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateInsightsConfigMethod(), getCallOptions(), request);
     }
 
@@ -656,8 +657,9 @@ public final class InsightsConfigServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteInsightsConfig(
-        com.google.cloud.developerconnect.v1.DeleteInsightsConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.DeleteInsightsConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteInsightsConfigMethod(), getCallOptions(), request);
     }
   }

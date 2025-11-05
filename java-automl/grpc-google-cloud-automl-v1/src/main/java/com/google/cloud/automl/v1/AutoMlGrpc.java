@@ -33,9 +33,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * snake_case or dash-case, either of those cases is accepted.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/automl/v1/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AutoMlGrpc {
 
@@ -1568,8 +1565,8 @@ public final class AutoMlGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createDataset(
-        com.google.cloud.automl.v1.CreateDatasetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.automl.v1.CreateDatasetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDatasetMethod(), getCallOptions(), request);
     }
 
@@ -1581,8 +1578,8 @@ public final class AutoMlGrpc {
      * </pre>
      */
     public com.google.cloud.automl.v1.Dataset getDataset(
-        com.google.cloud.automl.v1.GetDatasetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.automl.v1.GetDatasetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDatasetMethod(), getCallOptions(), request);
     }
 
@@ -1594,8 +1591,8 @@ public final class AutoMlGrpc {
      * </pre>
      */
     public com.google.cloud.automl.v1.ListDatasetsResponse listDatasets(
-        com.google.cloud.automl.v1.ListDatasetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.automl.v1.ListDatasetsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDatasetsMethod(), getCallOptions(), request);
     }
 
@@ -1607,8 +1604,8 @@ public final class AutoMlGrpc {
      * </pre>
      */
     public com.google.cloud.automl.v1.Dataset updateDataset(
-        com.google.cloud.automl.v1.UpdateDatasetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.automl.v1.UpdateDatasetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDatasetMethod(), getCallOptions(), request);
     }
 
@@ -1624,8 +1621,8 @@ public final class AutoMlGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteDataset(
-        com.google.cloud.automl.v1.DeleteDatasetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.automl.v1.DeleteDatasetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDatasetMethod(), getCallOptions(), request);
     }
 
@@ -1644,8 +1641,8 @@ public final class AutoMlGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importData(
-        com.google.cloud.automl.v1.ImportDataRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.automl.v1.ImportDataRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportDataMethod(), getCallOptions(), request);
     }
 
@@ -1659,8 +1656,8 @@ public final class AutoMlGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportData(
-        com.google.cloud.automl.v1.ExportDataRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.automl.v1.ExportDataRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportDataMethod(), getCallOptions(), request);
     }
 
@@ -1672,8 +1669,9 @@ public final class AutoMlGrpc {
      * </pre>
      */
     public com.google.cloud.automl.v1.AnnotationSpec getAnnotationSpec(
-        com.google.cloud.automl.v1.GetAnnotationSpecRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.automl.v1.GetAnnotationSpecRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAnnotationSpecMethod(), getCallOptions(), request);
     }
 
@@ -1689,8 +1687,8 @@ public final class AutoMlGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createModel(
-        com.google.cloud.automl.v1.CreateModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.automl.v1.CreateModelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateModelMethod(), getCallOptions(), request);
     }
 
@@ -1702,8 +1700,8 @@ public final class AutoMlGrpc {
      * </pre>
      */
     public com.google.cloud.automl.v1.Model getModel(
-        com.google.cloud.automl.v1.GetModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.automl.v1.GetModelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetModelMethod(), getCallOptions(), request);
     }
 
@@ -1715,8 +1713,8 @@ public final class AutoMlGrpc {
      * </pre>
      */
     public com.google.cloud.automl.v1.ListModelsResponse listModels(
-        com.google.cloud.automl.v1.ListModelsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.automl.v1.ListModelsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListModelsMethod(), getCallOptions(), request);
     }
 
@@ -1732,8 +1730,8 @@ public final class AutoMlGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteModel(
-        com.google.cloud.automl.v1.DeleteModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.automl.v1.DeleteModelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteModelMethod(), getCallOptions(), request);
     }
 
@@ -1745,8 +1743,8 @@ public final class AutoMlGrpc {
      * </pre>
      */
     public com.google.cloud.automl.v1.Model updateModel(
-        com.google.cloud.automl.v1.UpdateModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.automl.v1.UpdateModelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateModelMethod(), getCallOptions(), request);
     }
 
@@ -1766,8 +1764,8 @@ public final class AutoMlGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deployModel(
-        com.google.cloud.automl.v1.DeployModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.automl.v1.DeployModelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeployModelMethod(), getCallOptions(), request);
     }
 
@@ -1783,8 +1781,8 @@ public final class AutoMlGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation undeployModel(
-        com.google.cloud.automl.v1.UndeployModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.automl.v1.UndeployModelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUndeployModelMethod(), getCallOptions(), request);
     }
 
@@ -1801,8 +1799,8 @@ public final class AutoMlGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportModel(
-        com.google.cloud.automl.v1.ExportModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.automl.v1.ExportModelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportModelMethod(), getCallOptions(), request);
     }
 
@@ -1814,8 +1812,9 @@ public final class AutoMlGrpc {
      * </pre>
      */
     public com.google.cloud.automl.v1.ModelEvaluation getModelEvaluation(
-        com.google.cloud.automl.v1.GetModelEvaluationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.automl.v1.GetModelEvaluationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetModelEvaluationMethod(), getCallOptions(), request);
     }
 
@@ -1827,8 +1826,9 @@ public final class AutoMlGrpc {
      * </pre>
      */
     public com.google.cloud.automl.v1.ListModelEvaluationsResponse listModelEvaluations(
-        com.google.cloud.automl.v1.ListModelEvaluationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.automl.v1.ListModelEvaluationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListModelEvaluationsMethod(), getCallOptions(), request);
     }
   }

@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service to manage file attachments for Google Cloud support cases.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/support/v2beta/attachment_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CaseAttachmentServiceGrpc {
 
@@ -320,8 +317,9 @@ public final class CaseAttachmentServiceGrpc {
      * </pre>
      */
     public com.google.cloud.support.v2beta.ListAttachmentsResponse listAttachments(
-        com.google.cloud.support.v2beta.ListAttachmentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.support.v2beta.ListAttachmentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAttachmentsMethod(), getCallOptions(), request);
     }
 
@@ -333,8 +331,9 @@ public final class CaseAttachmentServiceGrpc {
      * </pre>
      */
     public com.google.cloud.support.v2beta.Attachment getAttachment(
-        com.google.cloud.support.v2beta.GetAttachmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.support.v2beta.GetAttachmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAttachmentMethod(), getCallOptions(), request);
     }
   }

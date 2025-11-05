@@ -45,6 +45,14 @@ public final class DataSourceReferenceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_backupdr_v1_GetDataSourceReferenceRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_backupdr_v1_ListDataSourceReferencesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_backupdr_v1_ListDataSourceReferencesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_backupdr_v1_ListDataSourceReferencesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_backupdr_v1_ListDataSourceReferencesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_backupdr_v1_FetchDataSourceReferencesForResourceTypeRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_backupdr_v1_FetchDataSourceReferencesForResourceTypeRequest_fieldAccessorTable;
@@ -66,7 +74,7 @@ public final class DataSourceReferenceProto {
           + "erence.proto\022\030google.cloud.backupdr.v1\032\037"
           + "google/api/field_behavior.proto\032\031google/"
           + "api/resource.proto\032*google/cloud/backupdr/v1/backupvault.proto\0323google/cloud/bac"
-          + "kupdr/v1/backupvault_cloudsql.proto\032\037google/protobuf/timestamp.proto\"\232\005\n"
+          + "kupdr/v1/backupvault_cloudsql.proto\032\037google/protobuf/timestamp.proto\"\327\005\n"
           + "\023DataSourceReference\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022?\n"
           + "\013data_source\030\002 \001(\tB*\340A\003\372A$\n"
@@ -77,27 +85,41 @@ public final class DataSourceReferenceProto {
           + "\030data_source_backup_count\030\005 \001(\003B\003\340A\003\022a\n"
           + "\036data_source_backup_config_info\030\006 \001(\013"
           + "24.google.cloud.backupdr.v1.DataSourceBackupConfigInfoB\003\340A\003\022_\n"
-          + "\035data_source_gcp_resource_info\030\007 \001(\01323.google.cloud.backup"
-          + "dr.v1.DataSourceGcpResourceInfoB\003\340A\003:\262\001\352A\256\001\n"
-          + "+backupdr.googleapis.com/DataSourceReference\022Tprojects/{project}/locations/{"
-          + "location}/dataSourceReferences/{data_sou"
-          + "rce_reference}*\024dataSourceReferences2\023dataSourceReference\"\312\001\n"
+          + "\035data_source_gcp_resource_info\030\007"
+          + " \001(\01323.google.cloud.backupdr.v1.DataSourceGcpResourceInfoB\003\340A\003\022$\n"
+          + "\022total_stored_bytes\030\010"
+          + " \001(\003B\003\340A\003H\000\210\001\001:\262\001\352A\256\001\n"
+          + "+backupdr.googleapis.com/DataSourceReference\022Tprojects/{project}/locations/{lo"
+          + "cation}/dataSourceReferences/{data_sourc"
+          + "e_reference}*\024dataSourceReferences2\023dataSourceReferenceB\025\n"
+          + "\023_total_stored_bytes\"\312\001\n"
           + "\032DataSourceBackupConfigInfo\022Z\n"
-          + "\021last_backup_state\030\001 \001(\0162:.go"
-          + "ogle.cloud.backupdr.v1.BackupConfigInfo.LastBackupStateB\003\340A\003\022P\n"
+          + "\021last_backup_state\030\001 \001(\0162:.google.cloud.backupdr"
+          + ".v1.BackupConfigInfo.LastBackupStateB\003\340A\003\022P\n"
           + "\'last_successful_backup_consistency_time\030\002"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\"\362\001\n"
           + "\031DataSourceGcpResourceInfo\022\035\n"
           + "\020gcp_resourcename\030\001 \001(\tB\003\340A\003\022\021\n"
           + "\004type\030\002 \001(\tB\003\340A\003\022\025\n"
           + "\010location\030\003 \001(\tB\003\340A\003\022u\n"
-          + "\035cloud_sql_instance_properties\030\004"
-          + " \001(\0132G.google.cloud.backupdr.v1.CloudSql"
-          + "InstanceDataSourceReferencePropertiesB\003\340A\003H\000B\025\n"
+          + "\035cloud_sql_instance_properties\030\004 \001(\0132G.google.cloud"
+          + ".backupdr.v1.CloudSqlInstanceDataSourceReferencePropertiesB\003\340A\003H\000B\025\n"
           + "\023resource_properties\"b\n"
           + "\035GetDataSourceReferenceRequest\022A\n"
           + "\004name\030\001 \001(\tB3\340A\002\372A-\n"
-          + "+backupdr.googleapis.com/DataSourceReference\"\357\001\n"
+          + "+backupdr.googleapis.com/DataSourceReference\"\303\001\n"
+          + "\037ListDataSourceReferencesRequest\022C\n"
+          + "\006parent\030\001 \001(\t"
+          + "B3\340A\002\372A-\022+backupdr.googleapis.com/DataSourceReference\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n"
+          + "\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
+          + "\010order_by\030\005 \001(\tB\003\340A\001\"\212\001\n"
+          + " ListDataSourceReferencesResponse\022M\n"
+          + "\026data_source_references\030\001"
+          + " \003(\0132-.google.cloud.backupdr.v1.DataSourceReference\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"\357\001\n"
           + "/FetchDataSourceReferencesForResourceTypeRequest\022C\n"
           + "\006parent\030\001 \001(\tB3\340A\002"
           + "\372A-\022+backupdr.googleapis.com/DataSourceReference\022\032\n\r"
@@ -138,6 +160,7 @@ public final class DataSourceReferenceProto {
               "DataSourceBackupCount",
               "DataSourceBackupConfigInfo",
               "DataSourceGcpResourceInfo",
+              "TotalStoredBytes",
             });
     internal_static_google_cloud_backupdr_v1_DataSourceBackupConfigInfo_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -167,8 +190,24 @@ public final class DataSourceReferenceProto {
             new java.lang.String[] {
               "Name",
             });
-    internal_static_google_cloud_backupdr_v1_FetchDataSourceReferencesForResourceTypeRequest_descriptor =
+    internal_static_google_cloud_backupdr_v1_ListDataSourceReferencesRequest_descriptor =
         getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_backupdr_v1_ListDataSourceReferencesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_backupdr_v1_ListDataSourceReferencesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
+            });
+    internal_static_google_cloud_backupdr_v1_ListDataSourceReferencesResponse_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_backupdr_v1_ListDataSourceReferencesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_backupdr_v1_ListDataSourceReferencesResponse_descriptor,
+            new java.lang.String[] {
+              "DataSourceReferences", "NextPageToken",
+            });
+    internal_static_google_cloud_backupdr_v1_FetchDataSourceReferencesForResourceTypeRequest_descriptor =
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_backupdr_v1_FetchDataSourceReferencesForResourceTypeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_backupdr_v1_FetchDataSourceReferencesForResourceTypeRequest_descriptor,
@@ -176,7 +215,7 @@ public final class DataSourceReferenceProto {
               "Parent", "ResourceType", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_backupdr_v1_FetchDataSourceReferencesForResourceTypeResponse_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_backupdr_v1_FetchDataSourceReferencesForResourceTypeResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_backupdr_v1_FetchDataSourceReferencesForResourceTypeResponse_descriptor,

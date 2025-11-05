@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * attempts to exercise as many user inputs and event handlers as possible.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/websecurityscanner/v1alpha/web_security_scanner.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class WebSecurityScannerGrpc {
 
@@ -1210,8 +1207,9 @@ public final class WebSecurityScannerGrpc {
      * </pre>
      */
     public com.google.cloud.websecurityscanner.v1alpha.ScanConfig createScanConfig(
-        com.google.cloud.websecurityscanner.v1alpha.CreateScanConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.websecurityscanner.v1alpha.CreateScanConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateScanConfigMethod(), getCallOptions(), request);
     }
 
@@ -1223,8 +1221,9 @@ public final class WebSecurityScannerGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteScanConfig(
-        com.google.cloud.websecurityscanner.v1alpha.DeleteScanConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.websecurityscanner.v1alpha.DeleteScanConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteScanConfigMethod(), getCallOptions(), request);
     }
 
@@ -1236,8 +1235,9 @@ public final class WebSecurityScannerGrpc {
      * </pre>
      */
     public com.google.cloud.websecurityscanner.v1alpha.ScanConfig getScanConfig(
-        com.google.cloud.websecurityscanner.v1alpha.GetScanConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.websecurityscanner.v1alpha.GetScanConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetScanConfigMethod(), getCallOptions(), request);
     }
 
@@ -1249,8 +1249,9 @@ public final class WebSecurityScannerGrpc {
      * </pre>
      */
     public com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsResponse listScanConfigs(
-        com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.websecurityscanner.v1alpha.ListScanConfigsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListScanConfigsMethod(), getCallOptions(), request);
     }
 
@@ -1262,8 +1263,9 @@ public final class WebSecurityScannerGrpc {
      * </pre>
      */
     public com.google.cloud.websecurityscanner.v1alpha.ScanConfig updateScanConfig(
-        com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateScanConfigMethod(), getCallOptions(), request);
     }
 
@@ -1275,8 +1277,9 @@ public final class WebSecurityScannerGrpc {
      * </pre>
      */
     public com.google.cloud.websecurityscanner.v1alpha.ScanRun startScanRun(
-        com.google.cloud.websecurityscanner.v1alpha.StartScanRunRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.websecurityscanner.v1alpha.StartScanRunRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getStartScanRunMethod(), getCallOptions(), request);
     }
 
@@ -1288,8 +1291,9 @@ public final class WebSecurityScannerGrpc {
      * </pre>
      */
     public com.google.cloud.websecurityscanner.v1alpha.ScanRun getScanRun(
-        com.google.cloud.websecurityscanner.v1alpha.GetScanRunRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.websecurityscanner.v1alpha.GetScanRunRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetScanRunMethod(), getCallOptions(), request);
     }
 
@@ -1302,8 +1306,9 @@ public final class WebSecurityScannerGrpc {
      * </pre>
      */
     public com.google.cloud.websecurityscanner.v1alpha.ListScanRunsResponse listScanRuns(
-        com.google.cloud.websecurityscanner.v1alpha.ListScanRunsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.websecurityscanner.v1alpha.ListScanRunsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListScanRunsMethod(), getCallOptions(), request);
     }
 
@@ -1315,8 +1320,9 @@ public final class WebSecurityScannerGrpc {
      * </pre>
      */
     public com.google.cloud.websecurityscanner.v1alpha.ScanRun stopScanRun(
-        com.google.cloud.websecurityscanner.v1alpha.StopScanRunRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.websecurityscanner.v1alpha.StopScanRunRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getStopScanRunMethod(), getCallOptions(), request);
     }
 
@@ -1328,8 +1334,9 @@ public final class WebSecurityScannerGrpc {
      * </pre>
      */
     public com.google.cloud.websecurityscanner.v1alpha.ListCrawledUrlsResponse listCrawledUrls(
-        com.google.cloud.websecurityscanner.v1alpha.ListCrawledUrlsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.websecurityscanner.v1alpha.ListCrawledUrlsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCrawledUrlsMethod(), getCallOptions(), request);
     }
 
@@ -1341,8 +1348,9 @@ public final class WebSecurityScannerGrpc {
      * </pre>
      */
     public com.google.cloud.websecurityscanner.v1alpha.Finding getFinding(
-        com.google.cloud.websecurityscanner.v1alpha.GetFindingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.websecurityscanner.v1alpha.GetFindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetFindingMethod(), getCallOptions(), request);
     }
 
@@ -1354,8 +1362,9 @@ public final class WebSecurityScannerGrpc {
      * </pre>
      */
     public com.google.cloud.websecurityscanner.v1alpha.ListFindingsResponse listFindings(
-        com.google.cloud.websecurityscanner.v1alpha.ListFindingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.websecurityscanner.v1alpha.ListFindingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListFindingsMethod(), getCallOptions(), request);
     }
 
@@ -1368,8 +1377,9 @@ public final class WebSecurityScannerGrpc {
      */
     public com.google.cloud.websecurityscanner.v1alpha.ListFindingTypeStatsResponse
         listFindingTypeStats(
-            com.google.cloud.websecurityscanner.v1alpha.ListFindingTypeStatsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.websecurityscanner.v1alpha.ListFindingTypeStatsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListFindingTypeStatsMethod(), getCallOptions(), request);
     }
   }

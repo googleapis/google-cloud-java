@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Dataflow jobs.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/dataflow/v1beta3/messages.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class MessagesV1Beta3Grpc {
 
@@ -261,8 +258,8 @@ public final class MessagesV1Beta3Grpc {
      * </pre>
      */
     public com.google.dataflow.v1beta3.ListJobMessagesResponse listJobMessages(
-        com.google.dataflow.v1beta3.ListJobMessagesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.dataflow.v1beta3.ListJobMessagesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListJobMessagesMethod(), getCallOptions(), request);
     }
   }

@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * TPU API v1
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/tpu/v1/cloud_tpu.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class TpuGrpc {
 
@@ -943,8 +940,8 @@ public final class TpuGrpc {
      * </pre>
      */
     public com.google.cloud.tpu.v1.ListNodesResponse listNodes(
-        com.google.cloud.tpu.v1.ListNodesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.tpu.v1.ListNodesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListNodesMethod(), getCallOptions(), request);
     }
 
@@ -955,8 +952,9 @@ public final class TpuGrpc {
      * Gets the details of a node.
      * </pre>
      */
-    public com.google.cloud.tpu.v1.Node getNode(com.google.cloud.tpu.v1.GetNodeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.cloud.tpu.v1.Node getNode(com.google.cloud.tpu.v1.GetNodeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetNodeMethod(), getCallOptions(), request);
     }
 
@@ -968,8 +966,8 @@ public final class TpuGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createNode(
-        com.google.cloud.tpu.v1.CreateNodeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.tpu.v1.CreateNodeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateNodeMethod(), getCallOptions(), request);
     }
 
@@ -981,8 +979,8 @@ public final class TpuGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteNode(
-        com.google.cloud.tpu.v1.DeleteNodeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.tpu.v1.DeleteNodeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteNodeMethod(), getCallOptions(), request);
     }
 
@@ -994,8 +992,8 @@ public final class TpuGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation reimageNode(
-        com.google.cloud.tpu.v1.ReimageNodeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.tpu.v1.ReimageNodeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReimageNodeMethod(), getCallOptions(), request);
     }
 
@@ -1007,8 +1005,8 @@ public final class TpuGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation stopNode(
-        com.google.cloud.tpu.v1.StopNodeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.tpu.v1.StopNodeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getStopNodeMethod(), getCallOptions(), request);
     }
 
@@ -1020,8 +1018,8 @@ public final class TpuGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation startNode(
-        com.google.cloud.tpu.v1.StartNodeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.tpu.v1.StartNodeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getStartNodeMethod(), getCallOptions(), request);
     }
 
@@ -1033,8 +1031,9 @@ public final class TpuGrpc {
      * </pre>
      */
     public com.google.cloud.tpu.v1.ListTensorFlowVersionsResponse listTensorFlowVersions(
-        com.google.cloud.tpu.v1.ListTensorFlowVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.tpu.v1.ListTensorFlowVersionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTensorFlowVersionsMethod(), getCallOptions(), request);
     }
 
@@ -1046,8 +1045,9 @@ public final class TpuGrpc {
      * </pre>
      */
     public com.google.cloud.tpu.v1.TensorFlowVersion getTensorFlowVersion(
-        com.google.cloud.tpu.v1.GetTensorFlowVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.tpu.v1.GetTensorFlowVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTensorFlowVersionMethod(), getCallOptions(), request);
     }
 
@@ -1059,8 +1059,9 @@ public final class TpuGrpc {
      * </pre>
      */
     public com.google.cloud.tpu.v1.ListAcceleratorTypesResponse listAcceleratorTypes(
-        com.google.cloud.tpu.v1.ListAcceleratorTypesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.tpu.v1.ListAcceleratorTypesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAcceleratorTypesMethod(), getCallOptions(), request);
     }
 
@@ -1072,8 +1073,8 @@ public final class TpuGrpc {
      * </pre>
      */
     public com.google.cloud.tpu.v1.AcceleratorType getAcceleratorType(
-        com.google.cloud.tpu.v1.GetAcceleratorTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.tpu.v1.GetAcceleratorTypeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAcceleratorTypeMethod(), getCallOptions(), request);
     }
   }

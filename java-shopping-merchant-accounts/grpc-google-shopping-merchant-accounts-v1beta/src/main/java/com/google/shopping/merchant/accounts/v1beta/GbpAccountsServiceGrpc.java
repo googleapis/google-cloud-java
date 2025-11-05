@@ -27,9 +27,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * - [GbpAccount][google.shopping.merchant.accounts.v1.GbpAccount]
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/accounts/v1beta/gbpaccounts.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class GbpAccountsServiceGrpc {
 
@@ -341,8 +338,9 @@ public final class GbpAccountsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.ListGbpAccountsResponse listGbpAccounts(
-        com.google.shopping.merchant.accounts.v1beta.ListGbpAccountsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.ListGbpAccountsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListGbpAccountsMethod(), getCallOptions(), request);
     }
 
@@ -354,8 +352,9 @@ public final class GbpAccountsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.LinkGbpAccountResponse linkGbpAccount(
-        com.google.shopping.merchant.accounts.v1beta.LinkGbpAccountRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.LinkGbpAccountRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getLinkGbpAccountMethod(), getCallOptions(), request);
     }
   }

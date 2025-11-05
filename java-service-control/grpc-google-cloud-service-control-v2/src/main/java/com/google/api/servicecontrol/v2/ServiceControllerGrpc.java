@@ -28,9 +28,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Infrastructure](https://cloud.google.com/service-infrastructure).
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/api/servicecontrol/v2/service_controller.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ServiceControllerGrpc {
 
@@ -402,8 +399,8 @@ public final class ServiceControllerGrpc {
      * </pre>
      */
     public com.google.api.servicecontrol.v2.CheckResponse check(
-        com.google.api.servicecontrol.v2.CheckRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.servicecontrol.v2.CheckRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCheckMethod(), getCallOptions(), request);
     }
 
@@ -427,8 +424,8 @@ public final class ServiceControllerGrpc {
      * </pre>
      */
     public com.google.api.servicecontrol.v2.ReportResponse report(
-        com.google.api.servicecontrol.v2.ReportRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.servicecontrol.v2.ReportRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReportMethod(), getCallOptions(), request);
     }
   }

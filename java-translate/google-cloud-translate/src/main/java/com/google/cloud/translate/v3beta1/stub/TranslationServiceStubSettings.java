@@ -66,6 +66,8 @@ import com.google.cloud.translate.v3beta1.GetSupportedLanguagesRequest;
 import com.google.cloud.translate.v3beta1.Glossary;
 import com.google.cloud.translate.v3beta1.ListGlossariesRequest;
 import com.google.cloud.translate.v3beta1.ListGlossariesResponse;
+import com.google.cloud.translate.v3beta1.RefineTextRequest;
+import com.google.cloud.translate.v3beta1.RefineTextResponse;
 import com.google.cloud.translate.v3beta1.SupportedLanguages;
 import com.google.cloud.translate.v3beta1.TranslateDocumentRequest;
 import com.google.cloud.translate.v3beta1.TranslateDocumentResponse;
@@ -198,6 +200,7 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
   private final OperationCallSettings<
           DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
       deleteGlossaryOperationSettings;
+  private final UnaryCallSettings<RefineTextRequest, RefineTextResponse> refineTextSettings;
 
   private static final PagedListDescriptor<ListGlossariesRequest, ListGlossariesResponse, Glossary>
       LIST_GLOSSARIES_PAGE_STR_DESC =
@@ -335,6 +338,11 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
     return deleteGlossaryOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to refineText. */
+  public UnaryCallSettings<RefineTextRequest, RefineTextResponse> refineTextSettings() {
+    return refineTextSettings;
+  }
+
   public TranslationServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -462,6 +470,7 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
     getGlossarySettings = settingsBuilder.getGlossarySettings().build();
     deleteGlossarySettings = settingsBuilder.deleteGlossarySettings().build();
     deleteGlossaryOperationSettings = settingsBuilder.deleteGlossaryOperationSettings().build();
+    refineTextSettings = settingsBuilder.refineTextSettings().build();
   }
 
   /** Builder for TranslationServiceStubSettings. */
@@ -502,6 +511,8 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
     private final OperationCallSettings.Builder<
             DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
         deleteGlossaryOperationSettings;
+    private final UnaryCallSettings.Builder<RefineTextRequest, RefineTextResponse>
+        refineTextSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -515,6 +526,7 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -542,6 +554,8 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
               .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
       definitions.put("retry_policy_1_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -566,6 +580,7 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
       getGlossarySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteGlossarySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteGlossaryOperationSettings = OperationCallSettings.newBuilder();
+      refineTextSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -578,7 +593,8 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
               createGlossarySettings,
               listGlossariesSettings,
               getGlossarySettings,
-              deleteGlossarySettings);
+              deleteGlossarySettings,
+              refineTextSettings);
       initDefaults(this);
     }
 
@@ -601,6 +617,7 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
       getGlossarySettings = settings.getGlossarySettings.toBuilder();
       deleteGlossarySettings = settings.deleteGlossarySettings.toBuilder();
       deleteGlossaryOperationSettings = settings.deleteGlossaryOperationSettings.toBuilder();
+      refineTextSettings = settings.refineTextSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -613,7 +630,8 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
               createGlossarySettings,
               listGlossariesSettings,
               getGlossarySettings,
-              deleteGlossarySettings);
+              deleteGlossarySettings,
+              refineTextSettings);
     }
 
     private static Builder createDefault() {
@@ -690,6 +708,11 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
           .deleteGlossarySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .refineTextSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .batchTranslateTextOperationSettings()
@@ -892,6 +915,11 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
             DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
         deleteGlossaryOperationSettings() {
       return deleteGlossaryOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to refineText. */
+    public UnaryCallSettings.Builder<RefineTextRequest, RefineTextResponse> refineTextSettings() {
+      return refineTextSettings;
     }
 
     @Override

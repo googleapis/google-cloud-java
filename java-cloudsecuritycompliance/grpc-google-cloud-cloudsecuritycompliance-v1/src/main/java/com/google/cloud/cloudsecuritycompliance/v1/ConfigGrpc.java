@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * configurations.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/cloudsecuritycompliance/v1/config.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ConfigGrpc {
 
@@ -1040,8 +1037,9 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.ListFrameworksResponse listFrameworks(
-        com.google.cloud.cloudsecuritycompliance.v1.ListFrameworksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudsecuritycompliance.v1.ListFrameworksRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListFrameworksMethod(), getCallOptions(), request);
     }
 
@@ -1056,8 +1054,9 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.Framework getFramework(
-        com.google.cloud.cloudsecuritycompliance.v1.GetFrameworkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudsecuritycompliance.v1.GetFrameworkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetFrameworkMethod(), getCallOptions(), request);
     }
 
@@ -1071,8 +1070,9 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.Framework createFramework(
-        com.google.cloud.cloudsecuritycompliance.v1.CreateFrameworkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudsecuritycompliance.v1.CreateFrameworkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateFrameworkMethod(), getCallOptions(), request);
     }
 
@@ -1093,8 +1093,9 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.Framework updateFramework(
-        com.google.cloud.cloudsecuritycompliance.v1.UpdateFrameworkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudsecuritycompliance.v1.UpdateFrameworkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateFrameworkMethod(), getCallOptions(), request);
     }
 
@@ -1111,8 +1112,9 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteFramework(
-        com.google.cloud.cloudsecuritycompliance.v1.DeleteFrameworkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudsecuritycompliance.v1.DeleteFrameworkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteFrameworkMethod(), getCallOptions(), request);
     }
 
@@ -1127,8 +1129,9 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.ListCloudControlsResponse listCloudControls(
-        com.google.cloud.cloudsecuritycompliance.v1.ListCloudControlsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudsecuritycompliance.v1.ListCloudControlsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCloudControlsMethod(), getCallOptions(), request);
     }
 
@@ -1145,8 +1148,9 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.CloudControl getCloudControl(
-        com.google.cloud.cloudsecuritycompliance.v1.GetCloudControlRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudsecuritycompliance.v1.GetCloudControlRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCloudControlMethod(), getCallOptions(), request);
     }
 
@@ -1161,8 +1165,9 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.CloudControl createCloudControl(
-        com.google.cloud.cloudsecuritycompliance.v1.CreateCloudControlRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudsecuritycompliance.v1.CreateCloudControlRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCloudControlMethod(), getCallOptions(), request);
     }
 
@@ -1183,8 +1188,9 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.CloudControl updateCloudControl(
-        com.google.cloud.cloudsecuritycompliance.v1.UpdateCloudControlRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudsecuritycompliance.v1.UpdateCloudControlRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateCloudControlMethod(), getCallOptions(), request);
     }
 
@@ -1202,8 +1208,9 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteCloudControl(
-        com.google.cloud.cloudsecuritycompliance.v1.DeleteCloudControlRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudsecuritycompliance.v1.DeleteCloudControlRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteCloudControlMethod(), getCallOptions(), request);
     }
   }

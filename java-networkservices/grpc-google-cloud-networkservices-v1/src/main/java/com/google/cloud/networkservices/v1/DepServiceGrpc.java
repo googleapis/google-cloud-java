@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service describing handlers for resources.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/networkservices/v1/dep.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DepServiceGrpc {
 
@@ -1756,8 +1753,9 @@ public final class DepServiceGrpc {
      */
     public com.google.cloud.networkservices.v1.ListLbTrafficExtensionsResponse
         listLbTrafficExtensions(
-            com.google.cloud.networkservices.v1.ListLbTrafficExtensionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.networkservices.v1.ListLbTrafficExtensionsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListLbTrafficExtensionsMethod(), getCallOptions(), request);
     }
 
@@ -1769,8 +1767,9 @@ public final class DepServiceGrpc {
      * </pre>
      */
     public com.google.cloud.networkservices.v1.LbTrafficExtension getLbTrafficExtension(
-        com.google.cloud.networkservices.v1.GetLbTrafficExtensionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.GetLbTrafficExtensionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetLbTrafficExtensionMethod(), getCallOptions(), request);
     }
 
@@ -1783,8 +1782,9 @@ public final class DepServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createLbTrafficExtension(
-        com.google.cloud.networkservices.v1.CreateLbTrafficExtensionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.CreateLbTrafficExtensionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateLbTrafficExtensionMethod(), getCallOptions(), request);
     }
 
@@ -1796,8 +1796,9 @@ public final class DepServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateLbTrafficExtension(
-        com.google.cloud.networkservices.v1.UpdateLbTrafficExtensionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.UpdateLbTrafficExtensionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateLbTrafficExtensionMethod(), getCallOptions(), request);
     }
 
@@ -1809,8 +1810,9 @@ public final class DepServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteLbTrafficExtension(
-        com.google.cloud.networkservices.v1.DeleteLbTrafficExtensionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.DeleteLbTrafficExtensionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteLbTrafficExtensionMethod(), getCallOptions(), request);
     }
 
@@ -1822,8 +1824,9 @@ public final class DepServiceGrpc {
      * </pre>
      */
     public com.google.cloud.networkservices.v1.ListLbRouteExtensionsResponse listLbRouteExtensions(
-        com.google.cloud.networkservices.v1.ListLbRouteExtensionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.ListLbRouteExtensionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListLbRouteExtensionsMethod(), getCallOptions(), request);
     }
 
@@ -1835,8 +1838,9 @@ public final class DepServiceGrpc {
      * </pre>
      */
     public com.google.cloud.networkservices.v1.LbRouteExtension getLbRouteExtension(
-        com.google.cloud.networkservices.v1.GetLbRouteExtensionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.GetLbRouteExtensionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetLbRouteExtensionMethod(), getCallOptions(), request);
     }
 
@@ -1848,8 +1852,9 @@ public final class DepServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createLbRouteExtension(
-        com.google.cloud.networkservices.v1.CreateLbRouteExtensionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.CreateLbRouteExtensionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateLbRouteExtensionMethod(), getCallOptions(), request);
     }
 
@@ -1861,8 +1866,9 @@ public final class DepServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateLbRouteExtension(
-        com.google.cloud.networkservices.v1.UpdateLbRouteExtensionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.UpdateLbRouteExtensionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateLbRouteExtensionMethod(), getCallOptions(), request);
     }
 
@@ -1874,8 +1880,9 @@ public final class DepServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteLbRouteExtension(
-        com.google.cloud.networkservices.v1.DeleteLbRouteExtensionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.DeleteLbRouteExtensionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteLbRouteExtensionMethod(), getCallOptions(), request);
     }
 
@@ -1887,8 +1894,9 @@ public final class DepServiceGrpc {
      * </pre>
      */
     public com.google.cloud.networkservices.v1.ListLbEdgeExtensionsResponse listLbEdgeExtensions(
-        com.google.cloud.networkservices.v1.ListLbEdgeExtensionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.ListLbEdgeExtensionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListLbEdgeExtensionsMethod(), getCallOptions(), request);
     }
 
@@ -1900,8 +1908,9 @@ public final class DepServiceGrpc {
      * </pre>
      */
     public com.google.cloud.networkservices.v1.LbEdgeExtension getLbEdgeExtension(
-        com.google.cloud.networkservices.v1.GetLbEdgeExtensionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.GetLbEdgeExtensionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetLbEdgeExtensionMethod(), getCallOptions(), request);
     }
 
@@ -1913,8 +1922,9 @@ public final class DepServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createLbEdgeExtension(
-        com.google.cloud.networkservices.v1.CreateLbEdgeExtensionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.CreateLbEdgeExtensionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateLbEdgeExtensionMethod(), getCallOptions(), request);
     }
 
@@ -1926,8 +1936,9 @@ public final class DepServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateLbEdgeExtension(
-        com.google.cloud.networkservices.v1.UpdateLbEdgeExtensionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.UpdateLbEdgeExtensionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateLbEdgeExtensionMethod(), getCallOptions(), request);
     }
 
@@ -1939,8 +1950,9 @@ public final class DepServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteLbEdgeExtension(
-        com.google.cloud.networkservices.v1.DeleteLbEdgeExtensionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.DeleteLbEdgeExtensionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteLbEdgeExtensionMethod(), getCallOptions(), request);
     }
 
@@ -1952,8 +1964,9 @@ public final class DepServiceGrpc {
      * </pre>
      */
     public com.google.cloud.networkservices.v1.ListAuthzExtensionsResponse listAuthzExtensions(
-        com.google.cloud.networkservices.v1.ListAuthzExtensionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.ListAuthzExtensionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAuthzExtensionsMethod(), getCallOptions(), request);
     }
 
@@ -1965,8 +1978,9 @@ public final class DepServiceGrpc {
      * </pre>
      */
     public com.google.cloud.networkservices.v1.AuthzExtension getAuthzExtension(
-        com.google.cloud.networkservices.v1.GetAuthzExtensionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.GetAuthzExtensionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAuthzExtensionMethod(), getCallOptions(), request);
     }
 
@@ -1979,8 +1993,9 @@ public final class DepServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createAuthzExtension(
-        com.google.cloud.networkservices.v1.CreateAuthzExtensionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.CreateAuthzExtensionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAuthzExtensionMethod(), getCallOptions(), request);
     }
 
@@ -1993,8 +2008,9 @@ public final class DepServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateAuthzExtension(
-        com.google.cloud.networkservices.v1.UpdateAuthzExtensionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.UpdateAuthzExtensionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAuthzExtensionMethod(), getCallOptions(), request);
     }
 
@@ -2006,8 +2022,9 @@ public final class DepServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteAuthzExtension(
-        com.google.cloud.networkservices.v1.DeleteAuthzExtensionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.DeleteAuthzExtensionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAuthzExtensionMethod(), getCallOptions(), request);
     }
   }

@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Cloud Run WorkerPool Control Plane API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/run/v2/worker_pool.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class WorkerPoolsGrpc {
 
@@ -741,8 +738,8 @@ public final class WorkerPoolsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createWorkerPool(
-        com.google.cloud.run.v2.CreateWorkerPoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.run.v2.CreateWorkerPoolRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateWorkerPoolMethod(), getCallOptions(), request);
     }
 
@@ -754,8 +751,8 @@ public final class WorkerPoolsGrpc {
      * </pre>
      */
     public com.google.cloud.run.v2.WorkerPool getWorkerPool(
-        com.google.cloud.run.v2.GetWorkerPoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.run.v2.GetWorkerPoolRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetWorkerPoolMethod(), getCallOptions(), request);
     }
 
@@ -767,8 +764,8 @@ public final class WorkerPoolsGrpc {
      * </pre>
      */
     public com.google.cloud.run.v2.ListWorkerPoolsResponse listWorkerPools(
-        com.google.cloud.run.v2.ListWorkerPoolsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.run.v2.ListWorkerPoolsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListWorkerPoolsMethod(), getCallOptions(), request);
     }
 
@@ -780,8 +777,8 @@ public final class WorkerPoolsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateWorkerPool(
-        com.google.cloud.run.v2.UpdateWorkerPoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.run.v2.UpdateWorkerPoolRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateWorkerPoolMethod(), getCallOptions(), request);
     }
 
@@ -793,8 +790,8 @@ public final class WorkerPoolsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteWorkerPool(
-        com.google.cloud.run.v2.DeleteWorkerPoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.run.v2.DeleteWorkerPoolRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteWorkerPoolMethod(), getCallOptions(), request);
     }
 
@@ -806,8 +803,9 @@ public final class WorkerPoolsGrpc {
      * Cloud Run WorkerPool. This result does not include any inherited policies.
      * </pre>
      */
-    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -819,8 +817,9 @@ public final class WorkerPoolsGrpc {
      * any existing policy.
      * </pre>
      */
-    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -833,8 +832,8 @@ public final class WorkerPoolsGrpc {
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
-        com.google.iam.v1.TestIamPermissionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.iam.v1.TestIamPermissionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
   }

@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Provides methods to manage snapshots of Google Cloud Dataflow jobs.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/dataflow/v1beta3/snapshots.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SnapshotsV1Beta3Grpc {
 
@@ -392,8 +389,8 @@ public final class SnapshotsV1Beta3Grpc {
      * </pre>
      */
     public com.google.dataflow.v1beta3.Snapshot getSnapshot(
-        com.google.dataflow.v1beta3.GetSnapshotRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.dataflow.v1beta3.GetSnapshotRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSnapshotMethod(), getCallOptions(), request);
     }
 
@@ -405,8 +402,8 @@ public final class SnapshotsV1Beta3Grpc {
      * </pre>
      */
     public com.google.dataflow.v1beta3.DeleteSnapshotResponse deleteSnapshot(
-        com.google.dataflow.v1beta3.DeleteSnapshotRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.dataflow.v1beta3.DeleteSnapshotRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSnapshotMethod(), getCallOptions(), request);
     }
 
@@ -418,8 +415,8 @@ public final class SnapshotsV1Beta3Grpc {
      * </pre>
      */
     public com.google.dataflow.v1beta3.ListSnapshotsResponse listSnapshots(
-        com.google.dataflow.v1beta3.ListSnapshotsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.dataflow.v1beta3.ListSnapshotsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSnapshotsMethod(), getCallOptions(), request);
     }
   }

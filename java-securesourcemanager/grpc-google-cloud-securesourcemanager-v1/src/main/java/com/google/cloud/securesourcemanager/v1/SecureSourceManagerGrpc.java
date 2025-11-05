@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Access Secure Source Manager instances, resources, and repositories.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/securesourcemanager/v1/secure_source_manager.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SecureSourceManagerGrpc {
 
@@ -4256,8 +4253,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.cloud.securesourcemanager.v1.ListInstancesResponse listInstances(
-        com.google.cloud.securesourcemanager.v1.ListInstancesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.ListInstancesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListInstancesMethod(), getCallOptions(), request);
     }
 
@@ -4269,8 +4267,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.cloud.securesourcemanager.v1.Instance getInstance(
-        com.google.cloud.securesourcemanager.v1.GetInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.GetInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetInstanceMethod(), getCallOptions(), request);
     }
 
@@ -4282,8 +4281,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createInstance(
-        com.google.cloud.securesourcemanager.v1.CreateInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.CreateInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateInstanceMethod(), getCallOptions(), request);
     }
 
@@ -4295,8 +4295,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteInstance(
-        com.google.cloud.securesourcemanager.v1.DeleteInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.DeleteInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteInstanceMethod(), getCallOptions(), request);
     }
 
@@ -4310,8 +4311,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.cloud.securesourcemanager.v1.ListRepositoriesResponse listRepositories(
-        com.google.cloud.securesourcemanager.v1.ListRepositoriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.ListRepositoriesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRepositoriesMethod(), getCallOptions(), request);
     }
 
@@ -4323,8 +4325,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.cloud.securesourcemanager.v1.Repository getRepository(
-        com.google.cloud.securesourcemanager.v1.GetRepositoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.GetRepositoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRepositoryMethod(), getCallOptions(), request);
     }
 
@@ -4338,8 +4341,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createRepository(
-        com.google.cloud.securesourcemanager.v1.CreateRepositoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.CreateRepositoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateRepositoryMethod(), getCallOptions(), request);
     }
 
@@ -4351,8 +4355,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateRepository(
-        com.google.cloud.securesourcemanager.v1.UpdateRepositoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.UpdateRepositoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateRepositoryMethod(), getCallOptions(), request);
     }
 
@@ -4364,8 +4369,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteRepository(
-        com.google.cloud.securesourcemanager.v1.DeleteRepositoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.DeleteRepositoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteRepositoryMethod(), getCallOptions(), request);
     }
 
@@ -4377,8 +4383,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.cloud.securesourcemanager.v1.ListHooksResponse listHooks(
-        com.google.cloud.securesourcemanager.v1.ListHooksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.ListHooksRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListHooksMethod(), getCallOptions(), request);
     }
 
@@ -4390,8 +4397,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.cloud.securesourcemanager.v1.Hook getHook(
-        com.google.cloud.securesourcemanager.v1.GetHookRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.GetHookRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetHookMethod(), getCallOptions(), request);
     }
 
@@ -4403,8 +4411,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createHook(
-        com.google.cloud.securesourcemanager.v1.CreateHookRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.CreateHookRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateHookMethod(), getCallOptions(), request);
     }
 
@@ -4416,8 +4425,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateHook(
-        com.google.cloud.securesourcemanager.v1.UpdateHookRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.UpdateHookRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateHookMethod(), getCallOptions(), request);
     }
 
@@ -4429,8 +4439,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteHook(
-        com.google.cloud.securesourcemanager.v1.DeleteHookRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.DeleteHookRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteHookMethod(), getCallOptions(), request);
     }
 
@@ -4441,9 +4452,9 @@ public final class SecureSourceManagerGrpc {
      * Get IAM policy for a repository.
      * </pre>
      */
-    public com.google.iam.v1.Policy getIamPolicyRepo(
-        com.google.iam.v1.GetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy getIamPolicyRepo(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIamPolicyRepoMethod(), getCallOptions(), request);
     }
 
@@ -4454,9 +4465,9 @@ public final class SecureSourceManagerGrpc {
      * Set IAM policy on a repository.
      * </pre>
      */
-    public com.google.iam.v1.Policy setIamPolicyRepo(
-        com.google.iam.v1.SetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy setIamPolicyRepo(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetIamPolicyRepoMethod(), getCallOptions(), request);
     }
 
@@ -4469,8 +4480,8 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissionsRepo(
-        com.google.iam.v1.TestIamPermissionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.iam.v1.TestIamPermissionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTestIamPermissionsRepoMethod(), getCallOptions(), request);
     }
 
@@ -4482,8 +4493,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createBranchRule(
-        com.google.cloud.securesourcemanager.v1.CreateBranchRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.CreateBranchRuleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateBranchRuleMethod(), getCallOptions(), request);
     }
 
@@ -4495,8 +4507,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.cloud.securesourcemanager.v1.ListBranchRulesResponse listBranchRules(
-        com.google.cloud.securesourcemanager.v1.ListBranchRulesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.ListBranchRulesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListBranchRulesMethod(), getCallOptions(), request);
     }
 
@@ -4508,8 +4521,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.cloud.securesourcemanager.v1.BranchRule getBranchRule(
-        com.google.cloud.securesourcemanager.v1.GetBranchRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.GetBranchRuleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetBranchRuleMethod(), getCallOptions(), request);
     }
 
@@ -4521,8 +4535,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateBranchRule(
-        com.google.cloud.securesourcemanager.v1.UpdateBranchRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.UpdateBranchRuleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateBranchRuleMethod(), getCallOptions(), request);
     }
 
@@ -4534,8 +4549,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteBranchRule(
-        com.google.cloud.securesourcemanager.v1.DeleteBranchRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.DeleteBranchRuleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteBranchRuleMethod(), getCallOptions(), request);
     }
 
@@ -4547,8 +4563,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createPullRequest(
-        com.google.cloud.securesourcemanager.v1.CreatePullRequestRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.CreatePullRequestRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreatePullRequestMethod(), getCallOptions(), request);
     }
 
@@ -4560,8 +4577,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.cloud.securesourcemanager.v1.PullRequest getPullRequest(
-        com.google.cloud.securesourcemanager.v1.GetPullRequestRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.GetPullRequestRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPullRequestMethod(), getCallOptions(), request);
     }
 
@@ -4573,8 +4591,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.cloud.securesourcemanager.v1.ListPullRequestsResponse listPullRequests(
-        com.google.cloud.securesourcemanager.v1.ListPullRequestsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.ListPullRequestsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPullRequestsMethod(), getCallOptions(), request);
     }
 
@@ -4586,8 +4605,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updatePullRequest(
-        com.google.cloud.securesourcemanager.v1.UpdatePullRequestRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.UpdatePullRequestRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdatePullRequestMethod(), getCallOptions(), request);
     }
 
@@ -4599,8 +4619,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation mergePullRequest(
-        com.google.cloud.securesourcemanager.v1.MergePullRequestRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.MergePullRequestRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getMergePullRequestMethod(), getCallOptions(), request);
     }
 
@@ -4612,8 +4633,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation openPullRequest(
-        com.google.cloud.securesourcemanager.v1.OpenPullRequestRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.OpenPullRequestRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getOpenPullRequestMethod(), getCallOptions(), request);
     }
 
@@ -4625,8 +4647,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation closePullRequest(
-        com.google.cloud.securesourcemanager.v1.ClosePullRequestRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.ClosePullRequestRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getClosePullRequestMethod(), getCallOptions(), request);
     }
 
@@ -4639,8 +4662,9 @@ public final class SecureSourceManagerGrpc {
      */
     public com.google.cloud.securesourcemanager.v1.ListPullRequestFileDiffsResponse
         listPullRequestFileDiffs(
-            com.google.cloud.securesourcemanager.v1.ListPullRequestFileDiffsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.securesourcemanager.v1.ListPullRequestFileDiffsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPullRequestFileDiffsMethod(), getCallOptions(), request);
     }
 
@@ -4652,8 +4676,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.cloud.securesourcemanager.v1.FetchTreeResponse fetchTree(
-        com.google.cloud.securesourcemanager.v1.FetchTreeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.FetchTreeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchTreeMethod(), getCallOptions(), request);
     }
 
@@ -4665,8 +4690,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.cloud.securesourcemanager.v1.FetchBlobResponse fetchBlob(
-        com.google.cloud.securesourcemanager.v1.FetchBlobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.FetchBlobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchBlobMethod(), getCallOptions(), request);
     }
 
@@ -4678,8 +4704,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createIssue(
-        com.google.cloud.securesourcemanager.v1.CreateIssueRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.CreateIssueRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateIssueMethod(), getCallOptions(), request);
     }
 
@@ -4691,8 +4718,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.cloud.securesourcemanager.v1.Issue getIssue(
-        com.google.cloud.securesourcemanager.v1.GetIssueRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.GetIssueRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIssueMethod(), getCallOptions(), request);
     }
 
@@ -4704,8 +4732,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.cloud.securesourcemanager.v1.ListIssuesResponse listIssues(
-        com.google.cloud.securesourcemanager.v1.ListIssuesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.ListIssuesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListIssuesMethod(), getCallOptions(), request);
     }
 
@@ -4717,8 +4746,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateIssue(
-        com.google.cloud.securesourcemanager.v1.UpdateIssueRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.UpdateIssueRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateIssueMethod(), getCallOptions(), request);
     }
 
@@ -4730,8 +4760,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteIssue(
-        com.google.cloud.securesourcemanager.v1.DeleteIssueRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.DeleteIssueRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteIssueMethod(), getCallOptions(), request);
     }
 
@@ -4743,8 +4774,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation openIssue(
-        com.google.cloud.securesourcemanager.v1.OpenIssueRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.OpenIssueRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getOpenIssueMethod(), getCallOptions(), request);
     }
 
@@ -4756,8 +4788,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation closeIssue(
-        com.google.cloud.securesourcemanager.v1.CloseIssueRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.CloseIssueRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCloseIssueMethod(), getCallOptions(), request);
     }
 
@@ -4769,8 +4802,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.cloud.securesourcemanager.v1.PullRequestComment getPullRequestComment(
-        com.google.cloud.securesourcemanager.v1.GetPullRequestCommentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.GetPullRequestCommentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPullRequestCommentMethod(), getCallOptions(), request);
     }
 
@@ -4783,8 +4817,9 @@ public final class SecureSourceManagerGrpc {
      */
     public com.google.cloud.securesourcemanager.v1.ListPullRequestCommentsResponse
         listPullRequestComments(
-            com.google.cloud.securesourcemanager.v1.ListPullRequestCommentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.securesourcemanager.v1.ListPullRequestCommentsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPullRequestCommentsMethod(), getCallOptions(), request);
     }
 
@@ -4800,8 +4835,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createPullRequestComment(
-        com.google.cloud.securesourcemanager.v1.CreatePullRequestCommentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.CreatePullRequestCommentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreatePullRequestCommentMethod(), getCallOptions(), request);
     }
 
@@ -4813,8 +4849,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updatePullRequestComment(
-        com.google.cloud.securesourcemanager.v1.UpdatePullRequestCommentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.UpdatePullRequestCommentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdatePullRequestCommentMethod(), getCallOptions(), request);
     }
 
@@ -4826,8 +4863,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deletePullRequestComment(
-        com.google.cloud.securesourcemanager.v1.DeletePullRequestCommentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.DeletePullRequestCommentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeletePullRequestCommentMethod(), getCallOptions(), request);
     }
 
@@ -4843,8 +4881,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation batchCreatePullRequestComments(
-        com.google.cloud.securesourcemanager.v1.BatchCreatePullRequestCommentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.BatchCreatePullRequestCommentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchCreatePullRequestCommentsMethod(), getCallOptions(), request);
     }
 
@@ -4859,8 +4898,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation resolvePullRequestComments(
-        com.google.cloud.securesourcemanager.v1.ResolvePullRequestCommentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.ResolvePullRequestCommentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getResolvePullRequestCommentsMethod(), getCallOptions(), request);
     }
 
@@ -4875,8 +4915,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation unresolvePullRequestComments(
-        com.google.cloud.securesourcemanager.v1.UnresolvePullRequestCommentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.UnresolvePullRequestCommentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUnresolvePullRequestCommentsMethod(), getCallOptions(), request);
     }
 
@@ -4888,8 +4929,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createIssueComment(
-        com.google.cloud.securesourcemanager.v1.CreateIssueCommentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.CreateIssueCommentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateIssueCommentMethod(), getCallOptions(), request);
     }
 
@@ -4901,8 +4943,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.cloud.securesourcemanager.v1.IssueComment getIssueComment(
-        com.google.cloud.securesourcemanager.v1.GetIssueCommentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.GetIssueCommentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIssueCommentMethod(), getCallOptions(), request);
     }
 
@@ -4914,8 +4957,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.cloud.securesourcemanager.v1.ListIssueCommentsResponse listIssueComments(
-        com.google.cloud.securesourcemanager.v1.ListIssueCommentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.ListIssueCommentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListIssueCommentsMethod(), getCallOptions(), request);
     }
 
@@ -4927,8 +4971,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateIssueComment(
-        com.google.cloud.securesourcemanager.v1.UpdateIssueCommentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.UpdateIssueCommentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateIssueCommentMethod(), getCallOptions(), request);
     }
 
@@ -4940,8 +4985,9 @@ public final class SecureSourceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteIssueComment(
-        com.google.cloud.securesourcemanager.v1.DeleteIssueCommentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securesourcemanager.v1.DeleteIssueCommentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteIssueCommentMethod(), getCallOptions(), request);
     }
   }

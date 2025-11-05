@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * API v1 service for Managed Notebooks.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/notebooks/v1/managed_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ManagedNotebookServiceGrpc {
 
@@ -1154,8 +1151,8 @@ public final class ManagedNotebookServiceGrpc {
      * </pre>
      */
     public com.google.cloud.notebooks.v1.ListRuntimesResponse listRuntimes(
-        com.google.cloud.notebooks.v1.ListRuntimesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.notebooks.v1.ListRuntimesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRuntimesMethod(), getCallOptions(), request);
     }
 
@@ -1168,8 +1165,8 @@ public final class ManagedNotebookServiceGrpc {
      * </pre>
      */
     public com.google.cloud.notebooks.v1.Runtime getRuntime(
-        com.google.cloud.notebooks.v1.GetRuntimeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.notebooks.v1.GetRuntimeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRuntimeMethod(), getCallOptions(), request);
     }
 
@@ -1181,8 +1178,8 @@ public final class ManagedNotebookServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createRuntime(
-        com.google.cloud.notebooks.v1.CreateRuntimeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.notebooks.v1.CreateRuntimeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateRuntimeMethod(), getCallOptions(), request);
     }
 
@@ -1194,8 +1191,8 @@ public final class ManagedNotebookServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateRuntime(
-        com.google.cloud.notebooks.v1.UpdateRuntimeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.notebooks.v1.UpdateRuntimeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateRuntimeMethod(), getCallOptions(), request);
     }
 
@@ -1207,8 +1204,8 @@ public final class ManagedNotebookServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteRuntime(
-        com.google.cloud.notebooks.v1.DeleteRuntimeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.notebooks.v1.DeleteRuntimeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteRuntimeMethod(), getCallOptions(), request);
     }
 
@@ -1224,8 +1221,8 @@ public final class ManagedNotebookServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation startRuntime(
-        com.google.cloud.notebooks.v1.StartRuntimeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.notebooks.v1.StartRuntimeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getStartRuntimeMethod(), getCallOptions(), request);
     }
 
@@ -1241,8 +1238,8 @@ public final class ManagedNotebookServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation stopRuntime(
-        com.google.cloud.notebooks.v1.StopRuntimeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.notebooks.v1.StopRuntimeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getStopRuntimeMethod(), getCallOptions(), request);
     }
 
@@ -1254,8 +1251,8 @@ public final class ManagedNotebookServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation switchRuntime(
-        com.google.cloud.notebooks.v1.SwitchRuntimeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.notebooks.v1.SwitchRuntimeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSwitchRuntimeMethod(), getCallOptions(), request);
     }
 
@@ -1267,8 +1264,8 @@ public final class ManagedNotebookServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation resetRuntime(
-        com.google.cloud.notebooks.v1.ResetRuntimeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.notebooks.v1.ResetRuntimeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getResetRuntimeMethod(), getCallOptions(), request);
     }
 
@@ -1280,8 +1277,9 @@ public final class ManagedNotebookServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation upgradeRuntime(
-        com.google.cloud.notebooks.v1.UpgradeRuntimeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.notebooks.v1.UpgradeRuntimeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpgradeRuntimeMethod(), getCallOptions(), request);
     }
 
@@ -1293,8 +1291,9 @@ public final class ManagedNotebookServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation reportRuntimeEvent(
-        com.google.cloud.notebooks.v1.ReportRuntimeEventRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.notebooks.v1.ReportRuntimeEventRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReportRuntimeEventMethod(), getCallOptions(), request);
     }
 
@@ -1308,8 +1307,9 @@ public final class ManagedNotebookServiceGrpc {
      */
     public com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalResponse
         refreshRuntimeTokenInternal(
-            com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRefreshRuntimeTokenInternalMethod(), getCallOptions(), request);
     }
 
@@ -1321,8 +1321,9 @@ public final class ManagedNotebookServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation diagnoseRuntime(
-        com.google.cloud.notebooks.v1.DiagnoseRuntimeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.notebooks.v1.DiagnoseRuntimeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDiagnoseRuntimeMethod(), getCallOptions(), request);
     }
   }

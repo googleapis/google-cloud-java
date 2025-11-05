@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * InstanceService provides the entry interface for the Chronicle API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/chronicle/v1/instance.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class InstanceServiceGrpc {
 
@@ -236,8 +233,8 @@ public final class InstanceServiceGrpc {
      * </pre>
      */
     public com.google.cloud.chronicle.v1.Instance getInstance(
-        com.google.cloud.chronicle.v1.GetInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.chronicle.v1.GetInstanceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetInstanceMethod(), getCallOptions(), request);
     }
   }

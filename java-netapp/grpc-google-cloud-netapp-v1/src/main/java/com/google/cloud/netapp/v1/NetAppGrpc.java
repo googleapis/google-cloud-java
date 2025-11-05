@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * NetApp Files Google Cloud Service
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/netapp/v1/cloud_netapp_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class NetAppGrpc {
 
@@ -4582,8 +4579,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.cloud.netapp.v1.ListStoragePoolsResponse listStoragePools(
-        com.google.cloud.netapp.v1.ListStoragePoolsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.ListStoragePoolsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListStoragePoolsMethod(), getCallOptions(), request);
     }
 
@@ -4595,8 +4592,9 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createStoragePool(
-        com.google.cloud.netapp.v1.CreateStoragePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.CreateStoragePoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateStoragePoolMethod(), getCallOptions(), request);
     }
 
@@ -4608,8 +4606,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.cloud.netapp.v1.StoragePool getStoragePool(
-        com.google.cloud.netapp.v1.GetStoragePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.GetStoragePoolRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetStoragePoolMethod(), getCallOptions(), request);
     }
 
@@ -4621,8 +4619,9 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateStoragePool(
-        com.google.cloud.netapp.v1.UpdateStoragePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.UpdateStoragePoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateStoragePoolMethod(), getCallOptions(), request);
     }
 
@@ -4634,8 +4633,9 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteStoragePool(
-        com.google.cloud.netapp.v1.DeleteStoragePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.DeleteStoragePoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteStoragePoolMethod(), getCallOptions(), request);
     }
 
@@ -4648,8 +4648,9 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation validateDirectoryService(
-        com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getValidateDirectoryServiceMethod(), getCallOptions(), request);
     }
 
@@ -4662,8 +4663,9 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation switchActiveReplicaZone(
-        com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSwitchActiveReplicaZoneMethod(), getCallOptions(), request);
     }
 
@@ -4675,8 +4677,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.cloud.netapp.v1.ListVolumesResponse listVolumes(
-        com.google.cloud.netapp.v1.ListVolumesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.ListVolumesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListVolumesMethod(), getCallOptions(), request);
     }
 
@@ -4688,8 +4690,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.cloud.netapp.v1.Volume getVolume(
-        com.google.cloud.netapp.v1.GetVolumeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.GetVolumeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetVolumeMethod(), getCallOptions(), request);
     }
 
@@ -4701,8 +4703,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createVolume(
-        com.google.cloud.netapp.v1.CreateVolumeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.CreateVolumeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateVolumeMethod(), getCallOptions(), request);
     }
 
@@ -4714,8 +4716,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateVolume(
-        com.google.cloud.netapp.v1.UpdateVolumeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.UpdateVolumeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateVolumeMethod(), getCallOptions(), request);
     }
 
@@ -4727,8 +4729,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteVolume(
-        com.google.cloud.netapp.v1.DeleteVolumeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.DeleteVolumeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteVolumeMethod(), getCallOptions(), request);
     }
 
@@ -4742,8 +4744,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation revertVolume(
-        com.google.cloud.netapp.v1.RevertVolumeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.RevertVolumeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRevertVolumeMethod(), getCallOptions(), request);
     }
 
@@ -4755,8 +4757,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.cloud.netapp.v1.ListSnapshotsResponse listSnapshots(
-        com.google.cloud.netapp.v1.ListSnapshotsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.ListSnapshotsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSnapshotsMethod(), getCallOptions(), request);
     }
 
@@ -4768,8 +4770,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.cloud.netapp.v1.Snapshot getSnapshot(
-        com.google.cloud.netapp.v1.GetSnapshotRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.GetSnapshotRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSnapshotMethod(), getCallOptions(), request);
     }
 
@@ -4781,8 +4783,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createSnapshot(
-        com.google.cloud.netapp.v1.CreateSnapshotRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.CreateSnapshotRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSnapshotMethod(), getCallOptions(), request);
     }
 
@@ -4794,8 +4796,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteSnapshot(
-        com.google.cloud.netapp.v1.DeleteSnapshotRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.DeleteSnapshotRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSnapshotMethod(), getCallOptions(), request);
     }
 
@@ -4807,8 +4809,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateSnapshot(
-        com.google.cloud.netapp.v1.UpdateSnapshotRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.UpdateSnapshotRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSnapshotMethod(), getCallOptions(), request);
     }
 
@@ -4820,8 +4822,9 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.cloud.netapp.v1.ListActiveDirectoriesResponse listActiveDirectories(
-        com.google.cloud.netapp.v1.ListActiveDirectoriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.ListActiveDirectoriesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListActiveDirectoriesMethod(), getCallOptions(), request);
     }
 
@@ -4833,8 +4836,9 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.cloud.netapp.v1.ActiveDirectory getActiveDirectory(
-        com.google.cloud.netapp.v1.GetActiveDirectoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.GetActiveDirectoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetActiveDirectoryMethod(), getCallOptions(), request);
     }
 
@@ -4847,8 +4851,9 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createActiveDirectory(
-        com.google.cloud.netapp.v1.CreateActiveDirectoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.CreateActiveDirectoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateActiveDirectoryMethod(), getCallOptions(), request);
     }
 
@@ -4860,8 +4865,9 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateActiveDirectory(
-        com.google.cloud.netapp.v1.UpdateActiveDirectoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.UpdateActiveDirectoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateActiveDirectoryMethod(), getCallOptions(), request);
     }
 
@@ -4873,8 +4879,9 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteActiveDirectory(
-        com.google.cloud.netapp.v1.DeleteActiveDirectoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.DeleteActiveDirectoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteActiveDirectoryMethod(), getCallOptions(), request);
     }
 
@@ -4886,8 +4893,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.cloud.netapp.v1.ListKmsConfigsResponse listKmsConfigs(
-        com.google.cloud.netapp.v1.ListKmsConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.ListKmsConfigsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListKmsConfigsMethod(), getCallOptions(), request);
     }
 
@@ -4899,8 +4906,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createKmsConfig(
-        com.google.cloud.netapp.v1.CreateKmsConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.CreateKmsConfigRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateKmsConfigMethod(), getCallOptions(), request);
     }
 
@@ -4912,8 +4919,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.cloud.netapp.v1.KmsConfig getKmsConfig(
-        com.google.cloud.netapp.v1.GetKmsConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.GetKmsConfigRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetKmsConfigMethod(), getCallOptions(), request);
     }
 
@@ -4925,8 +4932,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateKmsConfig(
-        com.google.cloud.netapp.v1.UpdateKmsConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.UpdateKmsConfigRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateKmsConfigMethod(), getCallOptions(), request);
     }
 
@@ -4939,8 +4946,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation encryptVolumes(
-        com.google.cloud.netapp.v1.EncryptVolumesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.EncryptVolumesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getEncryptVolumesMethod(), getCallOptions(), request);
     }
 
@@ -4952,8 +4959,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.cloud.netapp.v1.VerifyKmsConfigResponse verifyKmsConfig(
-        com.google.cloud.netapp.v1.VerifyKmsConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.VerifyKmsConfigRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getVerifyKmsConfigMethod(), getCallOptions(), request);
     }
 
@@ -4965,8 +4972,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteKmsConfig(
-        com.google.cloud.netapp.v1.DeleteKmsConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.DeleteKmsConfigRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteKmsConfigMethod(), getCallOptions(), request);
     }
 
@@ -4978,8 +4985,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.cloud.netapp.v1.ListReplicationsResponse listReplications(
-        com.google.cloud.netapp.v1.ListReplicationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.ListReplicationsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListReplicationsMethod(), getCallOptions(), request);
     }
 
@@ -4991,8 +4998,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.cloud.netapp.v1.Replication getReplication(
-        com.google.cloud.netapp.v1.GetReplicationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.GetReplicationRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetReplicationMethod(), getCallOptions(), request);
     }
 
@@ -5004,8 +5011,9 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createReplication(
-        com.google.cloud.netapp.v1.CreateReplicationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.CreateReplicationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateReplicationMethod(), getCallOptions(), request);
     }
 
@@ -5017,8 +5025,9 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteReplication(
-        com.google.cloud.netapp.v1.DeleteReplicationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.DeleteReplicationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteReplicationMethod(), getCallOptions(), request);
     }
 
@@ -5030,8 +5039,9 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateReplication(
-        com.google.cloud.netapp.v1.UpdateReplicationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.UpdateReplicationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateReplicationMethod(), getCallOptions(), request);
     }
 
@@ -5043,8 +5053,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation stopReplication(
-        com.google.cloud.netapp.v1.StopReplicationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.StopReplicationRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getStopReplicationMethod(), getCallOptions(), request);
     }
 
@@ -5056,8 +5066,9 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation resumeReplication(
-        com.google.cloud.netapp.v1.ResumeReplicationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.ResumeReplicationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getResumeReplicationMethod(), getCallOptions(), request);
     }
 
@@ -5070,8 +5081,9 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation reverseReplicationDirection(
-        com.google.cloud.netapp.v1.ReverseReplicationDirectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.ReverseReplicationDirectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReverseReplicationDirectionMethod(), getCallOptions(), request);
     }
 
@@ -5083,8 +5095,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation establishPeering(
-        com.google.cloud.netapp.v1.EstablishPeeringRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.EstablishPeeringRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getEstablishPeeringMethod(), getCallOptions(), request);
     }
 
@@ -5097,8 +5109,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation syncReplication(
-        com.google.cloud.netapp.v1.SyncReplicationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.SyncReplicationRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSyncReplicationMethod(), getCallOptions(), request);
     }
 
@@ -5110,8 +5122,9 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createBackupVault(
-        com.google.cloud.netapp.v1.CreateBackupVaultRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.CreateBackupVaultRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateBackupVaultMethod(), getCallOptions(), request);
     }
 
@@ -5123,8 +5136,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.cloud.netapp.v1.BackupVault getBackupVault(
-        com.google.cloud.netapp.v1.GetBackupVaultRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.GetBackupVaultRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetBackupVaultMethod(), getCallOptions(), request);
     }
 
@@ -5136,8 +5149,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.cloud.netapp.v1.ListBackupVaultsResponse listBackupVaults(
-        com.google.cloud.netapp.v1.ListBackupVaultsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.ListBackupVaultsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListBackupVaultsMethod(), getCallOptions(), request);
     }
 
@@ -5149,8 +5162,9 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateBackupVault(
-        com.google.cloud.netapp.v1.UpdateBackupVaultRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.UpdateBackupVaultRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateBackupVaultMethod(), getCallOptions(), request);
     }
 
@@ -5162,8 +5176,9 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteBackupVault(
-        com.google.cloud.netapp.v1.DeleteBackupVaultRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.DeleteBackupVaultRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteBackupVaultMethod(), getCallOptions(), request);
     }
 
@@ -5178,8 +5193,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createBackup(
-        com.google.cloud.netapp.v1.CreateBackupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.CreateBackupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateBackupMethod(), getCallOptions(), request);
     }
 
@@ -5191,8 +5206,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.cloud.netapp.v1.Backup getBackup(
-        com.google.cloud.netapp.v1.GetBackupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.GetBackupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetBackupMethod(), getCallOptions(), request);
     }
 
@@ -5204,8 +5219,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.cloud.netapp.v1.ListBackupsResponse listBackups(
-        com.google.cloud.netapp.v1.ListBackupsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.ListBackupsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListBackupsMethod(), getCallOptions(), request);
     }
 
@@ -5217,8 +5232,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteBackup(
-        com.google.cloud.netapp.v1.DeleteBackupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.DeleteBackupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteBackupMethod(), getCallOptions(), request);
     }
 
@@ -5230,8 +5245,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateBackup(
-        com.google.cloud.netapp.v1.UpdateBackupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.UpdateBackupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateBackupMethod(), getCallOptions(), request);
     }
 
@@ -5243,8 +5258,9 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createBackupPolicy(
-        com.google.cloud.netapp.v1.CreateBackupPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.CreateBackupPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateBackupPolicyMethod(), getCallOptions(), request);
     }
 
@@ -5256,8 +5272,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.cloud.netapp.v1.BackupPolicy getBackupPolicy(
-        com.google.cloud.netapp.v1.GetBackupPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.GetBackupPolicyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetBackupPolicyMethod(), getCallOptions(), request);
     }
 
@@ -5269,8 +5285,9 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.cloud.netapp.v1.ListBackupPoliciesResponse listBackupPolicies(
-        com.google.cloud.netapp.v1.ListBackupPoliciesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.ListBackupPoliciesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListBackupPoliciesMethod(), getCallOptions(), request);
     }
 
@@ -5282,8 +5299,9 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateBackupPolicy(
-        com.google.cloud.netapp.v1.UpdateBackupPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.UpdateBackupPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateBackupPolicyMethod(), getCallOptions(), request);
     }
 
@@ -5295,8 +5313,9 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteBackupPolicy(
-        com.google.cloud.netapp.v1.DeleteBackupPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.DeleteBackupPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteBackupPolicyMethod(), getCallOptions(), request);
     }
 
@@ -5308,8 +5327,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.cloud.netapp.v1.ListQuotaRulesResponse listQuotaRules(
-        com.google.cloud.netapp.v1.ListQuotaRulesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.ListQuotaRulesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListQuotaRulesMethod(), getCallOptions(), request);
     }
 
@@ -5321,8 +5340,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.cloud.netapp.v1.QuotaRule getQuotaRule(
-        com.google.cloud.netapp.v1.GetQuotaRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.GetQuotaRuleRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetQuotaRuleMethod(), getCallOptions(), request);
     }
 
@@ -5334,8 +5353,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createQuotaRule(
-        com.google.cloud.netapp.v1.CreateQuotaRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.CreateQuotaRuleRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateQuotaRuleMethod(), getCallOptions(), request);
     }
 
@@ -5347,8 +5366,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateQuotaRule(
-        com.google.cloud.netapp.v1.UpdateQuotaRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.UpdateQuotaRuleRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateQuotaRuleMethod(), getCallOptions(), request);
     }
 
@@ -5360,8 +5379,8 @@ public final class NetAppGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteQuotaRule(
-        com.google.cloud.netapp.v1.DeleteQuotaRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.netapp.v1.DeleteQuotaRuleRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteQuotaRuleMethod(), getCallOptions(), request);
     }
   }

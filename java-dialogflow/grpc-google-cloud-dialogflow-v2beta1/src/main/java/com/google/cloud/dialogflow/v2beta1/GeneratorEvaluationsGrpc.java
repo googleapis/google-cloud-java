@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing generator evaluations.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/v2beta1/generator_evaluation.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class GeneratorEvaluationsGrpc {
 
@@ -499,8 +496,9 @@ public final class GeneratorEvaluationsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createGeneratorEvaluation(
-        com.google.cloud.dialogflow.v2beta1.CreateGeneratorEvaluationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.CreateGeneratorEvaluationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateGeneratorEvaluationMethod(), getCallOptions(), request);
     }
 
@@ -512,8 +510,9 @@ public final class GeneratorEvaluationsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.GeneratorEvaluation getGeneratorEvaluation(
-        com.google.cloud.dialogflow.v2beta1.GetGeneratorEvaluationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.GetGeneratorEvaluationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetGeneratorEvaluationMethod(), getCallOptions(), request);
     }
 
@@ -526,8 +525,9 @@ public final class GeneratorEvaluationsGrpc {
      */
     public com.google.cloud.dialogflow.v2beta1.ListGeneratorEvaluationsResponse
         listGeneratorEvaluations(
-            com.google.cloud.dialogflow.v2beta1.ListGeneratorEvaluationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.dialogflow.v2beta1.ListGeneratorEvaluationsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListGeneratorEvaluationsMethod(), getCallOptions(), request);
     }
 
@@ -539,8 +539,9 @@ public final class GeneratorEvaluationsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteGeneratorEvaluation(
-        com.google.cloud.dialogflow.v2beta1.DeleteGeneratorEvaluationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.DeleteGeneratorEvaluationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteGeneratorEvaluationMethod(), getCallOptions(), request);
     }
   }

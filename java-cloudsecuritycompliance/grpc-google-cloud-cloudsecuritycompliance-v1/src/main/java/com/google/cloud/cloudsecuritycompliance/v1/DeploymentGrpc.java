@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Cloud Controls on a target resource.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/cloudsecuritycompliance/v1/deployment.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DeploymentGrpc {
 
@@ -679,8 +676,9 @@ public final class DeploymentGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createFrameworkDeployment(
-        com.google.cloud.cloudsecuritycompliance.v1.CreateFrameworkDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudsecuritycompliance.v1.CreateFrameworkDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateFrameworkDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -692,8 +690,9 @@ public final class DeploymentGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteFrameworkDeployment(
-        com.google.cloud.cloudsecuritycompliance.v1.DeleteFrameworkDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudsecuritycompliance.v1.DeleteFrameworkDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteFrameworkDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -705,8 +704,9 @@ public final class DeploymentGrpc {
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.FrameworkDeployment getFrameworkDeployment(
-        com.google.cloud.cloudsecuritycompliance.v1.GetFrameworkDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudsecuritycompliance.v1.GetFrameworkDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetFrameworkDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -719,8 +719,9 @@ public final class DeploymentGrpc {
      */
     public com.google.cloud.cloudsecuritycompliance.v1.ListFrameworkDeploymentsResponse
         listFrameworkDeployments(
-            com.google.cloud.cloudsecuritycompliance.v1.ListFrameworkDeploymentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.cloudsecuritycompliance.v1.ListFrameworkDeploymentsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListFrameworkDeploymentsMethod(), getCallOptions(), request);
     }
 
@@ -733,8 +734,9 @@ public final class DeploymentGrpc {
      */
     public com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment
         getCloudControlDeployment(
-            com.google.cloud.cloudsecuritycompliance.v1.GetCloudControlDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.cloudsecuritycompliance.v1.GetCloudControlDeploymentRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCloudControlDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -747,9 +749,9 @@ public final class DeploymentGrpc {
      */
     public com.google.cloud.cloudsecuritycompliance.v1.ListCloudControlDeploymentsResponse
         listCloudControlDeployments(
-            com.google.cloud.cloudsecuritycompliance.v1.ListCloudControlDeploymentsRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.cloudsecuritycompliance.v1.ListCloudControlDeploymentsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCloudControlDeploymentsMethod(), getCallOptions(), request);
     }
   }

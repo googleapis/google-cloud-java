@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * to help provide a rich conversational answer.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/geminidataanalytics/v1beta/data_chat_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DataChatServiceGrpc {
 
@@ -589,8 +586,9 @@ public final class DataChatServiceGrpc {
      * </pre>
      */
     public com.google.cloud.geminidataanalytics.v1beta.Conversation createConversation(
-        com.google.cloud.geminidataanalytics.v1beta.CreateConversationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.geminidataanalytics.v1beta.CreateConversationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateConversationMethod(), getCallOptions(), request);
     }
 
@@ -602,8 +600,9 @@ public final class DataChatServiceGrpc {
      * </pre>
      */
     public com.google.cloud.geminidataanalytics.v1beta.Conversation getConversation(
-        com.google.cloud.geminidataanalytics.v1beta.GetConversationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.geminidataanalytics.v1beta.GetConversationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetConversationMethod(), getCallOptions(), request);
     }
 
@@ -615,8 +614,9 @@ public final class DataChatServiceGrpc {
      * </pre>
      */
     public com.google.cloud.geminidataanalytics.v1beta.ListConversationsResponse listConversations(
-        com.google.cloud.geminidataanalytics.v1beta.ListConversationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.geminidataanalytics.v1beta.ListConversationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListConversationsMethod(), getCallOptions(), request);
     }
 
@@ -628,8 +628,9 @@ public final class DataChatServiceGrpc {
      * </pre>
      */
     public com.google.cloud.geminidataanalytics.v1beta.ListMessagesResponse listMessages(
-        com.google.cloud.geminidataanalytics.v1beta.ListMessagesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.geminidataanalytics.v1beta.ListMessagesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMessagesMethod(), getCallOptions(), request);
     }
   }

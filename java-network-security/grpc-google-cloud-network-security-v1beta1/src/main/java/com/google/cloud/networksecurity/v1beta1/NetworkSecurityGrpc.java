@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * information.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/networksecurity/v1beta1/network_security.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class NetworkSecurityGrpc {
 
@@ -1389,8 +1386,9 @@ public final class NetworkSecurityGrpc {
      */
     public com.google.cloud.networksecurity.v1beta1.ListAuthorizationPoliciesResponse
         listAuthorizationPolicies(
-            com.google.cloud.networksecurity.v1beta1.ListAuthorizationPoliciesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.networksecurity.v1beta1.ListAuthorizationPoliciesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAuthorizationPoliciesMethod(), getCallOptions(), request);
     }
 
@@ -1402,8 +1400,9 @@ public final class NetworkSecurityGrpc {
      * </pre>
      */
     public com.google.cloud.networksecurity.v1beta1.AuthorizationPolicy getAuthorizationPolicy(
-        com.google.cloud.networksecurity.v1beta1.GetAuthorizationPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networksecurity.v1beta1.GetAuthorizationPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAuthorizationPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1415,8 +1414,9 @@ public final class NetworkSecurityGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createAuthorizationPolicy(
-        com.google.cloud.networksecurity.v1beta1.CreateAuthorizationPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networksecurity.v1beta1.CreateAuthorizationPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAuthorizationPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1428,8 +1428,9 @@ public final class NetworkSecurityGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateAuthorizationPolicy(
-        com.google.cloud.networksecurity.v1beta1.UpdateAuthorizationPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networksecurity.v1beta1.UpdateAuthorizationPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAuthorizationPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1441,8 +1442,9 @@ public final class NetworkSecurityGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteAuthorizationPolicy(
-        com.google.cloud.networksecurity.v1beta1.DeleteAuthorizationPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networksecurity.v1beta1.DeleteAuthorizationPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAuthorizationPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1455,8 +1457,9 @@ public final class NetworkSecurityGrpc {
      */
     public com.google.cloud.networksecurity.v1beta1.ListServerTlsPoliciesResponse
         listServerTlsPolicies(
-            com.google.cloud.networksecurity.v1beta1.ListServerTlsPoliciesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.networksecurity.v1beta1.ListServerTlsPoliciesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListServerTlsPoliciesMethod(), getCallOptions(), request);
     }
 
@@ -1468,8 +1471,9 @@ public final class NetworkSecurityGrpc {
      * </pre>
      */
     public com.google.cloud.networksecurity.v1beta1.ServerTlsPolicy getServerTlsPolicy(
-        com.google.cloud.networksecurity.v1beta1.GetServerTlsPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networksecurity.v1beta1.GetServerTlsPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetServerTlsPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1481,8 +1485,9 @@ public final class NetworkSecurityGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createServerTlsPolicy(
-        com.google.cloud.networksecurity.v1beta1.CreateServerTlsPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networksecurity.v1beta1.CreateServerTlsPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateServerTlsPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1494,8 +1499,9 @@ public final class NetworkSecurityGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateServerTlsPolicy(
-        com.google.cloud.networksecurity.v1beta1.UpdateServerTlsPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networksecurity.v1beta1.UpdateServerTlsPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateServerTlsPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1507,8 +1513,9 @@ public final class NetworkSecurityGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteServerTlsPolicy(
-        com.google.cloud.networksecurity.v1beta1.DeleteServerTlsPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networksecurity.v1beta1.DeleteServerTlsPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteServerTlsPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1521,8 +1528,9 @@ public final class NetworkSecurityGrpc {
      */
     public com.google.cloud.networksecurity.v1beta1.ListClientTlsPoliciesResponse
         listClientTlsPolicies(
-            com.google.cloud.networksecurity.v1beta1.ListClientTlsPoliciesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.networksecurity.v1beta1.ListClientTlsPoliciesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListClientTlsPoliciesMethod(), getCallOptions(), request);
     }
 
@@ -1534,8 +1542,9 @@ public final class NetworkSecurityGrpc {
      * </pre>
      */
     public com.google.cloud.networksecurity.v1beta1.ClientTlsPolicy getClientTlsPolicy(
-        com.google.cloud.networksecurity.v1beta1.GetClientTlsPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networksecurity.v1beta1.GetClientTlsPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetClientTlsPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1547,8 +1556,9 @@ public final class NetworkSecurityGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createClientTlsPolicy(
-        com.google.cloud.networksecurity.v1beta1.CreateClientTlsPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networksecurity.v1beta1.CreateClientTlsPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateClientTlsPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1560,8 +1570,9 @@ public final class NetworkSecurityGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateClientTlsPolicy(
-        com.google.cloud.networksecurity.v1beta1.UpdateClientTlsPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networksecurity.v1beta1.UpdateClientTlsPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateClientTlsPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1573,8 +1584,9 @@ public final class NetworkSecurityGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteClientTlsPolicy(
-        com.google.cloud.networksecurity.v1beta1.DeleteClientTlsPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networksecurity.v1beta1.DeleteClientTlsPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteClientTlsPolicyMethod(), getCallOptions(), request);
     }
   }

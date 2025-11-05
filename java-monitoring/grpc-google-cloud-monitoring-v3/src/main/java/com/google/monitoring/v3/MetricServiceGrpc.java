@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * time series data.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/monitoring/v3/metric_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class MetricServiceGrpc {
 
@@ -911,8 +908,9 @@ public final class MetricServiceGrpc {
      */
     public com.google.monitoring.v3.ListMonitoredResourceDescriptorsResponse
         listMonitoredResourceDescriptors(
-            com.google.monitoring.v3.ListMonitoredResourceDescriptorsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.monitoring.v3.ListMonitoredResourceDescriptorsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMonitoredResourceDescriptorsMethod(), getCallOptions(), request);
     }
 
@@ -924,8 +922,9 @@ public final class MetricServiceGrpc {
      * </pre>
      */
     public com.google.api.MonitoredResourceDescriptor getMonitoredResourceDescriptor(
-        com.google.monitoring.v3.GetMonitoredResourceDescriptorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.GetMonitoredResourceDescriptorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetMonitoredResourceDescriptorMethod(), getCallOptions(), request);
     }
 
@@ -937,8 +936,9 @@ public final class MetricServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.ListMetricDescriptorsResponse listMetricDescriptors(
-        com.google.monitoring.v3.ListMetricDescriptorsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.ListMetricDescriptorsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMetricDescriptorsMethod(), getCallOptions(), request);
     }
 
@@ -950,8 +950,9 @@ public final class MetricServiceGrpc {
      * </pre>
      */
     public com.google.api.MetricDescriptor getMetricDescriptor(
-        com.google.monitoring.v3.GetMetricDescriptorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.GetMetricDescriptorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetMetricDescriptorMethod(), getCallOptions(), request);
     }
 
@@ -968,8 +969,9 @@ public final class MetricServiceGrpc {
      * </pre>
      */
     public com.google.api.MetricDescriptor createMetricDescriptor(
-        com.google.monitoring.v3.CreateMetricDescriptorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.CreateMetricDescriptorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateMetricDescriptorMethod(), getCallOptions(), request);
     }
 
@@ -983,8 +985,9 @@ public final class MetricServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteMetricDescriptor(
-        com.google.monitoring.v3.DeleteMetricDescriptorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.DeleteMetricDescriptorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteMetricDescriptorMethod(), getCallOptions(), request);
     }
 
@@ -996,8 +999,8 @@ public final class MetricServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.ListTimeSeriesResponse listTimeSeries(
-        com.google.monitoring.v3.ListTimeSeriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.ListTimeSeriesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTimeSeriesMethod(), getCallOptions(), request);
     }
 
@@ -1015,8 +1018,8 @@ public final class MetricServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty createTimeSeries(
-        com.google.monitoring.v3.CreateTimeSeriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.CreateTimeSeriesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTimeSeriesMethod(), getCallOptions(), request);
     }
 
@@ -1036,8 +1039,8 @@ public final class MetricServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty createServiceTimeSeries(
-        com.google.monitoring.v3.CreateTimeSeriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.CreateTimeSeriesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateServiceTimeSeriesMethod(), getCallOptions(), request);
     }
   }

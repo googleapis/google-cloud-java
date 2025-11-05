@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Dataproc API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dataproc/v1/workflow_templates.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class WorkflowTemplateServiceGrpc {
 
@@ -822,8 +819,9 @@ public final class WorkflowTemplateServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataproc.v1.WorkflowTemplate createWorkflowTemplate(
-        com.google.cloud.dataproc.v1.CreateWorkflowTemplateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.CreateWorkflowTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateWorkflowTemplateMethod(), getCallOptions(), request);
     }
 
@@ -837,8 +835,9 @@ public final class WorkflowTemplateServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataproc.v1.WorkflowTemplate getWorkflowTemplate(
-        com.google.cloud.dataproc.v1.GetWorkflowTemplateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.GetWorkflowTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetWorkflowTemplateMethod(), getCallOptions(), request);
     }
 
@@ -865,8 +864,9 @@ public final class WorkflowTemplateServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation instantiateWorkflowTemplate(
-        com.google.cloud.dataproc.v1.InstantiateWorkflowTemplateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.InstantiateWorkflowTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getInstantiateWorkflowTemplateMethod(), getCallOptions(), request);
     }
 
@@ -897,8 +897,9 @@ public final class WorkflowTemplateServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation instantiateInlineWorkflowTemplate(
-        com.google.cloud.dataproc.v1.InstantiateInlineWorkflowTemplateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.InstantiateInlineWorkflowTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getInstantiateInlineWorkflowTemplateMethod(), getCallOptions(), request);
     }
 
@@ -911,8 +912,9 @@ public final class WorkflowTemplateServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataproc.v1.WorkflowTemplate updateWorkflowTemplate(
-        com.google.cloud.dataproc.v1.UpdateWorkflowTemplateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.UpdateWorkflowTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateWorkflowTemplateMethod(), getCallOptions(), request);
     }
 
@@ -924,8 +926,9 @@ public final class WorkflowTemplateServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataproc.v1.ListWorkflowTemplatesResponse listWorkflowTemplates(
-        com.google.cloud.dataproc.v1.ListWorkflowTemplatesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.ListWorkflowTemplatesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListWorkflowTemplatesMethod(), getCallOptions(), request);
     }
 
@@ -937,8 +940,9 @@ public final class WorkflowTemplateServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteWorkflowTemplate(
-        com.google.cloud.dataproc.v1.DeleteWorkflowTemplateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.DeleteWorkflowTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteWorkflowTemplateMethod(), getCallOptions(), request);
     }
   }

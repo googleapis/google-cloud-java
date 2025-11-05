@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service describing handlers for resources
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/visionai/v1/platform.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AppPlatformGrpc {
 
@@ -2152,8 +2149,9 @@ public final class AppPlatformGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.ListApplicationsResponse listApplications(
-        com.google.cloud.visionai.v1.ListApplicationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.ListApplicationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListApplicationsMethod(), getCallOptions(), request);
     }
 
@@ -2165,8 +2163,8 @@ public final class AppPlatformGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.Application getApplication(
-        com.google.cloud.visionai.v1.GetApplicationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.GetApplicationRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetApplicationMethod(), getCallOptions(), request);
     }
 
@@ -2178,8 +2176,9 @@ public final class AppPlatformGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createApplication(
-        com.google.cloud.visionai.v1.CreateApplicationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.CreateApplicationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateApplicationMethod(), getCallOptions(), request);
     }
 
@@ -2191,8 +2190,9 @@ public final class AppPlatformGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateApplication(
-        com.google.cloud.visionai.v1.UpdateApplicationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.UpdateApplicationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateApplicationMethod(), getCallOptions(), request);
     }
 
@@ -2204,8 +2204,9 @@ public final class AppPlatformGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteApplication(
-        com.google.cloud.visionai.v1.DeleteApplicationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.DeleteApplicationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteApplicationMethod(), getCallOptions(), request);
     }
 
@@ -2217,8 +2218,9 @@ public final class AppPlatformGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deployApplication(
-        com.google.cloud.visionai.v1.DeployApplicationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.DeployApplicationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeployApplicationMethod(), getCallOptions(), request);
     }
 
@@ -2230,8 +2232,9 @@ public final class AppPlatformGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation undeployApplication(
-        com.google.cloud.visionai.v1.UndeployApplicationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.UndeployApplicationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUndeployApplicationMethod(), getCallOptions(), request);
     }
 
@@ -2246,8 +2249,9 @@ public final class AppPlatformGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation addApplicationStreamInput(
-        com.google.cloud.visionai.v1.AddApplicationStreamInputRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.AddApplicationStreamInputRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAddApplicationStreamInputMethod(), getCallOptions(), request);
     }
 
@@ -2261,8 +2265,9 @@ public final class AppPlatformGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation removeApplicationStreamInput(
-        com.google.cloud.visionai.v1.RemoveApplicationStreamInputRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.RemoveApplicationStreamInputRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRemoveApplicationStreamInputMethod(), getCallOptions(), request);
     }
 
@@ -2276,8 +2281,9 @@ public final class AppPlatformGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateApplicationStreamInput(
-        com.google.cloud.visionai.v1.UpdateApplicationStreamInputRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.UpdateApplicationStreamInputRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateApplicationStreamInputMethod(), getCallOptions(), request);
     }
 
@@ -2289,8 +2295,8 @@ public final class AppPlatformGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.ListInstancesResponse listInstances(
-        com.google.cloud.visionai.v1.ListInstancesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.ListInstancesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListInstancesMethod(), getCallOptions(), request);
     }
 
@@ -2302,8 +2308,8 @@ public final class AppPlatformGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.Instance getInstance(
-        com.google.cloud.visionai.v1.GetInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.GetInstanceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetInstanceMethod(), getCallOptions(), request);
     }
 
@@ -2318,8 +2324,9 @@ public final class AppPlatformGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createApplicationInstances(
-        com.google.cloud.visionai.v1.CreateApplicationInstancesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.CreateApplicationInstancesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateApplicationInstancesMethod(), getCallOptions(), request);
     }
 
@@ -2333,8 +2340,9 @@ public final class AppPlatformGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteApplicationInstances(
-        com.google.cloud.visionai.v1.DeleteApplicationInstancesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.DeleteApplicationInstancesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteApplicationInstancesMethod(), getCallOptions(), request);
     }
 
@@ -2349,8 +2357,9 @@ public final class AppPlatformGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateApplicationInstances(
-        com.google.cloud.visionai.v1.UpdateApplicationInstancesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.UpdateApplicationInstancesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateApplicationInstancesMethod(), getCallOptions(), request);
     }
 
@@ -2362,8 +2371,8 @@ public final class AppPlatformGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.ListDraftsResponse listDrafts(
-        com.google.cloud.visionai.v1.ListDraftsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.ListDraftsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDraftsMethod(), getCallOptions(), request);
     }
 
@@ -2375,8 +2384,8 @@ public final class AppPlatformGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.Draft getDraft(
-        com.google.cloud.visionai.v1.GetDraftRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.GetDraftRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDraftMethod(), getCallOptions(), request);
     }
 
@@ -2388,8 +2397,8 @@ public final class AppPlatformGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createDraft(
-        com.google.cloud.visionai.v1.CreateDraftRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.CreateDraftRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDraftMethod(), getCallOptions(), request);
     }
 
@@ -2401,8 +2410,8 @@ public final class AppPlatformGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateDraft(
-        com.google.cloud.visionai.v1.UpdateDraftRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.UpdateDraftRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDraftMethod(), getCallOptions(), request);
     }
 
@@ -2414,8 +2423,8 @@ public final class AppPlatformGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteDraft(
-        com.google.cloud.visionai.v1.DeleteDraftRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.DeleteDraftRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDraftMethod(), getCallOptions(), request);
     }
 
@@ -2427,8 +2436,8 @@ public final class AppPlatformGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.ListProcessorsResponse listProcessors(
-        com.google.cloud.visionai.v1.ListProcessorsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.ListProcessorsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListProcessorsMethod(), getCallOptions(), request);
     }
 
@@ -2441,8 +2450,9 @@ public final class AppPlatformGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.ListPrebuiltProcessorsResponse listPrebuiltProcessors(
-        com.google.cloud.visionai.v1.ListPrebuiltProcessorsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.ListPrebuiltProcessorsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPrebuiltProcessorsMethod(), getCallOptions(), request);
     }
 
@@ -2454,8 +2464,8 @@ public final class AppPlatformGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.Processor getProcessor(
-        com.google.cloud.visionai.v1.GetProcessorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.GetProcessorRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetProcessorMethod(), getCallOptions(), request);
     }
 
@@ -2467,8 +2477,9 @@ public final class AppPlatformGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createProcessor(
-        com.google.cloud.visionai.v1.CreateProcessorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.CreateProcessorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateProcessorMethod(), getCallOptions(), request);
     }
 
@@ -2480,8 +2491,9 @@ public final class AppPlatformGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateProcessor(
-        com.google.cloud.visionai.v1.UpdateProcessorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.UpdateProcessorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateProcessorMethod(), getCallOptions(), request);
     }
 
@@ -2493,8 +2505,9 @@ public final class AppPlatformGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteProcessor(
-        com.google.cloud.visionai.v1.DeleteProcessorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.DeleteProcessorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteProcessorMethod(), getCallOptions(), request);
     }
   }

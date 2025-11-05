@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service for online predictions and explanations.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1/prediction_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class PredictionServiceGrpc {
 
@@ -1299,8 +1296,8 @@ public final class PredictionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.PredictResponse predict(
-        com.google.cloud.aiplatform.v1.PredictRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.PredictRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPredictMethod(), getCallOptions(), request);
     }
 
@@ -1319,8 +1316,8 @@ public final class PredictionServiceGrpc {
      * </pre>
      */
     public com.google.api.HttpBody rawPredict(
-        com.google.cloud.aiplatform.v1.RawPredictRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.RawPredictRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRawPredictMethod(), getCallOptions(), request);
     }
 
@@ -1347,8 +1344,9 @@ public final class PredictionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.DirectPredictResponse directPredict(
-        com.google.cloud.aiplatform.v1.DirectPredictRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.DirectPredictRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDirectPredictMethod(), getCallOptions(), request);
     }
 
@@ -1361,8 +1359,9 @@ public final class PredictionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.DirectRawPredictResponse directRawPredict(
-        com.google.cloud.aiplatform.v1.DirectRawPredictRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.DirectRawPredictRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDirectRawPredictMethod(), getCallOptions(), request);
     }
 
@@ -1466,8 +1465,8 @@ public final class PredictionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ExplainResponse explain(
-        com.google.cloud.aiplatform.v1.ExplainRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ExplainRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExplainMethod(), getCallOptions(), request);
     }
 
@@ -1479,8 +1478,9 @@ public final class PredictionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.GenerateContentResponse generateContent(
-        com.google.cloud.aiplatform.v1.GenerateContentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.GenerateContentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateContentMethod(), getCallOptions(), request);
     }
 
@@ -1507,8 +1507,8 @@ public final class PredictionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.EmbedContentResponse embedContent(
-        com.google.cloud.aiplatform.v1.EmbedContentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.EmbedContentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getEmbedContentMethod(), getCallOptions(), request);
     }
   }

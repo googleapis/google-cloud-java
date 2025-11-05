@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing [Fulfillments][google.cloud.dialogflow.v2.Fulfillment].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/v2/fulfillment.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class FulfillmentsGrpc {
 
@@ -313,8 +310,9 @@ public final class FulfillmentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.Fulfillment getFulfillment(
-        com.google.cloud.dialogflow.v2.GetFulfillmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.GetFulfillmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetFulfillmentMethod(), getCallOptions(), request);
     }
 
@@ -326,8 +324,9 @@ public final class FulfillmentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.Fulfillment updateFulfillment(
-        com.google.cloud.dialogflow.v2.UpdateFulfillmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.UpdateFulfillmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateFulfillmentMethod(), getCallOptions(), request);
     }
   }

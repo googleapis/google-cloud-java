@@ -31,9 +31,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * https://developer.android.com/studio/preview/android-device-streaming
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/devicestreaming/v1/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DirectAccessServiceGrpc {
 
@@ -695,8 +692,9 @@ public final class DirectAccessServiceGrpc {
      * </pre>
      */
     public com.google.cloud.devicestreaming.v1.DeviceSession createDeviceSession(
-        com.google.cloud.devicestreaming.v1.CreateDeviceSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.devicestreaming.v1.CreateDeviceSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDeviceSessionMethod(), getCallOptions(), request);
     }
 
@@ -708,8 +706,9 @@ public final class DirectAccessServiceGrpc {
      * </pre>
      */
     public com.google.cloud.devicestreaming.v1.ListDeviceSessionsResponse listDeviceSessions(
-        com.google.cloud.devicestreaming.v1.ListDeviceSessionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.devicestreaming.v1.ListDeviceSessionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDeviceSessionsMethod(), getCallOptions(), request);
     }
 
@@ -723,8 +722,9 @@ public final class DirectAccessServiceGrpc {
      * </pre>
      */
     public com.google.cloud.devicestreaming.v1.DeviceSession getDeviceSession(
-        com.google.cloud.devicestreaming.v1.GetDeviceSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.devicestreaming.v1.GetDeviceSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDeviceSessionMethod(), getCallOptions(), request);
     }
 
@@ -740,8 +740,9 @@ public final class DirectAccessServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty cancelDeviceSession(
-        com.google.cloud.devicestreaming.v1.CancelDeviceSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.devicestreaming.v1.CancelDeviceSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCancelDeviceSessionMethod(), getCallOptions(), request);
     }
 
@@ -754,8 +755,9 @@ public final class DirectAccessServiceGrpc {
      * </pre>
      */
     public com.google.cloud.devicestreaming.v1.DeviceSession updateDeviceSession(
-        com.google.cloud.devicestreaming.v1.UpdateDeviceSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.devicestreaming.v1.UpdateDeviceSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDeviceSessionMethod(), getCallOptions(), request);
     }
 

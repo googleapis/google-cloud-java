@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * manage package installations and patch jobs for Compute Engine VM instances.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/osconfig/v1alpha/osconfig_zonal_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class OsConfigZonalServiceGrpc {
 
@@ -1415,8 +1412,9 @@ public final class OsConfigZonalServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createOSPolicyAssignment(
-        com.google.cloud.osconfig.v1alpha.CreateOSPolicyAssignmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.osconfig.v1alpha.CreateOSPolicyAssignmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateOSPolicyAssignmentMethod(), getCallOptions(), request);
     }
 
@@ -1433,8 +1431,9 @@ public final class OsConfigZonalServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateOSPolicyAssignment(
-        com.google.cloud.osconfig.v1alpha.UpdateOSPolicyAssignmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.osconfig.v1alpha.UpdateOSPolicyAssignmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateOSPolicyAssignmentMethod(), getCallOptions(), request);
     }
 
@@ -1449,8 +1448,9 @@ public final class OsConfigZonalServiceGrpc {
      * </pre>
      */
     public com.google.cloud.osconfig.v1alpha.OSPolicyAssignment getOSPolicyAssignment(
-        com.google.cloud.osconfig.v1alpha.GetOSPolicyAssignmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.osconfig.v1alpha.GetOSPolicyAssignmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetOSPolicyAssignmentMethod(), getCallOptions(), request);
     }
 
@@ -1464,8 +1464,9 @@ public final class OsConfigZonalServiceGrpc {
      */
     public com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentsResponse
         listOSPolicyAssignments(
-            com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListOSPolicyAssignmentsMethod(), getCallOptions(), request);
     }
 
@@ -1478,8 +1479,9 @@ public final class OsConfigZonalServiceGrpc {
      */
     public com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentRevisionsResponse
         listOSPolicyAssignmentRevisions(
-            com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentRevisionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentRevisionsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListOSPolicyAssignmentRevisionsMethod(), getCallOptions(), request);
     }
 
@@ -1498,8 +1500,9 @@ public final class OsConfigZonalServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteOSPolicyAssignment(
-        com.google.cloud.osconfig.v1alpha.DeleteOSPolicyAssignmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.osconfig.v1alpha.DeleteOSPolicyAssignmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteOSPolicyAssignmentMethod(), getCallOptions(), request);
     }
 
@@ -1514,8 +1517,9 @@ public final class OsConfigZonalServiceGrpc {
     @java.lang.Deprecated
     public com.google.cloud.osconfig.v1alpha.InstanceOSPoliciesCompliance
         getInstanceOSPoliciesCompliance(
-            com.google.cloud.osconfig.v1alpha.GetInstanceOSPoliciesComplianceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.osconfig.v1alpha.GetInstanceOSPoliciesComplianceRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetInstanceOSPoliciesComplianceMethod(), getCallOptions(), request);
     }
 
@@ -1530,8 +1534,9 @@ public final class OsConfigZonalServiceGrpc {
     @java.lang.Deprecated
     public com.google.cloud.osconfig.v1alpha.ListInstanceOSPoliciesCompliancesResponse
         listInstanceOSPoliciesCompliances(
-            com.google.cloud.osconfig.v1alpha.ListInstanceOSPoliciesCompliancesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.osconfig.v1alpha.ListInstanceOSPoliciesCompliancesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListInstanceOSPoliciesCompliancesMethod(), getCallOptions(), request);
     }
 
@@ -1544,8 +1549,9 @@ public final class OsConfigZonalServiceGrpc {
      * </pre>
      */
     public com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentReport getOSPolicyAssignmentReport(
-        com.google.cloud.osconfig.v1alpha.GetOSPolicyAssignmentReportRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.osconfig.v1alpha.GetOSPolicyAssignmentReportRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetOSPolicyAssignmentReportMethod(), getCallOptions(), request);
     }
 
@@ -1559,8 +1565,9 @@ public final class OsConfigZonalServiceGrpc {
      */
     public com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentReportsResponse
         listOSPolicyAssignmentReports(
-            com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentReportsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentReportsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListOSPolicyAssignmentReportsMethod(), getCallOptions(), request);
     }
 
@@ -1573,8 +1580,9 @@ public final class OsConfigZonalServiceGrpc {
      * </pre>
      */
     public com.google.cloud.osconfig.v1alpha.Inventory getInventory(
-        com.google.cloud.osconfig.v1alpha.GetInventoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.osconfig.v1alpha.GetInventoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetInventoryMethod(), getCallOptions(), request);
     }
 
@@ -1586,8 +1594,9 @@ public final class OsConfigZonalServiceGrpc {
      * </pre>
      */
     public com.google.cloud.osconfig.v1alpha.ListInventoriesResponse listInventories(
-        com.google.cloud.osconfig.v1alpha.ListInventoriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.osconfig.v1alpha.ListInventoriesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListInventoriesMethod(), getCallOptions(), request);
     }
 
@@ -1600,8 +1609,9 @@ public final class OsConfigZonalServiceGrpc {
      * </pre>
      */
     public com.google.cloud.osconfig.v1alpha.VulnerabilityReport getVulnerabilityReport(
-        com.google.cloud.osconfig.v1alpha.GetVulnerabilityReportRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.osconfig.v1alpha.GetVulnerabilityReportRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetVulnerabilityReportMethod(), getCallOptions(), request);
     }
 
@@ -1614,8 +1624,9 @@ public final class OsConfigZonalServiceGrpc {
      */
     public com.google.cloud.osconfig.v1alpha.ListVulnerabilityReportsResponse
         listVulnerabilityReports(
-            com.google.cloud.osconfig.v1alpha.ListVulnerabilityReportsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.osconfig.v1alpha.ListVulnerabilityReportsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListVulnerabilityReportsMethod(), getCallOptions(), request);
     }
   }

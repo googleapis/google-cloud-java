@@ -360,6 +360,29 @@ public class MockBackupDRImpl extends BackupDRImplBase {
   }
 
   @Override
+  public void fetchBackupsForResourceType(
+      FetchBackupsForResourceTypeRequest request,
+      StreamObserver<FetchBackupsForResourceTypeResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FetchBackupsForResourceTypeResponse) {
+      requests.add(request);
+      responseObserver.onNext(((FetchBackupsForResourceTypeResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FetchBackupsForResourceType, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FetchBackupsForResourceTypeResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getBackup(GetBackupRequest request, StreamObserver<Backup> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Backup) {
@@ -766,6 +789,29 @@ public class MockBackupDRImpl extends BackupDRImplBase {
                       + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   DataSourceReference.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listDataSourceReferences(
+      ListDataSourceReferencesRequest request,
+      StreamObserver<ListDataSourceReferencesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListDataSourceReferencesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListDataSourceReferencesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDataSourceReferences, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListDataSourceReferencesResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

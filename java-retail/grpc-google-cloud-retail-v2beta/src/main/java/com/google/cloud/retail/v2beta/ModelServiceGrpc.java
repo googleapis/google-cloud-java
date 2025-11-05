@@ -33,9 +33,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * * Control their tuning schedule.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/retail/v2beta/model_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ModelServiceGrpc {
 
@@ -780,8 +777,8 @@ public final class ModelServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createModel(
-        com.google.cloud.retail.v2beta.CreateModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2beta.CreateModelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateModelMethod(), getCallOptions(), request);
     }
 
@@ -793,8 +790,8 @@ public final class ModelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2beta.Model getModel(
-        com.google.cloud.retail.v2beta.GetModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2beta.GetModelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetModelMethod(), getCallOptions(), request);
     }
 
@@ -806,8 +803,8 @@ public final class ModelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2beta.Model pauseModel(
-        com.google.cloud.retail.v2beta.PauseModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2beta.PauseModelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPauseModelMethod(), getCallOptions(), request);
     }
 
@@ -819,8 +816,8 @@ public final class ModelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2beta.Model resumeModel(
-        com.google.cloud.retail.v2beta.ResumeModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2beta.ResumeModelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getResumeModelMethod(), getCallOptions(), request);
     }
 
@@ -832,8 +829,8 @@ public final class ModelServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteModel(
-        com.google.cloud.retail.v2beta.DeleteModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2beta.DeleteModelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteModelMethod(), getCallOptions(), request);
     }
 
@@ -845,8 +842,8 @@ public final class ModelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2beta.ListModelsResponse listModels(
-        com.google.cloud.retail.v2beta.ListModelsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2beta.ListModelsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListModelsMethod(), getCallOptions(), request);
     }
 
@@ -861,8 +858,8 @@ public final class ModelServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2beta.Model updateModel(
-        com.google.cloud.retail.v2beta.UpdateModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2beta.UpdateModelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateModelMethod(), getCallOptions(), request);
     }
 
@@ -874,8 +871,8 @@ public final class ModelServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation tuneModel(
-        com.google.cloud.retail.v2beta.TuneModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2beta.TuneModelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTuneModelMethod(), getCallOptions(), request);
     }
   }

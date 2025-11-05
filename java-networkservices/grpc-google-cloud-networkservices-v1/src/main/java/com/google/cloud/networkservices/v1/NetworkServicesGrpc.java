@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service describing handlers for resources.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/networkservices/v1/network_services.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class NetworkServicesGrpc {
 
@@ -4682,8 +4679,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.cloud.networkservices.v1.ListEndpointPoliciesResponse listEndpointPolicies(
-        com.google.cloud.networkservices.v1.ListEndpointPoliciesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.ListEndpointPoliciesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEndpointPoliciesMethod(), getCallOptions(), request);
     }
 
@@ -4695,8 +4693,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.cloud.networkservices.v1.EndpointPolicy getEndpointPolicy(
-        com.google.cloud.networkservices.v1.GetEndpointPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.GetEndpointPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEndpointPolicyMethod(), getCallOptions(), request);
     }
 
@@ -4708,8 +4707,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createEndpointPolicy(
-        com.google.cloud.networkservices.v1.CreateEndpointPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.CreateEndpointPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEndpointPolicyMethod(), getCallOptions(), request);
     }
 
@@ -4721,8 +4721,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateEndpointPolicy(
-        com.google.cloud.networkservices.v1.UpdateEndpointPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.UpdateEndpointPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateEndpointPolicyMethod(), getCallOptions(), request);
     }
 
@@ -4734,8 +4735,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteEndpointPolicy(
-        com.google.cloud.networkservices.v1.DeleteEndpointPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.DeleteEndpointPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteEndpointPolicyMethod(), getCallOptions(), request);
     }
 
@@ -4749,8 +4751,9 @@ public final class NetworkServicesGrpc {
      */
     public com.google.cloud.networkservices.v1.ListWasmPluginVersionsResponse
         listWasmPluginVersions(
-            com.google.cloud.networkservices.v1.ListWasmPluginVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.networkservices.v1.ListWasmPluginVersionsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListWasmPluginVersionsMethod(), getCallOptions(), request);
     }
 
@@ -4762,8 +4765,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.cloud.networkservices.v1.WasmPluginVersion getWasmPluginVersion(
-        com.google.cloud.networkservices.v1.GetWasmPluginVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.GetWasmPluginVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetWasmPluginVersionMethod(), getCallOptions(), request);
     }
 
@@ -4776,8 +4780,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createWasmPluginVersion(
-        com.google.cloud.networkservices.v1.CreateWasmPluginVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.CreateWasmPluginVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateWasmPluginVersionMethod(), getCallOptions(), request);
     }
 
@@ -4789,8 +4794,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteWasmPluginVersion(
-        com.google.cloud.networkservices.v1.DeleteWasmPluginVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.DeleteWasmPluginVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteWasmPluginVersionMethod(), getCallOptions(), request);
     }
 
@@ -4803,8 +4809,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.cloud.networkservices.v1.ListWasmPluginsResponse listWasmPlugins(
-        com.google.cloud.networkservices.v1.ListWasmPluginsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.ListWasmPluginsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListWasmPluginsMethod(), getCallOptions(), request);
     }
 
@@ -4816,8 +4823,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.cloud.networkservices.v1.WasmPlugin getWasmPlugin(
-        com.google.cloud.networkservices.v1.GetWasmPluginRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.GetWasmPluginRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetWasmPluginMethod(), getCallOptions(), request);
     }
 
@@ -4830,8 +4838,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createWasmPlugin(
-        com.google.cloud.networkservices.v1.CreateWasmPluginRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.CreateWasmPluginRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateWasmPluginMethod(), getCallOptions(), request);
     }
 
@@ -4843,8 +4852,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateWasmPlugin(
-        com.google.cloud.networkservices.v1.UpdateWasmPluginRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.UpdateWasmPluginRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateWasmPluginMethod(), getCallOptions(), request);
     }
 
@@ -4856,8 +4866,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteWasmPlugin(
-        com.google.cloud.networkservices.v1.DeleteWasmPluginRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.DeleteWasmPluginRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteWasmPluginMethod(), getCallOptions(), request);
     }
 
@@ -4869,8 +4880,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.cloud.networkservices.v1.ListGatewaysResponse listGateways(
-        com.google.cloud.networkservices.v1.ListGatewaysRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.ListGatewaysRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListGatewaysMethod(), getCallOptions(), request);
     }
 
@@ -4882,8 +4894,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.cloud.networkservices.v1.Gateway getGateway(
-        com.google.cloud.networkservices.v1.GetGatewayRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.GetGatewayRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetGatewayMethod(), getCallOptions(), request);
     }
 
@@ -4895,8 +4908,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createGateway(
-        com.google.cloud.networkservices.v1.CreateGatewayRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.CreateGatewayRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateGatewayMethod(), getCallOptions(), request);
     }
 
@@ -4908,8 +4922,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateGateway(
-        com.google.cloud.networkservices.v1.UpdateGatewayRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.UpdateGatewayRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateGatewayMethod(), getCallOptions(), request);
     }
 
@@ -4921,8 +4936,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteGateway(
-        com.google.cloud.networkservices.v1.DeleteGatewayRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.DeleteGatewayRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteGatewayMethod(), getCallOptions(), request);
     }
 
@@ -4934,8 +4950,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.cloud.networkservices.v1.ListGrpcRoutesResponse listGrpcRoutes(
-        com.google.cloud.networkservices.v1.ListGrpcRoutesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.ListGrpcRoutesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListGrpcRoutesMethod(), getCallOptions(), request);
     }
 
@@ -4947,8 +4964,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.cloud.networkservices.v1.GrpcRoute getGrpcRoute(
-        com.google.cloud.networkservices.v1.GetGrpcRouteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.GetGrpcRouteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetGrpcRouteMethod(), getCallOptions(), request);
     }
 
@@ -4960,8 +4978,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createGrpcRoute(
-        com.google.cloud.networkservices.v1.CreateGrpcRouteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.CreateGrpcRouteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateGrpcRouteMethod(), getCallOptions(), request);
     }
 
@@ -4973,8 +4992,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateGrpcRoute(
-        com.google.cloud.networkservices.v1.UpdateGrpcRouteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.UpdateGrpcRouteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateGrpcRouteMethod(), getCallOptions(), request);
     }
 
@@ -4986,8 +5006,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteGrpcRoute(
-        com.google.cloud.networkservices.v1.DeleteGrpcRouteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.DeleteGrpcRouteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteGrpcRouteMethod(), getCallOptions(), request);
     }
 
@@ -4999,8 +5020,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.cloud.networkservices.v1.ListHttpRoutesResponse listHttpRoutes(
-        com.google.cloud.networkservices.v1.ListHttpRoutesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.ListHttpRoutesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListHttpRoutesMethod(), getCallOptions(), request);
     }
 
@@ -5012,8 +5034,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.cloud.networkservices.v1.HttpRoute getHttpRoute(
-        com.google.cloud.networkservices.v1.GetHttpRouteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.GetHttpRouteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetHttpRouteMethod(), getCallOptions(), request);
     }
 
@@ -5025,8 +5048,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createHttpRoute(
-        com.google.cloud.networkservices.v1.CreateHttpRouteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.CreateHttpRouteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateHttpRouteMethod(), getCallOptions(), request);
     }
 
@@ -5038,8 +5062,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateHttpRoute(
-        com.google.cloud.networkservices.v1.UpdateHttpRouteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.UpdateHttpRouteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateHttpRouteMethod(), getCallOptions(), request);
     }
 
@@ -5051,8 +5076,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteHttpRoute(
-        com.google.cloud.networkservices.v1.DeleteHttpRouteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.DeleteHttpRouteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteHttpRouteMethod(), getCallOptions(), request);
     }
 
@@ -5064,8 +5090,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.cloud.networkservices.v1.ListTcpRoutesResponse listTcpRoutes(
-        com.google.cloud.networkservices.v1.ListTcpRoutesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.ListTcpRoutesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTcpRoutesMethod(), getCallOptions(), request);
     }
 
@@ -5077,8 +5104,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.cloud.networkservices.v1.TcpRoute getTcpRoute(
-        com.google.cloud.networkservices.v1.GetTcpRouteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.GetTcpRouteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTcpRouteMethod(), getCallOptions(), request);
     }
 
@@ -5090,8 +5118,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createTcpRoute(
-        com.google.cloud.networkservices.v1.CreateTcpRouteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.CreateTcpRouteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTcpRouteMethod(), getCallOptions(), request);
     }
 
@@ -5103,8 +5132,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateTcpRoute(
-        com.google.cloud.networkservices.v1.UpdateTcpRouteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.UpdateTcpRouteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateTcpRouteMethod(), getCallOptions(), request);
     }
 
@@ -5116,8 +5146,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteTcpRoute(
-        com.google.cloud.networkservices.v1.DeleteTcpRouteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.DeleteTcpRouteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTcpRouteMethod(), getCallOptions(), request);
     }
 
@@ -5129,8 +5160,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.cloud.networkservices.v1.ListTlsRoutesResponse listTlsRoutes(
-        com.google.cloud.networkservices.v1.ListTlsRoutesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.ListTlsRoutesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTlsRoutesMethod(), getCallOptions(), request);
     }
 
@@ -5142,8 +5174,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.cloud.networkservices.v1.TlsRoute getTlsRoute(
-        com.google.cloud.networkservices.v1.GetTlsRouteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.GetTlsRouteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTlsRouteMethod(), getCallOptions(), request);
     }
 
@@ -5155,8 +5188,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createTlsRoute(
-        com.google.cloud.networkservices.v1.CreateTlsRouteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.CreateTlsRouteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTlsRouteMethod(), getCallOptions(), request);
     }
 
@@ -5168,8 +5202,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateTlsRoute(
-        com.google.cloud.networkservices.v1.UpdateTlsRouteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.UpdateTlsRouteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateTlsRouteMethod(), getCallOptions(), request);
     }
 
@@ -5181,8 +5216,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteTlsRoute(
-        com.google.cloud.networkservices.v1.DeleteTlsRouteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.DeleteTlsRouteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTlsRouteMethod(), getCallOptions(), request);
     }
 
@@ -5194,8 +5230,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.cloud.networkservices.v1.ListServiceBindingsResponse listServiceBindings(
-        com.google.cloud.networkservices.v1.ListServiceBindingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.ListServiceBindingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListServiceBindingsMethod(), getCallOptions(), request);
     }
 
@@ -5207,8 +5244,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.cloud.networkservices.v1.ServiceBinding getServiceBinding(
-        com.google.cloud.networkservices.v1.GetServiceBindingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.GetServiceBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetServiceBindingMethod(), getCallOptions(), request);
     }
 
@@ -5220,8 +5258,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createServiceBinding(
-        com.google.cloud.networkservices.v1.CreateServiceBindingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.CreateServiceBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateServiceBindingMethod(), getCallOptions(), request);
     }
 
@@ -5233,8 +5272,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateServiceBinding(
-        com.google.cloud.networkservices.v1.UpdateServiceBindingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.UpdateServiceBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateServiceBindingMethod(), getCallOptions(), request);
     }
 
@@ -5246,8 +5286,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteServiceBinding(
-        com.google.cloud.networkservices.v1.DeleteServiceBindingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.DeleteServiceBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteServiceBindingMethod(), getCallOptions(), request);
     }
 
@@ -5259,8 +5300,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.cloud.networkservices.v1.ListMeshesResponse listMeshes(
-        com.google.cloud.networkservices.v1.ListMeshesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.ListMeshesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMeshesMethod(), getCallOptions(), request);
     }
 
@@ -5272,8 +5314,8 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.cloud.networkservices.v1.Mesh getMesh(
-        com.google.cloud.networkservices.v1.GetMeshRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.GetMeshRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetMeshMethod(), getCallOptions(), request);
     }
 
@@ -5285,8 +5327,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createMesh(
-        com.google.cloud.networkservices.v1.CreateMeshRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.CreateMeshRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateMeshMethod(), getCallOptions(), request);
     }
 
@@ -5298,8 +5341,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateMesh(
-        com.google.cloud.networkservices.v1.UpdateMeshRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.UpdateMeshRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateMeshMethod(), getCallOptions(), request);
     }
 
@@ -5311,8 +5355,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteMesh(
-        com.google.cloud.networkservices.v1.DeleteMeshRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.DeleteMeshRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteMeshMethod(), getCallOptions(), request);
     }
 
@@ -5324,8 +5369,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.cloud.networkservices.v1.ListServiceLbPoliciesResponse listServiceLbPolicies(
-        com.google.cloud.networkservices.v1.ListServiceLbPoliciesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.ListServiceLbPoliciesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListServiceLbPoliciesMethod(), getCallOptions(), request);
     }
 
@@ -5337,8 +5383,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.cloud.networkservices.v1.ServiceLbPolicy getServiceLbPolicy(
-        com.google.cloud.networkservices.v1.GetServiceLbPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.GetServiceLbPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetServiceLbPolicyMethod(), getCallOptions(), request);
     }
 
@@ -5350,8 +5397,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createServiceLbPolicy(
-        com.google.cloud.networkservices.v1.CreateServiceLbPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.CreateServiceLbPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateServiceLbPolicyMethod(), getCallOptions(), request);
     }
 
@@ -5363,8 +5411,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateServiceLbPolicy(
-        com.google.cloud.networkservices.v1.UpdateServiceLbPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.UpdateServiceLbPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateServiceLbPolicyMethod(), getCallOptions(), request);
     }
 
@@ -5376,8 +5425,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteServiceLbPolicy(
-        com.google.cloud.networkservices.v1.DeleteServiceLbPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.DeleteServiceLbPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteServiceLbPolicyMethod(), getCallOptions(), request);
     }
 
@@ -5389,8 +5439,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.cloud.networkservices.v1.GatewayRouteView getGatewayRouteView(
-        com.google.cloud.networkservices.v1.GetGatewayRouteViewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.GetGatewayRouteViewRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetGatewayRouteViewMethod(), getCallOptions(), request);
     }
 
@@ -5402,8 +5453,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.cloud.networkservices.v1.MeshRouteView getMeshRouteView(
-        com.google.cloud.networkservices.v1.GetMeshRouteViewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.GetMeshRouteViewRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetMeshRouteViewMethod(), getCallOptions(), request);
     }
 
@@ -5415,8 +5467,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.cloud.networkservices.v1.ListGatewayRouteViewsResponse listGatewayRouteViews(
-        com.google.cloud.networkservices.v1.ListGatewayRouteViewsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.ListGatewayRouteViewsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListGatewayRouteViewsMethod(), getCallOptions(), request);
     }
 
@@ -5428,8 +5481,9 @@ public final class NetworkServicesGrpc {
      * </pre>
      */
     public com.google.cloud.networkservices.v1.ListMeshRouteViewsResponse listMeshRouteViews(
-        com.google.cloud.networkservices.v1.ListMeshRouteViewsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkservices.v1.ListMeshRouteViewsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMeshRouteViewsMethod(), getCallOptions(), request);
     }
   }

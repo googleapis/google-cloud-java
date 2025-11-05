@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * The Routes API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/maps/routing/v2/routes_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class RoutesGrpc {
 
@@ -456,8 +453,8 @@ public final class RoutesGrpc {
      * </pre>
      */
     public com.google.maps.routing.v2.ComputeRoutesResponse computeRoutes(
-        com.google.maps.routing.v2.ComputeRoutesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.routing.v2.ComputeRoutesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getComputeRoutesMethod(), getCallOptions(), request);
     }
 

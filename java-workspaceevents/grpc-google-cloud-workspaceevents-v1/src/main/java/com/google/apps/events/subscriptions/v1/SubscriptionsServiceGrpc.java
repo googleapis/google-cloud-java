@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service that manages subscriptions to Google Workspace events.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/apps/events/subscriptions/v1/subscriptions_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SubscriptionsServiceGrpc {
 
@@ -674,8 +671,9 @@ public final class SubscriptionsServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createSubscription(
-        com.google.apps.events.subscriptions.v1.CreateSubscriptionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.apps.events.subscriptions.v1.CreateSubscriptionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSubscriptionMethod(), getCallOptions(), request);
     }
 
@@ -689,8 +687,9 @@ public final class SubscriptionsServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteSubscription(
-        com.google.apps.events.subscriptions.v1.DeleteSubscriptionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.apps.events.subscriptions.v1.DeleteSubscriptionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSubscriptionMethod(), getCallOptions(), request);
     }
 
@@ -704,8 +703,9 @@ public final class SubscriptionsServiceGrpc {
      * </pre>
      */
     public com.google.apps.events.subscriptions.v1.Subscription getSubscription(
-        com.google.apps.events.subscriptions.v1.GetSubscriptionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.apps.events.subscriptions.v1.GetSubscriptionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSubscriptionMethod(), getCallOptions(), request);
     }
 
@@ -719,8 +719,9 @@ public final class SubscriptionsServiceGrpc {
      * </pre>
      */
     public com.google.apps.events.subscriptions.v1.ListSubscriptionsResponse listSubscriptions(
-        com.google.apps.events.subscriptions.v1.ListSubscriptionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.apps.events.subscriptions.v1.ListSubscriptionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSubscriptionsMethod(), getCallOptions(), request);
     }
 
@@ -734,8 +735,9 @@ public final class SubscriptionsServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateSubscription(
-        com.google.apps.events.subscriptions.v1.UpdateSubscriptionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.apps.events.subscriptions.v1.UpdateSubscriptionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSubscriptionMethod(), getCallOptions(), request);
     }
 
@@ -752,8 +754,9 @@ public final class SubscriptionsServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation reactivateSubscription(
-        com.google.apps.events.subscriptions.v1.ReactivateSubscriptionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.apps.events.subscriptions.v1.ReactivateSubscriptionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReactivateSubscriptionMethod(), getCallOptions(), request);
     }
   }

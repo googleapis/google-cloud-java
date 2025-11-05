@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing Acl Configuration.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1alpha/acl_config_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AclConfigServiceGrpc {
 
@@ -327,8 +324,9 @@ public final class AclConfigServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.AclConfig updateAclConfig(
-        com.google.cloud.discoveryengine.v1alpha.UpdateAclConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.UpdateAclConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAclConfigMethod(), getCallOptions(), request);
     }
 
@@ -340,8 +338,9 @@ public final class AclConfigServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.AclConfig getAclConfig(
-        com.google.cloud.discoveryengine.v1alpha.GetAclConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.GetAclConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAclConfigMethod(), getCallOptions(), request);
     }
   }

@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * `ModelMonitor` resources, `ModelMonitoringJob` resources.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1beta1/model_monitoring_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ModelMonitoringServiceGrpc {
 
@@ -1086,8 +1083,9 @@ public final class ModelMonitoringServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createModelMonitor(
-        com.google.cloud.aiplatform.v1beta1.CreateModelMonitorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.CreateModelMonitorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateModelMonitorMethod(), getCallOptions(), request);
     }
 
@@ -1099,8 +1097,9 @@ public final class ModelMonitoringServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateModelMonitor(
-        com.google.cloud.aiplatform.v1beta1.UpdateModelMonitorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.UpdateModelMonitorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateModelMonitorMethod(), getCallOptions(), request);
     }
 
@@ -1112,8 +1111,9 @@ public final class ModelMonitoringServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ModelMonitor getModelMonitor(
-        com.google.cloud.aiplatform.v1beta1.GetModelMonitorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.GetModelMonitorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetModelMonitorMethod(), getCallOptions(), request);
     }
 
@@ -1125,8 +1125,9 @@ public final class ModelMonitoringServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ListModelMonitorsResponse listModelMonitors(
-        com.google.cloud.aiplatform.v1beta1.ListModelMonitorsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.ListModelMonitorsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListModelMonitorsMethod(), getCallOptions(), request);
     }
 
@@ -1138,8 +1139,9 @@ public final class ModelMonitoringServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteModelMonitor(
-        com.google.cloud.aiplatform.v1beta1.DeleteModelMonitorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.DeleteModelMonitorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteModelMonitorMethod(), getCallOptions(), request);
     }
 
@@ -1151,8 +1153,9 @@ public final class ModelMonitoringServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ModelMonitoringJob createModelMonitoringJob(
-        com.google.cloud.aiplatform.v1beta1.CreateModelMonitoringJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.CreateModelMonitoringJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateModelMonitoringJobMethod(), getCallOptions(), request);
     }
 
@@ -1164,8 +1167,9 @@ public final class ModelMonitoringServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ModelMonitoringJob getModelMonitoringJob(
-        com.google.cloud.aiplatform.v1beta1.GetModelMonitoringJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.GetModelMonitoringJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetModelMonitoringJobMethod(), getCallOptions(), request);
     }
 
@@ -1183,8 +1187,9 @@ public final class ModelMonitoringServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1beta1.ListModelMonitoringJobsResponse
         listModelMonitoringJobs(
-            com.google.cloud.aiplatform.v1beta1.ListModelMonitoringJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.aiplatform.v1beta1.ListModelMonitoringJobsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListModelMonitoringJobsMethod(), getCallOptions(), request);
     }
 
@@ -1196,8 +1201,9 @@ public final class ModelMonitoringServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteModelMonitoringJob(
-        com.google.cloud.aiplatform.v1beta1.DeleteModelMonitoringJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.DeleteModelMonitoringJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteModelMonitoringJobMethod(), getCallOptions(), request);
     }
 
@@ -1210,8 +1216,9 @@ public final class ModelMonitoringServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1beta1.SearchModelMonitoringStatsResponse
         searchModelMonitoringStats(
-            com.google.cloud.aiplatform.v1beta1.SearchModelMonitoringStatsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.aiplatform.v1beta1.SearchModelMonitoringStatsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchModelMonitoringStatsMethod(), getCallOptions(), request);
     }
 
@@ -1224,8 +1231,9 @@ public final class ModelMonitoringServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1beta1.SearchModelMonitoringAlertsResponse
         searchModelMonitoringAlerts(
-            com.google.cloud.aiplatform.v1beta1.SearchModelMonitoringAlertsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.aiplatform.v1beta1.SearchModelMonitoringAlertsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchModelMonitoringAlertsMethod(), getCallOptions(), request);
     }
   }

@@ -42,9 +42,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Provides methods to manage Cloud Certificate Manager entities.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/certificatemanager/v1/certificate_manager.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CertificateManagerGrpc {
 
@@ -2608,8 +2605,9 @@ public final class CertificateManagerGrpc {
      * </pre>
      */
     public com.google.cloud.certificatemanager.v1.ListCertificatesResponse listCertificates(
-        com.google.cloud.certificatemanager.v1.ListCertificatesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.certificatemanager.v1.ListCertificatesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCertificatesMethod(), getCallOptions(), request);
     }
 
@@ -2621,8 +2619,9 @@ public final class CertificateManagerGrpc {
      * </pre>
      */
     public com.google.cloud.certificatemanager.v1.Certificate getCertificate(
-        com.google.cloud.certificatemanager.v1.GetCertificateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.certificatemanager.v1.GetCertificateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCertificateMethod(), getCallOptions(), request);
     }
 
@@ -2634,8 +2633,9 @@ public final class CertificateManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createCertificate(
-        com.google.cloud.certificatemanager.v1.CreateCertificateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.certificatemanager.v1.CreateCertificateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCertificateMethod(), getCallOptions(), request);
     }
 
@@ -2647,8 +2647,9 @@ public final class CertificateManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateCertificate(
-        com.google.cloud.certificatemanager.v1.UpdateCertificateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.certificatemanager.v1.UpdateCertificateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateCertificateMethod(), getCallOptions(), request);
     }
 
@@ -2660,8 +2661,9 @@ public final class CertificateManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteCertificate(
-        com.google.cloud.certificatemanager.v1.DeleteCertificateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.certificatemanager.v1.DeleteCertificateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteCertificateMethod(), getCallOptions(), request);
     }
 
@@ -2673,8 +2675,9 @@ public final class CertificateManagerGrpc {
      * </pre>
      */
     public com.google.cloud.certificatemanager.v1.ListCertificateMapsResponse listCertificateMaps(
-        com.google.cloud.certificatemanager.v1.ListCertificateMapsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.certificatemanager.v1.ListCertificateMapsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCertificateMapsMethod(), getCallOptions(), request);
     }
 
@@ -2686,8 +2689,9 @@ public final class CertificateManagerGrpc {
      * </pre>
      */
     public com.google.cloud.certificatemanager.v1.CertificateMap getCertificateMap(
-        com.google.cloud.certificatemanager.v1.GetCertificateMapRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.certificatemanager.v1.GetCertificateMapRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCertificateMapMethod(), getCallOptions(), request);
     }
 
@@ -2699,8 +2703,9 @@ public final class CertificateManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createCertificateMap(
-        com.google.cloud.certificatemanager.v1.CreateCertificateMapRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.certificatemanager.v1.CreateCertificateMapRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCertificateMapMethod(), getCallOptions(), request);
     }
 
@@ -2712,8 +2717,9 @@ public final class CertificateManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateCertificateMap(
-        com.google.cloud.certificatemanager.v1.UpdateCertificateMapRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.certificatemanager.v1.UpdateCertificateMapRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateCertificateMapMethod(), getCallOptions(), request);
     }
 
@@ -2727,8 +2733,9 @@ public final class CertificateManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteCertificateMap(
-        com.google.cloud.certificatemanager.v1.DeleteCertificateMapRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.certificatemanager.v1.DeleteCertificateMapRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteCertificateMapMethod(), getCallOptions(), request);
     }
 
@@ -2741,8 +2748,9 @@ public final class CertificateManagerGrpc {
      */
     public com.google.cloud.certificatemanager.v1.ListCertificateMapEntriesResponse
         listCertificateMapEntries(
-            com.google.cloud.certificatemanager.v1.ListCertificateMapEntriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.certificatemanager.v1.ListCertificateMapEntriesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCertificateMapEntriesMethod(), getCallOptions(), request);
     }
 
@@ -2754,8 +2762,9 @@ public final class CertificateManagerGrpc {
      * </pre>
      */
     public com.google.cloud.certificatemanager.v1.CertificateMapEntry getCertificateMapEntry(
-        com.google.cloud.certificatemanager.v1.GetCertificateMapEntryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.certificatemanager.v1.GetCertificateMapEntryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCertificateMapEntryMethod(), getCallOptions(), request);
     }
 
@@ -2767,8 +2776,9 @@ public final class CertificateManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createCertificateMapEntry(
-        com.google.cloud.certificatemanager.v1.CreateCertificateMapEntryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.certificatemanager.v1.CreateCertificateMapEntryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCertificateMapEntryMethod(), getCallOptions(), request);
     }
 
@@ -2780,8 +2790,9 @@ public final class CertificateManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateCertificateMapEntry(
-        com.google.cloud.certificatemanager.v1.UpdateCertificateMapEntryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.certificatemanager.v1.UpdateCertificateMapEntryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateCertificateMapEntryMethod(), getCallOptions(), request);
     }
 
@@ -2793,8 +2804,9 @@ public final class CertificateManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteCertificateMapEntry(
-        com.google.cloud.certificatemanager.v1.DeleteCertificateMapEntryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.certificatemanager.v1.DeleteCertificateMapEntryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteCertificateMapEntryMethod(), getCallOptions(), request);
     }
 
@@ -2807,8 +2819,9 @@ public final class CertificateManagerGrpc {
      */
     public com.google.cloud.certificatemanager.v1.ListDnsAuthorizationsResponse
         listDnsAuthorizations(
-            com.google.cloud.certificatemanager.v1.ListDnsAuthorizationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.certificatemanager.v1.ListDnsAuthorizationsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDnsAuthorizationsMethod(), getCallOptions(), request);
     }
 
@@ -2820,8 +2833,9 @@ public final class CertificateManagerGrpc {
      * </pre>
      */
     public com.google.cloud.certificatemanager.v1.DnsAuthorization getDnsAuthorization(
-        com.google.cloud.certificatemanager.v1.GetDnsAuthorizationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.certificatemanager.v1.GetDnsAuthorizationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDnsAuthorizationMethod(), getCallOptions(), request);
     }
 
@@ -2833,8 +2847,9 @@ public final class CertificateManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createDnsAuthorization(
-        com.google.cloud.certificatemanager.v1.CreateDnsAuthorizationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.certificatemanager.v1.CreateDnsAuthorizationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDnsAuthorizationMethod(), getCallOptions(), request);
     }
 
@@ -2846,8 +2861,9 @@ public final class CertificateManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateDnsAuthorization(
-        com.google.cloud.certificatemanager.v1.UpdateDnsAuthorizationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.certificatemanager.v1.UpdateDnsAuthorizationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDnsAuthorizationMethod(), getCallOptions(), request);
     }
 
@@ -2859,8 +2875,9 @@ public final class CertificateManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteDnsAuthorization(
-        com.google.cloud.certificatemanager.v1.DeleteDnsAuthorizationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.certificatemanager.v1.DeleteDnsAuthorizationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDnsAuthorizationMethod(), getCallOptions(), request);
     }
 
@@ -2873,8 +2890,9 @@ public final class CertificateManagerGrpc {
      */
     public com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsResponse
         listCertificateIssuanceConfigs(
-            com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCertificateIssuanceConfigsMethod(), getCallOptions(), request);
     }
 
@@ -2887,8 +2905,9 @@ public final class CertificateManagerGrpc {
      */
     public com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig
         getCertificateIssuanceConfig(
-            com.google.cloud.certificatemanager.v1.GetCertificateIssuanceConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.certificatemanager.v1.GetCertificateIssuanceConfigRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCertificateIssuanceConfigMethod(), getCallOptions(), request);
     }
 
@@ -2900,8 +2919,9 @@ public final class CertificateManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createCertificateIssuanceConfig(
-        com.google.cloud.certificatemanager.v1.CreateCertificateIssuanceConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.certificatemanager.v1.CreateCertificateIssuanceConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCertificateIssuanceConfigMethod(), getCallOptions(), request);
     }
 
@@ -2913,8 +2933,9 @@ public final class CertificateManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteCertificateIssuanceConfig(
-        com.google.cloud.certificatemanager.v1.DeleteCertificateIssuanceConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.certificatemanager.v1.DeleteCertificateIssuanceConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteCertificateIssuanceConfigMethod(), getCallOptions(), request);
     }
 
@@ -2926,8 +2947,9 @@ public final class CertificateManagerGrpc {
      * </pre>
      */
     public com.google.cloud.certificatemanager.v1.ListTrustConfigsResponse listTrustConfigs(
-        com.google.cloud.certificatemanager.v1.ListTrustConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.certificatemanager.v1.ListTrustConfigsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTrustConfigsMethod(), getCallOptions(), request);
     }
 
@@ -2939,8 +2961,9 @@ public final class CertificateManagerGrpc {
      * </pre>
      */
     public com.google.cloud.certificatemanager.v1.TrustConfig getTrustConfig(
-        com.google.cloud.certificatemanager.v1.GetTrustConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.certificatemanager.v1.GetTrustConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTrustConfigMethod(), getCallOptions(), request);
     }
 
@@ -2952,8 +2975,9 @@ public final class CertificateManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createTrustConfig(
-        com.google.cloud.certificatemanager.v1.CreateTrustConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.certificatemanager.v1.CreateTrustConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTrustConfigMethod(), getCallOptions(), request);
     }
 
@@ -2965,8 +2989,9 @@ public final class CertificateManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateTrustConfig(
-        com.google.cloud.certificatemanager.v1.UpdateTrustConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.certificatemanager.v1.UpdateTrustConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateTrustConfigMethod(), getCallOptions(), request);
     }
 
@@ -2978,8 +3003,9 @@ public final class CertificateManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteTrustConfig(
-        com.google.cloud.certificatemanager.v1.DeleteTrustConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.certificatemanager.v1.DeleteTrustConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTrustConfigMethod(), getCallOptions(), request);
     }
   }

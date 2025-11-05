@@ -33,9 +33,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * with Membership resources.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/gkehub/v1beta/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class GkeHubGrpc {
 
@@ -566,8 +563,8 @@ public final class GkeHubGrpc {
      * </pre>
      */
     public com.google.cloud.gkehub.v1beta.ListFeaturesResponse listFeatures(
-        com.google.cloud.gkehub.v1beta.ListFeaturesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkehub.v1beta.ListFeaturesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListFeaturesMethod(), getCallOptions(), request);
     }
 
@@ -579,8 +576,8 @@ public final class GkeHubGrpc {
      * </pre>
      */
     public com.google.cloud.gkehub.v1beta.Feature getFeature(
-        com.google.cloud.gkehub.v1beta.GetFeatureRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkehub.v1beta.GetFeatureRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetFeatureMethod(), getCallOptions(), request);
     }
 
@@ -592,8 +589,9 @@ public final class GkeHubGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createFeature(
-        com.google.cloud.gkehub.v1beta.CreateFeatureRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkehub.v1beta.CreateFeatureRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateFeatureMethod(), getCallOptions(), request);
     }
 
@@ -605,8 +603,9 @@ public final class GkeHubGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteFeature(
-        com.google.cloud.gkehub.v1beta.DeleteFeatureRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkehub.v1beta.DeleteFeatureRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteFeatureMethod(), getCallOptions(), request);
     }
 
@@ -618,8 +617,9 @@ public final class GkeHubGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateFeature(
-        com.google.cloud.gkehub.v1beta.UpdateFeatureRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkehub.v1beta.UpdateFeatureRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateFeatureMethod(), getCallOptions(), request);
     }
   }

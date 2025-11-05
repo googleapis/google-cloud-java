@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * EntityService contains apis for finding entities.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/chronicle/v1/entity.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class EntityServiceGrpc {
 
@@ -543,8 +540,8 @@ public final class EntityServiceGrpc {
      * </pre>
      */
     public com.google.cloud.chronicle.v1.Watchlist getWatchlist(
-        com.google.cloud.chronicle.v1.GetWatchlistRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.chronicle.v1.GetWatchlistRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetWatchlistMethod(), getCallOptions(), request);
     }
 
@@ -556,8 +553,9 @@ public final class EntityServiceGrpc {
      * </pre>
      */
     public com.google.cloud.chronicle.v1.ListWatchlistsResponse listWatchlists(
-        com.google.cloud.chronicle.v1.ListWatchlistsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.chronicle.v1.ListWatchlistsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListWatchlistsMethod(), getCallOptions(), request);
     }
 
@@ -570,8 +568,9 @@ public final class EntityServiceGrpc {
      * </pre>
      */
     public com.google.cloud.chronicle.v1.Watchlist createWatchlist(
-        com.google.cloud.chronicle.v1.CreateWatchlistRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.chronicle.v1.CreateWatchlistRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateWatchlistMethod(), getCallOptions(), request);
     }
 
@@ -583,8 +582,9 @@ public final class EntityServiceGrpc {
      * </pre>
      */
     public com.google.cloud.chronicle.v1.Watchlist updateWatchlist(
-        com.google.cloud.chronicle.v1.UpdateWatchlistRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.chronicle.v1.UpdateWatchlistRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateWatchlistMethod(), getCallOptions(), request);
     }
 
@@ -596,8 +596,9 @@ public final class EntityServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteWatchlist(
-        com.google.cloud.chronicle.v1.DeleteWatchlistRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.chronicle.v1.DeleteWatchlistRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteWatchlistMethod(), getCallOptions(), request);
     }
   }

@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * projects and AWS accounts.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/monitoring/metricsscope/v1/metrics_scopes.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class MetricsScopesGrpc {
 
@@ -503,8 +500,9 @@ public final class MetricsScopesGrpc {
      * </pre>
      */
     public com.google.monitoring.metricsscope.v1.MetricsScope getMetricsScope(
-        com.google.monitoring.metricsscope.v1.GetMetricsScopeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.metricsscope.v1.GetMetricsScopeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetMetricsScopeMethod(), getCallOptions(), request);
     }
 
@@ -520,8 +518,9 @@ public final class MetricsScopesGrpc {
     public com.google.monitoring.metricsscope.v1.ListMetricsScopesByMonitoredProjectResponse
         listMetricsScopesByMonitoredProject(
             com.google.monitoring.metricsscope.v1.ListMetricsScopesByMonitoredProjectRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMetricsScopesByMonitoredProjectMethod(), getCallOptions(), request);
     }
 
@@ -534,8 +533,9 @@ public final class MetricsScopesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createMonitoredProject(
-        com.google.monitoring.metricsscope.v1.CreateMonitoredProjectRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.metricsscope.v1.CreateMonitoredProjectRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateMonitoredProjectMethod(), getCallOptions(), request);
     }
 
@@ -547,8 +547,9 @@ public final class MetricsScopesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteMonitoredProject(
-        com.google.monitoring.metricsscope.v1.DeleteMonitoredProjectRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.metricsscope.v1.DeleteMonitoredProjectRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteMonitoredProjectMethod(), getCallOptions(), request);
     }
   }

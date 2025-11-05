@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * complianceManager.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/cloudsecuritycompliance/v1/cm_enrollment_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CmEnrollmentServiceGrpc {
 
@@ -356,8 +353,9 @@ public final class CmEnrollmentServiceGrpc {
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.CmEnrollment updateCmEnrollment(
-        com.google.cloud.cloudsecuritycompliance.v1.UpdateCmEnrollmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudsecuritycompliance.v1.UpdateCmEnrollmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateCmEnrollmentMethod(), getCallOptions(), request);
     }
 
@@ -374,8 +372,9 @@ public final class CmEnrollmentServiceGrpc {
     public com.google.cloud.cloudsecuritycompliance.v1.CalculateEffectiveCmEnrollmentResponse
         calculateEffectiveCmEnrollment(
             com.google.cloud.cloudsecuritycompliance.v1.CalculateEffectiveCmEnrollmentRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCalculateEffectiveCmEnrollmentMethod(), getCallOptions(), request);
     }
   }

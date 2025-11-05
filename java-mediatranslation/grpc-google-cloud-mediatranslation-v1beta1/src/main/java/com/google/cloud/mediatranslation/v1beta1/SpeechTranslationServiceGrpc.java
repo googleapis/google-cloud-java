@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Provides translation from/to media types.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/mediatranslation/v1beta1/media_translation.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SpeechTranslationServiceGrpc {
 

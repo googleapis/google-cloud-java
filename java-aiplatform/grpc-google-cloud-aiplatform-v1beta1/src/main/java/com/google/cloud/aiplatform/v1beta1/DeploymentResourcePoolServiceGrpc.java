@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service that manages the DeploymentResourcePool resource.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1beta1/deployment_resource_pool_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DeploymentResourcePoolServiceGrpc {
 
@@ -669,8 +666,9 @@ public final class DeploymentResourcePoolServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createDeploymentResourcePool(
-        com.google.cloud.aiplatform.v1beta1.CreateDeploymentResourcePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.CreateDeploymentResourcePoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDeploymentResourcePoolMethod(), getCallOptions(), request);
     }
 
@@ -682,8 +680,9 @@ public final class DeploymentResourcePoolServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.DeploymentResourcePool getDeploymentResourcePool(
-        com.google.cloud.aiplatform.v1beta1.GetDeploymentResourcePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.GetDeploymentResourcePoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDeploymentResourcePoolMethod(), getCallOptions(), request);
     }
 
@@ -696,8 +695,9 @@ public final class DeploymentResourcePoolServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1beta1.ListDeploymentResourcePoolsResponse
         listDeploymentResourcePools(
-            com.google.cloud.aiplatform.v1beta1.ListDeploymentResourcePoolsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.aiplatform.v1beta1.ListDeploymentResourcePoolsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDeploymentResourcePoolsMethod(), getCallOptions(), request);
     }
 
@@ -709,8 +709,9 @@ public final class DeploymentResourcePoolServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateDeploymentResourcePool(
-        com.google.cloud.aiplatform.v1beta1.UpdateDeploymentResourcePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.UpdateDeploymentResourcePoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDeploymentResourcePoolMethod(), getCallOptions(), request);
     }
 
@@ -722,8 +723,9 @@ public final class DeploymentResourcePoolServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteDeploymentResourcePool(
-        com.google.cloud.aiplatform.v1beta1.DeleteDeploymentResourcePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.DeleteDeploymentResourcePoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDeploymentResourcePoolMethod(), getCallOptions(), request);
     }
 
@@ -735,8 +737,9 @@ public final class DeploymentResourcePoolServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.QueryDeployedModelsResponse queryDeployedModels(
-        com.google.cloud.aiplatform.v1beta1.QueryDeployedModelsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.QueryDeployedModelsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getQueryDeployedModelsMethod(), getCallOptions(), request);
     }
   }

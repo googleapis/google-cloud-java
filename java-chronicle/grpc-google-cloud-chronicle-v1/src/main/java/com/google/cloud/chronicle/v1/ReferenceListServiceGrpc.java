@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * ReferenceListService provides an interface for managing reference lists.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/chronicle/v1/reference_list.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ReferenceListServiceGrpc {
 
@@ -480,8 +477,9 @@ public final class ReferenceListServiceGrpc {
      * </pre>
      */
     public com.google.cloud.chronicle.v1.ReferenceList getReferenceList(
-        com.google.cloud.chronicle.v1.GetReferenceListRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.chronicle.v1.GetReferenceListRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetReferenceListMethod(), getCallOptions(), request);
     }
 
@@ -493,8 +491,9 @@ public final class ReferenceListServiceGrpc {
      * </pre>
      */
     public com.google.cloud.chronicle.v1.ListReferenceListsResponse listReferenceLists(
-        com.google.cloud.chronicle.v1.ListReferenceListsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.chronicle.v1.ListReferenceListsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListReferenceListsMethod(), getCallOptions(), request);
     }
 
@@ -506,8 +505,9 @@ public final class ReferenceListServiceGrpc {
      * </pre>
      */
     public com.google.cloud.chronicle.v1.ReferenceList createReferenceList(
-        com.google.cloud.chronicle.v1.CreateReferenceListRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.chronicle.v1.CreateReferenceListRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateReferenceListMethod(), getCallOptions(), request);
     }
 
@@ -519,8 +519,9 @@ public final class ReferenceListServiceGrpc {
      * </pre>
      */
     public com.google.cloud.chronicle.v1.ReferenceList updateReferenceList(
-        com.google.cloud.chronicle.v1.UpdateReferenceListRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.chronicle.v1.UpdateReferenceListRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateReferenceListMethod(), getCallOptions(), request);
     }
   }

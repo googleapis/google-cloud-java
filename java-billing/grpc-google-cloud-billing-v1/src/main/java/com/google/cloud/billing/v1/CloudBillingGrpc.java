@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * projects.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/billing/v1/cloud_billing.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CloudBillingGrpc {
 
@@ -1140,8 +1137,9 @@ public final class CloudBillingGrpc {
      * </pre>
      */
     public com.google.cloud.billing.v1.BillingAccount getBillingAccount(
-        com.google.cloud.billing.v1.GetBillingAccountRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.billing.v1.GetBillingAccountRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetBillingAccountMethod(), getCallOptions(), request);
     }
 
@@ -1155,8 +1153,9 @@ public final class CloudBillingGrpc {
      * </pre>
      */
     public com.google.cloud.billing.v1.ListBillingAccountsResponse listBillingAccounts(
-        com.google.cloud.billing.v1.ListBillingAccountsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.billing.v1.ListBillingAccountsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListBillingAccountsMethod(), getCallOptions(), request);
     }
 
@@ -1173,8 +1172,9 @@ public final class CloudBillingGrpc {
      * </pre>
      */
     public com.google.cloud.billing.v1.BillingAccount updateBillingAccount(
-        com.google.cloud.billing.v1.UpdateBillingAccountRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.billing.v1.UpdateBillingAccountRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateBillingAccountMethod(), getCallOptions(), request);
     }
 
@@ -1198,8 +1198,9 @@ public final class CloudBillingGrpc {
      * </pre>
      */
     public com.google.cloud.billing.v1.BillingAccount createBillingAccount(
-        com.google.cloud.billing.v1.CreateBillingAccountRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.billing.v1.CreateBillingAccountRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateBillingAccountMethod(), getCallOptions(), request);
     }
 
@@ -1214,8 +1215,9 @@ public final class CloudBillingGrpc {
      * </pre>
      */
     public com.google.cloud.billing.v1.ListProjectBillingInfoResponse listProjectBillingInfo(
-        com.google.cloud.billing.v1.ListProjectBillingInfoRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.billing.v1.ListProjectBillingInfoRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListProjectBillingInfoMethod(), getCallOptions(), request);
     }
 
@@ -1231,8 +1233,9 @@ public final class CloudBillingGrpc {
      * </pre>
      */
     public com.google.cloud.billing.v1.ProjectBillingInfo getProjectBillingInfo(
-        com.google.cloud.billing.v1.GetProjectBillingInfoRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.billing.v1.GetProjectBillingInfoRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetProjectBillingInfoMethod(), getCallOptions(), request);
     }
 
@@ -1271,8 +1274,9 @@ public final class CloudBillingGrpc {
      * </pre>
      */
     public com.google.cloud.billing.v1.ProjectBillingInfo updateProjectBillingInfo(
-        com.google.cloud.billing.v1.UpdateProjectBillingInfoRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.billing.v1.UpdateProjectBillingInfoRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateProjectBillingInfoMethod(), getCallOptions(), request);
     }
 
@@ -1286,8 +1290,9 @@ public final class CloudBillingGrpc {
      * [viewers](https://cloud.google.com/billing/docs/how-to/billing-access).
      * </pre>
      */
-    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1302,8 +1307,9 @@ public final class CloudBillingGrpc {
      * [administrators](https://cloud.google.com/billing/docs/how-to/billing-access).
      * </pre>
      */
-    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1317,8 +1323,8 @@ public final class CloudBillingGrpc {
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
-        com.google.iam.v1.TestIamPermissionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.iam.v1.TestIamPermissionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
 
@@ -1330,8 +1336,9 @@ public final class CloudBillingGrpc {
      * </pre>
      */
     public com.google.cloud.billing.v1.BillingAccount moveBillingAccount(
-        com.google.cloud.billing.v1.MoveBillingAccountRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.billing.v1.MoveBillingAccountRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getMoveBillingAccountMethod(), getCallOptions(), request);
     }
   }

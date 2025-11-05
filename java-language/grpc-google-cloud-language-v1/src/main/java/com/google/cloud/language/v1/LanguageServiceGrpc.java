@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * recognition.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/language/v1/language_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class LanguageServiceGrpc {
 
@@ -739,8 +736,9 @@ public final class LanguageServiceGrpc {
      * </pre>
      */
     public com.google.cloud.language.v1.AnalyzeSentimentResponse analyzeSentiment(
-        com.google.cloud.language.v1.AnalyzeSentimentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.language.v1.AnalyzeSentimentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAnalyzeSentimentMethod(), getCallOptions(), request);
     }
 
@@ -754,8 +752,9 @@ public final class LanguageServiceGrpc {
      * </pre>
      */
     public com.google.cloud.language.v1.AnalyzeEntitiesResponse analyzeEntities(
-        com.google.cloud.language.v1.AnalyzeEntitiesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.language.v1.AnalyzeEntitiesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAnalyzeEntitiesMethod(), getCallOptions(), request);
     }
 
@@ -770,8 +769,9 @@ public final class LanguageServiceGrpc {
      * </pre>
      */
     public com.google.cloud.language.v1.AnalyzeEntitySentimentResponse analyzeEntitySentiment(
-        com.google.cloud.language.v1.AnalyzeEntitySentimentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.language.v1.AnalyzeEntitySentimentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAnalyzeEntitySentimentMethod(), getCallOptions(), request);
     }
 
@@ -785,8 +785,8 @@ public final class LanguageServiceGrpc {
      * </pre>
      */
     public com.google.cloud.language.v1.AnalyzeSyntaxResponse analyzeSyntax(
-        com.google.cloud.language.v1.AnalyzeSyntaxRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.language.v1.AnalyzeSyntaxRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAnalyzeSyntaxMethod(), getCallOptions(), request);
     }
 
@@ -798,8 +798,8 @@ public final class LanguageServiceGrpc {
      * </pre>
      */
     public com.google.cloud.language.v1.ClassifyTextResponse classifyText(
-        com.google.cloud.language.v1.ClassifyTextRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.language.v1.ClassifyTextRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getClassifyTextMethod(), getCallOptions(), request);
     }
 
@@ -811,8 +811,8 @@ public final class LanguageServiceGrpc {
      * </pre>
      */
     public com.google.cloud.language.v1.ModerateTextResponse moderateText(
-        com.google.cloud.language.v1.ModerateTextRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.language.v1.ModerateTextRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getModerateTextMethod(), getCallOptions(), request);
     }
 
@@ -825,8 +825,8 @@ public final class LanguageServiceGrpc {
      * </pre>
      */
     public com.google.cloud.language.v1.AnnotateTextResponse annotateText(
-        com.google.cloud.language.v1.AnnotateTextRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.language.v1.AnnotateTextRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAnnotateTextMethod(), getCallOptions(), request);
     }
   }

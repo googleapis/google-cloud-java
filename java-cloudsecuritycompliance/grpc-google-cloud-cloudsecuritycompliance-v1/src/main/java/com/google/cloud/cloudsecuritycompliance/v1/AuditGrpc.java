@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service describing handlers for resources
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/cloudsecuritycompliance/v1/audit.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AuditGrpc {
 
@@ -491,8 +488,9 @@ public final class AuditGrpc {
     public com.google.cloud.cloudsecuritycompliance.v1.GenerateFrameworkAuditScopeReportResponse
         generateFrameworkAuditScopeReport(
             com.google.cloud.cloudsecuritycompliance.v1.GenerateFrameworkAuditScopeReportRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateFrameworkAuditScopeReportMethod(), getCallOptions(), request);
     }
 
@@ -504,8 +502,9 @@ public final class AuditGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createFrameworkAudit(
-        com.google.cloud.cloudsecuritycompliance.v1.CreateFrameworkAuditRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudsecuritycompliance.v1.CreateFrameworkAuditRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateFrameworkAuditMethod(), getCallOptions(), request);
     }
 
@@ -518,8 +517,9 @@ public final class AuditGrpc {
      */
     public com.google.cloud.cloudsecuritycompliance.v1.ListFrameworkAuditsResponse
         listFrameworkAudits(
-            com.google.cloud.cloudsecuritycompliance.v1.ListFrameworkAuditsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.cloudsecuritycompliance.v1.ListFrameworkAuditsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListFrameworkAuditsMethod(), getCallOptions(), request);
     }
 
@@ -531,8 +531,9 @@ public final class AuditGrpc {
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.FrameworkAudit getFrameworkAudit(
-        com.google.cloud.cloudsecuritycompliance.v1.GetFrameworkAuditRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudsecuritycompliance.v1.GetFrameworkAuditRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetFrameworkAuditMethod(), getCallOptions(), request);
     }
   }

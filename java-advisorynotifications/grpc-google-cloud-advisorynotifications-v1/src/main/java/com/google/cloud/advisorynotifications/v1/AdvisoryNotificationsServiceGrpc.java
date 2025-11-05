@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to manage Security and Privacy Notifications.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/advisorynotifications/v1/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AdvisoryNotificationsServiceGrpc {
 
@@ -495,8 +492,9 @@ public final class AdvisoryNotificationsServiceGrpc {
      * </pre>
      */
     public com.google.cloud.advisorynotifications.v1.ListNotificationsResponse listNotifications(
-        com.google.cloud.advisorynotifications.v1.ListNotificationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.advisorynotifications.v1.ListNotificationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListNotificationsMethod(), getCallOptions(), request);
     }
 
@@ -508,8 +506,9 @@ public final class AdvisoryNotificationsServiceGrpc {
      * </pre>
      */
     public com.google.cloud.advisorynotifications.v1.Notification getNotification(
-        com.google.cloud.advisorynotifications.v1.GetNotificationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.advisorynotifications.v1.GetNotificationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetNotificationMethod(), getCallOptions(), request);
     }
 
@@ -521,8 +520,9 @@ public final class AdvisoryNotificationsServiceGrpc {
      * </pre>
      */
     public com.google.cloud.advisorynotifications.v1.Settings getSettings(
-        com.google.cloud.advisorynotifications.v1.GetSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.advisorynotifications.v1.GetSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSettingsMethod(), getCallOptions(), request);
     }
 
@@ -534,8 +534,9 @@ public final class AdvisoryNotificationsServiceGrpc {
      * </pre>
      */
     public com.google.cloud.advisorynotifications.v1.Settings updateSettings(
-        com.google.cloud.advisorynotifications.v1.UpdateSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.advisorynotifications.v1.UpdateSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSettingsMethod(), getCallOptions(), request);
     }
   }

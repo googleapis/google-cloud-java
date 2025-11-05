@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service describing handlers for resources
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/cloudsecuritycompliance/v1/monitoring.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class MonitoringGrpc {
 
@@ -614,8 +611,9 @@ public final class MonitoringGrpc {
     public com.google.cloud.cloudsecuritycompliance.v1.ListFrameworkComplianceSummariesResponse
         listFrameworkComplianceSummaries(
             com.google.cloud.cloudsecuritycompliance.v1.ListFrameworkComplianceSummariesRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListFrameworkComplianceSummariesMethod(), getCallOptions(), request);
     }
 
@@ -628,8 +626,9 @@ public final class MonitoringGrpc {
      */
     public com.google.cloud.cloudsecuritycompliance.v1.ListFindingSummariesResponse
         listFindingSummaries(
-            com.google.cloud.cloudsecuritycompliance.v1.ListFindingSummariesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.cloudsecuritycompliance.v1.ListFindingSummariesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListFindingSummariesMethod(), getCallOptions(), request);
     }
 
@@ -643,8 +642,9 @@ public final class MonitoringGrpc {
     public com.google.cloud.cloudsecuritycompliance.v1.FrameworkComplianceReport
         fetchFrameworkComplianceReport(
             com.google.cloud.cloudsecuritycompliance.v1.FetchFrameworkComplianceReportRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchFrameworkComplianceReportMethod(), getCallOptions(), request);
     }
 
@@ -658,8 +658,9 @@ public final class MonitoringGrpc {
     public com.google.cloud.cloudsecuritycompliance.v1.ListControlComplianceSummariesResponse
         listControlComplianceSummaries(
             com.google.cloud.cloudsecuritycompliance.v1.ListControlComplianceSummariesRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListControlComplianceSummariesMethod(), getCallOptions(), request);
     }
 
@@ -673,8 +674,9 @@ public final class MonitoringGrpc {
     public com.google.cloud.cloudsecuritycompliance.v1.AggregateFrameworkComplianceReportResponse
         aggregateFrameworkComplianceReport(
             com.google.cloud.cloudsecuritycompliance.v1.AggregateFrameworkComplianceReportRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAggregateFrameworkComplianceReportMethod(), getCallOptions(), request);
     }
   }

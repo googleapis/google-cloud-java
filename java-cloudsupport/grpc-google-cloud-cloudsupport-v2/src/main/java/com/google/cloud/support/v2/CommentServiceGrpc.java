@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service to manage comments on cases.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/support/v2/comment_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CommentServiceGrpc {
 
@@ -314,8 +311,8 @@ public final class CommentServiceGrpc {
      * </pre>
      */
     public com.google.cloud.support.v2.ListCommentsResponse listComments(
-        com.google.cloud.support.v2.ListCommentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.support.v2.ListCommentsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCommentsMethod(), getCallOptions(), request);
     }
 
@@ -328,8 +325,8 @@ public final class CommentServiceGrpc {
      * </pre>
      */
     public com.google.cloud.support.v2.Comment createComment(
-        com.google.cloud.support.v2.CreateCommentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.support.v2.CreateCommentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCommentMethod(), getCallOptions(), request);
     }
   }

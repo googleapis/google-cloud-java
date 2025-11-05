@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service handles client event report.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/talent/v4/event_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class EventServiceGrpc {
 
@@ -255,8 +252,9 @@ public final class EventServiceGrpc {
      * </pre>
      */
     public com.google.cloud.talent.v4.ClientEvent createClientEvent(
-        com.google.cloud.talent.v4.CreateClientEventRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.talent.v4.CreateClientEventRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateClientEventMethod(), getCallOptions(), request);
     }
   }
