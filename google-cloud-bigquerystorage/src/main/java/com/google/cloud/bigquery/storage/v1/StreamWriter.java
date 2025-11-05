@@ -316,8 +316,8 @@ public class StreamWriter implements AutoCloseable {
                       String fetchedLocation = writeStream.getLocation();
                       log.info(
                           String.format(
-                              "Fetched location %s for stream name %s, extracted project and dataset"
-                                  + " name: %s\"",
+                              "Fetched location %s for stream name %s, extracted project and"
+                                  + " dataset name: %s\"",
                               fetchedLocation, streamName, datasetAndProjectName));
                       return fetchedLocation;
                     }
