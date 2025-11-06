@@ -21,6 +21,7 @@ import static org.mockito.Mockito.*;
 
 import com.google.api.gax.grpc.ChannelFactory;
 import com.google.common.collect.Iterables;
+import io.grpc.Attributes;
 import io.grpc.CallOptions;
 import io.grpc.ClientCall;
 import io.grpc.ManagedChannel;
@@ -112,6 +113,8 @@ public class BigtableChannelPoolTest {
     // Capture the listener when start is called
     // Configure mockClientCall.start to capture the listener
     doNothing().when(mockClientCall).start(listenerCaptor.capture(), any(Metadata.class));
+    // Default to no ALTS context
+    when(mockClientCall.getAttributes()).thenReturn(Attributes.EMPTY);
   }
 
   private BigtableChannelPool.Entry getSingleEntry() {
@@ -232,5 +235,17 @@ public class BigtableChannelPoolTest {
     assertThat(entry.getAndResetSuccessCount()).isEqualTo(0);
     assertThat(entry.getAndResetErrorCount()).isEqualTo(1); // The last failure
     assertThat(entry.totalOutstandingRpcs()).isEqualTo(0);
+  }
+
+  @Test
+  public void testNonAltsChannelReturnsFalse() {
+    // empty attributes
+    // cannot test true value as logic is complicated.
+    // alts check looks at  attributes.get(AltsProtocolNegotiator.AUTH_CONTEXT_KEY);
+    when(mockClientCall.getAttributes()).thenReturn(Attributes.EMPTY);
+    BigtableChannelPool.Entry entry = getSingleEntry();
+    assertThat(entry.isAltsHolder.get()).isNull();
+    startCall(unaryMethodDescriptor);
+    assertThat(entry.isAltsChannel()).isFalse();
   }
 }

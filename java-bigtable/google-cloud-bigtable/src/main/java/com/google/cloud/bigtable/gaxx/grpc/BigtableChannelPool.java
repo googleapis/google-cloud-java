@@ -30,6 +30,7 @@ import io.grpc.ManagedChannel;
 import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
 import io.grpc.Status;
+import io.grpc.alts.AltsContextUtil;
 import java.io.IOException;
 import java.time.Clock;
 import java.util.ArrayList;
@@ -565,9 +566,8 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
     }
 
     void checkAndSetIsAlts(ClientCall<?, ?> call) {
-      // TODO(populate ALTS holder)
-      boolean result = false;
-      isAltsHolder.compareAndSet(null, result);
+      boolean currentIsAlts = AltsContextUtil.check(call);
+      isAltsHolder.set(currentIsAlts);
     }
 
     ManagedChannel getManagedChannel() {
