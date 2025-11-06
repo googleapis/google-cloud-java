@@ -68,8 +68,7 @@ public final class CreateSchemaBundleRequest {
   }
 
   /** Sets the proto schema for this schema bundle. */
-  public CreateSchemaBundleRequest setProtoSchema(@Nonnull ByteString protoSchema)
-      throws IOException {
+  public CreateSchemaBundleRequest setProtoSchema(@Nonnull ByteString protoSchema) {
     Preconditions.checkNotNull(protoSchema, "protoSchema must be set");
     requestBuilder.setSchemaBundle(
         com.google.bigtable.admin.v2.SchemaBundle.newBuilder()

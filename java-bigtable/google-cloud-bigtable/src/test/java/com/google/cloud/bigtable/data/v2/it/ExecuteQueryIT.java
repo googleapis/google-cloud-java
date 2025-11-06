@@ -20,6 +20,7 @@ import static com.google.common.truth.TruthJUnit.assume;
 import static org.junit.Assert.assertThrows;
 
 import com.google.cloud.Date;
+import com.google.cloud.bigtable.admin.v2.models.CreateSchemaBundleRequest;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.TableId;
@@ -28,10 +29,14 @@ import com.google.cloud.bigtable.data.v2.models.sql.PreparedStatement;
 import com.google.cloud.bigtable.data.v2.models.sql.ResultSet;
 import com.google.cloud.bigtable.data.v2.models.sql.SqlType;
 import com.google.cloud.bigtable.data.v2.models.sql.Struct;
+import com.google.cloud.bigtable.data.v2.test.AlbumProto.Album;
+import com.google.cloud.bigtable.data.v2.test.SingerProto.Genre;
+import com.google.cloud.bigtable.data.v2.test.SingerProto.Singer;
 import com.google.cloud.bigtable.test_helpers.env.AbstractTestEnv;
 import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.DescriptorProtos.FileDescriptorSet;
 import java.io.IOException;
 import java.time.Instant;
 import java.util.Arrays;
@@ -47,6 +52,8 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class ExecuteQueryIT {
+
+  public static String SCHEMA_BUNDLE_ID = "my_bundle";
 
   @ClassRule public static TestEnvRule testEnvRule = new TestEnvRule();
   private static BigtableDataClient dataClient;
@@ -155,6 +162,8 @@ public class ExecuteQueryIT {
   @SuppressWarnings("DoubleBraceInitialization")
   @Test
   public void allTypes() {
+    createTestSchemaBundle();
+    Album album = Album.newBuilder().setTitle("Lover").build();
     PreparedStatement preparedStatement =
         dataClient.prepareStatement(
             "SELECT 'stringVal' AS strCol, b'foo' as bytesCol, 1 AS intCol, CAST(1.2 AS FLOAT32) as"
@@ -162,7 +171,12 @@ public class ExecuteQueryIT {
                 + " TIMESTAMP_FROM_UNIX_MILLIS(1000) AS tsCol, DATE(2024, 06, 01) as dateCol,"
                 + " STRUCT(1 as a, \"foo\" as b) AS structCol, [1,2,3] AS arrCol, "
                 + cf
-                + " as mapCol FROM `"
+                + " as mapCol, "
+                + " CAST(b'\022\005Lover' AS "
+                + SCHEMA_BUNDLE_ID
+                + ".com.google.cloud.bigtable.data.v2.test.Album) as protoCol, CAST('JAZZ' AS "
+                + SCHEMA_BUNDLE_ID
+                + ".com.google.cloud.bigtable.data.v2.test.Genre) as enumCol FROM `"
                 + tableId
                 + "` WHERE _key='"
                 + uniquePrefix
@@ -213,9 +227,13 @@ public class ExecuteQueryIT {
                   put(ByteString.copyFromUtf8("qual3"), ByteString.copyFromUtf8("val3"));
                 }
               });
-
+      assertThat(rs.getProtoMessage("protoCol", Album.getDefaultInstance())).isEqualTo(album);
+      assertThat(rs.getProtoMessage(11, Album.getDefaultInstance())).isEqualTo(album);
+      assertThat(rs.getProtoEnum("enumCol", Genre::forNumber)).isEqualTo(Genre.JAZZ);
+      assertThat(rs.getProtoEnum(12, Genre::forNumber)).isEqualTo(Genre.JAZZ);
       assertThat(rs.next()).isFalse();
     }
+    deleteTestSchemaBundle();
   }
 
   @Test
@@ -379,5 +397,21 @@ public class ExecuteQueryIT {
       assertThrows(NullPointerException.class, () -> rs.getBytes(1));
       assertThat(rs.next()).isFalse();
     }
+  }
+
+  private static void deleteTestSchemaBundle() {
+    testEnvRule.env().getTableAdminClient().deleteSchemaBundle(tableId, SCHEMA_BUNDLE_ID);
+  }
+
+  private static void createTestSchemaBundle() {
+    FileDescriptorSet fileDescriptorSet =
+        FileDescriptorSet.newBuilder()
+            .addFile(Singer.getDescriptor().getFile().toProto())
+            .addFile(Album.getDescriptor().getFile().toProto())
+            .build();
+    CreateSchemaBundleRequest request =
+        CreateSchemaBundleRequest.of(tableId, SCHEMA_BUNDLE_ID)
+            .setProtoSchema(fileDescriptorSet.toByteString());
+    testEnvRule.env().getTableAdminClient().createSchemaBundle(request);
   }
 }

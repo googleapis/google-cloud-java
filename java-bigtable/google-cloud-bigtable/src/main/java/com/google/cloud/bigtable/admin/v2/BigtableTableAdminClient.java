@@ -2091,8 +2091,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
-   * Deletes an schema bundle with the specified schema bundle ID in the specified table. Note that
-   * the deletion is prohibited if the schema bundle has deletion_protection field set to true.
+   * Deletes an schema bundle with the specified schema bundle ID in the specified table.
    *
    * <p>Sample code:
    *
@@ -2106,8 +2105,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
 
   /**
    * Asynchronously deletes an schema bundle with the specified schema bundle ID in the specified
-   * table. Note that the deletion is prohibited if the schema bundle has deletion_protection field
-   * set to true.
+   * table.
    *
    * <p>Sample code:
    *
