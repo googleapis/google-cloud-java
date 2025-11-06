@@ -2774,6 +2774,26 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
         : excludeFields_;
   }
 
+  public static final int CATALOG_PUBLISHING_ENABLED_FIELD_NUMBER = 8;
+  private boolean catalogPublishingEnabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, the latest DataScan job result will be published as
+   * Dataplex Universal Catalog metadata.
+   * </pre>
+   *
+   * <code>bool catalog_publishing_enabled = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The catalogPublishingEnabled.
+   */
+  @java.lang.Override
+  public boolean getCatalogPublishingEnabled() {
+    return catalogPublishingEnabled_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2803,6 +2823,9 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(6, getExcludeFields());
     }
+    if (catalogPublishingEnabled_ != false) {
+      output.writeBool(8, catalogPublishingEnabled_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2826,6 +2849,9 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getExcludeFields());
+    }
+    if (catalogPublishingEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, catalogPublishingEnabled_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2858,6 +2884,7 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
     if (hasExcludeFields()) {
       if (!getExcludeFields().equals(other.getExcludeFields())) return false;
     }
+    if (getCatalogPublishingEnabled() != other.getCatalogPublishingEnabled()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2885,6 +2912,8 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + EXCLUDE_FIELDS_FIELD_NUMBER;
       hash = (53 * hash) + getExcludeFields().hashCode();
     }
+    hash = (37 * hash) + CATALOG_PUBLISHING_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCatalogPublishingEnabled());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -3053,6 +3082,7 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
         excludeFieldsBuilder_.dispose();
         excludeFieldsBuilder_ = null;
       }
+      catalogPublishingEnabled_ = false;
       return this;
     }
 
@@ -3110,6 +3140,9 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
         result.excludeFields_ =
             excludeFieldsBuilder_ == null ? excludeFields_ : excludeFieldsBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.catalogPublishingEnabled_ = catalogPublishingEnabled_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3176,6 +3209,9 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
       if (other.hasExcludeFields()) {
         mergeExcludeFields(other.getExcludeFields());
       }
+      if (other.getCatalogPublishingEnabled() != false) {
+        setCatalogPublishingEnabled(other.getCatalogPublishingEnabled());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -3232,6 +3268,12 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000010;
                 break;
               } // case 50
+            case 64:
+              {
+                catalogPublishingEnabled_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 64
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4160,6 +4202,65 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
         excludeFields_ = null;
       }
       return excludeFieldsBuilder_;
+    }
+
+    private boolean catalogPublishingEnabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the latest DataScan job result will be published as
+     * Dataplex Universal Catalog metadata.
+     * </pre>
+     *
+     * <code>bool catalog_publishing_enabled = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The catalogPublishingEnabled.
+     */
+    @java.lang.Override
+    public boolean getCatalogPublishingEnabled() {
+      return catalogPublishingEnabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the latest DataScan job result will be published as
+     * Dataplex Universal Catalog metadata.
+     * </pre>
+     *
+     * <code>bool catalog_publishing_enabled = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The catalogPublishingEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCatalogPublishingEnabled(boolean value) {
+
+      catalogPublishingEnabled_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the latest DataScan job result will be published as
+     * Dataplex Universal Catalog metadata.
+     * </pre>
+     *
+     * <code>bool catalog_publishing_enabled = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCatalogPublishingEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      catalogPublishingEnabled_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

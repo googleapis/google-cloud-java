@@ -222,4 +222,18 @@ public interface DataProfileSpecOrBuilder
    * </code>
    */
   com.google.cloud.dataplex.v1.DataProfileSpec.SelectedFieldsOrBuilder getExcludeFieldsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, the latest DataScan job result will be published as
+   * Dataplex Universal Catalog metadata.
+   * </pre>
+   *
+   * <code>bool catalog_publishing_enabled = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The catalogPublishingEnabled.
+   */
+  boolean getCatalogPublishingEnabled();
 }
