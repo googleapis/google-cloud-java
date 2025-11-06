@@ -16,7 +16,6 @@
   </parent>
   <properties>
     <site.installationModule>google-cloud-datastore</site.installationModule>
-    <opentelemetry.version>1.42.1</opentelemetry.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -140,12 +139,10 @@
     <dependency>
       <groupId>io.opentelemetry</groupId>
       <artifactId>opentelemetry-api</artifactId>
-      <version>${opentelemetry.version}</version>
     </dependency>
     <dependency>
       <groupId>io.opentelemetry</groupId>
       <artifactId>opentelemetry-context</artifactId>
-      <version>${opentelemetry.version}</version>
     </dependency>
     <dependency>
       <groupId>io.opentelemetry.instrumentation</groupId>
@@ -211,25 +208,21 @@
     <dependency>
       <groupId>io.opentelemetry</groupId>
       <artifactId>opentelemetry-sdk</artifactId>
-      <version>${opentelemetry.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>io.opentelemetry</groupId>
       <artifactId>opentelemetry-sdk-common</artifactId>
-      <version>${opentelemetry.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>io.opentelemetry</groupId>
       <artifactId>opentelemetry-sdk-testing</artifactId>
-      <version>${opentelemetry.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>io.opentelemetry</groupId>
       <artifactId>opentelemetry-sdk-trace</artifactId>
-      <version>${opentelemetry.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
