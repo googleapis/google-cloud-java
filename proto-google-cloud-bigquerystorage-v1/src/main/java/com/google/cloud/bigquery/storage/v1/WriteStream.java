@@ -724,12 +724,12 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The geographic location where the stream's dataset resides. See
-   * https://cloud.google.com/bigquery/docs/locations for supported
+   * Output only. The geographic location where the stream's dataset resides.
+   * See https://cloud.google.com/bigquery/docs/locations for supported
    * locations.
    * </pre>
    *
-   * <code>string location = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>string location = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The location.
    */
@@ -750,12 +750,12 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The geographic location where the stream's dataset resides. See
-   * https://cloud.google.com/bigquery/docs/locations for supported
+   * Output only. The geographic location where the stream's dataset resides.
+   * See https://cloud.google.com/bigquery/docs/locations for supported
    * locations.
    * </pre>
    *
-   * <code>string location = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>string location = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for location.
    */
@@ -2336,12 +2336,12 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The geographic location where the stream's dataset resides. See
-     * https://cloud.google.com/bigquery/docs/locations for supported
+     * Output only. The geographic location where the stream's dataset resides.
+     * See https://cloud.google.com/bigquery/docs/locations for supported
      * locations.
      * </pre>
      *
-     * <code>string location = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>string location = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The location.
      */
@@ -2361,12 +2361,12 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The geographic location where the stream's dataset resides. See
-     * https://cloud.google.com/bigquery/docs/locations for supported
+     * Output only. The geographic location where the stream's dataset resides.
+     * See https://cloud.google.com/bigquery/docs/locations for supported
      * locations.
      * </pre>
      *
-     * <code>string location = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>string location = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for location.
      */
@@ -2386,12 +2386,12 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The geographic location where the stream's dataset resides. See
-     * https://cloud.google.com/bigquery/docs/locations for supported
+     * Output only. The geographic location where the stream's dataset resides.
+     * See https://cloud.google.com/bigquery/docs/locations for supported
      * locations.
      * </pre>
      *
-     * <code>string location = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>string location = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The location to set.
      * @return This builder for chaining.
@@ -2410,12 +2410,12 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The geographic location where the stream's dataset resides. See
-     * https://cloud.google.com/bigquery/docs/locations for supported
+     * Output only. The geographic location where the stream's dataset resides.
+     * See https://cloud.google.com/bigquery/docs/locations for supported
      * locations.
      * </pre>
      *
-     * <code>string location = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>string location = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -2430,12 +2430,12 @@ public final class WriteStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The geographic location where the stream's dataset resides. See
-     * https://cloud.google.com/bigquery/docs/locations for supported
+     * Output only. The geographic location where the stream's dataset resides.
+     * See https://cloud.google.com/bigquery/docs/locations for supported
      * locations.
      * </pre>
      *
-     * <code>string location = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>string location = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for location to set.
      * @return This builder for chaining.

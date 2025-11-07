@@ -260,12 +260,12 @@ public interface WriteStreamOrBuilder
    *
    *
    * <pre>
-   * Immutable. The geographic location where the stream's dataset resides. See
-   * https://cloud.google.com/bigquery/docs/locations for supported
+   * Output only. The geographic location where the stream's dataset resides.
+   * See https://cloud.google.com/bigquery/docs/locations for supported
    * locations.
    * </pre>
    *
-   * <code>string location = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>string location = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The location.
    */
@@ -275,12 +275,12 @@ public interface WriteStreamOrBuilder
    *
    *
    * <pre>
-   * Immutable. The geographic location where the stream's dataset resides. See
-   * https://cloud.google.com/bigquery/docs/locations for supported
+   * Output only. The geographic location where the stream's dataset resides.
+   * See https://cloud.google.com/bigquery/docs/locations for supported
    * locations.
    * </pre>
    *
-   * <code>string location = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>string location = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for location.
    */

@@ -53,13 +53,21 @@ public final class AvroProto {
           + "proto\022 google.cloud.bigquery.storage.v1\""
           + "\034\n\nAvroSchema\022\016\n\006schema\030\001 \001(\t\"A\n\010AvroRow"
           + "s\022\036\n\026serialized_binary_rows\030\001 \001(\014\022\025\n\trow"
-          + "_count\030\002 \001(\003B\002\030\001\"A\n\030AvroSerializationOpt"
-          + "ions\022%\n\035enable_display_name_attribute\030\001 "
-          + "\001(\010B\271\001\n$com.google.cloud.bigquery.storag"
-          + "e.v1B\tAvroProtoP\001Z>cloud.google.com/go/b"
-          + "igquery/storage/apiv1/storagepb;storagep"
-          + "b\252\002 Google.Cloud.BigQuery.Storage.V1\312\002 G"
-          + "oogle\\Cloud\\BigQuery\\Storage\\V1b\006proto3"
+          + "_count\030\002 \001(\003B\002\030\001\"\335\002\n\030AvroSerializationOp"
+          + "tions\022%\n\035enable_display_name_attribute\030\001"
+          + " \001(\010\022u\n\031picos_timestamp_precision\030\002 \001(\0162"
+          + "R.google.cloud.bigquery.storage.v1.AvroS"
+          + "erializationOptions.PicosTimestampPrecis"
+          + "ion\"\242\001\n\027PicosTimestampPrecision\022)\n%PICOS"
+          + "_TIMESTAMP_PRECISION_UNSPECIFIED\020\000\022\036\n\032TI"
+          + "MESTAMP_PRECISION_MICROS\020\001\022\035\n\031TIMESTAMP_"
+          + "PRECISION_NANOS\020\002\022\035\n\031TIMESTAMP_PRECISION"
+          + "_PICOS\020\003B\271\001\n$com.google.cloud.bigquery.s"
+          + "torage.v1B\tAvroProtoP\001Z>cloud.google.com"
+          + "/go/bigquery/storage/apiv1/storagepb;sto"
+          + "ragepb\252\002 Google.Cloud.BigQuery.Storage.V"
+          + "1\312\002 Google\\Cloud\\BigQuery\\Storage\\V1b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -86,7 +94,7 @@ public final class AvroProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_storage_v1_AvroSerializationOptions_descriptor,
             new java.lang.String[] {
-              "EnableDisplayNameAttribute",
+              "EnableDisplayNameAttribute", "PicosTimestampPrecision",
             });
   }
 

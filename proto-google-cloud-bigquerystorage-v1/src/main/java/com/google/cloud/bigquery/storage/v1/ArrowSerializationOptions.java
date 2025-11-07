@@ -41,6 +41,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
 
   private ArrowSerializationOptions() {
     bufferCompression_ = 0;
+    picosTimestampPrecision_ = 0;
   }
 
   @java.lang.Override
@@ -228,6 +229,205 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
     // @@protoc_insertion_point(enum_scope:google.cloud.bigquery.storage.v1.ArrowSerializationOptions.CompressionCodec)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * The precision of the timestamp value in the Avro message. This precision
+   * will **only** be applied to the column(s) with the `TIMESTAMP_PICOS` type.
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.cloud.bigquery.storage.v1.ArrowSerializationOptions.PicosTimestampPrecision}
+   */
+  public enum PicosTimestampPrecision implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified timestamp precision. The default precision is microseconds.
+     * </pre>
+     *
+     * <code>PICOS_TIMESTAMP_PRECISION_UNSPECIFIED = 0;</code>
+     */
+    PICOS_TIMESTAMP_PRECISION_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp values returned by Read API will be truncated to microsecond
+     * level precision. The value will be encoded as Arrow TIMESTAMP type in a
+     * 64 bit integer.
+     * </pre>
+     *
+     * <code>TIMESTAMP_PRECISION_MICROS = 1;</code>
+     */
+    TIMESTAMP_PRECISION_MICROS(1),
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp values returned by Read API will be truncated to nanosecond
+     * level precision. The value will be encoded as Arrow TIMESTAMP type in a
+     * 64 bit integer.
+     * </pre>
+     *
+     * <code>TIMESTAMP_PRECISION_NANOS = 2;</code>
+     */
+    TIMESTAMP_PRECISION_NANOS(2),
+    /**
+     *
+     *
+     * <pre>
+     * Read API will return full precision picosecond value. The value will be
+     * encoded as a string which conforms to ISO 8601 format.
+     * </pre>
+     *
+     * <code>TIMESTAMP_PRECISION_PICOS = 3;</code>
+     */
+    TIMESTAMP_PRECISION_PICOS(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified timestamp precision. The default precision is microseconds.
+     * </pre>
+     *
+     * <code>PICOS_TIMESTAMP_PRECISION_UNSPECIFIED = 0;</code>
+     */
+    public static final int PICOS_TIMESTAMP_PRECISION_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp values returned by Read API will be truncated to microsecond
+     * level precision. The value will be encoded as Arrow TIMESTAMP type in a
+     * 64 bit integer.
+     * </pre>
+     *
+     * <code>TIMESTAMP_PRECISION_MICROS = 1;</code>
+     */
+    public static final int TIMESTAMP_PRECISION_MICROS_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp values returned by Read API will be truncated to nanosecond
+     * level precision. The value will be encoded as Arrow TIMESTAMP type in a
+     * 64 bit integer.
+     * </pre>
+     *
+     * <code>TIMESTAMP_PRECISION_NANOS = 2;</code>
+     */
+    public static final int TIMESTAMP_PRECISION_NANOS_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Read API will return full precision picosecond value. The value will be
+     * encoded as a string which conforms to ISO 8601 format.
+     * </pre>
+     *
+     * <code>TIMESTAMP_PRECISION_PICOS = 3;</code>
+     */
+    public static final int TIMESTAMP_PRECISION_PICOS_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static PicosTimestampPrecision valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static PicosTimestampPrecision forNumber(int value) {
+      switch (value) {
+        case 0:
+          return PICOS_TIMESTAMP_PRECISION_UNSPECIFIED;
+        case 1:
+          return TIMESTAMP_PRECISION_MICROS;
+        case 2:
+          return TIMESTAMP_PRECISION_NANOS;
+        case 3:
+          return TIMESTAMP_PRECISION_PICOS;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<PicosTimestampPrecision>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<PicosTimestampPrecision>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<PicosTimestampPrecision>() {
+              public PicosTimestampPrecision findValueByNumber(int number) {
+                return PicosTimestampPrecision.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.getDescriptor()
+          .getEnumTypes()
+          .get(1);
+    }
+
+    private static final PicosTimestampPrecision[] VALUES = values();
+
+    public static PicosTimestampPrecision valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private PicosTimestampPrecision(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.bigquery.storage.v1.ArrowSerializationOptions.PicosTimestampPrecision)
+  }
+
   public static final int BUFFER_COMPRESSION_FIELD_NUMBER = 2;
   private int bufferCompression_ = 0;
 
@@ -276,6 +476,54 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
         : result;
   }
 
+  public static final int PICOS_TIMESTAMP_PRECISION_FIELD_NUMBER = 3;
+  private int picosTimestampPrecision_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Set timestamp precision option. If not set, the default precision
+   * is microseconds.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions.PicosTimestampPrecision picos_timestamp_precision = 3;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for picosTimestampPrecision.
+   */
+  @java.lang.Override
+  public int getPicosTimestampPrecisionValue() {
+    return picosTimestampPrecision_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Set timestamp precision option. If not set, the default precision
+   * is microseconds.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions.PicosTimestampPrecision picos_timestamp_precision = 3;
+   * </code>
+   *
+   * @return The picosTimestampPrecision.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.PicosTimestampPrecision
+      getPicosTimestampPrecision() {
+    com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.PicosTimestampPrecision result =
+        com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.PicosTimestampPrecision
+            .forNumber(picosTimestampPrecision_);
+    return result == null
+        ? com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.PicosTimestampPrecision
+            .UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -296,6 +544,12 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
             .getNumber()) {
       output.writeEnum(2, bufferCompression_);
     }
+    if (picosTimestampPrecision_
+        != com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.PicosTimestampPrecision
+            .PICOS_TIMESTAMP_PRECISION_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(3, picosTimestampPrecision_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -310,6 +564,12 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
             .COMPRESSION_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, bufferCompression_);
+    }
+    if (picosTimestampPrecision_
+        != com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.PicosTimestampPrecision
+            .PICOS_TIMESTAMP_PRECISION_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, picosTimestampPrecision_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -328,6 +588,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
         (com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions) obj;
 
     if (bufferCompression_ != other.bufferCompression_) return false;
+    if (picosTimestampPrecision_ != other.picosTimestampPrecision_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -341,6 +602,8 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + BUFFER_COMPRESSION_FIELD_NUMBER;
     hash = (53 * hash) + bufferCompression_;
+    hash = (37 * hash) + PICOS_TIMESTAMP_PRECISION_FIELD_NUMBER;
+    hash = (53 * hash) + picosTimestampPrecision_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -483,6 +746,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
       super.clear();
       bitField0_ = 0;
       bufferCompression_ = 0;
+      picosTimestampPrecision_ = 0;
       return this;
     }
 
@@ -523,6 +787,9 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.bufferCompression_ = bufferCompression_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.picosTimestampPrecision_ = picosTimestampPrecision_;
       }
     }
 
@@ -576,6 +843,9 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
       if (other.bufferCompression_ != 0) {
         setBufferCompressionValue(other.getBufferCompressionValue());
       }
+      if (other.picosTimestampPrecision_ != 0) {
+        setPicosTimestampPrecisionValue(other.getPicosTimestampPrecisionValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -608,6 +878,12 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
                 bitField0_ |= 0x00000001;
                 break;
               } // case 16
+            case 24:
+              {
+                picosTimestampPrecision_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -739,6 +1015,124 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
     public Builder clearBufferCompression() {
       bitField0_ = (bitField0_ & ~0x00000001);
       bufferCompression_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int picosTimestampPrecision_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set timestamp precision option. If not set, the default precision
+     * is microseconds.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions.PicosTimestampPrecision picos_timestamp_precision = 3;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for picosTimestampPrecision.
+     */
+    @java.lang.Override
+    public int getPicosTimestampPrecisionValue() {
+      return picosTimestampPrecision_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set timestamp precision option. If not set, the default precision
+     * is microseconds.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions.PicosTimestampPrecision picos_timestamp_precision = 3;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for picosTimestampPrecision to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPicosTimestampPrecisionValue(int value) {
+      picosTimestampPrecision_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set timestamp precision option. If not set, the default precision
+     * is microseconds.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions.PicosTimestampPrecision picos_timestamp_precision = 3;
+     * </code>
+     *
+     * @return The picosTimestampPrecision.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.PicosTimestampPrecision
+        getPicosTimestampPrecision() {
+      com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.PicosTimestampPrecision
+          result =
+              com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.PicosTimestampPrecision
+                  .forNumber(picosTimestampPrecision_);
+      return result == null
+          ? com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.PicosTimestampPrecision
+              .UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set timestamp precision option. If not set, the default precision
+     * is microseconds.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions.PicosTimestampPrecision picos_timestamp_precision = 3;
+     * </code>
+     *
+     * @param value The picosTimestampPrecision to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPicosTimestampPrecision(
+        com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.PicosTimestampPrecision
+            value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000002;
+      picosTimestampPrecision_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set timestamp precision option. If not set, the default precision
+     * is microseconds.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions.PicosTimestampPrecision picos_timestamp_precision = 3;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPicosTimestampPrecision() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      picosTimestampPrecision_ = 0;
       onChanged();
       return this;
     }

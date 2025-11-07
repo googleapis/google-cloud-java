@@ -121,7 +121,7 @@ public final class StreamProto {
           + "e.cloud.bigquery.storage.v1.TableSchemaB\003\340A\003\022P\n\n"
           + "write_mode\030\007 \001(\01627.google.cloud."
           + "bigquery.storage.v1.WriteStream.WriteModeB\003\340A\005\022\025\n"
-          + "\010location\030\010 \001(\tB\003\340A\005\"F\n"
+          + "\010location\030\010 \001(\tB\003\340A\003\"F\n"
           + "\004Type\022\024\n"
           + "\020TYPE_UNSPECIFIED\020\000\022\r\n"
           + "\tCOMMITTED\020\001\022\013\n"

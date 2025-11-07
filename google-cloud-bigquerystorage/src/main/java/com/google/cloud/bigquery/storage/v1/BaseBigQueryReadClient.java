@@ -84,7 +84,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ReadRows</td>
- *      <td><p> Reads rows from the stream in the format prescribed by the ReadSession. Each response contains one or more table rows, up to a maximum of 100 MiB per response; read requests which attempt to read individual rows larger than 100 MiB will fail.
+ *      <td><p> Reads rows from the stream in the format prescribed by the ReadSession. Each response contains one or more table rows, up to a maximum of 128 MB per response; read requests which attempt to read individual rows larger than 128 MB will fail.
  * <p>  Each request also returns a set of stream statistics reflecting the current state of the stream.</td>
  *      <td>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
@@ -414,8 +414,8 @@ public class BaseBigQueryReadClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Reads rows from the stream in the format prescribed by the ReadSession. Each response contains
-   * one or more table rows, up to a maximum of 100 MiB per response; read requests which attempt to
-   * read individual rows larger than 100 MiB will fail.
+   * one or more table rows, up to a maximum of 128 MB per response; read requests which attempt to
+   * read individual rows larger than 128 MB will fail.
    *
    * <p>Each request also returns a set of stream statistics reflecting the current state of the
    * stream.

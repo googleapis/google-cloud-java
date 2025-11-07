@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * The Read API can be used to read data from BigQuery.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/bigquery/storage/v1/storage.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class BigQueryReadGrpc {
 
@@ -276,9 +273,9 @@ public final class BigQueryReadGrpc {
      *
      * <pre>
      * Reads rows from the stream in the format prescribed by the ReadSession.
-     * Each response contains one or more table rows, up to a maximum of 100 MiB
+     * Each response contains one or more table rows, up to a maximum of 128 MB
      * per response; read requests which attempt to read individual rows larger
-     * than 100 MiB will fail.
+     * than 128 MB will fail.
      * Each request also returns a set of stream statistics reflecting the current
      * state of the stream.
      * </pre>
@@ -389,9 +386,9 @@ public final class BigQueryReadGrpc {
      *
      * <pre>
      * Reads rows from the stream in the format prescribed by the ReadSession.
-     * Each response contains one or more table rows, up to a maximum of 100 MiB
+     * Each response contains one or more table rows, up to a maximum of 128 MB
      * per response; read requests which attempt to read individual rows larger
-     * than 100 MiB will fail.
+     * than 128 MB will fail.
      * Each request also returns a set of stream statistics reflecting the current
      * state of the stream.
      * </pre>
@@ -475,8 +472,9 @@ public final class BigQueryReadGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.storage.v1.ReadSession createReadSession(
-        com.google.cloud.bigquery.storage.v1.CreateReadSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.storage.v1.CreateReadSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateReadSessionMethod(), getCallOptions(), request);
     }
 
@@ -485,9 +483,9 @@ public final class BigQueryReadGrpc {
      *
      * <pre>
      * Reads rows from the stream in the format prescribed by the ReadSession.
-     * Each response contains one or more table rows, up to a maximum of 100 MiB
+     * Each response contains one or more table rows, up to a maximum of 128 MB
      * per response; read requests which attempt to read individual rows larger
-     * than 100 MiB will fail.
+     * than 128 MB will fail.
      * Each request also returns a set of stream statistics reflecting the current
      * state of the stream.
      * </pre>
@@ -517,8 +515,9 @@ public final class BigQueryReadGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.storage.v1.SplitReadStreamResponse splitReadStream(
-        com.google.cloud.bigquery.storage.v1.SplitReadStreamRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.storage.v1.SplitReadStreamRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSplitReadStreamMethod(), getCallOptions(), request);
     }
   }
@@ -576,9 +575,9 @@ public final class BigQueryReadGrpc {
      *
      * <pre>
      * Reads rows from the stream in the format prescribed by the ReadSession.
-     * Each response contains one or more table rows, up to a maximum of 100 MiB
+     * Each response contains one or more table rows, up to a maximum of 128 MB
      * per response; read requests which attempt to read individual rows larger
-     * than 100 MiB will fail.
+     * than 128 MB will fail.
      * Each request also returns a set of stream statistics reflecting the current
      * state of the stream.
      * </pre>

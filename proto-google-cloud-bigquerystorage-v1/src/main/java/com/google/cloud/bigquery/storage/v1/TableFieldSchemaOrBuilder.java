@@ -324,6 +324,67 @@ public interface TableFieldSchemaOrBuilder
    *
    *
    * <pre>
+   * Optional. Precision (maximum number of total digits in base 10) for seconds
+   * of TIMESTAMP type.
+   *
+   * Possible values include:
+   *
+   * * 6 (Default, for TIMESTAMP type with microsecond precision)
+   * * 12 (For TIMESTAMP type with picosecond precision)
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Int64Value timestamp_precision = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the timestampPrecision field is set.
+   */
+  boolean hasTimestampPrecision();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Precision (maximum number of total digits in base 10) for seconds
+   * of TIMESTAMP type.
+   *
+   * Possible values include:
+   *
+   * * 6 (Default, for TIMESTAMP type with microsecond precision)
+   * * 12 (For TIMESTAMP type with picosecond precision)
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Int64Value timestamp_precision = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The timestampPrecision.
+   */
+  com.google.protobuf.Int64Value getTimestampPrecision();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Precision (maximum number of total digits in base 10) for seconds
+   * of TIMESTAMP type.
+   *
+   * Possible values include:
+   *
+   * * 6 (Default, for TIMESTAMP type with microsecond precision)
+   * * 12 (For TIMESTAMP type with picosecond precision)
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Int64Value timestamp_precision = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.Int64ValueOrBuilder getTimestampPrecisionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The subtype of the RANGE, if the type of this field is RANGE. If
    * the type is RANGE, this field is required. Possible values for the field
    * element type of a RANGE include:

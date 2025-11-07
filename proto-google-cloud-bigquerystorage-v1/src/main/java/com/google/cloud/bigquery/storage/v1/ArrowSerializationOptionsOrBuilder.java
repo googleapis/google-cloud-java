@@ -56,4 +56,37 @@ public interface ArrowSerializationOptionsOrBuilder
    */
   com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.CompressionCodec
       getBufferCompression();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Set timestamp precision option. If not set, the default precision
+   * is microseconds.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions.PicosTimestampPrecision picos_timestamp_precision = 3;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for picosTimestampPrecision.
+   */
+  int getPicosTimestampPrecisionValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Set timestamp precision option. If not set, the default precision
+   * is microseconds.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions.PicosTimestampPrecision picos_timestamp_precision = 3;
+   * </code>
+   *
+   * @return The picosTimestampPrecision.
+   */
+  com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.PicosTimestampPrecision
+      getPicosTimestampPrecision();
 }

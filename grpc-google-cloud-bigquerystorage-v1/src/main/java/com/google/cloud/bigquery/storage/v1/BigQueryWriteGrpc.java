@@ -27,9 +27,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * https://cloud.google.com/bigquery/docs/write-api
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/bigquery/storage/v1/storage.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class BigQueryWriteGrpc {
 
@@ -734,8 +731,9 @@ public final class BigQueryWriteGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.storage.v1.WriteStream createWriteStream(
-        com.google.cloud.bigquery.storage.v1.CreateWriteStreamRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.storage.v1.CreateWriteStreamRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateWriteStreamMethod(), getCallOptions(), request);
     }
 
@@ -786,8 +784,9 @@ public final class BigQueryWriteGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.storage.v1.WriteStream getWriteStream(
-        com.google.cloud.bigquery.storage.v1.GetWriteStreamRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.storage.v1.GetWriteStreamRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetWriteStreamMethod(), getCallOptions(), request);
     }
 
@@ -800,8 +799,9 @@ public final class BigQueryWriteGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.storage.v1.FinalizeWriteStreamResponse finalizeWriteStream(
-        com.google.cloud.bigquery.storage.v1.FinalizeWriteStreamRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.storage.v1.FinalizeWriteStreamRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFinalizeWriteStreamMethod(), getCallOptions(), request);
     }
 
@@ -818,8 +818,9 @@ public final class BigQueryWriteGrpc {
      */
     public com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsResponse
         batchCommitWriteStreams(
-            com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchCommitWriteStreamsMethod(), getCallOptions(), request);
     }
 
@@ -836,8 +837,9 @@ public final class BigQueryWriteGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.storage.v1.FlushRowsResponse flushRows(
-        com.google.cloud.bigquery.storage.v1.FlushRowsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.storage.v1.FlushRowsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFlushRowsMethod(), getCallOptions(), request);
     }
   }

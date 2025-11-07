@@ -1776,6 +1776,83 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int TIMESTAMP_PRECISION_FIELD_NUMBER = 27;
+  private com.google.protobuf.Int64Value timestampPrecision_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Precision (maximum number of total digits in base 10) for seconds
+   * of TIMESTAMP type.
+   *
+   * Possible values include:
+   *
+   * * 6 (Default, for TIMESTAMP type with microsecond precision)
+   * * 12 (For TIMESTAMP type with picosecond precision)
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Int64Value timestamp_precision = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the timestampPrecision field is set.
+   */
+  @java.lang.Override
+  public boolean hasTimestampPrecision() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Precision (maximum number of total digits in base 10) for seconds
+   * of TIMESTAMP type.
+   *
+   * Possible values include:
+   *
+   * * 6 (Default, for TIMESTAMP type with microsecond precision)
+   * * 12 (For TIMESTAMP type with picosecond precision)
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Int64Value timestamp_precision = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The timestampPrecision.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Int64Value getTimestampPrecision() {
+    return timestampPrecision_ == null
+        ? com.google.protobuf.Int64Value.getDefaultInstance()
+        : timestampPrecision_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Precision (maximum number of total digits in base 10) for seconds
+   * of TIMESTAMP type.
+   *
+   * Possible values include:
+   *
+   * * 6 (Default, for TIMESTAMP type with microsecond precision)
+   * * 12 (For TIMESTAMP type with picosecond precision)
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Int64Value timestamp_precision = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.Int64ValueOrBuilder getTimestampPrecisionOrBuilder() {
+    return timestampPrecision_ == null
+        ? com.google.protobuf.Int64Value.getDefaultInstance()
+        : timestampPrecision_;
+  }
+
   public static final int RANGE_ELEMENT_TYPE_FIELD_NUMBER = 11;
   private com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType rangeElementType_;
 
@@ -1799,7 +1876,7 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRangeElementType() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
@@ -1899,8 +1976,11 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultValueExpression_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, defaultValueExpression_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(11, getRangeElementType());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(27, getTimestampPrecision());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1942,8 +2022,11 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultValueExpression_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, defaultValueExpression_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getRangeElementType());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(27, getTimestampPrecision());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1970,6 +2053,10 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
     if (getPrecision() != other.getPrecision()) return false;
     if (getScale() != other.getScale()) return false;
     if (!getDefaultValueExpression().equals(other.getDefaultValueExpression())) return false;
+    if (hasTimestampPrecision() != other.hasTimestampPrecision()) return false;
+    if (hasTimestampPrecision()) {
+      if (!getTimestampPrecision().equals(other.getTimestampPrecision())) return false;
+    }
     if (hasRangeElementType() != other.hasRangeElementType()) return false;
     if (hasRangeElementType()) {
       if (!getRangeElementType().equals(other.getRangeElementType())) return false;
@@ -2005,6 +2092,10 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getScale());
     hash = (37 * hash) + DEFAULT_VALUE_EXPRESSION_FIELD_NUMBER;
     hash = (53 * hash) + getDefaultValueExpression().hashCode();
+    if (hasTimestampPrecision()) {
+      hash = (37 * hash) + TIMESTAMP_PRECISION_FIELD_NUMBER;
+      hash = (53 * hash) + getTimestampPrecision().hashCode();
+    }
     if (hasRangeElementType()) {
       hash = (37 * hash) + RANGE_ELEMENT_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getRangeElementType().hashCode();
@@ -2152,6 +2243,7 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getFieldsFieldBuilder();
+        getTimestampPrecisionFieldBuilder();
         getRangeElementTypeFieldBuilder();
       }
     }
@@ -2175,6 +2267,11 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
       precision_ = 0L;
       scale_ = 0L;
       defaultValueExpression_ = "";
+      timestampPrecision_ = null;
+      if (timestampPrecisionBuilder_ != null) {
+        timestampPrecisionBuilder_.dispose();
+        timestampPrecisionBuilder_ = null;
+      }
       rangeElementType_ = null;
       if (rangeElementTypeBuilder_ != null) {
         rangeElementTypeBuilder_.dispose();
@@ -2256,9 +2353,16 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.timestampPrecision_ =
+            timestampPrecisionBuilder_ == null
+                ? timestampPrecision_
+                : timestampPrecisionBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.rangeElementType_ =
             rangeElementTypeBuilder_ == null ? rangeElementType_ : rangeElementTypeBuilder_.build();
-        to_bitField0_ |= 0x00000001;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2366,6 +2470,9 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000100;
         onChanged();
       }
+      if (other.hasTimestampPrecision()) {
+        mergeTimestampPrecision(other.getTimestampPrecision());
+      }
       if (other.hasRangeElementType()) {
         mergeRangeElementType(other.getRangeElementType());
       }
@@ -2461,9 +2568,16 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     getRangeElementTypeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 90
+            case 218:
+              {
+                input.readMessage(
+                    getTimestampPrecisionFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 218
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3768,6 +3882,272 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private com.google.protobuf.Int64Value timestampPrecision_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Int64Value,
+            com.google.protobuf.Int64Value.Builder,
+            com.google.protobuf.Int64ValueOrBuilder>
+        timestampPrecisionBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Precision (maximum number of total digits in base 10) for seconds
+     * of TIMESTAMP type.
+     *
+     * Possible values include:
+     *
+     * * 6 (Default, for TIMESTAMP type with microsecond precision)
+     * * 12 (For TIMESTAMP type with picosecond precision)
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Int64Value timestamp_precision = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the timestampPrecision field is set.
+     */
+    public boolean hasTimestampPrecision() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Precision (maximum number of total digits in base 10) for seconds
+     * of TIMESTAMP type.
+     *
+     * Possible values include:
+     *
+     * * 6 (Default, for TIMESTAMP type with microsecond precision)
+     * * 12 (For TIMESTAMP type with picosecond precision)
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Int64Value timestamp_precision = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The timestampPrecision.
+     */
+    public com.google.protobuf.Int64Value getTimestampPrecision() {
+      if (timestampPrecisionBuilder_ == null) {
+        return timestampPrecision_ == null
+            ? com.google.protobuf.Int64Value.getDefaultInstance()
+            : timestampPrecision_;
+      } else {
+        return timestampPrecisionBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Precision (maximum number of total digits in base 10) for seconds
+     * of TIMESTAMP type.
+     *
+     * Possible values include:
+     *
+     * * 6 (Default, for TIMESTAMP type with microsecond precision)
+     * * 12 (For TIMESTAMP type with picosecond precision)
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Int64Value timestamp_precision = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTimestampPrecision(com.google.protobuf.Int64Value value) {
+      if (timestampPrecisionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        timestampPrecision_ = value;
+      } else {
+        timestampPrecisionBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Precision (maximum number of total digits in base 10) for seconds
+     * of TIMESTAMP type.
+     *
+     * Possible values include:
+     *
+     * * 6 (Default, for TIMESTAMP type with microsecond precision)
+     * * 12 (For TIMESTAMP type with picosecond precision)
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Int64Value timestamp_precision = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTimestampPrecision(com.google.protobuf.Int64Value.Builder builderForValue) {
+      if (timestampPrecisionBuilder_ == null) {
+        timestampPrecision_ = builderForValue.build();
+      } else {
+        timestampPrecisionBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Precision (maximum number of total digits in base 10) for seconds
+     * of TIMESTAMP type.
+     *
+     * Possible values include:
+     *
+     * * 6 (Default, for TIMESTAMP type with microsecond precision)
+     * * 12 (For TIMESTAMP type with picosecond precision)
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Int64Value timestamp_precision = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeTimestampPrecision(com.google.protobuf.Int64Value value) {
+      if (timestampPrecisionBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && timestampPrecision_ != null
+            && timestampPrecision_ != com.google.protobuf.Int64Value.getDefaultInstance()) {
+          getTimestampPrecisionBuilder().mergeFrom(value);
+        } else {
+          timestampPrecision_ = value;
+        }
+      } else {
+        timestampPrecisionBuilder_.mergeFrom(value);
+      }
+      if (timestampPrecision_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Precision (maximum number of total digits in base 10) for seconds
+     * of TIMESTAMP type.
+     *
+     * Possible values include:
+     *
+     * * 6 (Default, for TIMESTAMP type with microsecond precision)
+     * * 12 (For TIMESTAMP type with picosecond precision)
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Int64Value timestamp_precision = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearTimestampPrecision() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      timestampPrecision_ = null;
+      if (timestampPrecisionBuilder_ != null) {
+        timestampPrecisionBuilder_.dispose();
+        timestampPrecisionBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Precision (maximum number of total digits in base 10) for seconds
+     * of TIMESTAMP type.
+     *
+     * Possible values include:
+     *
+     * * 6 (Default, for TIMESTAMP type with microsecond precision)
+     * * 12 (For TIMESTAMP type with picosecond precision)
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Int64Value timestamp_precision = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Int64Value.Builder getTimestampPrecisionBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getTimestampPrecisionFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Precision (maximum number of total digits in base 10) for seconds
+     * of TIMESTAMP type.
+     *
+     * Possible values include:
+     *
+     * * 6 (Default, for TIMESTAMP type with microsecond precision)
+     * * 12 (For TIMESTAMP type with picosecond precision)
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Int64Value timestamp_precision = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Int64ValueOrBuilder getTimestampPrecisionOrBuilder() {
+      if (timestampPrecisionBuilder_ != null) {
+        return timestampPrecisionBuilder_.getMessageOrBuilder();
+      } else {
+        return timestampPrecision_ == null
+            ? com.google.protobuf.Int64Value.getDefaultInstance()
+            : timestampPrecision_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Precision (maximum number of total digits in base 10) for seconds
+     * of TIMESTAMP type.
+     *
+     * Possible values include:
+     *
+     * * 6 (Default, for TIMESTAMP type with microsecond precision)
+     * * 12 (For TIMESTAMP type with picosecond precision)
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Int64Value timestamp_precision = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Int64Value,
+            com.google.protobuf.Int64Value.Builder,
+            com.google.protobuf.Int64ValueOrBuilder>
+        getTimestampPrecisionFieldBuilder() {
+      if (timestampPrecisionBuilder_ == null) {
+        timestampPrecisionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Int64Value,
+                com.google.protobuf.Int64Value.Builder,
+                com.google.protobuf.Int64ValueOrBuilder>(
+                getTimestampPrecision(), getParentForChildren(), isClean());
+        timestampPrecision_ = null;
+      }
+      return timestampPrecisionBuilder_;
+    }
+
     private com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType
         rangeElementType_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -3795,7 +4175,7 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
      * @return Whether the rangeElementType field is set.
      */
     public boolean hasRangeElementType() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -3854,7 +4234,7 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
       } else {
         rangeElementTypeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3883,7 +4263,7 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
       } else {
         rangeElementTypeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3907,7 +4287,7 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
     public Builder mergeRangeElementType(
         com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType value) {
       if (rangeElementTypeBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && rangeElementType_ != null
             && rangeElementType_
                 != com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType
@@ -3920,7 +4300,7 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
         rangeElementTypeBuilder_.mergeFrom(value);
       }
       if (rangeElementType_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -3943,7 +4323,7 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearRangeElementType() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       rangeElementType_ = null;
       if (rangeElementTypeBuilder_ != null) {
         rangeElementTypeBuilder_.dispose();
@@ -3971,7 +4351,7 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType.Builder
         getRangeElementTypeBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return getRangeElementTypeFieldBuilder().getBuilder();
     }

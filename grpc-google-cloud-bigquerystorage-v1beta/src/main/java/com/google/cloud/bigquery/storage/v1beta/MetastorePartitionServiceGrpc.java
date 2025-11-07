@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *  metastore. The service supports only batch operations for write.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/bigquery/storage/v1beta/metastore_partition.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class MetastorePartitionServiceGrpc {
 
@@ -629,9 +626,9 @@ public final class MetastorePartitionServiceGrpc {
      */
     public com.google.cloud.bigquery.storage.v1beta.BatchCreateMetastorePartitionsResponse
         batchCreateMetastorePartitions(
-            com.google.cloud.bigquery.storage.v1beta.BatchCreateMetastorePartitionsRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.bigquery.storage.v1beta.BatchCreateMetastorePartitionsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchCreateMetastorePartitionsMethod(), getCallOptions(), request);
     }
 
@@ -643,8 +640,9 @@ public final class MetastorePartitionServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty batchDeleteMetastorePartitions(
-        com.google.cloud.bigquery.storage.v1beta.BatchDeleteMetastorePartitionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.storage.v1beta.BatchDeleteMetastorePartitionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchDeleteMetastorePartitionsMethod(), getCallOptions(), request);
     }
 
@@ -657,9 +655,9 @@ public final class MetastorePartitionServiceGrpc {
      */
     public com.google.cloud.bigquery.storage.v1beta.BatchUpdateMetastorePartitionsResponse
         batchUpdateMetastorePartitions(
-            com.google.cloud.bigquery.storage.v1beta.BatchUpdateMetastorePartitionsRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.bigquery.storage.v1beta.BatchUpdateMetastorePartitionsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchUpdateMetastorePartitionsMethod(), getCallOptions(), request);
     }
 
@@ -672,8 +670,9 @@ public final class MetastorePartitionServiceGrpc {
      */
     public com.google.cloud.bigquery.storage.v1beta.ListMetastorePartitionsResponse
         listMetastorePartitions(
-            com.google.cloud.bigquery.storage.v1beta.ListMetastorePartitionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.bigquery.storage.v1beta.ListMetastorePartitionsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMetastorePartitionsMethod(), getCallOptions(), request);
     }
 

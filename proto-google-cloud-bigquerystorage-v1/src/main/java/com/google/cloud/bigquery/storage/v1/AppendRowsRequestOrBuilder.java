@@ -203,8 +203,7 @@ public interface AppendRowsRequestOrBuilder
    *
    *
    * <pre>
-   * Rows in arrow format. This is an experimental feature only selected for
-   * allowlisted customers.
+   * Rows in arrow format.
    * </pre>
    *
    * <code>.google.cloud.bigquery.storage.v1.AppendRowsRequest.ArrowData arrow_rows = 5;</code>
@@ -217,8 +216,7 @@ public interface AppendRowsRequestOrBuilder
    *
    *
    * <pre>
-   * Rows in arrow format. This is an experimental feature only selected for
-   * allowlisted customers.
+   * Rows in arrow format.
    * </pre>
    *
    * <code>.google.cloud.bigquery.storage.v1.AppendRowsRequest.ArrowData arrow_rows = 5;</code>
@@ -231,8 +229,7 @@ public interface AppendRowsRequestOrBuilder
    *
    *
    * <pre>
-   * Rows in arrow format. This is an experimental feature only selected for
-   * allowlisted customers.
+   * Rows in arrow format.
    * </pre>
    *
    * <code>.google.cloud.bigquery.storage.v1.AppendRowsRequest.ArrowData arrow_rows = 5;</code>
@@ -534,8 +531,8 @@ public interface AppendRowsRequestOrBuilder
    * <pre>
    * Optional. Default missing value interpretation for all columns in the
    * table. When a value is specified on an `AppendRowsRequest`, it is applied
-   * to all requests on the connection from that point forward, until a
-   * subsequent `AppendRowsRequest` sets it to a different value.
+   * to all requests from that point forward, until a subsequent
+   * `AppendRowsRequest` sets it to a different value.
    * `missing_value_interpretation` can override
    * `default_missing_value_interpretation`. For example, if you want to write
    * `NULL` instead of using default values for some columns, you can set
@@ -557,8 +554,8 @@ public interface AppendRowsRequestOrBuilder
    * <pre>
    * Optional. Default missing value interpretation for all columns in the
    * table. When a value is specified on an `AppendRowsRequest`, it is applied
-   * to all requests on the connection from that point forward, until a
-   * subsequent `AppendRowsRequest` sets it to a different value.
+   * to all requests from that point forward, until a subsequent
+   * `AppendRowsRequest` sets it to a different value.
    * `missing_value_interpretation` can override
    * `default_missing_value_interpretation`. For example, if you want to write
    * `NULL` instead of using default values for some columns, you can set

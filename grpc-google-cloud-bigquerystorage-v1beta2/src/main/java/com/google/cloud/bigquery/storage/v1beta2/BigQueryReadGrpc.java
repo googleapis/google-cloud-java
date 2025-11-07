@@ -27,9 +27,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * API at the same time.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/bigquery/storage/v1beta2/storage.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class BigQueryReadGrpc {
 
@@ -487,8 +484,9 @@ public final class BigQueryReadGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.storage.v1beta2.ReadSession createReadSession(
-        com.google.cloud.bigquery.storage.v1beta2.CreateReadSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.storage.v1beta2.CreateReadSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateReadSessionMethod(), getCallOptions(), request);
     }
 
@@ -530,8 +528,9 @@ public final class BigQueryReadGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.storage.v1beta2.SplitReadStreamResponse splitReadStream(
-        com.google.cloud.bigquery.storage.v1beta2.SplitReadStreamRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.storage.v1beta2.SplitReadStreamRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSplitReadStreamMethod(), getCallOptions(), request);
     }
   }

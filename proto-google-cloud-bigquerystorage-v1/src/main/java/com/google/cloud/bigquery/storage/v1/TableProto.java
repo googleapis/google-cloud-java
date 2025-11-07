@@ -50,30 +50,32 @@ public final class TableProto {
   static {
     java.lang.String[] descriptorData = {
       "\n"
-          + ",google/cloud/bigquery/storage/v1/table.proto\022"
-          + " google.cloud.bigquery.storage.v1\032\037google/api/field_behavior.proto\"Q\n"
+          + ",google/cloud/bigquery/storage/v1/table.proto\022 google.cloud.bigquery.storage.v1"
+          + "\032\037google/api/field_behavior.proto\032\036google/protobuf/wrappers.proto\"Q\n"
           + "\013TableSchema\022B\n"
           + "\006fields\030\001"
-          + " \003(\01322.google.cloud.bigquery.storage.v1.TableFieldSchema\"\375\006\n"
+          + " \003(\01322.google.cloud.bigquery.storage.v1.TableFieldSchema\"\274\007\n"
           + "\020TableFieldSchema\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\002\022J\n"
-          + "\004type\030\002"
-          + " \001(\01627.google.cloud.bigquery.storage.v1.TableFieldSchema.TypeB\003\340A\002\022J\n"
-          + "\004mode\030\003"
-          + " \001(\01627.google.cloud.bigquery.storage.v1.TableFieldSchema.ModeB\003\340A\001\022G\n"
-          + "\006fields\030\004"
-          + " \003(\01322.google.cloud.bigquery.storage.v1.TableFieldSchemaB\003\340A\001\022\030\n"
+          + "\004type\030\002 \001"
+          + "(\01627.google.cloud.bigquery.storage.v1.TableFieldSchema.TypeB\003\340A\002\022J\n"
+          + "\004mode\030\003 \001(\01627"
+          + ".google.cloud.bigquery.storage.v1.TableFieldSchema.ModeB\003\340A\001\022G\n"
+          + "\006fields\030\004 \003(\01322.g"
+          + "oogle.cloud.bigquery.storage.v1.TableFieldSchemaB\003\340A\001\022\030\n"
           + "\013description\030\006 \001(\tB\003\340A\001\022\027\n\n"
           + "max_length\030\007 \001(\003B\003\340A\001\022\026\n"
           + "\tprecision\030\010 \001(\003B\003\340A\001\022\022\n"
           + "\005scale\030\t \001(\003B\003\340A\001\022%\n"
           + "\030default_value_expression\030\n"
-          + " \001(\tB\003\340A\001\022d\n"
-          + "\022range_element_type\030\013 \001(\0132C.google.cloud.b"
-          + "igquery.storage.v1.TableFieldSchema.FieldElementTypeB\003\340A\001\032^\n"
+          + " \001(\tB\003\340A\001\022=\n"
+          + "\023timestamp_precision\030\033"
+          + " \001(\0132\033.google.protobuf.Int64ValueB\003\340A\001\022d\n"
+          + "\022range_element_type\030\013 \001(\0132C"
+          + ".google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementTypeB\003\340A\001\032^\n"
           + "\020FieldElementType\022J\n"
-          + "\004type\030\001"
-          + " \001(\01627.google.cloud.bigquery.storage.v1.TableFieldSchema.TypeB\003\340A\002\"\340\001\n"
+          + "\004type\030\001 \001(\01627.google.clou"
+          + "d.bigquery.storage.v1.TableFieldSchema.TypeB\003\340A\002\"\340\001\n"
           + "\004Type\022\024\n"
           + "\020TYPE_UNSPECIFIED\020\000\022\n\n"
           + "\006STRING\020\001\022\t\n"
@@ -100,16 +102,17 @@ public final class TableProto {
           + "\010REQUIRED\020\002\022\014\n"
           + "\010REPEATED\020\003B\272\001\n"
           + "$com.google.cloud.bigquery.storage.v1B\n"
-          + "TableProtoP\001Z>cloud.googl"
-          + "e.com/go/bigquery/storage/apiv1/storagepb;storagepb\252\002"
-          + " Google.Cloud.BigQuery.Storage.V1\312\002 Google\\Cloud\\BigQuery\\Storage\\V"
-          + "1b\006proto3"
+          + "TableProto"
+          + "P\001Z>cloud.google.com/go/bigquery/storage/apiv1/storagepb;storagepb\252\002"
+          + " Google.Cloud.BigQuery.Storage.V1\312\002 Google\\Cloud\\Big"
+          + "Query\\Storage\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.protobuf.WrappersProto.getDescriptor(),
             });
     internal_static_google_cloud_bigquery_storage_v1_TableSchema_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -134,6 +137,7 @@ public final class TableProto {
               "Precision",
               "Scale",
               "DefaultValueExpression",
+              "TimestampPrecision",
               "RangeElementType",
             });
     internal_static_google_cloud_bigquery_storage_v1_TableFieldSchema_FieldElementType_descriptor =
@@ -152,6 +156,7 @@ public final class TableProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.protobuf.WrappersProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

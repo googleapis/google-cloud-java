@@ -45,4 +45,37 @@ public interface AvroSerializationOptionsOrBuilder
    * @return The enableDisplayNameAttribute.
    */
   boolean getEnableDisplayNameAttribute();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Set timestamp precision option. If not set, the default precision
+   * is microseconds.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.AvroSerializationOptions.PicosTimestampPrecision picos_timestamp_precision = 2;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for picosTimestampPrecision.
+   */
+  int getPicosTimestampPrecisionValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Set timestamp precision option. If not set, the default precision
+   * is microseconds.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.AvroSerializationOptions.PicosTimestampPrecision picos_timestamp_precision = 2;
+   * </code>
+   *
+   * @return The picosTimestampPrecision.
+   */
+  com.google.cloud.bigquery.storage.v1.AvroSerializationOptions.PicosTimestampPrecision
+      getPicosTimestampPrecision();
 }

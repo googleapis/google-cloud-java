@@ -28,9 +28,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *   should be used instead of the v1beta2 API for BigQueryWrite operations.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/bigquery/storage/v1beta2/storage.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 @java.lang.Deprecated
 public final class BigQueryWriteGrpc {
@@ -744,8 +741,9 @@ public final class BigQueryWriteGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.bigquery.storage.v1beta2.WriteStream createWriteStream(
-        com.google.cloud.bigquery.storage.v1beta2.CreateWriteStreamRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.storage.v1beta2.CreateWriteStreamRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateWriteStreamMethod(), getCallOptions(), request);
     }
 
@@ -790,8 +788,9 @@ public final class BigQueryWriteGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.bigquery.storage.v1beta2.WriteStream getWriteStream(
-        com.google.cloud.bigquery.storage.v1beta2.GetWriteStreamRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.storage.v1beta2.GetWriteStreamRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetWriteStreamMethod(), getCallOptions(), request);
     }
 
@@ -806,8 +805,9 @@ public final class BigQueryWriteGrpc {
     @java.lang.Deprecated
     public com.google.cloud.bigquery.storage.v1beta2.FinalizeWriteStreamResponse
         finalizeWriteStream(
-            com.google.cloud.bigquery.storage.v1beta2.FinalizeWriteStreamRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.bigquery.storage.v1beta2.FinalizeWriteStreamRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFinalizeWriteStreamMethod(), getCallOptions(), request);
     }
 
@@ -825,8 +825,9 @@ public final class BigQueryWriteGrpc {
     @java.lang.Deprecated
     public com.google.cloud.bigquery.storage.v1beta2.BatchCommitWriteStreamsResponse
         batchCommitWriteStreams(
-            com.google.cloud.bigquery.storage.v1beta2.BatchCommitWriteStreamsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.bigquery.storage.v1beta2.BatchCommitWriteStreamsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchCommitWriteStreamsMethod(), getCallOptions(), request);
     }
 
@@ -844,8 +845,9 @@ public final class BigQueryWriteGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.bigquery.storage.v1beta2.FlushRowsResponse flushRows(
-        com.google.cloud.bigquery.storage.v1beta2.FlushRowsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.storage.v1beta2.FlushRowsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFlushRowsMethod(), getCallOptions(), request);
     }
   }

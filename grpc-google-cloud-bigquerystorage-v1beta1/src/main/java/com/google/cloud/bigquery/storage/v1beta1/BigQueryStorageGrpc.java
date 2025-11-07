@@ -29,9 +29,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * going forward.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/bigquery/storage/v1beta1/storage.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class BigQueryStorageGrpc {
 
@@ -687,8 +684,9 @@ public final class BigQueryStorageGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession createReadSession(
-        com.google.cloud.bigquery.storage.v1beta1.Storage.CreateReadSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.storage.v1beta1.Storage.CreateReadSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateReadSessionMethod(), getCallOptions(), request);
     }
 
@@ -726,8 +724,9 @@ public final class BigQueryStorageGrpc {
     public com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsResponse
         batchCreateReadSessionStreams(
             com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchCreateReadSessionStreamsMethod(), getCallOptions(), request);
     }
 
@@ -750,8 +749,9 @@ public final class BigQueryStorageGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty finalizeStream(
-        com.google.cloud.bigquery.storage.v1beta1.Storage.FinalizeStreamRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.storage.v1beta1.Storage.FinalizeStreamRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFinalizeStreamMethod(), getCallOptions(), request);
     }
 
@@ -774,8 +774,9 @@ public final class BigQueryStorageGrpc {
      */
     public com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamResponse
         splitReadStream(
-            com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSplitReadStreamMethod(), getCallOptions(), request);
     }
   }

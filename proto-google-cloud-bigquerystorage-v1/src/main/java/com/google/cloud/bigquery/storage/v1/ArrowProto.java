@@ -53,18 +53,25 @@ public final class ArrowProto {
           + ".proto\022 google.cloud.bigquery.storage.v1"
           + "\"(\n\013ArrowSchema\022\031\n\021serialized_schema\030\001 \001"
           + "(\014\"J\n\020ArrowRecordBatch\022\037\n\027serialized_rec"
-          + "ord_batch\030\001 \001(\014\022\025\n\trow_count\030\002 \001(\003B\002\030\001\"\317"
-          + "\001\n\031ArrowSerializationOptions\022h\n\022buffer_c"
+          + "ord_batch\030\001 \001(\014\022\025\n\trow_count\030\002 \001(\003B\002\030\001\"\354"
+          + "\003\n\031ArrowSerializationOptions\022h\n\022buffer_c"
           + "ompression\030\002 \001(\0162L.google.cloud.bigquery"
           + ".storage.v1.ArrowSerializationOptions.Co"
-          + "mpressionCodec\"H\n\020CompressionCodec\022\033\n\027CO"
+          + "mpressionCodec\022v\n\031picos_timestamp_precis"
+          + "ion\030\003 \001(\0162S.google.cloud.bigquery.storag"
+          + "e.v1.ArrowSerializationOptions.PicosTime"
+          + "stampPrecision\"H\n\020CompressionCodec\022\033\n\027CO"
           + "MPRESSION_UNSPECIFIED\020\000\022\r\n\tLZ4_FRAME\020\001\022\010"
-          + "\n\004ZSTD\020\002B\272\001\n$com.google.cloud.bigquery.s"
-          + "torage.v1B\nArrowProtoP\001Z>cloud.google.co"
-          + "m/go/bigquery/storage/apiv1/storagepb;st"
-          + "oragepb\252\002 Google.Cloud.BigQuery.Storage."
-          + "V1\312\002 Google\\Cloud\\BigQuery\\Storage\\V1b\006p"
-          + "roto3"
+          + "\n\004ZSTD\020\002\"\242\001\n\027PicosTimestampPrecision\022)\n%"
+          + "PICOS_TIMESTAMP_PRECISION_UNSPECIFIED\020\000\022"
+          + "\036\n\032TIMESTAMP_PRECISION_MICROS\020\001\022\035\n\031TIMES"
+          + "TAMP_PRECISION_NANOS\020\002\022\035\n\031TIMESTAMP_PREC"
+          + "ISION_PICOS\020\003B\272\001\n$com.google.cloud.bigqu"
+          + "ery.storage.v1B\nArrowProtoP\001Z>cloud.goog"
+          + "le.com/go/bigquery/storage/apiv1/storage"
+          + "pb;storagepb\252\002 Google.Cloud.BigQuery.Sto"
+          + "rage.V1\312\002 Google\\Cloud\\BigQuery\\Storage\\"
+          + "V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -91,7 +98,7 @@ public final class ArrowProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_storage_v1_ArrowSerializationOptions_descriptor,
             new java.lang.String[] {
-              "BufferCompression",
+              "BufferCompression", "PicosTimestampPrecision",
             });
   }
 
