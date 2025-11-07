@@ -344,6 +344,63 @@ public final class VpcFlowLogsServiceGrpc {
     return getQueryOrgVpcFlowLogsConfigsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkmanagement.v1beta1.ShowEffectiveFlowLogsConfigsRequest,
+          com.google.cloud.networkmanagement.v1beta1.ShowEffectiveFlowLogsConfigsResponse>
+      getShowEffectiveFlowLogsConfigsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ShowEffectiveFlowLogsConfigs",
+      requestType =
+          com.google.cloud.networkmanagement.v1beta1.ShowEffectiveFlowLogsConfigsRequest.class,
+      responseType =
+          com.google.cloud.networkmanagement.v1beta1.ShowEffectiveFlowLogsConfigsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkmanagement.v1beta1.ShowEffectiveFlowLogsConfigsRequest,
+          com.google.cloud.networkmanagement.v1beta1.ShowEffectiveFlowLogsConfigsResponse>
+      getShowEffectiveFlowLogsConfigsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkmanagement.v1beta1.ShowEffectiveFlowLogsConfigsRequest,
+            com.google.cloud.networkmanagement.v1beta1.ShowEffectiveFlowLogsConfigsResponse>
+        getShowEffectiveFlowLogsConfigsMethod;
+    if ((getShowEffectiveFlowLogsConfigsMethod =
+            VpcFlowLogsServiceGrpc.getShowEffectiveFlowLogsConfigsMethod)
+        == null) {
+      synchronized (VpcFlowLogsServiceGrpc.class) {
+        if ((getShowEffectiveFlowLogsConfigsMethod =
+                VpcFlowLogsServiceGrpc.getShowEffectiveFlowLogsConfigsMethod)
+            == null) {
+          VpcFlowLogsServiceGrpc.getShowEffectiveFlowLogsConfigsMethod =
+              getShowEffectiveFlowLogsConfigsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkmanagement.v1beta1
+                              .ShowEffectiveFlowLogsConfigsRequest,
+                          com.google.cloud.networkmanagement.v1beta1
+                              .ShowEffectiveFlowLogsConfigsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ShowEffectiveFlowLogsConfigs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkmanagement.v1beta1
+                                  .ShowEffectiveFlowLogsConfigsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkmanagement.v1beta1
+                                  .ShowEffectiveFlowLogsConfigsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VpcFlowLogsServiceMethodDescriptorSupplier(
+                              "ShowEffectiveFlowLogsConfigs"))
+                      .build();
+        }
+      }
+    }
+    return getShowEffectiveFlowLogsConfigsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static VpcFlowLogsServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<VpcFlowLogsServiceStub> factory =
@@ -524,6 +581,23 @@ public final class VpcFlowLogsServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getQueryOrgVpcFlowLogsConfigsMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * ShowEffectiveFlowLogsConfigs returns a list of all VPC Flow Logs
+     * configurations applicable to a specified resource.
+     * </pre>
+     */
+    default void showEffectiveFlowLogsConfigs(
+        com.google.cloud.networkmanagement.v1beta1.ShowEffectiveFlowLogsConfigsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.networkmanagement.v1beta1.ShowEffectiveFlowLogsConfigsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getShowEffectiveFlowLogsConfigsMethod(), responseObserver);
+    }
   }
 
   /**
@@ -692,6 +766,25 @@ public final class VpcFlowLogsServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * ShowEffectiveFlowLogsConfigs returns a list of all VPC Flow Logs
+     * configurations applicable to a specified resource.
+     * </pre>
+     */
+    public void showEffectiveFlowLogsConfigs(
+        com.google.cloud.networkmanagement.v1beta1.ShowEffectiveFlowLogsConfigsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.networkmanagement.v1beta1.ShowEffectiveFlowLogsConfigsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getShowEffectiveFlowLogsConfigsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -828,6 +921,22 @@ public final class VpcFlowLogsServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getQueryOrgVpcFlowLogsConfigsMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * ShowEffectiveFlowLogsConfigs returns a list of all VPC Flow Logs
+     * configurations applicable to a specified resource.
+     * </pre>
+     */
+    public com.google.cloud.networkmanagement.v1beta1.ShowEffectiveFlowLogsConfigsResponse
+        showEffectiveFlowLogsConfigs(
+            com.google.cloud.networkmanagement.v1beta1.ShowEffectiveFlowLogsConfigsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getShowEffectiveFlowLogsConfigsMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -957,6 +1066,22 @@ public final class VpcFlowLogsServiceGrpc {
             com.google.cloud.networkmanagement.v1beta1.QueryOrgVpcFlowLogsConfigsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getQueryOrgVpcFlowLogsConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ShowEffectiveFlowLogsConfigs returns a list of all VPC Flow Logs
+     * configurations applicable to a specified resource.
+     * </pre>
+     */
+    public com.google.cloud.networkmanagement.v1beta1.ShowEffectiveFlowLogsConfigsResponse
+        showEffectiveFlowLogsConfigs(
+            com.google.cloud.networkmanagement.v1beta1.ShowEffectiveFlowLogsConfigsRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getShowEffectiveFlowLogsConfigsMethod(), getCallOptions(), request);
     }
   }
 
@@ -1094,6 +1219,23 @@ public final class VpcFlowLogsServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getQueryOrgVpcFlowLogsConfigsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * ShowEffectiveFlowLogsConfigs returns a list of all VPC Flow Logs
+     * configurations applicable to a specified resource.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.networkmanagement.v1beta1.ShowEffectiveFlowLogsConfigsResponse>
+        showEffectiveFlowLogsConfigs(
+            com.google.cloud.networkmanagement.v1beta1.ShowEffectiveFlowLogsConfigsRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getShowEffectiveFlowLogsConfigsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_VPC_FLOW_LOGS_CONFIGS = 0;
@@ -1102,6 +1244,7 @@ public final class VpcFlowLogsServiceGrpc {
   private static final int METHODID_UPDATE_VPC_FLOW_LOGS_CONFIG = 3;
   private static final int METHODID_DELETE_VPC_FLOW_LOGS_CONFIG = 4;
   private static final int METHODID_QUERY_ORG_VPC_FLOW_LOGS_CONFIGS = 5;
+  private static final int METHODID_SHOW_EFFECTIVE_FLOW_LOGS_CONFIGS = 6;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1156,6 +1299,15 @@ public final class VpcFlowLogsServiceGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.networkmanagement.v1beta1
                           .QueryOrgVpcFlowLogsConfigsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_SHOW_EFFECTIVE_FLOW_LOGS_CONFIGS:
+          serviceImpl.showEffectiveFlowLogsConfigs(
+              (com.google.cloud.networkmanagement.v1beta1.ShowEffectiveFlowLogsConfigsRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.networkmanagement.v1beta1
+                          .ShowEffectiveFlowLogsConfigsResponse>)
                   responseObserver);
           break;
         default:
@@ -1218,6 +1370,14 @@ public final class VpcFlowLogsServiceGrpc {
                     com.google.cloud.networkmanagement.v1beta1.QueryOrgVpcFlowLogsConfigsRequest,
                     com.google.cloud.networkmanagement.v1beta1.QueryOrgVpcFlowLogsConfigsResponse>(
                     service, METHODID_QUERY_ORG_VPC_FLOW_LOGS_CONFIGS)))
+        .addMethod(
+            getShowEffectiveFlowLogsConfigsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkmanagement.v1beta1.ShowEffectiveFlowLogsConfigsRequest,
+                    com.google.cloud.networkmanagement.v1beta1
+                        .ShowEffectiveFlowLogsConfigsResponse>(
+                    service, METHODID_SHOW_EFFECTIVE_FLOW_LOGS_CONFIGS)))
         .build();
   }
 
@@ -1275,6 +1435,7 @@ public final class VpcFlowLogsServiceGrpc {
                       .addMethod(getUpdateVpcFlowLogsConfigMethod())
                       .addMethod(getDeleteVpcFlowLogsConfigMethod())
                       .addMethod(getQueryOrgVpcFlowLogsConfigsMethod())
+                      .addMethod(getShowEffectiveFlowLogsConfigsMethod())
                       .build();
         }
       }

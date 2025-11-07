@@ -51,6 +51,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
     policy_ = "";
     policyUri_ = "";
     firewallRuleType_ = 0;
+    targetType_ = 0;
   }
 
   @java.lang.Override
@@ -436,6 +437,169 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.networkmanagement.v1beta1.FirewallInfo.FirewallRuleType)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Target type of the firewall rule.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.networkmanagement.v1beta1.FirewallInfo.TargetType}
+   */
+  public enum TargetType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Target type is not specified. In this case we treat the rule as applying
+     * to INSTANCES target type.
+     * </pre>
+     *
+     * <code>TARGET_TYPE_UNSPECIFIED = 0;</code>
+     */
+    TARGET_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Firewall rule applies to instances.
+     * </pre>
+     *
+     * <code>INSTANCES = 1;</code>
+     */
+    INSTANCES(1),
+    /**
+     *
+     *
+     * <pre>
+     * Firewall rule applies to internal managed load balancers.
+     * </pre>
+     *
+     * <code>INTERNAL_MANAGED_LB = 2;</code>
+     */
+    INTERNAL_MANAGED_LB(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Target type is not specified. In this case we treat the rule as applying
+     * to INSTANCES target type.
+     * </pre>
+     *
+     * <code>TARGET_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int TARGET_TYPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Firewall rule applies to instances.
+     * </pre>
+     *
+     * <code>INSTANCES = 1;</code>
+     */
+    public static final int INSTANCES_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Firewall rule applies to internal managed load balancers.
+     * </pre>
+     *
+     * <code>INTERNAL_MANAGED_LB = 2;</code>
+     */
+    public static final int INTERNAL_MANAGED_LB_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TargetType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static TargetType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return TARGET_TYPE_UNSPECIFIED;
+        case 1:
+          return INSTANCES;
+        case 2:
+          return INTERNAL_MANAGED_LB;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<TargetType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<TargetType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<TargetType>() {
+          public TargetType findValueByNumber(int number) {
+            return TargetType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.networkmanagement.v1beta1.FirewallInfo.getDescriptor()
+          .getEnumTypes()
+          .get(1);
+    }
+
+    private static final TargetType[] VALUES = values();
+
+    public static TargetType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private TargetType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.networkmanagement.v1beta1.FirewallInfo.TargetType)
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 1;
@@ -1048,6 +1212,45 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
     return policyPriority_;
   }
 
+  public static final int TARGET_TYPE_FIELD_NUMBER = 13;
+  private int targetType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Target type of the firewall rule.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.FirewallInfo.TargetType target_type = 13;</code>
+   *
+   * @return The enum numeric value on the wire for targetType.
+   */
+  @java.lang.Override
+  public int getTargetTypeValue() {
+    return targetType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Target type of the firewall rule.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.FirewallInfo.TargetType target_type = 13;</code>
+   *
+   * @return The targetType.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.FirewallInfo.TargetType getTargetType() {
+    com.google.cloud.networkmanagement.v1beta1.FirewallInfo.TargetType result =
+        com.google.cloud.networkmanagement.v1beta1.FirewallInfo.TargetType.forNumber(targetType_);
+    return result == null
+        ? com.google.cloud.networkmanagement.v1beta1.FirewallInfo.TargetType.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1101,6 +1304,12 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
     }
     if (policyPriority_ != 0) {
       output.writeInt32(12, policyPriority_);
+    }
+    if (targetType_
+        != com.google.cloud.networkmanagement.v1beta1.FirewallInfo.TargetType
+            .TARGET_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(13, targetType_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1160,6 +1369,12 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
     if (policyPriority_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(12, policyPriority_);
     }
+    if (targetType_
+        != com.google.cloud.networkmanagement.v1beta1.FirewallInfo.TargetType
+            .TARGET_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(13, targetType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1188,6 +1403,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
     if (!getPolicyUri().equals(other.getPolicyUri())) return false;
     if (firewallRuleType_ != other.firewallRuleType_) return false;
     if (getPolicyPriority() != other.getPolicyPriority()) return false;
+    if (targetType_ != other.targetType_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1227,6 +1443,8 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + firewallRuleType_;
     hash = (37 * hash) + POLICY_PRIORITY_FIELD_NUMBER;
     hash = (53 * hash) + getPolicyPriority();
+    hash = (37 * hash) + TARGET_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + targetType_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1381,6 +1599,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
       policyUri_ = "";
       firewallRuleType_ = 0;
       policyPriority_ = 0;
+      targetType_ = 0;
       return this;
     }
 
@@ -1454,6 +1673,9 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.policyPriority_ = policyPriority_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.targetType_ = targetType_;
       }
     }
 
@@ -1567,6 +1789,9 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
       if (other.getPolicyPriority() != 0) {
         setPolicyPriority(other.getPolicyPriority());
       }
+      if (other.targetType_ != 0) {
+        setTargetTypeValue(other.getTargetTypeValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1667,6 +1892,12 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000800;
                 break;
               } // case 96
+            case 104:
+              {
+                targetType_ = input.readEnum();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 104
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3098,6 +3329,109 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPolicyPriority() {
       bitField0_ = (bitField0_ & ~0x00000800);
       policyPriority_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int targetType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Target type of the firewall rule.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.FirewallInfo.TargetType target_type = 13;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for targetType.
+     */
+    @java.lang.Override
+    public int getTargetTypeValue() {
+      return targetType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Target type of the firewall rule.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.FirewallInfo.TargetType target_type = 13;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for targetType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTargetTypeValue(int value) {
+      targetType_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Target type of the firewall rule.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.FirewallInfo.TargetType target_type = 13;
+     * </code>
+     *
+     * @return The targetType.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.FirewallInfo.TargetType getTargetType() {
+      com.google.cloud.networkmanagement.v1beta1.FirewallInfo.TargetType result =
+          com.google.cloud.networkmanagement.v1beta1.FirewallInfo.TargetType.forNumber(targetType_);
+      return result == null
+          ? com.google.cloud.networkmanagement.v1beta1.FirewallInfo.TargetType.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Target type of the firewall rule.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.FirewallInfo.TargetType target_type = 13;
+     * </code>
+     *
+     * @param value The targetType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTargetType(
+        com.google.cloud.networkmanagement.v1beta1.FirewallInfo.TargetType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00001000;
+      targetType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Target type of the firewall rule.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.FirewallInfo.TargetType target_type = 13;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTargetType() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      targetType_ = 0;
       onChanged();
       return this;
     }

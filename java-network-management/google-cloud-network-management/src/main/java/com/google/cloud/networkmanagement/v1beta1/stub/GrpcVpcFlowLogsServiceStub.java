@@ -19,6 +19,7 @@ package com.google.cloud.networkmanagement.v1beta1.stub;
 import static com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsServiceClient.ListVpcFlowLogsConfigsPagedResponse;
 import static com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsServiceClient.QueryOrgVpcFlowLogsConfigsPagedResponse;
+import static com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsServiceClient.ShowEffectiveFlowLogsConfigsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -41,6 +42,8 @@ import com.google.cloud.networkmanagement.v1beta1.ListVpcFlowLogsConfigsResponse
 import com.google.cloud.networkmanagement.v1beta1.OperationMetadata;
 import com.google.cloud.networkmanagement.v1beta1.QueryOrgVpcFlowLogsConfigsRequest;
 import com.google.cloud.networkmanagement.v1beta1.QueryOrgVpcFlowLogsConfigsResponse;
+import com.google.cloud.networkmanagement.v1beta1.ShowEffectiveFlowLogsConfigsRequest;
+import com.google.cloud.networkmanagement.v1beta1.ShowEffectiveFlowLogsConfigsResponse;
 import com.google.cloud.networkmanagement.v1beta1.UpdateVpcFlowLogsConfigRequest;
 import com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -144,6 +147,22 @@ public class GrpcVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<
+          ShowEffectiveFlowLogsConfigsRequest, ShowEffectiveFlowLogsConfigsResponse>
+      showEffectiveFlowLogsConfigsMethodDescriptor =
+          MethodDescriptor
+              .<ShowEffectiveFlowLogsConfigsRequest, ShowEffectiveFlowLogsConfigsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkmanagement.v1beta1.VpcFlowLogsService/ShowEffectiveFlowLogsConfigs")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ShowEffectiveFlowLogsConfigsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ShowEffectiveFlowLogsConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -220,6 +239,12 @@ public class GrpcVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
   private final UnaryCallable<
           QueryOrgVpcFlowLogsConfigsRequest, QueryOrgVpcFlowLogsConfigsPagedResponse>
       queryOrgVpcFlowLogsConfigsPagedCallable;
+  private final UnaryCallable<
+          ShowEffectiveFlowLogsConfigsRequest, ShowEffectiveFlowLogsConfigsResponse>
+      showEffectiveFlowLogsConfigsCallable;
+  private final UnaryCallable<
+          ShowEffectiveFlowLogsConfigsRequest, ShowEffectiveFlowLogsConfigsPagedResponse>
+      showEffectiveFlowLogsConfigsPagedCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -343,6 +368,19 @@ public class GrpcVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<ShowEffectiveFlowLogsConfigsRequest, ShowEffectiveFlowLogsConfigsResponse>
+        showEffectiveFlowLogsConfigsTransportSettings =
+            GrpcCallSettings
+                .<ShowEffectiveFlowLogsConfigsRequest, ShowEffectiveFlowLogsConfigsResponse>
+                    newBuilder()
+                .setMethodDescriptor(showEffectiveFlowLogsConfigsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -453,6 +491,16 @@ public class GrpcVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
             queryOrgVpcFlowLogsConfigsTransportSettings,
             settings.queryOrgVpcFlowLogsConfigsSettings(),
             clientContext);
+    this.showEffectiveFlowLogsConfigsCallable =
+        callableFactory.createUnaryCallable(
+            showEffectiveFlowLogsConfigsTransportSettings,
+            settings.showEffectiveFlowLogsConfigsSettings(),
+            clientContext);
+    this.showEffectiveFlowLogsConfigsPagedCallable =
+        callableFactory.createPagedCallable(
+            showEffectiveFlowLogsConfigsTransportSettings,
+            settings.showEffectiveFlowLogsConfigsSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -546,6 +594,19 @@ public class GrpcVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
   public UnaryCallable<QueryOrgVpcFlowLogsConfigsRequest, QueryOrgVpcFlowLogsConfigsPagedResponse>
       queryOrgVpcFlowLogsConfigsPagedCallable() {
     return queryOrgVpcFlowLogsConfigsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ShowEffectiveFlowLogsConfigsRequest, ShowEffectiveFlowLogsConfigsResponse>
+      showEffectiveFlowLogsConfigsCallable() {
+    return showEffectiveFlowLogsConfigsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ShowEffectiveFlowLogsConfigsRequest, ShowEffectiveFlowLogsConfigsPagedResponse>
+      showEffectiveFlowLogsConfigsPagedCallable() {
+    return showEffectiveFlowLogsConfigsPagedCallable;
   }
 
   @Override

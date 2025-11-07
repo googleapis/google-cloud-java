@@ -60,6 +60,14 @@ public final class VpcFlowLogsProto {
       internal_static_google_cloud_networkmanagement_v1beta1_QueryOrgVpcFlowLogsConfigsResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_networkmanagement_v1beta1_QueryOrgVpcFlowLogsConfigsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_networkmanagement_v1beta1_ShowEffectiveFlowLogsConfigsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_networkmanagement_v1beta1_ShowEffectiveFlowLogsConfigsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_networkmanagement_v1beta1_ShowEffectiveFlowLogsConfigsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_networkmanagement_v1beta1_ShowEffectiveFlowLogsConfigsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -117,76 +125,93 @@ public final class VpcFlowLogsProto {
           + "\025vpc_flow_logs_configs\030\001 "
           + "\003(\01329.google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\023\n"
-          + "\013unreachable\030\003 \003(\t2\315\016\n"
+          + "\013unreachable\030\003 \003(\t\"\316\001\n"
+          + "#ShowEffectiveFlowLogsConfigsRequest\022J\n"
+          + "\006parent\030\001 \001("
+          + "\tB:\340A\002\372A4\0222networkmanagement.googleapis.com/VpcFlowLogsConfig\022\025\n"
+          + "\010resource\030\002 \001(\tB\003\340A\002\022\026\n"
+          + "\tpage_size\030\003 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\004 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\005 \001(\tB\003\340A\001\"\275\001\n"
+          + "$ShowEffectiveFlowLogsConfigsResponse\022g\n"
+          + "\033effective_flow_logs_configs\030\001 \003(\0132B.go"
+          + "ogle.cloud.networkmanagement.v1beta1.EffectiveVpcFlowLogsConfig\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\023\n"
+          + "\013unreachable\030\003 \003(\t2\353\020\n"
           + "\022VpcFlowLogsService\022\365\001\n"
-          + "\026ListVpcFlowLogsConfigs\022E.google.cloud.networkmanagement.v1beta1."
-          + "ListVpcFlowLogsConfigsRequest\032F.google.cloud.networkmanagement.v1beta1.ListVpcFl"
-          + "owLogsConfigsResponse\"L\332A\006parent\202\323\344\223\002=\022;"
-          + "/v1beta1/{parent=projects/*/locations/*}/vpcFlowLogsConfigs\022\342\001\n"
-          + "\024GetVpcFlowLogsConfig\022C.google.cloud.networkmanagement.v1"
-          + "beta1.GetVpcFlowLogsConfigRequest\0329.google.cloud.networkmanagement.v1beta1.VpcFl"
-          + "owLogsConfig\"J\332A\004name\202\323\344\223\002=\022;/v1beta1/{n"
-          + "ame=projects/*/locations/*/vpcFlowLogsConfigs/*}\022\342\002\n"
-          + "\027CreateVpcFlowLogsConfig\022F.google.cloud.networkmanagement.v1beta1.Cr"
-          + "eateVpcFlowLogsConfigRequest\032\035.google.longrunning.Operation\"\337\001\312AM\n"
-          + "\021VpcFlowLogsConfig\0228google.cloud.networkmanagement.v1b"
-          + "eta1.OperationMetadata\332A3parent,vpc_flow"
-          + "_logs_config,vpc_flow_logs_config_id\202\323\344\223"
-          + "\002S\";/v1beta1/{parent=projects/*/location"
-          + "s/*}/vpcFlowLogsConfigs:\024vpc_flow_logs_config\022\344\002\n"
-          + "\027UpdateVpcFlowLogsConfig\022F.google.cloud.networkmanagement.v1beta1.Updat"
-          + "eVpcFlowLogsConfigRequest\032\035.google.longrunning.Operation\"\341\001\312AM\n"
-          + "\021VpcFlowLogsConfi"
-          + "g\0228google.cloud.networkmanagement.v1beta1.OperationMetadata\332A vpc_flow_logs_conf"
-          + "ig,update_mask\202\323\344\223\002h2P/v1beta1/{vpc_flow"
-          + "_logs_config.name=projects/*/locations/*"
-          + "/vpcFlowLogsConfigs/*}:\024vpc_flow_logs_config\022\241\002\n"
-          + "\027DeleteVpcFlowLogsConfig\022F.google.cloud.networkmanagement.v1beta1.Delete"
-          + "VpcFlowLogsConfigRequest\032\035.google.longrunning.Operation\"\236\001\312AQ\n"
-          + "\025google.protobuf.Empty\0228google.cloud.networkmanagement.v1b"
-          + "eta1.OperationMetadata\332A\004name\202\323\344\223\002=*;/v1"
-          + "beta1/{name=projects/*/locations/*/vpcFlowLogsConfigs/*}\022\223\002\n"
-          + "\032QueryOrgVpcFlowLogsConfigs\022I.google.cloud.networkmanagement"
-          + ".v1beta1.QueryOrgVpcFlowLogsConfigsRequest\032J.google.cloud.networkmanagement.v1be"
-          + "ta1.QueryOrgVpcFlowLogsConfigsResponse\"^"
-          + "\202\323\344\223\002X\022V/v1beta1/{parent=projects/*/loca"
-          + "tions/*}/vpcFlowLogsConfigs:queryOrgVpcFlowLogsConfigs\032T\312A networkmanagement.goo"
-          + "gleapis.com\322A.https://www.googleapis.com/auth/cloud-platform2\334\014\n"
+          + "\026ListVpcFlowLogsConfigs\022E.google.cloud.networkmanagement.v1beta1"
+          + ".ListVpcFlowLogsConfigsRequest\032F.google.cloud.networkmanagement.v1beta1.ListVpcF"
+          + "lowLogsConfigsResponse\"L\332A\006parent\202\323\344\223\002=\022"
+          + ";/v1beta1/{parent=projects/*/locations/*}/vpcFlowLogsConfigs\022\342\001\n"
+          + "\024GetVpcFlowLogsConfig\022C.google.cloud.networkmanagement.v"
+          + "1beta1.GetVpcFlowLogsConfigRequest\0329.google.cloud.networkmanagement.v1beta1.VpcF"
+          + "lowLogsConfig\"J\332A\004name\202\323\344\223\002=\022;/v1beta1/{"
+          + "name=projects/*/locations/*/vpcFlowLogsConfigs/*}\022\342\002\n"
+          + "\027CreateVpcFlowLogsConfig\022F.google.cloud.networkmanagement.v1beta1.C"
+          + "reateVpcFlowLogsConfigRequest\032\035.google.longrunning.Operation\"\337\001\312AM\n"
+          + "\021VpcFlowLogsConfig\0228google.cloud.networkmanagement.v1"
+          + "beta1.OperationMetadata\332A3parent,vpc_flo"
+          + "w_logs_config,vpc_flow_logs_config_id\202\323\344"
+          + "\223\002S\";/v1beta1/{parent=projects/*/locatio"
+          + "ns/*}/vpcFlowLogsConfigs:\024vpc_flow_logs_config\022\344\002\n"
+          + "\027UpdateVpcFlowLogsConfig\022F.google.cloud.networkmanagement.v1beta1.Upda"
+          + "teVpcFlowLogsConfigRequest\032\035.google.longrunning.Operation\"\341\001\312AM\n"
+          + "\021VpcFlowLogsConf"
+          + "ig\0228google.cloud.networkmanagement.v1beta1.OperationMetadata\332A vpc_flow_logs_con"
+          + "fig,update_mask\202\323\344\223\002h2P/v1beta1/{vpc_flo"
+          + "w_logs_config.name=projects/*/locations/"
+          + "*/vpcFlowLogsConfigs/*}:\024vpc_flow_logs_config\022\241\002\n"
+          + "\027DeleteVpcFlowLogsConfig\022F.google.cloud.networkmanagement.v1beta1.Delet"
+          + "eVpcFlowLogsConfigRequest\032\035.google.longrunning.Operation\"\236\001\312AQ\n"
+          + "\025google.protobuf.Empty\0228google.cloud.networkmanagement.v1"
+          + "beta1.OperationMetadata\332A\004name\202\323\344\223\002=*;/v"
+          + "1beta1/{name=projects/*/locations/*/vpcFlowLogsConfigs/*}\022\223\002\n"
+          + "\032QueryOrgVpcFlowLogsConfigs\022I.google.cloud.networkmanagemen"
+          + "t.v1beta1.QueryOrgVpcFlowLogsConfigsRequest\032J.google.cloud.networkmanagement.v1b"
+          + "eta1.QueryOrgVpcFlowLogsConfigsResponse\""
+          + "^\202\323\344\223\002X\022V/v1beta1/{parent=projects/*/loc"
+          + "ations/*}/vpcFlowLogsConfigs:queryOrgVpcFlowLogsConfigs\022\233\002\n"
+          + "\034ShowEffectiveFlowLogsConfigs\022K.google.cloud.networkmanagemen"
+          + "t.v1beta1.ShowEffectiveFlowLogsConfigsRequest\032L.google.cloud.networkmanagement.v"
+          + "1beta1.ShowEffectiveFlowLogsConfigsRespo"
+          + "nse\"`\202\323\344\223\002Z\022X/v1beta1/{parent=projects/*"
+          + "/locations/*}/vpcFlowLogsConfigs:showEffectiveFlowLogsConfigs\032T\312A networkmanagem"
+          + "ent.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platform2\334\014\n"
           + "\036OrganizationVpcFlowLogsService\022\372\001\n"
-          + "\026ListVpcFlowLogsConfigs\022E.google.cloud.networkmanagement.v1be"
-          + "ta1.ListVpcFlowLogsConfigsRequest\032F.google.cloud.networkmanagement.v1beta1.ListV"
-          + "pcFlowLogsConfigsResponse\"Q\332A\006parent\202\323\344\223"
-          + "\002B\022@/v1beta1/{parent=organizations/*/locations/*}/vpcFlowLogsConfigs\022\347\001\n"
-          + "\024GetVpcFlowLogsConfig\022C.google.cloud.networkmana"
-          + "gement.v1beta1.GetVpcFlowLogsConfigRequest\0329.google.cloud.networkmanagement.v1be"
-          + "ta1.VpcFlowLogsConfig\"O\332A\004name\202\323\344\223\002B\022@/v"
-          + "1beta1/{name=organizations/*/locations/*/vpcFlowLogsConfigs/*}\022\347\002\n"
-          + "\027CreateVpcFlowLogsConfig\022F.google.cloud.networkmanagem"
-          + "ent.v1beta1.CreateVpcFlowLogsConfigRequest\032\035.google.longrunning.Operation\"\344\001\312AM\n"
-          + "\021VpcFlowLogsConfig\0228google.cloud.network"
-          + "management.v1beta1.OperationMetadata\332A3parent,vpc_flow_logs_config,vpc_flow_logs"
-          + "_config_id\202\323\344\223\002X\"@/v1beta1/{parent=organ"
-          + "izations/*/locations/*}/vpcFlowLogsConfigs:\024vpc_flow_logs_config\022\351\002\n"
-          + "\027UpdateVpcFlowLogsConfig\022F.google.cloud.networkmanag"
-          + "ement.v1beta1.UpdateVpcFlowLogsConfigReq"
-          + "uest\032\035.google.longrunning.Operation\"\346\001\312AM\n"
-          + "\021VpcFlowLogsConfig\0228google.cloud.netwo"
-          + "rkmanagement.v1beta1.OperationMetadata\332A"
-          + " vpc_flow_logs_config,update_mask\202\323\344\223\002m2"
-          + "U/v1beta1/{vpc_flow_logs_config.name=org"
-          + "anizations/*/locations/*/vpcFlowLogsConfigs/*}:\024vpc_flow_logs_config\022\246\002\n"
-          + "\027DeleteVpcFlowLogsConfig\022F.google.cloud.networkm"
-          + "anagement.v1beta1.DeleteVpcFlowLogsConfi"
-          + "gRequest\032\035.google.longrunning.Operation\"\243\001\312AQ\n"
-          + "\025google.protobuf.Empty\0228google.cloud.networkmanagement.v1beta1.OperationMe"
-          + "tadata\332A\004name\202\323\344\223\002B*@/v1beta1/{name=orga"
-          + "nizations/*/locations/*/vpcFlowLogsConfigs/*}\032T\312A networkmanagement.googleapis.c"
-          + "om\322A.https://www.googleapis.com/auth/cloud-platformB\230\002\n"
-          + "*com.google.cloud.networkmanagement.v1beta1B\020VpcFlowLogsProtoP\001ZX"
-          + "cloud.google.com/go/networkmanagement/apiv1beta1/networkmanagementpb;networkmana"
-          + "gementpb\252\002&Google.Cloud.NetworkManagemen"
-          + "t.V1Beta1\312\002&Google\\Cloud\\NetworkManageme"
-          + "nt\\V1beta1\352\002)Google::Cloud::NetworkManagement::V1beta1b\006proto3"
+          + "\026ListVpcFlowLogsConfigs\022E.google.cloud.networkmanageme"
+          + "nt.v1beta1.ListVpcFlowLogsConfigsRequest\032F.google.cloud.networkmanagement.v1beta"
+          + "1.ListVpcFlowLogsConfigsResponse\"Q\332A\006par"
+          + "ent\202\323\344\223\002B\022@/v1beta1/{parent=organizations/*/locations/*}/vpcFlowLogsConfigs\022\347\001\n"
+          + "\024GetVpcFlowLogsConfig\022C.google.cloud.netw"
+          + "orkmanagement.v1beta1.GetVpcFlowLogsConfigRequest\0329.google.cloud.networkmanageme"
+          + "nt.v1beta1.VpcFlowLogsConfig\"O\332A\004name\202\323\344"
+          + "\223\002B\022@/v1beta1/{name=organizations/*/locations/*/vpcFlowLogsConfigs/*}\022\347\002\n"
+          + "\027CreateVpcFlowLogsConfig\022F.google.cloud.network"
+          + "management.v1beta1.CreateVpcFlowLogsConf"
+          + "igRequest\032\035.google.longrunning.Operation\"\344\001\312AM\n"
+          + "\021VpcFlowLogsConfig\0228google.cloud.networkmanagement.v1beta1.OperationMetad"
+          + "ata\332A3parent,vpc_flow_logs_config,vpc_fl"
+          + "ow_logs_config_id\202\323\344\223\002X\"@/v1beta1/{paren"
+          + "t=organizations/*/locations/*}/vpcFlowLogsConfigs:\024vpc_flow_logs_config\022\351\002\n"
+          + "\027UpdateVpcFlowLogsConfig\022F.google.cloud.netwo"
+          + "rkmanagement.v1beta1.UpdateVpcFlowLogsCo"
+          + "nfigRequest\032\035.google.longrunning.Operation\"\346\001\312AM\n"
+          + "\021VpcFlowLogsConfig\0228google.clou"
+          + "d.networkmanagement.v1beta1.OperationMetadata\332A vpc_flow_logs_config,update_mask"
+          + "\202\323\344\223\002m2U/v1beta1/{vpc_flow_logs_config.n"
+          + "ame=organizations/*/locations/*/vpcFlowLogsConfigs/*}:\024vpc_flow_logs_config\022\246\002\n"
+          + "\027DeleteVpcFlowLogsConfig\022F.google.cloud.n"
+          + "etworkmanagement.v1beta1.DeleteVpcFlowLo"
+          + "gsConfigRequest\032\035.google.longrunning.Operation\"\243\001\312AQ\n"
+          + "\025google.protobuf.Empty\0228google.cloud.networkmanagement.v1beta1.Oper"
+          + "ationMetadata\332A\004name\202\323\344\223\002B*@/v1beta1/{na"
+          + "me=organizations/*/locations/*/vpcFlowLogsConfigs/*}\032T\312A networkmanagement.googl"
+          + "eapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\230\002\n"
+          + "*com.google.cloud.networkmanagement.v1beta1B\020VpcFlowLogsPr"
+          + "otoP\001ZXcloud.google.com/go/networkmanagement/apiv1beta1/networkmanagementpb;netw"
+          + "orkmanagementpb\252\002&Google.Cloud.NetworkMa"
+          + "nagement.V1Beta1\312\002&Google\\Cloud\\NetworkM"
+          + "anagement\\V1beta1\352\002)Google::Cloud::NetworkManagement::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -265,6 +290,22 @@ public final class VpcFlowLogsProto {
             internal_static_google_cloud_networkmanagement_v1beta1_QueryOrgVpcFlowLogsConfigsResponse_descriptor,
             new java.lang.String[] {
               "VpcFlowLogsConfigs", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_networkmanagement_v1beta1_ShowEffectiveFlowLogsConfigsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_networkmanagement_v1beta1_ShowEffectiveFlowLogsConfigsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_networkmanagement_v1beta1_ShowEffectiveFlowLogsConfigsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Resource", "PageSize", "PageToken", "Filter",
+            });
+    internal_static_google_cloud_networkmanagement_v1beta1_ShowEffectiveFlowLogsConfigsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_networkmanagement_v1beta1_ShowEffectiveFlowLogsConfigsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_networkmanagement_v1beta1_ShowEffectiveFlowLogsConfigsResponse_descriptor,
+            new java.lang.String[] {
+              "EffectiveFlowLogsConfigs", "NextPageToken", "Unreachable",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

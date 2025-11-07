@@ -115,27 +115,29 @@ public final class DataSourceReferenceProto {
           + "\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
-          + "\010order_by\030\005 \001(\tB\003\340A\001\"\212\001\n"
+          + "\010order_by\030\005 \001(\tB\003\340A\001\"\237\001\n"
           + " ListDataSourceReferencesResponse\022M\n"
           + "\026data_source_references\030\001"
           + " \003(\0132-.google.cloud.backupdr.v1.DataSourceReference\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"\357\001\n"
+          + "\017next_page_token\030\002 \001(\t\022\023\n"
+          + "\013unreachable\030\003 \003(\t\"\357\001\n"
           + "/FetchDataSourceReferencesForResourceTypeRequest\022C\n"
-          + "\006parent\030\001 \001(\tB3\340A\002"
-          + "\372A-\022+backupdr.googleapis.com/DataSourceReference\022\032\n\r"
+          + "\006parent\030\001 \001("
+          + "\tB3\340A\002\372A-\022+backupdr.googleapis.com/DataSourceReference\022\032\n\r"
           + "resource_type\030\002 \001(\tB\003\340A\002\022\026\n"
           + "\tpage_size\030\003 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\004 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\005 \001(\tB\003\340A\001\022\025\n"
           + "\010order_by\030\006 \001(\tB\003\340A\001\"\232\001\n"
           + "0FetchDataSourceReferencesForResourceTypeResponse\022M\n"
-          + "\026data_source_references\030\001"
-          + " \003(\0132-.google.cloud.backupdr.v1.DataSourceReference\022\027\n"
+          + "\026data_source_references\030\001 \003(\0132-.go"
+          + "ogle.cloud.backupdr.v1.DataSourceReference\022\027\n"
           + "\017next_page_token\030\002 \001(\tB\310\001\n"
-          + "\034com.google.cloud.backupdr.v1B\030DataSourceReferenceProtoP\001Z8cloud.googl"
-          + "e.com/go/backupdr/apiv1/backupdrpb;backu"
-          + "pdrpb\252\002\030Google.Cloud.BackupDR.V1\312\002\030Googl"
-          + "e\\Cloud\\BackupDR\\V1\352\002\033Google::Cloud::BackupDR::V1b\006proto3"
+          + "\034com.google.cloud.backupdr.v1B\030DataSourceReferenc"
+          + "eProtoP\001Z8cloud.google.com/go/backupdr/a"
+          + "piv1/backupdrpb;backupdrpb\252\002\030Google.Clou"
+          + "d.BackupDR.V1\312\002\030Google\\Cloud\\BackupDR\\V1"
+          + "\352\002\033Google::Cloud::BackupDR::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -204,7 +206,7 @@ public final class DataSourceReferenceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_backupdr_v1_ListDataSourceReferencesResponse_descriptor,
             new java.lang.String[] {
-              "DataSourceReferences", "NextPageToken",
+              "DataSourceReferences", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_backupdr_v1_FetchDataSourceReferencesForResourceTypeRequest_descriptor =
         getDescriptor().getMessageTypes().get(6);

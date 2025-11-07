@@ -499,6 +499,17 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>NO_SERVERLESS_IP_RANGES = 37;</code>
      */
     NO_SERVERLESS_IP_RANGES(37),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because the used protocol is not supported for the used IP
+     * version.
+     * </pre>
+     *
+     * <code>IP_VERSION_PROTOCOL_MISMATCH = 40;</code>
+     */
+    IP_VERSION_PROTOCOL_MISMATCH(40),
     UNRECOGNIZED(-1),
     ;
 
@@ -954,6 +965,18 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int NO_SERVERLESS_IP_RANGES_VALUE = 37;
 
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because the used protocol is not supported for the used IP
+     * version.
+     * </pre>
+     *
+     * <code>IP_VERSION_PROTOCOL_MISMATCH = 40;</code>
+     */
+    public static final int IP_VERSION_PROTOCOL_MISMATCH_VALUE = 40;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -1054,6 +1077,8 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
           return UNSUPPORTED_GOOGLE_MANAGED_PROJECT_CONFIG;
         case 37:
           return NO_SERVERLESS_IP_RANGES;
+        case 40:
+          return IP_VERSION_PROTOCOL_MISMATCH;
         default:
           return null;
       }
