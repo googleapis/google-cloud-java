@@ -296,7 +296,8 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A list of alternative names or synonyms that can be used to refer
-   * to this field. For example: ["id", "customerid", "cust_id"]
+   * to this field. For example: ["id", "customerid", "cust_id"]. Currently only
+   * used for BigQuery data sources.
    * </pre>
    *
    * <code>repeated string synonyms = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -312,7 +313,8 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A list of alternative names or synonyms that can be used to refer
-   * to this field. For example: ["id", "customerid", "cust_id"]
+   * to this field. For example: ["id", "customerid", "cust_id"]. Currently only
+   * used for BigQuery data sources.
    * </pre>
    *
    * <code>repeated string synonyms = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -328,7 +330,8 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A list of alternative names or synonyms that can be used to refer
-   * to this field. For example: ["id", "customerid", "cust_id"]
+   * to this field. For example: ["id", "customerid", "cust_id"]. Currently only
+   * used for BigQuery data sources.
    * </pre>
    *
    * <code>repeated string synonyms = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -345,7 +348,8 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A list of alternative names or synonyms that can be used to refer
-   * to this field. For example: ["id", "customerid", "cust_id"]
+   * to this field. For example: ["id", "customerid", "cust_id"]. Currently only
+   * used for BigQuery data sources.
    * </pre>
    *
    * <code>repeated string synonyms = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -368,7 +372,8 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A list of tags or keywords associated with the field, used for
-   * categorization. For example: ["identifier", "customer", "pii"]
+   * categorization. For example: ["identifier", "customer", "pii"]. Currently
+   * only used for BigQuery data sources.
    * </pre>
    *
    * <code>repeated string tags = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -384,7 +389,8 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A list of tags or keywords associated with the field, used for
-   * categorization. For example: ["identifier", "customer", "pii"]
+   * categorization. For example: ["identifier", "customer", "pii"]. Currently
+   * only used for BigQuery data sources.
    * </pre>
    *
    * <code>repeated string tags = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -400,7 +406,8 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A list of tags or keywords associated with the field, used for
-   * categorization. For example: ["identifier", "customer", "pii"]
+   * categorization. For example: ["identifier", "customer", "pii"]. Currently
+   * only used for BigQuery data sources.
    * </pre>
    *
    * <code>repeated string tags = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -417,7 +424,8 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A list of tags or keywords associated with the field, used for
-   * categorization. For example: ["identifier", "customer", "pii"]
+   * categorization. For example: ["identifier", "customer", "pii"]. Currently
+   * only used for BigQuery data sources.
    * </pre>
    *
    * <code>repeated string tags = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1778,7 +1786,8 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of alternative names or synonyms that can be used to refer
-     * to this field. For example: ["id", "customerid", "cust_id"]
+     * to this field. For example: ["id", "customerid", "cust_id"]. Currently only
+     * used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string synonyms = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1795,7 +1804,8 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of alternative names or synonyms that can be used to refer
-     * to this field. For example: ["id", "customerid", "cust_id"]
+     * to this field. For example: ["id", "customerid", "cust_id"]. Currently only
+     * used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string synonyms = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1811,7 +1821,8 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of alternative names or synonyms that can be used to refer
-     * to this field. For example: ["id", "customerid", "cust_id"]
+     * to this field. For example: ["id", "customerid", "cust_id"]. Currently only
+     * used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string synonyms = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1828,7 +1839,8 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of alternative names or synonyms that can be used to refer
-     * to this field. For example: ["id", "customerid", "cust_id"]
+     * to this field. For example: ["id", "customerid", "cust_id"]. Currently only
+     * used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string synonyms = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1845,7 +1857,8 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of alternative names or synonyms that can be used to refer
-     * to this field. For example: ["id", "customerid", "cust_id"]
+     * to this field. For example: ["id", "customerid", "cust_id"]. Currently only
+     * used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string synonyms = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1870,7 +1883,8 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of alternative names or synonyms that can be used to refer
-     * to this field. For example: ["id", "customerid", "cust_id"]
+     * to this field. For example: ["id", "customerid", "cust_id"]. Currently only
+     * used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string synonyms = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1894,7 +1908,8 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of alternative names or synonyms that can be used to refer
-     * to this field. For example: ["id", "customerid", "cust_id"]
+     * to this field. For example: ["id", "customerid", "cust_id"]. Currently only
+     * used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string synonyms = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1915,7 +1930,8 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of alternative names or synonyms that can be used to refer
-     * to this field. For example: ["id", "customerid", "cust_id"]
+     * to this field. For example: ["id", "customerid", "cust_id"]. Currently only
+     * used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string synonyms = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1935,7 +1951,8 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of alternative names or synonyms that can be used to refer
-     * to this field. For example: ["id", "customerid", "cust_id"]
+     * to this field. For example: ["id", "customerid", "cust_id"]. Currently only
+     * used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string synonyms = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1970,7 +1987,8 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags or keywords associated with the field, used for
-     * categorization. For example: ["identifier", "customer", "pii"]
+     * categorization. For example: ["identifier", "customer", "pii"]. Currently
+     * only used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string tags = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1987,7 +2005,8 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags or keywords associated with the field, used for
-     * categorization. For example: ["identifier", "customer", "pii"]
+     * categorization. For example: ["identifier", "customer", "pii"]. Currently
+     * only used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string tags = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2003,7 +2022,8 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags or keywords associated with the field, used for
-     * categorization. For example: ["identifier", "customer", "pii"]
+     * categorization. For example: ["identifier", "customer", "pii"]. Currently
+     * only used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string tags = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2020,7 +2040,8 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags or keywords associated with the field, used for
-     * categorization. For example: ["identifier", "customer", "pii"]
+     * categorization. For example: ["identifier", "customer", "pii"]. Currently
+     * only used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string tags = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2037,7 +2058,8 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags or keywords associated with the field, used for
-     * categorization. For example: ["identifier", "customer", "pii"]
+     * categorization. For example: ["identifier", "customer", "pii"]. Currently
+     * only used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string tags = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2062,7 +2084,8 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags or keywords associated with the field, used for
-     * categorization. For example: ["identifier", "customer", "pii"]
+     * categorization. For example: ["identifier", "customer", "pii"]. Currently
+     * only used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string tags = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2086,7 +2109,8 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags or keywords associated with the field, used for
-     * categorization. For example: ["identifier", "customer", "pii"]
+     * categorization. For example: ["identifier", "customer", "pii"]. Currently
+     * only used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string tags = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2107,7 +2131,8 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags or keywords associated with the field, used for
-     * categorization. For example: ["identifier", "customer", "pii"]
+     * categorization. For example: ["identifier", "customer", "pii"]. Currently
+     * only used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string tags = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2127,7 +2152,8 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags or keywords associated with the field, used for
-     * categorization. For example: ["identifier", "customer", "pii"]
+     * categorization. For example: ["identifier", "customer", "pii"]. Currently
+     * only used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string tags = 7 [(.google.api.field_behavior) = OPTIONAL];</code>

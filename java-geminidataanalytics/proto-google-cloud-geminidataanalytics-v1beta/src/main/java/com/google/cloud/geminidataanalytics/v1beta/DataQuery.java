@@ -66,6 +66,113 @@ public final class DataQuery extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.geminidataanalytics.v1beta.DataQuery.Builder.class);
   }
 
+  private int queryTypeCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object queryType_;
+
+  public enum QueryTypeCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    LOOKER(4),
+    QUERYTYPE_NOT_SET(0);
+    private final int value;
+
+    private QueryTypeCase(int value) {
+      this.value = value;
+    }
+
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static QueryTypeCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static QueryTypeCase forNumber(int value) {
+      switch (value) {
+        case 4:
+          return LOOKER;
+        case 0:
+          return QUERYTYPE_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public QueryTypeCase getQueryTypeCase() {
+    return QueryTypeCase.forNumber(queryTypeCase_);
+  }
+
+  public static final int LOOKER_FIELD_NUMBER = 4;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A query for retrieving data from a Looker explore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.LookerQuery looker = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the looker field is set.
+   */
+  @java.lang.Override
+  public boolean hasLooker() {
+    return queryTypeCase_ == 4;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A query for retrieving data from a Looker explore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.LookerQuery looker = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The looker.
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.LookerQuery getLooker() {
+    if (queryTypeCase_ == 4) {
+      return (com.google.cloud.geminidataanalytics.v1beta.LookerQuery) queryType_;
+    }
+    return com.google.cloud.geminidataanalytics.v1beta.LookerQuery.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A query for retrieving data from a Looker explore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.LookerQuery looker = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.LookerQueryOrBuilder getLookerOrBuilder() {
+    if (queryTypeCase_ == 4) {
+      return (com.google.cloud.geminidataanalytics.v1beta.LookerQuery) queryType_;
+    }
+    return com.google.cloud.geminidataanalytics.v1beta.LookerQuery.getDefaultInstance();
+  }
+
   public static final int QUESTION_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -293,6 +400,9 @@ public final class DataQuery extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
     }
+    if (queryTypeCase_ == 4) {
+      output.writeMessage(4, (com.google.cloud.geminidataanalytics.v1beta.LookerQuery) queryType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -310,6 +420,11 @@ public final class DataQuery extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
+    }
+    if (queryTypeCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.cloud.geminidataanalytics.v1beta.LookerQuery) queryType_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -330,6 +445,14 @@ public final class DataQuery extends com.google.protobuf.GeneratedMessageV3
     if (!getQuestion().equals(other.getQuestion())) return false;
     if (!getName().equals(other.getName())) return false;
     if (!getDatasourcesList().equals(other.getDatasourcesList())) return false;
+    if (!getQueryTypeCase().equals(other.getQueryTypeCase())) return false;
+    switch (queryTypeCase_) {
+      case 4:
+        if (!getLooker().equals(other.getLooker())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -348,6 +471,14 @@ public final class DataQuery extends com.google.protobuf.GeneratedMessageV3
     if (getDatasourcesCount() > 0) {
       hash = (37 * hash) + DATASOURCES_FIELD_NUMBER;
       hash = (53 * hash) + getDatasourcesList().hashCode();
+    }
+    switch (queryTypeCase_) {
+      case 4:
+        hash = (37 * hash) + LOOKER_FIELD_NUMBER;
+        hash = (53 * hash) + getLooker().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -490,6 +621,9 @@ public final class DataQuery extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      if (lookerBuilder_ != null) {
+        lookerBuilder_.clear();
+      }
       question_ = "";
       name_ = "";
       if (datasourcesBuilder_ == null) {
@@ -498,7 +632,9 @@ public final class DataQuery extends com.google.protobuf.GeneratedMessageV3
         datasources_ = null;
         datasourcesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
+      queryTypeCase_ = 0;
+      queryType_ = null;
       return this;
     }
 
@@ -530,6 +666,7 @@ public final class DataQuery extends com.google.protobuf.GeneratedMessageV3
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
@@ -537,9 +674,9 @@ public final class DataQuery extends com.google.protobuf.GeneratedMessageV3
     private void buildPartialRepeatedFields(
         com.google.cloud.geminidataanalytics.v1beta.DataQuery result) {
       if (datasourcesBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           datasources_ = java.util.Collections.unmodifiableList(datasources_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.datasources_ = datasources_;
       } else {
@@ -549,11 +686,19 @@ public final class DataQuery extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.cloud.geminidataanalytics.v1beta.DataQuery result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.question_ = question_;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.name_ = name_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.geminidataanalytics.v1beta.DataQuery result) {
+      result.queryTypeCase_ = queryTypeCase_;
+      result.queryType_ = this.queryType_;
+      if (queryTypeCase_ == 4 && lookerBuilder_ != null) {
+        result.queryType_ = lookerBuilder_.build();
       }
     }
 
@@ -605,19 +750,19 @@ public final class DataQuery extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getQuestion().isEmpty()) {
         question_ = other.question_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (datasourcesBuilder_ == null) {
         if (!other.datasources_.isEmpty()) {
           if (datasources_.isEmpty()) {
             datasources_ = other.datasources_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureDatasourcesIsMutable();
             datasources_.addAll(other.datasources_);
@@ -630,7 +775,7 @@ public final class DataQuery extends com.google.protobuf.GeneratedMessageV3
             datasourcesBuilder_.dispose();
             datasourcesBuilder_ = null;
             datasources_ = other.datasources_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
             datasourcesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getDatasourcesFieldBuilder()
@@ -639,6 +784,17 @@ public final class DataQuery extends com.google.protobuf.GeneratedMessageV3
             datasourcesBuilder_.addAllMessages(other.datasources_);
           }
         }
+      }
+      switch (other.getQueryTypeCase()) {
+        case LOOKER:
+          {
+            mergeLooker(other.getLooker());
+            break;
+          }
+        case QUERYTYPE_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -669,7 +825,7 @@ public final class DataQuery extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 question_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 18:
@@ -689,9 +845,15 @@ public final class DataQuery extends com.google.protobuf.GeneratedMessageV3
             case 26:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(getLookerFieldBuilder().getBuilder(), extensionRegistry);
+                queryTypeCase_ = 4;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -709,7 +871,258 @@ public final class DataQuery extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int queryTypeCase_ = 0;
+    private java.lang.Object queryType_;
+
+    public QueryTypeCase getQueryTypeCase() {
+      return QueryTypeCase.forNumber(queryTypeCase_);
+    }
+
+    public Builder clearQueryType() {
+      queryTypeCase_ = 0;
+      queryType_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.geminidataanalytics.v1beta.LookerQuery,
+            com.google.cloud.geminidataanalytics.v1beta.LookerQuery.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.LookerQueryOrBuilder>
+        lookerBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A query for retrieving data from a Looker explore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.LookerQuery looker = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the looker field is set.
+     */
+    @java.lang.Override
+    public boolean hasLooker() {
+      return queryTypeCase_ == 4;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A query for retrieving data from a Looker explore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.LookerQuery looker = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The looker.
+     */
+    @java.lang.Override
+    public com.google.cloud.geminidataanalytics.v1beta.LookerQuery getLooker() {
+      if (lookerBuilder_ == null) {
+        if (queryTypeCase_ == 4) {
+          return (com.google.cloud.geminidataanalytics.v1beta.LookerQuery) queryType_;
+        }
+        return com.google.cloud.geminidataanalytics.v1beta.LookerQuery.getDefaultInstance();
+      } else {
+        if (queryTypeCase_ == 4) {
+          return lookerBuilder_.getMessage();
+        }
+        return com.google.cloud.geminidataanalytics.v1beta.LookerQuery.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A query for retrieving data from a Looker explore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.LookerQuery looker = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setLooker(com.google.cloud.geminidataanalytics.v1beta.LookerQuery value) {
+      if (lookerBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        queryType_ = value;
+        onChanged();
+      } else {
+        lookerBuilder_.setMessage(value);
+      }
+      queryTypeCase_ = 4;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A query for retrieving data from a Looker explore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.LookerQuery looker = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setLooker(
+        com.google.cloud.geminidataanalytics.v1beta.LookerQuery.Builder builderForValue) {
+      if (lookerBuilder_ == null) {
+        queryType_ = builderForValue.build();
+        onChanged();
+      } else {
+        lookerBuilder_.setMessage(builderForValue.build());
+      }
+      queryTypeCase_ = 4;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A query for retrieving data from a Looker explore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.LookerQuery looker = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeLooker(com.google.cloud.geminidataanalytics.v1beta.LookerQuery value) {
+      if (lookerBuilder_ == null) {
+        if (queryTypeCase_ == 4
+            && queryType_
+                != com.google.cloud.geminidataanalytics.v1beta.LookerQuery.getDefaultInstance()) {
+          queryType_ =
+              com.google.cloud.geminidataanalytics.v1beta.LookerQuery.newBuilder(
+                      (com.google.cloud.geminidataanalytics.v1beta.LookerQuery) queryType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          queryType_ = value;
+        }
+        onChanged();
+      } else {
+        if (queryTypeCase_ == 4) {
+          lookerBuilder_.mergeFrom(value);
+        } else {
+          lookerBuilder_.setMessage(value);
+        }
+      }
+      queryTypeCase_ = 4;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A query for retrieving data from a Looker explore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.LookerQuery looker = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearLooker() {
+      if (lookerBuilder_ == null) {
+        if (queryTypeCase_ == 4) {
+          queryTypeCase_ = 0;
+          queryType_ = null;
+          onChanged();
+        }
+      } else {
+        if (queryTypeCase_ == 4) {
+          queryTypeCase_ = 0;
+          queryType_ = null;
+        }
+        lookerBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A query for retrieving data from a Looker explore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.LookerQuery looker = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.LookerQuery.Builder getLookerBuilder() {
+      return getLookerFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A query for retrieving data from a Looker explore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.LookerQuery looker = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.geminidataanalytics.v1beta.LookerQueryOrBuilder getLookerOrBuilder() {
+      if ((queryTypeCase_ == 4) && (lookerBuilder_ != null)) {
+        return lookerBuilder_.getMessageOrBuilder();
+      } else {
+        if (queryTypeCase_ == 4) {
+          return (com.google.cloud.geminidataanalytics.v1beta.LookerQuery) queryType_;
+        }
+        return com.google.cloud.geminidataanalytics.v1beta.LookerQuery.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A query for retrieving data from a Looker explore.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.LookerQuery looker = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.geminidataanalytics.v1beta.LookerQuery,
+            com.google.cloud.geminidataanalytics.v1beta.LookerQuery.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.LookerQueryOrBuilder>
+        getLookerFieldBuilder() {
+      if (lookerBuilder_ == null) {
+        if (!(queryTypeCase_ == 4)) {
+          queryType_ = com.google.cloud.geminidataanalytics.v1beta.LookerQuery.getDefaultInstance();
+        }
+        lookerBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.geminidataanalytics.v1beta.LookerQuery,
+                com.google.cloud.geminidataanalytics.v1beta.LookerQuery.Builder,
+                com.google.cloud.geminidataanalytics.v1beta.LookerQueryOrBuilder>(
+                (com.google.cloud.geminidataanalytics.v1beta.LookerQuery) queryType_,
+                getParentForChildren(),
+                isClean());
+        queryType_ = null;
+      }
+      queryTypeCase_ = 4;
+      onChanged();
+      return lookerBuilder_;
+    }
 
     private java.lang.Object question_ = "";
 
@@ -776,7 +1189,7 @@ public final class DataQuery extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       question_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -794,7 +1207,7 @@ public final class DataQuery extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearQuestion() {
       question_ = getDefaultInstance().getQuestion();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -817,7 +1230,7 @@ public final class DataQuery extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       question_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -902,7 +1315,7 @@ public final class DataQuery extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -925,7 +1338,7 @@ public final class DataQuery extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -953,7 +1366,7 @@ public final class DataQuery extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -962,11 +1375,11 @@ public final class DataQuery extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureDatasourcesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         datasources_ =
             new java.util.ArrayList<com.google.cloud.geminidataanalytics.v1beta.Datasource>(
                 datasources_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1218,7 +1631,7 @@ public final class DataQuery extends com.google.protobuf.GeneratedMessageV3
     public Builder clearDatasources() {
       if (datasourcesBuilder_ == null) {
         datasources_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         datasourcesBuilder_.clear();
@@ -1365,7 +1778,7 @@ public final class DataQuery extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.geminidataanalytics.v1beta.Datasource,
                 com.google.cloud.geminidataanalytics.v1beta.Datasource.Builder,
                 com.google.cloud.geminidataanalytics.v1beta.DatasourceOrBuilder>(
-                datasources_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                datasources_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         datasources_ = null;
       }
       return datasourcesBuilder_;

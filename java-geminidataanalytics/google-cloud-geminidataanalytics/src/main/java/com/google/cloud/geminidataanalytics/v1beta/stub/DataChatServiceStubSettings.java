@@ -50,6 +50,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.geminidataanalytics.v1beta.ChatRequest;
 import com.google.cloud.geminidataanalytics.v1beta.Conversation;
 import com.google.cloud.geminidataanalytics.v1beta.CreateConversationRequest;
+import com.google.cloud.geminidataanalytics.v1beta.DeleteConversationRequest;
 import com.google.cloud.geminidataanalytics.v1beta.GetConversationRequest;
 import com.google.cloud.geminidataanalytics.v1beta.ListConversationsRequest;
 import com.google.cloud.geminidataanalytics.v1beta.ListConversationsResponse;
@@ -65,6 +66,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
@@ -131,6 +133,7 @@ public class DataChatServiceStubSettings extends StubSettings<DataChatServiceStu
   private final ServerStreamingCallSettings<ChatRequest, Message> chatSettings;
   private final UnaryCallSettings<CreateConversationRequest, Conversation>
       createConversationSettings;
+  private final UnaryCallSettings<DeleteConversationRequest, Empty> deleteConversationSettings;
   private final UnaryCallSettings<GetConversationRequest, Conversation> getConversationSettings;
   private final PagedCallSettings<
           ListConversationsRequest, ListConversationsResponse, ListConversationsPagedResponse>
@@ -315,6 +318,11 @@ public class DataChatServiceStubSettings extends StubSettings<DataChatServiceStu
     return createConversationSettings;
   }
 
+  /** Returns the object with the settings used for calls to deleteConversation. */
+  public UnaryCallSettings<DeleteConversationRequest, Empty> deleteConversationSettings() {
+    return deleteConversationSettings;
+  }
+
   /** Returns the object with the settings used for calls to getConversation. */
   public UnaryCallSettings<GetConversationRequest, Conversation> getConversationSettings() {
     return getConversationSettings;
@@ -457,6 +465,7 @@ public class DataChatServiceStubSettings extends StubSettings<DataChatServiceStu
 
     chatSettings = settingsBuilder.chatSettings().build();
     createConversationSettings = settingsBuilder.createConversationSettings().build();
+    deleteConversationSettings = settingsBuilder.deleteConversationSettings().build();
     getConversationSettings = settingsBuilder.getConversationSettings().build();
     listConversationsSettings = settingsBuilder.listConversationsSettings().build();
     listMessagesSettings = settingsBuilder.listMessagesSettings().build();
@@ -470,6 +479,8 @@ public class DataChatServiceStubSettings extends StubSettings<DataChatServiceStu
     private final ServerStreamingCallSettings.Builder<ChatRequest, Message> chatSettings;
     private final UnaryCallSettings.Builder<CreateConversationRequest, Conversation>
         createConversationSettings;
+    private final UnaryCallSettings.Builder<DeleteConversationRequest, Empty>
+        deleteConversationSettings;
     private final UnaryCallSettings.Builder<GetConversationRequest, Conversation>
         getConversationSettings;
     private final PagedCallSettings.Builder<
@@ -504,10 +515,10 @@ public class DataChatServiceStubSettings extends StubSettings<DataChatServiceStu
               .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelayDuration(Duration.ofMillis(10000L))
-              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
-              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -522,6 +533,7 @@ public class DataChatServiceStubSettings extends StubSettings<DataChatServiceStu
 
       chatSettings = ServerStreamingCallSettings.newBuilder();
       createConversationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteConversationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getConversationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listConversationsSettings = PagedCallSettings.newBuilder(LIST_CONVERSATIONS_PAGE_STR_FACT);
       listMessagesSettings = PagedCallSettings.newBuilder(LIST_MESSAGES_PAGE_STR_FACT);
@@ -531,6 +543,7 @@ public class DataChatServiceStubSettings extends StubSettings<DataChatServiceStu
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createConversationSettings,
+              deleteConversationSettings,
               getConversationSettings,
               listConversationsSettings,
               listMessagesSettings,
@@ -544,6 +557,7 @@ public class DataChatServiceStubSettings extends StubSettings<DataChatServiceStu
 
       chatSettings = settings.chatSettings.toBuilder();
       createConversationSettings = settings.createConversationSettings.toBuilder();
+      deleteConversationSettings = settings.deleteConversationSettings.toBuilder();
       getConversationSettings = settings.getConversationSettings.toBuilder();
       listConversationsSettings = settings.listConversationsSettings.toBuilder();
       listMessagesSettings = settings.listMessagesSettings.toBuilder();
@@ -553,6 +567,7 @@ public class DataChatServiceStubSettings extends StubSettings<DataChatServiceStu
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createConversationSettings,
+              deleteConversationSettings,
               getConversationSettings,
               listConversationsSettings,
               listMessagesSettings,
@@ -592,6 +607,11 @@ public class DataChatServiceStubSettings extends StubSettings<DataChatServiceStu
 
       builder
           .createConversationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteConversationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -647,6 +667,12 @@ public class DataChatServiceStubSettings extends StubSettings<DataChatServiceStu
     public UnaryCallSettings.Builder<CreateConversationRequest, Conversation>
         createConversationSettings() {
       return createConversationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteConversation. */
+    public UnaryCallSettings.Builder<DeleteConversationRequest, Empty>
+        deleteConversationSettings() {
+      return deleteConversationSettings;
     }
 
     /** Returns the builder for the settings used for calls to getConversation. */

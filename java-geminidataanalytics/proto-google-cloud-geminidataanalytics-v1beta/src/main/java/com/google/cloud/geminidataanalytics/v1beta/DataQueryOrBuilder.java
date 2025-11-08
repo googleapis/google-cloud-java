@@ -28,6 +28,49 @@ public interface DataQueryOrBuilder
    *
    *
    * <pre>
+   * Optional. A query for retrieving data from a Looker explore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.LookerQuery looker = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the looker field is set.
+   */
+  boolean hasLooker();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A query for retrieving data from a Looker explore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.LookerQuery looker = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The looker.
+   */
+  com.google.cloud.geminidataanalytics.v1beta.LookerQuery getLooker();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A query for retrieving data from a Looker explore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.LookerQuery looker = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.LookerQueryOrBuilder getLookerOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. A natural language question to answer.
    * </pre>
    *
@@ -152,4 +195,6 @@ public interface DataQueryOrBuilder
    */
   com.google.cloud.geminidataanalytics.v1beta.DatasourceOrBuilder getDatasourcesOrBuilder(
       int index);
+
+  com.google.cloud.geminidataanalytics.v1beta.DataQuery.QueryTypeCase getQueryTypeCase();
 }

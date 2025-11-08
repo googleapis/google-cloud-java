@@ -55,6 +55,9 @@
             "CreateConversation": {
               "methods": ["createConversation", "createConversation", "createConversation", "createConversationCallable"]
             },
+            "DeleteConversation": {
+              "methods": ["deleteConversation", "deleteConversation", "deleteConversation", "deleteConversationCallable"]
+            },
             "GetConversation": {
               "methods": ["getConversation", "getConversation", "getConversation", "getConversationCallable"]
             },
