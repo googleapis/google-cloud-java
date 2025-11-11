@@ -111,7 +111,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      * <code>string username = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.username is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=211
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=225
      * @return The username.
      */
     @java.lang.Deprecated
@@ -127,7 +127,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      * <code>string username = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.username is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=211
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=225
      * @return The bytes for username.
      */
     @java.lang.Deprecated
@@ -143,7 +143,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      * <code>string password = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.password is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=214
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=228
      * @return The password.
      */
     @java.lang.Deprecated
@@ -159,7 +159,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      * <code>string password = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.password is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=214
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=228
      * @return The bytes for password.
      */
     @java.lang.Deprecated
@@ -531,6 +531,52 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.ServiceAgentAuth
         getServiceAgentAuth();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for service account authentication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.ServiceAccountAuthConfig service_account_auth_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the serviceAccountAuthConfig field is set.
+     */
+    boolean hasServiceAccountAuthConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for service account authentication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.ServiceAccountAuthConfig service_account_auth_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The serviceAccountAuthConfig.
+     */
+    com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.ServiceAccountAuthConfig
+        getServiceAccountAuthConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for service account authentication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.ServiceAccountAuthConfig service_account_auth_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+            .ServiceAccountAuthConfigOrBuilder
+        getServiceAccountAuthConfigOrBuilder();
 
     /**
      *
@@ -3908,6 +3954,798 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public interface ServiceAccountAuthConfigOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.ServiceAccountAuthConfig)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The email address of the service account used to authenticate
+       * the webhook call. Dialogflow uses this service account to exchange an
+       * access token and the access token is then sent in the `Authorization`
+       * header of the webhook request.
+       *
+       * The service account must have the
+       * `roles/iam.serviceAccountTokenCreator` role granted to the
+       * [Dialogflow service
+       * agent](https://cloud.google.com/iam/docs/service-agents#dialogflow-service-agent).
+       * </pre>
+       *
+       * <code>string service_account = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The serviceAccount.
+       */
+      java.lang.String getServiceAccount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The email address of the service account used to authenticate
+       * the webhook call. Dialogflow uses this service account to exchange an
+       * access token and the access token is then sent in the `Authorization`
+       * header of the webhook request.
+       *
+       * The service account must have the
+       * `roles/iam.serviceAccountTokenCreator` role granted to the
+       * [Dialogflow service
+       * agent](https://cloud.google.com/iam/docs/service-agents#dialogflow-service-agent).
+       * </pre>
+       *
+       * <code>string service_account = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for serviceAccount.
+       */
+      com.google.protobuf.ByteString getServiceAccountBytes();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for authentication using a service account.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.ServiceAccountAuthConfig}
+     */
+    public static final class ServiceAccountAuthConfig
+        extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.ServiceAccountAuthConfig)
+        ServiceAccountAuthConfigOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use ServiceAccountAuthConfig.newBuilder() to construct.
+      private ServiceAccountAuthConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private ServiceAccountAuthConfig() {
+        serviceAccount_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new ServiceAccountAuthConfig();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.WebhookProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Webhook_GenericWebService_ServiceAccountAuthConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3beta1.WebhookProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Webhook_GenericWebService_ServiceAccountAuthConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+                    .ServiceAccountAuthConfig.class,
+                com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+                    .ServiceAccountAuthConfig.Builder.class);
+      }
+
+      public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object serviceAccount_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The email address of the service account used to authenticate
+       * the webhook call. Dialogflow uses this service account to exchange an
+       * access token and the access token is then sent in the `Authorization`
+       * header of the webhook request.
+       *
+       * The service account must have the
+       * `roles/iam.serviceAccountTokenCreator` role granted to the
+       * [Dialogflow service
+       * agent](https://cloud.google.com/iam/docs/service-agents#dialogflow-service-agent).
+       * </pre>
+       *
+       * <code>string service_account = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The serviceAccount.
+       */
+      @java.lang.Override
+      public java.lang.String getServiceAccount() {
+        java.lang.Object ref = serviceAccount_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          serviceAccount_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The email address of the service account used to authenticate
+       * the webhook call. Dialogflow uses this service account to exchange an
+       * access token and the access token is then sent in the `Authorization`
+       * header of the webhook request.
+       *
+       * The service account must have the
+       * `roles/iam.serviceAccountTokenCreator` role granted to the
+       * [Dialogflow service
+       * agent](https://cloud.google.com/iam/docs/service-agents#dialogflow-service-agent).
+       * </pre>
+       *
+       * <code>string service_account = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for serviceAccount.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getServiceAccountBytes() {
+        java.lang.Object ref = serviceAccount_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          serviceAccount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, serviceAccount_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, serviceAccount_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+                .ServiceAccountAuthConfig)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.ServiceAccountAuthConfig
+            other =
+                (com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+                        .ServiceAccountAuthConfig)
+                    obj;
+
+        if (!getServiceAccount().equals(other.getServiceAccount())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getServiceAccount().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+              .ServiceAccountAuthConfig
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+              .ServiceAccountAuthConfig
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+              .ServiceAccountAuthConfig
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+              .ServiceAccountAuthConfig
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+              .ServiceAccountAuthConfig
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+              .ServiceAccountAuthConfig
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+              .ServiceAccountAuthConfig
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+              .ServiceAccountAuthConfig
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+              .ServiceAccountAuthConfig
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+              .ServiceAccountAuthConfig
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+              .ServiceAccountAuthConfig
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+              .ServiceAccountAuthConfig
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.ServiceAccountAuthConfig
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for authentication using a service account.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.ServiceAccountAuthConfig}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.ServiceAccountAuthConfig)
+          com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+              .ServiceAccountAuthConfigOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dialogflow.cx.v3beta1.WebhookProto
+              .internal_static_google_cloud_dialogflow_cx_v3beta1_Webhook_GenericWebService_ServiceAccountAuthConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dialogflow.cx.v3beta1.WebhookProto
+              .internal_static_google_cloud_dialogflow_cx_v3beta1_Webhook_GenericWebService_ServiceAccountAuthConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+                      .ServiceAccountAuthConfig.class,
+                  com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+                      .ServiceAccountAuthConfig.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.ServiceAccountAuthConfig.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          serviceAccount_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dialogflow.cx.v3beta1.WebhookProto
+              .internal_static_google_cloud_dialogflow_cx_v3beta1_Webhook_GenericWebService_ServiceAccountAuthConfig_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+                .ServiceAccountAuthConfig
+            getDefaultInstanceForType() {
+          return com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+              .ServiceAccountAuthConfig.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+                .ServiceAccountAuthConfig
+            build() {
+          com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.ServiceAccountAuthConfig
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+                .ServiceAccountAuthConfig
+            buildPartial() {
+          com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.ServiceAccountAuthConfig
+              result =
+                  new com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+                      .ServiceAccountAuthConfig(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+                    .ServiceAccountAuthConfig
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.serviceAccount_ = serviceAccount_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+                  .ServiceAccountAuthConfig) {
+            return mergeFrom(
+                (com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+                        .ServiceAccountAuthConfig)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+                    .ServiceAccountAuthConfig
+                other) {
+          if (other
+              == com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+                  .ServiceAccountAuthConfig.getDefaultInstance()) return this;
+          if (!other.getServiceAccount().isEmpty()) {
+            serviceAccount_ = other.serviceAccount_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    serviceAccount_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object serviceAccount_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The email address of the service account used to authenticate
+         * the webhook call. Dialogflow uses this service account to exchange an
+         * access token and the access token is then sent in the `Authorization`
+         * header of the webhook request.
+         *
+         * The service account must have the
+         * `roles/iam.serviceAccountTokenCreator` role granted to the
+         * [Dialogflow service
+         * agent](https://cloud.google.com/iam/docs/service-agents#dialogflow-service-agent).
+         * </pre>
+         *
+         * <code>string service_account = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The serviceAccount.
+         */
+        public java.lang.String getServiceAccount() {
+          java.lang.Object ref = serviceAccount_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            serviceAccount_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The email address of the service account used to authenticate
+         * the webhook call. Dialogflow uses this service account to exchange an
+         * access token and the access token is then sent in the `Authorization`
+         * header of the webhook request.
+         *
+         * The service account must have the
+         * `roles/iam.serviceAccountTokenCreator` role granted to the
+         * [Dialogflow service
+         * agent](https://cloud.google.com/iam/docs/service-agents#dialogflow-service-agent).
+         * </pre>
+         *
+         * <code>string service_account = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for serviceAccount.
+         */
+        public com.google.protobuf.ByteString getServiceAccountBytes() {
+          java.lang.Object ref = serviceAccount_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            serviceAccount_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The email address of the service account used to authenticate
+         * the webhook call. Dialogflow uses this service account to exchange an
+         * access token and the access token is then sent in the `Authorization`
+         * header of the webhook request.
+         *
+         * The service account must have the
+         * `roles/iam.serviceAccountTokenCreator` role granted to the
+         * [Dialogflow service
+         * agent](https://cloud.google.com/iam/docs/service-agents#dialogflow-service-agent).
+         * </pre>
+         *
+         * <code>string service_account = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The serviceAccount to set.
+         * @return This builder for chaining.
+         */
+        public Builder setServiceAccount(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          serviceAccount_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The email address of the service account used to authenticate
+         * the webhook call. Dialogflow uses this service account to exchange an
+         * access token and the access token is then sent in the `Authorization`
+         * header of the webhook request.
+         *
+         * The service account must have the
+         * `roles/iam.serviceAccountTokenCreator` role granted to the
+         * [Dialogflow service
+         * agent](https://cloud.google.com/iam/docs/service-agents#dialogflow-service-agent).
+         * </pre>
+         *
+         * <code>string service_account = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearServiceAccount() {
+          serviceAccount_ = getDefaultInstance().getServiceAccount();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The email address of the service account used to authenticate
+         * the webhook call. Dialogflow uses this service account to exchange an
+         * access token and the access token is then sent in the `Authorization`
+         * header of the webhook request.
+         *
+         * The service account must have the
+         * `roles/iam.serviceAccountTokenCreator` role granted to the
+         * [Dialogflow service
+         * agent](https://cloud.google.com/iam/docs/service-agents#dialogflow-service-agent).
+         * </pre>
+         *
+         * <code>string service_account = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for serviceAccount to set.
+         * @return This builder for chaining.
+         */
+        public Builder setServiceAccountBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          serviceAccount_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.ServiceAccountAuthConfig)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.ServiceAccountAuthConfig)
+      private static final com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+              .ServiceAccountAuthConfig
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+                .ServiceAccountAuthConfig();
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+              .ServiceAccountAuthConfig
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<ServiceAccountAuthConfig> PARSER =
+          new com.google.protobuf.AbstractParser<ServiceAccountAuthConfig>() {
+            @java.lang.Override
+            public ServiceAccountAuthConfig parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<ServiceAccountAuthConfig> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ServiceAccountAuthConfig> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+              .ServiceAccountAuthConfig
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int bitField0_;
     public static final int URI_FIELD_NUMBER = 1;
 
@@ -3979,7 +4817,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      * <code>string username = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.username is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=211
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=225
      * @return The username.
      */
     @java.lang.Override
@@ -4006,7 +4844,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      * <code>string username = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.username is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=211
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=225
      * @return The bytes for username.
      */
     @java.lang.Override
@@ -4038,7 +4876,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      * <code>string password = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.password is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=214
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=228
      * @return The password.
      */
     @java.lang.Override
@@ -4065,7 +4903,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
      * <code>string password = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.password is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=214
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=228
      * @return The bytes for password.
      */
     @java.lang.Override
@@ -4634,6 +5472,72 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
           : result;
     }
 
+    public static final int SERVICE_ACCOUNT_AUTH_CONFIG_FIELD_NUMBER = 18;
+    private com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+            .ServiceAccountAuthConfig
+        serviceAccountAuthConfig_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for service account authentication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.ServiceAccountAuthConfig service_account_auth_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the serviceAccountAuthConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasServiceAccountAuthConfig() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for service account authentication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.ServiceAccountAuthConfig service_account_auth_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The serviceAccountAuthConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.ServiceAccountAuthConfig
+        getServiceAccountAuthConfig() {
+      return serviceAccountAuthConfig_ == null
+          ? com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+              .ServiceAccountAuthConfig.getDefaultInstance()
+          : serviceAccountAuthConfig_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for service account authentication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.ServiceAccountAuthConfig service_account_auth_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+            .ServiceAccountAuthConfigOrBuilder
+        getServiceAccountAuthConfigOrBuilder() {
+      return serviceAccountAuthConfig_ == null
+          ? com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+              .ServiceAccountAuthConfig.getDefaultInstance()
+          : serviceAccountAuthConfig_;
+    }
+
     public static final int WEBHOOK_TYPE_FIELD_NUMBER = 6;
     private int webhookType_ = 0;
 
@@ -4970,6 +5874,9 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
               .getNumber()) {
         output.writeEnum(12, serviceAgentAuth_);
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(18, getServiceAccountAuthConfig());
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(
           secretVersionForUsernamePassword_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(
@@ -5051,6 +5958,11 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, serviceAgentAuth_);
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                18, getServiceAccountAuthConfig());
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(
           secretVersionForUsernamePassword_)) {
         size +=
@@ -5106,6 +6018,11 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
         if (!getOauthConfig().equals(other.getOauthConfig())) return false;
       }
       if (serviceAgentAuth_ != other.serviceAgentAuth_) return false;
+      if (hasServiceAccountAuthConfig() != other.hasServiceAccountAuthConfig()) return false;
+      if (hasServiceAccountAuthConfig()) {
+        if (!getServiceAccountAuthConfig().equals(other.getServiceAccountAuthConfig()))
+          return false;
+      }
       if (webhookType_ != other.webhookType_) return false;
       if (httpMethod_ != other.httpMethod_) return false;
       if (!getRequestBody().equals(other.getRequestBody())) return false;
@@ -5147,6 +6064,10 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       }
       hash = (37 * hash) + SERVICE_AGENT_AUTH_FIELD_NUMBER;
       hash = (53 * hash) + serviceAgentAuth_;
+      if (hasServiceAccountAuthConfig()) {
+        hash = (37 * hash) + SERVICE_ACCOUNT_AUTH_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getServiceAccountAuthConfig().hashCode();
+      }
       hash = (37 * hash) + WEBHOOK_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + webhookType_;
       hash = (37 * hash) + HTTP_METHOD_FIELD_NUMBER;
@@ -5334,6 +6255,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getOauthConfigFieldBuilder();
+          getServiceAccountAuthConfigFieldBuilder();
         }
       }
 
@@ -5354,6 +6276,11 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
           oauthConfigBuilder_ = null;
         }
         serviceAgentAuth_ = 0;
+        serviceAccountAuthConfig_ = null;
+        if (serviceAccountAuthConfigBuilder_ != null) {
+          serviceAccountAuthConfigBuilder_.dispose();
+          serviceAccountAuthConfigBuilder_ = null;
+        }
         webhookType_ = 0;
         httpMethod_ = 0;
         requestBody_ = "";
@@ -5432,15 +6359,22 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
           result.serviceAgentAuth_ = serviceAgentAuth_;
         }
         if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.webhookType_ = webhookType_;
+          result.serviceAccountAuthConfig_ =
+              serviceAccountAuthConfigBuilder_ == null
+                  ? serviceAccountAuthConfig_
+                  : serviceAccountAuthConfigBuilder_.build();
+          to_bitField0_ |= 0x00000002;
         }
         if (((from_bitField0_ & 0x00000400) != 0)) {
-          result.httpMethod_ = httpMethod_;
+          result.webhookType_ = webhookType_;
         }
         if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.requestBody_ = requestBody_;
+          result.httpMethod_ = httpMethod_;
         }
         if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.requestBody_ = requestBody_;
+        }
+        if (((from_bitField0_ & 0x00002000) != 0)) {
           result.parameterMapping_ = internalGetParameterMapping();
           result.parameterMapping_.makeImmutable();
         }
@@ -5540,6 +6474,9 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
         if (other.serviceAgentAuth_ != 0) {
           setServiceAgentAuthValue(other.getServiceAgentAuthValue());
         }
+        if (other.hasServiceAccountAuthConfig()) {
+          mergeServiceAccountAuthConfig(other.getServiceAccountAuthConfig());
+        }
         if (other.webhookType_ != 0) {
           setWebhookTypeValue(other.getWebhookTypeValue());
         }
@@ -5548,11 +6485,11 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
         }
         if (!other.getRequestBody().isEmpty()) {
           requestBody_ = other.requestBody_;
-          bitField0_ |= 0x00000800;
+          bitField0_ |= 0x00001000;
           onChanged();
         }
         internalGetMutableParameterMapping().mergeFrom(other.internalGetParameterMapping());
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -5620,19 +6557,19 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
               case 48:
                 {
                   webhookType_ = input.readEnum();
-                  bitField0_ |= 0x00000200;
+                  bitField0_ |= 0x00000400;
                   break;
                 } // case 48
               case 56:
                 {
                   httpMethod_ = input.readEnum();
-                  bitField0_ |= 0x00000400;
+                  bitField0_ |= 0x00000800;
                   break;
                 } // case 56
               case 66:
                 {
                   requestBody_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000800;
+                  bitField0_ |= 0x00001000;
                   break;
                 } // case 66
               case 74:
@@ -5645,7 +6582,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
                   internalGetMutableParameterMapping()
                       .getMutableMap()
                       .put(parameterMapping__.getKey(), parameterMapping__.getValue());
-                  bitField0_ |= 0x00001000;
+                  bitField0_ |= 0x00002000;
                   break;
                 } // case 74
               case 90:
@@ -5660,6 +6597,13 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000100;
                   break;
                 } // case 96
+              case 146:
+                {
+                  input.readMessage(
+                      getServiceAccountAuthConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000200;
+                  break;
+                } // case 146
               case 154:
                 {
                   secretVersionForUsernamePassword_ = input.readStringRequireUtf8();
@@ -5832,7 +6776,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        * <code>string username = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.username is
-       *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=211
+       *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=225
        * @return The username.
        */
       @java.lang.Deprecated
@@ -5858,7 +6802,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        * <code>string username = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.username is
-       *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=211
+       *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=225
        * @return The bytes for username.
        */
       @java.lang.Deprecated
@@ -5884,7 +6828,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        * <code>string username = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.username is
-       *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=211
+       *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=225
        * @param value The username to set.
        * @return This builder for chaining.
        */
@@ -5909,7 +6853,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        * <code>string username = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.username is
-       *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=211
+       *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=225
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -5930,7 +6874,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        * <code>string username = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.username is
-       *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=211
+       *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=225
        * @param value The bytes for username to set.
        * @return This builder for chaining.
        */
@@ -5958,7 +6902,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        * <code>string password = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.password is
-       *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=214
+       *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=228
        * @return The password.
        */
       @java.lang.Deprecated
@@ -5984,7 +6928,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        * <code>string password = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.password is
-       *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=214
+       *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=228
        * @return The bytes for password.
        */
       @java.lang.Deprecated
@@ -6010,7 +6954,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        * <code>string password = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.password is
-       *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=214
+       *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=228
        * @param value The password to set.
        * @return This builder for chaining.
        */
@@ -6035,7 +6979,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        * <code>string password = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.password is
-       *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=214
+       *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=228
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -6056,7 +7000,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        * <code>string password = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.password is
-       *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=214
+       *     deprecated. See google/cloud/dialogflow/cx/v3beta1/webhook.proto;l=228
        * @param value The bytes for password to set.
        * @return This builder for chaining.
        */
@@ -7352,6 +8296,246 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      private com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+              .ServiceAccountAuthConfig
+          serviceAccountAuthConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+                  .ServiceAccountAuthConfig,
+              com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+                  .ServiceAccountAuthConfig.Builder,
+              com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+                  .ServiceAccountAuthConfigOrBuilder>
+          serviceAccountAuthConfigBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for service account authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.ServiceAccountAuthConfig service_account_auth_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the serviceAccountAuthConfig field is set.
+       */
+      public boolean hasServiceAccountAuthConfig() {
+        return ((bitField0_ & 0x00000200) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for service account authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.ServiceAccountAuthConfig service_account_auth_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The serviceAccountAuthConfig.
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+              .ServiceAccountAuthConfig
+          getServiceAccountAuthConfig() {
+        if (serviceAccountAuthConfigBuilder_ == null) {
+          return serviceAccountAuthConfig_ == null
+              ? com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+                  .ServiceAccountAuthConfig.getDefaultInstance()
+              : serviceAccountAuthConfig_;
+        } else {
+          return serviceAccountAuthConfigBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for service account authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.ServiceAccountAuthConfig service_account_auth_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setServiceAccountAuthConfig(
+          com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.ServiceAccountAuthConfig
+              value) {
+        if (serviceAccountAuthConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          serviceAccountAuthConfig_ = value;
+        } else {
+          serviceAccountAuthConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for service account authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.ServiceAccountAuthConfig service_account_auth_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setServiceAccountAuthConfig(
+          com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.ServiceAccountAuthConfig
+                  .Builder
+              builderForValue) {
+        if (serviceAccountAuthConfigBuilder_ == null) {
+          serviceAccountAuthConfig_ = builderForValue.build();
+        } else {
+          serviceAccountAuthConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for service account authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.ServiceAccountAuthConfig service_account_auth_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeServiceAccountAuthConfig(
+          com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.ServiceAccountAuthConfig
+              value) {
+        if (serviceAccountAuthConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000200) != 0)
+              && serviceAccountAuthConfig_ != null
+              && serviceAccountAuthConfig_
+                  != com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+                      .ServiceAccountAuthConfig.getDefaultInstance()) {
+            getServiceAccountAuthConfigBuilder().mergeFrom(value);
+          } else {
+            serviceAccountAuthConfig_ = value;
+          }
+        } else {
+          serviceAccountAuthConfigBuilder_.mergeFrom(value);
+        }
+        if (serviceAccountAuthConfig_ != null) {
+          bitField0_ |= 0x00000200;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for service account authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.ServiceAccountAuthConfig service_account_auth_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearServiceAccountAuthConfig() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        serviceAccountAuthConfig_ = null;
+        if (serviceAccountAuthConfigBuilder_ != null) {
+          serviceAccountAuthConfigBuilder_.dispose();
+          serviceAccountAuthConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for service account authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.ServiceAccountAuthConfig service_account_auth_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+              .ServiceAccountAuthConfig.Builder
+          getServiceAccountAuthConfigBuilder() {
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return getServiceAccountAuthConfigFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for service account authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.ServiceAccountAuthConfig service_account_auth_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+              .ServiceAccountAuthConfigOrBuilder
+          getServiceAccountAuthConfigOrBuilder() {
+        if (serviceAccountAuthConfigBuilder_ != null) {
+          return serviceAccountAuthConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return serviceAccountAuthConfig_ == null
+              ? com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+                  .ServiceAccountAuthConfig.getDefaultInstance()
+              : serviceAccountAuthConfig_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for service account authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService.ServiceAccountAuthConfig service_account_auth_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+                  .ServiceAccountAuthConfig,
+              com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+                  .ServiceAccountAuthConfig.Builder,
+              com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+                  .ServiceAccountAuthConfigOrBuilder>
+          getServiceAccountAuthConfigFieldBuilder() {
+        if (serviceAccountAuthConfigBuilder_ == null) {
+          serviceAccountAuthConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+                      .ServiceAccountAuthConfig,
+                  com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+                      .ServiceAccountAuthConfig.Builder,
+                  com.google.cloud.dialogflow.cx.v3beta1.Webhook.GenericWebService
+                      .ServiceAccountAuthConfigOrBuilder>(
+                  getServiceAccountAuthConfig(), getParentForChildren(), isClean());
+          serviceAccountAuthConfig_ = null;
+        }
+        return serviceAccountAuthConfigBuilder_;
+      }
+
       private int webhookType_ = 0;
 
       /**
@@ -7388,7 +8572,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder setWebhookTypeValue(int value) {
         webhookType_ = value;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -7437,7 +8621,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         webhookType_ = value.getNumber();
         onChanged();
         return this;
@@ -7457,7 +8641,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearWebhookType() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         webhookType_ = 0;
         onChanged();
         return this;
@@ -7501,7 +8685,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder setHttpMethodValue(int value) {
         httpMethod_ = value;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -7552,7 +8736,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         httpMethod_ = value.getNumber();
         onChanged();
         return this;
@@ -7573,7 +8757,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearHttpMethod() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         httpMethod_ = 0;
         onChanged();
         return this;
@@ -7647,7 +8831,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         requestBody_ = value;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -7666,7 +8850,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearRequestBody() {
         requestBody_ = getDefaultInstance().getRequestBody();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
         return this;
       }
@@ -7690,7 +8874,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
         }
         checkByteStringIsUtf8(value);
         requestBody_ = value;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -7716,7 +8900,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
         if (!parameterMapping_.isMutable()) {
           parameterMapping_ = parameterMapping_.copy();
         }
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
         return parameterMapping_;
       }
@@ -7828,7 +9012,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       }
 
       public Builder clearParameterMapping() {
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         internalGetMutableParameterMapping().getMutableMap().clear();
         return this;
       }
@@ -7858,7 +9042,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getMutableParameterMapping() {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         return internalGetMutableParameterMapping().getMutableMap();
       }
 
@@ -7884,7 +9068,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException("map value");
         }
         internalGetMutableParameterMapping().getMutableMap().put(key, value);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         return this;
       }
 
@@ -7905,7 +9089,7 @@ public final class Webhook extends com.google.protobuf.GeneratedMessageV3
       public Builder putAllParameterMapping(
           java.util.Map<java.lang.String, java.lang.String> values) {
         internalGetMutableParameterMapping().getMutableMap().putAll(values);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         return this;
       }
 

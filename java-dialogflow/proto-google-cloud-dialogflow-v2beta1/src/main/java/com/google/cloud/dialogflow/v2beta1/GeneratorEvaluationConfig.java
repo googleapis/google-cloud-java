@@ -5398,11 +5398,10 @@ public final class GeneratorEvaluationConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. Version for summarization evaluation.
+     * Optional. Version for summarization evaluation.
      * </pre>
      *
-     * <code>optional string evaluator_version = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional string evaluator_version = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return Whether the evaluatorVersion field is set.
      */
@@ -5412,11 +5411,10 @@ public final class GeneratorEvaluationConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. Version for summarization evaluation.
+     * Optional. Version for summarization evaluation.
      * </pre>
      *
-     * <code>optional string evaluator_version = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional string evaluator_version = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The evaluatorVersion.
      */
@@ -5426,11 +5424,10 @@ public final class GeneratorEvaluationConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. Version for summarization evaluation.
+     * Optional. Version for summarization evaluation.
      * </pre>
      *
-     * <code>optional string evaluator_version = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional string evaluator_version = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for evaluatorVersion.
      */
@@ -5681,11 +5678,10 @@ public final class GeneratorEvaluationConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. Version for summarization evaluation.
+     * Optional. Version for summarization evaluation.
      * </pre>
      *
-     * <code>optional string evaluator_version = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional string evaluator_version = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return Whether the evaluatorVersion field is set.
      */
@@ -5698,11 +5694,10 @@ public final class GeneratorEvaluationConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. Version for summarization evaluation.
+     * Optional. Version for summarization evaluation.
      * </pre>
      *
-     * <code>optional string evaluator_version = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional string evaluator_version = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The evaluatorVersion.
      */
@@ -5723,11 +5718,10 @@ public final class GeneratorEvaluationConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. Version for summarization evaluation.
+     * Optional. Version for summarization evaluation.
      * </pre>
      *
-     * <code>optional string evaluator_version = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>optional string evaluator_version = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for evaluatorVersion.
      */
@@ -6674,10 +6668,10 @@ public final class GeneratorEvaluationConfig extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * Output only. Version for summarization evaluation.
+       * Optional. Version for summarization evaluation.
        * </pre>
        *
-       * <code>optional string evaluator_version = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * <code>optional string evaluator_version = 5 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return Whether the evaluatorVersion field is set.
@@ -6690,10 +6684,10 @@ public final class GeneratorEvaluationConfig extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * Output only. Version for summarization evaluation.
+       * Optional. Version for summarization evaluation.
        * </pre>
        *
-       * <code>optional string evaluator_version = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * <code>optional string evaluator_version = 5 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return The evaluatorVersion.
@@ -6714,10 +6708,10 @@ public final class GeneratorEvaluationConfig extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * Output only. Version for summarization evaluation.
+       * Optional. Version for summarization evaluation.
        * </pre>
        *
-       * <code>optional string evaluator_version = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * <code>optional string evaluator_version = 5 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return The bytes for evaluatorVersion.
@@ -6738,10 +6732,10 @@ public final class GeneratorEvaluationConfig extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * Output only. Version for summarization evaluation.
+       * Optional. Version for summarization evaluation.
        * </pre>
        *
-       * <code>optional string evaluator_version = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * <code>optional string evaluator_version = 5 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @param value The evaluatorVersion to set.
@@ -6761,10 +6755,10 @@ public final class GeneratorEvaluationConfig extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * Output only. Version for summarization evaluation.
+       * Optional. Version for summarization evaluation.
        * </pre>
        *
-       * <code>optional string evaluator_version = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * <code>optional string evaluator_version = 5 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return This builder for chaining.
@@ -6780,10 +6774,10 @@ public final class GeneratorEvaluationConfig extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * Output only. Version for summarization evaluation.
+       * Optional. Version for summarization evaluation.
        * </pre>
        *
-       * <code>optional string evaluator_version = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * <code>optional string evaluator_version = 5 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @param value The bytes for evaluatorVersion to set.

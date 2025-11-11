@@ -282,7 +282,7 @@ public interface AutomatedAgentReplyOrBuilder
    * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.AutomatedAgentReply.cx_session_parameters is
-   *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=548
+   *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=584
    * @return Whether the cxSessionParameters field is set.
    */
   @java.lang.Deprecated
@@ -300,7 +300,7 @@ public interface AutomatedAgentReplyOrBuilder
    * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.AutomatedAgentReply.cx_session_parameters is
-   *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=548
+   *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=584
    * @return The cxSessionParameters.
    */
   @java.lang.Deprecated

@@ -312,7 +312,7 @@ public final class GeneratorEvaluationProto {
           + "\033accuracy_evaluation_version\030\002 \001(\tB\005\030\001\340A\001\022-\n"
           + "\036enable_completeness_evaluation\030\003 \001(\010B\005\030\001\340A\001\022.\n"
           + "\037completeness_evaluation_version\030\004 \001(\tB\005\030\001\340A\001\022#\n"
-          + "\021evaluator_version\030\005 \001(\tB\003\340A\003H\000\210\001\001B\024\n"
+          + "\021evaluator_version\030\005 \001(\tB\003\340A\001H\000\210\001\001B\024\n"
           + "\022_evaluator_version\"y\n"
           + "\023InputDataSourceType\022&\n"
           + "\"INPUT_DATA_SOURCE_TYPE_UNSPECIFIED\020\000\022\036\n"
