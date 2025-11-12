@@ -72,6 +72,10 @@ public final class TestOuterClass {
       internal_static_google_cloud_networkmanagement_v1_ProbingDetails_EdgeLocation_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_networkmanagement_v1_ProbingDetails_EdgeLocation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_networkmanagement_v1_ProbingDetails_SingleEdgeResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_networkmanagement_v1_ProbingDetails_SingleEdgeResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -178,7 +182,7 @@ public final class TestOuterClass {
           + "\016latency_micros\030\002 \001(\003\"h\n"
           + "\023LatencyDistribution\022Q\n"
           + "\023latency_percentiles\030\001"
-          + " \003(\01324.google.cloud.networkmanagement.v1.LatencyPercentile\"\336\006\n"
+          + " \003(\01324.google.cloud.networkmanagement.v1.LatencyPercentile\"\314\n\n"
           + "\016ProbingDetails\022O\n"
           + "\006result\030\001 \001(\0162?.google.cloud.netwo"
           + "rkmanagement.v1.ProbingDetails.ProbingResult\022/\n"
@@ -193,9 +197,23 @@ public final class TestOuterClass {
           + "\017probing_latency\030\010"
           + " \001(\01326.google.cloud.networkmanagement.v1.LatencyDistribution\022c\n"
           + "\033destination_egress_location\030\t \001(\0132>.google.clou"
-          + "d.networkmanagement.v1.ProbingDetails.EdgeLocation\032)\n"
+          + "d.networkmanagement.v1.ProbingDetails.EdgeLocation\022\\\n"
+          + "\016edge_responses\030\n"
+          + " \003(\0132D.goo"
+          + "gle.cloud.networkmanagement.v1.ProbingDetails.SingleEdgeResponse\022\032\n"
+          + "\022probed_all_devices\030\013 \001(\010\032)\n"
           + "\014EdgeLocation\022\031\n"
-          + "\021metropolitan_area\030\001 \001(\t\"\200\001\n\r"
+          + "\021metropolitan_area\030\001 \001(\t\032\361\002\n"
+          + "\022SingleEdgeResponse\022O\n"
+          + "\006result\030\001 \001(\0162?.google.cloud.networkman"
+          + "agement.v1.ProbingDetails.ProbingResult\022\030\n"
+          + "\020sent_probe_count\030\002 \001(\005\022\036\n"
+          + "\026successful_probe_count\030\003 \001(\005\022O\n"
+          + "\017probing_latency\030\004 \001"
+          + "(\01326.google.cloud.networkmanagement.v1.LatencyDistribution\022c\n"
+          + "\033destination_egress_location\030\005 \001(\0132>.google.cloud.networkma"
+          + "nagement.v1.ProbingDetails.EdgeLocation\022\032\n"
+          + "\022destination_router\030\006 \001(\t\"\200\001\n\r"
           + "ProbingResult\022\036\n"
           + "\032PROBING_RESULT_UNSPECIFIED\020\000\022\r\n"
           + "\tREACHABLE\020\001\022\017\n"
@@ -206,10 +224,11 @@ public final class TestOuterClass {
           + "\037PROBING_ABORT_CAUSE_UNSPECIFIED\020\000\022\025\n"
           + "\021PERMISSION_DENIED\020\001\022\026\n"
           + "\022NO_SOURCE_LOCATION\020\002B\375\001\n"
-          + "%com.google.cloud.networkmanagement.v1B\016TestOuterClassP\001ZScloud.goo"
-          + "gle.com/go/networkmanagement/apiv1/networkmanagementpb;networkmanagementpb\252\002!Goo"
-          + "gle.Cloud.NetworkManagement.V1\312\002!Google\\"
-          + "Cloud\\NetworkManagement\\V1\352\002$Google::Cloud::NetworkManagement::V1b\006proto3"
+          + "%com.google.cloud.networkmanagement.v1B\016TestOuterClas"
+          + "sP\001ZScloud.google.com/go/networkmanagement/apiv1/networkmanagementpb;networkmana"
+          + "gementpb\252\002!Google.Cloud.NetworkManagemen"
+          + "t.V1\312\002!Google\\Cloud\\NetworkManagement\\V1"
+          + "\352\002$Google::Cloud::NetworkManagement::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -347,6 +366,8 @@ public final class TestOuterClass {
               "EndpointInfo",
               "ProbingLatency",
               "DestinationEgressLocation",
+              "EdgeResponses",
+              "ProbedAllDevices",
             });
     internal_static_google_cloud_networkmanagement_v1_ProbingDetails_EdgeLocation_descriptor =
         internal_static_google_cloud_networkmanagement_v1_ProbingDetails_descriptor
@@ -357,6 +378,21 @@ public final class TestOuterClass {
             internal_static_google_cloud_networkmanagement_v1_ProbingDetails_EdgeLocation_descriptor,
             new java.lang.String[] {
               "MetropolitanArea",
+            });
+    internal_static_google_cloud_networkmanagement_v1_ProbingDetails_SingleEdgeResponse_descriptor =
+        internal_static_google_cloud_networkmanagement_v1_ProbingDetails_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_networkmanagement_v1_ProbingDetails_SingleEdgeResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_networkmanagement_v1_ProbingDetails_SingleEdgeResponse_descriptor,
+            new java.lang.String[] {
+              "Result",
+              "SentProbeCount",
+              "SuccessfulProbeCount",
+              "ProbingLatency",
+              "DestinationEgressLocation",
+              "DestinationRouter",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

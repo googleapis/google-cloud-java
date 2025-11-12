@@ -32,9 +32,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [Using gRPC with Cloud KMS](https://cloud.google.com/kms/docs/grpc).
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/kms/v1/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class KeyManagementServiceGrpc {
 
@@ -2578,8 +2575,8 @@ public final class KeyManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.ListKeyRingsResponse listKeyRings(
-        com.google.cloud.kms.v1.ListKeyRingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.ListKeyRingsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListKeyRingsMethod(), getCallOptions(), request);
     }
 
@@ -2591,8 +2588,8 @@ public final class KeyManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.ListCryptoKeysResponse listCryptoKeys(
-        com.google.cloud.kms.v1.ListCryptoKeysRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.ListCryptoKeysRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCryptoKeysMethod(), getCallOptions(), request);
     }
 
@@ -2604,8 +2601,9 @@ public final class KeyManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.ListCryptoKeyVersionsResponse listCryptoKeyVersions(
-        com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCryptoKeyVersionsMethod(), getCallOptions(), request);
     }
 
@@ -2617,8 +2615,8 @@ public final class KeyManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.ListImportJobsResponse listImportJobs(
-        com.google.cloud.kms.v1.ListImportJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.ListImportJobsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListImportJobsMethod(), getCallOptions(), request);
     }
 
@@ -2630,8 +2628,8 @@ public final class KeyManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.KeyRing getKeyRing(
-        com.google.cloud.kms.v1.GetKeyRingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.GetKeyRingRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetKeyRingMethod(), getCallOptions(), request);
     }
 
@@ -2645,8 +2643,8 @@ public final class KeyManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.CryptoKey getCryptoKey(
-        com.google.cloud.kms.v1.GetCryptoKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.GetCryptoKeyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCryptoKeyMethod(), getCallOptions(), request);
     }
 
@@ -2659,8 +2657,8 @@ public final class KeyManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.CryptoKeyVersion getCryptoKeyVersion(
-        com.google.cloud.kms.v1.GetCryptoKeyVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.GetCryptoKeyVersionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCryptoKeyVersionMethod(), getCallOptions(), request);
     }
 
@@ -2677,8 +2675,8 @@ public final class KeyManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.PublicKey getPublicKey(
-        com.google.cloud.kms.v1.GetPublicKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.GetPublicKeyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPublicKeyMethod(), getCallOptions(), request);
     }
 
@@ -2690,8 +2688,8 @@ public final class KeyManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.ImportJob getImportJob(
-        com.google.cloud.kms.v1.GetImportJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.GetImportJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetImportJobMethod(), getCallOptions(), request);
     }
 
@@ -2704,8 +2702,8 @@ public final class KeyManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.KeyRing createKeyRing(
-        com.google.cloud.kms.v1.CreateKeyRingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.CreateKeyRingRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateKeyRingMethod(), getCallOptions(), request);
     }
 
@@ -2721,8 +2719,8 @@ public final class KeyManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.CryptoKey createCryptoKey(
-        com.google.cloud.kms.v1.CreateCryptoKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.CreateCryptoKeyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCryptoKeyMethod(), getCallOptions(), request);
     }
 
@@ -2738,8 +2736,9 @@ public final class KeyManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.CryptoKeyVersion createCryptoKeyVersion(
-        com.google.cloud.kms.v1.CreateCryptoKeyVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.CreateCryptoKeyVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCryptoKeyVersionMethod(), getCallOptions(), request);
     }
 
@@ -2757,8 +2756,9 @@ public final class KeyManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.CryptoKeyVersion importCryptoKeyVersion(
-        com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportCryptoKeyVersionMethod(), getCallOptions(), request);
     }
 
@@ -2773,8 +2773,8 @@ public final class KeyManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.ImportJob createImportJob(
-        com.google.cloud.kms.v1.CreateImportJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.CreateImportJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateImportJobMethod(), getCallOptions(), request);
     }
 
@@ -2786,8 +2786,8 @@ public final class KeyManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.CryptoKey updateCryptoKey(
-        com.google.cloud.kms.v1.UpdateCryptoKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.UpdateCryptoKeyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateCryptoKeyMethod(), getCallOptions(), request);
     }
 
@@ -2809,8 +2809,9 @@ public final class KeyManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.CryptoKeyVersion updateCryptoKeyVersion(
-        com.google.cloud.kms.v1.UpdateCryptoKeyVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.UpdateCryptoKeyVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateCryptoKeyVersionMethod(), getCallOptions(), request);
     }
 
@@ -2826,8 +2827,9 @@ public final class KeyManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.CryptoKey updateCryptoKeyPrimaryVersion(
-        com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateCryptoKeyPrimaryVersionMethod(), getCallOptions(), request);
     }
 
@@ -2857,8 +2859,9 @@ public final class KeyManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.CryptoKeyVersion destroyCryptoKeyVersion(
-        com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDestroyCryptoKeyVersionMethod(), getCallOptions(), request);
     }
 
@@ -2877,8 +2880,9 @@ public final class KeyManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.CryptoKeyVersion restoreCryptoKeyVersion(
-        com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRestoreCryptoKeyVersionMethod(), getCallOptions(), request);
     }
 
@@ -2893,8 +2897,8 @@ public final class KeyManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.EncryptResponse encrypt(
-        com.google.cloud.kms.v1.EncryptRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.EncryptRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getEncryptMethod(), getCallOptions(), request);
     }
 
@@ -2909,8 +2913,8 @@ public final class KeyManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.DecryptResponse decrypt(
-        com.google.cloud.kms.v1.DecryptRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.DecryptRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDecryptMethod(), getCallOptions(), request);
     }
 
@@ -2927,8 +2931,8 @@ public final class KeyManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.RawEncryptResponse rawEncrypt(
-        com.google.cloud.kms.v1.RawEncryptRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.RawEncryptRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRawEncryptMethod(), getCallOptions(), request);
     }
 
@@ -2943,8 +2947,8 @@ public final class KeyManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.RawDecryptResponse rawDecrypt(
-        com.google.cloud.kms.v1.RawDecryptRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.RawDecryptRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRawDecryptMethod(), getCallOptions(), request);
     }
 
@@ -2960,8 +2964,8 @@ public final class KeyManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.AsymmetricSignResponse asymmetricSign(
-        com.google.cloud.kms.v1.AsymmetricSignRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.AsymmetricSignRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAsymmetricSignMethod(), getCallOptions(), request);
     }
 
@@ -2977,8 +2981,8 @@ public final class KeyManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.AsymmetricDecryptResponse asymmetricDecrypt(
-        com.google.cloud.kms.v1.AsymmetricDecryptRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.AsymmetricDecryptRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAsymmetricDecryptMethod(), getCallOptions(), request);
     }
 
@@ -2992,8 +2996,8 @@ public final class KeyManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.MacSignResponse macSign(
-        com.google.cloud.kms.v1.MacSignRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.MacSignRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getMacSignMethod(), getCallOptions(), request);
     }
 
@@ -3008,8 +3012,8 @@ public final class KeyManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.MacVerifyResponse macVerify(
-        com.google.cloud.kms.v1.MacVerifyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.MacVerifyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getMacVerifyMethod(), getCallOptions(), request);
     }
 
@@ -3025,8 +3029,8 @@ public final class KeyManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.DecapsulateResponse decapsulate(
-        com.google.cloud.kms.v1.DecapsulateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.DecapsulateRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDecapsulateMethod(), getCallOptions(), request);
     }
 
@@ -3039,8 +3043,8 @@ public final class KeyManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.v1.GenerateRandomBytesResponse generateRandomBytes(
-        com.google.cloud.kms.v1.GenerateRandomBytesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.v1.GenerateRandomBytesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateRandomBytesMethod(), getCallOptions(), request);
     }
   }

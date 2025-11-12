@@ -81,6 +81,51 @@ public class MockMarketingplatformAdminServiceImpl extends MarketingplatformAdmi
   }
 
   @Override
+  public void listOrganizations(
+      ListOrganizationsRequest request,
+      StreamObserver<ListOrganizationsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListOrganizationsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListOrganizationsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListOrganizations, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListOrganizationsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void findSalesPartnerManagedClients(
+      FindSalesPartnerManagedClientsRequest request,
+      StreamObserver<FindSalesPartnerManagedClientsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FindSalesPartnerManagedClientsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((FindSalesPartnerManagedClientsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FindSalesPartnerManagedClients,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FindSalesPartnerManagedClientsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void listAnalyticsAccountLinks(
       ListAnalyticsAccountLinksRequest request,
       StreamObserver<ListAnalyticsAccountLinksResponse> responseObserver) {
@@ -167,6 +212,28 @@ public class MockMarketingplatformAdminServiceImpl extends MarketingplatformAdmi
                       + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   SetPropertyServiceLevelResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void reportPropertyUsage(
+      ReportPropertyUsageRequest request,
+      StreamObserver<ReportPropertyUsageResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ReportPropertyUsageResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ReportPropertyUsageResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ReportPropertyUsage, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ReportPropertyUsageResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

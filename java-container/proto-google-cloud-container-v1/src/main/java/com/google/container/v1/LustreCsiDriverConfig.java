@@ -90,13 +90,25 @@ public final class LustreCsiDriverConfig extends com.google.protobuf.GeneratedMe
    * <pre>
    * If set to true, the Lustre CSI driver will install Lustre kernel modules
    * using port 6988.
+   * This serves as a workaround for a port conflict with the
+   * gke-metadata-server. This field is required ONLY under the following
+   * conditions:
+   * 1. The GKE node version is older than 1.33.2-gke.4655000.
+   * 2. You're connecting to a Lustre instance that has the
+   * 'gke-support-enabled' flag.
+   * Deprecated: This flag is no longer required as of GKE node version
+   * 1.33.2-gke.4655000, unless you are connecting to a Lustre instance
+   * that has the `gke-support-enabled` flag.
    * </pre>
    *
-   * <code>bool enable_legacy_lustre_port = 3;</code>
+   * <code>bool enable_legacy_lustre_port = 3 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.LustreCsiDriverConfig.enable_legacy_lustre_port is deprecated.
+   *     See google/container/v1/cluster_service.proto;l=2103
    * @return The enableLegacyLustrePort.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean getEnableLegacyLustrePort() {
     return enableLegacyLustrePort_;
   }
@@ -527,13 +539,25 @@ public final class LustreCsiDriverConfig extends com.google.protobuf.GeneratedMe
      * <pre>
      * If set to true, the Lustre CSI driver will install Lustre kernel modules
      * using port 6988.
+     * This serves as a workaround for a port conflict with the
+     * gke-metadata-server. This field is required ONLY under the following
+     * conditions:
+     * 1. The GKE node version is older than 1.33.2-gke.4655000.
+     * 2. You're connecting to a Lustre instance that has the
+     * 'gke-support-enabled' flag.
+     * Deprecated: This flag is no longer required as of GKE node version
+     * 1.33.2-gke.4655000, unless you are connecting to a Lustre instance
+     * that has the `gke-support-enabled` flag.
      * </pre>
      *
-     * <code>bool enable_legacy_lustre_port = 3;</code>
+     * <code>bool enable_legacy_lustre_port = 3 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1.LustreCsiDriverConfig.enable_legacy_lustre_port is
+     *     deprecated. See google/container/v1/cluster_service.proto;l=2103
      * @return The enableLegacyLustrePort.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getEnableLegacyLustrePort() {
       return enableLegacyLustrePort_;
     }
@@ -544,13 +568,25 @@ public final class LustreCsiDriverConfig extends com.google.protobuf.GeneratedMe
      * <pre>
      * If set to true, the Lustre CSI driver will install Lustre kernel modules
      * using port 6988.
+     * This serves as a workaround for a port conflict with the
+     * gke-metadata-server. This field is required ONLY under the following
+     * conditions:
+     * 1. The GKE node version is older than 1.33.2-gke.4655000.
+     * 2. You're connecting to a Lustre instance that has the
+     * 'gke-support-enabled' flag.
+     * Deprecated: This flag is no longer required as of GKE node version
+     * 1.33.2-gke.4655000, unless you are connecting to a Lustre instance
+     * that has the `gke-support-enabled` flag.
      * </pre>
      *
-     * <code>bool enable_legacy_lustre_port = 3;</code>
+     * <code>bool enable_legacy_lustre_port = 3 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1.LustreCsiDriverConfig.enable_legacy_lustre_port is
+     *     deprecated. See google/container/v1/cluster_service.proto;l=2103
      * @param value The enableLegacyLustrePort to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setEnableLegacyLustrePort(boolean value) {
 
       enableLegacyLustrePort_ = value;
@@ -565,12 +601,24 @@ public final class LustreCsiDriverConfig extends com.google.protobuf.GeneratedMe
      * <pre>
      * If set to true, the Lustre CSI driver will install Lustre kernel modules
      * using port 6988.
+     * This serves as a workaround for a port conflict with the
+     * gke-metadata-server. This field is required ONLY under the following
+     * conditions:
+     * 1. The GKE node version is older than 1.33.2-gke.4655000.
+     * 2. You're connecting to a Lustre instance that has the
+     * 'gke-support-enabled' flag.
+     * Deprecated: This flag is no longer required as of GKE node version
+     * 1.33.2-gke.4655000, unless you are connecting to a Lustre instance
+     * that has the `gke-support-enabled` flag.
      * </pre>
      *
-     * <code>bool enable_legacy_lustre_port = 3;</code>
+     * <code>bool enable_legacy_lustre_port = 3 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1.LustreCsiDriverConfig.enable_legacy_lustre_port is
+     *     deprecated. See google/container/v1/cluster_service.proto;l=2103
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearEnableLegacyLustrePort() {
       bitField0_ = (bitField0_ & ~0x00000002);
       enableLegacyLustrePort_ = false;

@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [autofeed](https://support.google.com/merchants/answer/7538732) setting.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/accounts/v1beta/autofeedsettings.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AutofeedSettingsServiceGrpc {
 
@@ -339,8 +336,9 @@ public final class AutofeedSettingsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.AutofeedSettings getAutofeedSettings(
-        com.google.shopping.merchant.accounts.v1beta.GetAutofeedSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.GetAutofeedSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAutofeedSettingsMethod(), getCallOptions(), request);
     }
 
@@ -352,8 +350,9 @@ public final class AutofeedSettingsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.AutofeedSettings updateAutofeedSettings(
-        com.google.shopping.merchant.accounts.v1beta.UpdateAutofeedSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.UpdateAutofeedSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAutofeedSettingsMethod(), getCallOptions(), request);
     }
   }

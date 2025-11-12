@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * The IDS Service
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/ids/v1/ids.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class IDSGrpc {
 
@@ -444,8 +441,8 @@ public final class IDSGrpc {
      * </pre>
      */
     public com.google.cloud.ids.v1.ListEndpointsResponse listEndpoints(
-        com.google.cloud.ids.v1.ListEndpointsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.ids.v1.ListEndpointsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEndpointsMethod(), getCallOptions(), request);
     }
 
@@ -457,8 +454,8 @@ public final class IDSGrpc {
      * </pre>
      */
     public com.google.cloud.ids.v1.Endpoint getEndpoint(
-        com.google.cloud.ids.v1.GetEndpointRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.ids.v1.GetEndpointRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEndpointMethod(), getCallOptions(), request);
     }
 
@@ -470,8 +467,8 @@ public final class IDSGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createEndpoint(
-        com.google.cloud.ids.v1.CreateEndpointRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.ids.v1.CreateEndpointRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEndpointMethod(), getCallOptions(), request);
     }
 
@@ -483,8 +480,8 @@ public final class IDSGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteEndpoint(
-        com.google.cloud.ids.v1.DeleteEndpointRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.ids.v1.DeleteEndpointRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteEndpointMethod(), getCallOptions(), request);
     }
   }

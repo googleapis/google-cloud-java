@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for interactions with CloudSQL.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/alloydb/v1/csql_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AlloyDBCSQLAdminGrpc {
 
@@ -239,8 +236,9 @@ public final class AlloyDBCSQLAdminGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation restoreFromCloudSQL(
-        com.google.cloud.alloydb.v1.RestoreFromCloudSQLRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.alloydb.v1.RestoreFromCloudSQLRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRestoreFromCloudSQLMethod(), getCallOptions(), request);
     }
   }

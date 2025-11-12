@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * The service that manages Vertex AI Dataset and its child resources.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1/dataset_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DatasetServiceGrpc {
 
@@ -1619,8 +1616,9 @@ public final class DatasetServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createDataset(
-        com.google.cloud.aiplatform.v1.CreateDatasetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.CreateDatasetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDatasetMethod(), getCallOptions(), request);
     }
 
@@ -1632,8 +1630,8 @@ public final class DatasetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.Dataset getDataset(
-        com.google.cloud.aiplatform.v1.GetDatasetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.GetDatasetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDatasetMethod(), getCallOptions(), request);
     }
 
@@ -1645,8 +1643,9 @@ public final class DatasetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.Dataset updateDataset(
-        com.google.cloud.aiplatform.v1.UpdateDatasetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.UpdateDatasetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDatasetMethod(), getCallOptions(), request);
     }
 
@@ -1658,8 +1657,8 @@ public final class DatasetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ListDatasetsResponse listDatasets(
-        com.google.cloud.aiplatform.v1.ListDatasetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ListDatasetsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDatasetsMethod(), getCallOptions(), request);
     }
 
@@ -1671,8 +1670,9 @@ public final class DatasetServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteDataset(
-        com.google.cloud.aiplatform.v1.DeleteDatasetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.DeleteDatasetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDatasetMethod(), getCallOptions(), request);
     }
 
@@ -1684,8 +1684,8 @@ public final class DatasetServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importData(
-        com.google.cloud.aiplatform.v1.ImportDataRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ImportDataRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportDataMethod(), getCallOptions(), request);
     }
 
@@ -1697,8 +1697,8 @@ public final class DatasetServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportData(
-        com.google.cloud.aiplatform.v1.ExportDataRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ExportDataRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportDataMethod(), getCallOptions(), request);
     }
 
@@ -1710,8 +1710,9 @@ public final class DatasetServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createDatasetVersion(
-        com.google.cloud.aiplatform.v1.CreateDatasetVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.CreateDatasetVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDatasetVersionMethod(), getCallOptions(), request);
     }
 
@@ -1723,8 +1724,9 @@ public final class DatasetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.DatasetVersion updateDatasetVersion(
-        com.google.cloud.aiplatform.v1.UpdateDatasetVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.UpdateDatasetVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDatasetVersionMethod(), getCallOptions(), request);
     }
 
@@ -1736,8 +1738,9 @@ public final class DatasetServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteDatasetVersion(
-        com.google.cloud.aiplatform.v1.DeleteDatasetVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.DeleteDatasetVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDatasetVersionMethod(), getCallOptions(), request);
     }
 
@@ -1749,8 +1752,9 @@ public final class DatasetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.DatasetVersion getDatasetVersion(
-        com.google.cloud.aiplatform.v1.GetDatasetVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.GetDatasetVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDatasetVersionMethod(), getCallOptions(), request);
     }
 
@@ -1762,8 +1766,9 @@ public final class DatasetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ListDatasetVersionsResponse listDatasetVersions(
-        com.google.cloud.aiplatform.v1.ListDatasetVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ListDatasetVersionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDatasetVersionsMethod(), getCallOptions(), request);
     }
 
@@ -1775,8 +1780,9 @@ public final class DatasetServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation restoreDatasetVersion(
-        com.google.cloud.aiplatform.v1.RestoreDatasetVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.RestoreDatasetVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRestoreDatasetVersionMethod(), getCallOptions(), request);
     }
 
@@ -1788,8 +1794,9 @@ public final class DatasetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ListDataItemsResponse listDataItems(
-        com.google.cloud.aiplatform.v1.ListDataItemsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ListDataItemsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDataItemsMethod(), getCallOptions(), request);
     }
 
@@ -1801,8 +1808,9 @@ public final class DatasetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.SearchDataItemsResponse searchDataItems(
-        com.google.cloud.aiplatform.v1.SearchDataItemsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.SearchDataItemsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchDataItemsMethod(), getCallOptions(), request);
     }
 
@@ -1814,8 +1822,9 @@ public final class DatasetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ListSavedQueriesResponse listSavedQueries(
-        com.google.cloud.aiplatform.v1.ListSavedQueriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ListSavedQueriesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSavedQueriesMethod(), getCallOptions(), request);
     }
 
@@ -1827,8 +1836,9 @@ public final class DatasetServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteSavedQuery(
-        com.google.cloud.aiplatform.v1.DeleteSavedQueryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.DeleteSavedQueryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSavedQueryMethod(), getCallOptions(), request);
     }
 
@@ -1840,8 +1850,9 @@ public final class DatasetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.AnnotationSpec getAnnotationSpec(
-        com.google.cloud.aiplatform.v1.GetAnnotationSpecRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.GetAnnotationSpecRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAnnotationSpecMethod(), getCallOptions(), request);
     }
 
@@ -1855,8 +1866,9 @@ public final class DatasetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ListAnnotationsResponse listAnnotations(
-        com.google.cloud.aiplatform.v1.ListAnnotationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ListAnnotationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAnnotationsMethod(), getCallOptions(), request);
     }
   }

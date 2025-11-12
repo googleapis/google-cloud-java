@@ -846,4 +846,34 @@ public interface CloudVmClusterPropertiesOrBuilder
    * @return The bytes for clusterName.
    */
   com.google.protobuf.ByteString getClusterNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The compute model of the VM Cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.ComputeModel compute_model = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for computeModel.
+   */
+  int getComputeModelValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The compute model of the VM Cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.ComputeModel compute_model = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The computeModel.
+   */
+  com.google.cloud.oracledatabase.v1.ComputeModel getComputeModel();
 }

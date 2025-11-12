@@ -30,6 +30,7 @@ public interface ListCloudControlsRequestOrBuilder
    * <pre>
    * Required. The parent resource name, in the format
    * `organizations/{organization}/locations/{location}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -46,6 +47,7 @@ public interface ListCloudControlsRequestOrBuilder
    * <pre>
    * Required. The parent resource name, in the format
    * `organizations/{organization}/locations/{location}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -60,7 +62,7 @@ public interface ListCloudControlsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The maximum number of CloudControls to return. The default value
+   * Optional. The maximum number of cloud controls to return. The default value
    * is `500`.
    *
    * If you exceed the maximum value of `1000`, then the service uses the
@@ -77,12 +79,13 @@ public interface ListCloudControlsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A pagination token returned from a previous request to list
-   * CloudControls. Provide this token to retrieve the next page of results.
+   * Optional. A pagination token that's returned from a previous request to
+   * list cloud controls. Provide this token to retrieve the next page of
+   * results.
    *
-   * When paginating, parent provided to
-   * ListCloudControls request must match the call that provided the page
-   * token.
+   * When paginating, the parent that you provide to the
+   * [ListCloudControls][google.cloud.cloudsecuritycompliance.v1.Config.ListCloudControls]
+   * request must match the call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -95,12 +98,13 @@ public interface ListCloudControlsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A pagination token returned from a previous request to list
-   * CloudControls. Provide this token to retrieve the next page of results.
+   * Optional. A pagination token that's returned from a previous request to
+   * list cloud controls. Provide this token to retrieve the next page of
+   * results.
    *
-   * When paginating, parent provided to
-   * ListCloudControls request must match the call that provided the page
-   * token.
+   * When paginating, the parent that you provide to the
+   * [ListCloudControls][google.cloud.cloudsecuritycompliance.v1.Config.ListCloudControls]
+   * request must match the call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

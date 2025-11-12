@@ -372,6 +372,73 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
         : schema_;
   }
 
+  public static final int STRUCT_SCHEMA_FIELD_NUMBER = 10;
+  private com.google.protobuf.Struct structSchema_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A struct representation of the schema.
+   * This is populated for datasources with schemas that cannot be
+   * fully represented by the strongly-typed `schema` field.
+   *
+   * For Looker datasources, this maps to the LookmlModelExplore type:
+   * https://cloud.google.com/looker/docs/reference/looker-api/latest/types/LookmlModelExplore
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct struct_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the structSchema field is set.
+   */
+  @java.lang.Override
+  public boolean hasStructSchema() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A struct representation of the schema.
+   * This is populated for datasources with schemas that cannot be
+   * fully represented by the strongly-typed `schema` field.
+   *
+   * For Looker datasources, this maps to the LookmlModelExplore type:
+   * https://cloud.google.com/looker/docs/reference/looker-api/latest/types/LookmlModelExplore
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct struct_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The structSchema.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Struct getStructSchema() {
+    return structSchema_ == null ? com.google.protobuf.Struct.getDefaultInstance() : structSchema_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A struct representation of the schema.
+   * This is populated for datasources with schemas that cannot be
+   * fully represented by the strongly-typed `schema` field.
+   *
+   * For Looker datasources, this maps to the LookmlModelExplore type:
+   * https://cloud.google.com/looker/docs/reference/looker-api/latest/types/LookmlModelExplore
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct struct_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StructOrBuilder getStructSchemaOrBuilder() {
+    return structSchema_ == null ? com.google.protobuf.Struct.getDefaultInstance() : structSchema_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -400,6 +467,9 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(7, getSchema());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(10, getStructSchema());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -425,6 +495,9 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getSchema());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getStructSchema());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -444,6 +517,10 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
     if (hasSchema() != other.hasSchema()) return false;
     if (hasSchema()) {
       if (!getSchema().equals(other.getSchema())) return false;
+    }
+    if (hasStructSchema() != other.hasStructSchema()) return false;
+    if (hasStructSchema()) {
+      if (!getStructSchema().equals(other.getStructSchema())) return false;
     }
     if (!getReferenceCase().equals(other.getReferenceCase())) return false;
     switch (referenceCase_) {
@@ -473,6 +550,10 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
     if (hasSchema()) {
       hash = (37 * hash) + SCHEMA_FIELD_NUMBER;
       hash = (53 * hash) + getSchema().hashCode();
+    }
+    if (hasStructSchema()) {
+      hash = (37 * hash) + STRUCT_SCHEMA_FIELD_NUMBER;
+      hash = (53 * hash) + getStructSchema().hashCode();
     }
     switch (referenceCase_) {
       case 1:
@@ -633,6 +714,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getSchemaFieldBuilder();
+        getStructSchemaFieldBuilder();
       }
     }
 
@@ -650,6 +732,11 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
       if (schemaBuilder_ != null) {
         schemaBuilder_.dispose();
         schemaBuilder_ = null;
+      }
+      structSchema_ = null;
+      if (structSchemaBuilder_ != null) {
+        structSchemaBuilder_.dispose();
+        structSchemaBuilder_ = null;
       }
       referenceCase_ = 0;
       reference_ = null;
@@ -694,6 +781,11 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.schema_ = schemaBuilder_ == null ? schema_ : schemaBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.structSchema_ =
+            structSchemaBuilder_ == null ? structSchema_ : structSchemaBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -757,6 +849,9 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (other.hasSchema()) {
         mergeSchema(other.getSchema());
+      }
+      if (other.hasStructSchema()) {
+        mergeStructSchema(other.getStructSchema());
       }
       switch (other.getReferenceCase()) {
         case BIGQUERY_TABLE_REFERENCE:
@@ -834,6 +929,12 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 58
+            case 82:
+              {
+                input.readMessage(getStructSchemaFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1717,6 +1818,254 @@ public final class Datasource extends com.google.protobuf.GeneratedMessageV3
         schema_ = null;
       }
       return schemaBuilder_;
+    }
+
+    private com.google.protobuf.Struct structSchema_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        structSchemaBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A struct representation of the schema.
+     * This is populated for datasources with schemas that cannot be
+     * fully represented by the strongly-typed `schema` field.
+     *
+     * For Looker datasources, this maps to the LookmlModelExplore type:
+     * https://cloud.google.com/looker/docs/reference/looker-api/latest/types/LookmlModelExplore
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct struct_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the structSchema field is set.
+     */
+    public boolean hasStructSchema() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A struct representation of the schema.
+     * This is populated for datasources with schemas that cannot be
+     * fully represented by the strongly-typed `schema` field.
+     *
+     * For Looker datasources, this maps to the LookmlModelExplore type:
+     * https://cloud.google.com/looker/docs/reference/looker-api/latest/types/LookmlModelExplore
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct struct_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The structSchema.
+     */
+    public com.google.protobuf.Struct getStructSchema() {
+      if (structSchemaBuilder_ == null) {
+        return structSchema_ == null
+            ? com.google.protobuf.Struct.getDefaultInstance()
+            : structSchema_;
+      } else {
+        return structSchemaBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A struct representation of the schema.
+     * This is populated for datasources with schemas that cannot be
+     * fully represented by the strongly-typed `schema` field.
+     *
+     * For Looker datasources, this maps to the LookmlModelExplore type:
+     * https://cloud.google.com/looker/docs/reference/looker-api/latest/types/LookmlModelExplore
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct struct_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setStructSchema(com.google.protobuf.Struct value) {
+      if (structSchemaBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        structSchema_ = value;
+      } else {
+        structSchemaBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A struct representation of the schema.
+     * This is populated for datasources with schemas that cannot be
+     * fully represented by the strongly-typed `schema` field.
+     *
+     * For Looker datasources, this maps to the LookmlModelExplore type:
+     * https://cloud.google.com/looker/docs/reference/looker-api/latest/types/LookmlModelExplore
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct struct_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setStructSchema(com.google.protobuf.Struct.Builder builderForValue) {
+      if (structSchemaBuilder_ == null) {
+        structSchema_ = builderForValue.build();
+      } else {
+        structSchemaBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A struct representation of the schema.
+     * This is populated for datasources with schemas that cannot be
+     * fully represented by the strongly-typed `schema` field.
+     *
+     * For Looker datasources, this maps to the LookmlModelExplore type:
+     * https://cloud.google.com/looker/docs/reference/looker-api/latest/types/LookmlModelExplore
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct struct_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeStructSchema(com.google.protobuf.Struct value) {
+      if (structSchemaBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && structSchema_ != null
+            && structSchema_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getStructSchemaBuilder().mergeFrom(value);
+        } else {
+          structSchema_ = value;
+        }
+      } else {
+        structSchemaBuilder_.mergeFrom(value);
+      }
+      if (structSchema_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A struct representation of the schema.
+     * This is populated for datasources with schemas that cannot be
+     * fully represented by the strongly-typed `schema` field.
+     *
+     * For Looker datasources, this maps to the LookmlModelExplore type:
+     * https://cloud.google.com/looker/docs/reference/looker-api/latest/types/LookmlModelExplore
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct struct_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearStructSchema() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      structSchema_ = null;
+      if (structSchemaBuilder_ != null) {
+        structSchemaBuilder_.dispose();
+        structSchemaBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A struct representation of the schema.
+     * This is populated for datasources with schemas that cannot be
+     * fully represented by the strongly-typed `schema` field.
+     *
+     * For Looker datasources, this maps to the LookmlModelExplore type:
+     * https://cloud.google.com/looker/docs/reference/looker-api/latest/types/LookmlModelExplore
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct struct_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Struct.Builder getStructSchemaBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getStructSchemaFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A struct representation of the schema.
+     * This is populated for datasources with schemas that cannot be
+     * fully represented by the strongly-typed `schema` field.
+     *
+     * For Looker datasources, this maps to the LookmlModelExplore type:
+     * https://cloud.google.com/looker/docs/reference/looker-api/latest/types/LookmlModelExplore
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct struct_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.StructOrBuilder getStructSchemaOrBuilder() {
+      if (structSchemaBuilder_ != null) {
+        return structSchemaBuilder_.getMessageOrBuilder();
+      } else {
+        return structSchema_ == null
+            ? com.google.protobuf.Struct.getDefaultInstance()
+            : structSchema_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A struct representation of the schema.
+     * This is populated for datasources with schemas that cannot be
+     * fully represented by the strongly-typed `schema` field.
+     *
+     * For Looker datasources, this maps to the LookmlModelExplore type:
+     * https://cloud.google.com/looker/docs/reference/looker-api/latest/types/LookmlModelExplore
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct struct_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        getStructSchemaFieldBuilder() {
+      if (structSchemaBuilder_ == null) {
+        structSchemaBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>(
+                getStructSchema(), getParentForChildren(), isClean());
+        structSchema_ = null;
+      }
+      return structSchemaBuilder_;
     }
 
     @java.lang.Override

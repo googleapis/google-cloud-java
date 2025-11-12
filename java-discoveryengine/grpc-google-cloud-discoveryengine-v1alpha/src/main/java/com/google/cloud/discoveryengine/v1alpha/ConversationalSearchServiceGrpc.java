@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for conversational search.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1alpha/conversational_search_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ConversationalSearchServiceGrpc {
 
@@ -1246,8 +1243,9 @@ public final class ConversationalSearchServiceGrpc {
      */
     public com.google.cloud.discoveryengine.v1alpha.ConverseConversationResponse
         converseConversation(
-            com.google.cloud.discoveryengine.v1alpha.ConverseConversationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.discoveryengine.v1alpha.ConverseConversationRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getConverseConversationMethod(), getCallOptions(), request);
     }
 
@@ -1261,8 +1259,9 @@ public final class ConversationalSearchServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.Conversation createConversation(
-        com.google.cloud.discoveryengine.v1alpha.CreateConversationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.CreateConversationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateConversationMethod(), getCallOptions(), request);
     }
 
@@ -1276,8 +1275,9 @@ public final class ConversationalSearchServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteConversation(
-        com.google.cloud.discoveryengine.v1alpha.DeleteConversationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.DeleteConversationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteConversationMethod(), getCallOptions(), request);
     }
 
@@ -1293,8 +1293,9 @@ public final class ConversationalSearchServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.Conversation updateConversation(
-        com.google.cloud.discoveryengine.v1alpha.UpdateConversationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.UpdateConversationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateConversationMethod(), getCallOptions(), request);
     }
 
@@ -1306,8 +1307,9 @@ public final class ConversationalSearchServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.Conversation getConversation(
-        com.google.cloud.discoveryengine.v1alpha.GetConversationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.GetConversationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetConversationMethod(), getCallOptions(), request);
     }
 
@@ -1320,8 +1322,9 @@ public final class ConversationalSearchServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.ListConversationsResponse listConversations(
-        com.google.cloud.discoveryengine.v1alpha.ListConversationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.ListConversationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListConversationsMethod(), getCallOptions(), request);
     }
 
@@ -1333,8 +1336,9 @@ public final class ConversationalSearchServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.AnswerQueryResponse answerQuery(
-        com.google.cloud.discoveryengine.v1alpha.AnswerQueryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.AnswerQueryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAnswerQueryMethod(), getCallOptions(), request);
     }
 
@@ -1346,8 +1350,9 @@ public final class ConversationalSearchServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.Answer getAnswer(
-        com.google.cloud.discoveryengine.v1alpha.GetAnswerRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.GetAnswerRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAnswerMethod(), getCallOptions(), request);
     }
 
@@ -1361,8 +1366,9 @@ public final class ConversationalSearchServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.Session createSession(
-        com.google.cloud.discoveryengine.v1alpha.CreateSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.CreateSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSessionMethod(), getCallOptions(), request);
     }
 
@@ -1376,8 +1382,9 @@ public final class ConversationalSearchServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteSession(
-        com.google.cloud.discoveryengine.v1alpha.DeleteSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.DeleteSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSessionMethod(), getCallOptions(), request);
     }
 
@@ -1392,8 +1399,9 @@ public final class ConversationalSearchServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.Session updateSession(
-        com.google.cloud.discoveryengine.v1alpha.UpdateSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.UpdateSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSessionMethod(), getCallOptions(), request);
     }
 
@@ -1405,8 +1413,9 @@ public final class ConversationalSearchServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.Session getSession(
-        com.google.cloud.discoveryengine.v1alpha.GetSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.GetSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSessionMethod(), getCallOptions(), request);
     }
 
@@ -1419,8 +1428,9 @@ public final class ConversationalSearchServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.ListSessionsResponse listSessions(
-        com.google.cloud.discoveryengine.v1alpha.ListSessionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.ListSessionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSessionsMethod(), getCallOptions(), request);
     }
   }

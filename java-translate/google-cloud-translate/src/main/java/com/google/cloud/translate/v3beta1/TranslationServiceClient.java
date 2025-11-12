@@ -259,6 +259,20 @@ import javax.annotation.Generated;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> RefineText</td>
+ *      <td><p> Refines the input translated text to improve the quality.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> refineText(RefineTextRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> refineTextCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -805,7 +819,7 @@ public class TranslationServiceClient implements BackgroundResource {
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   TranslateDocumentRequest request =
    *       TranslateDocumentRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setSourceLanguageCode("sourceLanguageCode1645917472")
    *           .setTargetLanguageCode("targetLanguageCode-106414698")
    *           .setDocumentInputConfig(DocumentInputConfig.newBuilder().build())
@@ -844,7 +858,7 @@ public class TranslationServiceClient implements BackgroundResource {
    * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
    *   TranslateDocumentRequest request =
    *       TranslateDocumentRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setSourceLanguageCode("sourceLanguageCode1645917472")
    *           .setTargetLanguageCode("targetLanguageCode-106414698")
    *           .setDocumentInputConfig(DocumentInputConfig.newBuilder().build())
@@ -1161,6 +1175,7 @@ public class TranslationServiceClient implements BackgroundResource {
    *           .setCustomizedAttribution("customizedAttribution557650238")
    *           .setEnableShadowRemovalNativePdf(true)
    *           .setEnableRotationCorrection(true)
+   *           .setPdfNativeOnly(true)
    *           .build();
    *   BatchTranslateDocumentResponse response =
    *       translationServiceClient.batchTranslateDocumentAsync(request).get();
@@ -1207,6 +1222,7 @@ public class TranslationServiceClient implements BackgroundResource {
    *           .setCustomizedAttribution("customizedAttribution557650238")
    *           .setEnableShadowRemovalNativePdf(true)
    *           .setEnableRotationCorrection(true)
+   *           .setPdfNativeOnly(true)
    *           .build();
    *   OperationFuture<BatchTranslateDocumentResponse, BatchTranslateDocumentMetadata> future =
    *       translationServiceClient.batchTranslateDocumentOperationCallable().futureCall(request);
@@ -1255,6 +1271,7 @@ public class TranslationServiceClient implements BackgroundResource {
    *           .setCustomizedAttribution("customizedAttribution557650238")
    *           .setEnableShadowRemovalNativePdf(true)
    *           .setEnableRotationCorrection(true)
+   *           .setPdfNativeOnly(true)
    *           .build();
    *   ApiFuture<Operation> future =
    *       translationServiceClient.batchTranslateDocumentCallable().futureCall(request);
@@ -1876,6 +1893,68 @@ public class TranslationServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteGlossaryRequest, Operation> deleteGlossaryCallable() {
     return stub.deleteGlossaryCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Refines the input translated text to improve the quality.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   RefineTextRequest request =
+   *       RefineTextRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .addAllRefinementEntries(new ArrayList<RefinementEntry>())
+   *           .setSourceLanguageCode("sourceLanguageCode1645917472")
+   *           .setTargetLanguageCode("targetLanguageCode-106414698")
+   *           .build();
+   *   RefineTextResponse response = translationServiceClient.refineText(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RefineTextResponse refineText(RefineTextRequest request) {
+    return refineTextCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Refines the input translated text to improve the quality.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   RefineTextRequest request =
+   *       RefineTextRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .addAllRefinementEntries(new ArrayList<RefinementEntry>())
+   *           .setSourceLanguageCode("sourceLanguageCode1645917472")
+   *           .setTargetLanguageCode("targetLanguageCode-106414698")
+   *           .build();
+   *   ApiFuture<RefineTextResponse> future =
+   *       translationServiceClient.refineTextCallable().futureCall(request);
+   *   // Do something.
+   *   RefineTextResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RefineTextRequest, RefineTextResponse> refineTextCallable() {
+    return stub.refineTextCallable();
   }
 
   @Override

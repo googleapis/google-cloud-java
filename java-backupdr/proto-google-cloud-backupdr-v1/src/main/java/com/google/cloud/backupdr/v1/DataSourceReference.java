@@ -417,6 +417,45 @@ public final class DataSourceReference extends com.google.protobuf.GeneratedMess
         : dataSourceGcpResourceInfo_;
   }
 
+  public static final int TOTAL_STORED_BYTES_FIELD_NUMBER = 8;
+  private long totalStoredBytes_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Total size of the storage used by all backup resources for the
+   * referenced datasource.
+   * </pre>
+   *
+   * <code>optional int64 total_stored_bytes = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the totalStoredBytes field is set.
+   */
+  @java.lang.Override
+  public boolean hasTotalStoredBytes() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Total size of the storage used by all backup resources for the
+   * referenced datasource.
+   * </pre>
+   *
+   * <code>optional int64 total_stored_bytes = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The totalStoredBytes.
+   */
+  @java.lang.Override
+  public long getTotalStoredBytes() {
+    return totalStoredBytes_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -453,6 +492,9 @@ public final class DataSourceReference extends com.google.protobuf.GeneratedMess
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(7, getDataSourceGcpResourceInfo());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeInt64(8, totalStoredBytes_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -491,6 +533,9 @@ public final class DataSourceReference extends com.google.protobuf.GeneratedMess
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               7, getDataSourceGcpResourceInfo());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(8, totalStoredBytes_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -525,6 +570,10 @@ public final class DataSourceReference extends com.google.protobuf.GeneratedMess
       if (!getDataSourceGcpResourceInfo().equals(other.getDataSourceGcpResourceInfo()))
         return false;
     }
+    if (hasTotalStoredBytes() != other.hasTotalStoredBytes()) return false;
+    if (hasTotalStoredBytes()) {
+      if (getTotalStoredBytes() != other.getTotalStoredBytes()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -555,6 +604,10 @@ public final class DataSourceReference extends com.google.protobuf.GeneratedMess
     if (hasDataSourceGcpResourceInfo()) {
       hash = (37 * hash) + DATA_SOURCE_GCP_RESOURCE_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getDataSourceGcpResourceInfo().hashCode();
+    }
+    if (hasTotalStoredBytes()) {
+      hash = (37 * hash) + TOTAL_STORED_BYTES_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTotalStoredBytes());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -726,6 +779,7 @@ public final class DataSourceReference extends com.google.protobuf.GeneratedMess
         dataSourceGcpResourceInfoBuilder_.dispose();
         dataSourceGcpResourceInfoBuilder_ = null;
       }
+      totalStoredBytes_ = 0L;
       return this;
     }
 
@@ -792,6 +846,10 @@ public final class DataSourceReference extends com.google.protobuf.GeneratedMess
                 ? dataSourceGcpResourceInfo_
                 : dataSourceGcpResourceInfoBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.totalStoredBytes_ = totalStoredBytes_;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -867,6 +925,9 @@ public final class DataSourceReference extends com.google.protobuf.GeneratedMess
       if (other.hasDataSourceGcpResourceInfo()) {
         mergeDataSourceGcpResourceInfo(other.getDataSourceGcpResourceInfo());
       }
+      if (other.hasTotalStoredBytes()) {
+        setTotalStoredBytes(other.getTotalStoredBytes());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -937,6 +998,12 @@ public final class DataSourceReference extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
+            case 64:
+              {
+                totalStoredBytes_ = input.readInt64();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2016,6 +2083,86 @@ public final class DataSourceReference extends com.google.protobuf.GeneratedMess
         dataSourceGcpResourceInfo_ = null;
       }
       return dataSourceGcpResourceInfoBuilder_;
+    }
+
+    private long totalStoredBytes_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total size of the storage used by all backup resources for the
+     * referenced datasource.
+     * </pre>
+     *
+     * <code>optional int64 total_stored_bytes = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the totalStoredBytes field is set.
+     */
+    @java.lang.Override
+    public boolean hasTotalStoredBytes() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total size of the storage used by all backup resources for the
+     * referenced datasource.
+     * </pre>
+     *
+     * <code>optional int64 total_stored_bytes = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The totalStoredBytes.
+     */
+    @java.lang.Override
+    public long getTotalStoredBytes() {
+      return totalStoredBytes_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total size of the storage used by all backup resources for the
+     * referenced datasource.
+     * </pre>
+     *
+     * <code>optional int64 total_stored_bytes = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The totalStoredBytes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotalStoredBytes(long value) {
+
+      totalStoredBytes_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total size of the storage used by all backup resources for the
+     * referenced datasource.
+     * </pre>
+     *
+     * <code>optional int64 total_stored_bytes = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTotalStoredBytes() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      totalStoredBytes_ = 0L;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

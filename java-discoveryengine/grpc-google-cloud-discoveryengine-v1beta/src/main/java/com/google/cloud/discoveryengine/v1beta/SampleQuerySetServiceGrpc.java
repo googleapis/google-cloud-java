@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [SampleQuerySet][google.cloud.discoveryengine.v1beta.SampleQuerySet]s,
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1beta/sample_query_set_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SampleQuerySetServiceGrpc {
 
@@ -591,8 +588,9 @@ public final class SampleQuerySetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1beta.SampleQuerySet getSampleQuerySet(
-        com.google.cloud.discoveryengine.v1beta.GetSampleQuerySetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.GetSampleQuerySetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSampleQuerySetMethod(), getCallOptions(), request);
     }
 
@@ -605,8 +603,9 @@ public final class SampleQuerySetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1beta.ListSampleQuerySetsResponse listSampleQuerySets(
-        com.google.cloud.discoveryengine.v1beta.ListSampleQuerySetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.ListSampleQuerySetsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSampleQuerySetsMethod(), getCallOptions(), request);
     }
 
@@ -619,8 +618,9 @@ public final class SampleQuerySetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1beta.SampleQuerySet createSampleQuerySet(
-        com.google.cloud.discoveryengine.v1beta.CreateSampleQuerySetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.CreateSampleQuerySetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSampleQuerySetMethod(), getCallOptions(), request);
     }
 
@@ -633,8 +633,9 @@ public final class SampleQuerySetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1beta.SampleQuerySet updateSampleQuerySet(
-        com.google.cloud.discoveryengine.v1beta.UpdateSampleQuerySetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.UpdateSampleQuerySetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSampleQuerySetMethod(), getCallOptions(), request);
     }
 
@@ -647,8 +648,9 @@ public final class SampleQuerySetServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteSampleQuerySet(
-        com.google.cloud.discoveryengine.v1beta.DeleteSampleQuerySetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.DeleteSampleQuerySetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSampleQuerySetMethod(), getCallOptions(), request);
     }
   }

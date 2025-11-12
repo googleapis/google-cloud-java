@@ -23,7 +23,9 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * FrameworkReference contains the reference of a framework.
+ * The reference of a framework, in the format
+ * `organizations/{organization}/locations/{location}/frameworks/{framework}`.
+ * The only supported location is `global`.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.FrameworkReference}
@@ -74,8 +76,8 @@ public final class FrameworkReference extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. In the format:
-   * organizations/{org}/locations/{location}/frameworks/{framework}
+   * Required. The major version of the framework. If not specified, the version
+   * corresponds to the latest version of the framework.
    * </pre>
    *
    * <code>string framework = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -99,8 +101,8 @@ public final class FrameworkReference extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. In the format:
-   * organizations/{org}/locations/{location}/frameworks/{framework}
+   * Required. The major version of the framework. If not specified, the version
+   * corresponds to the latest version of the framework.
    * </pre>
    *
    * <code>string framework = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -127,8 +129,8 @@ public final class FrameworkReference extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Major revision id of the framework. If not specified, corresponds
-   * to the latest revision of the framework.
+   * Optional. The major version of the framework. If not specified, the version
+   * corresponds to the latest version of the framework.
    * </pre>
    *
    * <code>optional int64 major_revision_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -144,8 +146,8 @@ public final class FrameworkReference extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Major revision id of the framework. If not specified, corresponds
-   * to the latest revision of the framework.
+   * Optional. The major version of the framework. If not specified, the version
+   * corresponds to the latest version of the framework.
    * </pre>
    *
    * <code>optional int64 major_revision_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -336,7 +338,9 @@ public final class FrameworkReference extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * FrameworkReference contains the reference of a framework.
+   * The reference of a framework, in the format
+   * `organizations/{organization}/locations/{location}/frameworks/{framework}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.FrameworkReference}
@@ -540,8 +544,8 @@ public final class FrameworkReference extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. In the format:
-     * organizations/{org}/locations/{location}/frameworks/{framework}
+     * Required. The major version of the framework. If not specified, the version
+     * corresponds to the latest version of the framework.
      * </pre>
      *
      * <code>string framework = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -564,8 +568,8 @@ public final class FrameworkReference extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. In the format:
-     * organizations/{org}/locations/{location}/frameworks/{framework}
+     * Required. The major version of the framework. If not specified, the version
+     * corresponds to the latest version of the framework.
      * </pre>
      *
      * <code>string framework = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -588,8 +592,8 @@ public final class FrameworkReference extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. In the format:
-     * organizations/{org}/locations/{location}/frameworks/{framework}
+     * Required. The major version of the framework. If not specified, the version
+     * corresponds to the latest version of the framework.
      * </pre>
      *
      * <code>string framework = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -611,8 +615,8 @@ public final class FrameworkReference extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. In the format:
-     * organizations/{org}/locations/{location}/frameworks/{framework}
+     * Required. The major version of the framework. If not specified, the version
+     * corresponds to the latest version of the framework.
      * </pre>
      *
      * <code>string framework = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -630,8 +634,8 @@ public final class FrameworkReference extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. In the format:
-     * organizations/{org}/locations/{location}/frameworks/{framework}
+     * Required. The major version of the framework. If not specified, the version
+     * corresponds to the latest version of the framework.
      * </pre>
      *
      * <code>string framework = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -656,8 +660,8 @@ public final class FrameworkReference extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Major revision id of the framework. If not specified, corresponds
-     * to the latest revision of the framework.
+     * Optional. The major version of the framework. If not specified, the version
+     * corresponds to the latest version of the framework.
      * </pre>
      *
      * <code>optional int64 major_revision_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -673,8 +677,8 @@ public final class FrameworkReference extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Major revision id of the framework. If not specified, corresponds
-     * to the latest revision of the framework.
+     * Optional. The major version of the framework. If not specified, the version
+     * corresponds to the latest version of the framework.
      * </pre>
      *
      * <code>optional int64 major_revision_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -690,8 +694,8 @@ public final class FrameworkReference extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Major revision id of the framework. If not specified, corresponds
-     * to the latest revision of the framework.
+     * Optional. The major version of the framework. If not specified, the version
+     * corresponds to the latest version of the framework.
      * </pre>
      *
      * <code>optional int64 major_revision_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -711,8 +715,8 @@ public final class FrameworkReference extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Major revision id of the framework. If not specified, corresponds
-     * to the latest revision of the framework.
+     * Optional. The major version of the framework. If not specified, the version
+     * corresponds to the latest version of the framework.
      * </pre>
      *
      * <code>optional int64 major_revision_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

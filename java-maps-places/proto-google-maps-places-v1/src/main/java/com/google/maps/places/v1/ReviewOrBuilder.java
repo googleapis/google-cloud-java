@@ -294,4 +294,44 @@ public interface ReviewOrBuilder
    * @return The bytes for googleMapsUri.
    */
   com.google.protobuf.ByteString getGoogleMapsUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The date when the author visited the place. This is truncated to the year
+   * and month of the visit.
+   * </pre>
+   *
+   * <code>.google.type.Date visit_date = 17;</code>
+   *
+   * @return Whether the visitDate field is set.
+   */
+  boolean hasVisitDate();
+
+  /**
+   *
+   *
+   * <pre>
+   * The date when the author visited the place. This is truncated to the year
+   * and month of the visit.
+   * </pre>
+   *
+   * <code>.google.type.Date visit_date = 17;</code>
+   *
+   * @return The visitDate.
+   */
+  com.google.type.Date getVisitDate();
+
+  /**
+   *
+   *
+   * <pre>
+   * The date when the author visited the place. This is truncated to the year
+   * and month of the visit.
+   * </pre>
+   *
+   * <code>.google.type.Date visit_date = 17;</code>
+   */
+  com.google.type.DateOrBuilder getVisitDateOrBuilder();
 }

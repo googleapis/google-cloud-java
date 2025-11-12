@@ -41,25 +41,49 @@ public final class ContactMessagesProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n.google/ads/admanager/v1/contact_messag"
-          + "es.proto\022\027google.ads.admanager.v1\032\037googl"
-          + "e/api/field_behavior.proto\032\031google/api/r"
-          + "esource.proto\"\303\001\n\007Contact\022\021\n\004name\030\001 \001(\tB"
-          + "\003\340A\010\022&\n\024company_display_name\030\023 \001(\tB\003\340A\003H"
-          + "\000\210\001\001:d\352Aa\n admanager.googleapis.com/Cont"
-          + "act\022*networks/{network_code}/contacts/{c"
-          + "ontact}*\010contacts2\007contactB\027\n\025_company_d"
-          + "isplay_nameB\310\001\n\033com.google.ads.admanager"
-          + ".v1B\024ContactMessagesProtoP\001Z@google.gola"
-          + "ng.org/genproto/googleapis/ads/admanager"
-          + "/v1;admanager\252\002\027Google.Ads.AdManager.V1\312"
-          + "\002\027Google\\Ads\\AdManager\\V1\352\002\032Google::Ads:"
-          + ":AdManager::V1b\006proto3"
+      "\n"
+          + ".google/ads/admanager/v1/contact_messag"
+          + "es.proto\022\027google.ads.admanager.v1\032+googl"
+          + "e/ads/admanager/v1/contact_enums.proto\032\037"
+          + "google/api/field_behavior.proto\032\031google/api/resource.proto\"\356\004\n"
+          + "\007Contact\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\036\n"
+          + "\014display_name\030\003 \001(\tB\003\340A\002H\000\210\001\001\022A\n"
+          + "\007company\030\005 \001(\tB+\340A\002\340A\005\372A\"\n"
+          + " admanager.googleapis.com/CompanyH\001\210\001\001\022R\n"
+          + "\006status\030\006"
+          + " \001(\01628.google.ads.admanager.v1.ContactStatusEnum.ContactStatusB\003\340A\003H\002\210\001\001\022\031\n"
+          + "\007address\030\007 \001(\tB\003\340A\001H\003\210\001\001\022\034\n\n"
+          + "cell_phone\030\010 \001(\tB\003\340A\001H\004\210\001\001\022\031\n"
+          + "\007comment\030\t \001(\tB\003\340A\001H\005\210\001\001\022\027\n"
+          + "\005email\030\n"
+          + " \001(\tB\003\340A\001H\006\210\001\001\022\025\n"
+          + "\003fax\030\013 \001(\tB\003\340A\001H\007\210\001\001\022\027\n"
+          + "\005title\030\014 \001(\tB\003\340A\001H\010\210\001\001\022\034\n\n"
+          + "work_phone\030\r"
+          + " \001(\tB\003\340A\001H\t\210\001\001:d\352Aa\n"
+          + " admanager.googleapis.com/Contact\022*networks/{network_co"
+          + "de}/contacts/{contact}*\010contacts2\007contactB\017\n\r"
+          + "_display_nameB\n\n"
+          + "\010_companyB\t\n"
+          + "\007_statusB\n\n"
+          + "\010_addressB\r\n"
+          + "\013_cell_phoneB\n\n"
+          + "\010_commentB\010\n"
+          + "\006_emailB\006\n"
+          + "\004_faxB\010\n"
+          + "\006_titleB\r\n"
+          + "\013_work_phoneB\310\001\n"
+          + "\033com.google.ads.admanager.v1B\024ContactMessagesProtoP\001Z@google.golang.org/g"
+          + "enproto/googleapis/ads/admanager/v1;adma"
+          + "nager\252\002\027Google.Ads.AdManager.V1\312\002\027Google"
+          + "\\Ads\\AdManager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.ads.admanager.v1.ContactEnumsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
             });
@@ -69,14 +93,26 @@ public final class ContactMessagesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_Contact_descriptor,
             new java.lang.String[] {
-              "Name", "CompanyDisplayName",
+              "Name",
+              "DisplayName",
+              "Company",
+              "Status",
+              "Address",
+              "CellPhone",
+              "Comment",
+              "Email",
+              "Fax",
+              "Title",
+              "WorkPhone",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.ads.admanager.v1.ContactEnumsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
   }

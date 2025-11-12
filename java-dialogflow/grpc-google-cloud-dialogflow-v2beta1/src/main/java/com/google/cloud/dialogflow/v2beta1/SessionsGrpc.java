@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * guide](https://cloud.google.com/dialogflow/docs/api-overview).
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/v2beta1/session.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SessionsGrpc {
 
@@ -388,8 +385,9 @@ public final class SessionsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.DetectIntentResponse detectIntent(
-        com.google.cloud.dialogflow.v2beta1.DetectIntentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.DetectIntentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDetectIntentMethod(), getCallOptions(), request);
     }
 

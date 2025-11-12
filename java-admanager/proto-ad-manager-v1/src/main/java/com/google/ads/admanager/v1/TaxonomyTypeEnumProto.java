@@ -42,18 +42,19 @@ public final class TaxonomyTypeEnumProto {
   static {
     java.lang.String[] descriptorData = {
       "\n0google/ads/admanager/v1/taxonomy_type_"
-          + "enum.proto\022\027google.ads.admanager.v1\"\345\001\n\020"
-          + "TaxonomyTypeEnum\"\320\001\n\014TaxonomyType\022\035\n\031TAX"
+          + "enum.proto\022\027google.ads.admanager.v1\"\203\002\n\020"
+          + "TaxonomyTypeEnum\"\356\001\n\014TaxonomyType\022\035\n\031TAX"
           + "ONOMY_TYPE_UNSPECIFIED\020\000\022\035\n\031TAXONOMY_IAB"
           + "_AUDIENCE_1_1\020\003\022\034\n\030TAXONOMY_IAB_CONTENT_"
-          + "2_1\020\004\022\034\n\030TAXONOMY_IAB_CONTENT_2_2\020\006\022\034\n\030T"
-          + "AXONOMY_IAB_CONTENT_3_0\020\005\022(\n$TAXONOMY_GO"
-          + "OGLE_STRUCTURED_VIDEO_1_0\020\007B\311\001\n\033com.goog"
-          + "le.ads.admanager.v1B\025TaxonomyTypeEnumPro"
-          + "toP\001Z@google.golang.org/genproto/googlea"
-          + "pis/ads/admanager/v1;admanager\252\002\027Google."
-          + "Ads.AdManager.V1\312\002\027Google\\Ads\\AdManager\\"
-          + "V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
+          + "1_0\020\010\022\034\n\030TAXONOMY_IAB_CONTENT_2_1\020\004\022\034\n\030T"
+          + "AXONOMY_IAB_CONTENT_2_2\020\006\022\034\n\030TAXONOMY_IA"
+          + "B_CONTENT_3_0\020\005\022(\n$TAXONOMY_GOOGLE_STRUC"
+          + "TURED_VIDEO_1_0\020\007B\311\001\n\033com.google.ads.adm"
+          + "anager.v1B\025TaxonomyTypeEnumProtoP\001Z@goog"
+          + "le.golang.org/genproto/googleapis/ads/ad"
+          + "manager/v1;admanager\252\002\027Google.Ads.AdMana"
+          + "ger.V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Googl"
+          + "e::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

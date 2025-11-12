@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Provides access to historical and forecasted usage data.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/capacityplanner/v1beta/usage_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class UsageServiceGrpc {
 
@@ -651,8 +648,9 @@ public final class UsageServiceGrpc {
      * </pre>
      */
     public com.google.cloud.capacityplanner.v1beta.QueryUsageHistoriesResponse queryUsageHistories(
-        com.google.cloud.capacityplanner.v1beta.QueryUsageHistoriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.capacityplanner.v1beta.QueryUsageHistoriesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getQueryUsageHistoriesMethod(), getCallOptions(), request);
     }
 
@@ -665,8 +663,9 @@ public final class UsageServiceGrpc {
      * </pre>
      */
     public com.google.cloud.capacityplanner.v1beta.QueryForecastsResponse queryForecasts(
-        com.google.cloud.capacityplanner.v1beta.QueryForecastsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.capacityplanner.v1beta.QueryForecastsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getQueryForecastsMethod(), getCallOptions(), request);
     }
 
@@ -679,8 +678,9 @@ public final class UsageServiceGrpc {
      * </pre>
      */
     public com.google.cloud.capacityplanner.v1beta.QueryReservationsResponse queryReservations(
-        com.google.cloud.capacityplanner.v1beta.QueryReservationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.capacityplanner.v1beta.QueryReservationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getQueryReservationsMethod(), getCallOptions(), request);
     }
 
@@ -693,8 +693,9 @@ public final class UsageServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportUsageHistories(
-        com.google.cloud.capacityplanner.v1beta.ExportUsageHistoriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.capacityplanner.v1beta.ExportUsageHistoriesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportUsageHistoriesMethod(), getCallOptions(), request);
     }
 
@@ -707,8 +708,9 @@ public final class UsageServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportForecasts(
-        com.google.cloud.capacityplanner.v1beta.ExportForecastsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.capacityplanner.v1beta.ExportForecastsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportForecastsMethod(), getCallOptions(), request);
     }
 
@@ -721,8 +723,9 @@ public final class UsageServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportReservationsUsage(
-        com.google.cloud.capacityplanner.v1beta.ExportReservationsUsageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.capacityplanner.v1beta.ExportReservationsUsageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportReservationsUsageMethod(), getCallOptions(), request);
     }
   }

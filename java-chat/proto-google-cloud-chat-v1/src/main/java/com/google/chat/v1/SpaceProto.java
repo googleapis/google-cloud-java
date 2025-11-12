@@ -109,7 +109,7 @@ public final class SpaceProto {
           + "\032google/chat/v1/space.proto\022\016google.cha"
           + "t.v1\032\037google/api/field_behavior.proto\032\031g"
           + "oogle/api/resource.proto\032\"google/chat/v1/history_state.proto\032"
-          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\377\025\n"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\315\026\n"
           + "\005Space\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022/\n"
           + "\004type\030\002"
@@ -182,18 +182,20 @@ public final class SpaceProto {
           + "\014_manage_appsB\022\n"
           + "\020_manage_webhooksB\020\n"
           + "\016_post_messagesB\021\n"
-          + "\017_reply_messages\032P\n"
+          + "\017_reply_messages\032\235\001\n"
           + "\021PermissionSetting\022\035\n"
-          + "\020managers_allowed\030\001 \001(\010B\003\340A\001\022\034\n"
-          + "\017members_allowed\030\002 \001(\010B\003\340A\001\".\n"
+          + "\020managers_allowed\030\001 \001(\010B\003\340A\001\022,\n"
+          + "\032assistant_managers_allowed\030\003"
+          + " \001(\010B\003\340A\001H\000\210\001\001\022\034\n"
+          + "\017members_allowed\030\002 \001(\010B\003\340A\001B\035\n"
+          + "\033_assistant_managers_allowed\".\n"
           + "\004Type\022\024\n"
           + "\020TYPE_UNSPECIFIED\020\000\022\010\n"
           + "\004ROOM\020\001\022\006\n"
           + "\002DM\020\002\"V\n"
           + "\tSpaceType\022\032\n"
           + "\026SPACE_TYPE_UNSPECIFIED\020\000\022\t\n"
-          + "\005SPACE\020\001\022\016\n"
-          + "\n"
+          + "\005SPACE\020\001\022\016\n\n"
           + "GROUP_CHAT\020\002\022\022\n"
           + "\016DIRECT_MESSAGE\020\003\"\202\001\n"
           + "\023SpaceThreadingState\022%\n"
@@ -249,9 +251,9 @@ public final class SpaceProto {
           + "\033CompleteImportSpaceResponse\022$\n"
           + "\005space\030\001 \001(\0132\025.google.chat.v1.SpaceB\243\001\n"
           + "\022com.google.chat.v1B\n"
-          + "SpaceProtoP\001Z,cloud.google.com/go/chat/apiv1/chatpb;chat"
-          + "pb\242\002\013DYNAPIProto\252\002\023Google.Apps.Chat.V1\312\002"
-          + "\023Google\\Apps\\Chat\\V1\352\002\026Google::Apps::Chat::V1b\006proto3"
+          + "SpaceProtoP\001Z,cloud.google.com/go/chat/apiv1/chatpb;chatpb"
+          + "\242\002\013DYNAPIProto\252\002\023Google.Apps.Chat.V1\312\002\023G"
+          + "oogle\\Apps\\Chat\\V1\352\002\026Google::Apps::Chat::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -336,7 +338,7 @@ public final class SpaceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_chat_v1_Space_PermissionSetting_descriptor,
             new java.lang.String[] {
-              "ManagersAllowed", "MembersAllowed",
+              "ManagersAllowed", "AssistantManagersAllowed", "MembersAllowed",
             });
     internal_static_google_chat_v1_CreateSpaceRequest_descriptor =
         getDescriptor().getMessageTypes().get(1);

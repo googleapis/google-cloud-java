@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Asset service definition.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/asset/v1/asset_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AssetServiceGrpc {
 
@@ -2096,8 +2093,8 @@ public final class AssetServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportAssets(
-        com.google.cloud.asset.v1.ExportAssetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.asset.v1.ExportAssetsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportAssetsMethod(), getCallOptions(), request);
     }
 
@@ -2110,8 +2107,8 @@ public final class AssetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.asset.v1.ListAssetsResponse listAssets(
-        com.google.cloud.asset.v1.ListAssetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.asset.v1.ListAssetsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAssetsMethod(), getCallOptions(), request);
     }
 
@@ -2129,8 +2126,9 @@ public final class AssetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.asset.v1.BatchGetAssetsHistoryResponse batchGetAssetsHistory(
-        com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchGetAssetsHistoryMethod(), getCallOptions(), request);
     }
 
@@ -2143,8 +2141,8 @@ public final class AssetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.asset.v1.Feed createFeed(
-        com.google.cloud.asset.v1.CreateFeedRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.asset.v1.CreateFeedRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateFeedMethod(), getCallOptions(), request);
     }
 
@@ -2155,9 +2153,9 @@ public final class AssetServiceGrpc {
      * Gets details about an asset feed.
      * </pre>
      */
-    public com.google.cloud.asset.v1.Feed getFeed(
-        com.google.cloud.asset.v1.GetFeedRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.cloud.asset.v1.Feed getFeed(com.google.cloud.asset.v1.GetFeedRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetFeedMethod(), getCallOptions(), request);
     }
 
@@ -2169,8 +2167,8 @@ public final class AssetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.asset.v1.ListFeedsResponse listFeeds(
-        com.google.cloud.asset.v1.ListFeedsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.asset.v1.ListFeedsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListFeedsMethod(), getCallOptions(), request);
     }
 
@@ -2182,8 +2180,8 @@ public final class AssetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.asset.v1.Feed updateFeed(
-        com.google.cloud.asset.v1.UpdateFeedRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.asset.v1.UpdateFeedRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateFeedMethod(), getCallOptions(), request);
     }
 
@@ -2194,9 +2192,9 @@ public final class AssetServiceGrpc {
      * Deletes an asset feed.
      * </pre>
      */
-    public com.google.protobuf.Empty deleteFeed(
-        com.google.cloud.asset.v1.DeleteFeedRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.protobuf.Empty deleteFeed(com.google.cloud.asset.v1.DeleteFeedRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteFeedMethod(), getCallOptions(), request);
     }
 
@@ -2211,8 +2209,9 @@ public final class AssetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.asset.v1.SearchAllResourcesResponse searchAllResources(
-        com.google.cloud.asset.v1.SearchAllResourcesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.asset.v1.SearchAllResourcesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchAllResourcesMethod(), getCallOptions(), request);
     }
 
@@ -2227,8 +2226,9 @@ public final class AssetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.asset.v1.SearchAllIamPoliciesResponse searchAllIamPolicies(
-        com.google.cloud.asset.v1.SearchAllIamPoliciesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.asset.v1.SearchAllIamPoliciesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchAllIamPoliciesMethod(), getCallOptions(), request);
     }
 
@@ -2241,8 +2241,8 @@ public final class AssetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.asset.v1.AnalyzeIamPolicyResponse analyzeIamPolicy(
-        com.google.cloud.asset.v1.AnalyzeIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.asset.v1.AnalyzeIamPolicyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAnalyzeIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -2263,8 +2263,9 @@ public final class AssetServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation analyzeIamPolicyLongrunning(
-        com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAnalyzeIamPolicyLongrunningMethod(), getCallOptions(), request);
     }
 
@@ -2280,8 +2281,8 @@ public final class AssetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.asset.v1.AnalyzeMoveResponse analyzeMove(
-        com.google.cloud.asset.v1.AnalyzeMoveRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.asset.v1.AnalyzeMoveRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAnalyzeMoveMethod(), getCallOptions(), request);
     }
 
@@ -2301,8 +2302,8 @@ public final class AssetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.asset.v1.QueryAssetsResponse queryAssets(
-        com.google.cloud.asset.v1.QueryAssetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.asset.v1.QueryAssetsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getQueryAssetsMethod(), getCallOptions(), request);
     }
 
@@ -2314,8 +2315,8 @@ public final class AssetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.asset.v1.SavedQuery createSavedQuery(
-        com.google.cloud.asset.v1.CreateSavedQueryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.asset.v1.CreateSavedQueryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSavedQueryMethod(), getCallOptions(), request);
     }
 
@@ -2327,8 +2328,8 @@ public final class AssetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.asset.v1.SavedQuery getSavedQuery(
-        com.google.cloud.asset.v1.GetSavedQueryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.asset.v1.GetSavedQueryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSavedQueryMethod(), getCallOptions(), request);
     }
 
@@ -2340,8 +2341,8 @@ public final class AssetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.asset.v1.ListSavedQueriesResponse listSavedQueries(
-        com.google.cloud.asset.v1.ListSavedQueriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.asset.v1.ListSavedQueriesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSavedQueriesMethod(), getCallOptions(), request);
     }
 
@@ -2353,8 +2354,8 @@ public final class AssetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.asset.v1.SavedQuery updateSavedQuery(
-        com.google.cloud.asset.v1.UpdateSavedQueryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.asset.v1.UpdateSavedQueryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSavedQueryMethod(), getCallOptions(), request);
     }
 
@@ -2366,8 +2367,8 @@ public final class AssetServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteSavedQuery(
-        com.google.cloud.asset.v1.DeleteSavedQueryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.asset.v1.DeleteSavedQueryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSavedQueryMethod(), getCallOptions(), request);
     }
 
@@ -2380,8 +2381,9 @@ public final class AssetServiceGrpc {
      */
     public com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse
         batchGetEffectiveIamPolicies(
-            com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchGetEffectiveIamPoliciesMethod(), getCallOptions(), request);
     }
 
@@ -2393,8 +2395,9 @@ public final class AssetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.asset.v1.AnalyzeOrgPoliciesResponse analyzeOrgPolicies(
-        com.google.cloud.asset.v1.AnalyzeOrgPoliciesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.asset.v1.AnalyzeOrgPoliciesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAnalyzeOrgPoliciesMethod(), getCallOptions(), request);
     }
 
@@ -2408,8 +2411,9 @@ public final class AssetServiceGrpc {
      */
     public com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse
         analyzeOrgPolicyGovernedContainers(
-            com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAnalyzeOrgPolicyGovernedContainersMethod(), getCallOptions(), request);
     }
 
@@ -2468,8 +2472,9 @@ public final class AssetServiceGrpc {
      */
     public com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse
         analyzeOrgPolicyGovernedAssets(
-            com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAnalyzeOrgPolicyGovernedAssetsMethod(), getCallOptions(), request);
     }
   }

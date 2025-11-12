@@ -76,7 +76,9 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
    * Required. The Size of the AdUnit.
    * </pre>
    *
-   * <code>.google.ads.admanager.v1.Size size = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * optional .google.ads.admanager.v1.Size size = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the size field is set.
    */
@@ -92,7 +94,9 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
    * Required. The Size of the AdUnit.
    * </pre>
    *
-   * <code>.google.ads.admanager.v1.Size size = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * optional .google.ads.admanager.v1.Size size = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The size.
    */
@@ -108,7 +112,9 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
    * Required. The Size of the AdUnit.
    * </pre>
    *
-   * <code>.google.ads.admanager.v1.Size size = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * optional .google.ads.admanager.v1.Size size = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public com.google.ads.admanager.v1.SizeOrBuilder getSizeOrBuilder() {
@@ -126,7 +132,25 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType environment_type = 2 [(.google.api.field_behavior) = REQUIRED];
+   * optional .google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType environment_type = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the environmentType field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnvironmentType() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The EnvironmentType of the AdUnit
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType environment_type = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The enum numeric value on the wire for environmentType.
@@ -144,7 +168,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType environment_type = 2 [(.google.api.field_behavior) = REQUIRED];
+   * optional .google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType environment_type = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The environmentType.
@@ -261,10 +285,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getSize());
     }
-    if (environmentType_
-        != com.google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType
-            .ENVIRONMENT_TYPE_UNSPECIFIED
-            .getNumber()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeEnum(2, environmentType_);
     }
     for (int i = 0; i < companions_.size(); i++) {
@@ -282,10 +303,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getSize());
     }
-    if (environmentType_
-        != com.google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType
-            .ENVIRONMENT_TYPE_UNSPECIFIED
-            .getNumber()) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, environmentType_);
     }
     for (int i = 0; i < companions_.size(); i++) {
@@ -310,7 +328,10 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
     if (hasSize()) {
       if (!getSize().equals(other.getSize())) return false;
     }
-    if (environmentType_ != other.environmentType_) return false;
+    if (hasEnvironmentType() != other.hasEnvironmentType()) return false;
+    if (hasEnvironmentType()) {
+      if (environmentType_ != other.environmentType_) return false;
+    }
     if (!getCompanionsList().equals(other.getCompanionsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -327,8 +348,10 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SIZE_FIELD_NUMBER;
       hash = (53 * hash) + getSize().hashCode();
     }
-    hash = (37 * hash) + ENVIRONMENT_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + environmentType_;
+    if (hasEnvironmentType()) {
+      hash = (37 * hash) + ENVIRONMENT_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + environmentType_;
+    }
     if (getCompanionsCount() > 0) {
       hash = (37 * hash) + COMPANIONS_FIELD_NUMBER;
       hash = (53 * hash) + getCompanionsList().hashCode();
@@ -552,6 +575,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.environmentType_ = environmentType_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -604,8 +628,8 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
       if (other.hasSize()) {
         mergeSize(other.getSize());
       }
-      if (other.environmentType_ != 0) {
-        setEnvironmentTypeValue(other.getEnvironmentTypeValue());
+      if (other.hasEnvironmentType()) {
+        setEnvironmentType(other.getEnvironmentType());
       }
       if (companionsBuilder_ == null) {
         if (!other.companions_.isEmpty()) {
@@ -717,7 +741,8 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
      * Required. The Size of the AdUnit.
      * </pre>
      *
-     * <code>.google.ads.admanager.v1.Size size = 1 [(.google.api.field_behavior) = REQUIRED];
+     * <code>
+     * optional .google.ads.admanager.v1.Size size = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the size field is set.
@@ -733,7 +758,8 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
      * Required. The Size of the AdUnit.
      * </pre>
      *
-     * <code>.google.ads.admanager.v1.Size size = 1 [(.google.api.field_behavior) = REQUIRED];
+     * <code>
+     * optional .google.ads.admanager.v1.Size size = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The size.
@@ -753,7 +779,8 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
      * Required. The Size of the AdUnit.
      * </pre>
      *
-     * <code>.google.ads.admanager.v1.Size size = 1 [(.google.api.field_behavior) = REQUIRED];
+     * <code>
+     * optional .google.ads.admanager.v1.Size size = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setSize(com.google.ads.admanager.v1.Size value) {
@@ -777,7 +804,8 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
      * Required. The Size of the AdUnit.
      * </pre>
      *
-     * <code>.google.ads.admanager.v1.Size size = 1 [(.google.api.field_behavior) = REQUIRED];
+     * <code>
+     * optional .google.ads.admanager.v1.Size size = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setSize(com.google.ads.admanager.v1.Size.Builder builderForValue) {
@@ -798,7 +826,8 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
      * Required. The Size of the AdUnit.
      * </pre>
      *
-     * <code>.google.ads.admanager.v1.Size size = 1 [(.google.api.field_behavior) = REQUIRED];
+     * <code>
+     * optional .google.ads.admanager.v1.Size size = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeSize(com.google.ads.admanager.v1.Size value) {
@@ -827,7 +856,8 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
      * Required. The Size of the AdUnit.
      * </pre>
      *
-     * <code>.google.ads.admanager.v1.Size size = 1 [(.google.api.field_behavior) = REQUIRED];
+     * <code>
+     * optional .google.ads.admanager.v1.Size size = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearSize() {
@@ -848,7 +878,8 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
      * Required. The Size of the AdUnit.
      * </pre>
      *
-     * <code>.google.ads.admanager.v1.Size size = 1 [(.google.api.field_behavior) = REQUIRED];
+     * <code>
+     * optional .google.ads.admanager.v1.Size size = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.ads.admanager.v1.Size.Builder getSizeBuilder() {
@@ -864,7 +895,8 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
      * Required. The Size of the AdUnit.
      * </pre>
      *
-     * <code>.google.ads.admanager.v1.Size size = 1 [(.google.api.field_behavior) = REQUIRED];
+     * <code>
+     * optional .google.ads.admanager.v1.Size size = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.ads.admanager.v1.SizeOrBuilder getSizeOrBuilder() {
@@ -882,7 +914,8 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
      * Required. The Size of the AdUnit.
      * </pre>
      *
-     * <code>.google.ads.admanager.v1.Size size = 1 [(.google.api.field_behavior) = REQUIRED];
+     * <code>
+     * optional .google.ads.admanager.v1.Size size = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -912,7 +945,25 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType environment_type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * optional .google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType environment_type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the environmentType field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnvironmentType() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The EnvironmentType of the AdUnit
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType environment_type = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The enum numeric value on the wire for environmentType.
@@ -930,7 +981,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType environment_type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * optional .google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType environment_type = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The enum numeric value on the wire for environmentType to set.
@@ -951,7 +1002,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType environment_type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * optional .google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType environment_type = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The environmentType.
@@ -974,7 +1025,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType environment_type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * optional .google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType environment_type = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The environmentType to set.
@@ -999,7 +1050,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType environment_type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * optional .google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType environment_type = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return This builder for chaining.

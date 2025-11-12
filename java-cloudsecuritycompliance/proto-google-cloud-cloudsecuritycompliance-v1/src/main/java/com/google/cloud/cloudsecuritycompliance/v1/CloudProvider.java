@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * The cloud platform.
+ * The cloud provider that's associated with the cloud control.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.cloudsecuritycompliance.v1.CloudProvider}
@@ -179,7 +179,7 @@ public enum CloudProvider implements com.google.protobuf.ProtocolMessageEnum {
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.cloudsecuritycompliance.v1.CommonProto.getDescriptor()
         .getEnumTypes()
-        .get(3);
+        .get(4);
   }
 
   private static final CloudProvider[] VALUES = values();

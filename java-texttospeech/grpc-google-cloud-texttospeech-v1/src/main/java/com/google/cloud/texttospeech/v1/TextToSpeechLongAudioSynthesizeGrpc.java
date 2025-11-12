@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service that implements Google Cloud Text-to-Speech API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/texttospeech/v1/cloud_tts_lrs.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class TextToSpeechLongAudioSynthesizeGrpc {
 
@@ -250,8 +247,9 @@ public final class TextToSpeechLongAudioSynthesizeGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation synthesizeLongAudio(
-        com.google.cloud.texttospeech.v1.SynthesizeLongAudioRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.texttospeech.v1.SynthesizeLongAudioRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSynthesizeLongAudioMethod(), getCallOptions(), request);
     }
   }

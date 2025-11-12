@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * pipelines via a point-and-click UI.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/datafusion/v1/datafusion.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DataFusionGrpc {
 
@@ -696,8 +693,9 @@ public final class DataFusionGrpc {
      * </pre>
      */
     public com.google.cloud.datafusion.v1.ListAvailableVersionsResponse listAvailableVersions(
-        com.google.cloud.datafusion.v1.ListAvailableVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datafusion.v1.ListAvailableVersionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAvailableVersionsMethod(), getCallOptions(), request);
     }
 
@@ -709,8 +707,9 @@ public final class DataFusionGrpc {
      * </pre>
      */
     public com.google.cloud.datafusion.v1.ListInstancesResponse listInstances(
-        com.google.cloud.datafusion.v1.ListInstancesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datafusion.v1.ListInstancesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListInstancesMethod(), getCallOptions(), request);
     }
 
@@ -722,8 +721,8 @@ public final class DataFusionGrpc {
      * </pre>
      */
     public com.google.cloud.datafusion.v1.Instance getInstance(
-        com.google.cloud.datafusion.v1.GetInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datafusion.v1.GetInstanceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetInstanceMethod(), getCallOptions(), request);
     }
 
@@ -735,8 +734,9 @@ public final class DataFusionGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createInstance(
-        com.google.cloud.datafusion.v1.CreateInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datafusion.v1.CreateInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateInstanceMethod(), getCallOptions(), request);
     }
 
@@ -748,8 +748,9 @@ public final class DataFusionGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteInstance(
-        com.google.cloud.datafusion.v1.DeleteInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datafusion.v1.DeleteInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteInstanceMethod(), getCallOptions(), request);
     }
 
@@ -761,8 +762,9 @@ public final class DataFusionGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateInstance(
-        com.google.cloud.datafusion.v1.UpdateInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datafusion.v1.UpdateInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateInstanceMethod(), getCallOptions(), request);
     }
 
@@ -775,8 +777,9 @@ public final class DataFusionGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation restartInstance(
-        com.google.cloud.datafusion.v1.RestartInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datafusion.v1.RestartInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRestartInstanceMethod(), getCallOptions(), request);
     }
   }

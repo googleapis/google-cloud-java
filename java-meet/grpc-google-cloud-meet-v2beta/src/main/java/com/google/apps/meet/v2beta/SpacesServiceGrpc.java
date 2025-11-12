@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * REST API for services dealing with spaces.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/apps/meet/v2beta/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SpacesServiceGrpc {
 
@@ -873,8 +870,8 @@ public final class SpacesServiceGrpc {
      * </pre>
      */
     public com.google.apps.meet.v2beta.Space createSpace(
-        com.google.apps.meet.v2beta.CreateSpaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.apps.meet.v2beta.CreateSpaceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSpaceMethod(), getCallOptions(), request);
     }
 
@@ -888,8 +885,8 @@ public final class SpacesServiceGrpc {
      * </pre>
      */
     public com.google.apps.meet.v2beta.Space getSpace(
-        com.google.apps.meet.v2beta.GetSpaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.apps.meet.v2beta.GetSpaceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSpaceMethod(), getCallOptions(), request);
     }
 
@@ -903,8 +900,8 @@ public final class SpacesServiceGrpc {
      * </pre>
      */
     public com.google.apps.meet.v2beta.Space updateSpace(
-        com.google.apps.meet.v2beta.UpdateSpaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.apps.meet.v2beta.UpdateSpaceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSpaceMethod(), getCallOptions(), request);
     }
 
@@ -923,8 +920,9 @@ public final class SpacesServiceGrpc {
      * </pre>
      */
     public com.google.apps.meet.v2beta.ConnectActiveConferenceResponse connectActiveConference(
-        com.google.apps.meet.v2beta.ConnectActiveConferenceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.apps.meet.v2beta.ConnectActiveConferenceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getConnectActiveConferenceMethod(), getCallOptions(), request);
     }
 
@@ -938,8 +936,9 @@ public final class SpacesServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty endActiveConference(
-        com.google.apps.meet.v2beta.EndActiveConferenceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.apps.meet.v2beta.EndActiveConferenceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getEndActiveConferenceMethod(), getCallOptions(), request);
     }
 
@@ -956,8 +955,8 @@ public final class SpacesServiceGrpc {
      * </pre>
      */
     public com.google.apps.meet.v2beta.Member createMember(
-        com.google.apps.meet.v2beta.CreateMemberRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.apps.meet.v2beta.CreateMemberRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateMemberMethod(), getCallOptions(), request);
     }
 
@@ -974,8 +973,8 @@ public final class SpacesServiceGrpc {
      * </pre>
      */
     public com.google.apps.meet.v2beta.Member getMember(
-        com.google.apps.meet.v2beta.GetMemberRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.apps.meet.v2beta.GetMemberRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetMemberMethod(), getCallOptions(), request);
     }
 
@@ -992,8 +991,8 @@ public final class SpacesServiceGrpc {
      * </pre>
      */
     public com.google.apps.meet.v2beta.ListMembersResponse listMembers(
-        com.google.apps.meet.v2beta.ListMembersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.apps.meet.v2beta.ListMembersRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMembersMethod(), getCallOptions(), request);
     }
 
@@ -1006,8 +1005,8 @@ public final class SpacesServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteMember(
-        com.google.apps.meet.v2beta.DeleteMemberRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.apps.meet.v2beta.DeleteMemberRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteMemberMethod(), getCallOptions(), request);
     }
   }

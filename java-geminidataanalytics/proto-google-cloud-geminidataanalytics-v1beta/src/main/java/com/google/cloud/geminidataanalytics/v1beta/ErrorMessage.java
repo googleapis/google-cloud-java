@@ -23,7 +23,20 @@ package com.google.cloud.geminidataanalytics.v1beta;
  *
  *
  * <pre>
- * An error message.
+ * An error message from a tool call.
+ * This message is used to represent an error that occurred while an agent was
+ * trying to use a tool. It's important to note that not all errors are
+ * terminal. Many are recoverable, and the agent may use the information from
+ * this error message to self-correct and retry the tool call or try a
+ * different approach.
+ *
+ * For example, if a data query fails, the agent might receive an
+ * `ErrorMessage`, analyze it, and then generate a corrected query.
+ *
+ * Clients should be cautious about interpreting this message as a definitive
+ * failure. It can be part of the agent's normal, iterative process of
+ * completing a task. Surfacing these errors directly to end-users without
+ * context (e.g., as a "hard failure") may be misleading.
  * </pre>
  *
  * Protobuf type {@code google.cloud.geminidataanalytics.v1beta.ErrorMessage}
@@ -282,7 +295,20 @@ public final class ErrorMessage extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An error message.
+   * An error message from a tool call.
+   * This message is used to represent an error that occurred while an agent was
+   * trying to use a tool. It's important to note that not all errors are
+   * terminal. Many are recoverable, and the agent may use the information from
+   * this error message to self-correct and retry the tool call or try a
+   * different approach.
+   *
+   * For example, if a data query fails, the agent might receive an
+   * `ErrorMessage`, analyze it, and then generate a corrected query.
+   *
+   * Clients should be cautious about interpreting this message as a definitive
+   * failure. It can be part of the agent's normal, iterative process of
+   * completing a task. Surfacing these errors directly to end-users without
+   * context (e.g., as a "hard failure") may be misleading.
    * </pre>
    *
    * Protobuf type {@code google.cloud.geminidataanalytics.v1beta.ErrorMessage}

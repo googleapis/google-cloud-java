@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * A rule of the cloud control.
+ * A rule in the cloud control.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.Rule}
@@ -118,7 +118,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Logic expression in CEL language.
+   * The rule's logic expression in Common Expression Language (CEL).
    * </pre>
    *
    * <code>.google.cloud.cloudsecuritycompliance.v1.CELExpression cel_expression = 1;</code>
@@ -134,7 +134,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Logic expression in CEL language.
+   * The rule's logic expression in Common Expression Language (CEL).
    * </pre>
    *
    * <code>.google.cloud.cloudsecuritycompliance.v1.CELExpression cel_expression = 1;</code>
@@ -153,7 +153,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Logic expression in CEL language.
+   * The rule's logic expression in Common Expression Language (CEL).
    * </pre>
    *
    * <code>.google.cloud.cloudsecuritycompliance.v1.CELExpression cel_expression = 1;</code>
@@ -176,7 +176,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Description of the Rule. The maximum length is 2000 characters.
+   * Optional. The rule description. The maximum length is 2000 characters.
    * </pre>
    *
    * <code>string description = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -200,7 +200,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Description of the Rule. The maximum length is 2000 characters.
+   * Optional. The rule description. The maximum length is 2000 characters.
    * </pre>
    *
    * <code>string description = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -244,7 +244,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The functionality enabled by the Rule.
+   * Required. The functionality that's enabled by the rule.
    * </pre>
    *
    * <code>
@@ -265,7 +265,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The functionality enabled by the Rule.
+   * Required. The functionality that's enabled by the rule.
    * </pre>
    *
    * <code>
@@ -283,7 +283,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The functionality enabled by the Rule.
+   * Required. The functionality that's enabled by the rule.
    * </pre>
    *
    * <code>
@@ -302,7 +302,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The functionality enabled by the Rule.
+   * Required. The functionality that's enabled by the rule.
    * </pre>
    *
    * <code>
@@ -320,7 +320,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The functionality enabled by the Rule.
+   * Required. The functionality that's enabled by the rule.
    * </pre>
    *
    * <code>
@@ -552,7 +552,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A rule of the cloud control.
+   * A rule in the cloud control.
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.Rule}
@@ -827,7 +827,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Logic expression in CEL language.
+     * The rule's logic expression in Common Expression Language (CEL).
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.CELExpression cel_expression = 1;</code>
@@ -843,7 +843,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Logic expression in CEL language.
+     * The rule's logic expression in Common Expression Language (CEL).
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.CELExpression cel_expression = 1;</code>
@@ -869,7 +869,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Logic expression in CEL language.
+     * The rule's logic expression in Common Expression Language (CEL).
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.CELExpression cel_expression = 1;</code>
@@ -893,7 +893,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Logic expression in CEL language.
+     * The rule's logic expression in Common Expression Language (CEL).
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.CELExpression cel_expression = 1;</code>
@@ -914,7 +914,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Logic expression in CEL language.
+     * The rule's logic expression in Common Expression Language (CEL).
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.CELExpression cel_expression = 1;</code>
@@ -949,7 +949,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Logic expression in CEL language.
+     * The rule's logic expression in Common Expression Language (CEL).
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.CELExpression cel_expression = 1;</code>
@@ -975,7 +975,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Logic expression in CEL language.
+     * The rule's logic expression in Common Expression Language (CEL).
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.CELExpression cel_expression = 1;</code>
@@ -989,7 +989,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Logic expression in CEL language.
+     * The rule's logic expression in Common Expression Language (CEL).
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.CELExpression cel_expression = 1;</code>
@@ -1011,7 +1011,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Logic expression in CEL language.
+     * The rule's logic expression in Common Expression Language (CEL).
      * </pre>
      *
      * <code>.google.cloud.cloudsecuritycompliance.v1.CELExpression cel_expression = 1;</code>
@@ -1047,7 +1047,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Description of the Rule. The maximum length is 2000 characters.
+     * Optional. The rule description. The maximum length is 2000 characters.
      * </pre>
      *
      * <code>string description = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1070,7 +1070,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Description of the Rule. The maximum length is 2000 characters.
+     * Optional. The rule description. The maximum length is 2000 characters.
      * </pre>
      *
      * <code>string description = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1093,7 +1093,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Description of the Rule. The maximum length is 2000 characters.
+     * Optional. The rule description. The maximum length is 2000 characters.
      * </pre>
      *
      * <code>string description = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1115,7 +1115,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Description of the Rule. The maximum length is 2000 characters.
+     * Optional. The rule description. The maximum length is 2000 characters.
      * </pre>
      *
      * <code>string description = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1133,7 +1133,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Description of the Rule. The maximum length is 2000 characters.
+     * Optional. The rule description. The maximum length is 2000 characters.
      * </pre>
      *
      * <code>string description = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1165,7 +1165,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The functionality enabled by the Rule.
+     * Required. The functionality that's enabled by the rule.
      * </pre>
      *
      * <code>
@@ -1185,7 +1185,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The functionality enabled by the Rule.
+     * Required. The functionality that's enabled by the rule.
      * </pre>
      *
      * <code>
@@ -1202,7 +1202,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The functionality enabled by the Rule.
+     * Required. The functionality that's enabled by the rule.
      * </pre>
      *
      * <code>
@@ -1221,7 +1221,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The functionality enabled by the Rule.
+     * Required. The functionality that's enabled by the rule.
      * </pre>
      *
      * <code>
@@ -1247,7 +1247,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The functionality enabled by the Rule.
+     * Required. The functionality that's enabled by the rule.
      * </pre>
      *
      * <code>
@@ -1272,7 +1272,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The functionality enabled by the Rule.
+     * Required. The functionality that's enabled by the rule.
      * </pre>
      *
      * <code>
@@ -1297,7 +1297,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The functionality enabled by the Rule.
+     * Required. The functionality that's enabled by the rule.
      * </pre>
      *
      * <code>
@@ -1317,7 +1317,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The functionality enabled by the Rule.
+     * Required. The functionality that's enabled by the rule.
      * </pre>
      *
      * <code>
@@ -1334,7 +1334,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The functionality enabled by the Rule.
+     * Required. The functionality that's enabled by the rule.
      * </pre>
      *
      * <code>
@@ -1352,7 +1352,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The functionality enabled by the Rule.
+     * Required. The functionality that's enabled by the rule.
      * </pre>
      *
      * <code>
@@ -1374,7 +1374,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The functionality enabled by the Rule.
+     * Required. The functionality that's enabled by the rule.
      * </pre>
      *
      * <code>
@@ -1395,7 +1395,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The functionality enabled by the Rule.
+     * Required. The functionality that's enabled by the rule.
      * </pre>
      *
      * <code>

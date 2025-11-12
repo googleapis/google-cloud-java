@@ -27,9 +27,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * global.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/networkmanagement/v1beta1/vpc_flow_logs.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class OrganizationVpcFlowLogsServiceGrpc {
 
@@ -654,8 +651,9 @@ public final class OrganizationVpcFlowLogsServiceGrpc {
      */
     public com.google.cloud.networkmanagement.v1beta1.ListVpcFlowLogsConfigsResponse
         listVpcFlowLogsConfigs(
-            com.google.cloud.networkmanagement.v1beta1.ListVpcFlowLogsConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.networkmanagement.v1beta1.ListVpcFlowLogsConfigsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListVpcFlowLogsConfigsMethod(), getCallOptions(), request);
     }
 
@@ -667,8 +665,9 @@ public final class OrganizationVpcFlowLogsServiceGrpc {
      * </pre>
      */
     public com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig getVpcFlowLogsConfig(
-        com.google.cloud.networkmanagement.v1beta1.GetVpcFlowLogsConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkmanagement.v1beta1.GetVpcFlowLogsConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetVpcFlowLogsConfigMethod(), getCallOptions(), request);
     }
 
@@ -693,8 +692,9 @@ public final class OrganizationVpcFlowLogsServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createVpcFlowLogsConfig(
-        com.google.cloud.networkmanagement.v1beta1.CreateVpcFlowLogsConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkmanagement.v1beta1.CreateVpcFlowLogsConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateVpcFlowLogsConfigMethod(), getCallOptions(), request);
     }
 
@@ -719,8 +719,9 @@ public final class OrganizationVpcFlowLogsServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateVpcFlowLogsConfig(
-        com.google.cloud.networkmanagement.v1beta1.UpdateVpcFlowLogsConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkmanagement.v1beta1.UpdateVpcFlowLogsConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateVpcFlowLogsConfigMethod(), getCallOptions(), request);
     }
 
@@ -732,8 +733,9 @@ public final class OrganizationVpcFlowLogsServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteVpcFlowLogsConfig(
-        com.google.cloud.networkmanagement.v1beta1.DeleteVpcFlowLogsConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkmanagement.v1beta1.DeleteVpcFlowLogsConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteVpcFlowLogsConfigMethod(), getCallOptions(), request);
     }
   }

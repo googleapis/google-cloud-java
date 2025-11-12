@@ -114,8 +114,9 @@ public interface ListSessionsRequestOrBuilder
    * Optional. The standard list filter.
    * Supported fields:
    *    * `display_name`
+   *    * `user_id`
    *
-   * Example: `display_name=abc`.
+   * Example: `display_name="abc"`, `user_id="123"`.
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -131,8 +132,9 @@ public interface ListSessionsRequestOrBuilder
    * Optional. The standard list filter.
    * Supported fields:
    *    * `display_name`
+   *    * `user_id`
    *
-   * Example: `display_name=abc`.
+   * Example: `display_name="abc"`, `user_id="123"`.
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

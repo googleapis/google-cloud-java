@@ -1969,6 +1969,53 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     return PlanInfoCase.forNumber(planInfoCase_);
   }
 
+  private int sourceResourceCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object sourceResource_;
+
+  public enum SourceResourceCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    GCP_RESOURCE(31),
+    SOURCERESOURCE_NOT_SET(0);
+    private final int value;
+
+    private SourceResourceCase(int value) {
+      this.value = value;
+    }
+
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SourceResourceCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static SourceResourceCase forNumber(int value) {
+      switch (value) {
+        case 31:
+          return GCP_RESOURCE;
+        case 0:
+          return SOURCERESOURCE_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public SourceResourceCase getSourceResourceCase() {
+    return SourceResourceCase.forNumber(sourceResourceCase_);
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -3238,6 +3285,69 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     return satisfiesPzi_;
   }
 
+  public static final int GCP_RESOURCE_FIELD_NUMBER = 31;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Unique identifier of the GCP resource that is being backed
+   * up.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.BackupGcpResource gcp_resource = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the gcpResource field is set.
+   */
+  @java.lang.Override
+  public boolean hasGcpResource() {
+    return sourceResourceCase_ == 31;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Unique identifier of the GCP resource that is being backed
+   * up.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.BackupGcpResource gcp_resource = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The gcpResource.
+   */
+  @java.lang.Override
+  public com.google.cloud.backupdr.v1.BackupGcpResource getGcpResource() {
+    if (sourceResourceCase_ == 31) {
+      return (com.google.cloud.backupdr.v1.BackupGcpResource) sourceResource_;
+    }
+    return com.google.cloud.backupdr.v1.BackupGcpResource.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Unique identifier of the GCP resource that is being backed
+   * up.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.BackupGcpResource gcp_resource = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.backupdr.v1.BackupGcpResourceOrBuilder getGcpResourceOrBuilder() {
+    if (sourceResourceCase_ == 31) {
+      return (com.google.cloud.backupdr.v1.BackupGcpResource) sourceResource_;
+    }
+    return com.google.cloud.backupdr.v1.BackupGcpResource.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3318,6 +3428,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (backupPropertiesCase_ == 28) {
       output.writeMessage(
           28, (com.google.cloud.backupdr.v1.DiskBackupProperties) backupProperties_);
+    }
+    if (sourceResourceCase_ == 31) {
+      output.writeMessage(31, (com.google.cloud.backupdr.v1.BackupGcpResource) sourceResource_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -3414,6 +3527,11 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               28, (com.google.cloud.backupdr.v1.DiskBackupProperties) backupProperties_);
     }
+    if (sourceResourceCase_ == 31) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              31, (com.google.cloud.backupdr.v1.BackupGcpResource) sourceResource_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3496,6 +3614,14 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     switch (planInfoCase_) {
       case 22:
         if (!getGcpBackupPlanInfo().equals(other.getGcpBackupPlanInfo())) return false;
+        break;
+      case 0:
+      default:
+    }
+    if (!getSourceResourceCase().equals(other.getSourceResourceCase())) return false;
+    switch (sourceResourceCase_) {
+      case 31:
+        if (!getGcpResource().equals(other.getGcpResource())) return false;
         break;
       case 0:
       default:
@@ -3591,6 +3717,14 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       case 22:
         hash = (37 * hash) + GCP_BACKUP_PLAN_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getGcpBackupPlanInfo().hashCode();
+        break;
+      case 0:
+      default:
+    }
+    switch (sourceResourceCase_) {
+      case 31:
+        hash = (37 * hash) + GCP_RESOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getGcpResource().hashCode();
         break;
       case 0:
       default:
@@ -3834,10 +3968,15 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       resourceSizeBytes_ = 0L;
       satisfiesPzs_ = false;
       satisfiesPzi_ = false;
+      if (gcpResourceBuilder_ != null) {
+        gcpResourceBuilder_.clear();
+      }
       backupPropertiesCase_ = 0;
       backupProperties_ = null;
       planInfoCase_ = 0;
       planInfo_ = null;
+      sourceResourceCase_ = 0;
+      sourceResource_ = null;
       return this;
     }
 
@@ -3975,6 +4114,11 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       result.planInfo_ = this.planInfo_;
       if (planInfoCase_ == 22 && gcpBackupPlanInfoBuilder_ != null) {
         result.planInfo_ = gcpBackupPlanInfoBuilder_.build();
+      }
+      result.sourceResourceCase_ = sourceResourceCase_;
+      result.sourceResource_ = this.sourceResource_;
+      if (sourceResourceCase_ == 31 && gcpResourceBuilder_ != null) {
+        result.sourceResource_ = gcpResourceBuilder_.build();
       }
     }
 
@@ -4161,6 +4305,17 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
+      switch (other.getSourceResourceCase()) {
+        case GCP_RESOURCE:
+          {
+            mergeGcpResource(other.getGcpResource());
+            break;
+          }
+        case SOURCERESOURCE_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -4342,6 +4497,12 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
                 backupPropertiesCase_ = 28;
                 break;
               } // case 226
+            case 250:
+              {
+                input.readMessage(getGcpResourceFieldBuilder().getBuilder(), extensionRegistry);
+                sourceResourceCase_ = 31;
+                break;
+              } // case 250
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4383,6 +4544,20 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPlanInfo() {
       planInfoCase_ = 0;
       planInfo_ = null;
+      onChanged();
+      return this;
+    }
+
+    private int sourceResourceCase_ = 0;
+    private java.lang.Object sourceResource_;
+
+    public SourceResourceCase getSourceResourceCase() {
+      return SourceResourceCase.forNumber(sourceResourceCase_);
+    }
+
+    public Builder clearSourceResource() {
+      sourceResourceCase_ = 0;
+      sourceResource_ = null;
       onChanged();
       return this;
     }
@@ -8514,6 +8689,252 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       satisfiesPzi_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.backupdr.v1.BackupGcpResource,
+            com.google.cloud.backupdr.v1.BackupGcpResource.Builder,
+            com.google.cloud.backupdr.v1.BackupGcpResourceOrBuilder>
+        gcpResourceBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unique identifier of the GCP resource that is being backed
+     * up.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.BackupGcpResource gcp_resource = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the gcpResource field is set.
+     */
+    @java.lang.Override
+    public boolean hasGcpResource() {
+      return sourceResourceCase_ == 31;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unique identifier of the GCP resource that is being backed
+     * up.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.BackupGcpResource gcp_resource = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The gcpResource.
+     */
+    @java.lang.Override
+    public com.google.cloud.backupdr.v1.BackupGcpResource getGcpResource() {
+      if (gcpResourceBuilder_ == null) {
+        if (sourceResourceCase_ == 31) {
+          return (com.google.cloud.backupdr.v1.BackupGcpResource) sourceResource_;
+        }
+        return com.google.cloud.backupdr.v1.BackupGcpResource.getDefaultInstance();
+      } else {
+        if (sourceResourceCase_ == 31) {
+          return gcpResourceBuilder_.getMessage();
+        }
+        return com.google.cloud.backupdr.v1.BackupGcpResource.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unique identifier of the GCP resource that is being backed
+     * up.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.BackupGcpResource gcp_resource = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setGcpResource(com.google.cloud.backupdr.v1.BackupGcpResource value) {
+      if (gcpResourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceResource_ = value;
+        onChanged();
+      } else {
+        gcpResourceBuilder_.setMessage(value);
+      }
+      sourceResourceCase_ = 31;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unique identifier of the GCP resource that is being backed
+     * up.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.BackupGcpResource gcp_resource = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setGcpResource(
+        com.google.cloud.backupdr.v1.BackupGcpResource.Builder builderForValue) {
+      if (gcpResourceBuilder_ == null) {
+        sourceResource_ = builderForValue.build();
+        onChanged();
+      } else {
+        gcpResourceBuilder_.setMessage(builderForValue.build());
+      }
+      sourceResourceCase_ = 31;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unique identifier of the GCP resource that is being backed
+     * up.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.BackupGcpResource gcp_resource = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeGcpResource(com.google.cloud.backupdr.v1.BackupGcpResource value) {
+      if (gcpResourceBuilder_ == null) {
+        if (sourceResourceCase_ == 31
+            && sourceResource_
+                != com.google.cloud.backupdr.v1.BackupGcpResource.getDefaultInstance()) {
+          sourceResource_ =
+              com.google.cloud.backupdr.v1.BackupGcpResource.newBuilder(
+                      (com.google.cloud.backupdr.v1.BackupGcpResource) sourceResource_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          sourceResource_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceResourceCase_ == 31) {
+          gcpResourceBuilder_.mergeFrom(value);
+        } else {
+          gcpResourceBuilder_.setMessage(value);
+        }
+      }
+      sourceResourceCase_ = 31;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unique identifier of the GCP resource that is being backed
+     * up.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.BackupGcpResource gcp_resource = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearGcpResource() {
+      if (gcpResourceBuilder_ == null) {
+        if (sourceResourceCase_ == 31) {
+          sourceResourceCase_ = 0;
+          sourceResource_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceResourceCase_ == 31) {
+          sourceResourceCase_ = 0;
+          sourceResource_ = null;
+        }
+        gcpResourceBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unique identifier of the GCP resource that is being backed
+     * up.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.BackupGcpResource gcp_resource = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.backupdr.v1.BackupGcpResource.Builder getGcpResourceBuilder() {
+      return getGcpResourceFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unique identifier of the GCP resource that is being backed
+     * up.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.BackupGcpResource gcp_resource = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.backupdr.v1.BackupGcpResourceOrBuilder getGcpResourceOrBuilder() {
+      if ((sourceResourceCase_ == 31) && (gcpResourceBuilder_ != null)) {
+        return gcpResourceBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceResourceCase_ == 31) {
+          return (com.google.cloud.backupdr.v1.BackupGcpResource) sourceResource_;
+        }
+        return com.google.cloud.backupdr.v1.BackupGcpResource.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unique identifier of the GCP resource that is being backed
+     * up.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.BackupGcpResource gcp_resource = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.backupdr.v1.BackupGcpResource,
+            com.google.cloud.backupdr.v1.BackupGcpResource.Builder,
+            com.google.cloud.backupdr.v1.BackupGcpResourceOrBuilder>
+        getGcpResourceFieldBuilder() {
+      if (gcpResourceBuilder_ == null) {
+        if (!(sourceResourceCase_ == 31)) {
+          sourceResource_ = com.google.cloud.backupdr.v1.BackupGcpResource.getDefaultInstance();
+        }
+        gcpResourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.backupdr.v1.BackupGcpResource,
+                com.google.cloud.backupdr.v1.BackupGcpResource.Builder,
+                com.google.cloud.backupdr.v1.BackupGcpResourceOrBuilder>(
+                (com.google.cloud.backupdr.v1.BackupGcpResource) sourceResource_,
+                getParentForChildren(),
+                isClean());
+        sourceResource_ = null;
+      }
+      sourceResourceCase_ = 31;
+      onChanged();
+      return gcpResourceBuilder_;
     }
 
     @java.lang.Override

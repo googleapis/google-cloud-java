@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing billing estimations resources.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1alpha/estimate_billing_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class EstimateBillingServiceGrpc {
 
@@ -242,8 +239,9 @@ public final class EstimateBillingServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation estimateDataSize(
-        com.google.cloud.discoveryengine.v1alpha.EstimateDataSizeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.EstimateDataSizeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getEstimateDataSizeMethod(), getCallOptions(), request);
     }
   }

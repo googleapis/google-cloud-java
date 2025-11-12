@@ -52,6 +52,10 @@ public final class ConversationProto {
       internal_static_google_cloud_geminidataanalytics_v1beta_ListConversationsResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_geminidataanalytics_v1beta_ListConversationsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_geminidataanalytics_v1beta_DeleteConversationRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_geminidataanalytics_v1beta_DeleteConversationRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -99,12 +103,16 @@ public final class ConversationProto {
           + "\031ListConversationsResponse\022L\n\r"
           + "conversations\030\001"
           + " \003(\01325.google.cloud.geminidataanalytics.v1beta.Conversation\022\027\n"
-          + "\017next_page_token\030\002 \001(\tB\242\002\n"
-          + "+com.google.cloud.geminidataanalytics.v1betaB\021ConversationProt"
-          + "oP\001Z]cloud.google.com/go/geminidataanalytics/apiv1beta/geminidataanalyticspb;gem"
-          + "inidataanalyticspb\252\002\'Google.Cloud.Gemini"
-          + "DataAnalytics.V1Beta\312\002\'Google\\Cloud\\Gemi"
-          + "niDataAnalytics\\V1beta\352\002*Google::Cloud::GeminiDataAnalytics::V1betab\006proto3"
+          + "\017next_page_token\030\002 \001(\t\"b\n"
+          + "\031DeleteConversationRequest\022E\n"
+          + "\004name\030\001 \001(\tB7\340A\002\372A1\n"
+          + "/geminidataanalytics.googleapis.com/ConversationB\242\002\n"
+          + "+com.google.cloud.geminidataanalytics.v1be"
+          + "taB\021ConversationProtoP\001Z]cloud.google.com/go/geminidataanalytics/apiv1beta/gemin"
+          + "idataanalyticspb;geminidataanalyticspb\252\002"
+          + "\'Google.Cloud.GeminiDataAnalytics.V1Beta"
+          + "\312\002\'Google\\Cloud\\GeminiDataAnalytics\\V1be"
+          + "ta\352\002*Google::Cloud::GeminiDataAnalytics::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -164,6 +172,14 @@ public final class ConversationProto {
             internal_static_google_cloud_geminidataanalytics_v1beta_ListConversationsResponse_descriptor,
             new java.lang.String[] {
               "Conversations", "NextPageToken",
+            });
+    internal_static_google_cloud_geminidataanalytics_v1beta_DeleteConversationRequest_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_geminidataanalytics_v1beta_DeleteConversationRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_geminidataanalytics_v1beta_DeleteConversationRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service for serving online feature values.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1beta1/featurestore_online_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class FeaturestoreOnlineServingServiceGrpc {
 
@@ -439,8 +436,9 @@ public final class FeaturestoreOnlineServingServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ReadFeatureValuesResponse readFeatureValues(
-        com.google.cloud.aiplatform.v1beta1.ReadFeatureValuesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.ReadFeatureValuesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReadFeatureValuesMethod(), getCallOptions(), request);
     }
 
@@ -473,8 +471,9 @@ public final class FeaturestoreOnlineServingServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.WriteFeatureValuesResponse writeFeatureValues(
-        com.google.cloud.aiplatform.v1beta1.WriteFeatureValuesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.WriteFeatureValuesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getWriteFeatureValuesMethod(), getCallOptions(), request);
     }
   }

@@ -689,4 +689,17 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * @return The enableRotationCorrection.
    */
   boolean getEnableRotationCorrection();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, only native pdf pages will be translated.
+   * </pre>
+   *
+   * <code>bool pdf_native_only = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The pdfNativeOnly.
+   */
+  boolean getPdfNativeOnly();
 }

@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Manages services of an application.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/appengine/v1/appengine.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ServicesGrpc {
 
@@ -441,8 +438,8 @@ public final class ServicesGrpc {
      * </pre>
      */
     public com.google.appengine.v1.ListServicesResponse listServices(
-        com.google.appengine.v1.ListServicesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.appengine.v1.ListServicesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListServicesMethod(), getCallOptions(), request);
     }
 
@@ -454,8 +451,8 @@ public final class ServicesGrpc {
      * </pre>
      */
     public com.google.appengine.v1.Service getService(
-        com.google.appengine.v1.GetServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.appengine.v1.GetServiceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetServiceMethod(), getCallOptions(), request);
     }
 
@@ -467,8 +464,8 @@ public final class ServicesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateService(
-        com.google.appengine.v1.UpdateServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.appengine.v1.UpdateServiceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateServiceMethod(), getCallOptions(), request);
     }
 
@@ -480,8 +477,8 @@ public final class ServicesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteService(
-        com.google.appengine.v1.DeleteServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.appengine.v1.DeleteServiceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteServiceMethod(), getCallOptions(), request);
     }
   }

@@ -109,4 +109,47 @@ public interface ConversationOptionsOrBuilder
    * </code>
    */
   com.google.cloud.geminidataanalytics.v1beta.AnalysisOptionsOrBuilder getAnalysisOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options for datasources.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.DatasourceOptions datasource = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the datasource field is set.
+   */
+  boolean hasDatasource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options for datasources.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.DatasourceOptions datasource = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The datasource.
+   */
+  com.google.cloud.geminidataanalytics.v1beta.DatasourceOptions getDatasource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options for datasources.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.DatasourceOptions datasource = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.DatasourceOptionsOrBuilder getDatasourceOrBuilder();
 }

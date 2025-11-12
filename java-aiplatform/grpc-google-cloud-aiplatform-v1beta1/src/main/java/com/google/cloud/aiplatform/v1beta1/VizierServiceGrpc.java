@@ -27,9 +27,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * learning architectures.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1beta1/vizier_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class VizierServiceGrpc {
 
@@ -1334,8 +1331,9 @@ public final class VizierServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.Study createStudy(
-        com.google.cloud.aiplatform.v1beta1.CreateStudyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.CreateStudyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateStudyMethod(), getCallOptions(), request);
     }
 
@@ -1347,8 +1345,9 @@ public final class VizierServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.Study getStudy(
-        com.google.cloud.aiplatform.v1beta1.GetStudyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.GetStudyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetStudyMethod(), getCallOptions(), request);
     }
 
@@ -1360,8 +1359,9 @@ public final class VizierServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ListStudiesResponse listStudies(
-        com.google.cloud.aiplatform.v1beta1.ListStudiesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.ListStudiesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListStudiesMethod(), getCallOptions(), request);
     }
 
@@ -1373,8 +1373,9 @@ public final class VizierServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteStudy(
-        com.google.cloud.aiplatform.v1beta1.DeleteStudyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.DeleteStudyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteStudyMethod(), getCallOptions(), request);
     }
 
@@ -1387,8 +1388,9 @@ public final class VizierServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.Study lookupStudy(
-        com.google.cloud.aiplatform.v1beta1.LookupStudyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.LookupStudyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getLookupStudyMethod(), getCallOptions(), request);
     }
 
@@ -1405,8 +1407,9 @@ public final class VizierServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation suggestTrials(
-        com.google.cloud.aiplatform.v1beta1.SuggestTrialsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.SuggestTrialsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSuggestTrialsMethod(), getCallOptions(), request);
     }
 
@@ -1418,8 +1421,9 @@ public final class VizierServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.Trial createTrial(
-        com.google.cloud.aiplatform.v1beta1.CreateTrialRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.CreateTrialRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTrialMethod(), getCallOptions(), request);
     }
 
@@ -1431,8 +1435,9 @@ public final class VizierServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.Trial getTrial(
-        com.google.cloud.aiplatform.v1beta1.GetTrialRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.GetTrialRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTrialMethod(), getCallOptions(), request);
     }
 
@@ -1444,8 +1449,9 @@ public final class VizierServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ListTrialsResponse listTrials(
-        com.google.cloud.aiplatform.v1beta1.ListTrialsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.ListTrialsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTrialsMethod(), getCallOptions(), request);
     }
 
@@ -1458,8 +1464,9 @@ public final class VizierServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.Trial addTrialMeasurement(
-        com.google.cloud.aiplatform.v1beta1.AddTrialMeasurementRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.AddTrialMeasurementRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAddTrialMeasurementMethod(), getCallOptions(), request);
     }
 
@@ -1471,8 +1478,9 @@ public final class VizierServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.Trial completeTrial(
-        com.google.cloud.aiplatform.v1beta1.CompleteTrialRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.CompleteTrialRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCompleteTrialMethod(), getCallOptions(), request);
     }
 
@@ -1484,8 +1492,9 @@ public final class VizierServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteTrial(
-        com.google.cloud.aiplatform.v1beta1.DeleteTrialRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.DeleteTrialRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTrialMethod(), getCallOptions(), request);
     }
 
@@ -1500,8 +1509,9 @@ public final class VizierServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation checkTrialEarlyStoppingState(
-        com.google.cloud.aiplatform.v1beta1.CheckTrialEarlyStoppingStateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.CheckTrialEarlyStoppingStateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCheckTrialEarlyStoppingStateMethod(), getCallOptions(), request);
     }
 
@@ -1513,8 +1523,9 @@ public final class VizierServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.Trial stopTrial(
-        com.google.cloud.aiplatform.v1beta1.StopTrialRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.StopTrialRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getStopTrialMethod(), getCallOptions(), request);
     }
 
@@ -1529,8 +1540,9 @@ public final class VizierServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ListOptimalTrialsResponse listOptimalTrials(
-        com.google.cloud.aiplatform.v1beta1.ListOptimalTrialsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.ListOptimalTrialsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListOptimalTrialsMethod(), getCallOptions(), request);
     }
   }

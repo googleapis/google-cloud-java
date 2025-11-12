@@ -321,6 +321,28 @@ public class MockOracleDatabaseImpl extends OracleDatabaseImplBase {
   }
 
   @Override
+  public void listMinorVersions(
+      ListMinorVersionsRequest request,
+      StreamObserver<ListMinorVersionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListMinorVersionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListMinorVersionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListMinorVersions, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListMinorVersionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void listDbSystemShapes(
       ListDbSystemShapesRequest request,
       StreamObserver<ListDbSystemShapesResponse> responseObserver) {
@@ -402,6 +424,28 @@ public class MockOracleDatabaseImpl extends OracleDatabaseImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateAutonomousDatabase, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateAutonomousDatabase(
+      UpdateAutonomousDatabaseRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateAutonomousDatabase, expected %s"
                       + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
@@ -607,6 +651,676 @@ public class MockOracleDatabaseImpl extends OracleDatabaseImplBase {
                       + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void switchoverAutonomousDatabase(
+      SwitchoverAutonomousDatabaseRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SwitchoverAutonomousDatabase, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void failoverAutonomousDatabase(
+      FailoverAutonomousDatabaseRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FailoverAutonomousDatabase, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listOdbNetworks(
+      ListOdbNetworksRequest request, StreamObserver<ListOdbNetworksResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListOdbNetworksResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListOdbNetworksResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListOdbNetworks, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListOdbNetworksResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getOdbNetwork(
+      GetOdbNetworkRequest request, StreamObserver<OdbNetwork> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof OdbNetwork) {
+      requests.add(request);
+      responseObserver.onNext(((OdbNetwork) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetOdbNetwork, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  OdbNetwork.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createOdbNetwork(
+      CreateOdbNetworkRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateOdbNetwork, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteOdbNetwork(
+      DeleteOdbNetworkRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteOdbNetwork, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listOdbSubnets(
+      ListOdbSubnetsRequest request, StreamObserver<ListOdbSubnetsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListOdbSubnetsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListOdbSubnetsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListOdbSubnets, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListOdbSubnetsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getOdbSubnet(
+      GetOdbSubnetRequest request, StreamObserver<OdbSubnet> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof OdbSubnet) {
+      requests.add(request);
+      responseObserver.onNext(((OdbSubnet) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetOdbSubnet, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  OdbSubnet.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createOdbSubnet(
+      CreateOdbSubnetRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateOdbSubnet, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteOdbSubnet(
+      DeleteOdbSubnetRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteOdbSubnet, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listExadbVmClusters(
+      ListExadbVmClustersRequest request,
+      StreamObserver<ListExadbVmClustersResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListExadbVmClustersResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListExadbVmClustersResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListExadbVmClusters, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListExadbVmClustersResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getExadbVmCluster(
+      GetExadbVmClusterRequest request, StreamObserver<ExadbVmCluster> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ExadbVmCluster) {
+      requests.add(request);
+      responseObserver.onNext(((ExadbVmCluster) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetExadbVmCluster, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ExadbVmCluster.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createExadbVmCluster(
+      CreateExadbVmClusterRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateExadbVmCluster, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteExadbVmCluster(
+      DeleteExadbVmClusterRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteExadbVmCluster, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateExadbVmCluster(
+      UpdateExadbVmClusterRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateExadbVmCluster, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void removeVirtualMachineExadbVmCluster(
+      RemoveVirtualMachineExadbVmClusterRequest request,
+      StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RemoveVirtualMachineExadbVmCluster,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listExascaleDbStorageVaults(
+      ListExascaleDbStorageVaultsRequest request,
+      StreamObserver<ListExascaleDbStorageVaultsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListExascaleDbStorageVaultsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListExascaleDbStorageVaultsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListExascaleDbStorageVaults, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListExascaleDbStorageVaultsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getExascaleDbStorageVault(
+      GetExascaleDbStorageVaultRequest request,
+      StreamObserver<ExascaleDbStorageVault> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ExascaleDbStorageVault) {
+      requests.add(request);
+      responseObserver.onNext(((ExascaleDbStorageVault) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetExascaleDbStorageVault, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ExascaleDbStorageVault.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createExascaleDbStorageVault(
+      CreateExascaleDbStorageVaultRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateExascaleDbStorageVault, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteExascaleDbStorageVault(
+      DeleteExascaleDbStorageVaultRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteExascaleDbStorageVault, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listDbSystemInitialStorageSizes(
+      ListDbSystemInitialStorageSizesRequest request,
+      StreamObserver<ListDbSystemInitialStorageSizesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListDbSystemInitialStorageSizesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListDbSystemInitialStorageSizesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDbSystemInitialStorageSizes,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListDbSystemInitialStorageSizesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listDatabases(
+      ListDatabasesRequest request, StreamObserver<ListDatabasesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListDatabasesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListDatabasesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDatabases, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListDatabasesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getDatabase(GetDatabaseRequest request, StreamObserver<Database> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Database) {
+      requests.add(request);
+      responseObserver.onNext(((Database) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDatabase, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Database.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listPluggableDatabases(
+      ListPluggableDatabasesRequest request,
+      StreamObserver<ListPluggableDatabasesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListPluggableDatabasesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListPluggableDatabasesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListPluggableDatabases, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListPluggableDatabasesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getPluggableDatabase(
+      GetPluggableDatabaseRequest request, StreamObserver<PluggableDatabase> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof PluggableDatabase) {
+      requests.add(request);
+      responseObserver.onNext(((PluggableDatabase) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetPluggableDatabase, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  PluggableDatabase.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listDbSystems(
+      ListDbSystemsRequest request, StreamObserver<ListDbSystemsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListDbSystemsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListDbSystemsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDbSystems, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListDbSystemsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getDbSystem(GetDbSystemRequest request, StreamObserver<DbSystem> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DbSystem) {
+      requests.add(request);
+      responseObserver.onNext(((DbSystem) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDbSystem, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DbSystem.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createDbSystem(
+      CreateDbSystemRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateDbSystem, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteDbSystem(
+      DeleteDbSystemRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteDbSystem, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listDbVersions(
+      ListDbVersionsRequest request, StreamObserver<ListDbVersionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListDbVersionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListDbVersionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDbVersions, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListDbVersionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listDatabaseCharacterSets(
+      ListDatabaseCharacterSetsRequest request,
+      StreamObserver<ListDatabaseCharacterSetsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListDatabaseCharacterSetsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListDatabaseCharacterSetsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDatabaseCharacterSets, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListDatabaseCharacterSetsResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

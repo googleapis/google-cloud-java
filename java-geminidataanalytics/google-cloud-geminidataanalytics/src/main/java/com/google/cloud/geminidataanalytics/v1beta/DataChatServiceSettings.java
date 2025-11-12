@@ -38,6 +38,7 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -105,6 +106,11 @@ public class DataChatServiceSettings extends ClientSettings<DataChatServiceSetti
   /** Returns the object with the settings used for calls to createConversation. */
   public UnaryCallSettings<CreateConversationRequest, Conversation> createConversationSettings() {
     return ((DataChatServiceStubSettings) getStubSettings()).createConversationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteConversation. */
+  public UnaryCallSettings<DeleteConversationRequest, Empty> deleteConversationSettings() {
+    return ((DataChatServiceStubSettings) getStubSettings()).deleteConversationSettings();
   }
 
   /** Returns the object with the settings used for calls to getConversation. */
@@ -257,6 +263,12 @@ public class DataChatServiceSettings extends ClientSettings<DataChatServiceSetti
     public UnaryCallSettings.Builder<CreateConversationRequest, Conversation>
         createConversationSettings() {
       return getStubSettingsBuilder().createConversationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteConversation. */
+    public UnaryCallSettings.Builder<DeleteConversationRequest, Empty>
+        deleteConversationSettings() {
+      return getStubSettingsBuilder().deleteConversationSettings();
     }
 
     /** Returns the builder for the settings used for calls to getConversation. */

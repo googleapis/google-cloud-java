@@ -28,9 +28,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * classify data along a common axis.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/datacatalog/v1/policytagmanager.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class PolicyTagManagerGrpc {
 
@@ -1180,8 +1177,9 @@ public final class PolicyTagManagerGrpc {
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.Taxonomy createTaxonomy(
-        com.google.cloud.datacatalog.v1.CreateTaxonomyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.CreateTaxonomyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTaxonomyMethod(), getCallOptions(), request);
     }
 
@@ -1195,8 +1193,9 @@ public final class PolicyTagManagerGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteTaxonomy(
-        com.google.cloud.datacatalog.v1.DeleteTaxonomyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.DeleteTaxonomyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTaxonomyMethod(), getCallOptions(), request);
     }
 
@@ -1209,8 +1208,9 @@ public final class PolicyTagManagerGrpc {
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.Taxonomy updateTaxonomy(
-        com.google.cloud.datacatalog.v1.UpdateTaxonomyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.UpdateTaxonomyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateTaxonomyMethod(), getCallOptions(), request);
     }
 
@@ -1223,8 +1223,9 @@ public final class PolicyTagManagerGrpc {
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.ListTaxonomiesResponse listTaxonomies(
-        com.google.cloud.datacatalog.v1.ListTaxonomiesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.ListTaxonomiesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTaxonomiesMethod(), getCallOptions(), request);
     }
 
@@ -1236,8 +1237,8 @@ public final class PolicyTagManagerGrpc {
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.Taxonomy getTaxonomy(
-        com.google.cloud.datacatalog.v1.GetTaxonomyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.GetTaxonomyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTaxonomyMethod(), getCallOptions(), request);
     }
 
@@ -1249,8 +1250,9 @@ public final class PolicyTagManagerGrpc {
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.PolicyTag createPolicyTag(
-        com.google.cloud.datacatalog.v1.CreatePolicyTagRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.CreatePolicyTagRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreatePolicyTagMethod(), getCallOptions(), request);
     }
 
@@ -1266,8 +1268,9 @@ public final class PolicyTagManagerGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deletePolicyTag(
-        com.google.cloud.datacatalog.v1.DeletePolicyTagRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.DeletePolicyTagRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeletePolicyTagMethod(), getCallOptions(), request);
     }
 
@@ -1280,8 +1283,9 @@ public final class PolicyTagManagerGrpc {
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.PolicyTag updatePolicyTag(
-        com.google.cloud.datacatalog.v1.UpdatePolicyTagRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.UpdatePolicyTagRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdatePolicyTagMethod(), getCallOptions(), request);
     }
 
@@ -1293,8 +1297,9 @@ public final class PolicyTagManagerGrpc {
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.ListPolicyTagsResponse listPolicyTags(
-        com.google.cloud.datacatalog.v1.ListPolicyTagsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.ListPolicyTagsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPolicyTagsMethod(), getCallOptions(), request);
     }
 
@@ -1306,8 +1311,9 @@ public final class PolicyTagManagerGrpc {
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.PolicyTag getPolicyTag(
-        com.google.cloud.datacatalog.v1.GetPolicyTagRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.GetPolicyTagRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPolicyTagMethod(), getCallOptions(), request);
     }
 
@@ -1318,8 +1324,9 @@ public final class PolicyTagManagerGrpc {
      * Gets the IAM policy for a policy tag or a taxonomy.
      * </pre>
      */
-    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1330,8 +1337,9 @@ public final class PolicyTagManagerGrpc {
      * Sets the IAM policy for a policy tag or a taxonomy.
      * </pre>
      */
-    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1344,8 +1352,8 @@ public final class PolicyTagManagerGrpc {
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
-        com.google.iam.v1.TestIamPermissionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.iam.v1.TestIamPermissionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
   }

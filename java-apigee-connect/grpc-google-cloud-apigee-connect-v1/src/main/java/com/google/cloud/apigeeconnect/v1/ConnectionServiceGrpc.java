@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service Interface for the Apigee Connect connection management APIs.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/apigeeconnect/v1/connection.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ConnectionServiceGrpc {
 
@@ -246,8 +243,9 @@ public final class ConnectionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.apigeeconnect.v1.ListConnectionsResponse listConnections(
-        com.google.cloud.apigeeconnect.v1.ListConnectionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeconnect.v1.ListConnectionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListConnectionsMethod(), getCallOptions(), request);
     }
   }

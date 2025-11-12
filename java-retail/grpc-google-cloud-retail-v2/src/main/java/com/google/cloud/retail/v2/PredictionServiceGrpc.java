@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for making recommendation prediction.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/retail/v2/prediction_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class PredictionServiceGrpc {
 
@@ -231,8 +228,8 @@ public final class PredictionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2.PredictResponse predict(
-        com.google.cloud.retail.v2.PredictRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2.PredictRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPredictMethod(), getCallOptions(), request);
     }
   }

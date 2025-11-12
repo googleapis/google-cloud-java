@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Merchant Center Link service to link a Branch to a Merchant Center Account.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/retail/v2alpha/merchant_center_account_link_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class MerchantCenterAccountLinkServiceGrpc {
 
@@ -438,8 +435,9 @@ public final class MerchantCenterAccountLinkServiceGrpc {
      */
     public com.google.cloud.retail.v2alpha.ListMerchantCenterAccountLinksResponse
         listMerchantCenterAccountLinks(
-            com.google.cloud.retail.v2alpha.ListMerchantCenterAccountLinksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.retail.v2alpha.ListMerchantCenterAccountLinksRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMerchantCenterAccountLinksMethod(), getCallOptions(), request);
     }
 
@@ -452,8 +450,9 @@ public final class MerchantCenterAccountLinkServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createMerchantCenterAccountLink(
-        com.google.cloud.retail.v2alpha.CreateMerchantCenterAccountLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2alpha.CreateMerchantCenterAccountLinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateMerchantCenterAccountLinkMethod(), getCallOptions(), request);
     }
 
@@ -469,8 +468,9 @@ public final class MerchantCenterAccountLinkServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteMerchantCenterAccountLink(
-        com.google.cloud.retail.v2alpha.DeleteMerchantCenterAccountLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2alpha.DeleteMerchantCenterAccountLinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteMerchantCenterAccountLinkMethod(), getCallOptions(), request);
     }
   }

@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service for managing Vertex AI's Endpoints.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1/endpoint_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class EndpointServiceGrpc {
 
@@ -852,8 +849,9 @@ public final class EndpointServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createEndpoint(
-        com.google.cloud.aiplatform.v1.CreateEndpointRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.CreateEndpointRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEndpointMethod(), getCallOptions(), request);
     }
 
@@ -865,8 +863,8 @@ public final class EndpointServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.Endpoint getEndpoint(
-        com.google.cloud.aiplatform.v1.GetEndpointRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.GetEndpointRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEndpointMethod(), getCallOptions(), request);
     }
 
@@ -878,8 +876,9 @@ public final class EndpointServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ListEndpointsResponse listEndpoints(
-        com.google.cloud.aiplatform.v1.ListEndpointsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ListEndpointsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEndpointsMethod(), getCallOptions(), request);
     }
 
@@ -891,8 +890,9 @@ public final class EndpointServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.Endpoint updateEndpoint(
-        com.google.cloud.aiplatform.v1.UpdateEndpointRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.UpdateEndpointRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateEndpointMethod(), getCallOptions(), request);
     }
 
@@ -904,8 +904,9 @@ public final class EndpointServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateEndpointLongRunning(
-        com.google.cloud.aiplatform.v1.UpdateEndpointLongRunningRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.UpdateEndpointLongRunningRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateEndpointLongRunningMethod(), getCallOptions(), request);
     }
 
@@ -917,8 +918,9 @@ public final class EndpointServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteEndpoint(
-        com.google.cloud.aiplatform.v1.DeleteEndpointRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.DeleteEndpointRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteEndpointMethod(), getCallOptions(), request);
     }
 
@@ -930,8 +932,8 @@ public final class EndpointServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deployModel(
-        com.google.cloud.aiplatform.v1.DeployModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.DeployModelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeployModelMethod(), getCallOptions(), request);
     }
 
@@ -944,8 +946,9 @@ public final class EndpointServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation undeployModel(
-        com.google.cloud.aiplatform.v1.UndeployModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.UndeployModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUndeployModelMethod(), getCallOptions(), request);
     }
 
@@ -960,8 +963,9 @@ public final class EndpointServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation mutateDeployedModel(
-        com.google.cloud.aiplatform.v1.MutateDeployedModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.MutateDeployedModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getMutateDeployedModelMethod(), getCallOptions(), request);
     }
   }

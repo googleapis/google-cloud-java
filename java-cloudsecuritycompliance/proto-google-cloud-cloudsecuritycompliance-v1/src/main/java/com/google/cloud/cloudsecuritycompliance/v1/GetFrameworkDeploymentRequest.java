@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * Request message for GetFrameworkDeployment.
+ * The request message for [GetFrameworkDeployment][].
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.GetFrameworkDeploymentRequest}
@@ -74,8 +74,9 @@ public final class GetFrameworkDeploymentRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. FrameworkDeployment name in the following format:
-   * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
+   * Required. The name of the framework deployment, in the format
+   * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -101,8 +102,9 @@ public final class GetFrameworkDeploymentRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. FrameworkDeployment name in the following format:
-   * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
+   * Required. The name of the framework deployment, in the format
+   * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -291,7 +293,7 @@ public final class GetFrameworkDeploymentRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Request message for GetFrameworkDeployment.
+   * The request message for [GetFrameworkDeployment][].
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.GetFrameworkDeploymentRequest}
@@ -487,8 +489,9 @@ public final class GetFrameworkDeploymentRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. FrameworkDeployment name in the following format:
-     * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
+     * Required. The name of the framework deployment, in the format
+     * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -513,8 +516,9 @@ public final class GetFrameworkDeploymentRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. FrameworkDeployment name in the following format:
-     * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
+     * Required. The name of the framework deployment, in the format
+     * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -539,8 +543,9 @@ public final class GetFrameworkDeploymentRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. FrameworkDeployment name in the following format:
-     * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
+     * Required. The name of the framework deployment, in the format
+     * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -564,8 +569,9 @@ public final class GetFrameworkDeploymentRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. FrameworkDeployment name in the following format:
-     * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
+     * Required. The name of the framework deployment, in the format
+     * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -585,8 +591,9 @@ public final class GetFrameworkDeploymentRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. FrameworkDeployment name in the following format:
-     * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
+     * Required. The name of the framework deployment, in the format
+     * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>

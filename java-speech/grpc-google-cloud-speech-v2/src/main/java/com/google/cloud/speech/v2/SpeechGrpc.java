@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Enables speech transcription and resource management.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/speech/v2/cloud_speech.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SpeechGrpc {
 
@@ -1848,8 +1845,8 @@ public final class SpeechGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createRecognizer(
-        com.google.cloud.speech.v2.CreateRecognizerRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.speech.v2.CreateRecognizerRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateRecognizerMethod(), getCallOptions(), request);
     }
 
@@ -1861,8 +1858,8 @@ public final class SpeechGrpc {
      * </pre>
      */
     public com.google.cloud.speech.v2.ListRecognizersResponse listRecognizers(
-        com.google.cloud.speech.v2.ListRecognizersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.speech.v2.ListRecognizersRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRecognizersMethod(), getCallOptions(), request);
     }
 
@@ -1877,8 +1874,8 @@ public final class SpeechGrpc {
      * </pre>
      */
     public com.google.cloud.speech.v2.Recognizer getRecognizer(
-        com.google.cloud.speech.v2.GetRecognizerRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.speech.v2.GetRecognizerRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRecognizerMethod(), getCallOptions(), request);
     }
 
@@ -1890,8 +1887,8 @@ public final class SpeechGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateRecognizer(
-        com.google.cloud.speech.v2.UpdateRecognizerRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.speech.v2.UpdateRecognizerRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateRecognizerMethod(), getCallOptions(), request);
     }
 
@@ -1903,8 +1900,8 @@ public final class SpeechGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteRecognizer(
-        com.google.cloud.speech.v2.DeleteRecognizerRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.speech.v2.DeleteRecognizerRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteRecognizerMethod(), getCallOptions(), request);
     }
 
@@ -1916,8 +1913,9 @@ public final class SpeechGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation undeleteRecognizer(
-        com.google.cloud.speech.v2.UndeleteRecognizerRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.speech.v2.UndeleteRecognizerRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUndeleteRecognizerMethod(), getCallOptions(), request);
     }
 
@@ -1930,8 +1928,8 @@ public final class SpeechGrpc {
      * </pre>
      */
     public com.google.cloud.speech.v2.RecognizeResponse recognize(
-        com.google.cloud.speech.v2.RecognizeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.speech.v2.RecognizeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRecognizeMethod(), getCallOptions(), request);
     }
 
@@ -1962,8 +1960,8 @@ public final class SpeechGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation batchRecognize(
-        com.google.cloud.speech.v2.BatchRecognizeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.speech.v2.BatchRecognizeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchRecognizeMethod(), getCallOptions(), request);
     }
 
@@ -1975,8 +1973,8 @@ public final class SpeechGrpc {
      * </pre>
      */
     public com.google.cloud.speech.v2.Config getConfig(
-        com.google.cloud.speech.v2.GetConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.speech.v2.GetConfigRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetConfigMethod(), getCallOptions(), request);
     }
 
@@ -1988,8 +1986,8 @@ public final class SpeechGrpc {
      * </pre>
      */
     public com.google.cloud.speech.v2.Config updateConfig(
-        com.google.cloud.speech.v2.UpdateConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.speech.v2.UpdateConfigRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateConfigMethod(), getCallOptions(), request);
     }
 
@@ -2001,8 +1999,9 @@ public final class SpeechGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createCustomClass(
-        com.google.cloud.speech.v2.CreateCustomClassRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.speech.v2.CreateCustomClassRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCustomClassMethod(), getCallOptions(), request);
     }
 
@@ -2014,8 +2013,9 @@ public final class SpeechGrpc {
      * </pre>
      */
     public com.google.cloud.speech.v2.ListCustomClassesResponse listCustomClasses(
-        com.google.cloud.speech.v2.ListCustomClassesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.speech.v2.ListCustomClassesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCustomClassesMethod(), getCallOptions(), request);
     }
 
@@ -2028,8 +2028,8 @@ public final class SpeechGrpc {
      * </pre>
      */
     public com.google.cloud.speech.v2.CustomClass getCustomClass(
-        com.google.cloud.speech.v2.GetCustomClassRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.speech.v2.GetCustomClassRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCustomClassMethod(), getCallOptions(), request);
     }
 
@@ -2041,8 +2041,9 @@ public final class SpeechGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateCustomClass(
-        com.google.cloud.speech.v2.UpdateCustomClassRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.speech.v2.UpdateCustomClassRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateCustomClassMethod(), getCallOptions(), request);
     }
 
@@ -2054,8 +2055,9 @@ public final class SpeechGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteCustomClass(
-        com.google.cloud.speech.v2.DeleteCustomClassRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.speech.v2.DeleteCustomClassRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteCustomClassMethod(), getCallOptions(), request);
     }
 
@@ -2067,8 +2069,9 @@ public final class SpeechGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation undeleteCustomClass(
-        com.google.cloud.speech.v2.UndeleteCustomClassRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.speech.v2.UndeleteCustomClassRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUndeleteCustomClassMethod(), getCallOptions(), request);
     }
 
@@ -2080,8 +2083,8 @@ public final class SpeechGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createPhraseSet(
-        com.google.cloud.speech.v2.CreatePhraseSetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.speech.v2.CreatePhraseSetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreatePhraseSetMethod(), getCallOptions(), request);
     }
 
@@ -2093,8 +2096,8 @@ public final class SpeechGrpc {
      * </pre>
      */
     public com.google.cloud.speech.v2.ListPhraseSetsResponse listPhraseSets(
-        com.google.cloud.speech.v2.ListPhraseSetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.speech.v2.ListPhraseSetsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPhraseSetsMethod(), getCallOptions(), request);
     }
 
@@ -2107,8 +2110,8 @@ public final class SpeechGrpc {
      * </pre>
      */
     public com.google.cloud.speech.v2.PhraseSet getPhraseSet(
-        com.google.cloud.speech.v2.GetPhraseSetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.speech.v2.GetPhraseSetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPhraseSetMethod(), getCallOptions(), request);
     }
 
@@ -2120,8 +2123,8 @@ public final class SpeechGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updatePhraseSet(
-        com.google.cloud.speech.v2.UpdatePhraseSetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.speech.v2.UpdatePhraseSetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdatePhraseSetMethod(), getCallOptions(), request);
     }
 
@@ -2133,8 +2136,8 @@ public final class SpeechGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deletePhraseSet(
-        com.google.cloud.speech.v2.DeletePhraseSetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.speech.v2.DeletePhraseSetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeletePhraseSetMethod(), getCallOptions(), request);
     }
 
@@ -2146,8 +2149,9 @@ public final class SpeechGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation undeletePhraseSet(
-        com.google.cloud.speech.v2.UndeletePhraseSetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.speech.v2.UndeletePhraseSetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUndeletePhraseSetMethod(), getCallOptions(), request);
     }
   }

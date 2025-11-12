@@ -35,9 +35,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * * `projects/12345/locations/us-central1-c/instances/my-parallelstore-share`
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/parallelstore/v1beta/parallelstore.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ParallelstoreGrpc {
 
@@ -741,8 +738,9 @@ public final class ParallelstoreGrpc {
      * </pre>
      */
     public com.google.cloud.parallelstore.v1beta.ListInstancesResponse listInstances(
-        com.google.cloud.parallelstore.v1beta.ListInstancesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.parallelstore.v1beta.ListInstancesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListInstancesMethod(), getCallOptions(), request);
     }
 
@@ -754,8 +752,9 @@ public final class ParallelstoreGrpc {
      * </pre>
      */
     public com.google.cloud.parallelstore.v1beta.Instance getInstance(
-        com.google.cloud.parallelstore.v1beta.GetInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.parallelstore.v1beta.GetInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetInstanceMethod(), getCallOptions(), request);
     }
 
@@ -767,8 +766,9 @@ public final class ParallelstoreGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createInstance(
-        com.google.cloud.parallelstore.v1beta.CreateInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.parallelstore.v1beta.CreateInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateInstanceMethod(), getCallOptions(), request);
     }
 
@@ -780,8 +780,9 @@ public final class ParallelstoreGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateInstance(
-        com.google.cloud.parallelstore.v1beta.UpdateInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.parallelstore.v1beta.UpdateInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateInstanceMethod(), getCallOptions(), request);
     }
 
@@ -793,8 +794,9 @@ public final class ParallelstoreGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteInstance(
-        com.google.cloud.parallelstore.v1beta.DeleteInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.parallelstore.v1beta.DeleteInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteInstanceMethod(), getCallOptions(), request);
     }
 
@@ -806,8 +808,9 @@ public final class ParallelstoreGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importData(
-        com.google.cloud.parallelstore.v1beta.ImportDataRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.parallelstore.v1beta.ImportDataRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportDataMethod(), getCallOptions(), request);
     }
 
@@ -819,8 +822,9 @@ public final class ParallelstoreGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportData(
-        com.google.cloud.parallelstore.v1beta.ExportDataRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.parallelstore.v1beta.ExportDataRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportDataMethod(), getCallOptions(), request);
     }
   }

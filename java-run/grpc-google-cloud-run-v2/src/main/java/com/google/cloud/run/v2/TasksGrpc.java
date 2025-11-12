@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Cloud Run Task Control Plane API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/run/v2/task.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class TasksGrpc {
 
@@ -289,8 +286,9 @@ public final class TasksGrpc {
      * Gets information about a Task.
      * </pre>
      */
-    public com.google.cloud.run.v2.Task getTask(com.google.cloud.run.v2.GetTaskRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.cloud.run.v2.Task getTask(com.google.cloud.run.v2.GetTaskRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTaskMethod(), getCallOptions(), request);
     }
 
@@ -302,8 +300,8 @@ public final class TasksGrpc {
      * </pre>
      */
     public com.google.cloud.run.v2.ListTasksResponse listTasks(
-        com.google.cloud.run.v2.ListTasksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.run.v2.ListTasksRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTasksMethod(), getCallOptions(), request);
     }
   }

@@ -55,6 +55,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
     referencedPlaybooks_ = com.google.protobuf.LazyStringArrayList.emptyList();
     referencedFlows_ = com.google.protobuf.LazyStringArrayList.emptyList();
     referencedTools_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    inlineActions_ = com.google.protobuf.LazyStringArrayList.emptyList();
     handlers_ = java.util.Collections.emptyList();
     playbookType_ = 0;
   }
@@ -3680,6 +3681,156 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
     return referencedTools_.getByteString(index);
   }
 
+  public static final int INLINE_ACTIONS_FIELD_NUMBER = 22;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList inlineActions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Names of inline actions scoped to this playbook.
+   * These actions are in addition to those belonging to referenced tools, child
+   * playbooks, and flows, e.g. actions that are defined in the playbook's code
+   * block.
+   * </pre>
+   *
+   * <code>
+   * repeated string inline_actions = 22 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the inlineActions.
+   */
+  public com.google.protobuf.ProtocolStringList getInlineActionsList() {
+    return inlineActions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Names of inline actions scoped to this playbook.
+   * These actions are in addition to those belonging to referenced tools, child
+   * playbooks, and flows, e.g. actions that are defined in the playbook's code
+   * block.
+   * </pre>
+   *
+   * <code>
+   * repeated string inline_actions = 22 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of inlineActions.
+   */
+  public int getInlineActionsCount() {
+    return inlineActions_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Names of inline actions scoped to this playbook.
+   * These actions are in addition to those belonging to referenced tools, child
+   * playbooks, and flows, e.g. actions that are defined in the playbook's code
+   * block.
+   * </pre>
+   *
+   * <code>
+   * repeated string inline_actions = 22 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The inlineActions at the given index.
+   */
+  public java.lang.String getInlineActions(int index) {
+    return inlineActions_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Names of inline actions scoped to this playbook.
+   * These actions are in addition to those belonging to referenced tools, child
+   * playbooks, and flows, e.g. actions that are defined in the playbook's code
+   * block.
+   * </pre>
+   *
+   * <code>
+   * repeated string inline_actions = 22 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the inlineActions at the given index.
+   */
+  public com.google.protobuf.ByteString getInlineActionsBytes(int index) {
+    return inlineActions_.getByteString(index);
+  }
+
+  public static final int CODE_BLOCK_FIELD_NUMBER = 21;
+  private com.google.cloud.dialogflow.cx.v3beta1.CodeBlock codeBlock_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The playbook's scoped code block, which may implement handlers
+   * and actions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.CodeBlock code_block = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the codeBlock field is set.
+   */
+  @java.lang.Override
+  public boolean hasCodeBlock() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The playbook's scoped code block, which may implement handlers
+   * and actions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.CodeBlock code_block = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The codeBlock.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.CodeBlock getCodeBlock() {
+    return codeBlock_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.CodeBlock.getDefaultInstance()
+        : codeBlock_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The playbook's scoped code block, which may implement handlers
+   * and actions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.CodeBlock code_block = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.CodeBlockOrBuilder getCodeBlockOrBuilder() {
+    return codeBlock_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.CodeBlock.getDefaultInstance()
+        : codeBlock_;
+  }
+
   public static final int LLM_MODEL_SETTINGS_FIELD_NUMBER = 14;
   private com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings llmModelSettings_;
 
@@ -3698,7 +3849,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasLlmModelSettings() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -3758,7 +3909,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSpeechSettings() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -3985,7 +4136,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < referencedTools_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, referencedTools_.getRaw(i));
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(14, getLlmModelSettings());
     }
     for (int i = 0; i < handlers_.size(); i++) {
@@ -3999,8 +4150,14 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(19, playbookType_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(20, getSpeechSettings());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(21, getCodeBlock());
+    }
+    for (int i = 0; i < inlineActions_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 22, inlineActions_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -4063,7 +4220,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getReferencedToolsList().size();
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getLlmModelSettings());
     }
     for (int i = 0; i < handlers_.size(); i++) {
@@ -4077,8 +4234,19 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(19, playbookType_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getSpeechSettings());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getCodeBlock());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < inlineActions_.size(); i++) {
+        dataSize += computeStringSizeNoTag(inlineActions_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getInlineActionsList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -4119,6 +4287,11 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
     if (!getReferencedPlaybooksList().equals(other.getReferencedPlaybooksList())) return false;
     if (!getReferencedFlowsList().equals(other.getReferencedFlowsList())) return false;
     if (!getReferencedToolsList().equals(other.getReferencedToolsList())) return false;
+    if (!getInlineActionsList().equals(other.getInlineActionsList())) return false;
+    if (hasCodeBlock() != other.hasCodeBlock()) return false;
+    if (hasCodeBlock()) {
+      if (!getCodeBlock().equals(other.getCodeBlock())) return false;
+    }
     if (hasLlmModelSettings() != other.hasLlmModelSettings()) return false;
     if (hasLlmModelSettings()) {
       if (!getLlmModelSettings().equals(other.getLlmModelSettings())) return false;
@@ -4179,6 +4352,14 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
     if (getReferencedToolsCount() > 0) {
       hash = (37 * hash) + REFERENCED_TOOLS_FIELD_NUMBER;
       hash = (53 * hash) + getReferencedToolsList().hashCode();
+    }
+    if (getInlineActionsCount() > 0) {
+      hash = (37 * hash) + INLINE_ACTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getInlineActionsList().hashCode();
+    }
+    if (hasCodeBlock()) {
+      hash = (37 * hash) + CODE_BLOCK_FIELD_NUMBER;
+      hash = (53 * hash) + getCodeBlock().hashCode();
     }
     if (hasLlmModelSettings()) {
       hash = (37 * hash) + LLM_MODEL_SETTINGS_FIELD_NUMBER;
@@ -4347,6 +4528,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
         getInstructionFieldBuilder();
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
+        getCodeBlockFieldBuilder();
         getLlmModelSettingsFieldBuilder();
         getSpeechSettingsFieldBuilder();
         getHandlersFieldBuilder();
@@ -4393,6 +4575,12 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
       referencedPlaybooks_ = com.google.protobuf.LazyStringArrayList.emptyList();
       referencedFlows_ = com.google.protobuf.LazyStringArrayList.emptyList();
       referencedTools_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      inlineActions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      codeBlock_ = null;
+      if (codeBlockBuilder_ != null) {
+        codeBlockBuilder_.dispose();
+        codeBlockBuilder_ = null;
+      }
       llmModelSettings_ = null;
       if (llmModelSettingsBuilder_ != null) {
         llmModelSettingsBuilder_.dispose();
@@ -4409,7 +4597,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
         handlers_ = null;
         handlersBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       playbookType_ = 0;
       return this;
     }
@@ -4469,9 +4657,9 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
         result.outputParameterDefinitions_ = outputParameterDefinitionsBuilder_.build();
       }
       if (handlersBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)) {
+        if (((bitField0_ & 0x00010000) != 0)) {
           handlers_ = java.util.Collections.unmodifiableList(handlers_);
-          bitField0_ = (bitField0_ & ~0x00004000);
+          bitField0_ = (bitField0_ & ~0x00010000);
         }
         result.handlers_ = handlers_;
       } else {
@@ -4520,16 +4708,24 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
         result.referencedTools_ = referencedTools_;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.llmModelSettings_ =
-            llmModelSettingsBuilder_ == null ? llmModelSettings_ : llmModelSettingsBuilder_.build();
-        to_bitField0_ |= 0x00000008;
+        inlineActions_.makeImmutable();
+        result.inlineActions_ = inlineActions_;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.speechSettings_ =
-            speechSettingsBuilder_ == null ? speechSettings_ : speechSettingsBuilder_.build();
+        result.codeBlock_ = codeBlockBuilder_ == null ? codeBlock_ : codeBlockBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.llmModelSettings_ =
+            llmModelSettingsBuilder_ == null ? llmModelSettings_ : llmModelSettingsBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.speechSettings_ =
+            speechSettingsBuilder_ == null ? speechSettings_ : speechSettingsBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.playbookType_ = playbookType_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -4692,6 +4888,19 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
+      if (!other.inlineActions_.isEmpty()) {
+        if (inlineActions_.isEmpty()) {
+          inlineActions_ = other.inlineActions_;
+          bitField0_ |= 0x00001000;
+        } else {
+          ensureInlineActionsIsMutable();
+          inlineActions_.addAll(other.inlineActions_);
+        }
+        onChanged();
+      }
+      if (other.hasCodeBlock()) {
+        mergeCodeBlock(other.getCodeBlock());
+      }
       if (other.hasLlmModelSettings()) {
         mergeLlmModelSettings(other.getLlmModelSettings());
       }
@@ -4702,7 +4911,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
         if (!other.handlers_.isEmpty()) {
           if (handlers_.isEmpty()) {
             handlers_ = other.handlers_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00010000);
           } else {
             ensureHandlersIsMutable();
             handlers_.addAll(other.handlers_);
@@ -4715,7 +4924,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
             handlersBuilder_.dispose();
             handlersBuilder_ = null;
             handlers_ = other.handlers_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00010000);
             handlersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getHandlersFieldBuilder()
@@ -4843,7 +5052,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getLlmModelSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 114
             case 130:
@@ -4868,15 +5077,28 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
             case 152:
               {
                 playbookType_ = input.readEnum();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 152
             case 162:
               {
                 input.readMessage(getSpeechSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 162
+            case 170:
+              {
+                input.readMessage(getCodeBlockFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 170
+            case 178:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureInlineActionsIsMutable();
+                inlineActions_.add(s);
+                break;
+              } // case 178
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7420,6 +7642,457 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.protobuf.LazyStringArrayList inlineActions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureInlineActionsIsMutable() {
+      if (!inlineActions_.isModifiable()) {
+        inlineActions_ = new com.google.protobuf.LazyStringArrayList(inlineActions_);
+      }
+      bitField0_ |= 0x00001000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Names of inline actions scoped to this playbook.
+     * These actions are in addition to those belonging to referenced tools, child
+     * playbooks, and flows, e.g. actions that are defined in the playbook's code
+     * block.
+     * </pre>
+     *
+     * <code>
+     * repeated string inline_actions = 22 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the inlineActions.
+     */
+    public com.google.protobuf.ProtocolStringList getInlineActionsList() {
+      inlineActions_.makeImmutable();
+      return inlineActions_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Names of inline actions scoped to this playbook.
+     * These actions are in addition to those belonging to referenced tools, child
+     * playbooks, and flows, e.g. actions that are defined in the playbook's code
+     * block.
+     * </pre>
+     *
+     * <code>
+     * repeated string inline_actions = 22 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of inlineActions.
+     */
+    public int getInlineActionsCount() {
+      return inlineActions_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Names of inline actions scoped to this playbook.
+     * These actions are in addition to those belonging to referenced tools, child
+     * playbooks, and flows, e.g. actions that are defined in the playbook's code
+     * block.
+     * </pre>
+     *
+     * <code>
+     * repeated string inline_actions = 22 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The inlineActions at the given index.
+     */
+    public java.lang.String getInlineActions(int index) {
+      return inlineActions_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Names of inline actions scoped to this playbook.
+     * These actions are in addition to those belonging to referenced tools, child
+     * playbooks, and flows, e.g. actions that are defined in the playbook's code
+     * block.
+     * </pre>
+     *
+     * <code>
+     * repeated string inline_actions = 22 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the inlineActions at the given index.
+     */
+    public com.google.protobuf.ByteString getInlineActionsBytes(int index) {
+      return inlineActions_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Names of inline actions scoped to this playbook.
+     * These actions are in addition to those belonging to referenced tools, child
+     * playbooks, and flows, e.g. actions that are defined in the playbook's code
+     * block.
+     * </pre>
+     *
+     * <code>
+     * repeated string inline_actions = 22 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The inlineActions to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInlineActions(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureInlineActionsIsMutable();
+      inlineActions_.set(index, value);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Names of inline actions scoped to this playbook.
+     * These actions are in addition to those belonging to referenced tools, child
+     * playbooks, and flows, e.g. actions that are defined in the playbook's code
+     * block.
+     * </pre>
+     *
+     * <code>
+     * repeated string inline_actions = 22 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The inlineActions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addInlineActions(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureInlineActionsIsMutable();
+      inlineActions_.add(value);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Names of inline actions scoped to this playbook.
+     * These actions are in addition to those belonging to referenced tools, child
+     * playbooks, and flows, e.g. actions that are defined in the playbook's code
+     * block.
+     * </pre>
+     *
+     * <code>
+     * repeated string inline_actions = 22 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param values The inlineActions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllInlineActions(java.lang.Iterable<java.lang.String> values) {
+      ensureInlineActionsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, inlineActions_);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Names of inline actions scoped to this playbook.
+     * These actions are in addition to those belonging to referenced tools, child
+     * playbooks, and flows, e.g. actions that are defined in the playbook's code
+     * block.
+     * </pre>
+     *
+     * <code>
+     * repeated string inline_actions = 22 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInlineActions() {
+      inlineActions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. Names of inline actions scoped to this playbook.
+     * These actions are in addition to those belonging to referenced tools, child
+     * playbooks, and flows, e.g. actions that are defined in the playbook's code
+     * block.
+     * </pre>
+     *
+     * <code>
+     * repeated string inline_actions = 22 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes of the inlineActions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addInlineActionsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureInlineActionsIsMutable();
+      inlineActions_.add(value);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.dialogflow.cx.v3beta1.CodeBlock codeBlock_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.CodeBlock,
+            com.google.cloud.dialogflow.cx.v3beta1.CodeBlock.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.CodeBlockOrBuilder>
+        codeBlockBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The playbook's scoped code block, which may implement handlers
+     * and actions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.CodeBlock code_block = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the codeBlock field is set.
+     */
+    public boolean hasCodeBlock() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The playbook's scoped code block, which may implement handlers
+     * and actions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.CodeBlock code_block = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The codeBlock.
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.CodeBlock getCodeBlock() {
+      if (codeBlockBuilder_ == null) {
+        return codeBlock_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.CodeBlock.getDefaultInstance()
+            : codeBlock_;
+      } else {
+        return codeBlockBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The playbook's scoped code block, which may implement handlers
+     * and actions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.CodeBlock code_block = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCodeBlock(com.google.cloud.dialogflow.cx.v3beta1.CodeBlock value) {
+      if (codeBlockBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        codeBlock_ = value;
+      } else {
+        codeBlockBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The playbook's scoped code block, which may implement handlers
+     * and actions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.CodeBlock code_block = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCodeBlock(
+        com.google.cloud.dialogflow.cx.v3beta1.CodeBlock.Builder builderForValue) {
+      if (codeBlockBuilder_ == null) {
+        codeBlock_ = builderForValue.build();
+      } else {
+        codeBlockBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The playbook's scoped code block, which may implement handlers
+     * and actions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.CodeBlock code_block = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeCodeBlock(com.google.cloud.dialogflow.cx.v3beta1.CodeBlock value) {
+      if (codeBlockBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)
+            && codeBlock_ != null
+            && codeBlock_
+                != com.google.cloud.dialogflow.cx.v3beta1.CodeBlock.getDefaultInstance()) {
+          getCodeBlockBuilder().mergeFrom(value);
+        } else {
+          codeBlock_ = value;
+        }
+      } else {
+        codeBlockBuilder_.mergeFrom(value);
+      }
+      if (codeBlock_ != null) {
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The playbook's scoped code block, which may implement handlers
+     * and actions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.CodeBlock code_block = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCodeBlock() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      codeBlock_ = null;
+      if (codeBlockBuilder_ != null) {
+        codeBlockBuilder_.dispose();
+        codeBlockBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The playbook's scoped code block, which may implement handlers
+     * and actions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.CodeBlock code_block = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.CodeBlock.Builder getCodeBlockBuilder() {
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return getCodeBlockFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The playbook's scoped code block, which may implement handlers
+     * and actions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.CodeBlock code_block = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.CodeBlockOrBuilder getCodeBlockOrBuilder() {
+      if (codeBlockBuilder_ != null) {
+        return codeBlockBuilder_.getMessageOrBuilder();
+      } else {
+        return codeBlock_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.CodeBlock.getDefaultInstance()
+            : codeBlock_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The playbook's scoped code block, which may implement handlers
+     * and actions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.CodeBlock code_block = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.CodeBlock,
+            com.google.cloud.dialogflow.cx.v3beta1.CodeBlock.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.CodeBlockOrBuilder>
+        getCodeBlockFieldBuilder() {
+      if (codeBlockBuilder_ == null) {
+        codeBlockBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.CodeBlock,
+                com.google.cloud.dialogflow.cx.v3beta1.CodeBlock.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.CodeBlockOrBuilder>(
+                getCodeBlock(), getParentForChildren(), isClean());
+        codeBlock_ = null;
+      }
+      return codeBlockBuilder_;
+    }
+
     private com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings llmModelSettings_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings,
@@ -7441,7 +8114,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the llmModelSettings field is set.
      */
     public boolean hasLlmModelSettings() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -7488,7 +8161,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
       } else {
         llmModelSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -7511,7 +8184,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
       } else {
         llmModelSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -7530,7 +8203,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeLlmModelSettings(
         com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings value) {
       if (llmModelSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && llmModelSettings_ != null
             && llmModelSettings_
                 != com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.getDefaultInstance()) {
@@ -7542,7 +8215,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
         llmModelSettingsBuilder_.mergeFrom(value);
       }
       if (llmModelSettings_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -7560,7 +8233,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearLlmModelSettings() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       llmModelSettings_ = null;
       if (llmModelSettingsBuilder_ != null) {
         llmModelSettingsBuilder_.dispose();
@@ -7583,7 +8256,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings.Builder
         getLlmModelSettingsBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getLlmModelSettingsFieldBuilder().getBuilder();
     }
@@ -7659,7 +8332,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the speechSettings field is set.
      */
     public boolean hasSpeechSettings() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -7708,7 +8381,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
       } else {
         speechSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -7732,7 +8405,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
       } else {
         speechSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -7751,7 +8424,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSpeechSettings(
         com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings value) {
       if (speechSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && speechSettings_ != null
             && speechSettings_
                 != com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings
@@ -7764,7 +8437,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
         speechSettingsBuilder_.mergeFrom(value);
       }
       if (speechSettings_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -7782,7 +8455,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSpeechSettings() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       speechSettings_ = null;
       if (speechSettingsBuilder_ != null) {
         speechSettingsBuilder_.dispose();
@@ -7805,7 +8478,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings.Builder
         getSpeechSettingsBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return getSpeechSettingsFieldBuilder().getBuilder();
     }
@@ -7865,10 +8538,10 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureHandlersIsMutable() {
-      if (!((bitField0_ & 0x00004000) != 0)) {
+      if (!((bitField0_ & 0x00010000) != 0)) {
         handlers_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.cx.v3beta1.Handler>(handlers_);
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00010000;
       }
     }
 
@@ -8127,7 +8800,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
     public Builder clearHandlers() {
       if (handlersBuilder_ == null) {
         handlers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00010000);
         onChanged();
       } else {
         handlersBuilder_.clear();
@@ -8277,7 +8950,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.cx.v3beta1.Handler,
                 com.google.cloud.dialogflow.cx.v3beta1.Handler.Builder,
                 com.google.cloud.dialogflow.cx.v3beta1.HandlerOrBuilder>(
-                handlers_, ((bitField0_ & 0x00004000) != 0), getParentForChildren(), isClean());
+                handlers_, ((bitField0_ & 0x00010000) != 0), getParentForChildren(), isClean());
         handlers_ = null;
       }
       return handlersBuilder_;
@@ -8319,7 +8992,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setPlaybookTypeValue(int value) {
       playbookType_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -8365,7 +9038,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       playbookType_ = value.getNumber();
       onChanged();
       return this;
@@ -8385,7 +9058,7 @@ public final class Playbook extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPlaybookType() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       playbookType_ = 0;
       onChanged();
       return this;

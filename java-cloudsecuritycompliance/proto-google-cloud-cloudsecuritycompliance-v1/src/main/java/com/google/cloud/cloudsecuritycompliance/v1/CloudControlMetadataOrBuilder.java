@@ -28,7 +28,7 @@ public interface CloudControlMetadataOrBuilder
    *
    *
    * <pre>
-   * Required. Cloud control name and parameters.
+   * Required. The cloud control name and parameters.
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface CloudControlMetadataOrBuilder
    *
    *
    * <pre>
-   * Required. Cloud control name and parameters.
+   * Required. The cloud control name and parameters.
    * </pre>
    *
    * <code>
@@ -58,7 +58,7 @@ public interface CloudControlMetadataOrBuilder
    *
    *
    * <pre>
-   * Required. Cloud control name and parameters.
+   * Required. The cloud control name and parameters.
    * </pre>
    *
    * <code>
@@ -72,7 +72,7 @@ public interface CloudControlMetadataOrBuilder
    *
    *
    * <pre>
-   * Required. Enforcement mode of the cloud control
+   * Required. The enforcement mode of the cloud control.
    * </pre>
    *
    * <code>
@@ -87,7 +87,7 @@ public interface CloudControlMetadataOrBuilder
    *
    *
    * <pre>
-   * Required. Enforcement mode of the cloud control
+   * Required. The enforcement mode of the cloud control.
    * </pre>
    *
    * <code>

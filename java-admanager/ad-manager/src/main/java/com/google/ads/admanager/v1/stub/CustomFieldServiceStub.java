@@ -18,10 +18,20 @@ package com.google.ads.admanager.v1.stub;
 
 import static com.google.ads.admanager.v1.CustomFieldServiceClient.ListCustomFieldsPagedResponse;
 
+import com.google.ads.admanager.v1.BatchActivateCustomFieldsRequest;
+import com.google.ads.admanager.v1.BatchActivateCustomFieldsResponse;
+import com.google.ads.admanager.v1.BatchCreateCustomFieldsRequest;
+import com.google.ads.admanager.v1.BatchCreateCustomFieldsResponse;
+import com.google.ads.admanager.v1.BatchDeactivateCustomFieldsRequest;
+import com.google.ads.admanager.v1.BatchDeactivateCustomFieldsResponse;
+import com.google.ads.admanager.v1.BatchUpdateCustomFieldsRequest;
+import com.google.ads.admanager.v1.BatchUpdateCustomFieldsResponse;
+import com.google.ads.admanager.v1.CreateCustomFieldRequest;
 import com.google.ads.admanager.v1.CustomField;
 import com.google.ads.admanager.v1.GetCustomFieldRequest;
 import com.google.ads.admanager.v1.ListCustomFieldsRequest;
 import com.google.ads.admanager.v1.ListCustomFieldsResponse;
+import com.google.ads.admanager.v1.UpdateCustomFieldRequest;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import javax.annotation.Generated;
@@ -47,6 +57,35 @@ public abstract class CustomFieldServiceStub implements BackgroundResource {
   public UnaryCallable<ListCustomFieldsRequest, ListCustomFieldsResponse>
       listCustomFieldsCallable() {
     throw new UnsupportedOperationException("Not implemented: listCustomFieldsCallable()");
+  }
+
+  public UnaryCallable<CreateCustomFieldRequest, CustomField> createCustomFieldCallable() {
+    throw new UnsupportedOperationException("Not implemented: createCustomFieldCallable()");
+  }
+
+  public UnaryCallable<BatchCreateCustomFieldsRequest, BatchCreateCustomFieldsResponse>
+      batchCreateCustomFieldsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchCreateCustomFieldsCallable()");
+  }
+
+  public UnaryCallable<UpdateCustomFieldRequest, CustomField> updateCustomFieldCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateCustomFieldCallable()");
+  }
+
+  public UnaryCallable<BatchUpdateCustomFieldsRequest, BatchUpdateCustomFieldsResponse>
+      batchUpdateCustomFieldsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchUpdateCustomFieldsCallable()");
+  }
+
+  public UnaryCallable<BatchActivateCustomFieldsRequest, BatchActivateCustomFieldsResponse>
+      batchActivateCustomFieldsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchActivateCustomFieldsCallable()");
+  }
+
+  public UnaryCallable<BatchDeactivateCustomFieldsRequest, BatchDeactivateCustomFieldsResponse>
+      batchDeactivateCustomFieldsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchDeactivateCustomFieldsCallable()");
   }
 
   @Override

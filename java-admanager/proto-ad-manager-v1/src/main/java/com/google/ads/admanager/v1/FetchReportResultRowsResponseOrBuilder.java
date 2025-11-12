@@ -31,9 +31,9 @@ public interface FetchReportResultRowsResponseOrBuilder
    * Up to `page_size` rows of report data.
    * </pre>
    *
-   * <code>repeated .google.ads.admanager.v1.Report.DataTable.Row rows = 1;</code>
+   * <code>repeated .google.ads.admanager.v1.ReportDataTable.Row rows = 1;</code>
    */
-  java.util.List<com.google.ads.admanager.v1.Report.DataTable.Row> getRowsList();
+  java.util.List<com.google.ads.admanager.v1.ReportDataTable.Row> getRowsList();
 
   /**
    *
@@ -42,9 +42,9 @@ public interface FetchReportResultRowsResponseOrBuilder
    * Up to `page_size` rows of report data.
    * </pre>
    *
-   * <code>repeated .google.ads.admanager.v1.Report.DataTable.Row rows = 1;</code>
+   * <code>repeated .google.ads.admanager.v1.ReportDataTable.Row rows = 1;</code>
    */
-  com.google.ads.admanager.v1.Report.DataTable.Row getRows(int index);
+  com.google.ads.admanager.v1.ReportDataTable.Row getRows(int index);
 
   /**
    *
@@ -53,7 +53,7 @@ public interface FetchReportResultRowsResponseOrBuilder
    * Up to `page_size` rows of report data.
    * </pre>
    *
-   * <code>repeated .google.ads.admanager.v1.Report.DataTable.Row rows = 1;</code>
+   * <code>repeated .google.ads.admanager.v1.ReportDataTable.Row rows = 1;</code>
    */
   int getRowsCount();
 
@@ -64,9 +64,9 @@ public interface FetchReportResultRowsResponseOrBuilder
    * Up to `page_size` rows of report data.
    * </pre>
    *
-   * <code>repeated .google.ads.admanager.v1.Report.DataTable.Row rows = 1;</code>
+   * <code>repeated .google.ads.admanager.v1.ReportDataTable.Row rows = 1;</code>
    */
-  java.util.List<? extends com.google.ads.admanager.v1.Report.DataTable.RowOrBuilder>
+  java.util.List<? extends com.google.ads.admanager.v1.ReportDataTable.RowOrBuilder>
       getRowsOrBuilderList();
 
   /**
@@ -76,9 +76,9 @@ public interface FetchReportResultRowsResponseOrBuilder
    * Up to `page_size` rows of report data.
    * </pre>
    *
-   * <code>repeated .google.ads.admanager.v1.Report.DataTable.Row rows = 1;</code>
+   * <code>repeated .google.ads.admanager.v1.ReportDataTable.Row rows = 1;</code>
    */
-  com.google.ads.admanager.v1.Report.DataTable.RowOrBuilder getRowsOrBuilder(int index);
+  com.google.ads.admanager.v1.ReportDataTable.RowOrBuilder getRowsOrBuilder(int index);
 
   /**
    *
@@ -129,9 +129,12 @@ public interface FetchReportResultRowsResponseOrBuilder
    * included in the request).
    * </pre>
    *
-   * <code>repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange date_ranges = 3;</code>
+   * <code>
+   * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange date_ranges = 3;
+   * </code>
    */
-  java.util.List<com.google.ads.admanager.v1.Report.DateRange.FixedDateRange> getDateRangesList();
+  java.util.List<com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange>
+      getDateRangesList();
 
   /**
    *
@@ -142,9 +145,11 @@ public interface FetchReportResultRowsResponseOrBuilder
    * included in the request).
    * </pre>
    *
-   * <code>repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange date_ranges = 3;</code>
+   * <code>
+   * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange date_ranges = 3;
+   * </code>
    */
-  com.google.ads.admanager.v1.Report.DateRange.FixedDateRange getDateRanges(int index);
+  com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange getDateRanges(int index);
 
   /**
    *
@@ -155,7 +160,9 @@ public interface FetchReportResultRowsResponseOrBuilder
    * included in the request).
    * </pre>
    *
-   * <code>repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange date_ranges = 3;</code>
+   * <code>
+   * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange date_ranges = 3;
+   * </code>
    */
   int getDateRangesCount();
 
@@ -168,9 +175,12 @@ public interface FetchReportResultRowsResponseOrBuilder
    * included in the request).
    * </pre>
    *
-   * <code>repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange date_ranges = 3;</code>
+   * <code>
+   * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange date_ranges = 3;
+   * </code>
    */
-  java.util.List<? extends com.google.ads.admanager.v1.Report.DateRange.FixedDateRangeOrBuilder>
+  java.util.List<
+          ? extends com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRangeOrBuilder>
       getDateRangesOrBuilderList();
 
   /**
@@ -182,10 +192,12 @@ public interface FetchReportResultRowsResponseOrBuilder
    * included in the request).
    * </pre>
    *
-   * <code>repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange date_ranges = 3;</code>
+   * <code>
+   * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange date_ranges = 3;
+   * </code>
    */
-  com.google.ads.admanager.v1.Report.DateRange.FixedDateRangeOrBuilder getDateRangesOrBuilder(
-      int index);
+  com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRangeOrBuilder
+      getDateRangesOrBuilder(int index);
 
   /**
    *
@@ -197,10 +209,10 @@ public interface FetchReportResultRowsResponseOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange comparison_date_ranges = 4;
+   * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange comparison_date_ranges = 4;
    * </code>
    */
-  java.util.List<com.google.ads.admanager.v1.Report.DateRange.FixedDateRange>
+  java.util.List<com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange>
       getComparisonDateRangesList();
 
   /**
@@ -213,10 +225,11 @@ public interface FetchReportResultRowsResponseOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange comparison_date_ranges = 4;
+   * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange comparison_date_ranges = 4;
    * </code>
    */
-  com.google.ads.admanager.v1.Report.DateRange.FixedDateRange getComparisonDateRanges(int index);
+  com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange getComparisonDateRanges(
+      int index);
 
   /**
    *
@@ -228,7 +241,7 @@ public interface FetchReportResultRowsResponseOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange comparison_date_ranges = 4;
+   * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange comparison_date_ranges = 4;
    * </code>
    */
   int getComparisonDateRangesCount();
@@ -243,10 +256,11 @@ public interface FetchReportResultRowsResponseOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange comparison_date_ranges = 4;
+   * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange comparison_date_ranges = 4;
    * </code>
    */
-  java.util.List<? extends com.google.ads.admanager.v1.Report.DateRange.FixedDateRangeOrBuilder>
+  java.util.List<
+          ? extends com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRangeOrBuilder>
       getComparisonDateRangesOrBuilderList();
 
   /**
@@ -259,10 +273,10 @@ public interface FetchReportResultRowsResponseOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.ads.admanager.v1.Report.DateRange.FixedDateRange comparison_date_ranges = 4;
+   * repeated .google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRange comparison_date_ranges = 4;
    * </code>
    */
-  com.google.ads.admanager.v1.Report.DateRange.FixedDateRangeOrBuilder
+  com.google.ads.admanager.v1.ReportDefinition.DateRange.FixedDateRangeOrBuilder
       getComparisonDateRangesOrBuilder(int index);
 
   /**

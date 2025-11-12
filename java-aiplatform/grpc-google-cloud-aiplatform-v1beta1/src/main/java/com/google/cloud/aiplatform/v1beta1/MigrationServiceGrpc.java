@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * datalabeling.googleapis.com and ml.googleapis.com to Vertex AI.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1beta1/migration_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class MigrationServiceGrpc {
 
@@ -342,8 +339,9 @@ public final class MigrationServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesResponse
         searchMigratableResources(
-            com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchMigratableResourcesMethod(), getCallOptions(), request);
     }
 
@@ -356,8 +354,9 @@ public final class MigrationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation batchMigrateResources(
-        com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchMigrateResourcesMethod(), getCallOptions(), request);
     }
   }

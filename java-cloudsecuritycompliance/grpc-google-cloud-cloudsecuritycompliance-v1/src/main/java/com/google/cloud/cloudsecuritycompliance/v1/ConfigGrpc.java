@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * configurations.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/cloudsecuritycompliance/v1/config.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ConfigGrpc {
 
@@ -562,9 +559,10 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Lists all Frameworks (both Built-in and Custom) available within a given
-     * parent resource. This method supports pagination.
-     * The latest major version of each Framework is returned.
+     * Lists the frameworks (both built-in and custom) that are available within
+     * the parent resource. The latest major version of each framework is
+     * returned.
+     * This method supports pagination.
      * </pre>
      */
     default void listFrameworks(
@@ -580,12 +578,10 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Gets details of a single Framework.
-     * This method retrieves a Framework resource, which can be either Built-in or
-     * Custom, identified by its name.
-     * By default, the latest major version of the Framework is returned.
-     * A specific major version can be retrieved by specifying the
-     * `major_revision_id` in the request.
+     * Gets details about a framework.
+     * This method retrieves the latest major version of the framework.
+     * To retrieve a specific major version, include `major_revision_id` in
+     * the request.
      * </pre>
      */
     default void getFramework(
@@ -600,9 +596,9 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Creates a new Framework with type `Custom` under a given parent resource.
-     * Frameworks with type `Built-in` are managed by Google and cannot be created
-     * through this API.
+     * Creates a custom framework in a given parent resource.
+     * You can't create built-in frameworks because those are managed by
+     * Google.
      * </pre>
      */
     default void createFramework(
@@ -617,15 +613,16 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Updates a single Framework.
-     * This method allows for partial updates of a Framework resource. The fields
-     * to be updated are specified using the `update_mask`.
-     * - If an `update_mask` is provided, only the fields specified in the mask
-     * will be updated.
-     * - If no `update_mask` is provided, all fields present in the request's
-     * `framework` body will be used to overwrite the existing resource.
-     * This operation can only be performed on Frameworks with type `CUSTOM`.
-     * A successful update will result in a new version of the Framework.
+     * Updates a custom framework.
+     * This method allows for partial updates of a framework. Use the
+     * `update_mask` to specify which fields to update. Consider the following:
+     * - If you provide an `update_mask`, only the fields that are specified
+     * in the mask are updated.
+     * - If you don't provide an `update_mask`, all the fields that are present
+     * in the request's `framework` body are used to overwrite the existing
+     * resource.
+     * You can only update frameworks with the `CUSTOM` type.
+     * A successful update creates a new version of the framework.
      * </pre>
      */
     default void updateFramework(
@@ -640,13 +637,12 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Deletes a single Custom Framework, including all its minor and
-     * minor revisions.
-     * - This operation can only be performed on Frameworks with type `CUSTOM`.
-     *   Built-in Frameworks cannot be deleted.
-     * - The Framework cannot be deleted if it is currently deployed on any
-     *   resource.
-     * - This action is permanent and cannot be undone.
+     * Deletes a custom framework, including all its major and
+     * minor revisions. Consider the following:
+     * - You can't delete built-in frameworks. You can only delete frameworks
+     *   with type `CUSTOM`.
+     * - You can't delete frameworks that are deployed to a resource.
+     * - You can't restore a deleted framework. This action is permanent.
      * </pre>
      */
     default void deleteFramework(
@@ -660,9 +656,10 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Lists all CloudControls (both Built-in and Custom) available within a given
-     * parent resource. This method supports pagination.
-     * The latest major version of each CloudControl is returned.
+     * Lists the cloud controls (both built-in and custom) that are available
+     * in a given parent resource. The latest major version of each cloud control
+     * is returned.
+     * This method supports pagination.
      * </pre>
      */
     default void listCloudControls(
@@ -678,12 +675,12 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Gets details of a single CloudControl.
-     * This method retrieves a CloudControl resource, which can be either Built-in
-     * or Custom, identified by its name.
-     * By default, the latest major version of the CloudControl is returned.
-     * A specific major version can be retrieved by specifying the
-     * `major_revision_id` in the request.
+     * Gets details about a cloud control.
+     * This method retrieves the latest major version of a cloud control that
+     * you identify by name.
+     * By default, the latest major version of the cloud control is returned.
+     * To retrieve a specific major version, include `major_revision_id` in
+     * the request.
      * </pre>
      */
     default void getCloudControl(
@@ -698,9 +695,10 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Creates a new CloudControl with type `Custom` under a given parent
-     * resource. `Built-in` CloudControls are managed by Google and cannot be
-     * created through this API.
+     * Creates a custom cloud control in a given parent
+     * resource.
+     * You can't create built-in cloud controls because those are managed by
+     * Google.
      * </pre>
      */
     default void createCloudControl(
@@ -715,14 +713,16 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Updates a single CloudControl.
-     * This method allows for partial updates of a Custom CloudControl resource.
-     * Built-in CloudControls cannot be updated.
-     * - If an `update_mask` is provided, only the fields specified in the mask
-     * will be updated.
-     * - If no `update_mask` is provided, all fields present in the request's
-     * `cloud_control` body will be used to overwrite the existing resource.
-     * A successful update will result in a new version of the CloudControl.
+     * Updates a custom cloud control.
+     * This method allows for partial updates of a cloud control. Use the
+     * `update_mask` to specify which fields to update. Consider the following:
+     * - If you provide an `update_mask`, only the fields that are specified
+     * in the mask are updated.
+     * - If you don't provide an `update_mask`, all the fields that are present
+     * in the request's `cloud_control` body are used to overwrite the existing
+     * resource.
+     * You can only update cloud controls with the `CUSTOM` type.
+     * A successful update creates a new version of the cloud control.
      * </pre>
      */
     default void updateCloudControl(
@@ -737,13 +737,13 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Deletes a single Custom CloudControl, including all its
-     * major and minor revisions.
-     * - This operation can only be performed on CloudControls with type `CUSTOM`.
-     *   Built-in CloudControls cannot be deleted.
-     * - The CloudControl cannot be deleted if any of its revisions are currently
-     *   referenced by any Framework.
-     * - This action is permanent and cannot be undone.
+     * Deletes a custom cloud control, including all its
+     * major and minor revisions. Consider the following:
+     * - You can't delete built-in cloud controls. You can only delete cloud
+     *   controls with type `CUSTOM`.
+     * - You can't delete cloud controls if any of the versions are referenced
+     *   by a framework.
+     * - You can't restore a deleted cloud control. This action is permanent.
      * </pre>
      */
     default void deleteCloudControl(
@@ -792,9 +792,10 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Lists all Frameworks (both Built-in and Custom) available within a given
-     * parent resource. This method supports pagination.
-     * The latest major version of each Framework is returned.
+     * Lists the frameworks (both built-in and custom) that are available within
+     * the parent resource. The latest major version of each framework is
+     * returned.
+     * This method supports pagination.
      * </pre>
      */
     public void listFrameworks(
@@ -812,12 +813,10 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Gets details of a single Framework.
-     * This method retrieves a Framework resource, which can be either Built-in or
-     * Custom, identified by its name.
-     * By default, the latest major version of the Framework is returned.
-     * A specific major version can be retrieved by specifying the
-     * `major_revision_id` in the request.
+     * Gets details about a framework.
+     * This method retrieves the latest major version of the framework.
+     * To retrieve a specific major version, include `major_revision_id` in
+     * the request.
      * </pre>
      */
     public void getFramework(
@@ -834,9 +833,9 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Creates a new Framework with type `Custom` under a given parent resource.
-     * Frameworks with type `Built-in` are managed by Google and cannot be created
-     * through this API.
+     * Creates a custom framework in a given parent resource.
+     * You can't create built-in frameworks because those are managed by
+     * Google.
      * </pre>
      */
     public void createFramework(
@@ -853,15 +852,16 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Updates a single Framework.
-     * This method allows for partial updates of a Framework resource. The fields
-     * to be updated are specified using the `update_mask`.
-     * - If an `update_mask` is provided, only the fields specified in the mask
-     * will be updated.
-     * - If no `update_mask` is provided, all fields present in the request's
-     * `framework` body will be used to overwrite the existing resource.
-     * This operation can only be performed on Frameworks with type `CUSTOM`.
-     * A successful update will result in a new version of the Framework.
+     * Updates a custom framework.
+     * This method allows for partial updates of a framework. Use the
+     * `update_mask` to specify which fields to update. Consider the following:
+     * - If you provide an `update_mask`, only the fields that are specified
+     * in the mask are updated.
+     * - If you don't provide an `update_mask`, all the fields that are present
+     * in the request's `framework` body are used to overwrite the existing
+     * resource.
+     * You can only update frameworks with the `CUSTOM` type.
+     * A successful update creates a new version of the framework.
      * </pre>
      */
     public void updateFramework(
@@ -878,13 +878,12 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Deletes a single Custom Framework, including all its minor and
-     * minor revisions.
-     * - This operation can only be performed on Frameworks with type `CUSTOM`.
-     *   Built-in Frameworks cannot be deleted.
-     * - The Framework cannot be deleted if it is currently deployed on any
-     *   resource.
-     * - This action is permanent and cannot be undone.
+     * Deletes a custom framework, including all its major and
+     * minor revisions. Consider the following:
+     * - You can't delete built-in frameworks. You can only delete frameworks
+     *   with type `CUSTOM`.
+     * - You can't delete frameworks that are deployed to a resource.
+     * - You can't restore a deleted framework. This action is permanent.
      * </pre>
      */
     public void deleteFramework(
@@ -900,9 +899,10 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Lists all CloudControls (both Built-in and Custom) available within a given
-     * parent resource. This method supports pagination.
-     * The latest major version of each CloudControl is returned.
+     * Lists the cloud controls (both built-in and custom) that are available
+     * in a given parent resource. The latest major version of each cloud control
+     * is returned.
+     * This method supports pagination.
      * </pre>
      */
     public void listCloudControls(
@@ -920,12 +920,12 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Gets details of a single CloudControl.
-     * This method retrieves a CloudControl resource, which can be either Built-in
-     * or Custom, identified by its name.
-     * By default, the latest major version of the CloudControl is returned.
-     * A specific major version can be retrieved by specifying the
-     * `major_revision_id` in the request.
+     * Gets details about a cloud control.
+     * This method retrieves the latest major version of a cloud control that
+     * you identify by name.
+     * By default, the latest major version of the cloud control is returned.
+     * To retrieve a specific major version, include `major_revision_id` in
+     * the request.
      * </pre>
      */
     public void getCloudControl(
@@ -942,9 +942,10 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Creates a new CloudControl with type `Custom` under a given parent
-     * resource. `Built-in` CloudControls are managed by Google and cannot be
-     * created through this API.
+     * Creates a custom cloud control in a given parent
+     * resource.
+     * You can't create built-in cloud controls because those are managed by
+     * Google.
      * </pre>
      */
     public void createCloudControl(
@@ -961,14 +962,16 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Updates a single CloudControl.
-     * This method allows for partial updates of a Custom CloudControl resource.
-     * Built-in CloudControls cannot be updated.
-     * - If an `update_mask` is provided, only the fields specified in the mask
-     * will be updated.
-     * - If no `update_mask` is provided, all fields present in the request's
-     * `cloud_control` body will be used to overwrite the existing resource.
-     * A successful update will result in a new version of the CloudControl.
+     * Updates a custom cloud control.
+     * This method allows for partial updates of a cloud control. Use the
+     * `update_mask` to specify which fields to update. Consider the following:
+     * - If you provide an `update_mask`, only the fields that are specified
+     * in the mask are updated.
+     * - If you don't provide an `update_mask`, all the fields that are present
+     * in the request's `cloud_control` body are used to overwrite the existing
+     * resource.
+     * You can only update cloud controls with the `CUSTOM` type.
+     * A successful update creates a new version of the cloud control.
      * </pre>
      */
     public void updateCloudControl(
@@ -985,13 +988,13 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Deletes a single Custom CloudControl, including all its
-     * major and minor revisions.
-     * - This operation can only be performed on CloudControls with type `CUSTOM`.
-     *   Built-in CloudControls cannot be deleted.
-     * - The CloudControl cannot be deleted if any of its revisions are currently
-     *   referenced by any Framework.
-     * - This action is permanent and cannot be undone.
+     * Deletes a custom cloud control, including all its
+     * major and minor revisions. Consider the following:
+     * - You can't delete built-in cloud controls. You can only delete cloud
+     *   controls with type `CUSTOM`.
+     * - You can't delete cloud controls if any of the versions are referenced
+     *   by a framework.
+     * - You can't restore a deleted cloud control. This action is permanent.
      * </pre>
      */
     public void deleteCloudControl(
@@ -1027,14 +1030,16 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Lists all Frameworks (both Built-in and Custom) available within a given
-     * parent resource. This method supports pagination.
-     * The latest major version of each Framework is returned.
+     * Lists the frameworks (both built-in and custom) that are available within
+     * the parent resource. The latest major version of each framework is
+     * returned.
+     * This method supports pagination.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.ListFrameworksResponse listFrameworks(
-        com.google.cloud.cloudsecuritycompliance.v1.ListFrameworksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudsecuritycompliance.v1.ListFrameworksRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListFrameworksMethod(), getCallOptions(), request);
     }
 
@@ -1042,17 +1047,16 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Gets details of a single Framework.
-     * This method retrieves a Framework resource, which can be either Built-in or
-     * Custom, identified by its name.
-     * By default, the latest major version of the Framework is returned.
-     * A specific major version can be retrieved by specifying the
-     * `major_revision_id` in the request.
+     * Gets details about a framework.
+     * This method retrieves the latest major version of the framework.
+     * To retrieve a specific major version, include `major_revision_id` in
+     * the request.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.Framework getFramework(
-        com.google.cloud.cloudsecuritycompliance.v1.GetFrameworkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudsecuritycompliance.v1.GetFrameworkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetFrameworkMethod(), getCallOptions(), request);
     }
 
@@ -1060,14 +1064,15 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Creates a new Framework with type `Custom` under a given parent resource.
-     * Frameworks with type `Built-in` are managed by Google and cannot be created
-     * through this API.
+     * Creates a custom framework in a given parent resource.
+     * You can't create built-in frameworks because those are managed by
+     * Google.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.Framework createFramework(
-        com.google.cloud.cloudsecuritycompliance.v1.CreateFrameworkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudsecuritycompliance.v1.CreateFrameworkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateFrameworkMethod(), getCallOptions(), request);
     }
 
@@ -1075,20 +1080,22 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Updates a single Framework.
-     * This method allows for partial updates of a Framework resource. The fields
-     * to be updated are specified using the `update_mask`.
-     * - If an `update_mask` is provided, only the fields specified in the mask
-     * will be updated.
-     * - If no `update_mask` is provided, all fields present in the request's
-     * `framework` body will be used to overwrite the existing resource.
-     * This operation can only be performed on Frameworks with type `CUSTOM`.
-     * A successful update will result in a new version of the Framework.
+     * Updates a custom framework.
+     * This method allows for partial updates of a framework. Use the
+     * `update_mask` to specify which fields to update. Consider the following:
+     * - If you provide an `update_mask`, only the fields that are specified
+     * in the mask are updated.
+     * - If you don't provide an `update_mask`, all the fields that are present
+     * in the request's `framework` body are used to overwrite the existing
+     * resource.
+     * You can only update frameworks with the `CUSTOM` type.
+     * A successful update creates a new version of the framework.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.Framework updateFramework(
-        com.google.cloud.cloudsecuritycompliance.v1.UpdateFrameworkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudsecuritycompliance.v1.UpdateFrameworkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateFrameworkMethod(), getCallOptions(), request);
     }
 
@@ -1096,18 +1103,18 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Deletes a single Custom Framework, including all its minor and
-     * minor revisions.
-     * - This operation can only be performed on Frameworks with type `CUSTOM`.
-     *   Built-in Frameworks cannot be deleted.
-     * - The Framework cannot be deleted if it is currently deployed on any
-     *   resource.
-     * - This action is permanent and cannot be undone.
+     * Deletes a custom framework, including all its major and
+     * minor revisions. Consider the following:
+     * - You can't delete built-in frameworks. You can only delete frameworks
+     *   with type `CUSTOM`.
+     * - You can't delete frameworks that are deployed to a resource.
+     * - You can't restore a deleted framework. This action is permanent.
      * </pre>
      */
     public com.google.protobuf.Empty deleteFramework(
-        com.google.cloud.cloudsecuritycompliance.v1.DeleteFrameworkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudsecuritycompliance.v1.DeleteFrameworkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteFrameworkMethod(), getCallOptions(), request);
     }
 
@@ -1115,14 +1122,16 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Lists all CloudControls (both Built-in and Custom) available within a given
-     * parent resource. This method supports pagination.
-     * The latest major version of each CloudControl is returned.
+     * Lists the cloud controls (both built-in and custom) that are available
+     * in a given parent resource. The latest major version of each cloud control
+     * is returned.
+     * This method supports pagination.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.ListCloudControlsResponse listCloudControls(
-        com.google.cloud.cloudsecuritycompliance.v1.ListCloudControlsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudsecuritycompliance.v1.ListCloudControlsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCloudControlsMethod(), getCallOptions(), request);
     }
 
@@ -1130,17 +1139,18 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Gets details of a single CloudControl.
-     * This method retrieves a CloudControl resource, which can be either Built-in
-     * or Custom, identified by its name.
-     * By default, the latest major version of the CloudControl is returned.
-     * A specific major version can be retrieved by specifying the
-     * `major_revision_id` in the request.
+     * Gets details about a cloud control.
+     * This method retrieves the latest major version of a cloud control that
+     * you identify by name.
+     * By default, the latest major version of the cloud control is returned.
+     * To retrieve a specific major version, include `major_revision_id` in
+     * the request.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.CloudControl getCloudControl(
-        com.google.cloud.cloudsecuritycompliance.v1.GetCloudControlRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudsecuritycompliance.v1.GetCloudControlRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCloudControlMethod(), getCallOptions(), request);
     }
 
@@ -1148,14 +1158,16 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Creates a new CloudControl with type `Custom` under a given parent
-     * resource. `Built-in` CloudControls are managed by Google and cannot be
-     * created through this API.
+     * Creates a custom cloud control in a given parent
+     * resource.
+     * You can't create built-in cloud controls because those are managed by
+     * Google.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.CloudControl createCloudControl(
-        com.google.cloud.cloudsecuritycompliance.v1.CreateCloudControlRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudsecuritycompliance.v1.CreateCloudControlRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCloudControlMethod(), getCallOptions(), request);
     }
 
@@ -1163,19 +1175,22 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Updates a single CloudControl.
-     * This method allows for partial updates of a Custom CloudControl resource.
-     * Built-in CloudControls cannot be updated.
-     * - If an `update_mask` is provided, only the fields specified in the mask
-     * will be updated.
-     * - If no `update_mask` is provided, all fields present in the request's
-     * `cloud_control` body will be used to overwrite the existing resource.
-     * A successful update will result in a new version of the CloudControl.
+     * Updates a custom cloud control.
+     * This method allows for partial updates of a cloud control. Use the
+     * `update_mask` to specify which fields to update. Consider the following:
+     * - If you provide an `update_mask`, only the fields that are specified
+     * in the mask are updated.
+     * - If you don't provide an `update_mask`, all the fields that are present
+     * in the request's `cloud_control` body are used to overwrite the existing
+     * resource.
+     * You can only update cloud controls with the `CUSTOM` type.
+     * A successful update creates a new version of the cloud control.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.CloudControl updateCloudControl(
-        com.google.cloud.cloudsecuritycompliance.v1.UpdateCloudControlRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudsecuritycompliance.v1.UpdateCloudControlRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateCloudControlMethod(), getCallOptions(), request);
     }
 
@@ -1183,18 +1198,19 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Deletes a single Custom CloudControl, including all its
-     * major and minor revisions.
-     * - This operation can only be performed on CloudControls with type `CUSTOM`.
-     *   Built-in CloudControls cannot be deleted.
-     * - The CloudControl cannot be deleted if any of its revisions are currently
-     *   referenced by any Framework.
-     * - This action is permanent and cannot be undone.
+     * Deletes a custom cloud control, including all its
+     * major and minor revisions. Consider the following:
+     * - You can't delete built-in cloud controls. You can only delete cloud
+     *   controls with type `CUSTOM`.
+     * - You can't delete cloud controls if any of the versions are referenced
+     *   by a framework.
+     * - You can't restore a deleted cloud control. This action is permanent.
      * </pre>
      */
     public com.google.protobuf.Empty deleteCloudControl(
-        com.google.cloud.cloudsecuritycompliance.v1.DeleteCloudControlRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudsecuritycompliance.v1.DeleteCloudControlRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteCloudControlMethod(), getCallOptions(), request);
     }
   }
@@ -1222,9 +1238,10 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Lists all Frameworks (both Built-in and Custom) available within a given
-     * parent resource. This method supports pagination.
-     * The latest major version of each Framework is returned.
+     * Lists the frameworks (both built-in and custom) that are available within
+     * the parent resource. The latest major version of each framework is
+     * returned.
+     * This method supports pagination.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.ListFrameworksResponse listFrameworks(
@@ -1237,12 +1254,10 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Gets details of a single Framework.
-     * This method retrieves a Framework resource, which can be either Built-in or
-     * Custom, identified by its name.
-     * By default, the latest major version of the Framework is returned.
-     * A specific major version can be retrieved by specifying the
-     * `major_revision_id` in the request.
+     * Gets details about a framework.
+     * This method retrieves the latest major version of the framework.
+     * To retrieve a specific major version, include `major_revision_id` in
+     * the request.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.Framework getFramework(
@@ -1255,9 +1270,9 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Creates a new Framework with type `Custom` under a given parent resource.
-     * Frameworks with type `Built-in` are managed by Google and cannot be created
-     * through this API.
+     * Creates a custom framework in a given parent resource.
+     * You can't create built-in frameworks because those are managed by
+     * Google.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.Framework createFramework(
@@ -1270,15 +1285,16 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Updates a single Framework.
-     * This method allows for partial updates of a Framework resource. The fields
-     * to be updated are specified using the `update_mask`.
-     * - If an `update_mask` is provided, only the fields specified in the mask
-     * will be updated.
-     * - If no `update_mask` is provided, all fields present in the request's
-     * `framework` body will be used to overwrite the existing resource.
-     * This operation can only be performed on Frameworks with type `CUSTOM`.
-     * A successful update will result in a new version of the Framework.
+     * Updates a custom framework.
+     * This method allows for partial updates of a framework. Use the
+     * `update_mask` to specify which fields to update. Consider the following:
+     * - If you provide an `update_mask`, only the fields that are specified
+     * in the mask are updated.
+     * - If you don't provide an `update_mask`, all the fields that are present
+     * in the request's `framework` body are used to overwrite the existing
+     * resource.
+     * You can only update frameworks with the `CUSTOM` type.
+     * A successful update creates a new version of the framework.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.Framework updateFramework(
@@ -1291,13 +1307,12 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Deletes a single Custom Framework, including all its minor and
-     * minor revisions.
-     * - This operation can only be performed on Frameworks with type `CUSTOM`.
-     *   Built-in Frameworks cannot be deleted.
-     * - The Framework cannot be deleted if it is currently deployed on any
-     *   resource.
-     * - This action is permanent and cannot be undone.
+     * Deletes a custom framework, including all its major and
+     * minor revisions. Consider the following:
+     * - You can't delete built-in frameworks. You can only delete frameworks
+     *   with type `CUSTOM`.
+     * - You can't delete frameworks that are deployed to a resource.
+     * - You can't restore a deleted framework. This action is permanent.
      * </pre>
      */
     public com.google.protobuf.Empty deleteFramework(
@@ -1310,9 +1325,10 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Lists all CloudControls (both Built-in and Custom) available within a given
-     * parent resource. This method supports pagination.
-     * The latest major version of each CloudControl is returned.
+     * Lists the cloud controls (both built-in and custom) that are available
+     * in a given parent resource. The latest major version of each cloud control
+     * is returned.
+     * This method supports pagination.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.ListCloudControlsResponse listCloudControls(
@@ -1325,12 +1341,12 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Gets details of a single CloudControl.
-     * This method retrieves a CloudControl resource, which can be either Built-in
-     * or Custom, identified by its name.
-     * By default, the latest major version of the CloudControl is returned.
-     * A specific major version can be retrieved by specifying the
-     * `major_revision_id` in the request.
+     * Gets details about a cloud control.
+     * This method retrieves the latest major version of a cloud control that
+     * you identify by name.
+     * By default, the latest major version of the cloud control is returned.
+     * To retrieve a specific major version, include `major_revision_id` in
+     * the request.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.CloudControl getCloudControl(
@@ -1343,9 +1359,10 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Creates a new CloudControl with type `Custom` under a given parent
-     * resource. `Built-in` CloudControls are managed by Google and cannot be
-     * created through this API.
+     * Creates a custom cloud control in a given parent
+     * resource.
+     * You can't create built-in cloud controls because those are managed by
+     * Google.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.CloudControl createCloudControl(
@@ -1358,14 +1375,16 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Updates a single CloudControl.
-     * This method allows for partial updates of a Custom CloudControl resource.
-     * Built-in CloudControls cannot be updated.
-     * - If an `update_mask` is provided, only the fields specified in the mask
-     * will be updated.
-     * - If no `update_mask` is provided, all fields present in the request's
-     * `cloud_control` body will be used to overwrite the existing resource.
-     * A successful update will result in a new version of the CloudControl.
+     * Updates a custom cloud control.
+     * This method allows for partial updates of a cloud control. Use the
+     * `update_mask` to specify which fields to update. Consider the following:
+     * - If you provide an `update_mask`, only the fields that are specified
+     * in the mask are updated.
+     * - If you don't provide an `update_mask`, all the fields that are present
+     * in the request's `cloud_control` body are used to overwrite the existing
+     * resource.
+     * You can only update cloud controls with the `CUSTOM` type.
+     * A successful update creates a new version of the cloud control.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.CloudControl updateCloudControl(
@@ -1378,13 +1397,13 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Deletes a single Custom CloudControl, including all its
-     * major and minor revisions.
-     * - This operation can only be performed on CloudControls with type `CUSTOM`.
-     *   Built-in CloudControls cannot be deleted.
-     * - The CloudControl cannot be deleted if any of its revisions are currently
-     *   referenced by any Framework.
-     * - This action is permanent and cannot be undone.
+     * Deletes a custom cloud control, including all its
+     * major and minor revisions. Consider the following:
+     * - You can't delete built-in cloud controls. You can only delete cloud
+     *   controls with type `CUSTOM`.
+     * - You can't delete cloud controls if any of the versions are referenced
+     *   by a framework.
+     * - You can't restore a deleted cloud control. This action is permanent.
      * </pre>
      */
     public com.google.protobuf.Empty deleteCloudControl(
@@ -1417,9 +1436,10 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Lists all Frameworks (both Built-in and Custom) available within a given
-     * parent resource. This method supports pagination.
-     * The latest major version of each Framework is returned.
+     * Lists the frameworks (both built-in and custom) that are available within
+     * the parent resource. The latest major version of each framework is
+     * returned.
+     * This method supports pagination.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1433,12 +1453,10 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Gets details of a single Framework.
-     * This method retrieves a Framework resource, which can be either Built-in or
-     * Custom, identified by its name.
-     * By default, the latest major version of the Framework is returned.
-     * A specific major version can be retrieved by specifying the
-     * `major_revision_id` in the request.
+     * Gets details about a framework.
+     * This method retrieves the latest major version of the framework.
+     * To retrieve a specific major version, include `major_revision_id` in
+     * the request.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1452,9 +1470,9 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Creates a new Framework with type `Custom` under a given parent resource.
-     * Frameworks with type `Built-in` are managed by Google and cannot be created
-     * through this API.
+     * Creates a custom framework in a given parent resource.
+     * You can't create built-in frameworks because those are managed by
+     * Google.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1469,15 +1487,16 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Updates a single Framework.
-     * This method allows for partial updates of a Framework resource. The fields
-     * to be updated are specified using the `update_mask`.
-     * - If an `update_mask` is provided, only the fields specified in the mask
-     * will be updated.
-     * - If no `update_mask` is provided, all fields present in the request's
-     * `framework` body will be used to overwrite the existing resource.
-     * This operation can only be performed on Frameworks with type `CUSTOM`.
-     * A successful update will result in a new version of the Framework.
+     * Updates a custom framework.
+     * This method allows for partial updates of a framework. Use the
+     * `update_mask` to specify which fields to update. Consider the following:
+     * - If you provide an `update_mask`, only the fields that are specified
+     * in the mask are updated.
+     * - If you don't provide an `update_mask`, all the fields that are present
+     * in the request's `framework` body are used to overwrite the existing
+     * resource.
+     * You can only update frameworks with the `CUSTOM` type.
+     * A successful update creates a new version of the framework.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1492,13 +1511,12 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Deletes a single Custom Framework, including all its minor and
-     * minor revisions.
-     * - This operation can only be performed on Frameworks with type `CUSTOM`.
-     *   Built-in Frameworks cannot be deleted.
-     * - The Framework cannot be deleted if it is currently deployed on any
-     *   resource.
-     * - This action is permanent and cannot be undone.
+     * Deletes a custom framework, including all its major and
+     * minor revisions. Consider the following:
+     * - You can't delete built-in frameworks. You can only delete frameworks
+     *   with type `CUSTOM`.
+     * - You can't delete frameworks that are deployed to a resource.
+     * - You can't restore a deleted framework. This action is permanent.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -1512,9 +1530,10 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Lists all CloudControls (both Built-in and Custom) available within a given
-     * parent resource. This method supports pagination.
-     * The latest major version of each CloudControl is returned.
+     * Lists the cloud controls (both built-in and custom) that are available
+     * in a given parent resource. The latest major version of each cloud control
+     * is returned.
+     * This method supports pagination.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1529,12 +1548,12 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Gets details of a single CloudControl.
-     * This method retrieves a CloudControl resource, which can be either Built-in
-     * or Custom, identified by its name.
-     * By default, the latest major version of the CloudControl is returned.
-     * A specific major version can be retrieved by specifying the
-     * `major_revision_id` in the request.
+     * Gets details about a cloud control.
+     * This method retrieves the latest major version of a cloud control that
+     * you identify by name.
+     * By default, the latest major version of the cloud control is returned.
+     * To retrieve a specific major version, include `major_revision_id` in
+     * the request.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1549,9 +1568,10 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Creates a new CloudControl with type `Custom` under a given parent
-     * resource. `Built-in` CloudControls are managed by Google and cannot be
-     * created through this API.
+     * Creates a custom cloud control in a given parent
+     * resource.
+     * You can't create built-in cloud controls because those are managed by
+     * Google.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1566,14 +1586,16 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Updates a single CloudControl.
-     * This method allows for partial updates of a Custom CloudControl resource.
-     * Built-in CloudControls cannot be updated.
-     * - If an `update_mask` is provided, only the fields specified in the mask
-     * will be updated.
-     * - If no `update_mask` is provided, all fields present in the request's
-     * `cloud_control` body will be used to overwrite the existing resource.
-     * A successful update will result in a new version of the CloudControl.
+     * Updates a custom cloud control.
+     * This method allows for partial updates of a cloud control. Use the
+     * `update_mask` to specify which fields to update. Consider the following:
+     * - If you provide an `update_mask`, only the fields that are specified
+     * in the mask are updated.
+     * - If you don't provide an `update_mask`, all the fields that are present
+     * in the request's `cloud_control` body are used to overwrite the existing
+     * resource.
+     * You can only update cloud controls with the `CUSTOM` type.
+     * A successful update creates a new version of the cloud control.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1588,13 +1610,13 @@ public final class ConfigGrpc {
      *
      *
      * <pre>
-     * Deletes a single Custom CloudControl, including all its
-     * major and minor revisions.
-     * - This operation can only be performed on CloudControls with type `CUSTOM`.
-     *   Built-in CloudControls cannot be deleted.
-     * - The CloudControl cannot be deleted if any of its revisions are currently
-     *   referenced by any Framework.
-     * - This action is permanent and cannot be undone.
+     * Deletes a custom cloud control, including all its
+     * major and minor revisions. Consider the following:
+     * - You can't delete built-in cloud controls. You can only delete cloud
+     *   controls with type `CUSTOM`.
+     * - You can't delete cloud controls if any of the versions are referenced
+     *   by a framework.
+     * - You can't restore a deleted cloud control. This action is permanent.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>

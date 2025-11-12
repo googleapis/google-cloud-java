@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service describing handlers for resources.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/migrationcenter/v1/migrationcenter.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class MigrationCenterGrpc {
 
@@ -3841,8 +3838,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.cloud.migrationcenter.v1.ListAssetsResponse listAssets(
-        com.google.cloud.migrationcenter.v1.ListAssetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.ListAssetsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAssetsMethod(), getCallOptions(), request);
     }
 
@@ -3854,8 +3852,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.cloud.migrationcenter.v1.Asset getAsset(
-        com.google.cloud.migrationcenter.v1.GetAssetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.GetAssetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAssetMethod(), getCallOptions(), request);
     }
 
@@ -3867,8 +3866,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.cloud.migrationcenter.v1.Asset updateAsset(
-        com.google.cloud.migrationcenter.v1.UpdateAssetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.UpdateAssetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAssetMethod(), getCallOptions(), request);
     }
 
@@ -3880,8 +3880,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.cloud.migrationcenter.v1.BatchUpdateAssetsResponse batchUpdateAssets(
-        com.google.cloud.migrationcenter.v1.BatchUpdateAssetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.BatchUpdateAssetsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchUpdateAssetsMethod(), getCallOptions(), request);
     }
 
@@ -3893,8 +3894,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteAsset(
-        com.google.cloud.migrationcenter.v1.DeleteAssetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.DeleteAssetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAssetMethod(), getCallOptions(), request);
     }
 
@@ -3906,8 +3908,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty batchDeleteAssets(
-        com.google.cloud.migrationcenter.v1.BatchDeleteAssetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.BatchDeleteAssetsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchDeleteAssetsMethod(), getCallOptions(), request);
     }
 
@@ -3919,8 +3922,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.cloud.migrationcenter.v1.ReportAssetFramesResponse reportAssetFrames(
-        com.google.cloud.migrationcenter.v1.ReportAssetFramesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.ReportAssetFramesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReportAssetFramesMethod(), getCallOptions(), request);
     }
 
@@ -3932,8 +3936,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.cloud.migrationcenter.v1.AggregateAssetsValuesResponse aggregateAssetsValues(
-        com.google.cloud.migrationcenter.v1.AggregateAssetsValuesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.AggregateAssetsValuesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAggregateAssetsValuesMethod(), getCallOptions(), request);
     }
 
@@ -3945,8 +3950,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createImportJob(
-        com.google.cloud.migrationcenter.v1.CreateImportJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.CreateImportJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateImportJobMethod(), getCallOptions(), request);
     }
 
@@ -3958,8 +3964,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.cloud.migrationcenter.v1.ListImportJobsResponse listImportJobs(
-        com.google.cloud.migrationcenter.v1.ListImportJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.ListImportJobsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListImportJobsMethod(), getCallOptions(), request);
     }
 
@@ -3971,8 +3978,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.cloud.migrationcenter.v1.ImportJob getImportJob(
-        com.google.cloud.migrationcenter.v1.GetImportJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.GetImportJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetImportJobMethod(), getCallOptions(), request);
     }
 
@@ -3984,8 +3992,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteImportJob(
-        com.google.cloud.migrationcenter.v1.DeleteImportJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.DeleteImportJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteImportJobMethod(), getCallOptions(), request);
     }
 
@@ -3997,8 +4006,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateImportJob(
-        com.google.cloud.migrationcenter.v1.UpdateImportJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.UpdateImportJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateImportJobMethod(), getCallOptions(), request);
     }
 
@@ -4010,8 +4020,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation validateImportJob(
-        com.google.cloud.migrationcenter.v1.ValidateImportJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.ValidateImportJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getValidateImportJobMethod(), getCallOptions(), request);
     }
 
@@ -4023,8 +4034,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation runImportJob(
-        com.google.cloud.migrationcenter.v1.RunImportJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.RunImportJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRunImportJobMethod(), getCallOptions(), request);
     }
 
@@ -4036,8 +4048,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.cloud.migrationcenter.v1.ImportDataFile getImportDataFile(
-        com.google.cloud.migrationcenter.v1.GetImportDataFileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.GetImportDataFileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetImportDataFileMethod(), getCallOptions(), request);
     }
 
@@ -4049,8 +4062,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.cloud.migrationcenter.v1.ListImportDataFilesResponse listImportDataFiles(
-        com.google.cloud.migrationcenter.v1.ListImportDataFilesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.ListImportDataFilesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListImportDataFilesMethod(), getCallOptions(), request);
     }
 
@@ -4062,8 +4076,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createImportDataFile(
-        com.google.cloud.migrationcenter.v1.CreateImportDataFileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.CreateImportDataFileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateImportDataFileMethod(), getCallOptions(), request);
     }
 
@@ -4075,8 +4090,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteImportDataFile(
-        com.google.cloud.migrationcenter.v1.DeleteImportDataFileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.DeleteImportDataFileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteImportDataFileMethod(), getCallOptions(), request);
     }
 
@@ -4088,8 +4104,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.cloud.migrationcenter.v1.ListGroupsResponse listGroups(
-        com.google.cloud.migrationcenter.v1.ListGroupsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.ListGroupsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListGroupsMethod(), getCallOptions(), request);
     }
 
@@ -4101,8 +4118,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.cloud.migrationcenter.v1.Group getGroup(
-        com.google.cloud.migrationcenter.v1.GetGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.GetGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetGroupMethod(), getCallOptions(), request);
     }
 
@@ -4114,8 +4132,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createGroup(
-        com.google.cloud.migrationcenter.v1.CreateGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.CreateGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateGroupMethod(), getCallOptions(), request);
     }
 
@@ -4127,8 +4146,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateGroup(
-        com.google.cloud.migrationcenter.v1.UpdateGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.UpdateGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateGroupMethod(), getCallOptions(), request);
     }
 
@@ -4140,8 +4160,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteGroup(
-        com.google.cloud.migrationcenter.v1.DeleteGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.DeleteGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteGroupMethod(), getCallOptions(), request);
     }
 
@@ -4153,8 +4174,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation addAssetsToGroup(
-        com.google.cloud.migrationcenter.v1.AddAssetsToGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.AddAssetsToGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAddAssetsToGroupMethod(), getCallOptions(), request);
     }
 
@@ -4166,8 +4188,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation removeAssetsFromGroup(
-        com.google.cloud.migrationcenter.v1.RemoveAssetsFromGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.RemoveAssetsFromGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRemoveAssetsFromGroupMethod(), getCallOptions(), request);
     }
 
@@ -4179,8 +4202,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.cloud.migrationcenter.v1.ListErrorFramesResponse listErrorFrames(
-        com.google.cloud.migrationcenter.v1.ListErrorFramesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.ListErrorFramesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListErrorFramesMethod(), getCallOptions(), request);
     }
 
@@ -4192,8 +4216,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.cloud.migrationcenter.v1.ErrorFrame getErrorFrame(
-        com.google.cloud.migrationcenter.v1.GetErrorFrameRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.GetErrorFrameRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetErrorFrameMethod(), getCallOptions(), request);
     }
 
@@ -4205,8 +4230,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.cloud.migrationcenter.v1.ListSourcesResponse listSources(
-        com.google.cloud.migrationcenter.v1.ListSourcesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.ListSourcesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSourcesMethod(), getCallOptions(), request);
     }
 
@@ -4218,8 +4244,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.cloud.migrationcenter.v1.Source getSource(
-        com.google.cloud.migrationcenter.v1.GetSourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.GetSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSourceMethod(), getCallOptions(), request);
     }
 
@@ -4231,8 +4258,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createSource(
-        com.google.cloud.migrationcenter.v1.CreateSourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.CreateSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSourceMethod(), getCallOptions(), request);
     }
 
@@ -4244,8 +4272,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateSource(
-        com.google.cloud.migrationcenter.v1.UpdateSourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.UpdateSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSourceMethod(), getCallOptions(), request);
     }
 
@@ -4257,8 +4286,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteSource(
-        com.google.cloud.migrationcenter.v1.DeleteSourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.DeleteSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSourceMethod(), getCallOptions(), request);
     }
 
@@ -4270,8 +4300,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.cloud.migrationcenter.v1.ListPreferenceSetsResponse listPreferenceSets(
-        com.google.cloud.migrationcenter.v1.ListPreferenceSetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.ListPreferenceSetsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPreferenceSetsMethod(), getCallOptions(), request);
     }
 
@@ -4283,8 +4314,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.cloud.migrationcenter.v1.PreferenceSet getPreferenceSet(
-        com.google.cloud.migrationcenter.v1.GetPreferenceSetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.GetPreferenceSetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPreferenceSetMethod(), getCallOptions(), request);
     }
 
@@ -4296,8 +4328,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createPreferenceSet(
-        com.google.cloud.migrationcenter.v1.CreatePreferenceSetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.CreatePreferenceSetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreatePreferenceSetMethod(), getCallOptions(), request);
     }
 
@@ -4309,8 +4342,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updatePreferenceSet(
-        com.google.cloud.migrationcenter.v1.UpdatePreferenceSetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.UpdatePreferenceSetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdatePreferenceSetMethod(), getCallOptions(), request);
     }
 
@@ -4322,8 +4356,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deletePreferenceSet(
-        com.google.cloud.migrationcenter.v1.DeletePreferenceSetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.DeletePreferenceSetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeletePreferenceSetMethod(), getCallOptions(), request);
     }
 
@@ -4335,8 +4370,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.cloud.migrationcenter.v1.Settings getSettings(
-        com.google.cloud.migrationcenter.v1.GetSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.GetSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSettingsMethod(), getCallOptions(), request);
     }
 
@@ -4348,8 +4384,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateSettings(
-        com.google.cloud.migrationcenter.v1.UpdateSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.UpdateSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSettingsMethod(), getCallOptions(), request);
     }
 
@@ -4361,8 +4398,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createReportConfig(
-        com.google.cloud.migrationcenter.v1.CreateReportConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.CreateReportConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateReportConfigMethod(), getCallOptions(), request);
     }
 
@@ -4374,8 +4412,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.cloud.migrationcenter.v1.ReportConfig getReportConfig(
-        com.google.cloud.migrationcenter.v1.GetReportConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.GetReportConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetReportConfigMethod(), getCallOptions(), request);
     }
 
@@ -4387,8 +4426,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.cloud.migrationcenter.v1.ListReportConfigsResponse listReportConfigs(
-        com.google.cloud.migrationcenter.v1.ListReportConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.ListReportConfigsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListReportConfigsMethod(), getCallOptions(), request);
     }
 
@@ -4400,8 +4440,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteReportConfig(
-        com.google.cloud.migrationcenter.v1.DeleteReportConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.DeleteReportConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteReportConfigMethod(), getCallOptions(), request);
     }
 
@@ -4413,8 +4454,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createReport(
-        com.google.cloud.migrationcenter.v1.CreateReportRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.CreateReportRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateReportMethod(), getCallOptions(), request);
     }
 
@@ -4426,8 +4468,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.cloud.migrationcenter.v1.Report getReport(
-        com.google.cloud.migrationcenter.v1.GetReportRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.GetReportRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetReportMethod(), getCallOptions(), request);
     }
 
@@ -4439,8 +4482,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.cloud.migrationcenter.v1.ListReportsResponse listReports(
-        com.google.cloud.migrationcenter.v1.ListReportsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.ListReportsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListReportsMethod(), getCallOptions(), request);
     }
 
@@ -4452,8 +4496,9 @@ public final class MigrationCenterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteReport(
-        com.google.cloud.migrationcenter.v1.DeleteReportRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.migrationcenter.v1.DeleteReportRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteReportMethod(), getCallOptions(), request);
     }
   }

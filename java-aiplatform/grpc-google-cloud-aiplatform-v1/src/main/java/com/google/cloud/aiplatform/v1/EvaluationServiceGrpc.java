@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Vertex AI Online Evaluation Service.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1/evaluation_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class EvaluationServiceGrpc {
 
@@ -244,8 +241,9 @@ public final class EvaluationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.EvaluateInstancesResponse evaluateInstances(
-        com.google.cloud.aiplatform.v1.EvaluateInstancesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.EvaluateInstancesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getEvaluateInstancesMethod(), getCallOptions(), request);
     }
   }

@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [Evaluation][google.cloud.discoveryengine.v1alpha.Evaluation]s,
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1alpha/evaluation_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class EvaluationServiceGrpc {
 
@@ -497,8 +494,9 @@ public final class EvaluationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.Evaluation getEvaluation(
-        com.google.cloud.discoveryengine.v1alpha.GetEvaluationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.GetEvaluationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEvaluationMethod(), getCallOptions(), request);
     }
 
@@ -511,8 +509,9 @@ public final class EvaluationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.ListEvaluationsResponse listEvaluations(
-        com.google.cloud.discoveryengine.v1alpha.ListEvaluationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.ListEvaluationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEvaluationsMethod(), getCallOptions(), request);
     }
 
@@ -526,8 +525,9 @@ public final class EvaluationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createEvaluation(
-        com.google.cloud.discoveryengine.v1alpha.CreateEvaluationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.CreateEvaluationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEvaluationMethod(), getCallOptions(), request);
     }
 
@@ -541,8 +541,9 @@ public final class EvaluationServiceGrpc {
      */
     public com.google.cloud.discoveryengine.v1alpha.ListEvaluationResultsResponse
         listEvaluationResults(
-            com.google.cloud.discoveryengine.v1alpha.ListEvaluationResultsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.discoveryengine.v1alpha.ListEvaluationResultsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEvaluationResultsMethod(), getCallOptions(), request);
     }
   }

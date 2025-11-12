@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * method.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/accounts/v1/shippingsettings.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ShippingSettingsServiceGrpc {
 
@@ -340,8 +337,9 @@ public final class ShippingSettingsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1.ShippingSettings getShippingSettings(
-        com.google.shopping.merchant.accounts.v1.GetShippingSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.GetShippingSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetShippingSettingsMethod(), getCallOptions(), request);
     }
 
@@ -354,8 +352,9 @@ public final class ShippingSettingsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1.ShippingSettings insertShippingSettings(
-        com.google.shopping.merchant.accounts.v1.InsertShippingSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.InsertShippingSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getInsertShippingSettingsMethod(), getCallOptions(), request);
     }
   }

@@ -28,8 +28,8 @@ public interface FolderCreationConfigOrBuilder
    *
    *
    * <pre>
-   * Required. The parent of the folder to be created. It can be an
-   * organizations/{org} or folders/{folder}
+   * Required. The parent of the folder, in the format
+   * `organizations/{organizationID}` or `folders/{folderID}`.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -42,8 +42,8 @@ public interface FolderCreationConfigOrBuilder
    *
    *
    * <pre>
-   * Required. The parent of the folder to be created. It can be an
-   * organizations/{org} or folders/{folder}
+   * Required. The parent of the folder, in the format
+   * `organizations/{organizationID}` or `folders/{folderID}`.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -56,7 +56,7 @@ public interface FolderCreationConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Display name of the folder to be created
+   * Required. The display name of the folder.
    * </pre>
    *
    * <code>string folder_display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -69,7 +69,7 @@ public interface FolderCreationConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Display name of the folder to be created
+   * Required. The display name of the folder.
    * </pre>
    *
    * <code>string folder_display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>

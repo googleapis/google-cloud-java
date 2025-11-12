@@ -442,4 +442,49 @@ public interface DataQualityResultOrBuilder
    */
   com.google.cloud.dataplex.v1.DataScanCatalogPublishingStatusOrBuilder
       getCatalogPublishingStatusOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The generated assets for anomaly detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataQualityResult.AnomalyDetectionGeneratedAssets anomaly_detection_generated_assets = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the anomalyDetectionGeneratedAssets field is set.
+   */
+  boolean hasAnomalyDetectionGeneratedAssets();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The generated assets for anomaly detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataQualityResult.AnomalyDetectionGeneratedAssets anomaly_detection_generated_assets = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The anomalyDetectionGeneratedAssets.
+   */
+  com.google.cloud.dataplex.v1.DataQualityResult.AnomalyDetectionGeneratedAssets
+      getAnomalyDetectionGeneratedAssets();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The generated assets for anomaly detection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataQualityResult.AnomalyDetectionGeneratedAssets anomaly_detection_generated_assets = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.DataQualityResult.AnomalyDetectionGeneratedAssetsOrBuilder
+      getAnomalyDetectionGeneratedAssetsOrBuilder();
 }

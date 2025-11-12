@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Provides other SQL dialects to GoogleSQL translation operations.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/bigquery/migration/v2alpha/translation_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SqlTranslationServiceGrpc {
 
@@ -245,8 +242,9 @@ public final class SqlTranslationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.migration.v2alpha.TranslateQueryResponse translateQuery(
-        com.google.cloud.bigquery.migration.v2alpha.TranslateQueryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.migration.v2alpha.TranslateQueryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTranslateQueryMethod(), getCallOptions(), request);
     }
   }

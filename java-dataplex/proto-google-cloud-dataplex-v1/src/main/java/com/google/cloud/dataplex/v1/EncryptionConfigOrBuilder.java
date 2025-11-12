@@ -269,4 +269,17 @@ public interface EncryptionConfigOrBuilder
    */
   com.google.cloud.dataplex.v1.EncryptionConfig.FailureDetailsOrBuilder
       getFailureDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represent the state of CMEK opt-in for metastore.
+   * </pre>
+   *
+   * <code>bool enable_metastore_encryption = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableMetastoreEncryption.
+   */
+  boolean getEnableMetastoreEncryption();
 }

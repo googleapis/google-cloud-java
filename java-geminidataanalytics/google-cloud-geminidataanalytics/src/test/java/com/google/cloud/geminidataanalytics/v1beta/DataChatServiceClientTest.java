@@ -37,6 +37,7 @@ import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
+import com.google.protobuf.Empty;
 import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -236,6 +237,74 @@ public class DataChatServiceClientTest {
       Conversation conversation = Conversation.newBuilder().build();
       String conversationId = "conversationId-1676095234";
       client.createConversation(parent, conversation, conversationId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteConversationTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataChatService.addResponse(expectedResponse);
+
+    ConversationName name = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+
+    client.deleteConversation(name);
+
+    List<AbstractMessage> actualRequests = mockDataChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteConversationRequest actualRequest = ((DeleteConversationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteConversationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataChatService.addException(exception);
+
+    try {
+      ConversationName name = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+      client.deleteConversation(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteConversationTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataChatService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteConversation(name);
+
+    List<AbstractMessage> actualRequests = mockDataChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteConversationRequest actualRequest = ((DeleteConversationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteConversationExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataChatService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteConversation(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

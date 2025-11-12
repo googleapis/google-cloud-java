@@ -52,6 +52,9 @@ public final class CloudExadataInfrastructureProperties
     customerContacts_ = java.util.Collections.emptyList();
     monthlyStorageServerVersion_ = "";
     monthlyDbServerVersion_ = "";
+    computeModel_ = 0;
+    databaseServerType_ = "";
+    storageServerType_ = "";
   }
 
   @java.lang.Override
@@ -1374,6 +1377,153 @@ public final class CloudExadataInfrastructureProperties
     }
   }
 
+  public static final int COMPUTE_MODEL_FIELD_NUMBER = 31;
+  private int computeModel_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The compute model of the Exadata Infrastructure.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.ComputeModel compute_model = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for computeModel.
+   */
+  @java.lang.Override
+  public int getComputeModelValue() {
+    return computeModel_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The compute model of the Exadata Infrastructure.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.ComputeModel compute_model = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The computeModel.
+   */
+  @java.lang.Override
+  public com.google.cloud.oracledatabase.v1.ComputeModel getComputeModel() {
+    com.google.cloud.oracledatabase.v1.ComputeModel result =
+        com.google.cloud.oracledatabase.v1.ComputeModel.forNumber(computeModel_);
+    return result == null ? com.google.cloud.oracledatabase.v1.ComputeModel.UNRECOGNIZED : result;
+  }
+
+  public static final int DATABASE_SERVER_TYPE_FIELD_NUMBER = 29;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object databaseServerType_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The database server type of the Exadata Infrastructure.
+   * </pre>
+   *
+   * <code>string database_server_type = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The databaseServerType.
+   */
+  @java.lang.Override
+  public java.lang.String getDatabaseServerType() {
+    java.lang.Object ref = databaseServerType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      databaseServerType_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The database server type of the Exadata Infrastructure.
+   * </pre>
+   *
+   * <code>string database_server_type = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for databaseServerType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDatabaseServerTypeBytes() {
+    java.lang.Object ref = databaseServerType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      databaseServerType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int STORAGE_SERVER_TYPE_FIELD_NUMBER = 30;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object storageServerType_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The storage server type of the Exadata Infrastructure.
+   * </pre>
+   *
+   * <code>string storage_server_type = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The storageServerType.
+   */
+  @java.lang.Override
+  public java.lang.String getStorageServerType() {
+    java.lang.Object ref = storageServerType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      storageServerType_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The storage server type of the Exadata Infrastructure.
+   * </pre>
+   *
+   * <code>string storage_server_type = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for storageServerType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getStorageServerTypeBytes() {
+    java.lang.Object ref = storageServerType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      storageServerType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1471,6 +1621,16 @@ public final class CloudExadataInfrastructureProperties
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(monthlyDbServerVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 27, monthlyDbServerVersion_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(databaseServerType_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 29, databaseServerType_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(storageServerType_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 30, storageServerType_);
+    }
+    if (computeModel_
+        != com.google.cloud.oracledatabase.v1.ComputeModel.COMPUTE_MODEL_UNSPECIFIED.getNumber()) {
+      output.writeEnum(31, computeModel_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1571,6 +1731,16 @@ public final class CloudExadataInfrastructureProperties
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(monthlyDbServerVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(27, monthlyDbServerVersion_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(databaseServerType_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(29, databaseServerType_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(storageServerType_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(30, storageServerType_);
+    }
+    if (computeModel_
+        != com.google.cloud.oracledatabase.v1.ComputeModel.COMPUTE_MODEL_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(31, computeModel_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1628,6 +1798,9 @@ public final class CloudExadataInfrastructureProperties
     if (!getMonthlyStorageServerVersion().equals(other.getMonthlyStorageServerVersion()))
       return false;
     if (!getMonthlyDbServerVersion().equals(other.getMonthlyDbServerVersion())) return false;
+    if (computeModel_ != other.computeModel_) return false;
+    if (!getDatabaseServerType().equals(other.getDatabaseServerType())) return false;
+    if (!getStorageServerType().equals(other.getStorageServerType())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1707,6 +1880,12 @@ public final class CloudExadataInfrastructureProperties
     hash = (53 * hash) + getMonthlyStorageServerVersion().hashCode();
     hash = (37 * hash) + MONTHLY_DB_SERVER_VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getMonthlyDbServerVersion().hashCode();
+    hash = (37 * hash) + COMPUTE_MODEL_FIELD_NUMBER;
+    hash = (53 * hash) + computeModel_;
+    hash = (37 * hash) + DATABASE_SERVER_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getDatabaseServerType().hashCode();
+    hash = (37 * hash) + STORAGE_SERVER_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getStorageServerType().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1908,6 +2087,9 @@ public final class CloudExadataInfrastructureProperties
       bitField0_ = (bitField0_ & ~0x01000000);
       monthlyStorageServerVersion_ = "";
       monthlyDbServerVersion_ = "";
+      computeModel_ = 0;
+      databaseServerType_ = "";
+      storageServerType_ = "";
       return this;
     }
 
@@ -2052,6 +2234,15 @@ public final class CloudExadataInfrastructureProperties
       }
       if (((from_bitField0_ & 0x04000000) != 0)) {
         result.monthlyDbServerVersion_ = monthlyDbServerVersion_;
+      }
+      if (((from_bitField0_ & 0x08000000) != 0)) {
+        result.computeModel_ = computeModel_;
+      }
+      if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.databaseServerType_ = databaseServerType_;
+      }
+      if (((from_bitField0_ & 0x20000000) != 0)) {
+        result.storageServerType_ = storageServerType_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2225,6 +2416,19 @@ public final class CloudExadataInfrastructureProperties
       if (!other.getMonthlyDbServerVersion().isEmpty()) {
         monthlyDbServerVersion_ = other.monthlyDbServerVersion_;
         bitField0_ |= 0x04000000;
+        onChanged();
+      }
+      if (other.computeModel_ != 0) {
+        setComputeModelValue(other.getComputeModelValue());
+      }
+      if (!other.getDatabaseServerType().isEmpty()) {
+        databaseServerType_ = other.databaseServerType_;
+        bitField0_ |= 0x10000000;
+        onChanged();
+      }
+      if (!other.getStorageServerType().isEmpty()) {
+        storageServerType_ = other.storageServerType_;
+        bitField0_ |= 0x20000000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2427,6 +2631,24 @@ public final class CloudExadataInfrastructureProperties
                 bitField0_ |= 0x04000000;
                 break;
               } // case 218
+            case 234:
+              {
+                databaseServerType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x10000000;
+                break;
+              } // case 234
+            case 242:
+              {
+                storageServerType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x20000000;
+                break;
+              } // case 242
+            case 248:
+              {
+                computeModel_ = input.readEnum();
+                bitField0_ |= 0x08000000;
+                break;
+              } // case 248
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5359,6 +5581,333 @@ public final class CloudExadataInfrastructureProperties
       checkByteStringIsUtf8(value);
       monthlyDbServerVersion_ = value;
       bitField0_ |= 0x04000000;
+      onChanged();
+      return this;
+    }
+
+    private int computeModel_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The compute model of the Exadata Infrastructure.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.ComputeModel compute_model = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for computeModel.
+     */
+    @java.lang.Override
+    public int getComputeModelValue() {
+      return computeModel_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The compute model of the Exadata Infrastructure.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.ComputeModel compute_model = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for computeModel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setComputeModelValue(int value) {
+      computeModel_ = value;
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The compute model of the Exadata Infrastructure.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.ComputeModel compute_model = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The computeModel.
+     */
+    @java.lang.Override
+    public com.google.cloud.oracledatabase.v1.ComputeModel getComputeModel() {
+      com.google.cloud.oracledatabase.v1.ComputeModel result =
+          com.google.cloud.oracledatabase.v1.ComputeModel.forNumber(computeModel_);
+      return result == null ? com.google.cloud.oracledatabase.v1.ComputeModel.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The compute model of the Exadata Infrastructure.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.ComputeModel compute_model = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The computeModel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setComputeModel(com.google.cloud.oracledatabase.v1.ComputeModel value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x08000000;
+      computeModel_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The compute model of the Exadata Infrastructure.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.ComputeModel compute_model = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearComputeModel() {
+      bitField0_ = (bitField0_ & ~0x08000000);
+      computeModel_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object databaseServerType_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The database server type of the Exadata Infrastructure.
+     * </pre>
+     *
+     * <code>string database_server_type = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The databaseServerType.
+     */
+    public java.lang.String getDatabaseServerType() {
+      java.lang.Object ref = databaseServerType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        databaseServerType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The database server type of the Exadata Infrastructure.
+     * </pre>
+     *
+     * <code>string database_server_type = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for databaseServerType.
+     */
+    public com.google.protobuf.ByteString getDatabaseServerTypeBytes() {
+      java.lang.Object ref = databaseServerType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        databaseServerType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The database server type of the Exadata Infrastructure.
+     * </pre>
+     *
+     * <code>string database_server_type = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The databaseServerType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDatabaseServerType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      databaseServerType_ = value;
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The database server type of the Exadata Infrastructure.
+     * </pre>
+     *
+     * <code>string database_server_type = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDatabaseServerType() {
+      databaseServerType_ = getDefaultInstance().getDatabaseServerType();
+      bitField0_ = (bitField0_ & ~0x10000000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The database server type of the Exadata Infrastructure.
+     * </pre>
+     *
+     * <code>string database_server_type = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for databaseServerType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDatabaseServerTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      databaseServerType_ = value;
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object storageServerType_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The storage server type of the Exadata Infrastructure.
+     * </pre>
+     *
+     * <code>string storage_server_type = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The storageServerType.
+     */
+    public java.lang.String getStorageServerType() {
+      java.lang.Object ref = storageServerType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        storageServerType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The storage server type of the Exadata Infrastructure.
+     * </pre>
+     *
+     * <code>string storage_server_type = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for storageServerType.
+     */
+    public com.google.protobuf.ByteString getStorageServerTypeBytes() {
+      java.lang.Object ref = storageServerType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        storageServerType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The storage server type of the Exadata Infrastructure.
+     * </pre>
+     *
+     * <code>string storage_server_type = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The storageServerType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStorageServerType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      storageServerType_ = value;
+      bitField0_ |= 0x20000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The storage server type of the Exadata Infrastructure.
+     * </pre>
+     *
+     * <code>string storage_server_type = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStorageServerType() {
+      storageServerType_ = getDefaultInstance().getStorageServerType();
+      bitField0_ = (bitField0_ & ~0x20000000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The storage server type of the Exadata Infrastructure.
+     * </pre>
+     *
+     * <code>string storage_server_type = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for storageServerType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStorageServerTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      storageServerType_ = value;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }

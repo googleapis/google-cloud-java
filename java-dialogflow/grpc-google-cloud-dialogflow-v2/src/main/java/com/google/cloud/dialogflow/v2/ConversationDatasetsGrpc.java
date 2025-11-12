@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * customizable metadata that can be used for model training.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/v2/conversation_dataset.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ConversationDatasetsGrpc {
 
@@ -643,8 +640,9 @@ public final class ConversationDatasetsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createConversationDataset(
-        com.google.cloud.dialogflow.v2.CreateConversationDatasetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.CreateConversationDatasetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateConversationDatasetMethod(), getCallOptions(), request);
     }
 
@@ -656,8 +654,9 @@ public final class ConversationDatasetsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.ConversationDataset getConversationDataset(
-        com.google.cloud.dialogflow.v2.GetConversationDatasetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.GetConversationDatasetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetConversationDatasetMethod(), getCallOptions(), request);
     }
 
@@ -670,8 +669,9 @@ public final class ConversationDatasetsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.ListConversationDatasetsResponse listConversationDatasets(
-        com.google.cloud.dialogflow.v2.ListConversationDatasetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.ListConversationDatasetsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListConversationDatasetsMethod(), getCallOptions(), request);
     }
 
@@ -690,8 +690,9 @@ public final class ConversationDatasetsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteConversationDataset(
-        com.google.cloud.dialogflow.v2.DeleteConversationDatasetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.DeleteConversationDatasetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteConversationDatasetMethod(), getCallOptions(), request);
     }
 
@@ -712,8 +713,9 @@ public final class ConversationDatasetsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importConversationData(
-        com.google.cloud.dialogflow.v2.ImportConversationDataRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.ImportConversationDataRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportConversationDataMethod(), getCallOptions(), request);
     }
   }

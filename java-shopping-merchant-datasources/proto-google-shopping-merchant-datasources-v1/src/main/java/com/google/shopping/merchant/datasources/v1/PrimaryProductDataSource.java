@@ -3178,27 +3178,6 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
         : defaultRule_;
   }
 
-  public static final int CONTAINS_CUSTOM_RULES_FIELD_NUMBER = 9;
-  private boolean containsCustomRules_ = false;
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The existing data source setup contains at least one custom
-   * (non-default) rule and therefore its management through the
-   * `default_rule_data_sources` field should be treated with caution.
-   * </pre>
-   *
-   * <code>bool contains_custom_rules = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   *
-   * @return The containsCustomRules.
-   */
-  @java.lang.Override
-  public boolean getContainsCustomRules() {
-    return containsCustomRules_;
-  }
-
   public static final int DESTINATIONS_FIELD_NUMBER = 10;
 
   @SuppressWarnings("serial")
@@ -3400,9 +3379,6 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(7, getDefaultRule());
     }
-    if (containsCustomRules_ != false) {
-      output.writeBool(9, containsCustomRules_);
-    }
     for (int i = 0; i < destinations_.size(); i++) {
       output.writeMessage(10, destinations_.get(i));
     }
@@ -3434,9 +3410,6 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getDefaultRule());
-    }
-    if (containsCustomRules_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, containsCustomRules_);
     }
     for (int i = 0; i < destinations_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, destinations_.get(i));
@@ -3474,7 +3447,6 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
     if (hasDefaultRule()) {
       if (!getDefaultRule().equals(other.getDefaultRule())) return false;
     }
-    if (getContainsCustomRules() != other.getContainsCustomRules()) return false;
     if (!getDestinationsList().equals(other.getDestinationsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -3505,8 +3477,6 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
       hash = (37 * hash) + DEFAULT_RULE_FIELD_NUMBER;
       hash = (53 * hash) + getDefaultRule().hashCode();
     }
-    hash = (37 * hash) + CONTAINS_CUSTOM_RULES_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getContainsCustomRules());
     if (getDestinationsCount() > 0) {
       hash = (37 * hash) + DESTINATIONS_FIELD_NUMBER;
       hash = (53 * hash) + getDestinationsList().hashCode();
@@ -3673,14 +3643,13 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
         defaultRuleBuilder_.dispose();
         defaultRuleBuilder_ = null;
       }
-      containsCustomRules_ = false;
       if (destinationsBuilder_ == null) {
         destinations_ = java.util.Collections.emptyList();
       } else {
         destinations_ = null;
         destinationsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -3721,9 +3690,9 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
     private void buildPartialRepeatedFields(
         com.google.shopping.merchant.datasources.v1.PrimaryProductDataSource result) {
       if (destinationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           destinations_ = java.util.Collections.unmodifiableList(destinations_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.destinations_ = destinations_;
       } else {
@@ -3754,9 +3723,6 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
         result.defaultRule_ =
             defaultRuleBuilder_ == null ? defaultRule_ : defaultRuleBuilder_.build();
         to_bitField0_ |= 0x00000004;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.containsCustomRules_ = containsCustomRules_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3836,14 +3802,11 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
       if (other.hasDefaultRule()) {
         mergeDefaultRule(other.getDefaultRule());
       }
-      if (other.getContainsCustomRules() != false) {
-        setContainsCustomRules(other.getContainsCustomRules());
-      }
       if (destinationsBuilder_ == null) {
         if (!other.destinations_.isEmpty()) {
           if (destinations_.isEmpty()) {
             destinations_ = other.destinations_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureDestinationsIsMutable();
             destinations_.addAll(other.destinations_);
@@ -3856,7 +3819,7 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
             destinationsBuilder_.dispose();
             destinationsBuilder_ = null;
             destinations_ = other.destinations_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000020);
             destinationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getDestinationsFieldBuilder()
@@ -3917,12 +3880,6 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
                 bitField0_ |= 0x00000010;
                 break;
               } // case 58
-            case 72:
-              {
-                containsCustomRules_ = input.readBool();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 72
             case 82:
               {
                 com.google.shopping.merchant.datasources.v1.PrimaryProductDataSource.Destination m =
@@ -4887,79 +4844,17 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
       return defaultRuleBuilder_;
     }
 
-    private boolean containsCustomRules_;
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The existing data source setup contains at least one custom
-     * (non-default) rule and therefore its management through the
-     * `default_rule_data_sources` field should be treated with caution.
-     * </pre>
-     *
-     * <code>bool contains_custom_rules = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @return The containsCustomRules.
-     */
-    @java.lang.Override
-    public boolean getContainsCustomRules() {
-      return containsCustomRules_;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The existing data source setup contains at least one custom
-     * (non-default) rule and therefore its management through the
-     * `default_rule_data_sources` field should be treated with caution.
-     * </pre>
-     *
-     * <code>bool contains_custom_rules = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @param value The containsCustomRules to set.
-     * @return This builder for chaining.
-     */
-    public Builder setContainsCustomRules(boolean value) {
-
-      containsCustomRules_ = value;
-      bitField0_ |= 0x00000020;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. The existing data source setup contains at least one custom
-     * (non-default) rule and therefore its management through the
-     * `default_rule_data_sources` field should be treated with caution.
-     * </pre>
-     *
-     * <code>bool contains_custom_rules = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearContainsCustomRules() {
-      bitField0_ = (bitField0_ & ~0x00000020);
-      containsCustomRules_ = false;
-      onChanged();
-      return this;
-    }
-
     private java.util.List<
             com.google.shopping.merchant.datasources.v1.PrimaryProductDataSource.Destination>
         destinations_ = java.util.Collections.emptyList();
 
     private void ensureDestinationsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         destinations_ =
             new java.util.ArrayList<
                 com.google.shopping.merchant.datasources.v1.PrimaryProductDataSource.Destination>(
                 destinations_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -5402,7 +5297,7 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
     public Builder clearDestinations() {
       if (destinationsBuilder_ == null) {
         destinations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         destinationsBuilder_.clear();
@@ -5675,7 +5570,7 @@ public final class PrimaryProductDataSource extends com.google.protobuf.Generate
                     .Builder,
                 com.google.shopping.merchant.datasources.v1.PrimaryProductDataSource
                     .DestinationOrBuilder>(
-                destinations_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
+                destinations_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
         destinations_ = null;
       }
       return destinationsBuilder_;

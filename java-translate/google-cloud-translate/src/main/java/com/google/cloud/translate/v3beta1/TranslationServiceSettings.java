@@ -204,6 +204,11 @@ public class TranslationServiceSettings extends ClientSettings<TranslationServic
     return ((TranslationServiceStubSettings) getStubSettings()).deleteGlossaryOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to refineText. */
+  public UnaryCallSettings<RefineTextRequest, RefineTextResponse> refineTextSettings() {
+    return ((TranslationServiceStubSettings) getStubSettings()).refineTextSettings();
+  }
+
   public static final TranslationServiceSettings create(TranslationServiceStubSettings stub)
       throws IOException {
     return new TranslationServiceSettings.Builder(stub.toBuilder()).build();
@@ -401,6 +406,11 @@ public class TranslationServiceSettings extends ClientSettings<TranslationServic
             DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
         deleteGlossaryOperationSettings() {
       return getStubSettingsBuilder().deleteGlossaryOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to refineText. */
+    public UnaryCallSettings.Builder<RefineTextRequest, RefineTextResponse> refineTextSettings() {
+      return getStubSettingsBuilder().refineTextSettings();
     }
 
     @Override

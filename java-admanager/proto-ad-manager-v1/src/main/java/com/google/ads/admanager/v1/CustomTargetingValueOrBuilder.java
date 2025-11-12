@@ -64,7 +64,24 @@ public interface CustomTargetingValueOrBuilder
    * </pre>
    *
    * <code>
-   * string custom_targeting_key = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * optional string custom_targeting_key = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the customTargetingKey field is set.
+   */
+  boolean hasCustomTargetingKey();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Immutable. The resource name of the `CustomTargetingKey`.
+   * Format:
+   * `networks/{network_code}/customTargetingKeys/{custom_targeting_key_id}`
+   * </pre>
+   *
+   * <code>
+   * optional string custom_targeting_key = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The customTargetingKey.
@@ -81,7 +98,7 @@ public interface CustomTargetingValueOrBuilder
    * </pre>
    *
    * <code>
-   * string custom_targeting_key = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * optional string custom_targeting_key = 8 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for customTargetingKey.
@@ -99,7 +116,24 @@ public interface CustomTargetingValueOrBuilder
    * of using "age&gt;=18 AND &lt;=34", try "18-34"
    * </pre>
    *
-   * <code>string ad_tag_name = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>optional string ad_tag_name = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return Whether the adTagName field is set.
+   */
+  boolean hasAdTagName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Name of the `CustomTargetingValue`. Values can contain up to 40
+   * characters each. You can use alphanumeric characters and symbols other than
+   * the following: ", ', =, !, +, #, *, ~, ;, ^, (, ), &lt;, &gt;, [, ]. Values are
+   * not data-specific; all values are treated as strings. For example, instead
+   * of using "age&gt;=18 AND &lt;=34", try "18-34"
+   * </pre>
+   *
+   * <code>optional string ad_tag_name = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The adTagName.
    */
@@ -116,7 +150,7 @@ public interface CustomTargetingValueOrBuilder
    * of using "age&gt;=18 AND &lt;=34", try "18-34"
    * </pre>
    *
-   * <code>string ad_tag_name = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>optional string ad_tag_name = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The bytes for adTagName.
    */
@@ -129,7 +163,20 @@ public interface CustomTargetingValueOrBuilder
    * Optional. Descriptive name for the `CustomTargetingValue`.
    * </pre>
    *
-   * <code>string display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the displayName field is set.
+   */
+  boolean hasDisplayName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Descriptive name for the `CustomTargetingValue`.
+   * </pre>
+   *
+   * <code>optional string display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The displayName.
    */
@@ -142,7 +189,7 @@ public interface CustomTargetingValueOrBuilder
    * Optional. Descriptive name for the `CustomTargetingValue`.
    * </pre>
    *
-   * <code>string display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string display_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for displayName.
    */
@@ -157,7 +204,23 @@ public interface CustomTargetingValueOrBuilder
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.CustomTargetingValueMatchTypeEnum.CustomTargetingValueMatchType match_type = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
+   * optional .google.ads.admanager.v1.CustomTargetingValueMatchTypeEnum.CustomTargetingValueMatchType match_type = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the matchType field is set.
+   */
+  boolean hasMatchType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Immutable. The way in which the CustomTargetingValue.name strings
+   * will be matched.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CustomTargetingValueMatchTypeEnum.CustomTargetingValueMatchType match_type = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The enum numeric value on the wire for matchType.
@@ -173,7 +236,7 @@ public interface CustomTargetingValueOrBuilder
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.CustomTargetingValueMatchTypeEnum.CustomTargetingValueMatchType match_type = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
+   * optional .google.ads.admanager.v1.CustomTargetingValueMatchTypeEnum.CustomTargetingValueMatchType match_type = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The matchType.
@@ -189,7 +252,22 @@ public interface CustomTargetingValueOrBuilder
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.CustomTargetingValueStatusEnum.CustomTargetingValueStatus status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * optional .google.ads.admanager.v1.CustomTargetingValueStatusEnum.CustomTargetingValueStatus status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the status field is set.
+   */
+  boolean hasStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Status of the `CustomTargetingValue`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CustomTargetingValueStatusEnum.CustomTargetingValueStatus status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The enum numeric value on the wire for status.
@@ -204,7 +282,7 @@ public interface CustomTargetingValueOrBuilder
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.CustomTargetingValueStatusEnum.CustomTargetingValueStatus status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * optional .google.ads.admanager.v1.CustomTargetingValueStatusEnum.CustomTargetingValueStatus status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The status.

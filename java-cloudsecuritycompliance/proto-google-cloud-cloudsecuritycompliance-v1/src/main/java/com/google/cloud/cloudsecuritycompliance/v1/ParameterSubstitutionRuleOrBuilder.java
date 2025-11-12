@@ -28,7 +28,7 @@ public interface ParameterSubstitutionRuleOrBuilder
    *
    *
    * <pre>
-   * Placeholder substitution rule.
+   * The placeholder substitution rule.
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface ParameterSubstitutionRuleOrBuilder
    *
    *
    * <pre>
-   * Placeholder substitution rule.
+   * The placeholder substitution rule.
    * </pre>
    *
    * <code>
@@ -59,7 +59,7 @@ public interface ParameterSubstitutionRuleOrBuilder
    *
    *
    * <pre>
-   * Placeholder substitution rule.
+   * The placeholder substitution rule.
    * </pre>
    *
    * <code>
@@ -73,7 +73,7 @@ public interface ParameterSubstitutionRuleOrBuilder
    *
    *
    * <pre>
-   * Attribute substitution rule.
+   * The attribute substitution rule.
    * </pre>
    *
    * <code>
@@ -88,7 +88,7 @@ public interface ParameterSubstitutionRuleOrBuilder
    *
    *
    * <pre>
-   * Attribute substitution rule.
+   * The attribute substitution rule.
    * </pre>
    *
    * <code>
@@ -104,7 +104,7 @@ public interface ParameterSubstitutionRuleOrBuilder
    *
    *
    * <pre>
-   * Attribute substitution rule.
+   * The attribute substitution rule.
    * </pre>
    *
    * <code>

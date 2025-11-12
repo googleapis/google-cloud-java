@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service for managing user data for RAG.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1/vertex_rag_data_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class VertexRagDataServiceGrpc {
 
@@ -1076,8 +1073,9 @@ public final class VertexRagDataServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createRagCorpus(
-        com.google.cloud.aiplatform.v1.CreateRagCorpusRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.CreateRagCorpusRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateRagCorpusMethod(), getCallOptions(), request);
     }
 
@@ -1089,8 +1087,9 @@ public final class VertexRagDataServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateRagCorpus(
-        com.google.cloud.aiplatform.v1.UpdateRagCorpusRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.UpdateRagCorpusRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateRagCorpusMethod(), getCallOptions(), request);
     }
 
@@ -1102,8 +1101,8 @@ public final class VertexRagDataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.RagCorpus getRagCorpus(
-        com.google.cloud.aiplatform.v1.GetRagCorpusRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.GetRagCorpusRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRagCorpusMethod(), getCallOptions(), request);
     }
 
@@ -1115,8 +1114,9 @@ public final class VertexRagDataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ListRagCorporaResponse listRagCorpora(
-        com.google.cloud.aiplatform.v1.ListRagCorporaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ListRagCorporaRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRagCorporaMethod(), getCallOptions(), request);
     }
 
@@ -1128,8 +1128,9 @@ public final class VertexRagDataServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteRagCorpus(
-        com.google.cloud.aiplatform.v1.DeleteRagCorpusRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.DeleteRagCorpusRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteRagCorpusMethod(), getCallOptions(), request);
     }
 
@@ -1141,8 +1142,9 @@ public final class VertexRagDataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.UploadRagFileResponse uploadRagFile(
-        com.google.cloud.aiplatform.v1.UploadRagFileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.UploadRagFileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUploadRagFileMethod(), getCallOptions(), request);
     }
 
@@ -1154,8 +1156,9 @@ public final class VertexRagDataServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importRagFiles(
-        com.google.cloud.aiplatform.v1.ImportRagFilesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ImportRagFilesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportRagFilesMethod(), getCallOptions(), request);
     }
 
@@ -1167,8 +1170,8 @@ public final class VertexRagDataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.RagFile getRagFile(
-        com.google.cloud.aiplatform.v1.GetRagFileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.GetRagFileRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRagFileMethod(), getCallOptions(), request);
     }
 
@@ -1180,8 +1183,8 @@ public final class VertexRagDataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ListRagFilesResponse listRagFiles(
-        com.google.cloud.aiplatform.v1.ListRagFilesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ListRagFilesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRagFilesMethod(), getCallOptions(), request);
     }
 
@@ -1193,8 +1196,9 @@ public final class VertexRagDataServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteRagFile(
-        com.google.cloud.aiplatform.v1.DeleteRagFileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.DeleteRagFileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteRagFileMethod(), getCallOptions(), request);
     }
 
@@ -1206,8 +1210,9 @@ public final class VertexRagDataServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateRagEngineConfig(
-        com.google.cloud.aiplatform.v1.UpdateRagEngineConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.UpdateRagEngineConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateRagEngineConfigMethod(), getCallOptions(), request);
     }
 
@@ -1219,8 +1224,9 @@ public final class VertexRagDataServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.RagEngineConfig getRagEngineConfig(
-        com.google.cloud.aiplatform.v1.GetRagEngineConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.GetRagEngineConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRagEngineConfigMethod(), getCallOptions(), request);
     }
   }

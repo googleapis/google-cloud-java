@@ -135,6 +135,63 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
         : workloadPolicyConfig_;
   }
 
+  public static final int PRIVILEGED_ADMISSION_CONFIG_FIELD_NUMBER = 4;
+  private com.google.container.v1.PrivilegedAdmissionConfig privilegedAdmissionConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * PrivilegedAdmissionConfig is the configuration related to privileged
+   * admission control.
+   * </pre>
+   *
+   * <code>.google.container.v1.PrivilegedAdmissionConfig privileged_admission_config = 4;</code>
+   *
+   * @return Whether the privilegedAdmissionConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasPrivilegedAdmissionConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * PrivilegedAdmissionConfig is the configuration related to privileged
+   * admission control.
+   * </pre>
+   *
+   * <code>.google.container.v1.PrivilegedAdmissionConfig privileged_admission_config = 4;</code>
+   *
+   * @return The privilegedAdmissionConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.PrivilegedAdmissionConfig getPrivilegedAdmissionConfig() {
+    return privilegedAdmissionConfig_ == null
+        ? com.google.container.v1.PrivilegedAdmissionConfig.getDefaultInstance()
+        : privilegedAdmissionConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * PrivilegedAdmissionConfig is the configuration related to privileged
+   * admission control.
+   * </pre>
+   *
+   * <code>.google.container.v1.PrivilegedAdmissionConfig privileged_admission_config = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.PrivilegedAdmissionConfigOrBuilder
+      getPrivilegedAdmissionConfigOrBuilder() {
+    return privilegedAdmissionConfig_ == null
+        ? com.google.container.v1.PrivilegedAdmissionConfig.getDefaultInstance()
+        : privilegedAdmissionConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -155,6 +212,9 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getWorkloadPolicyConfig());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(4, getPrivilegedAdmissionConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -170,6 +230,11 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(2, getWorkloadPolicyConfig());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, getPrivilegedAdmissionConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -191,6 +256,11 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
     if (hasWorkloadPolicyConfig()) {
       if (!getWorkloadPolicyConfig().equals(other.getWorkloadPolicyConfig())) return false;
     }
+    if (hasPrivilegedAdmissionConfig() != other.hasPrivilegedAdmissionConfig()) return false;
+    if (hasPrivilegedAdmissionConfig()) {
+      if (!getPrivilegedAdmissionConfig().equals(other.getPrivilegedAdmissionConfig()))
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -207,6 +277,10 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
     if (hasWorkloadPolicyConfig()) {
       hash = (37 * hash) + WORKLOAD_POLICY_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getWorkloadPolicyConfig().hashCode();
+    }
+    if (hasPrivilegedAdmissionConfig()) {
+      hash = (37 * hash) + PRIVILEGED_ADMISSION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getPrivilegedAdmissionConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -349,6 +423,7 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getWorkloadPolicyConfigFieldBuilder();
+        getPrivilegedAdmissionConfigFieldBuilder();
       }
     }
 
@@ -361,6 +436,11 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
       if (workloadPolicyConfigBuilder_ != null) {
         workloadPolicyConfigBuilder_.dispose();
         workloadPolicyConfigBuilder_ = null;
+      }
+      privilegedAdmissionConfig_ = null;
+      if (privilegedAdmissionConfigBuilder_ != null) {
+        privilegedAdmissionConfigBuilder_.dispose();
+        privilegedAdmissionConfigBuilder_ = null;
       }
       return this;
     }
@@ -407,6 +487,13 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
                 ? workloadPolicyConfig_
                 : workloadPolicyConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.privilegedAdmissionConfig_ =
+            privilegedAdmissionConfigBuilder_ == null
+                ? privilegedAdmissionConfig_
+                : privilegedAdmissionConfigBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -462,6 +549,9 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
       if (other.hasWorkloadPolicyConfig()) {
         mergeWorkloadPolicyConfig(other.getWorkloadPolicyConfig());
       }
+      if (other.hasPrivilegedAdmissionConfig()) {
+        mergePrivilegedAdmissionConfig(other.getPrivilegedAdmissionConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -501,6 +591,13 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 34:
+              {
+                input.readMessage(
+                    getPrivilegedAdmissionConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -771,6 +868,215 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessageV3
         workloadPolicyConfig_ = null;
       }
       return workloadPolicyConfigBuilder_;
+    }
+
+    private com.google.container.v1.PrivilegedAdmissionConfig privilegedAdmissionConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.PrivilegedAdmissionConfig,
+            com.google.container.v1.PrivilegedAdmissionConfig.Builder,
+            com.google.container.v1.PrivilegedAdmissionConfigOrBuilder>
+        privilegedAdmissionConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * PrivilegedAdmissionConfig is the configuration related to privileged
+     * admission control.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivilegedAdmissionConfig privileged_admission_config = 4;</code>
+     *
+     * @return Whether the privilegedAdmissionConfig field is set.
+     */
+    public boolean hasPrivilegedAdmissionConfig() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * PrivilegedAdmissionConfig is the configuration related to privileged
+     * admission control.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivilegedAdmissionConfig privileged_admission_config = 4;</code>
+     *
+     * @return The privilegedAdmissionConfig.
+     */
+    public com.google.container.v1.PrivilegedAdmissionConfig getPrivilegedAdmissionConfig() {
+      if (privilegedAdmissionConfigBuilder_ == null) {
+        return privilegedAdmissionConfig_ == null
+            ? com.google.container.v1.PrivilegedAdmissionConfig.getDefaultInstance()
+            : privilegedAdmissionConfig_;
+      } else {
+        return privilegedAdmissionConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * PrivilegedAdmissionConfig is the configuration related to privileged
+     * admission control.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivilegedAdmissionConfig privileged_admission_config = 4;</code>
+     */
+    public Builder setPrivilegedAdmissionConfig(
+        com.google.container.v1.PrivilegedAdmissionConfig value) {
+      if (privilegedAdmissionConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        privilegedAdmissionConfig_ = value;
+      } else {
+        privilegedAdmissionConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * PrivilegedAdmissionConfig is the configuration related to privileged
+     * admission control.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivilegedAdmissionConfig privileged_admission_config = 4;</code>
+     */
+    public Builder setPrivilegedAdmissionConfig(
+        com.google.container.v1.PrivilegedAdmissionConfig.Builder builderForValue) {
+      if (privilegedAdmissionConfigBuilder_ == null) {
+        privilegedAdmissionConfig_ = builderForValue.build();
+      } else {
+        privilegedAdmissionConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * PrivilegedAdmissionConfig is the configuration related to privileged
+     * admission control.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivilegedAdmissionConfig privileged_admission_config = 4;</code>
+     */
+    public Builder mergePrivilegedAdmissionConfig(
+        com.google.container.v1.PrivilegedAdmissionConfig value) {
+      if (privilegedAdmissionConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && privilegedAdmissionConfig_ != null
+            && privilegedAdmissionConfig_
+                != com.google.container.v1.PrivilegedAdmissionConfig.getDefaultInstance()) {
+          getPrivilegedAdmissionConfigBuilder().mergeFrom(value);
+        } else {
+          privilegedAdmissionConfig_ = value;
+        }
+      } else {
+        privilegedAdmissionConfigBuilder_.mergeFrom(value);
+      }
+      if (privilegedAdmissionConfig_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * PrivilegedAdmissionConfig is the configuration related to privileged
+     * admission control.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivilegedAdmissionConfig privileged_admission_config = 4;</code>
+     */
+    public Builder clearPrivilegedAdmissionConfig() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      privilegedAdmissionConfig_ = null;
+      if (privilegedAdmissionConfigBuilder_ != null) {
+        privilegedAdmissionConfigBuilder_.dispose();
+        privilegedAdmissionConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * PrivilegedAdmissionConfig is the configuration related to privileged
+     * admission control.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivilegedAdmissionConfig privileged_admission_config = 4;</code>
+     */
+    public com.google.container.v1.PrivilegedAdmissionConfig.Builder
+        getPrivilegedAdmissionConfigBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getPrivilegedAdmissionConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * PrivilegedAdmissionConfig is the configuration related to privileged
+     * admission control.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivilegedAdmissionConfig privileged_admission_config = 4;</code>
+     */
+    public com.google.container.v1.PrivilegedAdmissionConfigOrBuilder
+        getPrivilegedAdmissionConfigOrBuilder() {
+      if (privilegedAdmissionConfigBuilder_ != null) {
+        return privilegedAdmissionConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return privilegedAdmissionConfig_ == null
+            ? com.google.container.v1.PrivilegedAdmissionConfig.getDefaultInstance()
+            : privilegedAdmissionConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * PrivilegedAdmissionConfig is the configuration related to privileged
+     * admission control.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivilegedAdmissionConfig privileged_admission_config = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.PrivilegedAdmissionConfig,
+            com.google.container.v1.PrivilegedAdmissionConfig.Builder,
+            com.google.container.v1.PrivilegedAdmissionConfigOrBuilder>
+        getPrivilegedAdmissionConfigFieldBuilder() {
+      if (privilegedAdmissionConfigBuilder_ == null) {
+        privilegedAdmissionConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.PrivilegedAdmissionConfig,
+                com.google.container.v1.PrivilegedAdmissionConfig.Builder,
+                com.google.container.v1.PrivilegedAdmissionConfigOrBuilder>(
+                getPrivilegedAdmissionConfig(), getParentForChildren(), isClean());
+        privilegedAdmissionConfig_ = null;
+      }
+      return privilegedAdmissionConfigBuilder_;
     }
 
     @java.lang.Override

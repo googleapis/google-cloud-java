@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.geminidataanalytics.v1beta.ChatRequest;
 import com.google.cloud.geminidataanalytics.v1beta.Conversation;
 import com.google.cloud.geminidataanalytics.v1beta.CreateConversationRequest;
+import com.google.cloud.geminidataanalytics.v1beta.DeleteConversationRequest;
 import com.google.cloud.geminidataanalytics.v1beta.GetConversationRequest;
 import com.google.cloud.geminidataanalytics.v1beta.ListConversationsRequest;
 import com.google.cloud.geminidataanalytics.v1beta.ListConversationsResponse;
@@ -43,6 +44,7 @@ import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.longrunning.stub.GrpcOperationsStub;
+import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -76,6 +78,18 @@ public class GrpcDataChatServiceStub extends DataChatServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateConversationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Conversation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteConversationRequest, Empty>
+      deleteConversationMethodDescriptor =
+          MethodDescriptor.<DeleteConversationRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.geminidataanalytics.v1beta.DataChatService/DeleteConversation")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteConversationRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -139,6 +153,7 @@ public class GrpcDataChatServiceStub extends DataChatServiceStub {
 
   private final ServerStreamingCallable<ChatRequest, Message> chatCallable;
   private final UnaryCallable<CreateConversationRequest, Conversation> createConversationCallable;
+  private final UnaryCallable<DeleteConversationRequest, Empty> deleteConversationCallable;
   private final UnaryCallable<GetConversationRequest, Conversation> getConversationCallable;
   private final UnaryCallable<ListConversationsRequest, ListConversationsResponse>
       listConversationsCallable;
@@ -216,6 +231,16 @@ public class GrpcDataChatServiceStub extends DataChatServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<DeleteConversationRequest, Empty> deleteConversationTransportSettings =
+        GrpcCallSettings.<DeleteConversationRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteConversationMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<GetConversationRequest, Conversation> getConversationTransportSettings =
         GrpcCallSettings.<GetConversationRequest, Conversation>newBuilder()
             .setMethodDescriptor(getConversationMethodDescriptor)
@@ -276,6 +301,11 @@ public class GrpcDataChatServiceStub extends DataChatServiceStub {
             createConversationTransportSettings,
             settings.createConversationSettings(),
             clientContext);
+    this.deleteConversationCallable =
+        callableFactory.createUnaryCallable(
+            deleteConversationTransportSettings,
+            settings.deleteConversationSettings(),
+            clientContext);
     this.getConversationCallable =
         callableFactory.createUnaryCallable(
             getConversationTransportSettings, settings.getConversationSettings(), clientContext);
@@ -321,6 +351,11 @@ public class GrpcDataChatServiceStub extends DataChatServiceStub {
   @Override
   public UnaryCallable<CreateConversationRequest, Conversation> createConversationCallable() {
     return createConversationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteConversationRequest, Empty> deleteConversationCallable() {
+    return deleteConversationCallable;
   }
 
   @Override

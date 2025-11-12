@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * identity](https://support.google.com/merchants/answer/12564247) API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/accounts/v1beta/businessidentity.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class BusinessIdentityServiceGrpc {
 
@@ -341,8 +338,9 @@ public final class BusinessIdentityServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.BusinessIdentity getBusinessIdentity(
-        com.google.shopping.merchant.accounts.v1beta.GetBusinessIdentityRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.GetBusinessIdentityRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetBusinessIdentityMethod(), getCallOptions(), request);
     }
 
@@ -355,8 +353,9 @@ public final class BusinessIdentityServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.BusinessIdentity updateBusinessIdentity(
-        com.google.shopping.merchant.accounts.v1beta.UpdateBusinessIdentityRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.UpdateBusinessIdentityRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateBusinessIdentityMethod(), getCallOptions(), request);
     }
   }

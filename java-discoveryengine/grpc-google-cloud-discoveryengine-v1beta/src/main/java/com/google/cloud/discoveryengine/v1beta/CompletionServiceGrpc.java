@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for Auto-Completion.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1beta/completion_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CompletionServiceGrpc {
 
@@ -676,8 +673,9 @@ public final class CompletionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1beta.CompleteQueryResponse completeQuery(
-        com.google.cloud.discoveryengine.v1beta.CompleteQueryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.CompleteQueryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCompleteQueryMethod(), getCallOptions(), request);
     }
 
@@ -690,8 +688,9 @@ public final class CompletionServiceGrpc {
      */
     public com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse
         advancedCompleteQuery(
-            com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAdvancedCompleteQueryMethod(), getCallOptions(), request);
     }
 
@@ -705,8 +704,9 @@ public final class CompletionServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importSuggestionDenyListEntries(
-        com.google.cloud.discoveryengine.v1beta.ImportSuggestionDenyListEntriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.ImportSuggestionDenyListEntriesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportSuggestionDenyListEntriesMethod(), getCallOptions(), request);
     }
 
@@ -720,8 +720,9 @@ public final class CompletionServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation purgeSuggestionDenyListEntries(
-        com.google.cloud.discoveryengine.v1beta.PurgeSuggestionDenyListEntriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.PurgeSuggestionDenyListEntriesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPurgeSuggestionDenyListEntriesMethod(), getCallOptions(), request);
     }
 
@@ -735,8 +736,9 @@ public final class CompletionServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importCompletionSuggestions(
-        com.google.cloud.discoveryengine.v1beta.ImportCompletionSuggestionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.ImportCompletionSuggestionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportCompletionSuggestionsMethod(), getCallOptions(), request);
     }
 
@@ -750,8 +752,9 @@ public final class CompletionServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation purgeCompletionSuggestions(
-        com.google.cloud.discoveryengine.v1beta.PurgeCompletionSuggestionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.PurgeCompletionSuggestionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPurgeCompletionSuggestionsMethod(), getCallOptions(), request);
     }
   }

@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * FeatureOnlineStore.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1beta1/feature_online_store_admin_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class FeatureOnlineStoreAdminServiceGrpc {
 
@@ -1249,8 +1246,9 @@ public final class FeatureOnlineStoreAdminServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createFeatureOnlineStore(
-        com.google.cloud.aiplatform.v1beta1.CreateFeatureOnlineStoreRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.CreateFeatureOnlineStoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateFeatureOnlineStoreMethod(), getCallOptions(), request);
     }
 
@@ -1262,8 +1260,9 @@ public final class FeatureOnlineStoreAdminServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore getFeatureOnlineStore(
-        com.google.cloud.aiplatform.v1beta1.GetFeatureOnlineStoreRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.GetFeatureOnlineStoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetFeatureOnlineStoreMethod(), getCallOptions(), request);
     }
 
@@ -1276,8 +1275,9 @@ public final class FeatureOnlineStoreAdminServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1beta1.ListFeatureOnlineStoresResponse
         listFeatureOnlineStores(
-            com.google.cloud.aiplatform.v1beta1.ListFeatureOnlineStoresRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.aiplatform.v1beta1.ListFeatureOnlineStoresRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListFeatureOnlineStoresMethod(), getCallOptions(), request);
     }
 
@@ -1289,8 +1289,9 @@ public final class FeatureOnlineStoreAdminServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateFeatureOnlineStore(
-        com.google.cloud.aiplatform.v1beta1.UpdateFeatureOnlineStoreRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.UpdateFeatureOnlineStoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateFeatureOnlineStoreMethod(), getCallOptions(), request);
     }
 
@@ -1303,8 +1304,9 @@ public final class FeatureOnlineStoreAdminServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteFeatureOnlineStore(
-        com.google.cloud.aiplatform.v1beta1.DeleteFeatureOnlineStoreRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.DeleteFeatureOnlineStoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteFeatureOnlineStoreMethod(), getCallOptions(), request);
     }
 
@@ -1316,8 +1318,9 @@ public final class FeatureOnlineStoreAdminServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createFeatureView(
-        com.google.cloud.aiplatform.v1beta1.CreateFeatureViewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.CreateFeatureViewRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateFeatureViewMethod(), getCallOptions(), request);
     }
 
@@ -1329,8 +1332,9 @@ public final class FeatureOnlineStoreAdminServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.FeatureView getFeatureView(
-        com.google.cloud.aiplatform.v1beta1.GetFeatureViewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.GetFeatureViewRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetFeatureViewMethod(), getCallOptions(), request);
     }
 
@@ -1342,8 +1346,9 @@ public final class FeatureOnlineStoreAdminServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ListFeatureViewsResponse listFeatureViews(
-        com.google.cloud.aiplatform.v1beta1.ListFeatureViewsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.ListFeatureViewsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListFeatureViewsMethod(), getCallOptions(), request);
     }
 
@@ -1355,8 +1360,9 @@ public final class FeatureOnlineStoreAdminServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateFeatureView(
-        com.google.cloud.aiplatform.v1beta1.UpdateFeatureViewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.UpdateFeatureViewRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateFeatureViewMethod(), getCallOptions(), request);
     }
 
@@ -1368,8 +1374,9 @@ public final class FeatureOnlineStoreAdminServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteFeatureView(
-        com.google.cloud.aiplatform.v1beta1.DeleteFeatureViewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.DeleteFeatureViewRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteFeatureViewMethod(), getCallOptions(), request);
     }
 
@@ -1381,8 +1388,9 @@ public final class FeatureOnlineStoreAdminServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.SyncFeatureViewResponse syncFeatureView(
-        com.google.cloud.aiplatform.v1beta1.SyncFeatureViewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.SyncFeatureViewRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSyncFeatureViewMethod(), getCallOptions(), request);
     }
 
@@ -1394,8 +1402,9 @@ public final class FeatureOnlineStoreAdminServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.FeatureViewSync getFeatureViewSync(
-        com.google.cloud.aiplatform.v1beta1.GetFeatureViewSyncRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.GetFeatureViewSyncRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetFeatureViewSyncMethod(), getCallOptions(), request);
     }
 
@@ -1407,8 +1416,9 @@ public final class FeatureOnlineStoreAdminServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ListFeatureViewSyncsResponse listFeatureViewSyncs(
-        com.google.cloud.aiplatform.v1beta1.ListFeatureViewSyncsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.ListFeatureViewSyncsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListFeatureViewSyncsMethod(), getCallOptions(), request);
     }
   }

@@ -28,7 +28,8 @@ public interface ProjectCreationConfigOrBuilder
    *
    *
    * <pre>
-   * Required. organizations/{org} or folders/{folder}
+   * Required. The parent of the project, in the format
+   * `organizations/{organizationID}` or `folders/{folderID}`.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -41,7 +42,8 @@ public interface ProjectCreationConfigOrBuilder
    *
    *
    * <pre>
-   * Required. organizations/{org} or folders/{folder}
+   * Required. The parent of the project, in the format
+   * `organizations/{organizationID}` or `folders/{folderID}`.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -54,7 +56,7 @@ public interface ProjectCreationConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Display name of the project to be created.
+   * Required. The display name of the project.
    * </pre>
    *
    * <code>string project_display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -67,7 +69,7 @@ public interface ProjectCreationConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Display name of the project to be created.
+   * Required. The display name of the project.
    * </pre>
    *
    * <code>string project_display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -80,7 +82,7 @@ public interface ProjectCreationConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Billing account id to be used for the project.
+   * Required. The billing account ID for the project.
    * </pre>
    *
    * <code>string billing_account_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -93,7 +95,7 @@ public interface ProjectCreationConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Billing account id to be used for the project.
+   * Required. The billing account ID for the project.
    * </pre>
    *
    * <code>string billing_account_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>

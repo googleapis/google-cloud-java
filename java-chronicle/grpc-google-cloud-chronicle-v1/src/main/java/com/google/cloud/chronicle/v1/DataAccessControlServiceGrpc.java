@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * access control.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/chronicle/v1/data_access_control.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DataAccessControlServiceGrpc {
 
@@ -1022,8 +1019,9 @@ public final class DataAccessControlServiceGrpc {
      * </pre>
      */
     public com.google.cloud.chronicle.v1.DataAccessLabel createDataAccessLabel(
-        com.google.cloud.chronicle.v1.CreateDataAccessLabelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.chronicle.v1.CreateDataAccessLabelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDataAccessLabelMethod(), getCallOptions(), request);
     }
 
@@ -1035,8 +1033,9 @@ public final class DataAccessControlServiceGrpc {
      * </pre>
      */
     public com.google.cloud.chronicle.v1.DataAccessLabel getDataAccessLabel(
-        com.google.cloud.chronicle.v1.GetDataAccessLabelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.chronicle.v1.GetDataAccessLabelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDataAccessLabelMethod(), getCallOptions(), request);
     }
 
@@ -1048,8 +1047,9 @@ public final class DataAccessControlServiceGrpc {
      * </pre>
      */
     public com.google.cloud.chronicle.v1.ListDataAccessLabelsResponse listDataAccessLabels(
-        com.google.cloud.chronicle.v1.ListDataAccessLabelsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.chronicle.v1.ListDataAccessLabelsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDataAccessLabelsMethod(), getCallOptions(), request);
     }
 
@@ -1061,8 +1061,9 @@ public final class DataAccessControlServiceGrpc {
      * </pre>
      */
     public com.google.cloud.chronicle.v1.DataAccessLabel updateDataAccessLabel(
-        com.google.cloud.chronicle.v1.UpdateDataAccessLabelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.chronicle.v1.UpdateDataAccessLabelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDataAccessLabelMethod(), getCallOptions(), request);
     }
 
@@ -1076,8 +1077,9 @@ public final class DataAccessControlServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteDataAccessLabel(
-        com.google.cloud.chronicle.v1.DeleteDataAccessLabelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.chronicle.v1.DeleteDataAccessLabelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDataAccessLabelMethod(), getCallOptions(), request);
     }
 
@@ -1094,8 +1096,9 @@ public final class DataAccessControlServiceGrpc {
      * </pre>
      */
     public com.google.cloud.chronicle.v1.DataAccessScope createDataAccessScope(
-        com.google.cloud.chronicle.v1.CreateDataAccessScopeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.chronicle.v1.CreateDataAccessScopeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDataAccessScopeMethod(), getCallOptions(), request);
     }
 
@@ -1107,8 +1110,9 @@ public final class DataAccessControlServiceGrpc {
      * </pre>
      */
     public com.google.cloud.chronicle.v1.DataAccessScope getDataAccessScope(
-        com.google.cloud.chronicle.v1.GetDataAccessScopeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.chronicle.v1.GetDataAccessScopeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDataAccessScopeMethod(), getCallOptions(), request);
     }
 
@@ -1120,8 +1124,9 @@ public final class DataAccessControlServiceGrpc {
      * </pre>
      */
     public com.google.cloud.chronicle.v1.ListDataAccessScopesResponse listDataAccessScopes(
-        com.google.cloud.chronicle.v1.ListDataAccessScopesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.chronicle.v1.ListDataAccessScopesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDataAccessScopesMethod(), getCallOptions(), request);
     }
 
@@ -1133,8 +1138,9 @@ public final class DataAccessControlServiceGrpc {
      * </pre>
      */
     public com.google.cloud.chronicle.v1.DataAccessScope updateDataAccessScope(
-        com.google.cloud.chronicle.v1.UpdateDataAccessScopeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.chronicle.v1.UpdateDataAccessScopeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDataAccessScopeMethod(), getCallOptions(), request);
     }
 
@@ -1146,8 +1152,9 @@ public final class DataAccessControlServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteDataAccessScope(
-        com.google.cloud.chronicle.v1.DeleteDataAccessScopeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.chronicle.v1.DeleteDataAccessScopeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDataAccessScopeMethod(), getCallOptions(), request);
     }
   }

@@ -250,6 +250,49 @@ public interface SystemMessageOrBuilder
    *
    *
    * <pre>
+   * Optional. A message containing example queries.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.ExampleQueries example_queries = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the exampleQueries field is set.
+   */
+  boolean hasExampleQueries();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A message containing example queries.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.ExampleQueries example_queries = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The exampleQueries.
+   */
+  com.google.cloud.geminidataanalytics.v1beta.ExampleQueries getExampleQueries();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A message containing example queries.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.ExampleQueries example_queries = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.ExampleQueriesOrBuilder getExampleQueriesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Identifies the group that the event belongs to. Similar events are deemed
    * to be logically relevant to each other and should be shown together in
    * the UI.

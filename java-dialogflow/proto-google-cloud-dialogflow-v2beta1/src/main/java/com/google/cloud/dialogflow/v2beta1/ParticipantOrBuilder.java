@@ -328,4 +328,52 @@ public interface ParticipantOrBuilder
    * </code>
    */
   java.lang.String getDocumentsMetadataFiltersOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. For tracking the utilization of prebuilt Agent Assist integration
+   * modules. This field is only inscope for Integration type that include UI
+   * Modules, Backend Modules, and Agent Desktop connector, it is out of scope
+   * for CCaaS and Direct Integration.
+   * For each human agent, prebuilt UI Modules needs to trigger the
+   * UpdateParticipant API to update this field. Both
+   * [CreateParticipantRequest][google.cloud.dialogflow.v2beta1.CreateParticipantRequest.participant]
+   * and
+   * [UpdateParticipantRequest][google.cloud.dialogflow.v2beta1.UpdateParticipantRequest.participant]
+   * will be supported.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Participant.AgentDesktopSource agent_desktop_source = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for agentDesktopSource.
+   */
+  int getAgentDesktopSourceValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. For tracking the utilization of prebuilt Agent Assist integration
+   * modules. This field is only inscope for Integration type that include UI
+   * Modules, Backend Modules, and Agent Desktop connector, it is out of scope
+   * for CCaaS and Direct Integration.
+   * For each human agent, prebuilt UI Modules needs to trigger the
+   * UpdateParticipant API to update this field. Both
+   * [CreateParticipantRequest][google.cloud.dialogflow.v2beta1.CreateParticipantRequest.participant]
+   * and
+   * [UpdateParticipantRequest][google.cloud.dialogflow.v2beta1.UpdateParticipantRequest.participant]
+   * will be supported.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.Participant.AgentDesktopSource agent_desktop_source = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The agentDesktopSource.
+   */
+  com.google.cloud.dialogflow.v2beta1.Participant.AgentDesktopSource getAgentDesktopSource();
 }

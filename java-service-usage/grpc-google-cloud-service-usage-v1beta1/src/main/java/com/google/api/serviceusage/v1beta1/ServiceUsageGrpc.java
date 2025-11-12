@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [Service Usage API](https://cloud.google.com/service-usage/docs/overview)
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/api/serviceusage/v1beta1/serviceusage.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ServiceUsageGrpc {
 
@@ -1738,8 +1735,9 @@ public final class ServiceUsageGrpc {
      */
     @java.lang.Deprecated
     public com.google.longrunning.Operation enableService(
-        com.google.api.serviceusage.v1beta1.EnableServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.serviceusage.v1beta1.EnableServiceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getEnableServiceMethod(), getCallOptions(), request);
     }
 
@@ -1758,8 +1756,9 @@ public final class ServiceUsageGrpc {
      */
     @java.lang.Deprecated
     public com.google.longrunning.Operation disableService(
-        com.google.api.serviceusage.v1beta1.DisableServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.serviceusage.v1beta1.DisableServiceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDisableServiceMethod(), getCallOptions(), request);
     }
 
@@ -1772,8 +1771,9 @@ public final class ServiceUsageGrpc {
      */
     @java.lang.Deprecated
     public com.google.api.serviceusage.v1beta1.Service getService(
-        com.google.api.serviceusage.v1beta1.GetServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.serviceusage.v1beta1.GetServiceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetServiceMethod(), getCallOptions(), request);
     }
 
@@ -1792,8 +1792,9 @@ public final class ServiceUsageGrpc {
      */
     @java.lang.Deprecated
     public com.google.api.serviceusage.v1beta1.ListServicesResponse listServices(
-        com.google.api.serviceusage.v1beta1.ListServicesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.serviceusage.v1beta1.ListServicesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListServicesMethod(), getCallOptions(), request);
     }
 
@@ -1809,8 +1810,9 @@ public final class ServiceUsageGrpc {
      */
     @java.lang.Deprecated
     public com.google.longrunning.Operation batchEnableServices(
-        com.google.api.serviceusage.v1beta1.BatchEnableServicesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.serviceusage.v1beta1.BatchEnableServicesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchEnableServicesMethod(), getCallOptions(), request);
     }
 
@@ -1827,8 +1829,9 @@ public final class ServiceUsageGrpc {
      */
     public com.google.api.serviceusage.v1beta1.ListConsumerQuotaMetricsResponse
         listConsumerQuotaMetrics(
-            com.google.api.serviceusage.v1beta1.ListConsumerQuotaMetricsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.api.serviceusage.v1beta1.ListConsumerQuotaMetricsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListConsumerQuotaMetricsMethod(), getCallOptions(), request);
     }
 
@@ -1840,8 +1843,9 @@ public final class ServiceUsageGrpc {
      * </pre>
      */
     public com.google.api.serviceusage.v1beta1.ConsumerQuotaMetric getConsumerQuotaMetric(
-        com.google.api.serviceusage.v1beta1.GetConsumerQuotaMetricRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.serviceusage.v1beta1.GetConsumerQuotaMetricRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetConsumerQuotaMetricMethod(), getCallOptions(), request);
     }
 
@@ -1853,8 +1857,9 @@ public final class ServiceUsageGrpc {
      * </pre>
      */
     public com.google.api.serviceusage.v1beta1.ConsumerQuotaLimit getConsumerQuotaLimit(
-        com.google.api.serviceusage.v1beta1.GetConsumerQuotaLimitRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.serviceusage.v1beta1.GetConsumerQuotaLimitRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetConsumerQuotaLimitMethod(), getCallOptions(), request);
     }
 
@@ -1871,8 +1876,9 @@ public final class ServiceUsageGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createAdminOverride(
-        com.google.api.serviceusage.v1beta1.CreateAdminOverrideRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.serviceusage.v1beta1.CreateAdminOverrideRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAdminOverrideMethod(), getCallOptions(), request);
     }
 
@@ -1884,8 +1890,9 @@ public final class ServiceUsageGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateAdminOverride(
-        com.google.api.serviceusage.v1beta1.UpdateAdminOverrideRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.serviceusage.v1beta1.UpdateAdminOverrideRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAdminOverrideMethod(), getCallOptions(), request);
     }
 
@@ -1897,8 +1904,9 @@ public final class ServiceUsageGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteAdminOverride(
-        com.google.api.serviceusage.v1beta1.DeleteAdminOverrideRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.serviceusage.v1beta1.DeleteAdminOverrideRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAdminOverrideMethod(), getCallOptions(), request);
     }
 
@@ -1910,8 +1918,9 @@ public final class ServiceUsageGrpc {
      * </pre>
      */
     public com.google.api.serviceusage.v1beta1.ListAdminOverridesResponse listAdminOverrides(
-        com.google.api.serviceusage.v1beta1.ListAdminOverridesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.serviceusage.v1beta1.ListAdminOverridesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAdminOverridesMethod(), getCallOptions(), request);
     }
 
@@ -1925,8 +1934,9 @@ public final class ServiceUsageGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importAdminOverrides(
-        com.google.api.serviceusage.v1beta1.ImportAdminOverridesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.serviceusage.v1beta1.ImportAdminOverridesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportAdminOverridesMethod(), getCallOptions(), request);
     }
 
@@ -1942,8 +1952,9 @@ public final class ServiceUsageGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createConsumerOverride(
-        com.google.api.serviceusage.v1beta1.CreateConsumerOverrideRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.serviceusage.v1beta1.CreateConsumerOverrideRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateConsumerOverrideMethod(), getCallOptions(), request);
     }
 
@@ -1955,8 +1966,9 @@ public final class ServiceUsageGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateConsumerOverride(
-        com.google.api.serviceusage.v1beta1.UpdateConsumerOverrideRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.serviceusage.v1beta1.UpdateConsumerOverrideRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateConsumerOverrideMethod(), getCallOptions(), request);
     }
 
@@ -1968,8 +1980,9 @@ public final class ServiceUsageGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteConsumerOverride(
-        com.google.api.serviceusage.v1beta1.DeleteConsumerOverrideRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.serviceusage.v1beta1.DeleteConsumerOverrideRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteConsumerOverrideMethod(), getCallOptions(), request);
     }
 
@@ -1981,8 +1994,9 @@ public final class ServiceUsageGrpc {
      * </pre>
      */
     public com.google.api.serviceusage.v1beta1.ListConsumerOverridesResponse listConsumerOverrides(
-        com.google.api.serviceusage.v1beta1.ListConsumerOverridesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.serviceusage.v1beta1.ListConsumerOverridesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListConsumerOverridesMethod(), getCallOptions(), request);
     }
 
@@ -1996,8 +2010,9 @@ public final class ServiceUsageGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importConsumerOverrides(
-        com.google.api.serviceusage.v1beta1.ImportConsumerOverridesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.serviceusage.v1beta1.ImportConsumerOverridesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportConsumerOverridesMethod(), getCallOptions(), request);
     }
 
@@ -2009,8 +2024,9 @@ public final class ServiceUsageGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation generateServiceIdentity(
-        com.google.api.serviceusage.v1beta1.GenerateServiceIdentityRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.serviceusage.v1beta1.GenerateServiceIdentityRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateServiceIdentityMethod(), getCallOptions(), request);
     }
   }

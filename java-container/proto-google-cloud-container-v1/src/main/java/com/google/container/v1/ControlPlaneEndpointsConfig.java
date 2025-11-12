@@ -106,7 +106,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
      *
      * <pre>
      * Controls whether user traffic is allowed over this endpoint. Note that
-     * GCP-managed services may still use the endpoint even if this is false.
+     * Google-managed services may still use the endpoint even if this is false.
      * </pre>
      *
      * <code>optional bool allow_external_traffic = 3;</code>
@@ -120,7 +120,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
      *
      * <pre>
      * Controls whether user traffic is allowed over this endpoint. Note that
-     * GCP-managed services may still use the endpoint even if this is false.
+     * Google-managed services may still use the endpoint even if this is false.
      * </pre>
      *
      * <code>optional bool allow_external_traffic = 3;</code>
@@ -128,6 +128,58 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
      * @return The allowExternalTraffic.
      */
     boolean getAllowExternalTraffic();
+
+    /**
+     *
+     *
+     * <pre>
+     * Controls whether the k8s token auth is allowed via DNS.
+     * </pre>
+     *
+     * <code>optional bool enable_k8s_tokens_via_dns = 5;</code>
+     *
+     * @return Whether the enableK8sTokensViaDns field is set.
+     */
+    boolean hasEnableK8STokensViaDns();
+
+    /**
+     *
+     *
+     * <pre>
+     * Controls whether the k8s token auth is allowed via DNS.
+     * </pre>
+     *
+     * <code>optional bool enable_k8s_tokens_via_dns = 5;</code>
+     *
+     * @return The enableK8sTokensViaDns.
+     */
+    boolean getEnableK8STokensViaDns();
+
+    /**
+     *
+     *
+     * <pre>
+     * Controls whether the k8s certs auth is allowed via DNS.
+     * </pre>
+     *
+     * <code>optional bool enable_k8s_certs_via_dns = 6;</code>
+     *
+     * @return Whether the enableK8sCertsViaDns field is set.
+     */
+    boolean hasEnableK8SCertsViaDns();
+
+    /**
+     *
+     *
+     * <pre>
+     * Controls whether the k8s certs auth is allowed via DNS.
+     * </pre>
+     *
+     * <code>optional bool enable_k8s_certs_via_dns = 6;</code>
+     *
+     * @return The enableK8sCertsViaDns.
+     */
+    boolean getEnableK8SCertsViaDns();
   }
 
   /**
@@ -245,7 +297,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
      *
      * <pre>
      * Controls whether user traffic is allowed over this endpoint. Note that
-     * GCP-managed services may still use the endpoint even if this is false.
+     * Google-managed services may still use the endpoint even if this is false.
      * </pre>
      *
      * <code>optional bool allow_external_traffic = 3;</code>
@@ -262,7 +314,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
      *
      * <pre>
      * Controls whether user traffic is allowed over this endpoint. Note that
-     * GCP-managed services may still use the endpoint even if this is false.
+     * Google-managed services may still use the endpoint even if this is false.
      * </pre>
      *
      * <code>optional bool allow_external_traffic = 3;</code>
@@ -272,6 +324,76 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
     @java.lang.Override
     public boolean getAllowExternalTraffic() {
       return allowExternalTraffic_;
+    }
+
+    public static final int ENABLE_K8S_TOKENS_VIA_DNS_FIELD_NUMBER = 5;
+    private boolean enableK8STokensViaDns_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Controls whether the k8s token auth is allowed via DNS.
+     * </pre>
+     *
+     * <code>optional bool enable_k8s_tokens_via_dns = 5;</code>
+     *
+     * @return Whether the enableK8sTokensViaDns field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnableK8STokensViaDns() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Controls whether the k8s token auth is allowed via DNS.
+     * </pre>
+     *
+     * <code>optional bool enable_k8s_tokens_via_dns = 5;</code>
+     *
+     * @return The enableK8sTokensViaDns.
+     */
+    @java.lang.Override
+    public boolean getEnableK8STokensViaDns() {
+      return enableK8STokensViaDns_;
+    }
+
+    public static final int ENABLE_K8S_CERTS_VIA_DNS_FIELD_NUMBER = 6;
+    private boolean enableK8SCertsViaDns_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Controls whether the k8s certs auth is allowed via DNS.
+     * </pre>
+     *
+     * <code>optional bool enable_k8s_certs_via_dns = 6;</code>
+     *
+     * @return Whether the enableK8sCertsViaDns field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnableK8SCertsViaDns() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Controls whether the k8s certs auth is allowed via DNS.
+     * </pre>
+     *
+     * <code>optional bool enable_k8s_certs_via_dns = 6;</code>
+     *
+     * @return The enableK8sCertsViaDns.
+     */
+    @java.lang.Override
+    public boolean getEnableK8SCertsViaDns() {
+      return enableK8SCertsViaDns_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -294,6 +416,12 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeBool(3, allowExternalTraffic_);
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeBool(5, enableK8STokensViaDns_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeBool(6, enableK8SCertsViaDns_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -308,6 +436,12 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       }
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, allowExternalTraffic_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, enableK8STokensViaDns_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, enableK8SCertsViaDns_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -330,6 +464,14 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       if (hasAllowExternalTraffic()) {
         if (getAllowExternalTraffic() != other.getAllowExternalTraffic()) return false;
       }
+      if (hasEnableK8STokensViaDns() != other.hasEnableK8STokensViaDns()) return false;
+      if (hasEnableK8STokensViaDns()) {
+        if (getEnableK8STokensViaDns() != other.getEnableK8STokensViaDns()) return false;
+      }
+      if (hasEnableK8SCertsViaDns() != other.hasEnableK8SCertsViaDns()) return false;
+      if (hasEnableK8SCertsViaDns()) {
+        if (getEnableK8SCertsViaDns() != other.getEnableK8SCertsViaDns()) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -346,6 +488,14 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       if (hasAllowExternalTraffic()) {
         hash = (37 * hash) + ALLOW_EXTERNAL_TRAFFIC_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowExternalTraffic());
+      }
+      if (hasEnableK8STokensViaDns()) {
+        hash = (37 * hash) + ENABLE_K8S_TOKENS_VIA_DNS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableK8STokensViaDns());
+      }
+      if (hasEnableK8SCertsViaDns()) {
+        hash = (37 * hash) + ENABLE_K8S_CERTS_VIA_DNS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableK8SCertsViaDns());
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -495,6 +645,8 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
         bitField0_ = 0;
         endpoint_ = "";
         allowExternalTraffic_ = false;
+        enableK8STokensViaDns_ = false;
+        enableK8SCertsViaDns_ = false;
         return this;
       }
 
@@ -542,6 +694,14 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.allowExternalTraffic_ = allowExternalTraffic_;
           to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.enableK8STokensViaDns_ = enableK8STokensViaDns_;
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.enableK8SCertsViaDns_ = enableK8SCertsViaDns_;
+          to_bitField0_ |= 0x00000004;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -606,6 +766,12 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
         if (other.hasAllowExternalTraffic()) {
           setAllowExternalTraffic(other.getAllowExternalTraffic());
         }
+        if (other.hasEnableK8STokensViaDns()) {
+          setEnableK8STokensViaDns(other.getEnableK8STokensViaDns());
+        }
+        if (other.hasEnableK8SCertsViaDns()) {
+          setEnableK8SCertsViaDns(other.getEnableK8SCertsViaDns());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -644,6 +810,18 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 24
+              case 40:
+                {
+                  enableK8STokensViaDns_ = input.readBool();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 40
+              case 48:
+                {
+                  enableK8SCertsViaDns_ = input.readBool();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 48
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -801,7 +979,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
        *
        * <pre>
        * Controls whether user traffic is allowed over this endpoint. Note that
-       * GCP-managed services may still use the endpoint even if this is false.
+       * Google-managed services may still use the endpoint even if this is false.
        * </pre>
        *
        * <code>optional bool allow_external_traffic = 3;</code>
@@ -818,7 +996,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
        *
        * <pre>
        * Controls whether user traffic is allowed over this endpoint. Note that
-       * GCP-managed services may still use the endpoint even if this is false.
+       * Google-managed services may still use the endpoint even if this is false.
        * </pre>
        *
        * <code>optional bool allow_external_traffic = 3;</code>
@@ -835,7 +1013,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
        *
        * <pre>
        * Controls whether user traffic is allowed over this endpoint. Note that
-       * GCP-managed services may still use the endpoint even if this is false.
+       * Google-managed services may still use the endpoint even if this is false.
        * </pre>
        *
        * <code>optional bool allow_external_traffic = 3;</code>
@@ -856,7 +1034,7 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
        *
        * <pre>
        * Controls whether user traffic is allowed over this endpoint. Note that
-       * GCP-managed services may still use the endpoint even if this is false.
+       * Google-managed services may still use the endpoint even if this is false.
        * </pre>
        *
        * <code>optional bool allow_external_traffic = 3;</code>
@@ -866,6 +1044,150 @@ public final class ControlPlaneEndpointsConfig extends com.google.protobuf.Gener
       public Builder clearAllowExternalTraffic() {
         bitField0_ = (bitField0_ & ~0x00000002);
         allowExternalTraffic_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean enableK8STokensViaDns_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Controls whether the k8s token auth is allowed via DNS.
+       * </pre>
+       *
+       * <code>optional bool enable_k8s_tokens_via_dns = 5;</code>
+       *
+       * @return Whether the enableK8sTokensViaDns field is set.
+       */
+      @java.lang.Override
+      public boolean hasEnableK8STokensViaDns() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Controls whether the k8s token auth is allowed via DNS.
+       * </pre>
+       *
+       * <code>optional bool enable_k8s_tokens_via_dns = 5;</code>
+       *
+       * @return The enableK8sTokensViaDns.
+       */
+      @java.lang.Override
+      public boolean getEnableK8STokensViaDns() {
+        return enableK8STokensViaDns_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Controls whether the k8s token auth is allowed via DNS.
+       * </pre>
+       *
+       * <code>optional bool enable_k8s_tokens_via_dns = 5;</code>
+       *
+       * @param value The enableK8sTokensViaDns to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableK8STokensViaDns(boolean value) {
+
+        enableK8STokensViaDns_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Controls whether the k8s token auth is allowed via DNS.
+       * </pre>
+       *
+       * <code>optional bool enable_k8s_tokens_via_dns = 5;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableK8STokensViaDns() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        enableK8STokensViaDns_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean enableK8SCertsViaDns_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Controls whether the k8s certs auth is allowed via DNS.
+       * </pre>
+       *
+       * <code>optional bool enable_k8s_certs_via_dns = 6;</code>
+       *
+       * @return Whether the enableK8sCertsViaDns field is set.
+       */
+      @java.lang.Override
+      public boolean hasEnableK8SCertsViaDns() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Controls whether the k8s certs auth is allowed via DNS.
+       * </pre>
+       *
+       * <code>optional bool enable_k8s_certs_via_dns = 6;</code>
+       *
+       * @return The enableK8sCertsViaDns.
+       */
+      @java.lang.Override
+      public boolean getEnableK8SCertsViaDns() {
+        return enableK8SCertsViaDns_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Controls whether the k8s certs auth is allowed via DNS.
+       * </pre>
+       *
+       * <code>optional bool enable_k8s_certs_via_dns = 6;</code>
+       *
+       * @param value The enableK8sCertsViaDns to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableK8SCertsViaDns(boolean value) {
+
+        enableK8SCertsViaDns_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Controls whether the k8s certs auth is allowed via DNS.
+       * </pre>
+       *
+       * <code>optional bool enable_k8s_certs_via_dns = 6;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableK8SCertsViaDns() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        enableK8SCertsViaDns_ = false;
         onChanged();
         return this;
       }

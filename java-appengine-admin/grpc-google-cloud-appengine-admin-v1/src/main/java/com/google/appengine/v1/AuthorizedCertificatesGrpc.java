@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * administer any SSL certificates applicable to their authorized domains.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/appengine/v1/appengine.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AuthorizedCertificatesGrpc {
 
@@ -592,8 +589,9 @@ public final class AuthorizedCertificatesGrpc {
      * </pre>
      */
     public com.google.appengine.v1.ListAuthorizedCertificatesResponse listAuthorizedCertificates(
-        com.google.appengine.v1.ListAuthorizedCertificatesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.appengine.v1.ListAuthorizedCertificatesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAuthorizedCertificatesMethod(), getCallOptions(), request);
     }
 
@@ -605,8 +603,9 @@ public final class AuthorizedCertificatesGrpc {
      * </pre>
      */
     public com.google.appengine.v1.AuthorizedCertificate getAuthorizedCertificate(
-        com.google.appengine.v1.GetAuthorizedCertificateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.appengine.v1.GetAuthorizedCertificateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAuthorizedCertificateMethod(), getCallOptions(), request);
     }
 
@@ -618,8 +617,9 @@ public final class AuthorizedCertificatesGrpc {
      * </pre>
      */
     public com.google.appengine.v1.AuthorizedCertificate createAuthorizedCertificate(
-        com.google.appengine.v1.CreateAuthorizedCertificateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.appengine.v1.CreateAuthorizedCertificateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAuthorizedCertificateMethod(), getCallOptions(), request);
     }
 
@@ -635,8 +635,9 @@ public final class AuthorizedCertificatesGrpc {
      * </pre>
      */
     public com.google.appengine.v1.AuthorizedCertificate updateAuthorizedCertificate(
-        com.google.appengine.v1.UpdateAuthorizedCertificateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.appengine.v1.UpdateAuthorizedCertificateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAuthorizedCertificateMethod(), getCallOptions(), request);
     }
 
@@ -648,8 +649,9 @@ public final class AuthorizedCertificatesGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteAuthorizedCertificate(
-        com.google.appengine.v1.DeleteAuthorizedCertificateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.appengine.v1.DeleteAuthorizedCertificateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAuthorizedCertificateMethod(), getCallOptions(), request);
     }
   }

@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to access Developer Registration.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/accounts/v1/developerregistration.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DeveloperRegistrationServiceGrpc {
 
@@ -420,8 +417,9 @@ public final class DeveloperRegistrationServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1.DeveloperRegistration registerGcp(
-        com.google.shopping.merchant.accounts.v1.RegisterGcpRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.RegisterGcpRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRegisterGcpMethod(), getCallOptions(), request);
     }
 
@@ -433,8 +431,9 @@ public final class DeveloperRegistrationServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1.DeveloperRegistration getDeveloperRegistration(
-        com.google.shopping.merchant.accounts.v1.GetDeveloperRegistrationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.GetDeveloperRegistrationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDeveloperRegistrationMethod(), getCallOptions(), request);
     }
 
@@ -448,8 +447,9 @@ public final class DeveloperRegistrationServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty unregisterGcp(
-        com.google.shopping.merchant.accounts.v1.UnregisterGcpRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.UnregisterGcpRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUnregisterGcpMethod(), getCallOptions(), request);
     }
   }

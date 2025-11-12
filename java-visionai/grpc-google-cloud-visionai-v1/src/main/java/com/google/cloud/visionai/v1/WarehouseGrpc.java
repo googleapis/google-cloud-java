@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service that manages media content + metadata for streaming.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/visionai/v1/warehouse.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class WarehouseGrpc {
 
@@ -4968,8 +4965,8 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.Asset createAsset(
-        com.google.cloud.visionai.v1.CreateAssetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.CreateAssetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAssetMethod(), getCallOptions(), request);
     }
 
@@ -4981,8 +4978,8 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.Asset updateAsset(
-        com.google.cloud.visionai.v1.UpdateAssetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.UpdateAssetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAssetMethod(), getCallOptions(), request);
     }
 
@@ -4994,8 +4991,8 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.Asset getAsset(
-        com.google.cloud.visionai.v1.GetAssetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.GetAssetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAssetMethod(), getCallOptions(), request);
     }
 
@@ -5007,8 +5004,8 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.ListAssetsResponse listAssets(
-        com.google.cloud.visionai.v1.ListAssetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.ListAssetsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAssetsMethod(), getCallOptions(), request);
     }
 
@@ -5020,8 +5017,8 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteAsset(
-        com.google.cloud.visionai.v1.DeleteAssetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.DeleteAssetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAssetMethod(), getCallOptions(), request);
     }
 
@@ -5042,8 +5039,8 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation uploadAsset(
-        com.google.cloud.visionai.v1.UploadAssetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.UploadAssetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUploadAssetMethod(), getCallOptions(), request);
     }
 
@@ -5057,8 +5054,9 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.GenerateRetrievalUrlResponse generateRetrievalUrl(
-        com.google.cloud.visionai.v1.GenerateRetrievalUrlRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.GenerateRetrievalUrlRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateRetrievalUrlMethod(), getCallOptions(), request);
     }
 
@@ -5070,8 +5068,8 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation analyzeAsset(
-        com.google.cloud.visionai.v1.AnalyzeAssetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.AnalyzeAssetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAnalyzeAssetMethod(), getCallOptions(), request);
     }
 
@@ -5084,8 +5082,8 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation indexAsset(
-        com.google.cloud.visionai.v1.IndexAssetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.IndexAssetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getIndexAssetMethod(), getCallOptions(), request);
     }
 
@@ -5098,8 +5096,9 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation removeIndexAsset(
-        com.google.cloud.visionai.v1.RemoveIndexAssetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.RemoveIndexAssetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRemoveIndexAssetMethod(), getCallOptions(), request);
     }
 
@@ -5111,8 +5110,9 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.ViewIndexedAssetsResponse viewIndexedAssets(
-        com.google.cloud.visionai.v1.ViewIndexedAssetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.ViewIndexedAssetsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getViewIndexedAssetsMethod(), getCallOptions(), request);
     }
 
@@ -5124,8 +5124,8 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createIndex(
-        com.google.cloud.visionai.v1.CreateIndexRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.CreateIndexRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateIndexMethod(), getCallOptions(), request);
     }
 
@@ -5139,8 +5139,8 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateIndex(
-        com.google.cloud.visionai.v1.UpdateIndexRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.UpdateIndexRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateIndexMethod(), getCallOptions(), request);
     }
 
@@ -5152,8 +5152,8 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.Index getIndex(
-        com.google.cloud.visionai.v1.GetIndexRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.GetIndexRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIndexMethod(), getCallOptions(), request);
     }
 
@@ -5165,8 +5165,8 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.ListIndexesResponse listIndexes(
-        com.google.cloud.visionai.v1.ListIndexesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.ListIndexesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListIndexesMethod(), getCallOptions(), request);
     }
 
@@ -5179,8 +5179,8 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteIndex(
-        com.google.cloud.visionai.v1.DeleteIndexRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.DeleteIndexRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteIndexMethod(), getCallOptions(), request);
     }
 
@@ -5192,8 +5192,8 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createCorpus(
-        com.google.cloud.visionai.v1.CreateCorpusRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.CreateCorpusRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCorpusMethod(), getCallOptions(), request);
     }
 
@@ -5205,8 +5205,8 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.Corpus getCorpus(
-        com.google.cloud.visionai.v1.GetCorpusRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.GetCorpusRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCorpusMethod(), getCallOptions(), request);
     }
 
@@ -5218,8 +5218,8 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.Corpus updateCorpus(
-        com.google.cloud.visionai.v1.UpdateCorpusRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.UpdateCorpusRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateCorpusMethod(), getCallOptions(), request);
     }
 
@@ -5231,8 +5231,8 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.ListCorporaResponse listCorpora(
-        com.google.cloud.visionai.v1.ListCorporaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.ListCorporaRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCorporaMethod(), getCallOptions(), request);
     }
 
@@ -5245,8 +5245,8 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteCorpus(
-        com.google.cloud.visionai.v1.DeleteCorpusRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.DeleteCorpusRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteCorpusMethod(), getCallOptions(), request);
     }
 
@@ -5258,8 +5258,8 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation analyzeCorpus(
-        com.google.cloud.visionai.v1.AnalyzeCorpusRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.AnalyzeCorpusRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAnalyzeCorpusMethod(), getCallOptions(), request);
     }
 
@@ -5271,8 +5271,9 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.DataSchema createDataSchema(
-        com.google.cloud.visionai.v1.CreateDataSchemaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.CreateDataSchemaRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDataSchemaMethod(), getCallOptions(), request);
     }
 
@@ -5284,8 +5285,9 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.DataSchema updateDataSchema(
-        com.google.cloud.visionai.v1.UpdateDataSchemaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.UpdateDataSchemaRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDataSchemaMethod(), getCallOptions(), request);
     }
 
@@ -5297,8 +5299,8 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.DataSchema getDataSchema(
-        com.google.cloud.visionai.v1.GetDataSchemaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.GetDataSchemaRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDataSchemaMethod(), getCallOptions(), request);
     }
 
@@ -5310,8 +5312,9 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteDataSchema(
-        com.google.cloud.visionai.v1.DeleteDataSchemaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.DeleteDataSchemaRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDataSchemaMethod(), getCallOptions(), request);
     }
 
@@ -5323,8 +5326,9 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.ListDataSchemasResponse listDataSchemas(
-        com.google.cloud.visionai.v1.ListDataSchemasRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.ListDataSchemasRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDataSchemasMethod(), getCallOptions(), request);
     }
 
@@ -5336,8 +5340,9 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.Annotation createAnnotation(
-        com.google.cloud.visionai.v1.CreateAnnotationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.CreateAnnotationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAnnotationMethod(), getCallOptions(), request);
     }
 
@@ -5349,8 +5354,8 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.Annotation getAnnotation(
-        com.google.cloud.visionai.v1.GetAnnotationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.GetAnnotationRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAnnotationMethod(), getCallOptions(), request);
     }
 
@@ -5362,8 +5367,9 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.ListAnnotationsResponse listAnnotations(
-        com.google.cloud.visionai.v1.ListAnnotationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.ListAnnotationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAnnotationsMethod(), getCallOptions(), request);
     }
 
@@ -5375,8 +5381,9 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.Annotation updateAnnotation(
-        com.google.cloud.visionai.v1.UpdateAnnotationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.UpdateAnnotationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAnnotationMethod(), getCallOptions(), request);
     }
 
@@ -5388,8 +5395,9 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteAnnotation(
-        com.google.cloud.visionai.v1.DeleteAnnotationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.DeleteAnnotationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAnnotationMethod(), getCallOptions(), request);
     }
 
@@ -5425,8 +5433,8 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.ClipAssetResponse clipAsset(
-        com.google.cloud.visionai.v1.ClipAssetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.ClipAssetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getClipAssetMethod(), getCallOptions(), request);
     }
 
@@ -5440,8 +5448,8 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.GenerateHlsUriResponse generateHlsUri(
-        com.google.cloud.visionai.v1.GenerateHlsUriRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.GenerateHlsUriRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateHlsUriMethod(), getCallOptions(), request);
     }
 
@@ -5455,8 +5463,8 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importAssets(
-        com.google.cloud.visionai.v1.ImportAssetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.ImportAssetsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportAssetsMethod(), getCallOptions(), request);
     }
 
@@ -5481,8 +5489,9 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.SearchConfig createSearchConfig(
-        com.google.cloud.visionai.v1.CreateSearchConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.CreateSearchConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSearchConfigMethod(), getCallOptions(), request);
     }
 
@@ -5506,8 +5515,9 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.SearchConfig updateSearchConfig(
-        com.google.cloud.visionai.v1.UpdateSearchConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.UpdateSearchConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSearchConfigMethod(), getCallOptions(), request);
     }
 
@@ -5519,8 +5529,9 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.SearchConfig getSearchConfig(
-        com.google.cloud.visionai.v1.GetSearchConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.GetSearchConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSearchConfigMethod(), getCallOptions(), request);
     }
 
@@ -5534,8 +5545,9 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteSearchConfig(
-        com.google.cloud.visionai.v1.DeleteSearchConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.DeleteSearchConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSearchConfigMethod(), getCallOptions(), request);
     }
 
@@ -5547,8 +5559,9 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.ListSearchConfigsResponse listSearchConfigs(
-        com.google.cloud.visionai.v1.ListSearchConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.ListSearchConfigsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSearchConfigsMethod(), getCallOptions(), request);
     }
 
@@ -5560,8 +5573,9 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.SearchHypernym createSearchHypernym(
-        com.google.cloud.visionai.v1.CreateSearchHypernymRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.CreateSearchHypernymRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSearchHypernymMethod(), getCallOptions(), request);
     }
 
@@ -5573,8 +5587,9 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.SearchHypernym updateSearchHypernym(
-        com.google.cloud.visionai.v1.UpdateSearchHypernymRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.UpdateSearchHypernymRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSearchHypernymMethod(), getCallOptions(), request);
     }
 
@@ -5586,8 +5601,9 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.SearchHypernym getSearchHypernym(
-        com.google.cloud.visionai.v1.GetSearchHypernymRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.GetSearchHypernymRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSearchHypernymMethod(), getCallOptions(), request);
     }
 
@@ -5599,8 +5615,9 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteSearchHypernym(
-        com.google.cloud.visionai.v1.DeleteSearchHypernymRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.DeleteSearchHypernymRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSearchHypernymMethod(), getCallOptions(), request);
     }
 
@@ -5612,8 +5629,9 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.ListSearchHypernymsResponse listSearchHypernyms(
-        com.google.cloud.visionai.v1.ListSearchHypernymsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.ListSearchHypernymsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSearchHypernymsMethod(), getCallOptions(), request);
     }
 
@@ -5625,8 +5643,8 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.SearchAssetsResponse searchAssets(
-        com.google.cloud.visionai.v1.SearchAssetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.SearchAssetsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchAssetsMethod(), getCallOptions(), request);
     }
 
@@ -5638,8 +5656,9 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.SearchIndexEndpointResponse searchIndexEndpoint(
-        com.google.cloud.visionai.v1.SearchIndexEndpointRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.SearchIndexEndpointRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchIndexEndpointMethod(), getCallOptions(), request);
     }
 
@@ -5651,8 +5670,9 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createIndexEndpoint(
-        com.google.cloud.visionai.v1.CreateIndexEndpointRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.CreateIndexEndpointRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateIndexEndpointMethod(), getCallOptions(), request);
     }
 
@@ -5664,8 +5684,9 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.IndexEndpoint getIndexEndpoint(
-        com.google.cloud.visionai.v1.GetIndexEndpointRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.GetIndexEndpointRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIndexEndpointMethod(), getCallOptions(), request);
     }
 
@@ -5677,8 +5698,9 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.ListIndexEndpointsResponse listIndexEndpoints(
-        com.google.cloud.visionai.v1.ListIndexEndpointsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.ListIndexEndpointsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListIndexEndpointsMethod(), getCallOptions(), request);
     }
 
@@ -5690,8 +5712,9 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateIndexEndpoint(
-        com.google.cloud.visionai.v1.UpdateIndexEndpointRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.UpdateIndexEndpointRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateIndexEndpointMethod(), getCallOptions(), request);
     }
 
@@ -5703,8 +5726,9 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteIndexEndpoint(
-        com.google.cloud.visionai.v1.DeleteIndexEndpointRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.DeleteIndexEndpointRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteIndexEndpointMethod(), getCallOptions(), request);
     }
 
@@ -5716,8 +5740,8 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deployIndex(
-        com.google.cloud.visionai.v1.DeployIndexRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.DeployIndexRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeployIndexMethod(), getCallOptions(), request);
     }
 
@@ -5729,8 +5753,8 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation undeployIndex(
-        com.google.cloud.visionai.v1.UndeployIndexRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.UndeployIndexRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUndeployIndexMethod(), getCallOptions(), request);
     }
 
@@ -5742,8 +5766,9 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createCollection(
-        com.google.cloud.visionai.v1.CreateCollectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.CreateCollectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCollectionMethod(), getCallOptions(), request);
     }
 
@@ -5755,8 +5780,9 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteCollection(
-        com.google.cloud.visionai.v1.DeleteCollectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.DeleteCollectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteCollectionMethod(), getCallOptions(), request);
     }
 
@@ -5768,8 +5794,8 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.Collection getCollection(
-        com.google.cloud.visionai.v1.GetCollectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.GetCollectionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCollectionMethod(), getCallOptions(), request);
     }
 
@@ -5781,8 +5807,9 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.Collection updateCollection(
-        com.google.cloud.visionai.v1.UpdateCollectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.UpdateCollectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateCollectionMethod(), getCallOptions(), request);
     }
 
@@ -5794,8 +5821,9 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.ListCollectionsResponse listCollections(
-        com.google.cloud.visionai.v1.ListCollectionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.ListCollectionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCollectionsMethod(), getCallOptions(), request);
     }
 
@@ -5807,8 +5835,9 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.AddCollectionItemResponse addCollectionItem(
-        com.google.cloud.visionai.v1.AddCollectionItemRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.AddCollectionItemRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAddCollectionItemMethod(), getCallOptions(), request);
     }
 
@@ -5820,8 +5849,9 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.RemoveCollectionItemResponse removeCollectionItem(
-        com.google.cloud.visionai.v1.RemoveCollectionItemRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.RemoveCollectionItemRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRemoveCollectionItemMethod(), getCallOptions(), request);
     }
 
@@ -5833,8 +5863,9 @@ public final class WarehouseGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.ViewCollectionItemsResponse viewCollectionItems(
-        com.google.cloud.visionai.v1.ViewCollectionItemsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.ViewCollectionItemsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getViewCollectionItemsMethod(), getCallOptions(), request);
     }
   }

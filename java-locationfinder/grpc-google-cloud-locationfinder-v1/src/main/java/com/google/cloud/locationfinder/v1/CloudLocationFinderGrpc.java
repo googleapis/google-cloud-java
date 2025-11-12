@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service describing handlers for resources
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/locationfinder/v1/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CloudLocationFinderGrpc {
 
@@ -407,8 +404,9 @@ public final class CloudLocationFinderGrpc {
      * </pre>
      */
     public com.google.cloud.locationfinder.v1.ListCloudLocationsResponse listCloudLocations(
-        com.google.cloud.locationfinder.v1.ListCloudLocationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.locationfinder.v1.ListCloudLocationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCloudLocationsMethod(), getCallOptions(), request);
     }
 
@@ -420,8 +418,9 @@ public final class CloudLocationFinderGrpc {
      * </pre>
      */
     public com.google.cloud.locationfinder.v1.CloudLocation getCloudLocation(
-        com.google.cloud.locationfinder.v1.GetCloudLocationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.locationfinder.v1.GetCloudLocationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCloudLocationMethod(), getCallOptions(), request);
     }
 
@@ -433,8 +432,9 @@ public final class CloudLocationFinderGrpc {
      * </pre>
      */
     public com.google.cloud.locationfinder.v1.SearchCloudLocationsResponse searchCloudLocations(
-        com.google.cloud.locationfinder.v1.SearchCloudLocationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.locationfinder.v1.SearchCloudLocationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchCloudLocationsMethod(), getCallOptions(), request);
     }
   }

@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Manages the API keys associated with projects.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/api/apikeys/v2/apikeys.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ApiKeysGrpc {
 
@@ -757,8 +754,8 @@ public final class ApiKeysGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createKey(
-        com.google.api.apikeys.v2.CreateKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.apikeys.v2.CreateKeyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateKeyMethod(), getCallOptions(), request);
     }
 
@@ -773,8 +770,8 @@ public final class ApiKeysGrpc {
      * </pre>
      */
     public com.google.api.apikeys.v2.ListKeysResponse listKeys(
-        com.google.api.apikeys.v2.ListKeysRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.apikeys.v2.ListKeysRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListKeysMethod(), getCallOptions(), request);
     }
 
@@ -788,8 +785,9 @@ public final class ApiKeysGrpc {
      * location is `global`.
      * </pre>
      */
-    public com.google.api.apikeys.v2.Key getKey(com.google.api.apikeys.v2.GetKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.api.apikeys.v2.Key getKey(com.google.api.apikeys.v2.GetKeyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetKeyMethod(), getCallOptions(), request);
     }
 
@@ -803,8 +801,8 @@ public final class ApiKeysGrpc {
      * </pre>
      */
     public com.google.api.apikeys.v2.GetKeyStringResponse getKeyString(
-        com.google.api.apikeys.v2.GetKeyStringRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.apikeys.v2.GetKeyStringRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetKeyStringMethod(), getCallOptions(), request);
     }
 
@@ -819,8 +817,8 @@ public final class ApiKeysGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateKey(
-        com.google.api.apikeys.v2.UpdateKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.apikeys.v2.UpdateKeyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateKeyMethod(), getCallOptions(), request);
     }
 
@@ -835,8 +833,8 @@ public final class ApiKeysGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteKey(
-        com.google.api.apikeys.v2.DeleteKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.apikeys.v2.DeleteKeyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteKeyMethod(), getCallOptions(), request);
     }
 
@@ -850,8 +848,8 @@ public final class ApiKeysGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation undeleteKey(
-        com.google.api.apikeys.v2.UndeleteKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.apikeys.v2.UndeleteKeyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUndeleteKeyMethod(), getCallOptions(), request);
     }
 
@@ -867,8 +865,8 @@ public final class ApiKeysGrpc {
      * </pre>
      */
     public com.google.api.apikeys.v2.LookupKeyResponse lookupKey(
-        com.google.api.apikeys.v2.LookupKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.apikeys.v2.LookupKeyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getLookupKeyMethod(), getCallOptions(), request);
     }
   }

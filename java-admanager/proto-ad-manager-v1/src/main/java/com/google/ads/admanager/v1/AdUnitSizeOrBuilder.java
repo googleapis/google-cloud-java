@@ -31,7 +31,9 @@ public interface AdUnitSizeOrBuilder
    * Required. The Size of the AdUnit.
    * </pre>
    *
-   * <code>.google.ads.admanager.v1.Size size = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * optional .google.ads.admanager.v1.Size size = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the size field is set.
    */
@@ -44,7 +46,9 @@ public interface AdUnitSizeOrBuilder
    * Required. The Size of the AdUnit.
    * </pre>
    *
-   * <code>.google.ads.admanager.v1.Size size = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * optional .google.ads.admanager.v1.Size size = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The size.
    */
@@ -57,7 +61,9 @@ public interface AdUnitSizeOrBuilder
    * Required. The Size of the AdUnit.
    * </pre>
    *
-   * <code>.google.ads.admanager.v1.Size size = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * optional .google.ads.admanager.v1.Size size = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.ads.admanager.v1.SizeOrBuilder getSizeOrBuilder();
 
@@ -69,7 +75,22 @@ public interface AdUnitSizeOrBuilder
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType environment_type = 2 [(.google.api.field_behavior) = REQUIRED];
+   * optional .google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType environment_type = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the environmentType field is set.
+   */
+  boolean hasEnvironmentType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The EnvironmentType of the AdUnit
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType environment_type = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The enum numeric value on the wire for environmentType.
@@ -84,7 +105,7 @@ public interface AdUnitSizeOrBuilder
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType environment_type = 2 [(.google.api.field_behavior) = REQUIRED];
+   * optional .google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType environment_type = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The environmentType.

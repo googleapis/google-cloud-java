@@ -28,8 +28,7 @@ public interface TargetResourceCreationConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Config to create a new folder to be used as the target_resource
-   * of a deployment.
+   * Optional. The configuration that's required to create a folder.
    * </pre>
    *
    * <code>
@@ -44,8 +43,7 @@ public interface TargetResourceCreationConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Config to create a new folder to be used as the target_resource
-   * of a deployment.
+   * Optional. The configuration that's required to create a folder.
    * </pre>
    *
    * <code>
@@ -60,8 +58,7 @@ public interface TargetResourceCreationConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Config to create a new folder to be used as the target_resource
-   * of a deployment.
+   * Optional. The configuration that's required to create a folder.
    * </pre>
    *
    * <code>
@@ -75,8 +72,7 @@ public interface TargetResourceCreationConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Config to create a new project to be used as the
-   * target_resource of a deployment.
+   * Optional. The configuration that's required to create a project.
    * </pre>
    *
    * <code>
@@ -91,8 +87,7 @@ public interface TargetResourceCreationConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Config to create a new project to be used as the
-   * target_resource of a deployment.
+   * Optional. The configuration that's required to create a project.
    * </pre>
    *
    * <code>
@@ -107,8 +102,7 @@ public interface TargetResourceCreationConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Config to create a new project to be used as the
-   * target_resource of a deployment.
+   * Optional. The configuration that's required to create a project.
    * </pre>
    *
    * <code>

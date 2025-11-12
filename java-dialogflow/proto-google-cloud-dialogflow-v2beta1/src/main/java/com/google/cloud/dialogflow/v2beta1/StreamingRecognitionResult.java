@@ -136,16 +136,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Message contains DTMF digits.
-     * </pre>
-     *
-     * <code>DTMF_DIGITS = 3;</code>
-     */
-    DTMF_DIGITS(3),
-    /**
-     *
-     *
-     * <pre>
      * This event indicates that the server has detected the end of the user's
      * speech utterance and expects no additional speech. Therefore, the server
      * will not process additional audio (although it may subsequently return
@@ -158,6 +148,16 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * <code>END_OF_SINGLE_UTTERANCE = 2;</code>
      */
     END_OF_SINGLE_UTTERANCE(2),
+    /**
+     *
+     *
+     * <pre>
+     * Message contains DTMF digits.
+     * </pre>
+     *
+     * <code>DTMF_DIGITS = 3;</code>
+     */
+    DTMF_DIGITS(3),
     /**
      *
      *
@@ -199,17 +199,6 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Message contains DTMF digits.
-     * </pre>
-     *
-     * <code>DTMF_DIGITS = 3;</code>
-     */
-    public static final int DTMF_DIGITS_VALUE = 3;
-
-    /**
-     *
-     *
-     * <pre>
      * This event indicates that the server has detected the end of the user's
      * speech utterance and expects no additional speech. Therefore, the server
      * will not process additional audio (although it may subsequently return
@@ -222,6 +211,17 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * <code>END_OF_SINGLE_UTTERANCE = 2;</code>
      */
     public static final int END_OF_SINGLE_UTTERANCE_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Message contains DTMF digits.
+     * </pre>
+     *
+     * <code>DTMF_DIGITS = 3;</code>
+     */
+    public static final int DTMF_DIGITS_VALUE = 3;
 
     /**
      *
@@ -264,10 +264,10 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
           return MESSAGE_TYPE_UNSPECIFIED;
         case 1:
           return TRANSCRIPT;
-        case 3:
-          return DTMF_DIGITS;
         case 2:
           return END_OF_SINGLE_UTTERANCE;
+        case 3:
+          return DTMF_DIGITS;
         case 4:
           return PARTIAL_DTMF_DIGITS;
         default:

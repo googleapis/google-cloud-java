@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Provides a service for Flex templates.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/dataflow/v1beta3/templates.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class FlexTemplatesServiceGrpc {
 
@@ -245,8 +242,9 @@ public final class FlexTemplatesServiceGrpc {
      * </pre>
      */
     public com.google.dataflow.v1beta3.LaunchFlexTemplateResponse launchFlexTemplate(
-        com.google.dataflow.v1beta3.LaunchFlexTemplateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.dataflow.v1beta3.LaunchFlexTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getLaunchFlexTemplateMethod(), getCallOptions(), request);
     }
   }

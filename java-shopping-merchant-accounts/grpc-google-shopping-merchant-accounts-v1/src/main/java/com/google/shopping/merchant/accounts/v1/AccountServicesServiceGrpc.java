@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to support AccountService API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/accounts/v1/accountservices.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AccountServicesServiceGrpc {
 
@@ -580,8 +577,9 @@ public final class AccountServicesServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1.AccountService getAccountService(
-        com.google.shopping.merchant.accounts.v1.GetAccountServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.GetAccountServiceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAccountServiceMethod(), getCallOptions(), request);
     }
 
@@ -593,8 +591,9 @@ public final class AccountServicesServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1.ListAccountServicesResponse listAccountServices(
-        com.google.shopping.merchant.accounts.v1.ListAccountServicesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.ListAccountServicesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAccountServicesMethod(), getCallOptions(), request);
     }
 
@@ -606,8 +605,9 @@ public final class AccountServicesServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1.AccountService proposeAccountService(
-        com.google.shopping.merchant.accounts.v1.ProposeAccountServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.ProposeAccountServiceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getProposeAccountServiceMethod(), getCallOptions(), request);
     }
 
@@ -619,8 +619,9 @@ public final class AccountServicesServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1.AccountService approveAccountService(
-        com.google.shopping.merchant.accounts.v1.ApproveAccountServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.ApproveAccountServiceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getApproveAccountServiceMethod(), getCallOptions(), request);
     }
 
@@ -633,8 +634,9 @@ public final class AccountServicesServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty rejectAccountService(
-        com.google.shopping.merchant.accounts.v1.RejectAccountServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.RejectAccountServiceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRejectAccountServiceMethod(), getCallOptions(), request);
     }
   }

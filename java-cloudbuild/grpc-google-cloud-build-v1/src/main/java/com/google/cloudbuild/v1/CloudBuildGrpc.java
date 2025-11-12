@@ -29,9 +29,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * determine the status of the build.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/devtools/cloudbuild/v1/cloudbuild.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CloudBuildGrpc {
 
@@ -1574,8 +1571,8 @@ public final class CloudBuildGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createBuild(
-        com.google.cloudbuild.v1.CreateBuildRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloudbuild.v1.CreateBuildRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateBuildMethod(), getCallOptions(), request);
     }
 
@@ -1588,9 +1585,9 @@ public final class CloudBuildGrpc {
      * `FAILURE`, or `WORKING`), and timing information.
      * </pre>
      */
-    public com.google.cloudbuild.v1.Build getBuild(
-        com.google.cloudbuild.v1.GetBuildRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.cloudbuild.v1.Build getBuild(com.google.cloudbuild.v1.GetBuildRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetBuildMethod(), getCallOptions(), request);
     }
 
@@ -1604,8 +1601,8 @@ public final class CloudBuildGrpc {
      * </pre>
      */
     public com.google.cloudbuild.v1.ListBuildsResponse listBuilds(
-        com.google.cloudbuild.v1.ListBuildsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloudbuild.v1.ListBuildsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListBuildsMethod(), getCallOptions(), request);
     }
 
@@ -1617,8 +1614,8 @@ public final class CloudBuildGrpc {
      * </pre>
      */
     public com.google.cloudbuild.v1.Build cancelBuild(
-        com.google.cloudbuild.v1.CancelBuildRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloudbuild.v1.CancelBuildRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCancelBuildMethod(), getCallOptions(), request);
     }
 
@@ -1649,8 +1646,8 @@ public final class CloudBuildGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation retryBuild(
-        com.google.cloudbuild.v1.RetryBuildRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloudbuild.v1.RetryBuildRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRetryBuildMethod(), getCallOptions(), request);
     }
 
@@ -1665,8 +1662,8 @@ public final class CloudBuildGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation approveBuild(
-        com.google.cloudbuild.v1.ApproveBuildRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloudbuild.v1.ApproveBuildRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getApproveBuildMethod(), getCallOptions(), request);
     }
 
@@ -1679,8 +1676,8 @@ public final class CloudBuildGrpc {
      * </pre>
      */
     public com.google.cloudbuild.v1.BuildTrigger createBuildTrigger(
-        com.google.cloudbuild.v1.CreateBuildTriggerRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloudbuild.v1.CreateBuildTriggerRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateBuildTriggerMethod(), getCallOptions(), request);
     }
 
@@ -1693,8 +1690,8 @@ public final class CloudBuildGrpc {
      * </pre>
      */
     public com.google.cloudbuild.v1.BuildTrigger getBuildTrigger(
-        com.google.cloudbuild.v1.GetBuildTriggerRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloudbuild.v1.GetBuildTriggerRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetBuildTriggerMethod(), getCallOptions(), request);
     }
 
@@ -1707,8 +1704,8 @@ public final class CloudBuildGrpc {
      * </pre>
      */
     public com.google.cloudbuild.v1.ListBuildTriggersResponse listBuildTriggers(
-        com.google.cloudbuild.v1.ListBuildTriggersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloudbuild.v1.ListBuildTriggersRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListBuildTriggersMethod(), getCallOptions(), request);
     }
 
@@ -1721,8 +1718,8 @@ public final class CloudBuildGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteBuildTrigger(
-        com.google.cloudbuild.v1.DeleteBuildTriggerRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloudbuild.v1.DeleteBuildTriggerRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteBuildTriggerMethod(), getCallOptions(), request);
     }
 
@@ -1735,8 +1732,8 @@ public final class CloudBuildGrpc {
      * </pre>
      */
     public com.google.cloudbuild.v1.BuildTrigger updateBuildTrigger(
-        com.google.cloudbuild.v1.UpdateBuildTriggerRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloudbuild.v1.UpdateBuildTriggerRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateBuildTriggerMethod(), getCallOptions(), request);
     }
 
@@ -1753,8 +1750,8 @@ public final class CloudBuildGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation runBuildTrigger(
-        com.google.cloudbuild.v1.RunBuildTriggerRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloudbuild.v1.RunBuildTriggerRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRunBuildTriggerMethod(), getCallOptions(), request);
     }
 
@@ -1767,8 +1764,9 @@ public final class CloudBuildGrpc {
      * </pre>
      */
     public com.google.cloudbuild.v1.ReceiveTriggerWebhookResponse receiveTriggerWebhook(
-        com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReceiveTriggerWebhookMethod(), getCallOptions(), request);
     }
 
@@ -1780,8 +1778,8 @@ public final class CloudBuildGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createWorkerPool(
-        com.google.cloudbuild.v1.CreateWorkerPoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloudbuild.v1.CreateWorkerPoolRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateWorkerPoolMethod(), getCallOptions(), request);
     }
 
@@ -1793,8 +1791,8 @@ public final class CloudBuildGrpc {
      * </pre>
      */
     public com.google.cloudbuild.v1.WorkerPool getWorkerPool(
-        com.google.cloudbuild.v1.GetWorkerPoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloudbuild.v1.GetWorkerPoolRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetWorkerPoolMethod(), getCallOptions(), request);
     }
 
@@ -1806,8 +1804,8 @@ public final class CloudBuildGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteWorkerPool(
-        com.google.cloudbuild.v1.DeleteWorkerPoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloudbuild.v1.DeleteWorkerPoolRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteWorkerPoolMethod(), getCallOptions(), request);
     }
 
@@ -1819,8 +1817,8 @@ public final class CloudBuildGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateWorkerPool(
-        com.google.cloudbuild.v1.UpdateWorkerPoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloudbuild.v1.UpdateWorkerPoolRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateWorkerPoolMethod(), getCallOptions(), request);
     }
 
@@ -1832,8 +1830,8 @@ public final class CloudBuildGrpc {
      * </pre>
      */
     public com.google.cloudbuild.v1.ListWorkerPoolsResponse listWorkerPools(
-        com.google.cloudbuild.v1.ListWorkerPoolsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloudbuild.v1.ListWorkerPoolsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListWorkerPoolsMethod(), getCallOptions(), request);
     }
   }

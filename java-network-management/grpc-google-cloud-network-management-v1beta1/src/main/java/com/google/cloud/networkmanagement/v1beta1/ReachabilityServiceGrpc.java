@@ -30,9 +30,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * to troubleshoot connectivity issues.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/networkmanagement/v1beta1/reachability.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ReachabilityServiceGrpc {
 
@@ -742,8 +739,9 @@ public final class ReachabilityServiceGrpc {
      */
     public com.google.cloud.networkmanagement.v1beta1.ListConnectivityTestsResponse
         listConnectivityTests(
-            com.google.cloud.networkmanagement.v1beta1.ListConnectivityTestsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.networkmanagement.v1beta1.ListConnectivityTestsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListConnectivityTestsMethod(), getCallOptions(), request);
     }
 
@@ -755,8 +753,9 @@ public final class ReachabilityServiceGrpc {
      * </pre>
      */
     public com.google.cloud.networkmanagement.v1beta1.ConnectivityTest getConnectivityTest(
-        com.google.cloud.networkmanagement.v1beta1.GetConnectivityTestRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkmanagement.v1beta1.GetConnectivityTestRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetConnectivityTestMethod(), getCallOptions(), request);
     }
 
@@ -778,8 +777,9 @@ public final class ReachabilityServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createConnectivityTest(
-        com.google.cloud.networkmanagement.v1beta1.CreateConnectivityTestRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkmanagement.v1beta1.CreateConnectivityTestRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateConnectivityTestMethod(), getCallOptions(), request);
     }
 
@@ -802,8 +802,9 @@ public final class ReachabilityServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateConnectivityTest(
-        com.google.cloud.networkmanagement.v1beta1.UpdateConnectivityTestRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkmanagement.v1beta1.UpdateConnectivityTestRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateConnectivityTestMethod(), getCallOptions(), request);
     }
 
@@ -824,8 +825,9 @@ public final class ReachabilityServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation rerunConnectivityTest(
-        com.google.cloud.networkmanagement.v1beta1.RerunConnectivityTestRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkmanagement.v1beta1.RerunConnectivityTestRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRerunConnectivityTestMethod(), getCallOptions(), request);
     }
 
@@ -837,8 +839,9 @@ public final class ReachabilityServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteConnectivityTest(
-        com.google.cloud.networkmanagement.v1beta1.DeleteConnectivityTestRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkmanagement.v1beta1.DeleteConnectivityTestRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteConnectivityTestMethod(), getCallOptions(), request);
     }
   }

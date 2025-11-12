@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service handles auto completion.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/talent/v4/completion_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CompletionGrpc {
 
@@ -238,8 +235,8 @@ public final class CompletionGrpc {
      * </pre>
      */
     public com.google.cloud.talent.v4.CompleteQueryResponse completeQuery(
-        com.google.cloud.talent.v4.CompleteQueryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.talent.v4.CompleteQueryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCompleteQueryMethod(), getCallOptions(), request);
     }
   }

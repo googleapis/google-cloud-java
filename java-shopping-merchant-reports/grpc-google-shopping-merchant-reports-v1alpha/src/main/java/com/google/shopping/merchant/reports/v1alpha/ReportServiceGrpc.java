@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * performance, and their competitive environment on Google.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/reports/v1alpha/reports.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ReportServiceGrpc {
 
@@ -248,8 +245,9 @@ public final class ReportServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.reports.v1alpha.SearchResponse search(
-        com.google.shopping.merchant.reports.v1alpha.SearchRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.reports.v1alpha.SearchRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchMethod(), getCallOptions(), request);
     }
   }

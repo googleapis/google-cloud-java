@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to manage customer specific RuleSets.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/contentwarehouse/v1/ruleset_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class RuleSetServiceGrpc {
 
@@ -546,8 +543,9 @@ public final class RuleSetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.contentwarehouse.v1.RuleSet createRuleSet(
-        com.google.cloud.contentwarehouse.v1.CreateRuleSetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contentwarehouse.v1.CreateRuleSetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateRuleSetMethod(), getCallOptions(), request);
     }
 
@@ -559,8 +557,9 @@ public final class RuleSetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.contentwarehouse.v1.RuleSet getRuleSet(
-        com.google.cloud.contentwarehouse.v1.GetRuleSetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contentwarehouse.v1.GetRuleSetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRuleSetMethod(), getCallOptions(), request);
     }
 
@@ -573,8 +572,9 @@ public final class RuleSetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.contentwarehouse.v1.RuleSet updateRuleSet(
-        com.google.cloud.contentwarehouse.v1.UpdateRuleSetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contentwarehouse.v1.UpdateRuleSetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateRuleSetMethod(), getCallOptions(), request);
     }
 
@@ -586,8 +586,9 @@ public final class RuleSetServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteRuleSet(
-        com.google.cloud.contentwarehouse.v1.DeleteRuleSetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contentwarehouse.v1.DeleteRuleSetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteRuleSetMethod(), getCallOptions(), request);
     }
 
@@ -599,8 +600,9 @@ public final class RuleSetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.contentwarehouse.v1.ListRuleSetsResponse listRuleSets(
-        com.google.cloud.contentwarehouse.v1.ListRuleSetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contentwarehouse.v1.ListRuleSetsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRuleSetsMethod(), getCallOptions(), request);
     }
   }

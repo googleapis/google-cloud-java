@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * DataTransferService is the service for the Data Transfer API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/networkconnectivity/v1/data_transfer.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DataTransferServiceGrpc {
 
@@ -1209,8 +1206,9 @@ public final class DataTransferServiceGrpc {
     public com.google.cloud.networkconnectivity.v1.ListMulticloudDataTransferConfigsResponse
         listMulticloudDataTransferConfigs(
             com.google.cloud.networkconnectivity.v1.ListMulticloudDataTransferConfigsRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMulticloudDataTransferConfigsMethod(), getCallOptions(), request);
     }
 
@@ -1223,9 +1221,9 @@ public final class DataTransferServiceGrpc {
      */
     public com.google.cloud.networkconnectivity.v1.MulticloudDataTransferConfig
         getMulticloudDataTransferConfig(
-            com.google.cloud.networkconnectivity.v1.GetMulticloudDataTransferConfigRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.networkconnectivity.v1.GetMulticloudDataTransferConfigRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetMulticloudDataTransferConfigMethod(), getCallOptions(), request);
     }
 
@@ -1238,8 +1236,9 @@ public final class DataTransferServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createMulticloudDataTransferConfig(
-        com.google.cloud.networkconnectivity.v1.CreateMulticloudDataTransferConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkconnectivity.v1.CreateMulticloudDataTransferConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateMulticloudDataTransferConfigMethod(), getCallOptions(), request);
     }
 
@@ -1252,8 +1251,9 @@ public final class DataTransferServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateMulticloudDataTransferConfig(
-        com.google.cloud.networkconnectivity.v1.UpdateMulticloudDataTransferConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkconnectivity.v1.UpdateMulticloudDataTransferConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateMulticloudDataTransferConfigMethod(), getCallOptions(), request);
     }
 
@@ -1265,8 +1265,9 @@ public final class DataTransferServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteMulticloudDataTransferConfig(
-        com.google.cloud.networkconnectivity.v1.DeleteMulticloudDataTransferConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkconnectivity.v1.DeleteMulticloudDataTransferConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteMulticloudDataTransferConfigMethod(), getCallOptions(), request);
     }
 
@@ -1278,8 +1279,9 @@ public final class DataTransferServiceGrpc {
      * </pre>
      */
     public com.google.cloud.networkconnectivity.v1.ListDestinationsResponse listDestinations(
-        com.google.cloud.networkconnectivity.v1.ListDestinationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkconnectivity.v1.ListDestinationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDestinationsMethod(), getCallOptions(), request);
     }
 
@@ -1291,8 +1293,9 @@ public final class DataTransferServiceGrpc {
      * </pre>
      */
     public com.google.cloud.networkconnectivity.v1.Destination getDestination(
-        com.google.cloud.networkconnectivity.v1.GetDestinationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkconnectivity.v1.GetDestinationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDestinationMethod(), getCallOptions(), request);
     }
 
@@ -1304,8 +1307,9 @@ public final class DataTransferServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createDestination(
-        com.google.cloud.networkconnectivity.v1.CreateDestinationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkconnectivity.v1.CreateDestinationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDestinationMethod(), getCallOptions(), request);
     }
 
@@ -1317,8 +1321,9 @@ public final class DataTransferServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateDestination(
-        com.google.cloud.networkconnectivity.v1.UpdateDestinationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkconnectivity.v1.UpdateDestinationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDestinationMethod(), getCallOptions(), request);
     }
 
@@ -1330,8 +1335,9 @@ public final class DataTransferServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteDestination(
-        com.google.cloud.networkconnectivity.v1.DeleteDestinationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkconnectivity.v1.DeleteDestinationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDestinationMethod(), getCallOptions(), request);
     }
 
@@ -1346,8 +1352,9 @@ public final class DataTransferServiceGrpc {
     public com.google.cloud.networkconnectivity.v1.MulticloudDataTransferSupportedService
         getMulticloudDataTransferSupportedService(
             com.google.cloud.networkconnectivity.v1.GetMulticloudDataTransferSupportedServiceRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getGetMulticloudDataTransferSupportedServiceMethod(),
           getCallOptions(),
@@ -1367,8 +1374,9 @@ public final class DataTransferServiceGrpc {
         listMulticloudDataTransferSupportedServices(
             com.google.cloud.networkconnectivity.v1
                     .ListMulticloudDataTransferSupportedServicesRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getListMulticloudDataTransferSupportedServicesMethod(),
           getCallOptions(),

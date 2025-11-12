@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * to create and manage Anthos clusters that run on Azure infrastructure.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/gkemulticloud/v1/azure_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AzureClustersGrpc {
 
@@ -1765,8 +1762,9 @@ public final class AzureClustersGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createAzureClient(
-        com.google.cloud.gkemulticloud.v1.CreateAzureClientRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.CreateAzureClientRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAzureClientMethod(), getCallOptions(), request);
     }
 
@@ -1779,8 +1777,9 @@ public final class AzureClustersGrpc {
      * </pre>
      */
     public com.google.cloud.gkemulticloud.v1.AzureClient getAzureClient(
-        com.google.cloud.gkemulticloud.v1.GetAzureClientRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.GetAzureClientRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAzureClientMethod(), getCallOptions(), request);
     }
 
@@ -1793,8 +1792,9 @@ public final class AzureClustersGrpc {
      * </pre>
      */
     public com.google.cloud.gkemulticloud.v1.ListAzureClientsResponse listAzureClients(
-        com.google.cloud.gkemulticloud.v1.ListAzureClientsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.ListAzureClientsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAzureClientsMethod(), getCallOptions(), request);
     }
 
@@ -1812,8 +1812,9 @@ public final class AzureClustersGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteAzureClient(
-        com.google.cloud.gkemulticloud.v1.DeleteAzureClientRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.DeleteAzureClientRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAzureClientMethod(), getCallOptions(), request);
     }
 
@@ -1829,8 +1830,9 @@ public final class AzureClustersGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createAzureCluster(
-        com.google.cloud.gkemulticloud.v1.CreateAzureClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.CreateAzureClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAzureClusterMethod(), getCallOptions(), request);
     }
 
@@ -1842,8 +1844,9 @@ public final class AzureClustersGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateAzureCluster(
-        com.google.cloud.gkemulticloud.v1.UpdateAzureClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.UpdateAzureClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAzureClusterMethod(), getCallOptions(), request);
     }
 
@@ -1856,8 +1859,9 @@ public final class AzureClustersGrpc {
      * </pre>
      */
     public com.google.cloud.gkemulticloud.v1.AzureCluster getAzureCluster(
-        com.google.cloud.gkemulticloud.v1.GetAzureClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.GetAzureClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAzureClusterMethod(), getCallOptions(), request);
     }
 
@@ -1870,8 +1874,9 @@ public final class AzureClustersGrpc {
      * </pre>
      */
     public com.google.cloud.gkemulticloud.v1.ListAzureClustersResponse listAzureClusters(
-        com.google.cloud.gkemulticloud.v1.ListAzureClustersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.ListAzureClustersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAzureClustersMethod(), getCallOptions(), request);
     }
 
@@ -1889,8 +1894,9 @@ public final class AzureClustersGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteAzureCluster(
-        com.google.cloud.gkemulticloud.v1.DeleteAzureClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.DeleteAzureClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAzureClusterMethod(), getCallOptions(), request);
     }
 
@@ -1903,8 +1909,9 @@ public final class AzureClustersGrpc {
      */
     public com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenResponse
         generateAzureClusterAgentToken(
-            com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateAzureClusterAgentTokenMethod(), getCallOptions(), request);
     }
 
@@ -1918,8 +1925,9 @@ public final class AzureClustersGrpc {
      */
     public com.google.cloud.gkemulticloud.v1.GenerateAzureAccessTokenResponse
         generateAzureAccessToken(
-            com.google.cloud.gkemulticloud.v1.GenerateAzureAccessTokenRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.gkemulticloud.v1.GenerateAzureAccessTokenRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateAzureAccessTokenMethod(), getCallOptions(), request);
     }
 
@@ -1936,8 +1944,9 @@ public final class AzureClustersGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createAzureNodePool(
-        com.google.cloud.gkemulticloud.v1.CreateAzureNodePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.CreateAzureNodePoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAzureNodePoolMethod(), getCallOptions(), request);
     }
 
@@ -1949,8 +1958,9 @@ public final class AzureClustersGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateAzureNodePool(
-        com.google.cloud.gkemulticloud.v1.UpdateAzureNodePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.UpdateAzureNodePoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAzureNodePoolMethod(), getCallOptions(), request);
     }
 
@@ -1963,8 +1973,9 @@ public final class AzureClustersGrpc {
      * </pre>
      */
     public com.google.cloud.gkemulticloud.v1.AzureNodePool getAzureNodePool(
-        com.google.cloud.gkemulticloud.v1.GetAzureNodePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.GetAzureNodePoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAzureNodePoolMethod(), getCallOptions(), request);
     }
 
@@ -1978,8 +1989,9 @@ public final class AzureClustersGrpc {
      * </pre>
      */
     public com.google.cloud.gkemulticloud.v1.ListAzureNodePoolsResponse listAzureNodePools(
-        com.google.cloud.gkemulticloud.v1.ListAzureNodePoolsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.ListAzureNodePoolsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAzureNodePoolsMethod(), getCallOptions(), request);
     }
 
@@ -1995,8 +2007,9 @@ public final class AzureClustersGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteAzureNodePool(
-        com.google.cloud.gkemulticloud.v1.DeleteAzureNodePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.DeleteAzureNodePoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAzureNodePoolMethod(), getCallOptions(), request);
     }
 
@@ -2012,8 +2025,9 @@ public final class AzureClustersGrpc {
      * </pre>
      */
     public com.google.cloud.gkemulticloud.v1.AzureOpenIdConfig getAzureOpenIdConfig(
-        com.google.cloud.gkemulticloud.v1.GetAzureOpenIdConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.GetAzureOpenIdConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAzureOpenIdConfigMethod(), getCallOptions(), request);
     }
 
@@ -2026,8 +2040,9 @@ public final class AzureClustersGrpc {
      * </pre>
      */
     public com.google.cloud.gkemulticloud.v1.AzureJsonWebKeys getAzureJsonWebKeys(
-        com.google.cloud.gkemulticloud.v1.GetAzureJsonWebKeysRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.GetAzureJsonWebKeysRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAzureJsonWebKeysMethod(), getCallOptions(), request);
     }
 
@@ -2040,8 +2055,9 @@ public final class AzureClustersGrpc {
      * </pre>
      */
     public com.google.cloud.gkemulticloud.v1.AzureServerConfig getAzureServerConfig(
-        com.google.cloud.gkemulticloud.v1.GetAzureServerConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.GetAzureServerConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAzureServerConfigMethod(), getCallOptions(), request);
     }
   }

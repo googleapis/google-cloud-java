@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * This service works for products with online channel only.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/products/v1beta/productinputs.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ProductInputsServiceGrpc {
 
@@ -441,8 +438,9 @@ public final class ProductInputsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.products.v1beta.ProductInput insertProductInput(
-        com.google.shopping.merchant.products.v1beta.InsertProductInputRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.products.v1beta.InsertProductInputRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getInsertProductInputMethod(), getCallOptions(), request);
     }
 
@@ -456,8 +454,9 @@ public final class ProductInputsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.products.v1beta.ProductInput updateProductInput(
-        com.google.shopping.merchant.products.v1beta.UpdateProductInputRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.products.v1beta.UpdateProductInputRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateProductInputMethod(), getCallOptions(), request);
     }
 
@@ -471,8 +470,9 @@ public final class ProductInputsServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteProductInput(
-        com.google.shopping.merchant.products.v1beta.DeleteProductInputRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.products.v1beta.DeleteProductInputRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteProductInputMethod(), getCallOptions(), request);
     }
   }

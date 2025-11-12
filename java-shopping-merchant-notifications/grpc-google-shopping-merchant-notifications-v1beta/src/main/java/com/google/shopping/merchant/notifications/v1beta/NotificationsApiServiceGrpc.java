@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to manage notification subscriptions for merchants
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/notifications/v1beta/notificationsapi.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class NotificationsApiServiceGrpc {
 
@@ -652,8 +649,9 @@ public final class NotificationsApiServiceGrpc {
     public com.google.shopping.merchant.notifications.v1beta.NotificationSubscription
         getNotificationSubscription(
             com.google.shopping.merchant.notifications.v1beta.GetNotificationSubscriptionRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetNotificationSubscriptionMethod(), getCallOptions(), request);
     }
 
@@ -677,8 +675,9 @@ public final class NotificationsApiServiceGrpc {
     public com.google.shopping.merchant.notifications.v1beta.NotificationSubscription
         createNotificationSubscription(
             com.google.shopping.merchant.notifications.v1beta.CreateNotificationSubscriptionRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateNotificationSubscriptionMethod(), getCallOptions(), request);
     }
 
@@ -692,8 +691,9 @@ public final class NotificationsApiServiceGrpc {
     public com.google.shopping.merchant.notifications.v1beta.NotificationSubscription
         updateNotificationSubscription(
             com.google.shopping.merchant.notifications.v1beta.UpdateNotificationSubscriptionRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateNotificationSubscriptionMethod(), getCallOptions(), request);
     }
 
@@ -706,8 +706,9 @@ public final class NotificationsApiServiceGrpc {
      */
     public com.google.protobuf.Empty deleteNotificationSubscription(
         com.google.shopping.merchant.notifications.v1beta.DeleteNotificationSubscriptionRequest
-            request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteNotificationSubscriptionMethod(), getCallOptions(), request);
     }
 
@@ -721,8 +722,9 @@ public final class NotificationsApiServiceGrpc {
     public com.google.shopping.merchant.notifications.v1beta.ListNotificationSubscriptionsResponse
         listNotificationSubscriptions(
             com.google.shopping.merchant.notifications.v1beta.ListNotificationSubscriptionsRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListNotificationSubscriptionsMethod(), getCallOptions(), request);
     }
   }

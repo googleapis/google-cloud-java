@@ -28,7 +28,7 @@ public interface ListFrameworksResponseOrBuilder
    *
    *
    * <pre>
-   * The list of Framework resources.
+   * The list of framework resources.
    * </pre>
    *
    * <code>repeated .google.cloud.cloudsecuritycompliance.v1.Framework frameworks = 1;</code>
@@ -39,7 +39,7 @@ public interface ListFrameworksResponseOrBuilder
    *
    *
    * <pre>
-   * The list of Framework resources.
+   * The list of framework resources.
    * </pre>
    *
    * <code>repeated .google.cloud.cloudsecuritycompliance.v1.Framework frameworks = 1;</code>
@@ -50,7 +50,7 @@ public interface ListFrameworksResponseOrBuilder
    *
    *
    * <pre>
-   * The list of Framework resources.
+   * The list of framework resources.
    * </pre>
    *
    * <code>repeated .google.cloud.cloudsecuritycompliance.v1.Framework frameworks = 1;</code>
@@ -61,7 +61,7 @@ public interface ListFrameworksResponseOrBuilder
    *
    *
    * <pre>
-   * The list of Framework resources.
+   * The list of framework resources.
    * </pre>
    *
    * <code>repeated .google.cloud.cloudsecuritycompliance.v1.Framework frameworks = 1;</code>
@@ -73,7 +73,7 @@ public interface ListFrameworksResponseOrBuilder
    *
    *
    * <pre>
-   * The list of Framework resources.
+   * The list of framework resources.
    * </pre>
    *
    * <code>repeated .google.cloud.cloudsecuritycompliance.v1.Framework frameworks = 1;</code>

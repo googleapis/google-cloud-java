@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service for managing memories for LLM applications.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1beta1/memory_bank_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class MemoryBankServiceGrpc {
 
@@ -693,8 +690,9 @@ public final class MemoryBankServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createMemory(
-        com.google.cloud.aiplatform.v1beta1.CreateMemoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.CreateMemoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateMemoryMethod(), getCallOptions(), request);
     }
 
@@ -706,8 +704,9 @@ public final class MemoryBankServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.Memory getMemory(
-        com.google.cloud.aiplatform.v1beta1.GetMemoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.GetMemoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetMemoryMethod(), getCallOptions(), request);
     }
 
@@ -719,8 +718,9 @@ public final class MemoryBankServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateMemory(
-        com.google.cloud.aiplatform.v1beta1.UpdateMemoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.UpdateMemoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateMemoryMethod(), getCallOptions(), request);
     }
 
@@ -732,8 +732,9 @@ public final class MemoryBankServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ListMemoriesResponse listMemories(
-        com.google.cloud.aiplatform.v1beta1.ListMemoriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.ListMemoriesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMemoriesMethod(), getCallOptions(), request);
     }
 
@@ -745,8 +746,9 @@ public final class MemoryBankServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteMemory(
-        com.google.cloud.aiplatform.v1beta1.DeleteMemoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.DeleteMemoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteMemoryMethod(), getCallOptions(), request);
     }
 
@@ -758,8 +760,9 @@ public final class MemoryBankServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation generateMemories(
-        com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.GenerateMemoriesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateMemoriesMethod(), getCallOptions(), request);
     }
 
@@ -771,8 +774,9 @@ public final class MemoryBankServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.RetrieveMemoriesResponse retrieveMemories(
-        com.google.cloud.aiplatform.v1beta1.RetrieveMemoriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.RetrieveMemoriesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRetrieveMemoriesMethod(), getCallOptions(), request);
     }
   }

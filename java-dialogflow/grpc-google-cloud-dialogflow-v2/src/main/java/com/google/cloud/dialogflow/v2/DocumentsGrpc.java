@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [Documents][google.cloud.dialogflow.v2.Document].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/v2/document.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DocumentsGrpc {
 
@@ -840,8 +837,9 @@ public final class DocumentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.ListDocumentsResponse listDocuments(
-        com.google.cloud.dialogflow.v2.ListDocumentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.ListDocumentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDocumentsMethod(), getCallOptions(), request);
     }
 
@@ -853,8 +851,8 @@ public final class DocumentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.Document getDocument(
-        com.google.cloud.dialogflow.v2.GetDocumentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.GetDocumentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDocumentMethod(), getCallOptions(), request);
     }
 
@@ -872,8 +870,9 @@ public final class DocumentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createDocument(
-        com.google.cloud.dialogflow.v2.CreateDocumentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.CreateDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDocumentMethod(), getCallOptions(), request);
     }
 
@@ -894,8 +893,9 @@ public final class DocumentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importDocuments(
-        com.google.cloud.dialogflow.v2.ImportDocumentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.ImportDocumentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportDocumentsMethod(), getCallOptions(), request);
     }
 
@@ -914,8 +914,9 @@ public final class DocumentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteDocument(
-        com.google.cloud.dialogflow.v2.DeleteDocumentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.DeleteDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDocumentMethod(), getCallOptions(), request);
     }
 
@@ -933,8 +934,9 @@ public final class DocumentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateDocument(
-        com.google.cloud.dialogflow.v2.UpdateDocumentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.UpdateDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDocumentMethod(), getCallOptions(), request);
     }
 
@@ -957,8 +959,9 @@ public final class DocumentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation reloadDocument(
-        com.google.cloud.dialogflow.v2.ReloadDocumentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.ReloadDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReloadDocumentMethod(), getCallOptions(), request);
     }
 
@@ -977,8 +980,9 @@ public final class DocumentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportDocument(
-        com.google.cloud.dialogflow.v2.ExportDocumentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.ExportDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportDocumentMethod(), getCallOptions(), request);
     }
   }

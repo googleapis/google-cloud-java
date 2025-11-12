@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Provides a method to create Cloud Dataflow jobs from templates.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/dataflow/v1beta3/templates.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class TemplatesServiceGrpc {
 
@@ -433,8 +430,9 @@ public final class TemplatesServiceGrpc {
      * </pre>
      */
     public com.google.dataflow.v1beta3.Job createJobFromTemplate(
-        com.google.dataflow.v1beta3.CreateJobFromTemplateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.dataflow.v1beta3.CreateJobFromTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateJobFromTemplateMethod(), getCallOptions(), request);
     }
 
@@ -451,8 +449,8 @@ public final class TemplatesServiceGrpc {
      * </pre>
      */
     public com.google.dataflow.v1beta3.LaunchTemplateResponse launchTemplate(
-        com.google.dataflow.v1beta3.LaunchTemplateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.dataflow.v1beta3.LaunchTemplateRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getLaunchTemplateMethod(), getCallOptions(), request);
     }
 
@@ -469,8 +467,8 @@ public final class TemplatesServiceGrpc {
      * </pre>
      */
     public com.google.dataflow.v1beta3.GetTemplateResponse getTemplate(
-        com.google.dataflow.v1beta3.GetTemplateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.dataflow.v1beta3.GetTemplateRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTemplateMethod(), getCallOptions(), request);
     }
   }

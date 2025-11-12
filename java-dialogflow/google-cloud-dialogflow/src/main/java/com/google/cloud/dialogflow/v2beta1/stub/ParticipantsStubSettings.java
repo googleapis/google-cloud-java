@@ -49,6 +49,8 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.AnalyzeContentRequest;
 import com.google.cloud.dialogflow.v2beta1.AnalyzeContentResponse;
+import com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentRequest;
+import com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentResponse;
 import com.google.cloud.dialogflow.v2beta1.CompileSuggestionRequest;
 import com.google.cloud.dialogflow.v2beta1.CompileSuggestionResponse;
 import com.google.cloud.dialogflow.v2beta1.CreateParticipantRequest;
@@ -154,6 +156,9 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
   private final StreamingCallSettings<
           StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
       streamingAnalyzeContentSettings;
+  private final StreamingCallSettings<
+          BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+      bidiStreamingAnalyzeContentSettings;
   private final UnaryCallSettings<SuggestArticlesRequest, SuggestArticlesResponse>
       suggestArticlesSettings;
   private final UnaryCallSettings<SuggestFaqAnswersRequest, SuggestFaqAnswersResponse>
@@ -367,6 +372,13 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
     return streamingAnalyzeContentSettings;
   }
 
+  /** Returns the object with the settings used for calls to bidiStreamingAnalyzeContent. */
+  public StreamingCallSettings<
+          BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+      bidiStreamingAnalyzeContentSettings() {
+    return bidiStreamingAnalyzeContentSettings;
+  }
+
   /** Returns the object with the settings used for calls to suggestArticles. */
   public UnaryCallSettings<SuggestArticlesRequest, SuggestArticlesResponse>
       suggestArticlesSettings() {
@@ -542,6 +554,8 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
     updateParticipantSettings = settingsBuilder.updateParticipantSettings().build();
     analyzeContentSettings = settingsBuilder.analyzeContentSettings().build();
     streamingAnalyzeContentSettings = settingsBuilder.streamingAnalyzeContentSettings().build();
+    bidiStreamingAnalyzeContentSettings =
+        settingsBuilder.bidiStreamingAnalyzeContentSettings().build();
     suggestArticlesSettings = settingsBuilder.suggestArticlesSettings().build();
     suggestFaqAnswersSettings = settingsBuilder.suggestFaqAnswersSettings().build();
     suggestSmartRepliesSettings = settingsBuilder.suggestSmartRepliesSettings().build();
@@ -569,6 +583,9 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
     private final StreamingCallSettings.Builder<
             StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
         streamingAnalyzeContentSettings;
+    private final StreamingCallSettings.Builder<
+            BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+        bidiStreamingAnalyzeContentSettings;
     private final UnaryCallSettings.Builder<SuggestArticlesRequest, SuggestArticlesResponse>
         suggestArticlesSettings;
     private final UnaryCallSettings.Builder<SuggestFaqAnswersRequest, SuggestFaqAnswersResponse>
@@ -601,6 +618,8 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put(
           "no_retry_3_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_8_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -639,6 +658,17 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
               .setTotalTimeoutDuration(Duration.ofMillis(220000L))
               .build();
       definitions.put("no_retry_3_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(1800000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(1800000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(1800000L))
+              .build();
+      definitions.put("retry_policy_8_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -655,6 +685,7 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
       updateParticipantSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       analyzeContentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       streamingAnalyzeContentSettings = StreamingCallSettings.newBuilder();
+      bidiStreamingAnalyzeContentSettings = StreamingCallSettings.newBuilder();
       suggestArticlesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       suggestFaqAnswersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       suggestSmartRepliesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -691,6 +722,8 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
       updateParticipantSettings = settings.updateParticipantSettings.toBuilder();
       analyzeContentSettings = settings.analyzeContentSettings.toBuilder();
       streamingAnalyzeContentSettings = settings.streamingAnalyzeContentSettings.toBuilder();
+      bidiStreamingAnalyzeContentSettings =
+          settings.bidiStreamingAnalyzeContentSettings.toBuilder();
       suggestArticlesSettings = settings.suggestArticlesSettings.toBuilder();
       suggestFaqAnswersSettings = settings.suggestFaqAnswersSettings.toBuilder();
       suggestSmartRepliesSettings = settings.suggestSmartRepliesSettings.toBuilder();
@@ -860,6 +893,13 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
             StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
         streamingAnalyzeContentSettings() {
       return streamingAnalyzeContentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to bidiStreamingAnalyzeContent. */
+    public StreamingCallSettings.Builder<
+            BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+        bidiStreamingAnalyzeContentSettings() {
+      return bidiStreamingAnalyzeContentSettings;
     }
 
     /** Returns the builder for the settings used for calls to suggestArticles. */

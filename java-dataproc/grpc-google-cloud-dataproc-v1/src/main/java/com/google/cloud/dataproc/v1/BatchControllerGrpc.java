@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * The BatchController provides methods to manage batch workloads.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dataproc/v1/batches.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class BatchControllerGrpc {
 
@@ -453,8 +450,8 @@ public final class BatchControllerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createBatch(
-        com.google.cloud.dataproc.v1.CreateBatchRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.CreateBatchRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateBatchMethod(), getCallOptions(), request);
     }
 
@@ -466,8 +463,8 @@ public final class BatchControllerGrpc {
      * </pre>
      */
     public com.google.cloud.dataproc.v1.Batch getBatch(
-        com.google.cloud.dataproc.v1.GetBatchRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.GetBatchRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetBatchMethod(), getCallOptions(), request);
     }
 
@@ -479,8 +476,8 @@ public final class BatchControllerGrpc {
      * </pre>
      */
     public com.google.cloud.dataproc.v1.ListBatchesResponse listBatches(
-        com.google.cloud.dataproc.v1.ListBatchesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.ListBatchesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListBatchesMethod(), getCallOptions(), request);
     }
 
@@ -493,8 +490,8 @@ public final class BatchControllerGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteBatch(
-        com.google.cloud.dataproc.v1.DeleteBatchRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.DeleteBatchRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteBatchMethod(), getCallOptions(), request);
     }
   }

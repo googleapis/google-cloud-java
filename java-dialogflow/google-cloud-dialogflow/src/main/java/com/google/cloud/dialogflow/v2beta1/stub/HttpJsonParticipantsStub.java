@@ -36,6 +36,8 @@ import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.AnalyzeContentRequest;
 import com.google.cloud.dialogflow.v2beta1.AnalyzeContentResponse;
+import com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentRequest;
+import com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentResponse;
 import com.google.cloud.dialogflow.v2beta1.CompileSuggestionRequest;
 import com.google.cloud.dialogflow.v2beta1.CompileSuggestionResponse;
 import com.google.cloud.dialogflow.v2beta1.CreateParticipantRequest;
@@ -979,6 +981,15 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
     throw new UnsupportedOperationException(
         "Not implemented: streamingAnalyzeContentCallable(). REST transport is not implemented for"
             + " this method yet.");
+  }
+
+  @Override
+  public BidiStreamingCallable<
+          BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+      bidiStreamingAnalyzeContentCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: bidiStreamingAnalyzeContentCallable(). REST transport is not implemented"
+            + " for this method yet.");
   }
 
   @Override

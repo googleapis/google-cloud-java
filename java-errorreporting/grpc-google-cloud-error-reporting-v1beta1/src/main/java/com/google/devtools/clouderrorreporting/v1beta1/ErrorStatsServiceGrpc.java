@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * individual events.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/devtools/clouderrorreporting/v1beta1/error_stats_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ErrorStatsServiceGrpc {
 
@@ -409,8 +406,9 @@ public final class ErrorStatsServiceGrpc {
      * </pre>
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse listGroupStats(
-        com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListGroupStatsMethod(), getCallOptions(), request);
     }
 
@@ -422,8 +420,9 @@ public final class ErrorStatsServiceGrpc {
      * </pre>
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse listEvents(
-        com.google.devtools.clouderrorreporting.v1beta1.ListEventsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.clouderrorreporting.v1beta1.ListEventsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEventsMethod(), getCallOptions(), request);
     }
 
@@ -435,8 +434,9 @@ public final class ErrorStatsServiceGrpc {
      * </pre>
      */
     public com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsResponse deleteEvents(
-        com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteEventsMethod(), getCallOptions(), request);
     }
   }

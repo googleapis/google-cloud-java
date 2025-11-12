@@ -68,6 +68,7 @@ public final class CloudSqlInstanceBackupProperties extends com.google.protobuf.
             com.google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties.Builder.class);
   }
 
+  private int bitField0_;
   public static final int DATABASE_INSTALLED_VERSION_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
@@ -205,6 +206,65 @@ public final class CloudSqlInstanceBackupProperties extends com.google.protobuf.
     }
   }
 
+  public static final int INSTANCE_CREATE_TIME_FIELD_NUMBER = 5;
+  private com.google.protobuf.Timestamp instanceCreateTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The instance creation timestamp.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp instance_create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the instanceCreateTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasInstanceCreateTime() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The instance creation timestamp.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp instance_create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The instanceCreateTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getInstanceCreateTime() {
+    return instanceCreateTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : instanceCreateTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The instance creation timestamp.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp instance_create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getInstanceCreateTimeOrBuilder() {
+    return instanceCreateTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : instanceCreateTime_;
+  }
+
   public static final int INSTANCE_TIER_FIELD_NUMBER = 6;
 
   @SuppressWarnings("serial")
@@ -260,6 +320,65 @@ public final class CloudSqlInstanceBackupProperties extends com.google.protobuf.
     }
   }
 
+  public static final int INSTANCE_DELETE_TIME_FIELD_NUMBER = 8;
+  private com.google.protobuf.Timestamp instanceDeleteTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The instance delete timestamp.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp instance_delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the instanceDeleteTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasInstanceDeleteTime() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The instance delete timestamp.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp instance_delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The instanceDeleteTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getInstanceDeleteTime() {
+    return instanceDeleteTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : instanceDeleteTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The instance delete timestamp.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp instance_delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getInstanceDeleteTimeOrBuilder() {
+    return instanceDeleteTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : instanceDeleteTime_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -283,8 +402,14 @@ public final class CloudSqlInstanceBackupProperties extends com.google.protobuf.
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceInstance_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, sourceInstance_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(5, getInstanceCreateTime());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceTier_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, instanceTier_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(8, getInstanceDeleteTime());
     }
     getUnknownFields().writeTo(output);
   }
@@ -305,8 +430,14 @@ public final class CloudSqlInstanceBackupProperties extends com.google.protobuf.
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceInstance_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, sourceInstance_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getInstanceCreateTime());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceTier_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, instanceTier_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getInstanceDeleteTime());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -327,7 +458,15 @@ public final class CloudSqlInstanceBackupProperties extends com.google.protobuf.
     if (!getDatabaseInstalledVersion().equals(other.getDatabaseInstalledVersion())) return false;
     if (getFinalBackup() != other.getFinalBackup()) return false;
     if (!getSourceInstance().equals(other.getSourceInstance())) return false;
+    if (hasInstanceCreateTime() != other.hasInstanceCreateTime()) return false;
+    if (hasInstanceCreateTime()) {
+      if (!getInstanceCreateTime().equals(other.getInstanceCreateTime())) return false;
+    }
     if (!getInstanceTier().equals(other.getInstanceTier())) return false;
+    if (hasInstanceDeleteTime() != other.hasInstanceDeleteTime()) return false;
+    if (hasInstanceDeleteTime()) {
+      if (!getInstanceDeleteTime().equals(other.getInstanceDeleteTime())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -345,8 +484,16 @@ public final class CloudSqlInstanceBackupProperties extends com.google.protobuf.
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getFinalBackup());
     hash = (37 * hash) + SOURCE_INSTANCE_FIELD_NUMBER;
     hash = (53 * hash) + getSourceInstance().hashCode();
+    if (hasInstanceCreateTime()) {
+      hash = (37 * hash) + INSTANCE_CREATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getInstanceCreateTime().hashCode();
+    }
     hash = (37 * hash) + INSTANCE_TIER_FIELD_NUMBER;
     hash = (53 * hash) + getInstanceTier().hashCode();
+    if (hasInstanceDeleteTime()) {
+      hash = (37 * hash) + INSTANCE_DELETE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getInstanceDeleteTime().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -479,10 +626,20 @@ public final class CloudSqlInstanceBackupProperties extends com.google.protobuf.
     }
 
     // Construct using com.google.cloud.backupdr.v1.CloudSqlInstanceBackupProperties.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getInstanceCreateTimeFieldBuilder();
+        getInstanceDeleteTimeFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -492,7 +649,17 @@ public final class CloudSqlInstanceBackupProperties extends com.google.protobuf.
       databaseInstalledVersion_ = "";
       finalBackup_ = false;
       sourceInstance_ = "";
+      instanceCreateTime_ = null;
+      if (instanceCreateTimeBuilder_ != null) {
+        instanceCreateTimeBuilder_.dispose();
+        instanceCreateTimeBuilder_ = null;
+      }
       instanceTier_ = "";
+      instanceDeleteTime_ = null;
+      if (instanceDeleteTimeBuilder_ != null) {
+        instanceDeleteTimeBuilder_.dispose();
+        instanceDeleteTimeBuilder_ = null;
+      }
       return this;
     }
 
@@ -540,9 +707,25 @@ public final class CloudSqlInstanceBackupProperties extends com.google.protobuf.
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.sourceInstance_ = sourceInstance_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.instanceCreateTime_ =
+            instanceCreateTimeBuilder_ == null
+                ? instanceCreateTime_
+                : instanceCreateTimeBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.instanceTier_ = instanceTier_;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.instanceDeleteTime_ =
+            instanceDeleteTimeBuilder_ == null
+                ? instanceDeleteTime_
+                : instanceDeleteTimeBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -605,10 +788,16 @@ public final class CloudSqlInstanceBackupProperties extends com.google.protobuf.
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (other.hasInstanceCreateTime()) {
+        mergeInstanceCreateTime(other.getInstanceCreateTime());
+      }
       if (!other.getInstanceTier().isEmpty()) {
         instanceTier_ = other.instanceTier_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
+      }
+      if (other.hasInstanceDeleteTime()) {
+        mergeInstanceDeleteTime(other.getInstanceDeleteTime());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -654,12 +843,26 @@ public final class CloudSqlInstanceBackupProperties extends com.google.protobuf.
                 bitField0_ |= 0x00000004;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getInstanceCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 42
             case 50:
               {
                 instanceTier_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
+            case 66:
+              {
+                input.readMessage(
+                    getInstanceDeleteTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -987,6 +1190,218 @@ public final class CloudSqlInstanceBackupProperties extends com.google.protobuf.
       return this;
     }
 
+    private com.google.protobuf.Timestamp instanceCreateTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        instanceCreateTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The instance creation timestamp.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp instance_create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the instanceCreateTime field is set.
+     */
+    public boolean hasInstanceCreateTime() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The instance creation timestamp.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp instance_create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The instanceCreateTime.
+     */
+    public com.google.protobuf.Timestamp getInstanceCreateTime() {
+      if (instanceCreateTimeBuilder_ == null) {
+        return instanceCreateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : instanceCreateTime_;
+      } else {
+        return instanceCreateTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The instance creation timestamp.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp instance_create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setInstanceCreateTime(com.google.protobuf.Timestamp value) {
+      if (instanceCreateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        instanceCreateTime_ = value;
+      } else {
+        instanceCreateTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The instance creation timestamp.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp instance_create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setInstanceCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (instanceCreateTimeBuilder_ == null) {
+        instanceCreateTime_ = builderForValue.build();
+      } else {
+        instanceCreateTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The instance creation timestamp.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp instance_create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeInstanceCreateTime(com.google.protobuf.Timestamp value) {
+      if (instanceCreateTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && instanceCreateTime_ != null
+            && instanceCreateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getInstanceCreateTimeBuilder().mergeFrom(value);
+        } else {
+          instanceCreateTime_ = value;
+        }
+      } else {
+        instanceCreateTimeBuilder_.mergeFrom(value);
+      }
+      if (instanceCreateTime_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The instance creation timestamp.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp instance_create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearInstanceCreateTime() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      instanceCreateTime_ = null;
+      if (instanceCreateTimeBuilder_ != null) {
+        instanceCreateTimeBuilder_.dispose();
+        instanceCreateTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The instance creation timestamp.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp instance_create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getInstanceCreateTimeBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getInstanceCreateTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The instance creation timestamp.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp instance_create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getInstanceCreateTimeOrBuilder() {
+      if (instanceCreateTimeBuilder_ != null) {
+        return instanceCreateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return instanceCreateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : instanceCreateTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The instance creation timestamp.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp instance_create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getInstanceCreateTimeFieldBuilder() {
+      if (instanceCreateTimeBuilder_ == null) {
+        instanceCreateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getInstanceCreateTime(), getParentForChildren(), isClean());
+        instanceCreateTime_ = null;
+      }
+      return instanceCreateTimeBuilder_;
+    }
+
     private java.lang.Object instanceTier_ = "";
 
     /**
@@ -1055,7 +1470,7 @@ public final class CloudSqlInstanceBackupProperties extends com.google.protobuf.
         throw new NullPointerException();
       }
       instanceTier_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1074,7 +1489,7 @@ public final class CloudSqlInstanceBackupProperties extends com.google.protobuf.
      */
     public Builder clearInstanceTier() {
       instanceTier_ = getDefaultInstance().getInstanceTier();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1098,9 +1513,221 @@ public final class CloudSqlInstanceBackupProperties extends com.google.protobuf.
       }
       checkByteStringIsUtf8(value);
       instanceTier_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Timestamp instanceDeleteTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        instanceDeleteTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The instance delete timestamp.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp instance_delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the instanceDeleteTime field is set.
+     */
+    public boolean hasInstanceDeleteTime() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The instance delete timestamp.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp instance_delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The instanceDeleteTime.
+     */
+    public com.google.protobuf.Timestamp getInstanceDeleteTime() {
+      if (instanceDeleteTimeBuilder_ == null) {
+        return instanceDeleteTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : instanceDeleteTime_;
+      } else {
+        return instanceDeleteTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The instance delete timestamp.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp instance_delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setInstanceDeleteTime(com.google.protobuf.Timestamp value) {
+      if (instanceDeleteTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        instanceDeleteTime_ = value;
+      } else {
+        instanceDeleteTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The instance delete timestamp.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp instance_delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setInstanceDeleteTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (instanceDeleteTimeBuilder_ == null) {
+        instanceDeleteTime_ = builderForValue.build();
+      } else {
+        instanceDeleteTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The instance delete timestamp.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp instance_delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeInstanceDeleteTime(com.google.protobuf.Timestamp value) {
+      if (instanceDeleteTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && instanceDeleteTime_ != null
+            && instanceDeleteTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getInstanceDeleteTimeBuilder().mergeFrom(value);
+        } else {
+          instanceDeleteTime_ = value;
+        }
+      } else {
+        instanceDeleteTimeBuilder_.mergeFrom(value);
+      }
+      if (instanceDeleteTime_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The instance delete timestamp.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp instance_delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearInstanceDeleteTime() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      instanceDeleteTime_ = null;
+      if (instanceDeleteTimeBuilder_ != null) {
+        instanceDeleteTimeBuilder_.dispose();
+        instanceDeleteTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The instance delete timestamp.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp instance_delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getInstanceDeleteTimeBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getInstanceDeleteTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The instance delete timestamp.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp instance_delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getInstanceDeleteTimeOrBuilder() {
+      if (instanceDeleteTimeBuilder_ != null) {
+        return instanceDeleteTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return instanceDeleteTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : instanceDeleteTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The instance delete timestamp.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp instance_delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getInstanceDeleteTimeFieldBuilder() {
+      if (instanceDeleteTimeBuilder_ == null) {
+        instanceDeleteTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getInstanceDeleteTime(), getParentForChildren(), isClean());
+        instanceDeleteTime_ = null;
+      }
+      return instanceDeleteTimeBuilder_;
     }
 
     @java.lang.Override

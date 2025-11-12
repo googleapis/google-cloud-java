@@ -23,8 +23,7 @@ package com.google.container.v1;
  *
  *
  * <pre>
- * Configuration for the use of Kubernetes Service Accounts in GCP IAM
- * policies.
+ * Configuration for the use of Kubernetes Service Accounts in IAM policies.
  * </pre>
  *
  * Protobuf type {@code google.container.v1.WorkloadIdentityConfig}
@@ -282,8 +281,7 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Configuration for the use of Kubernetes Service Accounts in GCP IAM
-   * policies.
+   * Configuration for the use of Kubernetes Service Accounts in IAM policies.
    * </pre>
    *
    * Protobuf type {@code google.container.v1.WorkloadIdentityConfig}

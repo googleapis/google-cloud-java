@@ -80,7 +80,7 @@ public interface SpaceOrBuilder
    * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=255
+   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=265
    * @return The enum numeric value on the wire for type.
    */
   @java.lang.Deprecated
@@ -98,7 +98,7 @@ public interface SpaceOrBuilder
    * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=255
+   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=265
    * @return The type.
    */
   @java.lang.Deprecated
@@ -160,7 +160,7 @@ public interface SpaceOrBuilder
    *
    * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
-   * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=267
+   * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=277
    * @return The threaded.
    */
   @java.lang.Deprecated

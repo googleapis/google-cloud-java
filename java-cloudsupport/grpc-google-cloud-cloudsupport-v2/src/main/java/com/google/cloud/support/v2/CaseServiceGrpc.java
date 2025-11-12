@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service to manage Google Cloud support cases.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/support/v2/case_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CaseServiceGrpc {
 
@@ -771,8 +768,8 @@ public final class CaseServiceGrpc {
      * </pre>
      */
     public com.google.cloud.support.v2.Case getCase(
-        com.google.cloud.support.v2.GetCaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.support.v2.GetCaseRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCaseMethod(), getCallOptions(), request);
     }
 
@@ -787,8 +784,8 @@ public final class CaseServiceGrpc {
      * </pre>
      */
     public com.google.cloud.support.v2.ListCasesResponse listCases(
-        com.google.cloud.support.v2.ListCasesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.support.v2.ListCasesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCasesMethod(), getCallOptions(), request);
     }
 
@@ -800,8 +797,8 @@ public final class CaseServiceGrpc {
      * </pre>
      */
     public com.google.cloud.support.v2.SearchCasesResponse searchCases(
-        com.google.cloud.support.v2.SearchCasesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.support.v2.SearchCasesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchCasesMethod(), getCallOptions(), request);
     }
 
@@ -816,8 +813,8 @@ public final class CaseServiceGrpc {
      * </pre>
      */
     public com.google.cloud.support.v2.Case createCase(
-        com.google.cloud.support.v2.CreateCaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.support.v2.CreateCaseRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCaseMethod(), getCallOptions(), request);
     }
 
@@ -829,8 +826,8 @@ public final class CaseServiceGrpc {
      * </pre>
      */
     public com.google.cloud.support.v2.Case updateCase(
-        com.google.cloud.support.v2.UpdateCaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.support.v2.UpdateCaseRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateCaseMethod(), getCallOptions(), request);
     }
 
@@ -847,8 +844,8 @@ public final class CaseServiceGrpc {
      * </pre>
      */
     public com.google.cloud.support.v2.Case escalateCase(
-        com.google.cloud.support.v2.EscalateCaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.support.v2.EscalateCaseRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getEscalateCaseMethod(), getCallOptions(), request);
     }
 
@@ -860,8 +857,8 @@ public final class CaseServiceGrpc {
      * </pre>
      */
     public com.google.cloud.support.v2.Case closeCase(
-        com.google.cloud.support.v2.CloseCaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.support.v2.CloseCaseRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCloseCaseMethod(), getCallOptions(), request);
     }
 
@@ -880,8 +877,9 @@ public final class CaseServiceGrpc {
      * </pre>
      */
     public com.google.cloud.support.v2.SearchCaseClassificationsResponse searchCaseClassifications(
-        com.google.cloud.support.v2.SearchCaseClassificationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.support.v2.SearchCaseClassificationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchCaseClassificationsMethod(), getCallOptions(), request);
     }
   }

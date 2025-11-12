@@ -28,8 +28,11 @@ public interface TargetResourceConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. CRM node in format organizations/{organization},
-   * folders/{folder}, or projects/{project}
+   * Optional. The resource hierarchy node, in one of the following formats:
+   *
+   * - `organizations/{organizationID}`
+   * - `folders/{folderID}`
+   * - `projects/{projectID}`
    * </pre>
    *
    * <code>string existing_target_resource = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -42,8 +45,11 @@ public interface TargetResourceConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. CRM node in format organizations/{organization},
-   * folders/{folder}, or projects/{project}
+   * Optional. The resource hierarchy node, in one of the following formats:
+   *
+   * - `organizations/{organizationID}`
+   * - `folders/{folderID}`
+   * - `projects/{projectID}`
    * </pre>
    *
    * <code>string existing_target_resource = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -56,8 +62,11 @@ public interface TargetResourceConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. CRM node in format organizations/{organization},
-   * folders/{folder}, or projects/{project}
+   * Optional. The resource hierarchy node, in one of the following formats:
+   *
+   * - `organizations/{organizationID}`
+   * - `folders/{folderID}`
+   * - `projects/{projectID}`
    * </pre>
    *
    * <code>string existing_target_resource = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -70,8 +79,8 @@ public interface TargetResourceConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Config to create a new resource and use that as the
-   * target_resource for deployment.
+   * Optional. The details that are required to create a resource and use
+   * that resource as the target resource for deployment.
    * </pre>
    *
    * <code>
@@ -86,8 +95,8 @@ public interface TargetResourceConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Config to create a new resource and use that as the
-   * target_resource for deployment.
+   * Optional. The details that are required to create a resource and use
+   * that resource as the target resource for deployment.
    * </pre>
    *
    * <code>
@@ -103,8 +112,8 @@ public interface TargetResourceConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Config to create a new resource and use that as the
-   * target_resource for deployment.
+   * Optional. The details that are required to create a resource and use
+   * that resource as the target resource for deployment.
    * </pre>
    *
    * <code>

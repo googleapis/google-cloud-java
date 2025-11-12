@@ -308,7 +308,7 @@ public interface AutonomousDatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. The subnet CIDR range for the Autonmous Database.
+   * Optional. The subnet CIDR range for the Autonomous Database.
    * </pre>
    *
    * <code>string cidr = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -321,7 +321,7 @@ public interface AutonomousDatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. The subnet CIDR range for the Autonmous Database.
+   * Optional. The subnet CIDR range for the Autonomous Database.
    * </pre>
    *
    * <code>string cidr = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -329,6 +329,193 @@ public interface AutonomousDatabaseOrBuilder
    * @return The bytes for cidr.
    */
   com.google.protobuf.ByteString getCidrBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the OdbNetwork associated with the Autonomous
+   * Database. Format:
+   * projects/{project}/locations/{location}/odbNetworks/{odb_network} It is
+   * optional but if specified, this should match the parent ODBNetwork of the
+   * OdbSubnet.
+   * </pre>
+   *
+   * <code>
+   * string odb_network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The odbNetwork.
+   */
+  java.lang.String getOdbNetwork();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the OdbNetwork associated with the Autonomous
+   * Database. Format:
+   * projects/{project}/locations/{location}/odbNetworks/{odb_network} It is
+   * optional but if specified, this should match the parent ODBNetwork of the
+   * OdbSubnet.
+   * </pre>
+   *
+   * <code>
+   * string odb_network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for odbNetwork.
+   */
+  com.google.protobuf.ByteString getOdbNetworkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the OdbSubnet associated with the Autonomous
+   * Database. Format:
+   * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
+   * </pre>
+   *
+   * <code>
+   * string odb_subnet = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The odbSubnet.
+   */
+  java.lang.String getOdbSubnet();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the OdbSubnet associated with the Autonomous
+   * Database. Format:
+   * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
+   * </pre>
+   *
+   * <code>
+   * string odb_subnet = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for odbSubnet.
+   */
+  com.google.protobuf.ByteString getOdbSubnetBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The source Autonomous Database configuration for the standby
+   * Autonomous Database. The source Autonomous Database is configured while
+   * creating the Peer Autonomous Database and can't be updated after creation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sourceConfig field is set.
+   */
+  boolean hasSourceConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The source Autonomous Database configuration for the standby
+   * Autonomous Database. The source Autonomous Database is configured while
+   * creating the Peer Autonomous Database and can't be updated after creation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sourceConfig.
+   */
+  com.google.cloud.oracledatabase.v1.SourceConfig getSourceConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The source Autonomous Database configuration for the standby
+   * Autonomous Database. The source Autonomous Database is configured while
+   * creating the Peer Autonomous Database and can't be updated after creation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.oracledatabase.v1.SourceConfigOrBuilder getSourceConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The peer Autonomous Database names of the given Autonomous
+   * Database.
+   * </pre>
+   *
+   * <code>
+   * repeated string peer_autonomous_databases = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the peerAutonomousDatabases.
+   */
+  java.util.List<java.lang.String> getPeerAutonomousDatabasesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The peer Autonomous Database names of the given Autonomous
+   * Database.
+   * </pre>
+   *
+   * <code>
+   * repeated string peer_autonomous_databases = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of peerAutonomousDatabases.
+   */
+  int getPeerAutonomousDatabasesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The peer Autonomous Database names of the given Autonomous
+   * Database.
+   * </pre>
+   *
+   * <code>
+   * repeated string peer_autonomous_databases = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The peerAutonomousDatabases at the given index.
+   */
+  java.lang.String getPeerAutonomousDatabases(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The peer Autonomous Database names of the given Autonomous
+   * Database.
+   * </pre>
+   *
+   * <code>
+   * repeated string peer_autonomous_databases = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the peerAutonomousDatabases at the given index.
+   */
+  com.google.protobuf.ByteString getPeerAutonomousDatabasesBytes(int index);
 
   /**
    *
@@ -369,4 +556,70 @@ public interface AutonomousDatabaseOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of supported GCP region to clone the Autonomous Database
+   * for disaster recovery. Format: `project/{project}/locations/{location}`.
+   * </pre>
+   *
+   * <code>
+   * repeated string disaster_recovery_supported_locations = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the disasterRecoverySupportedLocations.
+   */
+  java.util.List<java.lang.String> getDisasterRecoverySupportedLocationsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of supported GCP region to clone the Autonomous Database
+   * for disaster recovery. Format: `project/{project}/locations/{location}`.
+   * </pre>
+   *
+   * <code>
+   * repeated string disaster_recovery_supported_locations = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of disasterRecoverySupportedLocations.
+   */
+  int getDisasterRecoverySupportedLocationsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of supported GCP region to clone the Autonomous Database
+   * for disaster recovery. Format: `project/{project}/locations/{location}`.
+   * </pre>
+   *
+   * <code>
+   * repeated string disaster_recovery_supported_locations = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The disasterRecoverySupportedLocations at the given index.
+   */
+  java.lang.String getDisasterRecoverySupportedLocations(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of supported GCP region to clone the Autonomous Database
+   * for disaster recovery. Format: `project/{project}/locations/{location}`.
+   * </pre>
+   *
+   * <code>
+   * repeated string disaster_recovery_supported_locations = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the disasterRecoverySupportedLocations at the given index.
+   */
+  com.google.protobuf.ByteString getDisasterRecoverySupportedLocationsBytes(int index);
 }

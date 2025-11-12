@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * state of a merchant.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/lfp/v1beta/lfpmerchantstate.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class LfpMerchantStateServiceGrpc {
 
@@ -258,8 +255,9 @@ public final class LfpMerchantStateServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.lfp.v1beta.LfpMerchantState getLfpMerchantState(
-        com.google.shopping.merchant.lfp.v1beta.GetLfpMerchantStateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.lfp.v1beta.GetLfpMerchantStateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetLfpMerchantStateMethod(), getCallOptions(), request);
     }
   }

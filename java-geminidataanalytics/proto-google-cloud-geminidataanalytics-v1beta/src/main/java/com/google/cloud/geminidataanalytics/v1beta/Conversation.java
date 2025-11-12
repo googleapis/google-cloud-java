@@ -94,7 +94,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
    * https://google.aip.dev/122#resource-id-segments
    *
    * Example:
-   * `projects/1234567890/locations/us-central1/conversations/my-conversation`.
+   * `projects/1234567890/locations/global/conversations/my-conversation`.
    *
    * It is recommended to skip setting this field during conversation creation
    * as it will be inferred automatically and overwritten with the
@@ -131,7 +131,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
    * https://google.aip.dev/122#resource-id-segments
    *
    * Example:
-   * `projects/1234567890/locations/us-central1/conversations/my-conversation`.
+   * `projects/1234567890/locations/global/conversations/my-conversation`.
    *
    * It is recommended to skip setting this field during conversation creation
    * as it will be inferred automatically and overwritten with the
@@ -993,7 +993,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      * https://google.aip.dev/122#resource-id-segments
      *
      * Example:
-     * `projects/1234567890/locations/us-central1/conversations/my-conversation`.
+     * `projects/1234567890/locations/global/conversations/my-conversation`.
      *
      * It is recommended to skip setting this field during conversation creation
      * as it will be inferred automatically and overwritten with the
@@ -1029,7 +1029,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      * https://google.aip.dev/122#resource-id-segments
      *
      * Example:
-     * `projects/1234567890/locations/us-central1/conversations/my-conversation`.
+     * `projects/1234567890/locations/global/conversations/my-conversation`.
      *
      * It is recommended to skip setting this field during conversation creation
      * as it will be inferred automatically and overwritten with the
@@ -1065,7 +1065,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      * https://google.aip.dev/122#resource-id-segments
      *
      * Example:
-     * `projects/1234567890/locations/us-central1/conversations/my-conversation`.
+     * `projects/1234567890/locations/global/conversations/my-conversation`.
      *
      * It is recommended to skip setting this field during conversation creation
      * as it will be inferred automatically and overwritten with the
@@ -1100,7 +1100,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      * https://google.aip.dev/122#resource-id-segments
      *
      * Example:
-     * `projects/1234567890/locations/us-central1/conversations/my-conversation`.
+     * `projects/1234567890/locations/global/conversations/my-conversation`.
      *
      * It is recommended to skip setting this field during conversation creation
      * as it will be inferred automatically and overwritten with the
@@ -1131,7 +1131,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      * https://google.aip.dev/122#resource-id-segments
      *
      * Example:
-     * `projects/1234567890/locations/us-central1/conversations/my-conversation`.
+     * `projects/1234567890/locations/global/conversations/my-conversation`.
      *
      * It is recommended to skip setting this field during conversation creation
      * as it will be inferred automatically and overwritten with the

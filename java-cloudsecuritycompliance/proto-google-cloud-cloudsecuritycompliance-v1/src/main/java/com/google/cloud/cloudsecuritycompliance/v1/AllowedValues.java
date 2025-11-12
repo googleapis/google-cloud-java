@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * Allowed set of values for the parameter.
+ * The allowed set of values for the parameter.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.AllowedValues}
@@ -73,7 +73,7 @@ public final class AllowedValues extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. List of allowed values for the parameter.
+   * Required. The list of allowed values for the parameter.
    * </pre>
    *
    * <code>
@@ -89,7 +89,7 @@ public final class AllowedValues extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. List of allowed values for the parameter.
+   * Required. The list of allowed values for the parameter.
    * </pre>
    *
    * <code>
@@ -106,7 +106,7 @@ public final class AllowedValues extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. List of allowed values for the parameter.
+   * Required. The list of allowed values for the parameter.
    * </pre>
    *
    * <code>
@@ -122,7 +122,7 @@ public final class AllowedValues extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. List of allowed values for the parameter.
+   * Required. The list of allowed values for the parameter.
    * </pre>
    *
    * <code>
@@ -138,7 +138,7 @@ public final class AllowedValues extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. List of allowed values for the parameter.
+   * Required. The list of allowed values for the parameter.
    * </pre>
    *
    * <code>
@@ -318,7 +318,7 @@ public final class AllowedValues extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Allowed set of values for the parameter.
+   * The allowed set of values for the parameter.
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.AllowedValues}
@@ -566,7 +566,7 @@ public final class AllowedValues extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of allowed values for the parameter.
+     * Required. The list of allowed values for the parameter.
      * </pre>
      *
      * <code>
@@ -585,7 +585,7 @@ public final class AllowedValues extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of allowed values for the parameter.
+     * Required. The list of allowed values for the parameter.
      * </pre>
      *
      * <code>
@@ -604,7 +604,7 @@ public final class AllowedValues extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of allowed values for the parameter.
+     * Required. The list of allowed values for the parameter.
      * </pre>
      *
      * <code>
@@ -623,7 +623,7 @@ public final class AllowedValues extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of allowed values for the parameter.
+     * Required. The list of allowed values for the parameter.
      * </pre>
      *
      * <code>
@@ -649,7 +649,7 @@ public final class AllowedValues extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of allowed values for the parameter.
+     * Required. The list of allowed values for the parameter.
      * </pre>
      *
      * <code>
@@ -672,7 +672,7 @@ public final class AllowedValues extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of allowed values for the parameter.
+     * Required. The list of allowed values for the parameter.
      * </pre>
      *
      * <code>
@@ -697,7 +697,7 @@ public final class AllowedValues extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of allowed values for the parameter.
+     * Required. The list of allowed values for the parameter.
      * </pre>
      *
      * <code>
@@ -723,7 +723,7 @@ public final class AllowedValues extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of allowed values for the parameter.
+     * Required. The list of allowed values for the parameter.
      * </pre>
      *
      * <code>
@@ -746,7 +746,7 @@ public final class AllowedValues extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of allowed values for the parameter.
+     * Required. The list of allowed values for the parameter.
      * </pre>
      *
      * <code>
@@ -769,7 +769,7 @@ public final class AllowedValues extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of allowed values for the parameter.
+     * Required. The list of allowed values for the parameter.
      * </pre>
      *
      * <code>
@@ -793,7 +793,7 @@ public final class AllowedValues extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of allowed values for the parameter.
+     * Required. The list of allowed values for the parameter.
      * </pre>
      *
      * <code>
@@ -815,7 +815,7 @@ public final class AllowedValues extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of allowed values for the parameter.
+     * Required. The list of allowed values for the parameter.
      * </pre>
      *
      * <code>
@@ -837,7 +837,7 @@ public final class AllowedValues extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of allowed values for the parameter.
+     * Required. The list of allowed values for the parameter.
      * </pre>
      *
      * <code>
@@ -853,7 +853,7 @@ public final class AllowedValues extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of allowed values for the parameter.
+     * Required. The list of allowed values for the parameter.
      * </pre>
      *
      * <code>
@@ -873,7 +873,7 @@ public final class AllowedValues extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of allowed values for the parameter.
+     * Required. The list of allowed values for the parameter.
      * </pre>
      *
      * <code>
@@ -893,7 +893,7 @@ public final class AllowedValues extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of allowed values for the parameter.
+     * Required. The list of allowed values for the parameter.
      * </pre>
      *
      * <code>
@@ -909,7 +909,7 @@ public final class AllowedValues extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of allowed values for the parameter.
+     * Required. The list of allowed values for the parameter.
      * </pre>
      *
      * <code>
@@ -927,7 +927,7 @@ public final class AllowedValues extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of allowed values for the parameter.
+     * Required. The list of allowed values for the parameter.
      * </pre>
      *
      * <code>

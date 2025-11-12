@@ -54,7 +54,7 @@ public interface ParameterSpecOrBuilder
    *
    *
    * <pre>
-   * Optional. The display name of the parameter. The maximum length is 200
+   * Optional. The friendly name of the parameter. The maximum length is 200
    * characters.
    * </pre>
    *
@@ -68,7 +68,7 @@ public interface ParameterSpecOrBuilder
    *
    *
    * <pre>
-   * Optional. The display name of the parameter. The maximum length is 200
+   * Optional. The friendly name of the parameter. The maximum length is 200
    * characters.
    * </pre>
    *
@@ -110,7 +110,7 @@ public interface ParameterSpecOrBuilder
    *
    *
    * <pre>
-   * Required. if the parameter is required
+   * Required. Whether the parameter is required.
    * </pre>
    *
    * <code>bool is_required = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -123,7 +123,7 @@ public interface ParameterSpecOrBuilder
    *
    *
    * <pre>
-   * Required. Parameter value type.
+   * Required. The parameter value type.
    * </pre>
    *
    * <code>
@@ -138,7 +138,7 @@ public interface ParameterSpecOrBuilder
    *
    *
    * <pre>
-   * Required. Parameter value type.
+   * Required. The parameter value type.
    * </pre>
    *
    * <code>
@@ -196,7 +196,7 @@ public interface ParameterSpecOrBuilder
    *
    *
    * <pre>
-   * Optional. List of parameter substitutions.
+   * Optional. The list of parameter substitutions.
    * </pre>
    *
    * <code>
@@ -210,7 +210,7 @@ public interface ParameterSpecOrBuilder
    *
    *
    * <pre>
-   * Optional. List of parameter substitutions.
+   * Optional. The list of parameter substitutions.
    * </pre>
    *
    * <code>
@@ -224,7 +224,7 @@ public interface ParameterSpecOrBuilder
    *
    *
    * <pre>
-   * Optional. List of parameter substitutions.
+   * Optional. The list of parameter substitutions.
    * </pre>
    *
    * <code>
@@ -237,7 +237,7 @@ public interface ParameterSpecOrBuilder
    *
    *
    * <pre>
-   * Optional. List of parameter substitutions.
+   * Optional. The list of parameter substitutions.
    * </pre>
    *
    * <code>
@@ -252,7 +252,7 @@ public interface ParameterSpecOrBuilder
    *
    *
    * <pre>
-   * Optional. List of parameter substitutions.
+   * Optional. The list of parameter substitutions.
    * </pre>
    *
    * <code>
@@ -266,7 +266,7 @@ public interface ParameterSpecOrBuilder
    *
    *
    * <pre>
-   * Optional. ParameterSpec for oneof attributes.
+   * Optional. The parameter specification for `oneOf` attributes.
    * </pre>
    *
    * <code>
@@ -279,7 +279,7 @@ public interface ParameterSpecOrBuilder
    *
    *
    * <pre>
-   * Optional. ParameterSpec for oneof attributes.
+   * Optional. The parameter specification for `oneOf` attributes.
    * </pre>
    *
    * <code>
@@ -292,7 +292,7 @@ public interface ParameterSpecOrBuilder
    *
    *
    * <pre>
-   * Optional. ParameterSpec for oneof attributes.
+   * Optional. The parameter specification for `oneOf` attributes.
    * </pre>
    *
    * <code>
@@ -305,7 +305,7 @@ public interface ParameterSpecOrBuilder
    *
    *
    * <pre>
-   * Optional. ParameterSpec for oneof attributes.
+   * Optional. The parameter specification for `oneOf` attributes.
    * </pre>
    *
    * <code>
@@ -319,7 +319,7 @@ public interface ParameterSpecOrBuilder
    *
    *
    * <pre>
-   * Optional. ParameterSpec for oneof attributes.
+   * Optional. The parameter specification for `oneOf` attributes.
    * </pre>
    *
    * <code>
@@ -333,7 +333,7 @@ public interface ParameterSpecOrBuilder
    *
    *
    * <pre>
-   * Optional. The allowed set of values for the parameter.
+   * Optional. The permitted set of values for the parameter.
    * </pre>
    *
    * <code>
@@ -348,7 +348,7 @@ public interface ParameterSpecOrBuilder
    *
    *
    * <pre>
-   * Optional. The allowed set of values for the parameter.
+   * Optional. The permitted set of values for the parameter.
    * </pre>
    *
    * <code>
@@ -363,7 +363,7 @@ public interface ParameterSpecOrBuilder
    *
    *
    * <pre>
-   * Optional. The allowed set of values for the parameter.
+   * Optional. The permitted set of values for the parameter.
    * </pre>
    *
    * <code>

@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * - [AccountTax][google.shopping.merchant.accounts.v1main.AccountTax]
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/accounts/v1beta/account_tax.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AccountTaxServiceGrpc {
 
@@ -419,8 +416,9 @@ public final class AccountTaxServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.AccountTax getAccountTax(
-        com.google.shopping.merchant.accounts.v1beta.GetAccountTaxRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.GetAccountTaxRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAccountTaxMethod(), getCallOptions(), request);
     }
 
@@ -435,8 +433,9 @@ public final class AccountTaxServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.ListAccountTaxResponse listAccountTax(
-        com.google.shopping.merchant.accounts.v1beta.ListAccountTaxRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.ListAccountTaxRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAccountTaxMethod(), getCallOptions(), request);
     }
 
@@ -448,8 +447,9 @@ public final class AccountTaxServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.AccountTax updateAccountTax(
-        com.google.shopping.merchant.accounts.v1beta.UpdateAccountTaxRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.UpdateAccountTaxRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAccountTaxMethod(), getCallOptions(), request);
     }
   }

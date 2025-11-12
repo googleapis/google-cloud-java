@@ -33,9 +33,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *   or Version.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/devtools/artifactregistry/v1/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ArtifactRegistryGrpc {
 
@@ -3998,8 +3995,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1.ListDockerImagesResponse listDockerImages(
-        com.google.devtools.artifactregistry.v1.ListDockerImagesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.ListDockerImagesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDockerImagesMethod(), getCallOptions(), request);
     }
 
@@ -4011,8 +4009,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1.DockerImage getDockerImage(
-        com.google.devtools.artifactregistry.v1.GetDockerImageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.GetDockerImageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDockerImageMethod(), getCallOptions(), request);
     }
 
@@ -4024,8 +4023,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1.ListMavenArtifactsResponse listMavenArtifacts(
-        com.google.devtools.artifactregistry.v1.ListMavenArtifactsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.ListMavenArtifactsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMavenArtifactsMethod(), getCallOptions(), request);
     }
 
@@ -4037,8 +4037,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1.MavenArtifact getMavenArtifact(
-        com.google.devtools.artifactregistry.v1.GetMavenArtifactRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.GetMavenArtifactRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetMavenArtifactMethod(), getCallOptions(), request);
     }
 
@@ -4050,8 +4051,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1.ListNpmPackagesResponse listNpmPackages(
-        com.google.devtools.artifactregistry.v1.ListNpmPackagesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.ListNpmPackagesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListNpmPackagesMethod(), getCallOptions(), request);
     }
 
@@ -4063,8 +4065,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1.NpmPackage getNpmPackage(
-        com.google.devtools.artifactregistry.v1.GetNpmPackageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.GetNpmPackageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetNpmPackageMethod(), getCallOptions(), request);
     }
 
@@ -4076,8 +4079,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1.ListPythonPackagesResponse listPythonPackages(
-        com.google.devtools.artifactregistry.v1.ListPythonPackagesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.ListPythonPackagesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPythonPackagesMethod(), getCallOptions(), request);
     }
 
@@ -4089,8 +4093,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1.PythonPackage getPythonPackage(
-        com.google.devtools.artifactregistry.v1.GetPythonPackageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.GetPythonPackageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPythonPackageMethod(), getCallOptions(), request);
     }
 
@@ -4105,8 +4110,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importAptArtifacts(
-        com.google.devtools.artifactregistry.v1.ImportAptArtifactsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.ImportAptArtifactsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportAptArtifactsMethod(), getCallOptions(), request);
     }
 
@@ -4121,8 +4127,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importYumArtifacts(
-        com.google.devtools.artifactregistry.v1.ImportYumArtifactsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.ImportYumArtifactsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportYumArtifactsMethod(), getCallOptions(), request);
     }
 
@@ -4134,8 +4141,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1.ListRepositoriesResponse listRepositories(
-        com.google.devtools.artifactregistry.v1.ListRepositoriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.ListRepositoriesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRepositoriesMethod(), getCallOptions(), request);
     }
 
@@ -4147,8 +4155,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1.Repository getRepository(
-        com.google.devtools.artifactregistry.v1.GetRepositoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.GetRepositoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRepositoryMethod(), getCallOptions(), request);
     }
 
@@ -4161,8 +4170,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createRepository(
-        com.google.devtools.artifactregistry.v1.CreateRepositoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.CreateRepositoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateRepositoryMethod(), getCallOptions(), request);
     }
 
@@ -4174,8 +4184,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1.Repository updateRepository(
-        com.google.devtools.artifactregistry.v1.UpdateRepositoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.UpdateRepositoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateRepositoryMethod(), getCallOptions(), request);
     }
 
@@ -4189,8 +4200,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteRepository(
-        com.google.devtools.artifactregistry.v1.DeleteRepositoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.DeleteRepositoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteRepositoryMethod(), getCallOptions(), request);
     }
 
@@ -4202,8 +4214,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1.ListPackagesResponse listPackages(
-        com.google.devtools.artifactregistry.v1.ListPackagesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.ListPackagesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPackagesMethod(), getCallOptions(), request);
     }
 
@@ -4215,8 +4228,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1.Package getPackage(
-        com.google.devtools.artifactregistry.v1.GetPackageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.GetPackageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPackageMethod(), getCallOptions(), request);
     }
 
@@ -4229,8 +4243,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deletePackage(
-        com.google.devtools.artifactregistry.v1.DeletePackageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.DeletePackageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeletePackageMethod(), getCallOptions(), request);
     }
 
@@ -4242,8 +4257,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1.ListVersionsResponse listVersions(
-        com.google.devtools.artifactregistry.v1.ListVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.ListVersionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListVersionsMethod(), getCallOptions(), request);
     }
 
@@ -4255,8 +4271,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1.Version getVersion(
-        com.google.devtools.artifactregistry.v1.GetVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.GetVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetVersionMethod(), getCallOptions(), request);
     }
 
@@ -4269,8 +4286,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteVersion(
-        com.google.devtools.artifactregistry.v1.DeleteVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.DeleteVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteVersionMethod(), getCallOptions(), request);
     }
 
@@ -4283,8 +4301,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation batchDeleteVersions(
-        com.google.devtools.artifactregistry.v1.BatchDeleteVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.BatchDeleteVersionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchDeleteVersionsMethod(), getCallOptions(), request);
     }
 
@@ -4296,8 +4315,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1.Version updateVersion(
-        com.google.devtools.artifactregistry.v1.UpdateVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.UpdateVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateVersionMethod(), getCallOptions(), request);
     }
 
@@ -4309,8 +4329,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1.ListFilesResponse listFiles(
-        com.google.devtools.artifactregistry.v1.ListFilesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.ListFilesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListFilesMethod(), getCallOptions(), request);
     }
 
@@ -4322,8 +4343,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1.File getFile(
-        com.google.devtools.artifactregistry.v1.GetFileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.GetFileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetFileMethod(), getCallOptions(), request);
     }
 
@@ -4337,8 +4359,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteFile(
-        com.google.devtools.artifactregistry.v1.DeleteFileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.DeleteFileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteFileMethod(), getCallOptions(), request);
     }
 
@@ -4350,8 +4373,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1.File updateFile(
-        com.google.devtools.artifactregistry.v1.UpdateFileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.UpdateFileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateFileMethod(), getCallOptions(), request);
     }
 
@@ -4363,8 +4387,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1.ListTagsResponse listTags(
-        com.google.devtools.artifactregistry.v1.ListTagsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.ListTagsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTagsMethod(), getCallOptions(), request);
     }
 
@@ -4376,8 +4401,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1.Tag getTag(
-        com.google.devtools.artifactregistry.v1.GetTagRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.GetTagRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTagMethod(), getCallOptions(), request);
     }
 
@@ -4389,8 +4415,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1.Tag createTag(
-        com.google.devtools.artifactregistry.v1.CreateTagRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.CreateTagRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTagMethod(), getCallOptions(), request);
     }
 
@@ -4402,8 +4429,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1.Tag updateTag(
-        com.google.devtools.artifactregistry.v1.UpdateTagRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.UpdateTagRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateTagMethod(), getCallOptions(), request);
     }
 
@@ -4415,8 +4443,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteTag(
-        com.google.devtools.artifactregistry.v1.DeleteTagRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.DeleteTagRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTagMethod(), getCallOptions(), request);
     }
 
@@ -4428,8 +4457,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1.Rule createRule(
-        com.google.devtools.artifactregistry.v1.CreateRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.CreateRuleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateRuleMethod(), getCallOptions(), request);
     }
 
@@ -4441,8 +4471,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1.ListRulesResponse listRules(
-        com.google.devtools.artifactregistry.v1.ListRulesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.ListRulesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRulesMethod(), getCallOptions(), request);
     }
 
@@ -4454,8 +4485,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1.Rule getRule(
-        com.google.devtools.artifactregistry.v1.GetRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.GetRuleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRuleMethod(), getCallOptions(), request);
     }
 
@@ -4467,8 +4499,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1.Rule updateRule(
-        com.google.devtools.artifactregistry.v1.UpdateRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.UpdateRuleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateRuleMethod(), getCallOptions(), request);
     }
 
@@ -4480,8 +4513,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteRule(
-        com.google.devtools.artifactregistry.v1.DeleteRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.DeleteRuleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteRuleMethod(), getCallOptions(), request);
     }
 
@@ -4492,8 +4526,9 @@ public final class ArtifactRegistryGrpc {
      * Updates the IAM policy for a given resource.
      * </pre>
      */
-    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -4504,8 +4539,9 @@ public final class ArtifactRegistryGrpc {
      * Gets the IAM policy for a given resource.
      * </pre>
      */
-    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -4517,8 +4553,8 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
-        com.google.iam.v1.TestIamPermissionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.iam.v1.TestIamPermissionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
 
@@ -4530,8 +4566,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1.ProjectSettings getProjectSettings(
-        com.google.devtools.artifactregistry.v1.GetProjectSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.GetProjectSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetProjectSettingsMethod(), getCallOptions(), request);
     }
 
@@ -4543,8 +4580,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1.ProjectSettings updateProjectSettings(
-        com.google.devtools.artifactregistry.v1.UpdateProjectSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.UpdateProjectSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateProjectSettingsMethod(), getCallOptions(), request);
     }
 
@@ -4556,8 +4594,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1.VPCSCConfig getVPCSCConfig(
-        com.google.devtools.artifactregistry.v1.GetVPCSCConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.GetVPCSCConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetVPCSCConfigMethod(), getCallOptions(), request);
     }
 
@@ -4569,8 +4608,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1.VPCSCConfig updateVPCSCConfig(
-        com.google.devtools.artifactregistry.v1.UpdateVPCSCConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.UpdateVPCSCConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateVPCSCConfigMethod(), getCallOptions(), request);
     }
 
@@ -4582,8 +4622,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1.Package updatePackage(
-        com.google.devtools.artifactregistry.v1.UpdatePackageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.UpdatePackageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdatePackageMethod(), getCallOptions(), request);
     }
 
@@ -4595,8 +4636,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1.ListAttachmentsResponse listAttachments(
-        com.google.devtools.artifactregistry.v1.ListAttachmentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.ListAttachmentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAttachmentsMethod(), getCallOptions(), request);
     }
 
@@ -4608,8 +4650,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.devtools.artifactregistry.v1.Attachment getAttachment(
-        com.google.devtools.artifactregistry.v1.GetAttachmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.GetAttachmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAttachmentMethod(), getCallOptions(), request);
     }
 
@@ -4622,8 +4665,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createAttachment(
-        com.google.devtools.artifactregistry.v1.CreateAttachmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.CreateAttachmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAttachmentMethod(), getCallOptions(), request);
     }
 
@@ -4637,8 +4681,9 @@ public final class ArtifactRegistryGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteAttachment(
-        com.google.devtools.artifactregistry.v1.DeleteAttachmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.artifactregistry.v1.DeleteAttachmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAttachmentMethod(), getCallOptions(), request);
     }
   }

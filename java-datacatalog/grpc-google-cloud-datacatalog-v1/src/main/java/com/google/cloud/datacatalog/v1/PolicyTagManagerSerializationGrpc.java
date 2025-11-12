@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Taxonomy is a hierarchical group of policy tags.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/datacatalog/v1/policytagmanagerserialization.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class PolicyTagManagerSerializationGrpc {
 
@@ -466,8 +463,9 @@ public final class PolicyTagManagerSerializationGrpc {
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.Taxonomy replaceTaxonomy(
-        com.google.cloud.datacatalog.v1.ReplaceTaxonomyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.ReplaceTaxonomyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReplaceTaxonomyMethod(), getCallOptions(), request);
     }
 
@@ -484,8 +482,9 @@ public final class PolicyTagManagerSerializationGrpc {
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.ImportTaxonomiesResponse importTaxonomies(
-        com.google.cloud.datacatalog.v1.ImportTaxonomiesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.ImportTaxonomiesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportTaxonomiesMethod(), getCallOptions(), request);
     }
 
@@ -501,8 +500,9 @@ public final class PolicyTagManagerSerializationGrpc {
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.ExportTaxonomiesResponse exportTaxonomies(
-        com.google.cloud.datacatalog.v1.ExportTaxonomiesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.v1.ExportTaxonomiesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportTaxonomiesMethod(), getCallOptions(), request);
     }
   }

@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing [Versions][google.cloud.dialogflow.v2.Version].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/v2/version.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class VersionsGrpc {
 
@@ -536,8 +533,8 @@ public final class VersionsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.ListVersionsResponse listVersions(
-        com.google.cloud.dialogflow.v2.ListVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.ListVersionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListVersionsMethod(), getCallOptions(), request);
     }
 
@@ -549,8 +546,8 @@ public final class VersionsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.Version getVersion(
-        com.google.cloud.dialogflow.v2.GetVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.GetVersionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetVersionMethod(), getCallOptions(), request);
     }
 
@@ -563,8 +560,9 @@ public final class VersionsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.Version createVersion(
-        com.google.cloud.dialogflow.v2.CreateVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.CreateVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateVersionMethod(), getCallOptions(), request);
     }
 
@@ -579,8 +577,9 @@ public final class VersionsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.Version updateVersion(
-        com.google.cloud.dialogflow.v2.UpdateVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.UpdateVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateVersionMethod(), getCallOptions(), request);
     }
 
@@ -592,8 +591,9 @@ public final class VersionsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteVersion(
-        com.google.cloud.dialogflow.v2.DeleteVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.DeleteVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteVersionMethod(), getCallOptions(), request);
     }
   }

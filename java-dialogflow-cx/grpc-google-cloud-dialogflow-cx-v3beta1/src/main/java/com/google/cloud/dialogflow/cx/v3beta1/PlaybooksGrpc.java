@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [Playbooks][google.cloud.dialogflow.cx.v3beta1.Playbook].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/cx/v3beta1/playbook.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class PlaybooksGrpc {
 
@@ -1104,8 +1101,9 @@ public final class PlaybooksGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Playbook createPlaybook(
-        com.google.cloud.dialogflow.cx.v3beta1.CreatePlaybookRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.CreatePlaybookRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreatePlaybookMethod(), getCallOptions(), request);
     }
 
@@ -1117,8 +1115,9 @@ public final class PlaybooksGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deletePlaybook(
-        com.google.cloud.dialogflow.cx.v3beta1.DeletePlaybookRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.DeletePlaybookRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeletePlaybookMethod(), getCallOptions(), request);
     }
 
@@ -1130,8 +1129,9 @@ public final class PlaybooksGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.ListPlaybooksResponse listPlaybooks(
-        com.google.cloud.dialogflow.cx.v3beta1.ListPlaybooksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.ListPlaybooksRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPlaybooksMethod(), getCallOptions(), request);
     }
 
@@ -1143,8 +1143,9 @@ public final class PlaybooksGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Playbook getPlaybook(
-        com.google.cloud.dialogflow.cx.v3beta1.GetPlaybookRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.GetPlaybookRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPlaybookMethod(), getCallOptions(), request);
     }
 
@@ -1158,8 +1159,9 @@ public final class PlaybooksGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportPlaybook(
-        com.google.cloud.dialogflow.cx.v3beta1.ExportPlaybookRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.ExportPlaybookRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportPlaybookMethod(), getCallOptions(), request);
     }
 
@@ -1171,8 +1173,9 @@ public final class PlaybooksGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importPlaybook(
-        com.google.cloud.dialogflow.cx.v3beta1.ImportPlaybookRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.ImportPlaybookRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportPlaybookMethod(), getCallOptions(), request);
     }
 
@@ -1184,8 +1187,9 @@ public final class PlaybooksGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Playbook updatePlaybook(
-        com.google.cloud.dialogflow.cx.v3beta1.UpdatePlaybookRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.UpdatePlaybookRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdatePlaybookMethod(), getCallOptions(), request);
     }
 
@@ -1197,8 +1201,9 @@ public final class PlaybooksGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.PlaybookVersion createPlaybookVersion(
-        com.google.cloud.dialogflow.cx.v3beta1.CreatePlaybookVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.CreatePlaybookVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreatePlaybookVersionMethod(), getCallOptions(), request);
     }
 
@@ -1210,8 +1215,9 @@ public final class PlaybooksGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.PlaybookVersion getPlaybookVersion(
-        com.google.cloud.dialogflow.cx.v3beta1.GetPlaybookVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.GetPlaybookVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPlaybookVersionMethod(), getCallOptions(), request);
     }
 
@@ -1225,8 +1231,9 @@ public final class PlaybooksGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionResponse
         restorePlaybookVersion(
-            com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.dialogflow.cx.v3beta1.RestorePlaybookVersionRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRestorePlaybookVersionMethod(), getCallOptions(), request);
     }
 
@@ -1238,8 +1245,9 @@ public final class PlaybooksGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.ListPlaybookVersionsResponse listPlaybookVersions(
-        com.google.cloud.dialogflow.cx.v3beta1.ListPlaybookVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.ListPlaybookVersionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPlaybookVersionsMethod(), getCallOptions(), request);
     }
 
@@ -1251,8 +1259,9 @@ public final class PlaybooksGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deletePlaybookVersion(
-        com.google.cloud.dialogflow.cx.v3beta1.DeletePlaybookVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.DeletePlaybookVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeletePlaybookVersionMethod(), getCallOptions(), request);
     }
   }

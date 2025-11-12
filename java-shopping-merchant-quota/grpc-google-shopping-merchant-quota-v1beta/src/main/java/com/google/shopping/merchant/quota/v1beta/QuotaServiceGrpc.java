@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to get method call quota information per Merchant API method.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/quota/v1beta/quota.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class QuotaServiceGrpc {
 
@@ -246,8 +243,9 @@ public final class QuotaServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.quota.v1beta.ListQuotaGroupsResponse listQuotaGroups(
-        com.google.shopping.merchant.quota.v1beta.ListQuotaGroupsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.quota.v1beta.ListQuotaGroupsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListQuotaGroupsMethod(), getCallOptions(), request);
     }
   }

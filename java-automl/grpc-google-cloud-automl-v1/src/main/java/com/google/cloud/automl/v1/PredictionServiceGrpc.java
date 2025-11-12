@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * snake_case or dash-case, either of those cases is accepted.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/automl/v1/prediction_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class PredictionServiceGrpc {
 
@@ -402,8 +399,8 @@ public final class PredictionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.automl.v1.PredictResponse predict(
-        com.google.cloud.automl.v1.PredictRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.automl.v1.PredictRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPredictMethod(), getCallOptions(), request);
     }
 
@@ -428,8 +425,8 @@ public final class PredictionServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation batchPredict(
-        com.google.cloud.automl.v1.BatchPredictRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.automl.v1.BatchPredictRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchPredictMethod(), getCallOptions(), request);
     }
   }

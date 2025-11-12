@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service describing handlers for resources
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/storageinsights/v1/storageinsights.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class StorageInsightsGrpc {
 
@@ -1259,8 +1256,9 @@ public final class StorageInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.storageinsights.v1.ListReportConfigsResponse listReportConfigs(
-        com.google.cloud.storageinsights.v1.ListReportConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.storageinsights.v1.ListReportConfigsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListReportConfigsMethod(), getCallOptions(), request);
     }
 
@@ -1272,8 +1270,9 @@ public final class StorageInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.storageinsights.v1.ReportConfig getReportConfig(
-        com.google.cloud.storageinsights.v1.GetReportConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.storageinsights.v1.GetReportConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetReportConfigMethod(), getCallOptions(), request);
     }
 
@@ -1285,8 +1284,9 @@ public final class StorageInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.storageinsights.v1.ReportConfig createReportConfig(
-        com.google.cloud.storageinsights.v1.CreateReportConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.storageinsights.v1.CreateReportConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateReportConfigMethod(), getCallOptions(), request);
     }
 
@@ -1298,8 +1298,9 @@ public final class StorageInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.storageinsights.v1.ReportConfig updateReportConfig(
-        com.google.cloud.storageinsights.v1.UpdateReportConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.storageinsights.v1.UpdateReportConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateReportConfigMethod(), getCallOptions(), request);
     }
 
@@ -1311,8 +1312,9 @@ public final class StorageInsightsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteReportConfig(
-        com.google.cloud.storageinsights.v1.DeleteReportConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.storageinsights.v1.DeleteReportConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteReportConfigMethod(), getCallOptions(), request);
     }
 
@@ -1324,8 +1326,9 @@ public final class StorageInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.storageinsights.v1.ListReportDetailsResponse listReportDetails(
-        com.google.cloud.storageinsights.v1.ListReportDetailsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.storageinsights.v1.ListReportDetailsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListReportDetailsMethod(), getCallOptions(), request);
     }
 
@@ -1337,8 +1340,9 @@ public final class StorageInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.storageinsights.v1.ReportDetail getReportDetail(
-        com.google.cloud.storageinsights.v1.GetReportDetailRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.storageinsights.v1.GetReportDetailRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetReportDetailMethod(), getCallOptions(), request);
     }
 
@@ -1350,8 +1354,9 @@ public final class StorageInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.storageinsights.v1.ListDatasetConfigsResponse listDatasetConfigs(
-        com.google.cloud.storageinsights.v1.ListDatasetConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.storageinsights.v1.ListDatasetConfigsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDatasetConfigsMethod(), getCallOptions(), request);
     }
 
@@ -1363,8 +1368,9 @@ public final class StorageInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.storageinsights.v1.DatasetConfig getDatasetConfig(
-        com.google.cloud.storageinsights.v1.GetDatasetConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.storageinsights.v1.GetDatasetConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDatasetConfigMethod(), getCallOptions(), request);
     }
 
@@ -1376,8 +1382,9 @@ public final class StorageInsightsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createDatasetConfig(
-        com.google.cloud.storageinsights.v1.CreateDatasetConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.storageinsights.v1.CreateDatasetConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDatasetConfigMethod(), getCallOptions(), request);
     }
 
@@ -1389,8 +1396,9 @@ public final class StorageInsightsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateDatasetConfig(
-        com.google.cloud.storageinsights.v1.UpdateDatasetConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.storageinsights.v1.UpdateDatasetConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDatasetConfigMethod(), getCallOptions(), request);
     }
 
@@ -1402,8 +1410,9 @@ public final class StorageInsightsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteDatasetConfig(
-        com.google.cloud.storageinsights.v1.DeleteDatasetConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.storageinsights.v1.DeleteDatasetConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDatasetConfigMethod(), getCallOptions(), request);
     }
 
@@ -1415,8 +1424,9 @@ public final class StorageInsightsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation linkDataset(
-        com.google.cloud.storageinsights.v1.LinkDatasetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.storageinsights.v1.LinkDatasetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getLinkDatasetMethod(), getCallOptions(), request);
     }
 
@@ -1429,8 +1439,9 @@ public final class StorageInsightsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation unlinkDataset(
-        com.google.cloud.storageinsights.v1.UnlinkDatasetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.storageinsights.v1.UnlinkDatasetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUnlinkDatasetMethod(), getCallOptions(), request);
     }
   }

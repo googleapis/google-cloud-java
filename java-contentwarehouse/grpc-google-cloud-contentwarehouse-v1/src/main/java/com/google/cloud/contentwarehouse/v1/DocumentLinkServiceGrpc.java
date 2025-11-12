@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Document-Links are treated as sub-resources under source documents.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/contentwarehouse/v1/document_link_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DocumentLinkServiceGrpc {
 
@@ -486,8 +483,9 @@ public final class DocumentLinkServiceGrpc {
      * </pre>
      */
     public com.google.cloud.contentwarehouse.v1.ListLinkedTargetsResponse listLinkedTargets(
-        com.google.cloud.contentwarehouse.v1.ListLinkedTargetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contentwarehouse.v1.ListLinkedTargetsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListLinkedTargetsMethod(), getCallOptions(), request);
     }
 
@@ -499,8 +497,9 @@ public final class DocumentLinkServiceGrpc {
      * </pre>
      */
     public com.google.cloud.contentwarehouse.v1.ListLinkedSourcesResponse listLinkedSources(
-        com.google.cloud.contentwarehouse.v1.ListLinkedSourcesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contentwarehouse.v1.ListLinkedSourcesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListLinkedSourcesMethod(), getCallOptions(), request);
     }
 
@@ -512,8 +511,9 @@ public final class DocumentLinkServiceGrpc {
      * </pre>
      */
     public com.google.cloud.contentwarehouse.v1.DocumentLink createDocumentLink(
-        com.google.cloud.contentwarehouse.v1.CreateDocumentLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contentwarehouse.v1.CreateDocumentLinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDocumentLinkMethod(), getCallOptions(), request);
     }
 
@@ -525,8 +525,9 @@ public final class DocumentLinkServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteDocumentLink(
-        com.google.cloud.contentwarehouse.v1.DeleteDocumentLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contentwarehouse.v1.DeleteDocumentLinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDocumentLinkMethod(), getCallOptions(), request);
     }
   }

@@ -77,4 +77,34 @@ public interface TextMessageOrBuilder
    * @return The bytes of the parts at the given index.
    */
   com.google.protobuf.ByteString getPartsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of the text message.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.TextMessage.TextType text_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for textType.
+   */
+  int getTextTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of the text message.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.TextMessage.TextType text_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The textType.
+   */
+  com.google.cloud.geminidataanalytics.v1beta.TextMessage.TextType getTextType();
 }

@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing conversation history.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/cx/v3beta1/conversation_history.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ConversationHistoryGrpc {
 
@@ -403,8 +400,9 @@ public final class ConversationHistoryGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.ListConversationsResponse listConversations(
-        com.google.cloud.dialogflow.cx.v3beta1.ListConversationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.ListConversationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListConversationsMethod(), getCallOptions(), request);
     }
 
@@ -416,8 +414,9 @@ public final class ConversationHistoryGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Conversation getConversation(
-        com.google.cloud.dialogflow.cx.v3beta1.GetConversationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.GetConversationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetConversationMethod(), getCallOptions(), request);
     }
 
@@ -429,8 +428,9 @@ public final class ConversationHistoryGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteConversation(
-        com.google.cloud.dialogflow.cx.v3beta1.DeleteConversationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.DeleteConversationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteConversationMethod(), getCallOptions(), request);
     }
   }

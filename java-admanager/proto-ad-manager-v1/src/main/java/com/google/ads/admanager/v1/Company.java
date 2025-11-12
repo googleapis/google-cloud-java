@@ -142,7 +142,23 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * Output only. `Company` ID.
    * </pre>
    *
-   * <code>int64 company_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional int64 company_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the companyId field is set.
+   */
+  @java.lang.Override
+  public boolean hasCompanyId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. `Company` ID.
+   * </pre>
+   *
+   * <code>optional int64 company_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The companyId.
    */
@@ -165,7 +181,25 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * This value has a maximum length of 127 characters.
    * </pre>
    *
-   * <code>string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the displayName field is set.
+   */
+  @java.lang.Override
+  public boolean hasDisplayName() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The display name of the `Company`.
+   *
+   * This value has a maximum length of 127 characters.
+   * </pre>
+   *
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The displayName.
    */
@@ -191,7 +225,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * This value has a maximum length of 127 characters.
    * </pre>
    *
-   * <code>string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for displayName.
    */
@@ -219,7 +253,25 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.CompanyTypeEnum.CompanyType type = 4 [(.google.api.field_behavior) = REQUIRED];
+   * optional .google.ads.admanager.v1.CompanyTypeEnum.CompanyType type = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the type field is set.
+   */
+  @java.lang.Override
+  public boolean hasType() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The type of the `Company`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CompanyTypeEnum.CompanyType type = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The enum numeric value on the wire for type.
@@ -237,7 +289,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.CompanyTypeEnum.CompanyType type = 4 [(.google.api.field_behavior) = REQUIRED];
+   * optional .google.ads.admanager.v1.CompanyTypeEnum.CompanyType type = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The type.
@@ -265,7 +317,25 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * This value has a maximum length of 1024 characters.
    * </pre>
    *
-   * <code>string address = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string address = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the address field is set.
+   */
+  @java.lang.Override
+  public boolean hasAddress() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The address for the `Company`.
+   *
+   * This value has a maximum length of 1024 characters.
+   * </pre>
+   *
+   * <code>optional string address = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The address.
    */
@@ -291,7 +361,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * This value has a maximum length of 1024 characters.
    * </pre>
    *
-   * <code>string address = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string address = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for address.
    */
@@ -322,7 +392,25 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * This value has a maximum length of 128 characters.
    * </pre>
    *
-   * <code>string email = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string email = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the email field is set.
+   */
+  @java.lang.Override
+  public boolean hasEmail() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The email for the `Company`.
+   *
+   * This value has a maximum length of 128 characters.
+   * </pre>
+   *
+   * <code>optional string email = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The email.
    */
@@ -348,7 +436,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * This value has a maximum length of 128 characters.
    * </pre>
    *
-   * <code>string email = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string email = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for email.
    */
@@ -379,7 +467,25 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * This value has a maximum length of 63 characters.
    * </pre>
    *
-   * <code>string fax = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string fax = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the fax field is set.
+   */
+  @java.lang.Override
+  public boolean hasFax() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The fax number for the `Company`.
+   *
+   * This value has a maximum length of 63 characters.
+   * </pre>
+   *
+   * <code>optional string fax = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The fax.
    */
@@ -405,7 +511,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * This value has a maximum length of 63 characters.
    * </pre>
    *
-   * <code>string fax = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string fax = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for fax.
    */
@@ -436,7 +542,25 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * This value has a maximum length of 63 characters.
    * </pre>
    *
-   * <code>string phone = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string phone = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the phone field is set.
+   */
+  @java.lang.Override
+  public boolean hasPhone() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The phone number for the `Company`.
+   *
+   * This value has a maximum length of 63 characters.
+   * </pre>
+   *
+   * <code>optional string phone = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The phone.
    */
@@ -462,7 +586,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * This value has a maximum length of 63 characters.
    * </pre>
    *
-   * <code>string phone = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string phone = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for phone.
    */
@@ -493,7 +617,25 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * This value has a maximum length of 255 characters.
    * </pre>
    *
-   * <code>string external_id = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string external_id = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the externalId field is set.
+   */
+  @java.lang.Override
+  public boolean hasExternalId() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The external ID for the `Company`.
+   *
+   * This value has a maximum length of 255 characters.
+   * </pre>
+   *
+   * <code>optional string external_id = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The externalId.
    */
@@ -519,7 +661,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * This value has a maximum length of 255 characters.
    * </pre>
    *
-   * <code>string external_id = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string external_id = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for externalId.
    */
@@ -550,7 +692,25 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * This value has a maximum length of 1024 characters.
    * </pre>
    *
-   * <code>string comment = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string comment = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the comment field is set.
+   */
+  @java.lang.Override
+  public boolean hasComment() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Comments about the `Company`.
+   *
+   * This value has a maximum length of 1024 characters.
+   * </pre>
+   *
+   * <code>optional string comment = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The comment.
    */
@@ -576,7 +736,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * This value has a maximum length of 1024 characters.
    * </pre>
    *
-   * <code>string comment = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string comment = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for comment.
    */
@@ -607,7 +767,28 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.CompanyCreditStatusEnum.CompanyCreditStatus credit_status = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * optional .google.ads.admanager.v1.CompanyCreditStatusEnum.CompanyCreditStatus credit_status = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the creditStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreditStatus() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The credit status of the `Company`.
+   *
+   * This attribute defaults to `ACTIVE` if basic settings are enabled and
+   * `ON_HOLD` if advance settings are enabled.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CompanyCreditStatusEnum.CompanyCreditStatus credit_status = 11 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for creditStatus.
@@ -628,7 +809,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.CompanyCreditStatusEnum.CompanyCreditStatus credit_status = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * optional .google.ads.admanager.v1.CompanyCreditStatusEnum.CompanyCreditStatus credit_status = 11 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The creditStatus.
@@ -750,7 +931,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPrimaryContact() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
@@ -898,7 +1079,26 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * `Company`.
    * </pre>
    *
-   * <code>int64 third_party_company_id = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional int64 third_party_company_id = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the thirdPartyCompanyId field is set.
+   */
+  @java.lang.Override
+  public boolean hasThirdPartyCompanyId() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ID of the Google-recognized canonicalized form of the
+   * `Company`.
+   * </pre>
+   *
+   * <code>optional int64 third_party_company_id = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The thirdPartyCompanyId.
    */
@@ -917,14 +1117,15 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * Output only. The time the `Company` was last modified.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional .google.protobuf.Timestamp update_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the updateTime field is set.
    */
   @java.lang.Override
   public boolean hasUpdateTime() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
 
   /**
@@ -934,7 +1135,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * Output only. The time the `Company` was last modified.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional .google.protobuf.Timestamp update_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The updateTime.
@@ -951,7 +1153,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
    * Output only. The time the `Company` was last modified.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional .google.protobuf.Timestamp update_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -976,54 +1179,49 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (companyId_ != 0L) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt64(2, companyId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, displayName_);
     }
-    if (type_
-        != com.google.ads.admanager.v1.CompanyTypeEnum.CompanyType.COMPANY_TYPE_UNSPECIFIED
-            .getNumber()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeEnum(4, type_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, address_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, email_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fax_)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, fax_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(phone_)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, phone_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalId_)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, externalId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(comment_)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, comment_);
     }
-    if (creditStatus_
-        != com.google.ads.admanager.v1.CompanyCreditStatusEnum.CompanyCreditStatus
-            .COMPANY_CREDIT_STATUS_UNSPECIFIED
-            .getNumber()) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeEnum(11, creditStatus_);
     }
     for (int i = 0; i < appliedLabels_.size(); i++) {
       output.writeMessage(12, appliedLabels_.get(i));
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, primaryContact_);
     }
     for (int i = 0; i < appliedTeams_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, appliedTeams_.getRaw(i));
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       output.writeMessage(15, getUpdateTime());
     }
-    if (thirdPartyCompanyId_ != 0L) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeInt64(16, thirdPartyCompanyId_);
     }
     getUnknownFields().writeTo(output);
@@ -1038,45 +1236,40 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (companyId_ != 0L) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, companyId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, displayName_);
     }
-    if (type_
-        != com.google.ads.admanager.v1.CompanyTypeEnum.CompanyType.COMPANY_TYPE_UNSPECIFIED
-            .getNumber()) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, type_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, address_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, email_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fax_)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, fax_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(phone_)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, phone_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalId_)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, externalId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(comment_)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, comment_);
     }
-    if (creditStatus_
-        != com.google.ads.admanager.v1.CompanyCreditStatusEnum.CompanyCreditStatus
-            .COMPANY_CREDIT_STATUS_UNSPECIFIED
-            .getNumber()) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(11, creditStatus_);
     }
     for (int i = 0; i < appliedLabels_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, appliedLabels_.get(i));
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, primaryContact_);
     }
     {
@@ -1087,10 +1280,10 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getAppliedTeamsList().size();
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getUpdateTime());
     }
-    if (thirdPartyCompanyId_ != 0L) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(16, thirdPartyCompanyId_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -1109,23 +1302,56 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     com.google.ads.admanager.v1.Company other = (com.google.ads.admanager.v1.Company) obj;
 
     if (!getName().equals(other.getName())) return false;
-    if (getCompanyId() != other.getCompanyId()) return false;
-    if (!getDisplayName().equals(other.getDisplayName())) return false;
-    if (type_ != other.type_) return false;
-    if (!getAddress().equals(other.getAddress())) return false;
-    if (!getEmail().equals(other.getEmail())) return false;
-    if (!getFax().equals(other.getFax())) return false;
-    if (!getPhone().equals(other.getPhone())) return false;
-    if (!getExternalId().equals(other.getExternalId())) return false;
-    if (!getComment().equals(other.getComment())) return false;
-    if (creditStatus_ != other.creditStatus_) return false;
+    if (hasCompanyId() != other.hasCompanyId()) return false;
+    if (hasCompanyId()) {
+      if (getCompanyId() != other.getCompanyId()) return false;
+    }
+    if (hasDisplayName() != other.hasDisplayName()) return false;
+    if (hasDisplayName()) {
+      if (!getDisplayName().equals(other.getDisplayName())) return false;
+    }
+    if (hasType() != other.hasType()) return false;
+    if (hasType()) {
+      if (type_ != other.type_) return false;
+    }
+    if (hasAddress() != other.hasAddress()) return false;
+    if (hasAddress()) {
+      if (!getAddress().equals(other.getAddress())) return false;
+    }
+    if (hasEmail() != other.hasEmail()) return false;
+    if (hasEmail()) {
+      if (!getEmail().equals(other.getEmail())) return false;
+    }
+    if (hasFax() != other.hasFax()) return false;
+    if (hasFax()) {
+      if (!getFax().equals(other.getFax())) return false;
+    }
+    if (hasPhone() != other.hasPhone()) return false;
+    if (hasPhone()) {
+      if (!getPhone().equals(other.getPhone())) return false;
+    }
+    if (hasExternalId() != other.hasExternalId()) return false;
+    if (hasExternalId()) {
+      if (!getExternalId().equals(other.getExternalId())) return false;
+    }
+    if (hasComment() != other.hasComment()) return false;
+    if (hasComment()) {
+      if (!getComment().equals(other.getComment())) return false;
+    }
+    if (hasCreditStatus() != other.hasCreditStatus()) return false;
+    if (hasCreditStatus()) {
+      if (creditStatus_ != other.creditStatus_) return false;
+    }
     if (!getAppliedLabelsList().equals(other.getAppliedLabelsList())) return false;
     if (hasPrimaryContact() != other.hasPrimaryContact()) return false;
     if (hasPrimaryContact()) {
       if (!getPrimaryContact().equals(other.getPrimaryContact())) return false;
     }
     if (!getAppliedTeamsList().equals(other.getAppliedTeamsList())) return false;
-    if (getThirdPartyCompanyId() != other.getThirdPartyCompanyId()) return false;
+    if (hasThirdPartyCompanyId() != other.hasThirdPartyCompanyId()) return false;
+    if (hasThirdPartyCompanyId()) {
+      if (getThirdPartyCompanyId() != other.getThirdPartyCompanyId()) return false;
+    }
     if (hasUpdateTime() != other.hasUpdateTime()) return false;
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
@@ -1143,26 +1369,46 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + COMPANY_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getCompanyId());
-    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getDisplayName().hashCode();
-    hash = (37 * hash) + TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + type_;
-    hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
-    hash = (53 * hash) + getAddress().hashCode();
-    hash = (37 * hash) + EMAIL_FIELD_NUMBER;
-    hash = (53 * hash) + getEmail().hashCode();
-    hash = (37 * hash) + FAX_FIELD_NUMBER;
-    hash = (53 * hash) + getFax().hashCode();
-    hash = (37 * hash) + PHONE_FIELD_NUMBER;
-    hash = (53 * hash) + getPhone().hashCode();
-    hash = (37 * hash) + EXTERNAL_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getExternalId().hashCode();
-    hash = (37 * hash) + COMMENT_FIELD_NUMBER;
-    hash = (53 * hash) + getComment().hashCode();
-    hash = (37 * hash) + CREDIT_STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + creditStatus_;
+    if (hasCompanyId()) {
+      hash = (37 * hash) + COMPANY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getCompanyId());
+    }
+    if (hasDisplayName()) {
+      hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getDisplayName().hashCode();
+    }
+    if (hasType()) {
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+    }
+    if (hasAddress()) {
+      hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getAddress().hashCode();
+    }
+    if (hasEmail()) {
+      hash = (37 * hash) + EMAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getEmail().hashCode();
+    }
+    if (hasFax()) {
+      hash = (37 * hash) + FAX_FIELD_NUMBER;
+      hash = (53 * hash) + getFax().hashCode();
+    }
+    if (hasPhone()) {
+      hash = (37 * hash) + PHONE_FIELD_NUMBER;
+      hash = (53 * hash) + getPhone().hashCode();
+    }
+    if (hasExternalId()) {
+      hash = (37 * hash) + EXTERNAL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getExternalId().hashCode();
+    }
+    if (hasComment()) {
+      hash = (37 * hash) + COMMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getComment().hashCode();
+    }
+    if (hasCreditStatus()) {
+      hash = (37 * hash) + CREDIT_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + creditStatus_;
+    }
     if (getAppliedLabelsCount() > 0) {
       hash = (37 * hash) + APPLIED_LABELS_FIELD_NUMBER;
       hash = (53 * hash) + getAppliedLabelsList().hashCode();
@@ -1175,8 +1421,10 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + APPLIED_TEAMS_FIELD_NUMBER;
       hash = (53 * hash) + getAppliedTeamsList().hashCode();
     }
-    hash = (37 * hash) + THIRD_PARTY_COMPANY_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getThirdPartyCompanyId());
+    if (hasThirdPartyCompanyId()) {
+      hash = (37 * hash) + THIRD_PARTY_COMPANY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getThirdPartyCompanyId());
+    }
     if (hasUpdateTime()) {
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
@@ -1407,40 +1655,50 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.companyId_ = companyId_;
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.displayName_ = displayName_;
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.type_ = type_;
+        to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.address_ = address_;
+        to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.email_ = email_;
+        to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.fax_ = fax_;
+        to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.phone_ = phone_;
+        to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.externalId_ = externalId_;
+        to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.comment_ = comment_;
+        to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.creditStatus_ = creditStatus_;
+        to_bitField0_ |= 0x00000200;
       }
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.primaryContact_ = primaryContact_;
-        to_bitField0_ |= 0x00000001;
+        to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
         appliedTeams_.makeImmutable();
@@ -1448,10 +1706,11 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
         result.thirdPartyCompanyId_ = thirdPartyCompanyId_;
+        to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00001000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1506,49 +1765,49 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (other.getCompanyId() != 0L) {
+      if (other.hasCompanyId()) {
         setCompanyId(other.getCompanyId());
       }
-      if (!other.getDisplayName().isEmpty()) {
+      if (other.hasDisplayName()) {
         displayName_ = other.displayName_;
         bitField0_ |= 0x00000004;
         onChanged();
       }
-      if (other.type_ != 0) {
-        setTypeValue(other.getTypeValue());
+      if (other.hasType()) {
+        setType(other.getType());
       }
-      if (!other.getAddress().isEmpty()) {
+      if (other.hasAddress()) {
         address_ = other.address_;
         bitField0_ |= 0x00000010;
         onChanged();
       }
-      if (!other.getEmail().isEmpty()) {
+      if (other.hasEmail()) {
         email_ = other.email_;
         bitField0_ |= 0x00000020;
         onChanged();
       }
-      if (!other.getFax().isEmpty()) {
+      if (other.hasFax()) {
         fax_ = other.fax_;
         bitField0_ |= 0x00000040;
         onChanged();
       }
-      if (!other.getPhone().isEmpty()) {
+      if (other.hasPhone()) {
         phone_ = other.phone_;
         bitField0_ |= 0x00000080;
         onChanged();
       }
-      if (!other.getExternalId().isEmpty()) {
+      if (other.hasExternalId()) {
         externalId_ = other.externalId_;
         bitField0_ |= 0x00000100;
         onChanged();
       }
-      if (!other.getComment().isEmpty()) {
+      if (other.hasComment()) {
         comment_ = other.comment_;
         bitField0_ |= 0x00000200;
         onChanged();
       }
-      if (other.creditStatus_ != 0) {
-        setCreditStatusValue(other.getCreditStatusValue());
+      if (other.hasCreditStatus()) {
+        setCreditStatus(other.getCreditStatus());
       }
       if (appliedLabelsBuilder_ == null) {
         if (!other.appliedLabels_.isEmpty()) {
@@ -1592,7 +1851,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
-      if (other.getThirdPartyCompanyId() != 0L) {
+      if (other.hasThirdPartyCompanyId()) {
         setThirdPartyCompanyId(other.getThirdPartyCompanyId());
       }
       if (other.hasUpdateTime()) {
@@ -1872,7 +2131,23 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * Output only. `Company` ID.
      * </pre>
      *
-     * <code>int64 company_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 company_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the companyId field is set.
+     */
+    @java.lang.Override
+    public boolean hasCompanyId() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. `Company` ID.
+     * </pre>
+     *
+     * <code>optional int64 company_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The companyId.
      */
@@ -1888,7 +2163,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * Output only. `Company` ID.
      * </pre>
      *
-     * <code>int64 company_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 company_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The companyId to set.
      * @return This builder for chaining.
@@ -1908,7 +2183,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * Output only. `Company` ID.
      * </pre>
      *
-     * <code>int64 company_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 company_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1930,7 +2205,24 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 127 characters.
      * </pre>
      *
-     * <code>string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the displayName field is set.
+     */
+    public boolean hasDisplayName() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The display name of the `Company`.
+     *
+     * This value has a maximum length of 127 characters.
+     * </pre>
+     *
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The displayName.
      */
@@ -1955,7 +2247,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 127 characters.
      * </pre>
      *
-     * <code>string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for displayName.
      */
@@ -1980,7 +2272,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 127 characters.
      * </pre>
      *
-     * <code>string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -2004,7 +2296,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 127 characters.
      * </pre>
      *
-     * <code>string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -2024,7 +2316,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 127 characters.
      * </pre>
      *
-     * <code>string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
@@ -2050,7 +2342,25 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CompanyTypeEnum.CompanyType type = 4 [(.google.api.field_behavior) = REQUIRED];
+     * optional .google.ads.admanager.v1.CompanyTypeEnum.CompanyType type = 4 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the type field is set.
+     */
+    @java.lang.Override
+    public boolean hasType() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The type of the `Company`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CompanyTypeEnum.CompanyType type = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The enum numeric value on the wire for type.
@@ -2068,7 +2378,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CompanyTypeEnum.CompanyType type = 4 [(.google.api.field_behavior) = REQUIRED];
+     * optional .google.ads.admanager.v1.CompanyTypeEnum.CompanyType type = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The enum numeric value on the wire for type to set.
@@ -2089,7 +2399,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CompanyTypeEnum.CompanyType type = 4 [(.google.api.field_behavior) = REQUIRED];
+     * optional .google.ads.admanager.v1.CompanyTypeEnum.CompanyType type = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The type.
@@ -2111,7 +2421,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CompanyTypeEnum.CompanyType type = 4 [(.google.api.field_behavior) = REQUIRED];
+     * optional .google.ads.admanager.v1.CompanyTypeEnum.CompanyType type = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The type to set.
@@ -2135,7 +2445,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CompanyTypeEnum.CompanyType type = 4 [(.google.api.field_behavior) = REQUIRED];
+     * optional .google.ads.admanager.v1.CompanyTypeEnum.CompanyType type = 4 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return This builder for chaining.
@@ -2158,7 +2468,24 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 1024 characters.
      * </pre>
      *
-     * <code>string address = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string address = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the address field is set.
+     */
+    public boolean hasAddress() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The address for the `Company`.
+     *
+     * This value has a maximum length of 1024 characters.
+     * </pre>
+     *
+     * <code>optional string address = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The address.
      */
@@ -2183,7 +2510,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 1024 characters.
      * </pre>
      *
-     * <code>string address = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string address = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for address.
      */
@@ -2208,7 +2535,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 1024 characters.
      * </pre>
      *
-     * <code>string address = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string address = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The address to set.
      * @return This builder for chaining.
@@ -2232,7 +2559,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 1024 characters.
      * </pre>
      *
-     * <code>string address = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string address = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -2252,7 +2579,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 1024 characters.
      * </pre>
      *
-     * <code>string address = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string address = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for address to set.
      * @return This builder for chaining.
@@ -2279,7 +2606,24 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 128 characters.
      * </pre>
      *
-     * <code>string email = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string email = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the email field is set.
+     */
+    public boolean hasEmail() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The email for the `Company`.
+     *
+     * This value has a maximum length of 128 characters.
+     * </pre>
+     *
+     * <code>optional string email = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The email.
      */
@@ -2304,7 +2648,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 128 characters.
      * </pre>
      *
-     * <code>string email = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string email = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for email.
      */
@@ -2329,7 +2673,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 128 characters.
      * </pre>
      *
-     * <code>string email = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string email = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The email to set.
      * @return This builder for chaining.
@@ -2353,7 +2697,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 128 characters.
      * </pre>
      *
-     * <code>string email = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string email = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -2373,7 +2717,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 128 characters.
      * </pre>
      *
-     * <code>string email = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string email = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for email to set.
      * @return This builder for chaining.
@@ -2400,7 +2744,24 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 63 characters.
      * </pre>
      *
-     * <code>string fax = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string fax = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the fax field is set.
+     */
+    public boolean hasFax() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The fax number for the `Company`.
+     *
+     * This value has a maximum length of 63 characters.
+     * </pre>
+     *
+     * <code>optional string fax = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The fax.
      */
@@ -2425,7 +2786,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 63 characters.
      * </pre>
      *
-     * <code>string fax = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string fax = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for fax.
      */
@@ -2450,7 +2811,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 63 characters.
      * </pre>
      *
-     * <code>string fax = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string fax = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The fax to set.
      * @return This builder for chaining.
@@ -2474,7 +2835,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 63 characters.
      * </pre>
      *
-     * <code>string fax = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string fax = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -2494,7 +2855,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 63 characters.
      * </pre>
      *
-     * <code>string fax = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string fax = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for fax to set.
      * @return This builder for chaining.
@@ -2521,7 +2882,24 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 63 characters.
      * </pre>
      *
-     * <code>string phone = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string phone = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the phone field is set.
+     */
+    public boolean hasPhone() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The phone number for the `Company`.
+     *
+     * This value has a maximum length of 63 characters.
+     * </pre>
+     *
+     * <code>optional string phone = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The phone.
      */
@@ -2546,7 +2924,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 63 characters.
      * </pre>
      *
-     * <code>string phone = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string phone = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for phone.
      */
@@ -2571,7 +2949,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 63 characters.
      * </pre>
      *
-     * <code>string phone = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string phone = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The phone to set.
      * @return This builder for chaining.
@@ -2595,7 +2973,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 63 characters.
      * </pre>
      *
-     * <code>string phone = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string phone = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -2615,7 +2993,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 63 characters.
      * </pre>
      *
-     * <code>string phone = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string phone = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for phone to set.
      * @return This builder for chaining.
@@ -2642,7 +3020,24 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 255 characters.
      * </pre>
      *
-     * <code>string external_id = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string external_id = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the externalId field is set.
+     */
+    public boolean hasExternalId() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The external ID for the `Company`.
+     *
+     * This value has a maximum length of 255 characters.
+     * </pre>
+     *
+     * <code>optional string external_id = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The externalId.
      */
@@ -2667,7 +3062,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 255 characters.
      * </pre>
      *
-     * <code>string external_id = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string external_id = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for externalId.
      */
@@ -2692,7 +3087,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 255 characters.
      * </pre>
      *
-     * <code>string external_id = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string external_id = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The externalId to set.
      * @return This builder for chaining.
@@ -2716,7 +3111,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 255 characters.
      * </pre>
      *
-     * <code>string external_id = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string external_id = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -2736,7 +3131,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 255 characters.
      * </pre>
      *
-     * <code>string external_id = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string external_id = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for externalId to set.
      * @return This builder for chaining.
@@ -2763,7 +3158,24 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 1024 characters.
      * </pre>
      *
-     * <code>string comment = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string comment = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the comment field is set.
+     */
+    public boolean hasComment() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Comments about the `Company`.
+     *
+     * This value has a maximum length of 1024 characters.
+     * </pre>
+     *
+     * <code>optional string comment = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The comment.
      */
@@ -2788,7 +3200,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 1024 characters.
      * </pre>
      *
-     * <code>string comment = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string comment = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for comment.
      */
@@ -2813,7 +3225,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 1024 characters.
      * </pre>
      *
-     * <code>string comment = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string comment = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The comment to set.
      * @return This builder for chaining.
@@ -2837,7 +3249,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 1024 characters.
      * </pre>
      *
-     * <code>string comment = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string comment = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -2857,7 +3269,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * This value has a maximum length of 1024 characters.
      * </pre>
      *
-     * <code>string comment = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string comment = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for comment to set.
      * @return This builder for chaining.
@@ -2886,7 +3298,28 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CompanyCreditStatusEnum.CompanyCreditStatus credit_status = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * optional .google.ads.admanager.v1.CompanyCreditStatusEnum.CompanyCreditStatus credit_status = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the creditStatus field is set.
+     */
+    @java.lang.Override
+    public boolean hasCreditStatus() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The credit status of the `Company`.
+     *
+     * This attribute defaults to `ACTIVE` if basic settings are enabled and
+     * `ON_HOLD` if advance settings are enabled.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CompanyCreditStatusEnum.CompanyCreditStatus credit_status = 11 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enum numeric value on the wire for creditStatus.
@@ -2907,7 +3340,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CompanyCreditStatusEnum.CompanyCreditStatus credit_status = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * optional .google.ads.admanager.v1.CompanyCreditStatusEnum.CompanyCreditStatus credit_status = 11 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The enum numeric value on the wire for creditStatus to set.
@@ -2931,7 +3364,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CompanyCreditStatusEnum.CompanyCreditStatus credit_status = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * optional .google.ads.admanager.v1.CompanyCreditStatusEnum.CompanyCreditStatus credit_status = 11 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The creditStatus.
@@ -2958,7 +3391,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CompanyCreditStatusEnum.CompanyCreditStatus credit_status = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * optional .google.ads.admanager.v1.CompanyCreditStatusEnum.CompanyCreditStatus credit_status = 11 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The creditStatus to set.
@@ -2986,7 +3419,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.CompanyCreditStatusEnum.CompanyCreditStatus credit_status = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * optional .google.ads.admanager.v1.CompanyCreditStatusEnum.CompanyCreditStatus credit_status = 11 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.
@@ -3769,7 +4202,26 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * `Company`.
      * </pre>
      *
-     * <code>int64 third_party_company_id = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional int64 third_party_company_id = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the thirdPartyCompanyId field is set.
+     */
+    @java.lang.Override
+    public boolean hasThirdPartyCompanyId() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ID of the Google-recognized canonicalized form of the
+     * `Company`.
+     * </pre>
+     *
+     * <code>optional int64 third_party_company_id = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The thirdPartyCompanyId.
      */
@@ -3786,7 +4238,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * `Company`.
      * </pre>
      *
-     * <code>int64 third_party_company_id = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional int64 third_party_company_id = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The thirdPartyCompanyId to set.
      * @return This builder for chaining.
@@ -3807,7 +4260,8 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * `Company`.
      * </pre>
      *
-     * <code>int64 third_party_company_id = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional int64 third_party_company_id = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -3833,7 +4287,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp update_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp update_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return Whether the updateTime field is set.
@@ -3850,7 +4304,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp update_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp update_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The updateTime.
@@ -3873,7 +4327,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp update_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp update_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
@@ -3898,7 +4352,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp update_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp update_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -3920,7 +4374,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp update_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp update_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
@@ -3950,7 +4404,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp update_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp update_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder clearUpdateTime() {
@@ -3972,7 +4426,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp update_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp update_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
@@ -3989,7 +4443,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp update_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp update_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
@@ -4010,7 +4464,7 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp update_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp update_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

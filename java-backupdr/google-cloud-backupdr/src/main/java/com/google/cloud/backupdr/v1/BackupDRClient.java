@@ -354,6 +354,26 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> FetchBackupsForResourceType</td>
+ *      <td><p> Fetch Backups for a given resource type.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> fetchBackupsForResourceType(FetchBackupsForResourceTypeRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> fetchBackupsForResourceType(DataSourceName parent, String resourceType)
+ *           <li><p> fetchBackupsForResourceType(String parent, String resourceType)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> fetchBackupsForResourceTypePagedCallable()
+ *           <li><p> fetchBackupsForResourceTypeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> GetBackup</td>
  *      <td><p> Gets details of a Backup.</td>
  *      <td>
@@ -722,6 +742,26 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> getDataSourceReferenceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListDataSourceReferences</td>
+ *      <td><p> Lists DataSourceReferences for a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listDataSourceReferences(ListDataSourceReferencesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listDataSourceReferences(LocationName parent)
+ *           <li><p> listDataSourceReferences(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listDataSourceReferencesPagedCallable()
+ *           <li><p> listDataSourceReferencesCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -3165,6 +3205,210 @@ public class BackupDRClient implements BackgroundResource {
    */
   public final UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable() {
     return stub.listBackupsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch Backups for a given resource type.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   DataSourceName parent =
+   *       DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]");
+   *   String resourceType = "resourceType-384364440";
+   *   for (Backup element :
+   *       backupDRClient.fetchBackupsForResourceType(parent, resourceType).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Datasources are the parent resource for the backups. Format:
+   *     projects/{project}/locations/{location}/backupVaults/{backupVaultId}/dataSources/{datasourceId}
+   * @param resourceType Required. The type of the GCP resource. Ex:
+   *     sqladmin.googleapis.com/Instance
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchBackupsForResourceTypePagedResponse fetchBackupsForResourceType(
+      DataSourceName parent, String resourceType) {
+    FetchBackupsForResourceTypeRequest request =
+        FetchBackupsForResourceTypeRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setResourceType(resourceType)
+            .build();
+    return fetchBackupsForResourceType(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch Backups for a given resource type.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String parent =
+   *       DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]").toString();
+   *   String resourceType = "resourceType-384364440";
+   *   for (Backup element :
+   *       backupDRClient.fetchBackupsForResourceType(parent, resourceType).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Datasources are the parent resource for the backups. Format:
+   *     projects/{project}/locations/{location}/backupVaults/{backupVaultId}/dataSources/{datasourceId}
+   * @param resourceType Required. The type of the GCP resource. Ex:
+   *     sqladmin.googleapis.com/Instance
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchBackupsForResourceTypePagedResponse fetchBackupsForResourceType(
+      String parent, String resourceType) {
+    FetchBackupsForResourceTypeRequest request =
+        FetchBackupsForResourceTypeRequest.newBuilder()
+            .setParent(parent)
+            .setResourceType(resourceType)
+            .build();
+    return fetchBackupsForResourceType(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch Backups for a given resource type.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   FetchBackupsForResourceTypeRequest request =
+   *       FetchBackupsForResourceTypeRequest.newBuilder()
+   *           .setParent(
+   *               DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]")
+   *                   .toString())
+   *           .setResourceType("resourceType-384364440")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setView(BackupView.forNumber(0))
+   *           .build();
+   *   for (Backup element : backupDRClient.fetchBackupsForResourceType(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchBackupsForResourceTypePagedResponse fetchBackupsForResourceType(
+      FetchBackupsForResourceTypeRequest request) {
+    return fetchBackupsForResourceTypePagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch Backups for a given resource type.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   FetchBackupsForResourceTypeRequest request =
+   *       FetchBackupsForResourceTypeRequest.newBuilder()
+   *           .setParent(
+   *               DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]")
+   *                   .toString())
+   *           .setResourceType("resourceType-384364440")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setView(BackupView.forNumber(0))
+   *           .build();
+   *   ApiFuture<Backup> future =
+   *       backupDRClient.fetchBackupsForResourceTypePagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Backup element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypePagedResponse>
+      fetchBackupsForResourceTypePagedCallable() {
+    return stub.fetchBackupsForResourceTypePagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch Backups for a given resource type.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   FetchBackupsForResourceTypeRequest request =
+   *       FetchBackupsForResourceTypeRequest.newBuilder()
+   *           .setParent(
+   *               DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]")
+   *                   .toString())
+   *           .setResourceType("resourceType-384364440")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setView(BackupView.forNumber(0))
+   *           .build();
+   *   while (true) {
+   *     FetchBackupsForResourceTypeResponse response =
+   *         backupDRClient.fetchBackupsForResourceTypeCallable().call(request);
+   *     for (Backup element : response.getBackupsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypeResponse>
+      fetchBackupsForResourceTypeCallable() {
+    return stub.fetchBackupsForResourceTypeCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -6040,6 +6284,183 @@ public class BackupDRClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Lists DataSourceReferences for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (DataSourceReference element :
+   *       backupDRClient.listDataSourceReferences(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource name. Format:
+   *     projects/{project}/locations/{location}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDataSourceReferencesPagedResponse listDataSourceReferences(LocationName parent) {
+    ListDataSourceReferencesRequest request =
+        ListDataSourceReferencesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listDataSourceReferences(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists DataSourceReferences for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (DataSourceReference element :
+   *       backupDRClient.listDataSourceReferences(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource name. Format:
+   *     projects/{project}/locations/{location}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDataSourceReferencesPagedResponse listDataSourceReferences(String parent) {
+    ListDataSourceReferencesRequest request =
+        ListDataSourceReferencesRequest.newBuilder().setParent(parent).build();
+    return listDataSourceReferences(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists DataSourceReferences for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListDataSourceReferencesRequest request =
+   *       ListDataSourceReferencesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (DataSourceReference element :
+   *       backupDRClient.listDataSourceReferences(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDataSourceReferencesPagedResponse listDataSourceReferences(
+      ListDataSourceReferencesRequest request) {
+    return listDataSourceReferencesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists DataSourceReferences for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListDataSourceReferencesRequest request =
+   *       ListDataSourceReferencesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<DataSourceReference> future =
+   *       backupDRClient.listDataSourceReferencesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (DataSourceReference element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListDataSourceReferencesRequest, ListDataSourceReferencesPagedResponse>
+      listDataSourceReferencesPagedCallable() {
+    return stub.listDataSourceReferencesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists DataSourceReferences for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListDataSourceReferencesRequest request =
+   *       ListDataSourceReferencesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListDataSourceReferencesResponse response =
+   *         backupDRClient.listDataSourceReferencesCallable().call(request);
+   *     for (DataSourceReference element : response.getDataSourceReferencesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListDataSourceReferencesRequest, ListDataSourceReferencesResponse>
+      listDataSourceReferencesCallable() {
+    return stub.listDataSourceReferencesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Fetch DataSourceReferences for a given project, location and resource type.
    *
    * <p>Sample code:
@@ -7113,6 +7534,91 @@ public class BackupDRClient implements BackgroundResource {
     }
   }
 
+  public static class FetchBackupsForResourceTypePagedResponse
+      extends AbstractPagedListResponse<
+          FetchBackupsForResourceTypeRequest,
+          FetchBackupsForResourceTypeResponse,
+          Backup,
+          FetchBackupsForResourceTypePage,
+          FetchBackupsForResourceTypeFixedSizeCollection> {
+
+    public static ApiFuture<FetchBackupsForResourceTypePagedResponse> createAsync(
+        PageContext<FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypeResponse, Backup>
+            context,
+        ApiFuture<FetchBackupsForResourceTypeResponse> futureResponse) {
+      ApiFuture<FetchBackupsForResourceTypePage> futurePage =
+          FetchBackupsForResourceTypePage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new FetchBackupsForResourceTypePagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private FetchBackupsForResourceTypePagedResponse(FetchBackupsForResourceTypePage page) {
+      super(page, FetchBackupsForResourceTypeFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class FetchBackupsForResourceTypePage
+      extends AbstractPage<
+          FetchBackupsForResourceTypeRequest,
+          FetchBackupsForResourceTypeResponse,
+          Backup,
+          FetchBackupsForResourceTypePage> {
+
+    private FetchBackupsForResourceTypePage(
+        PageContext<FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypeResponse, Backup>
+            context,
+        FetchBackupsForResourceTypeResponse response) {
+      super(context, response);
+    }
+
+    private static FetchBackupsForResourceTypePage createEmptyPage() {
+      return new FetchBackupsForResourceTypePage(null, null);
+    }
+
+    @Override
+    protected FetchBackupsForResourceTypePage createPage(
+        PageContext<FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypeResponse, Backup>
+            context,
+        FetchBackupsForResourceTypeResponse response) {
+      return new FetchBackupsForResourceTypePage(context, response);
+    }
+
+    @Override
+    public ApiFuture<FetchBackupsForResourceTypePage> createPageAsync(
+        PageContext<FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypeResponse, Backup>
+            context,
+        ApiFuture<FetchBackupsForResourceTypeResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class FetchBackupsForResourceTypeFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          FetchBackupsForResourceTypeRequest,
+          FetchBackupsForResourceTypeResponse,
+          Backup,
+          FetchBackupsForResourceTypePage,
+          FetchBackupsForResourceTypeFixedSizeCollection> {
+
+    private FetchBackupsForResourceTypeFixedSizeCollection(
+        List<FetchBackupsForResourceTypePage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static FetchBackupsForResourceTypeFixedSizeCollection createEmptyCollection() {
+      return new FetchBackupsForResourceTypeFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected FetchBackupsForResourceTypeFixedSizeCollection createCollection(
+        List<FetchBackupsForResourceTypePage> pages, int collectionSize) {
+      return new FetchBackupsForResourceTypeFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
   public static class ListBackupPlansPagedResponse
       extends AbstractPagedListResponse<
           ListBackupPlansRequest,
@@ -7473,6 +7979,102 @@ public class BackupDRClient implements BackgroundResource {
         List<FetchBackupPlanAssociationsForResourceTypePage> pages, int collectionSize) {
       return new FetchBackupPlanAssociationsForResourceTypeFixedSizeCollection(
           pages, collectionSize);
+    }
+  }
+
+  public static class ListDataSourceReferencesPagedResponse
+      extends AbstractPagedListResponse<
+          ListDataSourceReferencesRequest,
+          ListDataSourceReferencesResponse,
+          DataSourceReference,
+          ListDataSourceReferencesPage,
+          ListDataSourceReferencesFixedSizeCollection> {
+
+    public static ApiFuture<ListDataSourceReferencesPagedResponse> createAsync(
+        PageContext<
+                ListDataSourceReferencesRequest,
+                ListDataSourceReferencesResponse,
+                DataSourceReference>
+            context,
+        ApiFuture<ListDataSourceReferencesResponse> futureResponse) {
+      ApiFuture<ListDataSourceReferencesPage> futurePage =
+          ListDataSourceReferencesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListDataSourceReferencesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListDataSourceReferencesPagedResponse(ListDataSourceReferencesPage page) {
+      super(page, ListDataSourceReferencesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListDataSourceReferencesPage
+      extends AbstractPage<
+          ListDataSourceReferencesRequest,
+          ListDataSourceReferencesResponse,
+          DataSourceReference,
+          ListDataSourceReferencesPage> {
+
+    private ListDataSourceReferencesPage(
+        PageContext<
+                ListDataSourceReferencesRequest,
+                ListDataSourceReferencesResponse,
+                DataSourceReference>
+            context,
+        ListDataSourceReferencesResponse response) {
+      super(context, response);
+    }
+
+    private static ListDataSourceReferencesPage createEmptyPage() {
+      return new ListDataSourceReferencesPage(null, null);
+    }
+
+    @Override
+    protected ListDataSourceReferencesPage createPage(
+        PageContext<
+                ListDataSourceReferencesRequest,
+                ListDataSourceReferencesResponse,
+                DataSourceReference>
+            context,
+        ListDataSourceReferencesResponse response) {
+      return new ListDataSourceReferencesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListDataSourceReferencesPage> createPageAsync(
+        PageContext<
+                ListDataSourceReferencesRequest,
+                ListDataSourceReferencesResponse,
+                DataSourceReference>
+            context,
+        ApiFuture<ListDataSourceReferencesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListDataSourceReferencesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListDataSourceReferencesRequest,
+          ListDataSourceReferencesResponse,
+          DataSourceReference,
+          ListDataSourceReferencesPage,
+          ListDataSourceReferencesFixedSizeCollection> {
+
+    private ListDataSourceReferencesFixedSizeCollection(
+        List<ListDataSourceReferencesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListDataSourceReferencesFixedSizeCollection createEmptyCollection() {
+      return new ListDataSourceReferencesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListDataSourceReferencesFixedSizeCollection createCollection(
+        List<ListDataSourceReferencesPage> pages, int collectionSize) {
+      return new ListDataSourceReferencesFixedSizeCollection(pages, collectionSize);
     }
   }
 

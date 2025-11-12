@@ -31,9 +31,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * more.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/iam/credentials/v1/iamcredentials.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class IAMCredentialsGrpc {
 
@@ -506,8 +503,9 @@ public final class IAMCredentialsGrpc {
      * </pre>
      */
     public com.google.cloud.iam.credentials.v1.GenerateAccessTokenResponse generateAccessToken(
-        com.google.cloud.iam.credentials.v1.GenerateAccessTokenRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.iam.credentials.v1.GenerateAccessTokenRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateAccessTokenMethod(), getCallOptions(), request);
     }
 
@@ -519,8 +517,9 @@ public final class IAMCredentialsGrpc {
      * </pre>
      */
     public com.google.cloud.iam.credentials.v1.GenerateIdTokenResponse generateIdToken(
-        com.google.cloud.iam.credentials.v1.GenerateIdTokenRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.iam.credentials.v1.GenerateIdTokenRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateIdTokenMethod(), getCallOptions(), request);
     }
 
@@ -532,8 +531,9 @@ public final class IAMCredentialsGrpc {
      * </pre>
      */
     public com.google.cloud.iam.credentials.v1.SignBlobResponse signBlob(
-        com.google.cloud.iam.credentials.v1.SignBlobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.iam.credentials.v1.SignBlobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSignBlobMethod(), getCallOptions(), request);
     }
 
@@ -545,8 +545,8 @@ public final class IAMCredentialsGrpc {
      * </pre>
      */
     public com.google.cloud.iam.credentials.v1.SignJwtResponse signJwt(
-        com.google.cloud.iam.credentials.v1.SignJwtRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.iam.credentials.v1.SignJwtRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSignJwtMethod(), getCallOptions(), request);
     }
   }
