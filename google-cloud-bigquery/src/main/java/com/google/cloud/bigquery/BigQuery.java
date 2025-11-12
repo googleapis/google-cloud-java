@@ -1610,6 +1610,28 @@ public interface BigQuery extends Service<BigQueryOptions> {
       throws InterruptedException, JobException;
 
   /**
+   * Starts the query associated with the request, using the given JobId. It returns either
+   * TableResult for quick queries or Job object for long-running queries.
+   *
+   * <p>If the location of the job is not "US" or "EU", the {@code jobId} must specify the job
+   * location.
+   *
+   * <p>This method cannot be used in conjunction with {@link QueryJobConfiguration#dryRun()}
+   * queries. Since dry-run queries are not actually executed, there's no way to retrieve results.
+   *
+   * <p>See {@link #query(QueryJobConfiguration, JobOption...)} for examples on populating a {@link
+   * QueryJobConfiguration}.
+   *
+   * @throws BigQueryException upon failure
+   * @throws InterruptedException if the current thread gets interrupted while waiting for the query
+   *     to complete
+   * @throws JobException if the job completes unsuccessfully
+   */
+  Object queryWithTimeout(
+      QueryJobConfiguration configuration, JobId jobId, Long timeoutMs, JobOption... options)
+      throws InterruptedException, JobException;
+
+  /**
    * Returns results of the query associated with the provided job.
    *
    * <p>Users are encouraged to use {@link Job#getQueryResults(QueryResultsOption...)} instead.

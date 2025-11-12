@@ -7215,6 +7215,7 @@ public class ITBigQueryTest {
     // 2. For queries that fails the requirements to be stateless, then jobId is populated and
     // queryId is not.
     // 3. For explicitly created jobs, then jobId is populated and queryId is not populated.
+    // 4. If QueryJobConfiguration explicitly sets Job Creation Mode to Required.
 
     // Test scenario 1.
     // Create local BigQuery for test scenario 1 to not contaminate global test parameters.
@@ -7238,6 +7239,16 @@ public class ITBigQueryTest {
     // Test scenario 3.
     QueryJobConfiguration configWithJob = QueryJobConfiguration.newBuilder(query).build();
     Job job = bigQuery.create(JobInfo.of(JobId.of(), configWithJob));
+    result = job.getQueryResults();
+    assertNotNull(result.getJobId());
+    assertNull(result.getQueryId());
+
+    // Test scenario 4.
+    configWithJob =
+        QueryJobConfiguration.newBuilder(query)
+            .setJobCreationMode(JobCreationMode.JOB_CREATION_REQUIRED)
+            .build();
+    result = bigQuery.query(configWithJob);
     result = job.getQueryResults();
     assertNotNull(result.getJobId());
     assertNull(result.getQueryId());
@@ -7292,6 +7303,50 @@ public class ITBigQueryTest {
     } finally {
       bigQuery.delete(dataset.getDatasetId(), DatasetDeleteOption.deleteContents());
     }
+  }
+
+  @Test
+  public void testQueryWithTimeout() throws InterruptedException {
+    // Validate that queryWithTimeout returns either TableResult or Job object
+
+    RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
+    BigQuery bigQuery = bigqueryHelper.getOptions().getService();
+    bigQuery.getOptions().setDefaultJobCreationMode(JobCreationMode.JOB_CREATION_OPTIONAL);
+    String largeQuery =
+        "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 20000)) CROSS JOIN UNNEST(GENERATE_ARRAY(1, 20000))";
+    String query = "SELECT 1 as one";
+    // Test scenario 1.
+    // Stateless query returns TableResult
+    QueryJobConfiguration config = QueryJobConfiguration.newBuilder(query).build();
+    Object result = bigQuery.queryWithTimeout(config, null, null);
+    assertTrue(result instanceof TableResult);
+    assertNull(((TableResult) result).getJobId());
+    assertNotNull(((TableResult) result).getQueryId());
+
+    // Stateful query returns Job
+    // Test scenario 2 to ensure job is created if JobCreationMode is set, but for a small query
+    // it still returns results.
+    config =
+        QueryJobConfiguration.newBuilder(query)
+            .setJobCreationMode(JobCreationMode.JOB_CREATION_REQUIRED)
+            .build();
+    result = bigQuery.queryWithTimeout(config, null, null);
+    assertTrue(result instanceof TableResult);
+    assertNotNull(((TableResult) result).getJobId());
+    assertNull(((TableResult) result).getQueryId());
+
+    // Stateful query returns Job
+    // Test scenario 3 to ensure job is created if Query is long running.
+    // Explicitly disable cache to ensure it is long-running query;
+    config = QueryJobConfiguration.newBuilder(largeQuery).setUseQueryCache(false).build();
+    long millis = System.currentTimeMillis();
+    result = bigQuery.queryWithTimeout(config, null, 1000L);
+    millis = System.currentTimeMillis() - millis;
+    assertTrue(result instanceof Job);
+    // Cancel the job as we don't need results.
+    ((Job) result).cancel();
+    // Allow 2 seconds of timeout value to account for random delays
+    assertTrue(millis < 1_000_000 * 2);
   }
 
   @Test
@@ -7743,7 +7798,7 @@ public class ITBigQueryTest {
     assertNotNull(
         OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.BigQueryRetryHelper.runWithRetries"));
     assertNotNull(OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.BigQueryRpc.queryRpc"));
-    assertTrue(OTEL_ATTRIBUTES.containsKey("com.google.cloud.bigquery.BigQuery.query"));
+    assertTrue(OTEL_ATTRIBUTES.containsKey("com.google.cloud.bigquery.BigQuery.queryWithTimeout"));
 
     // Query job
     String query = "SELECT TimestampField, StringField, BooleanField FROM " + TABLE_ID.getTable();

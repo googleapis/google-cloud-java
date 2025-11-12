@@ -119,6 +119,11 @@
   </difference>
   <difference>
     <differenceType>7012</differenceType>
+    <className>com/google/cloud/bigquery/BigQuery</className>
+    <method>java.lang.Object queryWithTimeout(com.google.cloud.bigquery.QueryJobConfiguration, com.google.cloud.bigquery.JobId, java.lang.Long, com.google.cloud.bigquery.BigQuery$JobOption[])</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
     <className>com/google/cloud/bigquery/Connection</className>
     <method>com.google.common.util.concurrent.ListenableFuture executeSelectAsync(java.lang.String)</method>
   </difference>

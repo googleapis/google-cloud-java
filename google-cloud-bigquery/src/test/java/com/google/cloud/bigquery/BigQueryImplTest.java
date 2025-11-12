@@ -2611,6 +2611,29 @@ public class BigQueryImplTest {
   }
 
   @Test
+  public void testQueryWithTimeoutSetsTimeout() throws InterruptedException, IOException {
+    com.google.api.services.bigquery.model.QueryResponse queryResponsePb =
+        new com.google.api.services.bigquery.model.QueryResponse()
+            .setCacheHit(false)
+            .setJobComplete(true)
+            .setKind("bigquery#queryResponse")
+            .setPageToken(null)
+            .setRows(ImmutableList.of(TABLE_ROW))
+            .setSchema(TABLE_SCHEMA.toPb())
+            .setTotalBytesProcessed(42L)
+            .setTotalRows(BigInteger.valueOf(1L));
+
+    when(bigqueryRpcMock.queryRpcSkipExceptionTranslation(eq(PROJECT), requestPbCapture.capture()))
+        .thenReturn(queryResponsePb);
+
+    bigquery = options.getService();
+    Object result = bigquery.queryWithTimeout(QUERY_JOB_CONFIGURATION_FOR_QUERY, null, 1000L);
+    assertTrue(result instanceof TableResult);
+    QueryRequest requestPb = requestPbCapture.getValue();
+    assertEquals((Long) 1000L, requestPb.getTimeoutMs());
+  }
+
+  @Test
   public void testGetQueryResults() throws IOException {
     JobId queryJob = JobId.of(JOB);
     GetQueryResultsResponse responsePb =
