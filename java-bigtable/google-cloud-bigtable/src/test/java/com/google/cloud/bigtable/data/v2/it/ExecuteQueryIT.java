@@ -53,11 +53,10 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class ExecuteQueryIT {
 
-  public static String SCHEMA_BUNDLE_ID = "my_bundle";
-
   @ClassRule public static TestEnvRule testEnvRule = new TestEnvRule();
   private static BigtableDataClient dataClient;
   private static String tableId;
+  private static String schemaBundleId;
   private static String cf;
   private static String uniquePrefix;
 
@@ -78,6 +77,7 @@ public class ExecuteQueryIT {
     dataClient = testEnvRule.env().getDataClient();
     cf = testEnvRule.env().getFamilyId();
     uniquePrefix = UUID.randomUUID() + "-execute-query-it-";
+    schemaBundleId = UUID.randomUUID() + "-bundle";
 
     dataClient.mutateRow(
         RowMutation.create(TableId.of(tableId), uniquePrefix + "a")
@@ -161,7 +161,7 @@ public class ExecuteQueryIT {
 
   @SuppressWarnings("DoubleBraceInitialization")
   @Test
-  public void allTypes() {
+  public void allTypes() throws Exception {
     createTestSchemaBundle();
     Album album = Album.newBuilder().setTitle("Lover").build();
     PreparedStatement preparedStatement =
@@ -172,11 +172,11 @@ public class ExecuteQueryIT {
                 + " STRUCT(1 as a, \"foo\" as b) AS structCol, [1,2,3] AS arrCol, "
                 + cf
                 + " as mapCol, "
-                + " CAST(b'\022\005Lover' AS "
-                + SCHEMA_BUNDLE_ID
-                + ".com.google.cloud.bigtable.data.v2.test.Album) as protoCol, CAST('JAZZ' AS "
-                + SCHEMA_BUNDLE_ID
-                + ".com.google.cloud.bigtable.data.v2.test.Genre) as enumCol FROM `"
+                + " CAST(b'\022\005Lover' AS `"
+                + schemaBundleId
+                + ".com.google.cloud.bigtable.data.v2.test.Album`) as protoCol, CAST('JAZZ' AS `"
+                + schemaBundleId
+                + ".com.google.cloud.bigtable.data.v2.test.Genre`) as enumCol FROM `"
                 + tableId
                 + "` WHERE _key='"
                 + uniquePrefix
@@ -400,18 +400,23 @@ public class ExecuteQueryIT {
   }
 
   private static void deleteTestSchemaBundle() {
-    testEnvRule.env().getTableAdminClient().deleteSchemaBundle(tableId, SCHEMA_BUNDLE_ID);
+    testEnvRule.env().getTableAdminClient().deleteSchemaBundle(tableId, schemaBundleId);
   }
 
-  private static void createTestSchemaBundle() {
+  private static void createTestSchemaBundle() throws Exception {
     FileDescriptorSet fileDescriptorSet =
         FileDescriptorSet.newBuilder()
             .addFile(Singer.getDescriptor().getFile().toProto())
             .addFile(Album.getDescriptor().getFile().toProto())
             .build();
     CreateSchemaBundleRequest request =
-        CreateSchemaBundleRequest.of(tableId, SCHEMA_BUNDLE_ID)
+        CreateSchemaBundleRequest.of(tableId, schemaBundleId)
             .setProtoSchema(fileDescriptorSet.toByteString());
     testEnvRule.env().getTableAdminClient().createSchemaBundle(request);
+
+    // For some reason the ExecuteQuery data path sometimes cannot resolve a newly-created schema
+    // bundle immediately after its creation. Adding a manual sleep to avoid test flakiness until
+    // the underlying issue is resolved.
+    Thread.sleep(5000);
   }
 }
