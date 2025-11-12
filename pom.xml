@@ -79,6 +79,7 @@
     <module>java-dataform</module>
     <module>java-datalabeling</module>
     <module>java-datalineage</module>
+    <module>java-datamanager</module>
     <module>java-dataplex</module>
     <module>java-dataproc</module>
     <module>java-dataproc-metastore</module>

@@ -917,3 +917,6 @@ grpc-google-cloud-locationfinder-v1:0.3.0:0.4.0-SNAPSHOT
 google-cloud-capacityplanner:0.1.0:0.2.0-SNAPSHOT
 proto-google-cloud-capacityplanner-v1beta:0.1.0:0.2.0-SNAPSHOT
 grpc-google-cloud-capacityplanner-v1beta:0.1.0:0.2.0-SNAPSHOT
+data-manager:0.0.0:0.0.1-SNAPSHOT
+proto-data-manager-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-data-manager-v1:0.0.0:0.0.1-SNAPSHOT
