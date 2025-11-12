@@ -430,7 +430,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-databasecenter-bom</artifactId>
-        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-databasecenter:current} -->
+        <version>0.0.1</version><!-- {x-version-update:google-cloud-databasecenter:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -466,6 +466,13 @@
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-datalineage-bom</artifactId>
         <version>0.71.0</version><!-- {x-version-update:google-cloud-datalineage:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-datamanager-bom</artifactId>
+        <version>0.0.1</version><!-- {x-version-update:google-cloud-data-manager:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -1273,7 +1280,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-vectorsearch-bom</artifactId>
-        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-vectorsearch:current} -->
+        <version>0.0.1</version><!-- {x-version-update:google-cloud-vectorsearch:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
