@@ -471,13 +471,6 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-datamanager-bom</artifactId>
-        <version>0.0.1</version><!-- {x-version-update:google-cloud-data-manager:current} -->
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dataplex-bom</artifactId>
         <version>1.77.0</version><!-- {x-version-update:google-cloud-dataplex:current} -->
         <type>pom</type>
