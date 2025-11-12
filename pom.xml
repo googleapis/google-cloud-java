@@ -74,6 +74,7 @@
     <module>java-containeranalysis</module>
     <module>java-contentwarehouse</module>
     <module>java-data-fusion</module>
+    <module>java-databasecenter</module>
     <module>java-datacatalog</module>
     <module>java-dataflow</module>
     <module>java-dataform</module>
