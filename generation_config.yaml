@@ -778,6 +778,23 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/datacatalog/lineage/v1
 
+- api_shortname: datamanager
+  name_pretty: Data Manager API
+  product_documentation: https://developers.google.com/data-manager
+  api_description: A unified ingestion API for data partners, agencies and advertisers
+    to connect first-party data across Google advertising products.
+  client_documentation: https://cloud.google.com/java/docs/reference/data-manager/latest/overview
+  release_level: preview
+  distribution_name: com.google.api-ads:data-manager
+  api_id: datamanager.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.api-ads
+  cloud_api: false
+  GAPICs:
+  - proto_path: google/ads/datamanager/v1
+  library_name: datamanager
+  requires_billing: true
+  rpc_documentation: https://developers.google.com/data-manager/api/reference/rpc
 - api_shortname: dataplex
   name_pretty: Cloud Dataplex
   product_documentation: https://cloud.google.com/dataplex
