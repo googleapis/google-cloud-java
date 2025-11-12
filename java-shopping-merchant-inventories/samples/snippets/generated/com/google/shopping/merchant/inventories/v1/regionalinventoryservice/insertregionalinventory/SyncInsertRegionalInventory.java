@@ -40,6 +40,7 @@ public class SyncInsertRegionalInventory {
           InsertRegionalInventoryRequest.newBuilder()
               .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
               .setRegionalInventory(RegionalInventory.newBuilder().build())
+              .setProductIdBase64UrlEncoded(true)
               .build();
       RegionalInventory response = regionalInventoryServiceClient.insertRegionalInventory(request);
     }

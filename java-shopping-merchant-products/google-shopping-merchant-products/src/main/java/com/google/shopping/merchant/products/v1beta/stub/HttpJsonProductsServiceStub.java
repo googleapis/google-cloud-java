@@ -76,6 +76,10 @@ public class HttpJsonProductsServiceStub extends ProductsServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetProductRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(
+                            fields,
+                            "productIdBase64UrlEncoded",
+                            request.getProductIdBase64UrlEncoded());
                         serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })

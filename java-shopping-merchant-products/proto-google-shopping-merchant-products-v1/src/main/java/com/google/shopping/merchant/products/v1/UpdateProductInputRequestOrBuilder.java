@@ -189,4 +189,27 @@ public interface UpdateProductInputRequestOrBuilder
    * @return The bytes for dataSource.
    */
   com.google.protobuf.ByteString getDataSourceBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, the `{productInput}` in the `name` field of the request
+   * will be interpreted as unpadded base64url-encoded and decoded during
+   * request processing to match the decoded value. Default value is `false`.
+   * Use this if your `{productInput}` contains special characters, such as
+   * forward slash
+   * `/` or other characters that are unpadded base64url-encoded (as per RFC
+   * 7515: https://datatracker.ietf.org/doc/html/rfc7515#section-2).
+   *
+   * Note that future versions of the API will only accept unpadded
+   * base64url-encoded product ids, so we strongly recommend proactively setting
+   * this to `true` and encoding the product ids.
+   * </pre>
+   *
+   * <code>bool product_id_base64_url_encoded = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The productIdBase64UrlEncoded.
+   */
+  boolean getProductIdBase64UrlEncoded();
 }

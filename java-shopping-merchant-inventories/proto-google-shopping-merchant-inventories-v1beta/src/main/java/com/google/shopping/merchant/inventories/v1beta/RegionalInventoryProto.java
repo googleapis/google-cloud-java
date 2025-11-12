@@ -63,57 +63,64 @@ public final class RegionalInventoryProto {
           + "le/api/annotations.proto\032\027google/api/cli"
           + "ent.proto\032\037google/api/field_behavior.pro"
           + "to\032\031google/api/resource.proto\032\033google/protobuf/empty.proto\032"
-          + " google/shopping/type/types.proto\032\032google/type/interval.proto\"\320\003\n"
+          + " google/shopping/type/types.proto\032\032google/type/interval.proto\"\343\003\n"
           + "\021RegionalInventory\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\022\024\n"
           + "\007account\030\002 \001(\003B\003\340A\003\022\026\n"
-          + "\006region\030\003 \001(\tB\006\340A\002\340A\005\022*\n"
-          + "\005price\030\004 \001(\0132\033.google.shopping.type.Price\022/\n\n"
-          + "sale_price\030\005 \001(\0132\033.google.shopping.type.Price\0228\n"
-          + "\031sale_price_effective_date\030\006 \001(\0132\025.google.type.Interval\022\031\n"
-          + "\014availability\030\007 \001(\tH\000\210\001\001\022@\n"
+          + "\006region\030\003 \001(\tB\006\340A\002\340A\005\022/\n"
+          + "\005price\030\004 \001(\0132\033.google.shopping.type.PriceB\003\340A\001\0224\n\n"
+          + "sale_price\030\005 \001(\0132\033.google.shopping.type.PriceB\003\340A\001\022=\n"
+          + "\031sale_price_effective_date\030\006"
+          + " \001(\0132\025.google.type.IntervalB\003\340A\001\022\031\n"
+          + "\014availability\030\007 \001(\tH\000\210\001\001\022D\n"
           + "\021custom_attributes\030\010"
-          + " \003(\0132%.google.shopping.type.CustomAttribute:u\352Ar\n"
-          + ",merchantapi.googleapis.com/RegionalInventory\022Baccounts/{accoun"
-          + "t}/products/{product}/regionalInventories/{region}B\017\n\r"
-          + "_availability\"\215\001\n"
+          + " \003(\0132%.google.shopping.type.CustomAttributeB\002\030\001:u\352Ar\n"
+          + ",merchantapi.googleapis.com/RegionalInventor"
+          + "y\022Baccounts/{account}/products/{product}/regionalInventories/{region}B\017\n\r"
+          + "_availability\"\271\001\n"
           + "\036ListRegionalInventoriesRequest\022D\n"
-          + "\006parent\030\001 \001(\tB4"
-          + "\340A\002\372A.\022,merchantapi.googleapis.com/RegionalInventory\022\021\n"
-          + "\tpage_size\030\002 \001(\005\022\022\n\n"
-          + "page_token\030\003 \001(\t\"\230\001\n"
-          + "\037ListRegionalInventoriesResponse\022\\\n"
-          + "\024regional_inventories\030\001 \003(\0132>."
-          + "google.shopping.merchant.inventories.v1beta.RegionalInventory\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"\307\001\n"
-          + "\036InsertRegionalInventoryRequest\022D\n"
           + "\006parent\030\001 \001("
-          + "\tB4\340A\002\372A.\022,merchantapi.googleapis.com/RegionalInventory\022_\n"
-          + "\022regional_inventory\030\002 \001(\0132>.google.shopping.me"
-          + "rchant.inventories.v1beta.RegionalInventoryB\003\340A\002\"d\n"
+          + "\tB4\340A\002\372A.\022,merchantapi.googleapis.com/RegionalInventory\022\021\n"
+          + "\tpage_size\030\002 \001(\005\022\022\n\n"
+          + "page_token\030\003 \001(\t\022*\n"
+          + "\035product_id_base64_url_encoded\030\004 \001(\010B\003\340A\001\"\230\001\n"
+          + "\037ListRegionalInventoriesResponse\022\\\n"
+          + "\024regional_inventories\030\001 \003(\0132>.google.shopping.m"
+          + "erchant.inventories.v1beta.RegionalInventory\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"\363\001\n"
+          + "\036InsertRegionalInventoryRequest\022D\n"
+          + "\006parent\030\001 \001(\t"
+          + "B4\340A\002\372A.\022,merchantapi.googleapis.com/RegionalInventory\022_\n"
+          + "\022regional_inventory\030\002 \001"
+          + "(\0132>.google.shopping.merchant.inventories.v1beta.RegionalInventoryB\003\340A\002\022*\n"
+          + "\035product_id_base64_url_encoded\030\003 \001(\010B\003\340A\001\"\220\001\n"
           + "\036DeleteRegionalInventoryRequest\022B\n"
           + "\004name\030\001 \001(\tB4\340A\002\372A.\n"
-          + ",merchantapi.googleapis.com/RegionalInventory2\337\006\n"
+          + ",merchantapi.googleapis.com/RegionalInventory\022*\n"
+          + "\035product_id_base64_url_encoded\030\002 \001(\010B\003\340A\0012\337\006\n"
           + "\030RegionalInventoryService\022\215\002\n"
-          + "\027ListRegionalInventories\022K.google.shopping.merchant.inven"
-          + "tories.v1beta.ListRegionalInventoriesRequest\032L.google.shopping.merchant.inventor"
-          + "ies.v1beta.ListRegionalInventoriesRespon"
-          + "se\"W\332A\006parent\202\323\344\223\002H\022F/inventories/v1beta"
-          + "/{parent=accounts/*/products/*}/regionalInventories\022\221\002\n"
-          + "\027InsertRegionalInventory\022K.google.shopping.merchant.inventories.v"
-          + "1beta.InsertRegionalInventoryRequest\032>.google.shopping.merchant.inventories.v1be"
-          + "ta.RegionalInventory\"i\202\323\344\223\002c\"M/inventori"
-          + "es/v1beta/{parent=accounts/*/products/*}"
-          + "/regionalInventories:insert:\022regional_inventory\022\325\001\n"
-          + "\027DeleteRegionalInventory\022K.google.shopping.merchant.inventories.v1bet"
-          + "a.DeleteRegionalInventoryRequest\032\026.googl"
-          + "e.protobuf.Empty\"U\332A\004name\202\323\344\223\002H*F/invent"
-          + "ories/v1beta/{name=accounts/*/products/*"
-          + "/regionalInventories/*}\032G\312A\032merchantapi."
-          + "googleapis.com\322A\'https://www.googleapis.com/auth/contentB\244\001\n"
-          + "/com.google.shopping.merchant.inventories.v1betaB\026RegionalIn"
-          + "ventoryProtoP\001ZWcloud.google.com/go/shopping/merchant/inventories/apiv1beta/inve"
-          + "ntoriespb;inventoriespbb\006proto3"
+          + "\027ListRegionalInventories\022K.google.shopping.merchant.inventories.v"
+          + "1beta.ListRegionalInventoriesRequest\032L.google.shopping.merchant.inventories.v1be"
+          + "ta.ListRegionalInventoriesResponse\"W\332A\006p"
+          + "arent\202\323\344\223\002H\022F/inventories/v1beta/{parent"
+          + "=accounts/*/products/*}/regionalInventories\022\221\002\n"
+          + "\027InsertRegionalInventory\022K.google.shopping.merchant.inventories.v1beta.In"
+          + "sertRegionalInventoryRequest\032>.google.shopping.merchant.inventories.v1beta.Regio"
+          + "nalInventory\"i\202\323\344\223\002c\"M/inventories/v1bet"
+          + "a/{parent=accounts/*/products/*}/regiona"
+          + "lInventories:insert:\022regional_inventory\022\325\001\n"
+          + "\027DeleteRegionalInventory\022K.google.shopping.merchant.inventories.v1beta.Delete"
+          + "RegionalInventoryRequest\032\026.google.protob"
+          + "uf.Empty\"U\332A\004name\202\323\344\223\002H*F/inventories/v1"
+          + "beta/{name=accounts/*/products/*/regiona"
+          + "lInventories/*}\032G\312A\032merchantapi.googleap"
+          + "is.com\322A\'https://www.googleapis.com/auth/contentB\262\002\n"
+          + "/com.google.shopping.merchant.inventories.v1betaB\026RegionalInventoryP"
+          + "rotoP\001ZWcloud.google.com/go/shopping/merchant/inventories/apiv1beta/inventoriesp"
+          + "b;inventoriespb\252\002+Google.Shopping.Mercha"
+          + "nt.Inventories.V1Beta\312\002+Google\\Shopping\\"
+          + "Merchant\\Inventories\\V1beta\352\002/Google::Sh"
+          + "opping::Merchant::Inventories::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -148,7 +155,7 @@ public final class RegionalInventoryProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_shopping_merchant_inventories_v1beta_ListRegionalInventoriesRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "PageSize", "PageToken",
+              "Parent", "PageSize", "PageToken", "ProductIdBase64UrlEncoded",
             });
     internal_static_google_shopping_merchant_inventories_v1beta_ListRegionalInventoriesResponse_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -164,7 +171,7 @@ public final class RegionalInventoryProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_shopping_merchant_inventories_v1beta_InsertRegionalInventoryRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "RegionalInventory",
+              "Parent", "RegionalInventory", "ProductIdBase64UrlEncoded",
             });
     internal_static_google_shopping_merchant_inventories_v1beta_DeleteRegionalInventoryRequest_descriptor =
         getDescriptor().getMessageTypes().get(4);
@@ -172,7 +179,7 @@ public final class RegionalInventoryProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_shopping_merchant_inventories_v1beta_DeleteRegionalInventoryRequest_descriptor,
             new java.lang.String[] {
-              "Name",
+              "Name", "ProductIdBase64UrlEncoded",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

@@ -54,6 +54,7 @@ import javax.annotation.Generated;
  *       InsertRegionalInventoryRequest.newBuilder()
  *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
  *           .setRegionalInventory(RegionalInventory.newBuilder().build())
+ *           .setProductIdBase64UrlEncoded(true)
  *           .build();
  *   RegionalInventory response = regionalInventoryServiceClient.insertRegionalInventory(request);
  * }
@@ -334,6 +335,7 @@ public class RegionalInventoryServiceClient implements BackgroundResource {
    *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setProductIdBase64UrlEncoded(true)
    *           .build();
    *   for (RegionalInventory element :
    *       regionalInventoryServiceClient.listRegionalInventories(request).iterateAll()) {
@@ -373,6 +375,7 @@ public class RegionalInventoryServiceClient implements BackgroundResource {
    *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setProductIdBase64UrlEncoded(true)
    *           .build();
    *   ApiFuture<RegionalInventory> future =
    *       regionalInventoryServiceClient.listRegionalInventoriesPagedCallable().futureCall(request);
@@ -411,6 +414,7 @@ public class RegionalInventoryServiceClient implements BackgroundResource {
    *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setProductIdBase64UrlEncoded(true)
    *           .build();
    *   while (true) {
    *     ListRegionalInventoriesResponse response =
@@ -458,6 +462,7 @@ public class RegionalInventoryServiceClient implements BackgroundResource {
    *       InsertRegionalInventoryRequest.newBuilder()
    *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
    *           .setRegionalInventory(RegionalInventory.newBuilder().build())
+   *           .setProductIdBase64UrlEncoded(true)
    *           .build();
    *   RegionalInventory response = regionalInventoryServiceClient.insertRegionalInventory(request);
    * }
@@ -495,6 +500,7 @@ public class RegionalInventoryServiceClient implements BackgroundResource {
    *       InsertRegionalInventoryRequest.newBuilder()
    *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
    *           .setRegionalInventory(RegionalInventory.newBuilder().build())
+   *           .setProductIdBase64UrlEncoded(true)
    *           .build();
    *   ApiFuture<RegionalInventory> future =
    *       regionalInventoryServiceClient.insertRegionalInventoryCallable().futureCall(request);
@@ -594,6 +600,7 @@ public class RegionalInventoryServiceClient implements BackgroundResource {
    *   DeleteRegionalInventoryRequest request =
    *       DeleteRegionalInventoryRequest.newBuilder()
    *           .setName(RegionalInventoryName.of("[ACCOUNT]", "[PRODUCT]", "[REGION]").toString())
+   *           .setProductIdBase64UrlEncoded(true)
    *           .build();
    *   regionalInventoryServiceClient.deleteRegionalInventory(request);
    * }
@@ -626,6 +633,7 @@ public class RegionalInventoryServiceClient implements BackgroundResource {
    *   DeleteRegionalInventoryRequest request =
    *       DeleteRegionalInventoryRequest.newBuilder()
    *           .setName(RegionalInventoryName.of("[ACCOUNT]", "[PRODUCT]", "[REGION]").toString())
+   *           .setProductIdBase64UrlEncoded(true)
    *           .build();
    *   ApiFuture<Empty> future =
    *       regionalInventoryServiceClient.deleteRegionalInventoryCallable().futureCall(request);

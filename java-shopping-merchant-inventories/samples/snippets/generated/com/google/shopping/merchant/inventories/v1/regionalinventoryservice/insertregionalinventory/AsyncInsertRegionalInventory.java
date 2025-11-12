@@ -41,6 +41,7 @@ public class AsyncInsertRegionalInventory {
           InsertRegionalInventoryRequest.newBuilder()
               .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
               .setRegionalInventory(RegionalInventory.newBuilder().build())
+              .setProductIdBase64UrlEncoded(true)
               .build();
       ApiFuture<RegionalInventory> future =
           regionalInventoryServiceClient.insertRegionalInventoryCallable().futureCall(request);

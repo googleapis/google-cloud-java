@@ -2062,6 +2062,230 @@ public interface ProductAttributesOrBuilder
    *
    *
    * <pre>
+   * The business days during which orders can be handled. If not provided,
+   * Monday to Friday business days will be assumed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_handling_business_days = 143;
+   * </code>
+   */
+  java.util.List<
+          com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig>
+      getShippingHandlingBusinessDaysList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The business days during which orders can be handled. If not provided,
+   * Monday to Friday business days will be assumed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_handling_business_days = 143;
+   * </code>
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
+      getShippingHandlingBusinessDays(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The business days during which orders can be handled. If not provided,
+   * Monday to Friday business days will be assumed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_handling_business_days = 143;
+   * </code>
+   */
+  int getShippingHandlingBusinessDaysCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The business days during which orders can be handled. If not provided,
+   * Monday to Friday business days will be assumed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_handling_business_days = 143;
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.shopping.merchant.products.v1.ProductAttributes
+                  .ShippingBusinessDaysConfigOrBuilder>
+      getShippingHandlingBusinessDaysOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The business days during which orders can be handled. If not provided,
+   * Monday to Friday business days will be assumed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_handling_business_days = 143;
+   * </code>
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfigOrBuilder
+      getShippingHandlingBusinessDaysOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The business days during which orders are in transit.
+   * If not provided, Monday to Friday business days will be assumed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_transit_business_days = 144;
+   * </code>
+   */
+  java.util.List<
+          com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig>
+      getShippingTransitBusinessDaysList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The business days during which orders are in transit.
+   * If not provided, Monday to Friday business days will be assumed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_transit_business_days = 144;
+   * </code>
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
+      getShippingTransitBusinessDays(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The business days during which orders are in transit.
+   * If not provided, Monday to Friday business days will be assumed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_transit_business_days = 144;
+   * </code>
+   */
+  int getShippingTransitBusinessDaysCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The business days during which orders are in transit.
+   * If not provided, Monday to Friday business days will be assumed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_transit_business_days = 144;
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.shopping.merchant.products.v1.ProductAttributes
+                  .ShippingBusinessDaysConfigOrBuilder>
+      getShippingTransitBusinessDaysOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The business days during which orders are in transit.
+   * If not provided, Monday to Friday business days will be assumed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_transit_business_days = 144;
+   * </code>
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfigOrBuilder
+      getShippingTransitBusinessDaysOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The handling cutoff times for shipping.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.HandlingCutoffTime handling_cutoff_times = 141;
+   * </code>
+   */
+  java.util.List<com.google.shopping.merchant.products.v1.HandlingCutoffTime>
+      getHandlingCutoffTimesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The handling cutoff times for shipping.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.HandlingCutoffTime handling_cutoff_times = 141;
+   * </code>
+   */
+  com.google.shopping.merchant.products.v1.HandlingCutoffTime getHandlingCutoffTimes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The handling cutoff times for shipping.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.HandlingCutoffTime handling_cutoff_times = 141;
+   * </code>
+   */
+  int getHandlingCutoffTimesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The handling cutoff times for shipping.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.HandlingCutoffTime handling_cutoff_times = 141;
+   * </code>
+   */
+  java.util.List<? extends com.google.shopping.merchant.products.v1.HandlingCutoffTimeOrBuilder>
+      getHandlingCutoffTimesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The handling cutoff times for shipping.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.HandlingCutoffTime handling_cutoff_times = 141;
+   * </code>
+   */
+  com.google.shopping.merchant.products.v1.HandlingCutoffTimeOrBuilder
+      getHandlingCutoffTimesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * The shipping label of the product, used to group product in account-level
    * shipping rules.
    * </pre>

@@ -44,6 +44,7 @@ public class AsyncRenderProductIssues {
               .setLanguageCode("languageCode-2092349083")
               .setTimeZone("timeZone-2077180903")
               .setPayload(RenderIssuesRequestPayload.newBuilder().build())
+              .setProductIdBase64UrlEncoded(true)
               .build();
       ApiFuture<RenderProductIssuesResponse> future =
           issueResolutionServiceClient.renderProductIssuesCallable().futureCall(request);

@@ -43,6 +43,7 @@ public class SyncRenderProductIssues {
               .setLanguageCode("languageCode-2092349083")
               .setTimeZone("timeZone-2077180903")
               .setPayload(RenderIssuesRequestPayload.newBuilder().build())
+              .setProductIdBase64UrlEncoded(true)
               .build();
       RenderProductIssuesResponse response =
           issueResolutionServiceClient.renderProductIssues(request);

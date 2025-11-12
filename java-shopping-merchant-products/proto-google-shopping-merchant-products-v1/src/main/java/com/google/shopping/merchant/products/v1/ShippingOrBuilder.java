@@ -395,4 +395,106 @@ public interface ShippingOrBuilder
    * @return The maxTransitTime.
    */
   long getMaxTransitTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * The handling cutoff time until which an order has to be placed to be
+   * processed in the same day. This is a string in format of HHMM (e.g.
+   * `1530`) for 3:30 PM. If not configured, the cutoff time will be defaulted
+   * to 8AM PST and `handling_cutoff_timezone` will be ignored.
+   * </pre>
+   *
+   * <code>optional string handling_cutoff_time = 12;</code>
+   *
+   * @return Whether the handlingCutoffTime field is set.
+   */
+  boolean hasHandlingCutoffTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * The handling cutoff time until which an order has to be placed to be
+   * processed in the same day. This is a string in format of HHMM (e.g.
+   * `1530`) for 3:30 PM. If not configured, the cutoff time will be defaulted
+   * to 8AM PST and `handling_cutoff_timezone` will be ignored.
+   * </pre>
+   *
+   * <code>optional string handling_cutoff_time = 12;</code>
+   *
+   * @return The handlingCutoffTime.
+   */
+  java.lang.String getHandlingCutoffTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * The handling cutoff time until which an order has to be placed to be
+   * processed in the same day. This is a string in format of HHMM (e.g.
+   * `1530`) for 3:30 PM. If not configured, the cutoff time will be defaulted
+   * to 8AM PST and `handling_cutoff_timezone` will be ignored.
+   * </pre>
+   *
+   * <code>optional string handling_cutoff_time = 12;</code>
+   *
+   * @return The bytes for handlingCutoffTime.
+   */
+  com.google.protobuf.ByteString getHandlingCutoffTimeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Timezone
+   * identifier](https://developers.google.com/adwords/api/docs/appendix/codes-formats#timezone-ids)
+   * For example `Europe/Zurich`. This field only applies if
+   * `handling_cutoff_time` is set. If `handling_cutoff_time` is set but this
+   * field is not set, the shipping destination timezone will be used. If both
+   * fields are not set, the handling cutoff time will default to 8AM PST.
+   * </pre>
+   *
+   * <code>optional string handling_cutoff_timezone = 13;</code>
+   *
+   * @return Whether the handlingCutoffTimezone field is set.
+   */
+  boolean hasHandlingCutoffTimezone();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Timezone
+   * identifier](https://developers.google.com/adwords/api/docs/appendix/codes-formats#timezone-ids)
+   * For example `Europe/Zurich`. This field only applies if
+   * `handling_cutoff_time` is set. If `handling_cutoff_time` is set but this
+   * field is not set, the shipping destination timezone will be used. If both
+   * fields are not set, the handling cutoff time will default to 8AM PST.
+   * </pre>
+   *
+   * <code>optional string handling_cutoff_timezone = 13;</code>
+   *
+   * @return The handlingCutoffTimezone.
+   */
+  java.lang.String getHandlingCutoffTimezone();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Timezone
+   * identifier](https://developers.google.com/adwords/api/docs/appendix/codes-formats#timezone-ids)
+   * For example `Europe/Zurich`. This field only applies if
+   * `handling_cutoff_time` is set. If `handling_cutoff_time` is set but this
+   * field is not set, the shipping destination timezone will be used. If both
+   * fields are not set, the handling cutoff time will default to 8AM PST.
+   * </pre>
+   *
+   * <code>optional string handling_cutoff_timezone = 13;</code>
+   *
+   * @return The bytes for handlingCutoffTimezone.
+   */
+  com.google.protobuf.ByteString getHandlingCutoffTimezoneBytes();
 }

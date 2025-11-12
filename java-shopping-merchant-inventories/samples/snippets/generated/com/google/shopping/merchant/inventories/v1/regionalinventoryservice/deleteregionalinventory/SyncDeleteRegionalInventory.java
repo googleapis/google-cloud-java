@@ -39,6 +39,7 @@ public class SyncDeleteRegionalInventory {
       DeleteRegionalInventoryRequest request =
           DeleteRegionalInventoryRequest.newBuilder()
               .setName(RegionalInventoryName.of("[ACCOUNT]", "[PRODUCT]", "[REGION]").toString())
+              .setProductIdBase64UrlEncoded(true)
               .build();
       regionalInventoryServiceClient.deleteRegionalInventory(request);
     }

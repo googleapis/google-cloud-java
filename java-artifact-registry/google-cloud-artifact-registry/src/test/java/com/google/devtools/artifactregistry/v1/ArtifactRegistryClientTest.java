@@ -174,6 +174,8 @@ public class ArtifactRegistryClientTest {
             .setMediaType("mediaType2140463422")
             .setBuildTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setArtifactType("artifactType-672214996")
+            .addAllImageManifests(new ArrayList<ImageManifest>())
             .build();
     mockArtifactRegistry.addResponse(expectedResponse);
 
@@ -223,6 +225,8 @@ public class ArtifactRegistryClientTest {
             .setMediaType("mediaType2140463422")
             .setBuildTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setArtifactType("artifactType-672214996")
+            .addAllImageManifests(new ArrayList<ImageManifest>())
             .build();
     mockArtifactRegistry.addResponse(expectedResponse);
 

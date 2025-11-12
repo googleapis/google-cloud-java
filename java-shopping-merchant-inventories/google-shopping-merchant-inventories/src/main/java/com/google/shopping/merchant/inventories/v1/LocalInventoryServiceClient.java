@@ -52,6 +52,7 @@ import javax.annotation.Generated;
  *       InsertLocalInventoryRequest.newBuilder()
  *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
  *           .setLocalInventory(LocalInventory.newBuilder().build())
+ *           .setProductIdBase64UrlEncoded(true)
  *           .build();
  *   LocalInventory response = localInventoryServiceClient.insertLocalInventory(request);
  * }
@@ -329,6 +330,7 @@ public class LocalInventoryServiceClient implements BackgroundResource {
    *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setProductIdBase64UrlEncoded(true)
    *           .build();
    *   for (LocalInventory element :
    *       localInventoryServiceClient.listLocalInventories(request).iterateAll()) {
@@ -368,6 +370,7 @@ public class LocalInventoryServiceClient implements BackgroundResource {
    *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setProductIdBase64UrlEncoded(true)
    *           .build();
    *   ApiFuture<LocalInventory> future =
    *       localInventoryServiceClient.listLocalInventoriesPagedCallable().futureCall(request);
@@ -406,6 +409,7 @@ public class LocalInventoryServiceClient implements BackgroundResource {
    *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setProductIdBase64UrlEncoded(true)
    *           .build();
    *   while (true) {
    *     ListLocalInventoriesResponse response =
@@ -453,6 +457,7 @@ public class LocalInventoryServiceClient implements BackgroundResource {
    *       InsertLocalInventoryRequest.newBuilder()
    *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
    *           .setLocalInventory(LocalInventory.newBuilder().build())
+   *           .setProductIdBase64UrlEncoded(true)
    *           .build();
    *   LocalInventory response = localInventoryServiceClient.insertLocalInventory(request);
    * }
@@ -490,6 +495,7 @@ public class LocalInventoryServiceClient implements BackgroundResource {
    *       InsertLocalInventoryRequest.newBuilder()
    *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
    *           .setLocalInventory(LocalInventory.newBuilder().build())
+   *           .setProductIdBase64UrlEncoded(true)
    *           .build();
    *   ApiFuture<LocalInventory> future =
    *       localInventoryServiceClient.insertLocalInventoryCallable().futureCall(request);
@@ -589,6 +595,7 @@ public class LocalInventoryServiceClient implements BackgroundResource {
    *   DeleteLocalInventoryRequest request =
    *       DeleteLocalInventoryRequest.newBuilder()
    *           .setName(LocalInventoryName.of("[ACCOUNT]", "[PRODUCT]", "[STORE_CODE]").toString())
+   *           .setProductIdBase64UrlEncoded(true)
    *           .build();
    *   localInventoryServiceClient.deleteLocalInventory(request);
    * }
@@ -621,6 +628,7 @@ public class LocalInventoryServiceClient implements BackgroundResource {
    *   DeleteLocalInventoryRequest request =
    *       DeleteLocalInventoryRequest.newBuilder()
    *           .setName(LocalInventoryName.of("[ACCOUNT]", "[PRODUCT]", "[STORE_CODE]").toString())
+   *           .setProductIdBase64UrlEncoded(true)
    *           .build();
    *   ApiFuture<Empty> future =
    *       localInventoryServiceClient.deleteLocalInventoryCallable().futureCall(request);

@@ -224,10 +224,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Price of the product at this store.
+   * Optional. Price of the product at this store.
    * </pre>
    *
-   * <code>.google.shopping.type.Price price = 4;</code>
+   * <code>.google.shopping.type.Price price = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the price field is set.
    */
@@ -240,10 +240,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Price of the product at this store.
+   * Optional. Price of the product at this store.
    * </pre>
    *
-   * <code>.google.shopping.type.Price price = 4;</code>
+   * <code>.google.shopping.type.Price price = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The price.
    */
@@ -256,10 +256,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Price of the product at this store.
+   * Optional. Price of the product at this store.
    * </pre>
    *
-   * <code>.google.shopping.type.Price price = 4;</code>
+   * <code>.google.shopping.type.Price price = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public com.google.shopping.type.PriceOrBuilder getPriceOrBuilder() {
@@ -273,12 +273,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Sale price of the product at this store. Mandatory if
+   * Optional. Sale price of the product at this store. Mandatory if
    * [`salePriceEffectiveDate`][google.shopping.merchant.inventories.v1beta.LocalInventory.sale_price_effective_date]
    * is defined.
    * </pre>
    *
-   * <code>.google.shopping.type.Price sale_price = 5;</code>
+   * <code>.google.shopping.type.Price sale_price = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the salePrice field is set.
    */
@@ -291,12 +292,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Sale price of the product at this store. Mandatory if
+   * Optional. Sale price of the product at this store. Mandatory if
    * [`salePriceEffectiveDate`][google.shopping.merchant.inventories.v1beta.LocalInventory.sale_price_effective_date]
    * is defined.
    * </pre>
    *
-   * <code>.google.shopping.type.Price sale_price = 5;</code>
+   * <code>.google.shopping.type.Price sale_price = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The salePrice.
    */
@@ -309,12 +311,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Sale price of the product at this store. Mandatory if
+   * Optional. Sale price of the product at this store. Mandatory if
    * [`salePriceEffectiveDate`][google.shopping.merchant.inventories.v1beta.LocalInventory.sale_price_effective_date]
    * is defined.
    * </pre>
    *
-   * <code>.google.shopping.type.Price sale_price = 5;</code>
+   * <code>.google.shopping.type.Price sale_price = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.shopping.type.PriceOrBuilder getSalePriceOrBuilder() {
@@ -328,11 +331,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The `TimePeriod` of the
+   * Optional. The `TimePeriod` of the
    * sale at this store.
    * </pre>
    *
-   * <code>.google.type.Interval sale_price_effective_date = 6;</code>
+   * <code>
+   * .google.type.Interval sale_price_effective_date = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the salePriceEffectiveDate field is set.
    */
@@ -345,11 +350,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The `TimePeriod` of the
+   * Optional. The `TimePeriod` of the
    * sale at this store.
    * </pre>
    *
-   * <code>.google.type.Interval sale_price_effective_date = 6;</code>
+   * <code>
+   * .google.type.Interval sale_price_effective_date = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The salePriceEffectiveDate.
    */
@@ -364,11 +371,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The `TimePeriod` of the
+   * Optional. The `TimePeriod` of the
    * sale at this store.
    * </pre>
    *
-   * <code>.google.type.Interval sale_price_effective_date = 6;</code>
+   * <code>
+   * .google.type.Interval sale_price_effective_date = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.type.IntervalOrBuilder getSalePriceEffectiveDateOrBuilder() {
@@ -734,9 +743,12 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    * generic form.
    * </pre>
    *
-   * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 12;</code>
+   * <code>
+   * repeated .google.shopping.type.CustomAttribute custom_attributes = 12 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.util.List<com.google.shopping.type.CustomAttribute> getCustomAttributesList() {
     return customAttributes_;
   }
@@ -750,9 +762,12 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    * generic form.
    * </pre>
    *
-   * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 12;</code>
+   * <code>
+   * repeated .google.shopping.type.CustomAttribute custom_attributes = 12 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.util.List<? extends com.google.shopping.type.CustomAttributeOrBuilder>
       getCustomAttributesOrBuilderList() {
     return customAttributes_;
@@ -767,9 +782,12 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    * generic form.
    * </pre>
    *
-   * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 12;</code>
+   * <code>
+   * repeated .google.shopping.type.CustomAttribute custom_attributes = 12 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public int getCustomAttributesCount() {
     return customAttributes_.size();
   }
@@ -783,9 +801,12 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    * generic form.
    * </pre>
    *
-   * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 12;</code>
+   * <code>
+   * repeated .google.shopping.type.CustomAttribute custom_attributes = 12 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.shopping.type.CustomAttribute getCustomAttributes(int index) {
     return customAttributes_.get(index);
   }
@@ -799,9 +820,12 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
    * generic form.
    * </pre>
    *
-   * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 12;</code>
+   * <code>
+   * repeated .google.shopping.type.CustomAttribute custom_attributes = 12 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.shopping.type.CustomAttributeOrBuilder getCustomAttributesOrBuilder(int index) {
     return customAttributes_.get(index);
   }
@@ -1871,10 +1895,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Price of the product at this store.
+     * Optional. Price of the product at this store.
      * </pre>
      *
-     * <code>.google.shopping.type.Price price = 4;</code>
+     * <code>.google.shopping.type.Price price = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return Whether the price field is set.
      */
@@ -1886,10 +1910,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Price of the product at this store.
+     * Optional. Price of the product at this store.
      * </pre>
      *
-     * <code>.google.shopping.type.Price price = 4;</code>
+     * <code>.google.shopping.type.Price price = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The price.
      */
@@ -1905,10 +1929,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Price of the product at this store.
+     * Optional. Price of the product at this store.
      * </pre>
      *
-     * <code>.google.shopping.type.Price price = 4;</code>
+     * <code>.google.shopping.type.Price price = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setPrice(com.google.shopping.type.Price value) {
       if (priceBuilder_ == null) {
@@ -1928,10 +1952,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Price of the product at this store.
+     * Optional. Price of the product at this store.
      * </pre>
      *
-     * <code>.google.shopping.type.Price price = 4;</code>
+     * <code>.google.shopping.type.Price price = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder setPrice(com.google.shopping.type.Price.Builder builderForValue) {
       if (priceBuilder_ == null) {
@@ -1948,10 +1972,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Price of the product at this store.
+     * Optional. Price of the product at this store.
      * </pre>
      *
-     * <code>.google.shopping.type.Price price = 4;</code>
+     * <code>.google.shopping.type.Price price = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder mergePrice(com.google.shopping.type.Price value) {
       if (priceBuilder_ == null) {
@@ -1976,10 +2000,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Price of the product at this store.
+     * Optional. Price of the product at this store.
      * </pre>
      *
-     * <code>.google.shopping.type.Price price = 4;</code>
+     * <code>.google.shopping.type.Price price = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearPrice() {
       bitField0_ = (bitField0_ & ~0x00000008);
@@ -1996,10 +2020,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Price of the product at this store.
+     * Optional. Price of the product at this store.
      * </pre>
      *
-     * <code>.google.shopping.type.Price price = 4;</code>
+     * <code>.google.shopping.type.Price price = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.shopping.type.Price.Builder getPriceBuilder() {
       bitField0_ |= 0x00000008;
@@ -2011,10 +2035,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Price of the product at this store.
+     * Optional. Price of the product at this store.
      * </pre>
      *
-     * <code>.google.shopping.type.Price price = 4;</code>
+     * <code>.google.shopping.type.Price price = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.shopping.type.PriceOrBuilder getPriceOrBuilder() {
       if (priceBuilder_ != null) {
@@ -2028,10 +2052,10 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Price of the product at this store.
+     * Optional. Price of the product at this store.
      * </pre>
      *
-     * <code>.google.shopping.type.Price price = 4;</code>
+     * <code>.google.shopping.type.Price price = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.shopping.type.Price,
@@ -2061,12 +2085,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Sale price of the product at this store. Mandatory if
+     * Optional. Sale price of the product at this store. Mandatory if
      * [`salePriceEffectiveDate`][google.shopping.merchant.inventories.v1beta.LocalInventory.sale_price_effective_date]
      * is defined.
      * </pre>
      *
-     * <code>.google.shopping.type.Price sale_price = 5;</code>
+     * <code>.google.shopping.type.Price sale_price = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the salePrice field is set.
      */
@@ -2078,12 +2103,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Sale price of the product at this store. Mandatory if
+     * Optional. Sale price of the product at this store. Mandatory if
      * [`salePriceEffectiveDate`][google.shopping.merchant.inventories.v1beta.LocalInventory.sale_price_effective_date]
      * is defined.
      * </pre>
      *
-     * <code>.google.shopping.type.Price sale_price = 5;</code>
+     * <code>.google.shopping.type.Price sale_price = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The salePrice.
      */
@@ -2101,12 +2127,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Sale price of the product at this store. Mandatory if
+     * Optional. Sale price of the product at this store. Mandatory if
      * [`salePriceEffectiveDate`][google.shopping.merchant.inventories.v1beta.LocalInventory.sale_price_effective_date]
      * is defined.
      * </pre>
      *
-     * <code>.google.shopping.type.Price sale_price = 5;</code>
+     * <code>.google.shopping.type.Price sale_price = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setSalePrice(com.google.shopping.type.Price value) {
       if (salePriceBuilder_ == null) {
@@ -2126,12 +2153,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Sale price of the product at this store. Mandatory if
+     * Optional. Sale price of the product at this store. Mandatory if
      * [`salePriceEffectiveDate`][google.shopping.merchant.inventories.v1beta.LocalInventory.sale_price_effective_date]
      * is defined.
      * </pre>
      *
-     * <code>.google.shopping.type.Price sale_price = 5;</code>
+     * <code>.google.shopping.type.Price sale_price = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setSalePrice(com.google.shopping.type.Price.Builder builderForValue) {
       if (salePriceBuilder_ == null) {
@@ -2148,12 +2176,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Sale price of the product at this store. Mandatory if
+     * Optional. Sale price of the product at this store. Mandatory if
      * [`salePriceEffectiveDate`][google.shopping.merchant.inventories.v1beta.LocalInventory.sale_price_effective_date]
      * is defined.
      * </pre>
      *
-     * <code>.google.shopping.type.Price sale_price = 5;</code>
+     * <code>.google.shopping.type.Price sale_price = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeSalePrice(com.google.shopping.type.Price value) {
       if (salePriceBuilder_ == null) {
@@ -2178,12 +2207,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Sale price of the product at this store. Mandatory if
+     * Optional. Sale price of the product at this store. Mandatory if
      * [`salePriceEffectiveDate`][google.shopping.merchant.inventories.v1beta.LocalInventory.sale_price_effective_date]
      * is defined.
      * </pre>
      *
-     * <code>.google.shopping.type.Price sale_price = 5;</code>
+     * <code>.google.shopping.type.Price sale_price = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearSalePrice() {
       bitField0_ = (bitField0_ & ~0x00000010);
@@ -2200,12 +2230,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Sale price of the product at this store. Mandatory if
+     * Optional. Sale price of the product at this store. Mandatory if
      * [`salePriceEffectiveDate`][google.shopping.merchant.inventories.v1beta.LocalInventory.sale_price_effective_date]
      * is defined.
      * </pre>
      *
-     * <code>.google.shopping.type.Price sale_price = 5;</code>
+     * <code>.google.shopping.type.Price sale_price = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.shopping.type.Price.Builder getSalePriceBuilder() {
       bitField0_ |= 0x00000010;
@@ -2217,12 +2248,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Sale price of the product at this store. Mandatory if
+     * Optional. Sale price of the product at this store. Mandatory if
      * [`salePriceEffectiveDate`][google.shopping.merchant.inventories.v1beta.LocalInventory.sale_price_effective_date]
      * is defined.
      * </pre>
      *
-     * <code>.google.shopping.type.Price sale_price = 5;</code>
+     * <code>.google.shopping.type.Price sale_price = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.shopping.type.PriceOrBuilder getSalePriceOrBuilder() {
       if (salePriceBuilder_ != null) {
@@ -2238,12 +2270,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Sale price of the product at this store. Mandatory if
+     * Optional. Sale price of the product at this store. Mandatory if
      * [`salePriceEffectiveDate`][google.shopping.merchant.inventories.v1beta.LocalInventory.sale_price_effective_date]
      * is defined.
      * </pre>
      *
-     * <code>.google.shopping.type.Price sale_price = 5;</code>
+     * <code>.google.shopping.type.Price sale_price = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.shopping.type.Price,
@@ -2273,11 +2306,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The `TimePeriod` of the
+     * Optional. The `TimePeriod` of the
      * sale at this store.
      * </pre>
      *
-     * <code>.google.type.Interval sale_price_effective_date = 6;</code>
+     * <code>
+     * .google.type.Interval sale_price_effective_date = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the salePriceEffectiveDate field is set.
      */
@@ -2289,11 +2324,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The `TimePeriod` of the
+     * Optional. The `TimePeriod` of the
      * sale at this store.
      * </pre>
      *
-     * <code>.google.type.Interval sale_price_effective_date = 6;</code>
+     * <code>
+     * .google.type.Interval sale_price_effective_date = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The salePriceEffectiveDate.
      */
@@ -2311,11 +2348,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The `TimePeriod` of the
+     * Optional. The `TimePeriod` of the
      * sale at this store.
      * </pre>
      *
-     * <code>.google.type.Interval sale_price_effective_date = 6;</code>
+     * <code>
+     * .google.type.Interval sale_price_effective_date = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setSalePriceEffectiveDate(com.google.type.Interval value) {
       if (salePriceEffectiveDateBuilder_ == null) {
@@ -2335,11 +2374,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The `TimePeriod` of the
+     * Optional. The `TimePeriod` of the
      * sale at this store.
      * </pre>
      *
-     * <code>.google.type.Interval sale_price_effective_date = 6;</code>
+     * <code>
+     * .google.type.Interval sale_price_effective_date = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setSalePriceEffectiveDate(com.google.type.Interval.Builder builderForValue) {
       if (salePriceEffectiveDateBuilder_ == null) {
@@ -2356,11 +2397,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The `TimePeriod` of the
+     * Optional. The `TimePeriod` of the
      * sale at this store.
      * </pre>
      *
-     * <code>.google.type.Interval sale_price_effective_date = 6;</code>
+     * <code>
+     * .google.type.Interval sale_price_effective_date = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeSalePriceEffectiveDate(com.google.type.Interval value) {
       if (salePriceEffectiveDateBuilder_ == null) {
@@ -2385,11 +2428,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The `TimePeriod` of the
+     * Optional. The `TimePeriod` of the
      * sale at this store.
      * </pre>
      *
-     * <code>.google.type.Interval sale_price_effective_date = 6;</code>
+     * <code>
+     * .google.type.Interval sale_price_effective_date = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearSalePriceEffectiveDate() {
       bitField0_ = (bitField0_ & ~0x00000020);
@@ -2406,11 +2451,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The `TimePeriod` of the
+     * Optional. The `TimePeriod` of the
      * sale at this store.
      * </pre>
      *
-     * <code>.google.type.Interval sale_price_effective_date = 6;</code>
+     * <code>
+     * .google.type.Interval sale_price_effective_date = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.type.Interval.Builder getSalePriceEffectiveDateBuilder() {
       bitField0_ |= 0x00000020;
@@ -2422,11 +2469,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The `TimePeriod` of the
+     * Optional. The `TimePeriod` of the
      * sale at this store.
      * </pre>
      *
-     * <code>.google.type.Interval sale_price_effective_date = 6;</code>
+     * <code>
+     * .google.type.Interval sale_price_effective_date = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.type.IntervalOrBuilder getSalePriceEffectiveDateOrBuilder() {
       if (salePriceEffectiveDateBuilder_ != null) {
@@ -2442,11 +2491,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The `TimePeriod` of the
+     * Optional. The `TimePeriod` of the
      * sale at this store.
      * </pre>
      *
-     * <code>.google.type.Interval sale_price_effective_date = 6;</code>
+     * <code>
+     * .google.type.Interval sale_price_effective_date = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Interval,
@@ -3131,8 +3182,11 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * generic form.
      * </pre>
      *
-     * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 12;</code>
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 12 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public java.util.List<com.google.shopping.type.CustomAttribute> getCustomAttributesList() {
       if (customAttributesBuilder_ == null) {
         return java.util.Collections.unmodifiableList(customAttributes_);
@@ -3150,8 +3204,11 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * generic form.
      * </pre>
      *
-     * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 12;</code>
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 12 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public int getCustomAttributesCount() {
       if (customAttributesBuilder_ == null) {
         return customAttributes_.size();
@@ -3169,8 +3226,11 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * generic form.
      * </pre>
      *
-     * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 12;</code>
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 12 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.shopping.type.CustomAttribute getCustomAttributes(int index) {
       if (customAttributesBuilder_ == null) {
         return customAttributes_.get(index);
@@ -3188,8 +3248,11 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * generic form.
      * </pre>
      *
-     * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 12;</code>
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 12 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setCustomAttributes(int index, com.google.shopping.type.CustomAttribute value) {
       if (customAttributesBuilder_ == null) {
         if (value == null) {
@@ -3213,8 +3276,11 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * generic form.
      * </pre>
      *
-     * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 12;</code>
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 12 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setCustomAttributes(
         int index, com.google.shopping.type.CustomAttribute.Builder builderForValue) {
       if (customAttributesBuilder_ == null) {
@@ -3236,8 +3302,11 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * generic form.
      * </pre>
      *
-     * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 12;</code>
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 12 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder addCustomAttributes(com.google.shopping.type.CustomAttribute value) {
       if (customAttributesBuilder_ == null) {
         if (value == null) {
@@ -3261,8 +3330,11 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * generic form.
      * </pre>
      *
-     * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 12;</code>
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 12 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder addCustomAttributes(int index, com.google.shopping.type.CustomAttribute value) {
       if (customAttributesBuilder_ == null) {
         if (value == null) {
@@ -3286,8 +3358,11 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * generic form.
      * </pre>
      *
-     * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 12;</code>
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 12 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder addCustomAttributes(
         com.google.shopping.type.CustomAttribute.Builder builderForValue) {
       if (customAttributesBuilder_ == null) {
@@ -3309,8 +3384,11 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * generic form.
      * </pre>
      *
-     * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 12;</code>
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 12 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder addCustomAttributes(
         int index, com.google.shopping.type.CustomAttribute.Builder builderForValue) {
       if (customAttributesBuilder_ == null) {
@@ -3332,8 +3410,11 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * generic form.
      * </pre>
      *
-     * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 12;</code>
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 12 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder addAllCustomAttributes(
         java.lang.Iterable<? extends com.google.shopping.type.CustomAttribute> values) {
       if (customAttributesBuilder_ == null) {
@@ -3355,8 +3436,11 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * generic form.
      * </pre>
      *
-     * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 12;</code>
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 12 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder clearCustomAttributes() {
       if (customAttributesBuilder_ == null) {
         customAttributes_ = java.util.Collections.emptyList();
@@ -3377,8 +3461,11 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * generic form.
      * </pre>
      *
-     * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 12;</code>
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 12 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder removeCustomAttributes(int index) {
       if (customAttributesBuilder_ == null) {
         ensureCustomAttributesIsMutable();
@@ -3399,8 +3486,11 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * generic form.
      * </pre>
      *
-     * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 12;</code>
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 12 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.shopping.type.CustomAttribute.Builder getCustomAttributesBuilder(int index) {
       return getCustomAttributesFieldBuilder().getBuilder(index);
     }
@@ -3414,8 +3504,11 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * generic form.
      * </pre>
      *
-     * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 12;</code>
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 12 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.shopping.type.CustomAttributeOrBuilder getCustomAttributesOrBuilder(
         int index) {
       if (customAttributesBuilder_ == null) {
@@ -3434,8 +3527,11 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * generic form.
      * </pre>
      *
-     * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 12;</code>
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 12 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public java.util.List<? extends com.google.shopping.type.CustomAttributeOrBuilder>
         getCustomAttributesOrBuilderList() {
       if (customAttributesBuilder_ != null) {
@@ -3454,8 +3550,11 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * generic form.
      * </pre>
      *
-     * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 12;</code>
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 12 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.shopping.type.CustomAttribute.Builder addCustomAttributesBuilder() {
       return getCustomAttributesFieldBuilder()
           .addBuilder(com.google.shopping.type.CustomAttribute.getDefaultInstance());
@@ -3470,8 +3569,11 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * generic form.
      * </pre>
      *
-     * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 12;</code>
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 12 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.shopping.type.CustomAttribute.Builder addCustomAttributesBuilder(int index) {
       return getCustomAttributesFieldBuilder()
           .addBuilder(index, com.google.shopping.type.CustomAttribute.getDefaultInstance());
@@ -3486,8 +3588,11 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessageV3
      * generic form.
      * </pre>
      *
-     * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 12;</code>
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 12 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public java.util.List<com.google.shopping.type.CustomAttribute.Builder>
         getCustomAttributesBuilderList() {
       return getCustomAttributesFieldBuilder().getBuilderList();

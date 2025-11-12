@@ -197,6 +197,7 @@ public class LocalInventoryServiceClientTest {
         InsertLocalInventoryRequest.newBuilder()
             .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
             .setLocalInventory(LocalInventory.newBuilder().build())
+            .setProductIdBase64UrlEncoded(true)
             .build();
 
     LocalInventory actualResponse = client.insertLocalInventory(request);
@@ -209,6 +210,8 @@ public class LocalInventoryServiceClientTest {
 
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertEquals(request.getLocalInventory(), actualRequest.getLocalInventory());
+    Assert.assertEquals(
+        request.getProductIdBase64UrlEncoded(), actualRequest.getProductIdBase64UrlEncoded());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -225,6 +228,7 @@ public class LocalInventoryServiceClientTest {
           InsertLocalInventoryRequest.newBuilder()
               .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
               .setLocalInventory(LocalInventory.newBuilder().build())
+              .setProductIdBase64UrlEncoded(true)
               .build();
       client.insertLocalInventory(request);
       Assert.fail("No exception raised");

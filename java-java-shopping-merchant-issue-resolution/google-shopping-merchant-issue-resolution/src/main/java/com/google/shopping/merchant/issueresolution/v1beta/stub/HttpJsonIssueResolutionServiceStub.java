@@ -121,6 +121,10 @@ public class HttpJsonIssueResolutionServiceStub extends IssueResolutionServiceSt
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "languageCode", request.getLanguageCode());
+                            serializer.putQueryParam(
+                                fields,
+                                "productIdBase64UrlEncoded",
+                                request.getProductIdBase64UrlEncoded());
                             serializer.putQueryParam(fields, "timeZone", request.getTimeZone());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;

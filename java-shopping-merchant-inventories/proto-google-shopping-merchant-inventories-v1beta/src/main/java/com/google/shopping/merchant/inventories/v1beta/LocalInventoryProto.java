@@ -63,67 +63,73 @@ public final class LocalInventoryProto {
           + "api/annotations.proto\032\027google/api/client"
           + ".proto\032\037google/api/field_behavior.proto\032"
           + "\031google/api/resource.proto\032\033google/protobuf/empty.proto\032"
-          + " google/shopping/type/types.proto\032\032google/type/interval.proto\"\215\005\n"
+          + " google/shopping/type/types.proto\032\032google/type/interval.proto\"\240\005\n"
           + "\016LocalInventory\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\022\024\n"
           + "\007account\030\002 \001(\003B\003\340A\003\022\032\n\n"
-          + "store_code\030\003 \001(\tB\006\340A\002\340A\005\022*\n"
-          + "\005price\030\004 \001(\0132\033.google.shopping.type.Price\022/\n\n"
-          + "sale_price\030\005 \001(\0132\033.google.shopping.type.Price\0228\n"
-          + "\031sale_price_effective_date\030\006 \001(\0132\025.google.type.Interval\022\031\n"
+          + "store_code\030\003 \001(\tB\006\340A\002\340A\005\022/\n"
+          + "\005price\030\004 \001(\0132\033.google.shopping.type.PriceB\003\340A\001\0224\n\n"
+          + "sale_price\030\005 \001(\0132\033.google.shopping.type.PriceB\003\340A\001\022=\n"
+          + "\031sale_price_effective_date\030\006"
+          + " \001(\0132\025.google.type.IntervalB\003\340A\001\022\031\n"
           + "\014availability\030\007 \001(\tH\000\210\001\001\022\025\n"
           + "\010quantity\030\010 \001(\003H\001\210\001\001\022\032\n\r"
           + "pickup_method\030\t \001(\tH\002\210\001\001\022\027\n\n"
           + "pickup_sla\030\n"
           + " \001(\tH\003\210\001\001\022%\n"
-          + "\030instore_product_location\030\013 \001(\tH\004\210\001\001\022@\n"
+          + "\030instore_product_location\030\013 \001(\tH\004\210\001\001\022D\n"
           + "\021custom_attributes\030\014"
-          + " \003(\0132%.google.shopping.type.CustomAttribute:s\352Ap\n"
-          + ")merchantapi.googleapis.com/LocalInventory\022Caccounts/{account}/product"
-          + "s/{product}/localInventories/{store_code}B\017\n\r"
+          + " \003(\0132%.google.shopping.type.CustomAttributeB\002\030\001:s\352Ap\n"
+          + ")merchantapi.googleapis.com/LocalInventory\022Caccount"
+          + "s/{account}/products/{product}/localInventories/{store_code}B\017\n\r"
           + "_availabilityB\013\n"
           + "\t_quantityB\020\n"
           + "\016_pickup_methodB\r\n"
           + "\013_pickup_slaB\033\n"
-          + "\031_instore_product_location\"\207\001\n"
+          + "\031_instore_product_location\"\263\001\n"
           + "\033ListLocalInventoriesRequest\022A\n"
-          + "\006parent\030\001 \001("
-          + "\tB1\340A\002\372A+\022)merchantapi.googleapis.com/LocalInventory\022\021\n"
+          + "\006parent\030\001 \001(\t"
+          + "B1\340A\002\372A+\022)merchantapi.googleapis.com/LocalInventory\022\021\n"
           + "\tpage_size\030\002 \001(\005\022\022\n\n"
-          + "page_token\030\003 \001(\t\"\217\001\n"
+          + "page_token\030\003 \001(\t\022*\n"
+          + "\035product_id_base64_url_encoded\030\004 \001(\010B\003\340A\001\"\217\001\n"
           + "\034ListLocalInventoriesResponse\022V\n"
-          + "\021local_inventories\030\001"
-          + " \003(\0132;.google.shopping.merchant.inventories.v1beta.LocalInventory\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"\273\001\n"
+          + "\021local_inventories\030\001 \003(\0132;.goo"
+          + "gle.shopping.merchant.inventories.v1beta.LocalInventory\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"\347\001\n"
           + "\033InsertLocalInventoryRequest\022A\n"
           + "\006parent\030\001 \001("
           + "\tB1\340A\002\372A+\022)merchantapi.googleapis.com/LocalInventory\022Y\n"
-          + "\017local_inventory\030\002 \001(\0132;.google.shopping."
-          + "merchant.inventories.v1beta.LocalInventoryB\003\340A\002\"^\n"
+          + "\017local_inventory\030\002"
+          + " \001(\0132;.google.shopping.merchant.inventories.v1beta.LocalInventoryB\003\340A\002\022*\n"
+          + "\035product_id_base64_url_encoded\030\003 \001(\010B\003\340A\001\"\212\001\n"
           + "\033DeleteLocalInventoryRequest\022?\n"
           + "\004name\030\001 \001(\tB1\340A\002\372A+\n"
-          + ")merchantapi.googleapis.com/LocalInventory2\270\006\n"
+          + ")merchantapi.googleapis.com/LocalInventory\022*\n"
+          + "\035product_id_base64_url_encoded\030\002 \001(\010B\003\340A\0012\270\006\n"
           + "\025LocalInventoryService\022\201\002\n"
-          + "\024ListLocalInventories\022H.google.shopping.merchant.inventories.v1beta"
-          + ".ListLocalInventoriesRequest\032I.google.shopping.merchant.inventories.v1beta.ListL"
-          + "ocalInventoriesResponse\"T\332A\006parent\202\323\344\223\002E"
-          + "\022C/inventories/v1beta/{parent=accounts/*/products/*}/localInventories\022\202\002\n"
-          + "\024InsertLocalInventory\022H.google.shopping.merchan"
-          + "t.inventories.v1beta.InsertLocalInventoryRequest\032;.google.shopping.merchant.inve"
-          + "ntories.v1beta.LocalInventory\"c\202\323\344\223\002]\"J/"
-          + "inventories/v1beta/{parent=accounts/*/pr"
-          + "oducts/*}/localInventories:insert:\017local_inventory\022\314\001\n"
-          + "\024DeleteLocalInventory\022H.google.shopping.merchant.inventories.v1bet"
-          + "a.DeleteLocalInventoryRequest\032\026.google.p"
-          + "rotobuf.Empty\"R\332A\004name\202\323\344\223\002E*C/inventori"
-          + "es/v1beta/{name=accounts/*/products/*/lo"
-          + "calInventories/*}\032G\312A\032merchantapi.google"
-          + "apis.com\322A\'https://www.googleapis.com/auth/contentB\357\001\n"
-          + "/com.google.shopping.merchant.inventories.v1betaB\023LocalInventoryPr"
-          + "otoP\001ZWcloud.google.com/go/shopping/merc"
-          + "hant/inventories/apiv1beta/inventoriespb;inventoriespb\352AK\n"
-          + "\"merchantapi.googleapis.com/Product\022%accounts/{account}/produc"
-          + "ts/{product}b\006proto3"
+          + "\024ListLocalInventories\022H.google.shopping.merchant.inventories.v1beta.ListLoc"
+          + "alInventoriesRequest\032I.google.shopping.merchant.inventories.v1beta.ListLocalInve"
+          + "ntoriesResponse\"T\332A\006parent\202\323\344\223\002E\022C/inven"
+          + "tories/v1beta/{parent=accounts/*/products/*}/localInventories\022\202\002\n"
+          + "\024InsertLocalInventory\022H.google.shopping.merchant.invent"
+          + "ories.v1beta.InsertLocalInventoryRequest\032;.google.shopping.merchant.inventories."
+          + "v1beta.LocalInventory\"c\202\323\344\223\002]\"J/inventor"
+          + "ies/v1beta/{parent=accounts/*/products/*"
+          + "}/localInventories:insert:\017local_inventory\022\314\001\n"
+          + "\024DeleteLocalInventory\022H.google.shopping.merchant.inventories.v1beta.Delete"
+          + "LocalInventoryRequest\032\026.google.protobuf."
+          + "Empty\"R\332A\004name\202\323\344\223\002E*C/inventories/v1bet"
+          + "a/{name=accounts/*/products/*/localInven"
+          + "tories/*}\032G\312A\032merchantapi.googleapis.com"
+          + "\322A\'https://www.googleapis.com/auth/contentB\375\002\n"
+          + "/com.google.shopping.merchant.inventories.v1betaB\023LocalInventoryProtoP\001ZWc"
+          + "loud.google.com/go/shopping/merchant/inventories/apiv1beta/inventoriespb;invento"
+          + "riespb\252\002+Google.Shopping.Merchant.Invent"
+          + "ories.V1Beta\312\002+Google\\Shopping\\Merchant\\"
+          + "Inventories\\V1beta\352\002/Google::Shopping::Merchant::Inventories::V1beta\352AK\n"
+          + "\"merchantapi.googleapis.com/Product\022%accounts/{a"
+          + "ccount}/products/{product}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -162,7 +168,7 @@ public final class LocalInventoryProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_shopping_merchant_inventories_v1beta_ListLocalInventoriesRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "PageSize", "PageToken",
+              "Parent", "PageSize", "PageToken", "ProductIdBase64UrlEncoded",
             });
     internal_static_google_shopping_merchant_inventories_v1beta_ListLocalInventoriesResponse_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -178,7 +184,7 @@ public final class LocalInventoryProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_shopping_merchant_inventories_v1beta_InsertLocalInventoryRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "LocalInventory",
+              "Parent", "LocalInventory", "ProductIdBase64UrlEncoded",
             });
     internal_static_google_shopping_merchant_inventories_v1beta_DeleteLocalInventoryRequest_descriptor =
         getDescriptor().getMessageTypes().get(4);
@@ -186,7 +192,7 @@ public final class LocalInventoryProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_shopping_merchant_inventories_v1beta_DeleteLocalInventoryRequest_descriptor,
             new java.lang.String[] {
-              "Name",
+              "Name", "ProductIdBase64UrlEncoded",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

@@ -43,6 +43,7 @@ public class AsyncListRegionalInventoriesPaged {
               .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setProductIdBase64UrlEncoded(true)
               .build();
       while (true) {
         ListRegionalInventoriesResponse response =

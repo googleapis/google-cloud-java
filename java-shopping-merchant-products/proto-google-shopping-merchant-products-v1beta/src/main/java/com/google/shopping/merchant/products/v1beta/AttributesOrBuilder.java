@@ -857,7 +857,7 @@ public interface AttributesOrBuilder
    * <code>repeated string gtin = 26 [deprecated = true];</code>
    *
    * @deprecated google.shopping.merchant.products.v1beta.Attributes.gtin is deprecated. See
-   *     google/shopping/merchant/products/v1beta/products_common.proto;l=132
+   *     google/shopping/merchant/products/v1beta/products_common.proto;l=135
    * @return A list containing the gtin.
    */
   @java.lang.Deprecated
@@ -878,7 +878,7 @@ public interface AttributesOrBuilder
    * <code>repeated string gtin = 26 [deprecated = true];</code>
    *
    * @deprecated google.shopping.merchant.products.v1beta.Attributes.gtin is deprecated. See
-   *     google/shopping/merchant/products/v1beta/products_common.proto;l=132
+   *     google/shopping/merchant/products/v1beta/products_common.proto;l=135
    * @return The count of gtin.
    */
   @java.lang.Deprecated
@@ -899,7 +899,7 @@ public interface AttributesOrBuilder
    * <code>repeated string gtin = 26 [deprecated = true];</code>
    *
    * @deprecated google.shopping.merchant.products.v1beta.Attributes.gtin is deprecated. See
-   *     google/shopping/merchant/products/v1beta/products_common.proto;l=132
+   *     google/shopping/merchant/products/v1beta/products_common.proto;l=135
    * @param index The index of the element to return.
    * @return The gtin at the given index.
    */
@@ -921,7 +921,7 @@ public interface AttributesOrBuilder
    * <code>repeated string gtin = 26 [deprecated = true];</code>
    *
    * @deprecated google.shopping.merchant.products.v1beta.Attributes.gtin is deprecated. See
-   *     google/shopping/merchant/products/v1beta/products_common.proto;l=132
+   *     google/shopping/merchant/products/v1beta/products_common.proto;l=135
    * @param index The index of the value to return.
    * @return The bytes of the gtin at the given index.
    */
@@ -932,7 +932,7 @@ public interface AttributesOrBuilder
    *
    *
    * <pre>
-   * Global Trade Item Numbers
+   * A list of Global Trade Item Numbers
    * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
    * item.
    * You can provide up to 10 GTINs.
@@ -948,7 +948,7 @@ public interface AttributesOrBuilder
    *
    *
    * <pre>
-   * Global Trade Item Numbers
+   * A list of Global Trade Item Numbers
    * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
    * item.
    * You can provide up to 10 GTINs.
@@ -964,7 +964,7 @@ public interface AttributesOrBuilder
    *
    *
    * <pre>
-   * Global Trade Item Numbers
+   * A list of Global Trade Item Numbers
    * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
    * item.
    * You can provide up to 10 GTINs.
@@ -981,7 +981,7 @@ public interface AttributesOrBuilder
    *
    *
    * <pre>
-   * Global Trade Item Numbers
+   * A list of Global Trade Item Numbers
    * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
    * item.
    * You can provide up to 10 GTINs.
@@ -2404,7 +2404,7 @@ public interface AttributesOrBuilder
    * <code>optional string tax_category = 52 [deprecated = true];</code>
    *
    * @deprecated google.shopping.merchant.products.v1beta.Attributes.tax_category is deprecated. See
-   *     google/shopping/merchant/products/v1beta/products_common.proto;l=264
+   *     google/shopping/merchant/products/v1beta/products_common.proto;l=267
    * @return Whether the taxCategory field is set.
    */
   @java.lang.Deprecated
@@ -2421,7 +2421,7 @@ public interface AttributesOrBuilder
    * <code>optional string tax_category = 52 [deprecated = true];</code>
    *
    * @deprecated google.shopping.merchant.products.v1beta.Attributes.tax_category is deprecated. See
-   *     google/shopping/merchant/products/v1beta/products_common.proto;l=264
+   *     google/shopping/merchant/products/v1beta/products_common.proto;l=267
    * @return The taxCategory.
    */
   @java.lang.Deprecated
@@ -2438,7 +2438,7 @@ public interface AttributesOrBuilder
    * <code>optional string tax_category = 52 [deprecated = true];</code>
    *
    * @deprecated google.shopping.merchant.products.v1beta.Attributes.tax_category is deprecated. See
-   *     google/shopping/merchant/products/v1beta/products_common.proto;l=264
+   *     google/shopping/merchant/products/v1beta/products_common.proto;l=267
    * @return The bytes for taxCategory.
    */
   @java.lang.Deprecated
@@ -2676,7 +2676,7 @@ public interface AttributesOrBuilder
    *
    *
    * <pre>
-   * Used to group items in an arbitrary way. Only for CPA%, discouraged
+   * Used to group items in an arbitrary way. Only for CPA, discouraged
    * otherwise. For more information, see
    * [Display ads
    * attribute](https://support.google.com/merchants/answer/6069387).
@@ -2692,7 +2692,7 @@ public interface AttributesOrBuilder
    *
    *
    * <pre>
-   * Used to group items in an arbitrary way. Only for CPA%, discouraged
+   * Used to group items in an arbitrary way. Only for CPA, discouraged
    * otherwise. For more information, see
    * [Display ads
    * attribute](https://support.google.com/merchants/answer/6069387).
@@ -2708,7 +2708,7 @@ public interface AttributesOrBuilder
    *
    *
    * <pre>
-   * Used to group items in an arbitrary way. Only for CPA%, discouraged
+   * Used to group items in an arbitrary way. Only for CPA, discouraged
    * otherwise. For more information, see
    * [Display ads
    * attribute](https://support.google.com/merchants/answer/6069387).
@@ -3625,6 +3625,9 @@ public interface AttributesOrBuilder
    *
    *
    * <pre>
+   * Destinations also known as [Marketing
+   * methods](https://support.google.com/merchants/answer/15130232) selections.
+   *
    * The list of destinations to include for this target (corresponds to
    * checked check boxes in Merchant Center). Default destinations are always
    * included unless provided in `excludedDestinations`.
@@ -3647,6 +3650,9 @@ public interface AttributesOrBuilder
    *
    *
    * <pre>
+   * Destinations also known as [Marketing
+   * methods](https://support.google.com/merchants/answer/15130232) selections.
+   *
    * The list of destinations to include for this target (corresponds to
    * checked check boxes in Merchant Center). Default destinations are always
    * included unless provided in `excludedDestinations`.
@@ -3669,6 +3675,9 @@ public interface AttributesOrBuilder
    *
    *
    * <pre>
+   * Destinations also known as [Marketing
+   * methods](https://support.google.com/merchants/answer/15130232) selections.
+   *
    * The list of destinations to include for this target (corresponds to
    * checked check boxes in Merchant Center). Default destinations are always
    * included unless provided in `excludedDestinations`.
@@ -3692,6 +3701,9 @@ public interface AttributesOrBuilder
    *
    *
    * <pre>
+   * Destinations also known as [Marketing
+   * methods](https://support.google.com/merchants/answer/15130232) selections.
+   *
    * The list of destinations to include for this target (corresponds to
    * checked check boxes in Merchant Center). Default destinations are always
    * included unless provided in `excludedDestinations`.
@@ -3715,6 +3727,9 @@ public interface AttributesOrBuilder
    *
    *
    * <pre>
+   * Destinations also known as [Marketing
+   * methods](https://support.google.com/merchants/answer/15130232) selections.
+   *
    * The list of destinations to exclude for this target (corresponds to
    * unchecked check boxes in Merchant Center).
    *
@@ -3736,6 +3751,9 @@ public interface AttributesOrBuilder
    *
    *
    * <pre>
+   * Destinations also known as [Marketing
+   * methods](https://support.google.com/merchants/answer/15130232) selections.
+   *
    * The list of destinations to exclude for this target (corresponds to
    * unchecked check boxes in Merchant Center).
    *
@@ -3757,6 +3775,9 @@ public interface AttributesOrBuilder
    *
    *
    * <pre>
+   * Destinations also known as [Marketing
+   * methods](https://support.google.com/merchants/answer/15130232) selections.
+   *
    * The list of destinations to exclude for this target (corresponds to
    * unchecked check boxes in Merchant Center).
    *
@@ -3779,6 +3800,9 @@ public interface AttributesOrBuilder
    *
    *
    * <pre>
+   * Destinations also known as [Marketing
+   * methods](https://support.google.com/merchants/answer/15130232) selections.
+   *
    * The list of destinations to exclude for this target (corresponds to
    * unchecked check boxes in Merchant Center).
    *
@@ -4310,10 +4334,10 @@ public interface AttributesOrBuilder
    * <pre>
    * A safeguard in the [automated discounts]
    * (https://support.google.com/merchants/answer/10295759) and
-   * "Dynamic Promotions"
-   * (https://support.google.com/merchants/answer/13949249) projects,
-   * ensuring that discounts on business offers do not fall below this value,
-   * thereby preserving the offer's value and profitability.
+   * ["dynamic
+   * promotions"](https://support.google.com/merchants/answer/13949249)
+   * projects, ensuring that discounts on business offers do not fall below this
+   * value, thereby preserving the offer's value and profitability.
    * </pre>
    *
    * <code>.google.shopping.type.Price auto_pricing_min_price = 124;</code>
@@ -4328,10 +4352,10 @@ public interface AttributesOrBuilder
    * <pre>
    * A safeguard in the [automated discounts]
    * (https://support.google.com/merchants/answer/10295759) and
-   * "Dynamic Promotions"
-   * (https://support.google.com/merchants/answer/13949249) projects,
-   * ensuring that discounts on business offers do not fall below this value,
-   * thereby preserving the offer's value and profitability.
+   * ["dynamic
+   * promotions"](https://support.google.com/merchants/answer/13949249)
+   * projects, ensuring that discounts on business offers do not fall below this
+   * value, thereby preserving the offer's value and profitability.
    * </pre>
    *
    * <code>.google.shopping.type.Price auto_pricing_min_price = 124;</code>
@@ -4346,10 +4370,10 @@ public interface AttributesOrBuilder
    * <pre>
    * A safeguard in the [automated discounts]
    * (https://support.google.com/merchants/answer/10295759) and
-   * "Dynamic Promotions"
-   * (https://support.google.com/merchants/answer/13949249) projects,
-   * ensuring that discounts on business offers do not fall below this value,
-   * thereby preserving the offer's value and profitability.
+   * ["dynamic
+   * promotions"](https://support.google.com/merchants/answer/13949249)
+   * projects, ensuring that discounts on business offers do not fall below this
+   * value, thereby preserving the offer's value and profitability.
    * </pre>
    *
    * <code>.google.shopping.type.Price auto_pricing_min_price = 124;</code>

@@ -110,10 +110,10 @@ public interface LocalInventoryOrBuilder
    *
    *
    * <pre>
-   * Price of the product at this store.
+   * Optional. Price of the product at this store.
    * </pre>
    *
-   * <code>.google.shopping.type.Price price = 4;</code>
+   * <code>.google.shopping.type.Price price = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the price field is set.
    */
@@ -123,10 +123,10 @@ public interface LocalInventoryOrBuilder
    *
    *
    * <pre>
-   * Price of the product at this store.
+   * Optional. Price of the product at this store.
    * </pre>
    *
-   * <code>.google.shopping.type.Price price = 4;</code>
+   * <code>.google.shopping.type.Price price = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The price.
    */
@@ -136,10 +136,10 @@ public interface LocalInventoryOrBuilder
    *
    *
    * <pre>
-   * Price of the product at this store.
+   * Optional. Price of the product at this store.
    * </pre>
    *
-   * <code>.google.shopping.type.Price price = 4;</code>
+   * <code>.google.shopping.type.Price price = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.shopping.type.PriceOrBuilder getPriceOrBuilder();
 
@@ -147,12 +147,13 @@ public interface LocalInventoryOrBuilder
    *
    *
    * <pre>
-   * Sale price of the product at this store. Mandatory if
+   * Optional. Sale price of the product at this store. Mandatory if
    * [`salePriceEffectiveDate`][google.shopping.merchant.inventories.v1beta.LocalInventory.sale_price_effective_date]
    * is defined.
    * </pre>
    *
-   * <code>.google.shopping.type.Price sale_price = 5;</code>
+   * <code>.google.shopping.type.Price sale_price = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the salePrice field is set.
    */
@@ -162,12 +163,13 @@ public interface LocalInventoryOrBuilder
    *
    *
    * <pre>
-   * Sale price of the product at this store. Mandatory if
+   * Optional. Sale price of the product at this store. Mandatory if
    * [`salePriceEffectiveDate`][google.shopping.merchant.inventories.v1beta.LocalInventory.sale_price_effective_date]
    * is defined.
    * </pre>
    *
-   * <code>.google.shopping.type.Price sale_price = 5;</code>
+   * <code>.google.shopping.type.Price sale_price = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The salePrice.
    */
@@ -177,12 +179,13 @@ public interface LocalInventoryOrBuilder
    *
    *
    * <pre>
-   * Sale price of the product at this store. Mandatory if
+   * Optional. Sale price of the product at this store. Mandatory if
    * [`salePriceEffectiveDate`][google.shopping.merchant.inventories.v1beta.LocalInventory.sale_price_effective_date]
    * is defined.
    * </pre>
    *
-   * <code>.google.shopping.type.Price sale_price = 5;</code>
+   * <code>.google.shopping.type.Price sale_price = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.shopping.type.PriceOrBuilder getSalePriceOrBuilder();
 
@@ -190,11 +193,13 @@ public interface LocalInventoryOrBuilder
    *
    *
    * <pre>
-   * The `TimePeriod` of the
+   * Optional. The `TimePeriod` of the
    * sale at this store.
    * </pre>
    *
-   * <code>.google.type.Interval sale_price_effective_date = 6;</code>
+   * <code>
+   * .google.type.Interval sale_price_effective_date = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the salePriceEffectiveDate field is set.
    */
@@ -204,11 +209,13 @@ public interface LocalInventoryOrBuilder
    *
    *
    * <pre>
-   * The `TimePeriod` of the
+   * Optional. The `TimePeriod` of the
    * sale at this store.
    * </pre>
    *
-   * <code>.google.type.Interval sale_price_effective_date = 6;</code>
+   * <code>
+   * .google.type.Interval sale_price_effective_date = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The salePriceEffectiveDate.
    */
@@ -218,11 +225,13 @@ public interface LocalInventoryOrBuilder
    *
    *
    * <pre>
-   * The `TimePeriod` of the
+   * Optional. The `TimePeriod` of the
    * sale at this store.
    * </pre>
    *
-   * <code>.google.type.Interval sale_price_effective_date = 6;</code>
+   * <code>
+   * .google.type.Interval sale_price_effective_date = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.type.IntervalOrBuilder getSalePriceEffectiveDateOrBuilder();
 
@@ -449,8 +458,11 @@ public interface LocalInventoryOrBuilder
    * generic form.
    * </pre>
    *
-   * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 12;</code>
+   * <code>
+   * repeated .google.shopping.type.CustomAttribute custom_attributes = 12 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   java.util.List<com.google.shopping.type.CustomAttribute> getCustomAttributesList();
 
   /**
@@ -462,8 +474,11 @@ public interface LocalInventoryOrBuilder
    * generic form.
    * </pre>
    *
-   * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 12;</code>
+   * <code>
+   * repeated .google.shopping.type.CustomAttribute custom_attributes = 12 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   com.google.shopping.type.CustomAttribute getCustomAttributes(int index);
 
   /**
@@ -475,8 +490,11 @@ public interface LocalInventoryOrBuilder
    * generic form.
    * </pre>
    *
-   * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 12;</code>
+   * <code>
+   * repeated .google.shopping.type.CustomAttribute custom_attributes = 12 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   int getCustomAttributesCount();
 
   /**
@@ -488,8 +506,11 @@ public interface LocalInventoryOrBuilder
    * generic form.
    * </pre>
    *
-   * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 12;</code>
+   * <code>
+   * repeated .google.shopping.type.CustomAttribute custom_attributes = 12 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   java.util.List<? extends com.google.shopping.type.CustomAttributeOrBuilder>
       getCustomAttributesOrBuilderList();
 
@@ -502,7 +523,10 @@ public interface LocalInventoryOrBuilder
    * generic form.
    * </pre>
    *
-   * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 12;</code>
+   * <code>
+   * repeated .google.shopping.type.CustomAttribute custom_attributes = 12 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   com.google.shopping.type.CustomAttributeOrBuilder getCustomAttributesOrBuilder(int index);
 }

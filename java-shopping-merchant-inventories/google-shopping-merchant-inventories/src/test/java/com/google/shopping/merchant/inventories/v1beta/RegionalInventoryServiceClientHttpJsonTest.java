@@ -199,6 +199,7 @@ public class RegionalInventoryServiceClientHttpJsonTest {
         InsertRegionalInventoryRequest.newBuilder()
             .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
             .setRegionalInventory(RegionalInventory.newBuilder().build())
+            .setProductIdBase64UrlEncoded(true)
             .build();
 
     RegionalInventory actualResponse = client.insertRegionalInventory(request);
@@ -231,6 +232,7 @@ public class RegionalInventoryServiceClientHttpJsonTest {
           InsertRegionalInventoryRequest.newBuilder()
               .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
               .setRegionalInventory(RegionalInventory.newBuilder().build())
+              .setProductIdBase64UrlEncoded(true)
               .build();
       client.insertRegionalInventory(request);
       Assert.fail("No exception raised");

@@ -203,6 +203,7 @@ public class LocalInventoryServiceClientHttpJsonTest {
         InsertLocalInventoryRequest.newBuilder()
             .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
             .setLocalInventory(LocalInventory.newBuilder().build())
+            .setProductIdBase64UrlEncoded(true)
             .build();
 
     LocalInventory actualResponse = client.insertLocalInventory(request);
@@ -235,6 +236,7 @@ public class LocalInventoryServiceClientHttpJsonTest {
           InsertLocalInventoryRequest.newBuilder()
               .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
               .setLocalInventory(LocalInventory.newBuilder().build())
+              .setProductIdBase64UrlEncoded(true)
               .build();
       client.insertLocalInventory(request);
       Assert.fail("No exception raised");

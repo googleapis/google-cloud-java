@@ -214,6 +214,34 @@ public final class ListRegionalInventoriesRequest extends com.google.protobuf.Ge
     }
   }
 
+  public static final int PRODUCT_ID_BASE64_URL_ENCODED_FIELD_NUMBER = 4;
+  private boolean productIdBase64UrlEncoded_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, the `{product}` in the `parent` field of the request
+   * will be interpreted as unpadded base64url-encoded and decoded during
+   * request processing to match the decoded value. Default value is `false`.
+   * Use this if your `{product}` contains special characters, such as forward
+   * slash `/` or other characters that are unpadded base64url-encoded (as per
+   * RFC 7515: https://datatracker.ietf.org/doc/html/rfc7515#section-2).
+   *
+   * Note that future versions of the API will only accept unpadded
+   * base64url-encoded product ids, so we strongly recommend proactively setting
+   * this to `true` and encoding the product ids.
+   * </pre>
+   *
+   * <code>bool product_id_base64_url_encoded = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The productIdBase64UrlEncoded.
+   */
+  @java.lang.Override
+  public boolean getProductIdBase64UrlEncoded() {
+    return productIdBase64UrlEncoded_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -237,6 +265,9 @@ public final class ListRegionalInventoriesRequest extends com.google.protobuf.Ge
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
     }
+    if (productIdBase64UrlEncoded_ != false) {
+      output.writeBool(4, productIdBase64UrlEncoded_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -254,6 +285,9 @@ public final class ListRegionalInventoriesRequest extends com.google.protobuf.Ge
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
+    }
+    if (productIdBase64UrlEncoded_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, productIdBase64UrlEncoded_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -276,6 +310,7 @@ public final class ListRegionalInventoriesRequest extends com.google.protobuf.Ge
     if (!getParent().equals(other.getParent())) return false;
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
+    if (getProductIdBase64UrlEncoded() != other.getProductIdBase64UrlEncoded()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -293,6 +328,8 @@ public final class ListRegionalInventoriesRequest extends com.google.protobuf.Ge
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getPageToken().hashCode();
+    hash = (37 * hash) + PRODUCT_ID_BASE64_URL_ENCODED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getProductIdBase64UrlEncoded());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -446,6 +483,7 @@ public final class ListRegionalInventoriesRequest extends com.google.protobuf.Ge
       parent_ = "";
       pageSize_ = 0;
       pageToken_ = "";
+      productIdBase64UrlEncoded_ = false;
       return this;
     }
 
@@ -495,6 +533,9 @@ public final class ListRegionalInventoriesRequest extends com.google.protobuf.Ge
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.pageToken_ = pageToken_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.productIdBase64UrlEncoded_ = productIdBase64UrlEncoded_;
       }
     }
 
@@ -562,6 +603,9 @@ public final class ListRegionalInventoriesRequest extends com.google.protobuf.Ge
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (other.getProductIdBase64UrlEncoded() != false) {
+        setProductIdBase64UrlEncoded(other.getProductIdBase64UrlEncoded());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -606,6 +650,12 @@ public final class ListRegionalInventoriesRequest extends com.google.protobuf.Ge
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 32:
+              {
+                productIdBase64UrlEncoded_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -956,6 +1006,92 @@ public final class ListRegionalInventoriesRequest extends com.google.protobuf.Ge
       checkByteStringIsUtf8(value);
       pageToken_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private boolean productIdBase64UrlEncoded_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the `{product}` in the `parent` field of the request
+     * will be interpreted as unpadded base64url-encoded and decoded during
+     * request processing to match the decoded value. Default value is `false`.
+     * Use this if your `{product}` contains special characters, such as forward
+     * slash `/` or other characters that are unpadded base64url-encoded (as per
+     * RFC 7515: https://datatracker.ietf.org/doc/html/rfc7515#section-2).
+     *
+     * Note that future versions of the API will only accept unpadded
+     * base64url-encoded product ids, so we strongly recommend proactively setting
+     * this to `true` and encoding the product ids.
+     * </pre>
+     *
+     * <code>bool product_id_base64_url_encoded = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The productIdBase64UrlEncoded.
+     */
+    @java.lang.Override
+    public boolean getProductIdBase64UrlEncoded() {
+      return productIdBase64UrlEncoded_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the `{product}` in the `parent` field of the request
+     * will be interpreted as unpadded base64url-encoded and decoded during
+     * request processing to match the decoded value. Default value is `false`.
+     * Use this if your `{product}` contains special characters, such as forward
+     * slash `/` or other characters that are unpadded base64url-encoded (as per
+     * RFC 7515: https://datatracker.ietf.org/doc/html/rfc7515#section-2).
+     *
+     * Note that future versions of the API will only accept unpadded
+     * base64url-encoded product ids, so we strongly recommend proactively setting
+     * this to `true` and encoding the product ids.
+     * </pre>
+     *
+     * <code>bool product_id_base64_url_encoded = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The productIdBase64UrlEncoded to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProductIdBase64UrlEncoded(boolean value) {
+
+      productIdBase64UrlEncoded_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the `{product}` in the `parent` field of the request
+     * will be interpreted as unpadded base64url-encoded and decoded during
+     * request processing to match the decoded value. Default value is `false`.
+     * Use this if your `{product}` contains special characters, such as forward
+     * slash `/` or other characters that are unpadded base64url-encoded (as per
+     * RFC 7515: https://datatracker.ietf.org/doc/html/rfc7515#section-2).
+     *
+     * Note that future versions of the API will only accept unpadded
+     * base64url-encoded product ids, so we strongly recommend proactively setting
+     * this to `true` and encoding the product ids.
+     * </pre>
+     *
+     * <code>bool product_id_base64_url_encoded = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProductIdBase64UrlEncoded() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      productIdBase64UrlEncoded_ = false;
       onChanged();
       return this;
     }

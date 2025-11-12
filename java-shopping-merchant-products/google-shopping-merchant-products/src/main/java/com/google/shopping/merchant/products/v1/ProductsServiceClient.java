@@ -301,6 +301,7 @@ public class ProductsServiceClient implements BackgroundResource {
    *   GetProductRequest request =
    *       GetProductRequest.newBuilder()
    *           .setName(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
+   *           .setProductIdBase64UrlEncoded(true)
    *           .build();
    *   Product response = productsServiceClient.getProduct(request);
    * }
@@ -332,6 +333,7 @@ public class ProductsServiceClient implements BackgroundResource {
    *   GetProductRequest request =
    *       GetProductRequest.newBuilder()
    *           .setName(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
+   *           .setProductIdBase64UrlEncoded(true)
    *           .build();
    *   ApiFuture<Product> future = productsServiceClient.getProductCallable().futureCall(request);
    *   // Do something.
