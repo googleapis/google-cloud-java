@@ -71,10 +71,12 @@ public final class CustomFieldOption extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. `CustomFieldOption` ID.
+   * Optional. Non-empty default. `CustomFieldOption` ID.
    * </pre>
    *
-   * <code>int64 custom_field_option_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * int64 custom_field_option_id = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
    *
    * @return The customFieldOptionId.
    */
@@ -510,10 +512,12 @@ public final class CustomFieldOption extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. `CustomFieldOption` ID.
+     * Optional. Non-empty default. `CustomFieldOption` ID.
      * </pre>
      *
-     * <code>int64 custom_field_option_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * int64 custom_field_option_id = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
      *
      * @return The customFieldOptionId.
      */
@@ -526,10 +530,12 @@ public final class CustomFieldOption extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. `CustomFieldOption` ID.
+     * Optional. Non-empty default. `CustomFieldOption` ID.
      * </pre>
      *
-     * <code>int64 custom_field_option_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * int64 custom_field_option_id = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
      *
      * @param value The customFieldOptionId to set.
      * @return This builder for chaining.
@@ -546,10 +552,12 @@ public final class CustomFieldOption extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. `CustomFieldOption` ID.
+     * Optional. Non-empty default. `CustomFieldOption` ID.
      * </pre>
      *
-     * <code>int64 custom_field_option_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * int64 custom_field_option_id = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
      *
      * @return This builder for chaining.
      */

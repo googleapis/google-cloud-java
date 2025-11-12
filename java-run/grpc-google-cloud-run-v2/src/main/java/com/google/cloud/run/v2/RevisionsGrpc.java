@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Cloud Run Revision Control Plane API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/run/v2/revision.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class RevisionsGrpc {
 
@@ -378,8 +375,8 @@ public final class RevisionsGrpc {
      * </pre>
      */
     public com.google.cloud.run.v2.Revision getRevision(
-        com.google.cloud.run.v2.GetRevisionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.run.v2.GetRevisionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRevisionMethod(), getCallOptions(), request);
     }
 
@@ -392,8 +389,8 @@ public final class RevisionsGrpc {
      * </pre>
      */
     public com.google.cloud.run.v2.ListRevisionsResponse listRevisions(
-        com.google.cloud.run.v2.ListRevisionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.run.v2.ListRevisionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRevisionsMethod(), getCallOptions(), request);
     }
 
@@ -405,8 +402,8 @@ public final class RevisionsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteRevision(
-        com.google.cloud.run.v2.DeleteRevisionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.run.v2.DeleteRevisionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteRevisionMethod(), getCallOptions(), request);
     }
   }

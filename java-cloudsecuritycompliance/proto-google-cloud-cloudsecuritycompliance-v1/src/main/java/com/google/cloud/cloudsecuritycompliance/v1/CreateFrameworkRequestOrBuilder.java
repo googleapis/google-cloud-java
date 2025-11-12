@@ -30,6 +30,7 @@ public interface CreateFrameworkRequestOrBuilder
    * <pre>
    * Required. The parent resource name, in the format
    * `organizations/{organization}/locations/{location}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -46,6 +47,7 @@ public interface CreateFrameworkRequestOrBuilder
    * <pre>
    * Required. The parent resource name, in the format
    * `organizations/{organization}/locations/{location}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -60,9 +62,8 @@ public interface CreateFrameworkRequestOrBuilder
    *
    *
    * <pre>
-   * Required. ID of the framework.
-   * This is not the full name of the framework.
-   * This is the last part of the full name of the framework.
+   * Required. The identifier (ID) of the framework. The ID is not the full name
+   * of the framework; it's the last part of the full name of the framework.
    * </pre>
    *
    * <code>string framework_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -75,9 +76,8 @@ public interface CreateFrameworkRequestOrBuilder
    *
    *
    * <pre>
-   * Required. ID of the framework.
-   * This is not the full name of the framework.
-   * This is the last part of the full name of the framework.
+   * Required. The identifier (ID) of the framework. The ID is not the full name
+   * of the framework; it's the last part of the full name of the framework.
    * </pre>
    *
    * <code>string framework_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -90,7 +90,7 @@ public interface CreateFrameworkRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource being created
+   * Required. The resource being created.
    * </pre>
    *
    * <code>
@@ -105,7 +105,7 @@ public interface CreateFrameworkRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource being created
+   * Required. The resource being created.
    * </pre>
    *
    * <code>
@@ -120,7 +120,7 @@ public interface CreateFrameworkRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource being created
+   * Required. The resource being created.
    * </pre>
    *
    * <code>

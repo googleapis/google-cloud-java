@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Database Migration service
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/clouddms/v1/clouddms.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DataMigrationServiceGrpc {
 
@@ -3495,8 +3492,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.clouddms.v1.ListMigrationJobsResponse listMigrationJobs(
-        com.google.cloud.clouddms.v1.ListMigrationJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.ListMigrationJobsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMigrationJobsMethod(), getCallOptions(), request);
     }
 
@@ -3508,8 +3506,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.clouddms.v1.MigrationJob getMigrationJob(
-        com.google.cloud.clouddms.v1.GetMigrationJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.GetMigrationJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetMigrationJobMethod(), getCallOptions(), request);
     }
 
@@ -3521,8 +3520,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createMigrationJob(
-        com.google.cloud.clouddms.v1.CreateMigrationJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.CreateMigrationJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateMigrationJobMethod(), getCallOptions(), request);
     }
 
@@ -3534,8 +3534,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateMigrationJob(
-        com.google.cloud.clouddms.v1.UpdateMigrationJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.UpdateMigrationJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateMigrationJobMethod(), getCallOptions(), request);
     }
 
@@ -3547,8 +3548,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteMigrationJob(
-        com.google.cloud.clouddms.v1.DeleteMigrationJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.DeleteMigrationJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteMigrationJobMethod(), getCallOptions(), request);
     }
 
@@ -3560,8 +3562,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation startMigrationJob(
-        com.google.cloud.clouddms.v1.StartMigrationJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.StartMigrationJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getStartMigrationJobMethod(), getCallOptions(), request);
     }
 
@@ -3573,8 +3576,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation stopMigrationJob(
-        com.google.cloud.clouddms.v1.StopMigrationJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.StopMigrationJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getStopMigrationJobMethod(), getCallOptions(), request);
     }
 
@@ -3587,8 +3591,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation resumeMigrationJob(
-        com.google.cloud.clouddms.v1.ResumeMigrationJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.ResumeMigrationJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getResumeMigrationJobMethod(), getCallOptions(), request);
     }
 
@@ -3601,8 +3606,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation promoteMigrationJob(
-        com.google.cloud.clouddms.v1.PromoteMigrationJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.PromoteMigrationJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPromoteMigrationJobMethod(), getCallOptions(), request);
     }
 
@@ -3615,8 +3621,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation verifyMigrationJob(
-        com.google.cloud.clouddms.v1.VerifyMigrationJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.VerifyMigrationJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getVerifyMigrationJobMethod(), getCallOptions(), request);
     }
 
@@ -3630,8 +3637,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation restartMigrationJob(
-        com.google.cloud.clouddms.v1.RestartMigrationJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.RestartMigrationJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRestartMigrationJobMethod(), getCallOptions(), request);
     }
 
@@ -3644,8 +3652,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.clouddms.v1.SshScript generateSshScript(
-        com.google.cloud.clouddms.v1.GenerateSshScriptRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.GenerateSshScriptRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateSshScriptMethod(), getCallOptions(), request);
     }
 
@@ -3658,8 +3667,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.clouddms.v1.TcpProxyScript generateTcpProxyScript(
-        com.google.cloud.clouddms.v1.GenerateTcpProxyScriptRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.GenerateTcpProxyScriptRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateTcpProxyScriptMethod(), getCallOptions(), request);
     }
 
@@ -3672,8 +3682,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.clouddms.v1.ListConnectionProfilesResponse listConnectionProfiles(
-        com.google.cloud.clouddms.v1.ListConnectionProfilesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.ListConnectionProfilesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListConnectionProfilesMethod(), getCallOptions(), request);
     }
 
@@ -3685,8 +3696,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.clouddms.v1.ConnectionProfile getConnectionProfile(
-        com.google.cloud.clouddms.v1.GetConnectionProfileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.GetConnectionProfileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetConnectionProfileMethod(), getCallOptions(), request);
     }
 
@@ -3698,8 +3710,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createConnectionProfile(
-        com.google.cloud.clouddms.v1.CreateConnectionProfileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.CreateConnectionProfileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateConnectionProfileMethod(), getCallOptions(), request);
     }
 
@@ -3711,8 +3724,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateConnectionProfile(
-        com.google.cloud.clouddms.v1.UpdateConnectionProfileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.UpdateConnectionProfileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateConnectionProfileMethod(), getCallOptions(), request);
     }
 
@@ -3726,8 +3740,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteConnectionProfile(
-        com.google.cloud.clouddms.v1.DeleteConnectionProfileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.DeleteConnectionProfileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteConnectionProfileMethod(), getCallOptions(), request);
     }
 
@@ -3739,8 +3754,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createPrivateConnection(
-        com.google.cloud.clouddms.v1.CreatePrivateConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.CreatePrivateConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreatePrivateConnectionMethod(), getCallOptions(), request);
     }
 
@@ -3752,8 +3768,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.clouddms.v1.PrivateConnection getPrivateConnection(
-        com.google.cloud.clouddms.v1.GetPrivateConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.GetPrivateConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPrivateConnectionMethod(), getCallOptions(), request);
     }
 
@@ -3765,8 +3782,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.clouddms.v1.ListPrivateConnectionsResponse listPrivateConnections(
-        com.google.cloud.clouddms.v1.ListPrivateConnectionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.ListPrivateConnectionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPrivateConnectionsMethod(), getCallOptions(), request);
     }
 
@@ -3778,8 +3796,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deletePrivateConnection(
-        com.google.cloud.clouddms.v1.DeletePrivateConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.DeletePrivateConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeletePrivateConnectionMethod(), getCallOptions(), request);
     }
 
@@ -3791,8 +3810,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.clouddms.v1.ConversionWorkspace getConversionWorkspace(
-        com.google.cloud.clouddms.v1.GetConversionWorkspaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.GetConversionWorkspaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetConversionWorkspaceMethod(), getCallOptions(), request);
     }
 
@@ -3804,8 +3824,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.clouddms.v1.ListConversionWorkspacesResponse listConversionWorkspaces(
-        com.google.cloud.clouddms.v1.ListConversionWorkspacesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.ListConversionWorkspacesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListConversionWorkspacesMethod(), getCallOptions(), request);
     }
 
@@ -3817,8 +3838,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createConversionWorkspace(
-        com.google.cloud.clouddms.v1.CreateConversionWorkspaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.CreateConversionWorkspaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateConversionWorkspaceMethod(), getCallOptions(), request);
     }
 
@@ -3830,8 +3852,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateConversionWorkspace(
-        com.google.cloud.clouddms.v1.UpdateConversionWorkspaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.UpdateConversionWorkspaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateConversionWorkspaceMethod(), getCallOptions(), request);
     }
 
@@ -3843,8 +3866,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteConversionWorkspace(
-        com.google.cloud.clouddms.v1.DeleteConversionWorkspaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.DeleteConversionWorkspaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteConversionWorkspaceMethod(), getCallOptions(), request);
     }
 
@@ -3856,8 +3880,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.clouddms.v1.MappingRule createMappingRule(
-        com.google.cloud.clouddms.v1.CreateMappingRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.CreateMappingRuleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateMappingRuleMethod(), getCallOptions(), request);
     }
 
@@ -3869,8 +3894,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteMappingRule(
-        com.google.cloud.clouddms.v1.DeleteMappingRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.DeleteMappingRuleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteMappingRuleMethod(), getCallOptions(), request);
     }
 
@@ -3882,8 +3908,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.clouddms.v1.ListMappingRulesResponse listMappingRules(
-        com.google.cloud.clouddms.v1.ListMappingRulesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.ListMappingRulesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMappingRulesMethod(), getCallOptions(), request);
     }
 
@@ -3895,8 +3922,8 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.clouddms.v1.MappingRule getMappingRule(
-        com.google.cloud.clouddms.v1.GetMappingRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.GetMappingRuleRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetMappingRuleMethod(), getCallOptions(), request);
     }
 
@@ -3909,8 +3936,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation seedConversionWorkspace(
-        com.google.cloud.clouddms.v1.SeedConversionWorkspaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.SeedConversionWorkspaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSeedConversionWorkspaceMethod(), getCallOptions(), request);
     }
 
@@ -3923,8 +3951,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importMappingRules(
-        com.google.cloud.clouddms.v1.ImportMappingRulesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.ImportMappingRulesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportMappingRulesMethod(), getCallOptions(), request);
     }
 
@@ -3936,8 +3965,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation convertConversionWorkspace(
-        com.google.cloud.clouddms.v1.ConvertConversionWorkspaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.ConvertConversionWorkspaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getConvertConversionWorkspaceMethod(), getCallOptions(), request);
     }
 
@@ -3949,8 +3979,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation commitConversionWorkspace(
-        com.google.cloud.clouddms.v1.CommitConversionWorkspaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.CommitConversionWorkspaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCommitConversionWorkspaceMethod(), getCallOptions(), request);
     }
 
@@ -3962,8 +3993,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation rollbackConversionWorkspace(
-        com.google.cloud.clouddms.v1.RollbackConversionWorkspaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.RollbackConversionWorkspaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRollbackConversionWorkspaceMethod(), getCallOptions(), request);
     }
 
@@ -3975,8 +4007,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation applyConversionWorkspace(
-        com.google.cloud.clouddms.v1.ApplyConversionWorkspaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.ApplyConversionWorkspaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getApplyConversionWorkspaceMethod(), getCallOptions(), request);
     }
 
@@ -3992,8 +4025,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.clouddms.v1.DescribeDatabaseEntitiesResponse describeDatabaseEntities(
-        com.google.cloud.clouddms.v1.DescribeDatabaseEntitiesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.DescribeDatabaseEntitiesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDescribeDatabaseEntitiesMethod(), getCallOptions(), request);
     }
 
@@ -4009,8 +4043,9 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.clouddms.v1.SearchBackgroundJobsResponse searchBackgroundJobs(
-        com.google.cloud.clouddms.v1.SearchBackgroundJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.SearchBackgroundJobsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchBackgroundJobsMethod(), getCallOptions(), request);
     }
 
@@ -4024,8 +4059,9 @@ public final class DataMigrationServiceGrpc {
      */
     public com.google.cloud.clouddms.v1.DescribeConversionWorkspaceRevisionsResponse
         describeConversionWorkspaceRevisions(
-            com.google.cloud.clouddms.v1.DescribeConversionWorkspaceRevisionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.clouddms.v1.DescribeConversionWorkspaceRevisionsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDescribeConversionWorkspaceRevisionsMethod(), getCallOptions(), request);
     }
 
@@ -4038,8 +4074,8 @@ public final class DataMigrationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.clouddms.v1.FetchStaticIpsResponse fetchStaticIps(
-        com.google.cloud.clouddms.v1.FetchStaticIpsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.clouddms.v1.FetchStaticIpsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchStaticIpsMethod(), getCallOptions(), request);
     }
   }

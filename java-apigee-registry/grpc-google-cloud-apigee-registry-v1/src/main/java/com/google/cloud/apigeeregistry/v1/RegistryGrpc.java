@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * The Registry service allows teams to manage descriptions of APIs.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/apigeeregistry/v1/registry_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class RegistryGrpc {
 
@@ -2852,8 +2849,8 @@ public final class RegistryGrpc {
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ListApisResponse listApis(
-        com.google.cloud.apigeeregistry.v1.ListApisRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeregistry.v1.ListApisRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListApisMethod(), getCallOptions(), request);
     }
 
@@ -2865,8 +2862,8 @@ public final class RegistryGrpc {
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.Api getApi(
-        com.google.cloud.apigeeregistry.v1.GetApiRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeregistry.v1.GetApiRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetApiMethod(), getCallOptions(), request);
     }
 
@@ -2878,8 +2875,9 @@ public final class RegistryGrpc {
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.Api createApi(
-        com.google.cloud.apigeeregistry.v1.CreateApiRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeregistry.v1.CreateApiRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateApiMethod(), getCallOptions(), request);
     }
 
@@ -2891,8 +2889,9 @@ public final class RegistryGrpc {
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.Api updateApi(
-        com.google.cloud.apigeeregistry.v1.UpdateApiRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeregistry.v1.UpdateApiRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateApiMethod(), getCallOptions(), request);
     }
 
@@ -2905,8 +2904,9 @@ public final class RegistryGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteApi(
-        com.google.cloud.apigeeregistry.v1.DeleteApiRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeregistry.v1.DeleteApiRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteApiMethod(), getCallOptions(), request);
     }
 
@@ -2918,8 +2918,9 @@ public final class RegistryGrpc {
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ListApiVersionsResponse listApiVersions(
-        com.google.cloud.apigeeregistry.v1.ListApiVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeregistry.v1.ListApiVersionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListApiVersionsMethod(), getCallOptions(), request);
     }
 
@@ -2931,8 +2932,9 @@ public final class RegistryGrpc {
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ApiVersion getApiVersion(
-        com.google.cloud.apigeeregistry.v1.GetApiVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeregistry.v1.GetApiVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetApiVersionMethod(), getCallOptions(), request);
     }
 
@@ -2944,8 +2946,9 @@ public final class RegistryGrpc {
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ApiVersion createApiVersion(
-        com.google.cloud.apigeeregistry.v1.CreateApiVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeregistry.v1.CreateApiVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateApiVersionMethod(), getCallOptions(), request);
     }
 
@@ -2957,8 +2960,9 @@ public final class RegistryGrpc {
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ApiVersion updateApiVersion(
-        com.google.cloud.apigeeregistry.v1.UpdateApiVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeregistry.v1.UpdateApiVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateApiVersionMethod(), getCallOptions(), request);
     }
 
@@ -2971,8 +2975,9 @@ public final class RegistryGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteApiVersion(
-        com.google.cloud.apigeeregistry.v1.DeleteApiVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeregistry.v1.DeleteApiVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteApiVersionMethod(), getCallOptions(), request);
     }
 
@@ -2984,8 +2989,9 @@ public final class RegistryGrpc {
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ListApiSpecsResponse listApiSpecs(
-        com.google.cloud.apigeeregistry.v1.ListApiSpecsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeregistry.v1.ListApiSpecsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListApiSpecsMethod(), getCallOptions(), request);
     }
 
@@ -2997,8 +3003,9 @@ public final class RegistryGrpc {
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ApiSpec getApiSpec(
-        com.google.cloud.apigeeregistry.v1.GetApiSpecRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeregistry.v1.GetApiSpecRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetApiSpecMethod(), getCallOptions(), request);
     }
 
@@ -3013,8 +3020,9 @@ public final class RegistryGrpc {
      * </pre>
      */
     public com.google.api.HttpBody getApiSpecContents(
-        com.google.cloud.apigeeregistry.v1.GetApiSpecContentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeregistry.v1.GetApiSpecContentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetApiSpecContentsMethod(), getCallOptions(), request);
     }
 
@@ -3026,8 +3034,9 @@ public final class RegistryGrpc {
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ApiSpec createApiSpec(
-        com.google.cloud.apigeeregistry.v1.CreateApiSpecRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeregistry.v1.CreateApiSpecRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateApiSpecMethod(), getCallOptions(), request);
     }
 
@@ -3039,8 +3048,9 @@ public final class RegistryGrpc {
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ApiSpec updateApiSpec(
-        com.google.cloud.apigeeregistry.v1.UpdateApiSpecRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeregistry.v1.UpdateApiSpecRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateApiSpecMethod(), getCallOptions(), request);
     }
 
@@ -3053,8 +3063,9 @@ public final class RegistryGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteApiSpec(
-        com.google.cloud.apigeeregistry.v1.DeleteApiSpecRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeregistry.v1.DeleteApiSpecRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteApiSpecMethod(), getCallOptions(), request);
     }
 
@@ -3066,8 +3077,9 @@ public final class RegistryGrpc {
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ApiSpec tagApiSpecRevision(
-        com.google.cloud.apigeeregistry.v1.TagApiSpecRevisionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeregistry.v1.TagApiSpecRevisionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTagApiSpecRevisionMethod(), getCallOptions(), request);
     }
 
@@ -3080,8 +3092,9 @@ public final class RegistryGrpc {
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ListApiSpecRevisionsResponse listApiSpecRevisions(
-        com.google.cloud.apigeeregistry.v1.ListApiSpecRevisionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeregistry.v1.ListApiSpecRevisionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListApiSpecRevisionsMethod(), getCallOptions(), request);
     }
 
@@ -3094,8 +3107,9 @@ public final class RegistryGrpc {
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ApiSpec rollbackApiSpec(
-        com.google.cloud.apigeeregistry.v1.RollbackApiSpecRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeregistry.v1.RollbackApiSpecRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRollbackApiSpecMethod(), getCallOptions(), request);
     }
 
@@ -3107,8 +3121,9 @@ public final class RegistryGrpc {
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ApiSpec deleteApiSpecRevision(
-        com.google.cloud.apigeeregistry.v1.DeleteApiSpecRevisionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeregistry.v1.DeleteApiSpecRevisionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteApiSpecRevisionMethod(), getCallOptions(), request);
     }
 
@@ -3120,8 +3135,9 @@ public final class RegistryGrpc {
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ListApiDeploymentsResponse listApiDeployments(
-        com.google.cloud.apigeeregistry.v1.ListApiDeploymentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeregistry.v1.ListApiDeploymentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListApiDeploymentsMethod(), getCallOptions(), request);
     }
 
@@ -3133,8 +3149,9 @@ public final class RegistryGrpc {
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ApiDeployment getApiDeployment(
-        com.google.cloud.apigeeregistry.v1.GetApiDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeregistry.v1.GetApiDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetApiDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -3146,8 +3163,9 @@ public final class RegistryGrpc {
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ApiDeployment createApiDeployment(
-        com.google.cloud.apigeeregistry.v1.CreateApiDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeregistry.v1.CreateApiDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateApiDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -3159,8 +3177,9 @@ public final class RegistryGrpc {
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ApiDeployment updateApiDeployment(
-        com.google.cloud.apigeeregistry.v1.UpdateApiDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeregistry.v1.UpdateApiDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateApiDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -3173,8 +3192,9 @@ public final class RegistryGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteApiDeployment(
-        com.google.cloud.apigeeregistry.v1.DeleteApiDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeregistry.v1.DeleteApiDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteApiDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -3187,8 +3207,9 @@ public final class RegistryGrpc {
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ApiDeployment tagApiDeploymentRevision(
-        com.google.cloud.apigeeregistry.v1.TagApiDeploymentRevisionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeregistry.v1.TagApiDeploymentRevisionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTagApiDeploymentRevisionMethod(), getCallOptions(), request);
     }
 
@@ -3202,8 +3223,9 @@ public final class RegistryGrpc {
      */
     public com.google.cloud.apigeeregistry.v1.ListApiDeploymentRevisionsResponse
         listApiDeploymentRevisions(
-            com.google.cloud.apigeeregistry.v1.ListApiDeploymentRevisionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.apigeeregistry.v1.ListApiDeploymentRevisionsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListApiDeploymentRevisionsMethod(), getCallOptions(), request);
     }
 
@@ -3216,8 +3238,9 @@ public final class RegistryGrpc {
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ApiDeployment rollbackApiDeployment(
-        com.google.cloud.apigeeregistry.v1.RollbackApiDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeregistry.v1.RollbackApiDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRollbackApiDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -3229,8 +3252,9 @@ public final class RegistryGrpc {
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ApiDeployment deleteApiDeploymentRevision(
-        com.google.cloud.apigeeregistry.v1.DeleteApiDeploymentRevisionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeregistry.v1.DeleteApiDeploymentRevisionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteApiDeploymentRevisionMethod(), getCallOptions(), request);
     }
 
@@ -3242,8 +3266,9 @@ public final class RegistryGrpc {
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.ListArtifactsResponse listArtifacts(
-        com.google.cloud.apigeeregistry.v1.ListArtifactsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeregistry.v1.ListArtifactsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListArtifactsMethod(), getCallOptions(), request);
     }
 
@@ -3255,8 +3280,9 @@ public final class RegistryGrpc {
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.Artifact getArtifact(
-        com.google.cloud.apigeeregistry.v1.GetArtifactRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeregistry.v1.GetArtifactRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetArtifactMethod(), getCallOptions(), request);
     }
 
@@ -3271,8 +3297,9 @@ public final class RegistryGrpc {
      * </pre>
      */
     public com.google.api.HttpBody getArtifactContents(
-        com.google.cloud.apigeeregistry.v1.GetArtifactContentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeregistry.v1.GetArtifactContentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetArtifactContentsMethod(), getCallOptions(), request);
     }
 
@@ -3284,8 +3311,9 @@ public final class RegistryGrpc {
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.Artifact createArtifact(
-        com.google.cloud.apigeeregistry.v1.CreateArtifactRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeregistry.v1.CreateArtifactRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateArtifactMethod(), getCallOptions(), request);
     }
 
@@ -3297,8 +3325,9 @@ public final class RegistryGrpc {
      * </pre>
      */
     public com.google.cloud.apigeeregistry.v1.Artifact replaceArtifact(
-        com.google.cloud.apigeeregistry.v1.ReplaceArtifactRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeregistry.v1.ReplaceArtifactRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReplaceArtifactMethod(), getCallOptions(), request);
     }
 
@@ -3310,8 +3339,9 @@ public final class RegistryGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteArtifact(
-        com.google.cloud.apigeeregistry.v1.DeleteArtifactRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigeeregistry.v1.DeleteArtifactRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteArtifactMethod(), getCallOptions(), request);
     }
   }

@@ -347,6 +347,17 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Forwarding state: arriving at a hybrid subnet. Appropriate routing
+     * configuration will be determined here.
+     * </pre>
+     *
+     * <code>ARRIVE_AT_HYBRID_SUBNET = 38;</code>
+     */
+    ARRIVE_AT_HYBRID_SUBNET(38),
+    /**
+     *
+     *
+     * <pre>
      * Forwarding state: arriving at a Cloud VPN gateway.
      * </pre>
      *
@@ -363,6 +374,16 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>ARRIVE_AT_VPN_TUNNEL = 13;</code>
      */
     ARRIVE_AT_VPN_TUNNEL(13),
+    /**
+     *
+     *
+     * <pre>
+     * Forwarding state: arriving at an interconnect attachment.
+     * </pre>
+     *
+     * <code>ARRIVE_AT_INTERCONNECT_ATTACHMENT = 37;</code>
+     */
+    ARRIVE_AT_INTERCONNECT_ATTACHMENT(37),
     /**
      *
      *
@@ -399,7 +420,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Transition state: packet header translated.
+     * Transition state: packet header translated. The `nat` field is populated
+     * with the translation information.
      * </pre>
      *
      * <code>NAT = 14;</code>
@@ -762,6 +784,18 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Forwarding state: arriving at a hybrid subnet. Appropriate routing
+     * configuration will be determined here.
+     * </pre>
+     *
+     * <code>ARRIVE_AT_HYBRID_SUBNET = 38;</code>
+     */
+    public static final int ARRIVE_AT_HYBRID_SUBNET_VALUE = 38;
+
+    /**
+     *
+     *
+     * <pre>
      * Forwarding state: arriving at a Cloud VPN gateway.
      * </pre>
      *
@@ -779,6 +813,17 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>ARRIVE_AT_VPN_TUNNEL = 13;</code>
      */
     public static final int ARRIVE_AT_VPN_TUNNEL_VALUE = 13;
+
+    /**
+     *
+     *
+     * <pre>
+     * Forwarding state: arriving at an interconnect attachment.
+     * </pre>
+     *
+     * <code>ARRIVE_AT_INTERCONNECT_ATTACHMENT = 37;</code>
+     */
+    public static final int ARRIVE_AT_INTERCONNECT_ATTACHMENT_VALUE = 37;
 
     /**
      *
@@ -819,7 +864,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Transition state: packet header translated.
+     * Transition state: packet header translated. The `nat` field is populated
+     * with the translation information.
      * </pre>
      *
      * <code>NAT = 14;</code>
@@ -967,10 +1013,14 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
           return ARRIVE_AT_INTERNAL_LOAD_BALANCER;
         case 11:
           return ARRIVE_AT_EXTERNAL_LOAD_BALANCER;
+        case 38:
+          return ARRIVE_AT_HYBRID_SUBNET;
         case 12:
           return ARRIVE_AT_VPN_GATEWAY;
         case 13:
           return ARRIVE_AT_VPN_TUNNEL;
+        case 37:
+          return ARRIVE_AT_INTERCONNECT_ATTACHMENT;
         case 24:
           return ARRIVE_AT_VPC_CONNECTOR;
         case 35:
@@ -1059,8 +1109,10 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     ENDPOINT(8),
     GOOGLE_SERVICE(24),
     FORWARDING_RULE(9),
+    HYBRID_SUBNET(36),
     VPN_GATEWAY(10),
     VPN_TUNNEL(11),
+    INTERCONNECT_ATTACHMENT(35),
     VPC_CONNECTOR(21),
     DIRECT_VPC_EGRESS_CONNECTION(33),
     SERVERLESS_EXTERNAL_CONNECTION(34),
@@ -1114,10 +1166,14 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
           return GOOGLE_SERVICE;
         case 9:
           return FORWARDING_RULE;
+        case 36:
+          return HYBRID_SUBNET;
         case 10:
           return VPN_GATEWAY;
         case 11:
           return VPN_TUNNEL;
+        case 35:
+          return INTERCONNECT_ATTACHMENT;
         case 21:
           return VPC_CONNECTOR;
         case 33:
@@ -1675,6 +1731,61 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.networkmanagement.v1beta1.ForwardingRuleInfo.getDefaultInstance();
   }
 
+  public static final int HYBRID_SUBNET_FIELD_NUMBER = 36;
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a hybrid subnet.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo hybrid_subnet = 36;</code>
+   *
+   * @return Whether the hybridSubnet field is set.
+   */
+  @java.lang.Override
+  public boolean hasHybridSubnet() {
+    return stepInfoCase_ == 36;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a hybrid subnet.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo hybrid_subnet = 36;</code>
+   *
+   * @return The hybridSubnet.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo getHybridSubnet() {
+    if (stepInfoCase_ == 36) {
+      return (com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a hybrid subnet.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo hybrid_subnet = 36;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfoOrBuilder
+      getHybridSubnetOrBuilder() {
+    if (stepInfoCase_ == 36) {
+      return (com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo.getDefaultInstance();
+  }
+
   public static final int VPN_GATEWAY_FIELD_NUMBER = 10;
 
   /**
@@ -1782,6 +1893,70 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.networkmanagement.v1beta1.VpnTunnelInfo) stepInfo_;
     }
     return com.google.cloud.networkmanagement.v1beta1.VpnTunnelInfo.getDefaultInstance();
+  }
+
+  public static final int INTERCONNECT_ATTACHMENT_FIELD_NUMBER = 35;
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of an interconnect attachment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo interconnect_attachment = 35;
+   * </code>
+   *
+   * @return Whether the interconnectAttachment field is set.
+   */
+  @java.lang.Override
+  public boolean hasInterconnectAttachment() {
+    return stepInfoCase_ == 35;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of an interconnect attachment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo interconnect_attachment = 35;
+   * </code>
+   *
+   * @return The interconnectAttachment.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo
+      getInterconnectAttachment() {
+    if (stepInfoCase_ == 35) {
+      return (com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo
+        .getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of an interconnect attachment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo interconnect_attachment = 35;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfoOrBuilder
+      getInterconnectAttachmentOrBuilder() {
+    if (stepInfoCase_ == 35) {
+      return (com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo
+        .getDefaultInstance();
   }
 
   public static final int VPC_CONNECTOR_FIELD_NUMBER = 21;
@@ -2200,7 +2375,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=272
+   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=286
    * @return Whether the loadBalancer field is set.
    */
   @java.lang.Override
@@ -2222,7 +2397,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=272
+   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=286
    * @return The loadBalancer.
    */
   @java.lang.Override
@@ -3119,6 +3294,14 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
           34,
           (com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo) stepInfo_);
     }
+    if (stepInfoCase_ == 35) {
+      output.writeMessage(
+          35, (com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 36) {
+      output.writeMessage(
+          36, (com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo) stepInfo_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -3289,6 +3472,17 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
               (com.google.cloud.networkmanagement.v1beta1.ServerlessExternalConnectionInfo)
                   stepInfo_);
     }
+    if (stepInfoCase_ == 35) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              35,
+              (com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 36) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              36, (com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo) stepInfo_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3329,11 +3523,17 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       case 9:
         if (!getForwardingRule().equals(other.getForwardingRule())) return false;
         break;
+      case 36:
+        if (!getHybridSubnet().equals(other.getHybridSubnet())) return false;
+        break;
       case 10:
         if (!getVpnGateway().equals(other.getVpnGateway())) return false;
         break;
       case 11:
         if (!getVpnTunnel().equals(other.getVpnTunnel())) return false;
+        break;
+      case 35:
+        if (!getInterconnectAttachment().equals(other.getInterconnectAttachment())) return false;
         break;
       case 21:
         if (!getVpcConnector().equals(other.getVpcConnector())) return false;
@@ -3447,6 +3647,10 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + FORWARDING_RULE_FIELD_NUMBER;
         hash = (53 * hash) + getForwardingRule().hashCode();
         break;
+      case 36:
+        hash = (37 * hash) + HYBRID_SUBNET_FIELD_NUMBER;
+        hash = (53 * hash) + getHybridSubnet().hashCode();
+        break;
       case 10:
         hash = (37 * hash) + VPN_GATEWAY_FIELD_NUMBER;
         hash = (53 * hash) + getVpnGateway().hashCode();
@@ -3454,6 +3658,10 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       case 11:
         hash = (37 * hash) + VPN_TUNNEL_FIELD_NUMBER;
         hash = (53 * hash) + getVpnTunnel().hashCode();
+        break;
+      case 35:
+        hash = (37 * hash) + INTERCONNECT_ATTACHMENT_FIELD_NUMBER;
+        hash = (53 * hash) + getInterconnectAttachment().hashCode();
         break;
       case 21:
         hash = (37 * hash) + VPC_CONNECTOR_FIELD_NUMBER;
@@ -3706,11 +3914,17 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       if (forwardingRuleBuilder_ != null) {
         forwardingRuleBuilder_.clear();
       }
+      if (hybridSubnetBuilder_ != null) {
+        hybridSubnetBuilder_.clear();
+      }
       if (vpnGatewayBuilder_ != null) {
         vpnGatewayBuilder_.clear();
       }
       if (vpnTunnelBuilder_ != null) {
         vpnTunnelBuilder_.clear();
+      }
+      if (interconnectAttachmentBuilder_ != null) {
+        interconnectAttachmentBuilder_.clear();
       }
       if (vpcConnectorBuilder_ != null) {
         vpcConnectorBuilder_.clear();
@@ -3856,11 +4070,17 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       if (stepInfoCase_ == 9 && forwardingRuleBuilder_ != null) {
         result.stepInfo_ = forwardingRuleBuilder_.build();
       }
+      if (stepInfoCase_ == 36 && hybridSubnetBuilder_ != null) {
+        result.stepInfo_ = hybridSubnetBuilder_.build();
+      }
       if (stepInfoCase_ == 10 && vpnGatewayBuilder_ != null) {
         result.stepInfo_ = vpnGatewayBuilder_.build();
       }
       if (stepInfoCase_ == 11 && vpnTunnelBuilder_ != null) {
         result.stepInfo_ = vpnTunnelBuilder_.build();
+      }
+      if (stepInfoCase_ == 35 && interconnectAttachmentBuilder_ != null) {
+        result.stepInfo_ = interconnectAttachmentBuilder_.build();
       }
       if (stepInfoCase_ == 21 && vpcConnectorBuilder_ != null) {
         result.stepInfo_ = vpcConnectorBuilder_.build();
@@ -4020,6 +4240,11 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             mergeForwardingRule(other.getForwardingRule());
             break;
           }
+        case HYBRID_SUBNET:
+          {
+            mergeHybridSubnet(other.getHybridSubnet());
+            break;
+          }
         case VPN_GATEWAY:
           {
             mergeVpnGateway(other.getVpnGateway());
@@ -4028,6 +4253,11 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         case VPN_TUNNEL:
           {
             mergeVpnTunnel(other.getVpnTunnel());
+            break;
+          }
+        case INTERCONNECT_ATTACHMENT:
+          {
+            mergeInterconnectAttachment(other.getInterconnectAttachment());
             break;
           }
         case VPC_CONNECTOR:
@@ -4370,6 +4600,19 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
                 stepInfoCase_ = 34;
                 break;
               } // case 274
+            case 282:
+              {
+                input.readMessage(
+                    getInterconnectAttachmentFieldBuilder().getBuilder(), extensionRegistry);
+                stepInfoCase_ = 35;
+                break;
+              } // case 282
+            case 290:
+              {
+                input.readMessage(getHybridSubnetFieldBuilder().getBuilder(), extensionRegistry);
+                stepInfoCase_ = 36;
+                break;
+              } // case 290
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6133,6 +6376,231 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo,
+            com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo.Builder,
+            com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfoOrBuilder>
+        hybridSubnetBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a hybrid subnet.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo hybrid_subnet = 36;</code>
+     *
+     * @return Whether the hybridSubnet field is set.
+     */
+    @java.lang.Override
+    public boolean hasHybridSubnet() {
+      return stepInfoCase_ == 36;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a hybrid subnet.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo hybrid_subnet = 36;</code>
+     *
+     * @return The hybridSubnet.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo getHybridSubnet() {
+      if (hybridSubnetBuilder_ == null) {
+        if (stepInfoCase_ == 36) {
+          return (com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo.getDefaultInstance();
+      } else {
+        if (stepInfoCase_ == 36) {
+          return hybridSubnetBuilder_.getMessage();
+        }
+        return com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a hybrid subnet.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo hybrid_subnet = 36;</code>
+     */
+    public Builder setHybridSubnet(
+        com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo value) {
+      if (hybridSubnetBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stepInfo_ = value;
+        onChanged();
+      } else {
+        hybridSubnetBuilder_.setMessage(value);
+      }
+      stepInfoCase_ = 36;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a hybrid subnet.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo hybrid_subnet = 36;</code>
+     */
+    public Builder setHybridSubnet(
+        com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo.Builder builderForValue) {
+      if (hybridSubnetBuilder_ == null) {
+        stepInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        hybridSubnetBuilder_.setMessage(builderForValue.build());
+      }
+      stepInfoCase_ = 36;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a hybrid subnet.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo hybrid_subnet = 36;</code>
+     */
+    public Builder mergeHybridSubnet(
+        com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo value) {
+      if (hybridSubnetBuilder_ == null) {
+        if (stepInfoCase_ == 36
+            && stepInfo_
+                != com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo
+                    .getDefaultInstance()) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo.newBuilder(
+                      (com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo) stepInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          stepInfo_ = value;
+        }
+        onChanged();
+      } else {
+        if (stepInfoCase_ == 36) {
+          hybridSubnetBuilder_.mergeFrom(value);
+        } else {
+          hybridSubnetBuilder_.setMessage(value);
+        }
+      }
+      stepInfoCase_ = 36;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a hybrid subnet.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo hybrid_subnet = 36;</code>
+     */
+    public Builder clearHybridSubnet() {
+      if (hybridSubnetBuilder_ == null) {
+        if (stepInfoCase_ == 36) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+          onChanged();
+        }
+      } else {
+        if (stepInfoCase_ == 36) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+        }
+        hybridSubnetBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a hybrid subnet.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo hybrid_subnet = 36;</code>
+     */
+    public com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo.Builder
+        getHybridSubnetBuilder() {
+      return getHybridSubnetFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a hybrid subnet.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo hybrid_subnet = 36;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfoOrBuilder
+        getHybridSubnetOrBuilder() {
+      if ((stepInfoCase_ == 36) && (hybridSubnetBuilder_ != null)) {
+        return hybridSubnetBuilder_.getMessageOrBuilder();
+      } else {
+        if (stepInfoCase_ == 36) {
+          return (com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a hybrid subnet.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo hybrid_subnet = 36;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo,
+            com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo.Builder,
+            com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfoOrBuilder>
+        getHybridSubnetFieldBuilder() {
+      if (hybridSubnetBuilder_ == null) {
+        if (!(stepInfoCase_ == 36)) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo.getDefaultInstance();
+        }
+        hybridSubnetBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo,
+                com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo.Builder,
+                com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfoOrBuilder>(
+                (com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo) stepInfo_,
+                getParentForChildren(),
+                isClean());
+        stepInfo_ = null;
+      }
+      stepInfoCase_ = 36;
+      onChanged();
+      return hybridSubnetBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.networkmanagement.v1beta1.VpnGatewayInfo,
             com.google.cloud.networkmanagement.v1beta1.VpnGatewayInfo.Builder,
             com.google.cloud.networkmanagement.v1beta1.VpnGatewayInfoOrBuilder>
@@ -6573,6 +7041,256 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       stepInfoCase_ = 11;
       onChanged();
       return vpnTunnelBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo,
+            com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo.Builder,
+            com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfoOrBuilder>
+        interconnectAttachmentBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of an interconnect attachment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo interconnect_attachment = 35;
+     * </code>
+     *
+     * @return Whether the interconnectAttachment field is set.
+     */
+    @java.lang.Override
+    public boolean hasInterconnectAttachment() {
+      return stepInfoCase_ == 35;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of an interconnect attachment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo interconnect_attachment = 35;
+     * </code>
+     *
+     * @return The interconnectAttachment.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo
+        getInterconnectAttachment() {
+      if (interconnectAttachmentBuilder_ == null) {
+        if (stepInfoCase_ == 35) {
+          return (com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo
+            .getDefaultInstance();
+      } else {
+        if (stepInfoCase_ == 35) {
+          return interconnectAttachmentBuilder_.getMessage();
+        }
+        return com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of an interconnect attachment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo interconnect_attachment = 35;
+     * </code>
+     */
+    public Builder setInterconnectAttachment(
+        com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo value) {
+      if (interconnectAttachmentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stepInfo_ = value;
+        onChanged();
+      } else {
+        interconnectAttachmentBuilder_.setMessage(value);
+      }
+      stepInfoCase_ = 35;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of an interconnect attachment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo interconnect_attachment = 35;
+     * </code>
+     */
+    public Builder setInterconnectAttachment(
+        com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo.Builder
+            builderForValue) {
+      if (interconnectAttachmentBuilder_ == null) {
+        stepInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        interconnectAttachmentBuilder_.setMessage(builderForValue.build());
+      }
+      stepInfoCase_ = 35;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of an interconnect attachment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo interconnect_attachment = 35;
+     * </code>
+     */
+    public Builder mergeInterconnectAttachment(
+        com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo value) {
+      if (interconnectAttachmentBuilder_ == null) {
+        if (stepInfoCase_ == 35
+            && stepInfo_
+                != com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo
+                    .getDefaultInstance()) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo.newBuilder(
+                      (com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo)
+                          stepInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          stepInfo_ = value;
+        }
+        onChanged();
+      } else {
+        if (stepInfoCase_ == 35) {
+          interconnectAttachmentBuilder_.mergeFrom(value);
+        } else {
+          interconnectAttachmentBuilder_.setMessage(value);
+        }
+      }
+      stepInfoCase_ = 35;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of an interconnect attachment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo interconnect_attachment = 35;
+     * </code>
+     */
+    public Builder clearInterconnectAttachment() {
+      if (interconnectAttachmentBuilder_ == null) {
+        if (stepInfoCase_ == 35) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+          onChanged();
+        }
+      } else {
+        if (stepInfoCase_ == 35) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+        }
+        interconnectAttachmentBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of an interconnect attachment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo interconnect_attachment = 35;
+     * </code>
+     */
+    public com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo.Builder
+        getInterconnectAttachmentBuilder() {
+      return getInterconnectAttachmentFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of an interconnect attachment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo interconnect_attachment = 35;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfoOrBuilder
+        getInterconnectAttachmentOrBuilder() {
+      if ((stepInfoCase_ == 35) && (interconnectAttachmentBuilder_ != null)) {
+        return interconnectAttachmentBuilder_.getMessageOrBuilder();
+      } else {
+        if (stepInfoCase_ == 35) {
+          return (com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of an interconnect attachment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo interconnect_attachment = 35;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo,
+            com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo.Builder,
+            com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfoOrBuilder>
+        getInterconnectAttachmentFieldBuilder() {
+      if (interconnectAttachmentBuilder_ == null) {
+        if (!(stepInfoCase_ == 35)) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo
+                  .getDefaultInstance();
+        }
+        interconnectAttachmentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo,
+                com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo.Builder,
+                com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfoOrBuilder>(
+                (com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo) stepInfo_,
+                getParentForChildren(),
+                isClean());
+        stepInfo_ = null;
+      }
+      stepInfoCase_ = 35;
+      onChanged();
+      return interconnectAttachmentBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -8203,7 +8921,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.networkmanagement.v1beta1.Step.load_balancer is deprecated. See
-     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=272
+     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=286
      * @return Whether the loadBalancer field is set.
      */
     @java.lang.Override
@@ -8225,7 +8943,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.networkmanagement.v1beta1.Step.load_balancer is deprecated. See
-     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=272
+     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=286
      * @return The loadBalancer.
      */
     @java.lang.Override

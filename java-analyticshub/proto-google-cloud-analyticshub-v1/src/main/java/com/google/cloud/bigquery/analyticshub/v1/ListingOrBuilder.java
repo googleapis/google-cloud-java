@@ -550,6 +550,53 @@ public interface ListingOrBuilder
    *
    *
    * <pre>
+   * Optional. If set, stored procedure configuration will be propagated and
+   * enforced on the linked dataset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig stored_procedure_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the storedProcedureConfig field is set.
+   */
+  boolean hasStoredProcedureConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, stored procedure configuration will be propagated and
+   * enforced on the linked dataset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig stored_procedure_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The storedProcedureConfig.
+   */
+  com.google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig getStoredProcedureConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, stored procedure configuration will be propagated and
+   * enforced on the linked dataset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.StoredProcedureConfig stored_procedure_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.bigquery.analyticshub.v1.StoredProcedureConfigOrBuilder
+      getStoredProcedureConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Type of discovery of the listing on the discovery page.
    * </pre>
    *

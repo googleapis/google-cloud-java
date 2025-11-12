@@ -799,6 +799,12 @@ public class ParticipantsClientHttpJsonTest {
   }
 
   @Test
+  public void bidiStreamingAnalyzeContentUnsupportedMethodTest() throws Exception {
+    // The bidiStreamingAnalyzeContent() method is not supported in REST transport.
+    // This empty test is generated for technical reasons.
+  }
+
+  @Test
   public void suggestArticlesTest() throws Exception {
     SuggestArticlesResponse expectedResponse =
         SuggestArticlesResponse.newBuilder()

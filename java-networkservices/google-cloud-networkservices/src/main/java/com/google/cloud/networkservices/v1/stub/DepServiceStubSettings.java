@@ -17,6 +17,7 @@
 package com.google.cloud.networkservices.v1.stub;
 
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListAuthzExtensionsPagedResponse;
+import static com.google.cloud.networkservices.v1.DepServiceClient.ListLbEdgeExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLbRouteExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLbTrafficExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLocationsPagedResponse;
@@ -57,24 +58,31 @@ import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.cloud.networkservices.v1.AuthzExtension;
 import com.google.cloud.networkservices.v1.CreateAuthzExtensionRequest;
+import com.google.cloud.networkservices.v1.CreateLbEdgeExtensionRequest;
 import com.google.cloud.networkservices.v1.CreateLbRouteExtensionRequest;
 import com.google.cloud.networkservices.v1.CreateLbTrafficExtensionRequest;
 import com.google.cloud.networkservices.v1.DeleteAuthzExtensionRequest;
+import com.google.cloud.networkservices.v1.DeleteLbEdgeExtensionRequest;
 import com.google.cloud.networkservices.v1.DeleteLbRouteExtensionRequest;
 import com.google.cloud.networkservices.v1.DeleteLbTrafficExtensionRequest;
 import com.google.cloud.networkservices.v1.GetAuthzExtensionRequest;
+import com.google.cloud.networkservices.v1.GetLbEdgeExtensionRequest;
 import com.google.cloud.networkservices.v1.GetLbRouteExtensionRequest;
 import com.google.cloud.networkservices.v1.GetLbTrafficExtensionRequest;
+import com.google.cloud.networkservices.v1.LbEdgeExtension;
 import com.google.cloud.networkservices.v1.LbRouteExtension;
 import com.google.cloud.networkservices.v1.LbTrafficExtension;
 import com.google.cloud.networkservices.v1.ListAuthzExtensionsRequest;
 import com.google.cloud.networkservices.v1.ListAuthzExtensionsResponse;
+import com.google.cloud.networkservices.v1.ListLbEdgeExtensionsRequest;
+import com.google.cloud.networkservices.v1.ListLbEdgeExtensionsResponse;
 import com.google.cloud.networkservices.v1.ListLbRouteExtensionsRequest;
 import com.google.cloud.networkservices.v1.ListLbRouteExtensionsResponse;
 import com.google.cloud.networkservices.v1.ListLbTrafficExtensionsRequest;
 import com.google.cloud.networkservices.v1.ListLbTrafficExtensionsResponse;
 import com.google.cloud.networkservices.v1.OperationMetadata;
 import com.google.cloud.networkservices.v1.UpdateAuthzExtensionRequest;
+import com.google.cloud.networkservices.v1.UpdateLbEdgeExtensionRequest;
 import com.google.cloud.networkservices.v1.UpdateLbRouteExtensionRequest;
 import com.google.cloud.networkservices.v1.UpdateLbTrafficExtensionRequest;
 import com.google.common.collect.ImmutableList;
@@ -217,6 +225,27 @@ public class DepServiceStubSettings extends StubSettings<DepServiceStubSettings>
   private final OperationCallSettings<DeleteLbRouteExtensionRequest, Empty, OperationMetadata>
       deleteLbRouteExtensionOperationSettings;
   private final PagedCallSettings<
+          ListLbEdgeExtensionsRequest,
+          ListLbEdgeExtensionsResponse,
+          ListLbEdgeExtensionsPagedResponse>
+      listLbEdgeExtensionsSettings;
+  private final UnaryCallSettings<GetLbEdgeExtensionRequest, LbEdgeExtension>
+      getLbEdgeExtensionSettings;
+  private final UnaryCallSettings<CreateLbEdgeExtensionRequest, Operation>
+      createLbEdgeExtensionSettings;
+  private final OperationCallSettings<
+          CreateLbEdgeExtensionRequest, LbEdgeExtension, OperationMetadata>
+      createLbEdgeExtensionOperationSettings;
+  private final UnaryCallSettings<UpdateLbEdgeExtensionRequest, Operation>
+      updateLbEdgeExtensionSettings;
+  private final OperationCallSettings<
+          UpdateLbEdgeExtensionRequest, LbEdgeExtension, OperationMetadata>
+      updateLbEdgeExtensionOperationSettings;
+  private final UnaryCallSettings<DeleteLbEdgeExtensionRequest, Operation>
+      deleteLbEdgeExtensionSettings;
+  private final OperationCallSettings<DeleteLbEdgeExtensionRequest, Empty, OperationMetadata>
+      deleteLbEdgeExtensionOperationSettings;
+  private final PagedCallSettings<
           ListAuthzExtensionsRequest, ListAuthzExtensionsResponse, ListAuthzExtensionsPagedResponse>
       listAuthzExtensionsSettings;
   private final UnaryCallSettings<GetAuthzExtensionRequest, AuthzExtension>
@@ -323,6 +352,45 @@ public class DepServiceStubSettings extends StubSettings<DepServiceStubSettings>
             public Iterable<LbRouteExtension> extractResources(
                 ListLbRouteExtensionsResponse payload) {
               return payload.getLbRouteExtensionsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsResponse, LbEdgeExtension>
+      LIST_LB_EDGE_EXTENSIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsResponse, LbEdgeExtension>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLbEdgeExtensionsRequest injectToken(
+                ListLbEdgeExtensionsRequest payload, String token) {
+              return ListLbEdgeExtensionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLbEdgeExtensionsRequest injectPageSize(
+                ListLbEdgeExtensionsRequest payload, int pageSize) {
+              return ListLbEdgeExtensionsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLbEdgeExtensionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLbEdgeExtensionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<LbEdgeExtension> extractResources(
+                ListLbEdgeExtensionsResponse payload) {
+              return payload.getLbEdgeExtensionsList();
             }
           };
 
@@ -446,6 +514,30 @@ public class DepServiceStubSettings extends StubSettings<DepServiceStubSettings>
                       PageContext.create(
                           callable, LIST_LB_ROUTE_EXTENSIONS_PAGE_STR_DESC, request, context);
               return ListLbRouteExtensionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListLbEdgeExtensionsRequest,
+          ListLbEdgeExtensionsResponse,
+          ListLbEdgeExtensionsPagedResponse>
+      LIST_LB_EDGE_EXTENSIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLbEdgeExtensionsRequest,
+              ListLbEdgeExtensionsResponse,
+              ListLbEdgeExtensionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLbEdgeExtensionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsResponse> callable,
+                ListLbEdgeExtensionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLbEdgeExtensionsResponse> futureResponse) {
+              PageContext<
+                      ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsResponse, LbEdgeExtension>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_LB_EDGE_EXTENSIONS_PAGE_STR_DESC, request, context);
+              return ListLbEdgeExtensionsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -589,6 +681,57 @@ public class DepServiceStubSettings extends StubSettings<DepServiceStubSettings>
   public OperationCallSettings<DeleteLbRouteExtensionRequest, Empty, OperationMetadata>
       deleteLbRouteExtensionOperationSettings() {
     return deleteLbRouteExtensionOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listLbEdgeExtensions. */
+  public PagedCallSettings<
+          ListLbEdgeExtensionsRequest,
+          ListLbEdgeExtensionsResponse,
+          ListLbEdgeExtensionsPagedResponse>
+      listLbEdgeExtensionsSettings() {
+    return listLbEdgeExtensionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLbEdgeExtension. */
+  public UnaryCallSettings<GetLbEdgeExtensionRequest, LbEdgeExtension>
+      getLbEdgeExtensionSettings() {
+    return getLbEdgeExtensionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createLbEdgeExtension. */
+  public UnaryCallSettings<CreateLbEdgeExtensionRequest, Operation>
+      createLbEdgeExtensionSettings() {
+    return createLbEdgeExtensionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createLbEdgeExtension. */
+  public OperationCallSettings<CreateLbEdgeExtensionRequest, LbEdgeExtension, OperationMetadata>
+      createLbEdgeExtensionOperationSettings() {
+    return createLbEdgeExtensionOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateLbEdgeExtension. */
+  public UnaryCallSettings<UpdateLbEdgeExtensionRequest, Operation>
+      updateLbEdgeExtensionSettings() {
+    return updateLbEdgeExtensionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateLbEdgeExtension. */
+  public OperationCallSettings<UpdateLbEdgeExtensionRequest, LbEdgeExtension, OperationMetadata>
+      updateLbEdgeExtensionOperationSettings() {
+    return updateLbEdgeExtensionOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteLbEdgeExtension. */
+  public UnaryCallSettings<DeleteLbEdgeExtensionRequest, Operation>
+      deleteLbEdgeExtensionSettings() {
+    return deleteLbEdgeExtensionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteLbEdgeExtension. */
+  public OperationCallSettings<DeleteLbEdgeExtensionRequest, Empty, OperationMetadata>
+      deleteLbEdgeExtensionOperationSettings() {
+    return deleteLbEdgeExtensionOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to listAuthzExtensions. */
@@ -796,6 +939,17 @@ public class DepServiceStubSettings extends StubSettings<DepServiceStubSettings>
     deleteLbRouteExtensionSettings = settingsBuilder.deleteLbRouteExtensionSettings().build();
     deleteLbRouteExtensionOperationSettings =
         settingsBuilder.deleteLbRouteExtensionOperationSettings().build();
+    listLbEdgeExtensionsSettings = settingsBuilder.listLbEdgeExtensionsSettings().build();
+    getLbEdgeExtensionSettings = settingsBuilder.getLbEdgeExtensionSettings().build();
+    createLbEdgeExtensionSettings = settingsBuilder.createLbEdgeExtensionSettings().build();
+    createLbEdgeExtensionOperationSettings =
+        settingsBuilder.createLbEdgeExtensionOperationSettings().build();
+    updateLbEdgeExtensionSettings = settingsBuilder.updateLbEdgeExtensionSettings().build();
+    updateLbEdgeExtensionOperationSettings =
+        settingsBuilder.updateLbEdgeExtensionOperationSettings().build();
+    deleteLbEdgeExtensionSettings = settingsBuilder.deleteLbEdgeExtensionSettings().build();
+    deleteLbEdgeExtensionOperationSettings =
+        settingsBuilder.deleteLbEdgeExtensionOperationSettings().build();
     listAuthzExtensionsSettings = settingsBuilder.listAuthzExtensionsSettings().build();
     getAuthzExtensionSettings = settingsBuilder.getAuthzExtensionSettings().build();
     createAuthzExtensionSettings = settingsBuilder.createAuthzExtensionSettings().build();
@@ -861,6 +1015,28 @@ public class DepServiceStubSettings extends StubSettings<DepServiceStubSettings>
     private final OperationCallSettings.Builder<
             DeleteLbRouteExtensionRequest, Empty, OperationMetadata>
         deleteLbRouteExtensionOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListLbEdgeExtensionsRequest,
+            ListLbEdgeExtensionsResponse,
+            ListLbEdgeExtensionsPagedResponse>
+        listLbEdgeExtensionsSettings;
+    private final UnaryCallSettings.Builder<GetLbEdgeExtensionRequest, LbEdgeExtension>
+        getLbEdgeExtensionSettings;
+    private final UnaryCallSettings.Builder<CreateLbEdgeExtensionRequest, Operation>
+        createLbEdgeExtensionSettings;
+    private final OperationCallSettings.Builder<
+            CreateLbEdgeExtensionRequest, LbEdgeExtension, OperationMetadata>
+        createLbEdgeExtensionOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateLbEdgeExtensionRequest, Operation>
+        updateLbEdgeExtensionSettings;
+    private final OperationCallSettings.Builder<
+            UpdateLbEdgeExtensionRequest, LbEdgeExtension, OperationMetadata>
+        updateLbEdgeExtensionOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteLbEdgeExtensionRequest, Operation>
+        deleteLbEdgeExtensionSettings;
+    private final OperationCallSettings.Builder<
+            DeleteLbEdgeExtensionRequest, Empty, OperationMetadata>
+        deleteLbEdgeExtensionOperationSettings;
     private final PagedCallSettings.Builder<
             ListAuthzExtensionsRequest,
             ListAuthzExtensionsResponse,
@@ -943,6 +1119,15 @@ public class DepServiceStubSettings extends StubSettings<DepServiceStubSettings>
       updateLbRouteExtensionOperationSettings = OperationCallSettings.newBuilder();
       deleteLbRouteExtensionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteLbRouteExtensionOperationSettings = OperationCallSettings.newBuilder();
+      listLbEdgeExtensionsSettings =
+          PagedCallSettings.newBuilder(LIST_LB_EDGE_EXTENSIONS_PAGE_STR_FACT);
+      getLbEdgeExtensionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createLbEdgeExtensionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createLbEdgeExtensionOperationSettings = OperationCallSettings.newBuilder();
+      updateLbEdgeExtensionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateLbEdgeExtensionOperationSettings = OperationCallSettings.newBuilder();
+      deleteLbEdgeExtensionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteLbEdgeExtensionOperationSettings = OperationCallSettings.newBuilder();
       listAuthzExtensionsSettings =
           PagedCallSettings.newBuilder(LIST_AUTHZ_EXTENSIONS_PAGE_STR_FACT);
       getAuthzExtensionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -970,6 +1155,11 @@ public class DepServiceStubSettings extends StubSettings<DepServiceStubSettings>
               createLbRouteExtensionSettings,
               updateLbRouteExtensionSettings,
               deleteLbRouteExtensionSettings,
+              listLbEdgeExtensionsSettings,
+              getLbEdgeExtensionSettings,
+              createLbEdgeExtensionSettings,
+              updateLbEdgeExtensionSettings,
+              deleteLbEdgeExtensionSettings,
               listAuthzExtensionsSettings,
               getAuthzExtensionSettings,
               createAuthzExtensionSettings,
@@ -1008,6 +1198,17 @@ public class DepServiceStubSettings extends StubSettings<DepServiceStubSettings>
       deleteLbRouteExtensionSettings = settings.deleteLbRouteExtensionSettings.toBuilder();
       deleteLbRouteExtensionOperationSettings =
           settings.deleteLbRouteExtensionOperationSettings.toBuilder();
+      listLbEdgeExtensionsSettings = settings.listLbEdgeExtensionsSettings.toBuilder();
+      getLbEdgeExtensionSettings = settings.getLbEdgeExtensionSettings.toBuilder();
+      createLbEdgeExtensionSettings = settings.createLbEdgeExtensionSettings.toBuilder();
+      createLbEdgeExtensionOperationSettings =
+          settings.createLbEdgeExtensionOperationSettings.toBuilder();
+      updateLbEdgeExtensionSettings = settings.updateLbEdgeExtensionSettings.toBuilder();
+      updateLbEdgeExtensionOperationSettings =
+          settings.updateLbEdgeExtensionOperationSettings.toBuilder();
+      deleteLbEdgeExtensionSettings = settings.deleteLbEdgeExtensionSettings.toBuilder();
+      deleteLbEdgeExtensionOperationSettings =
+          settings.deleteLbEdgeExtensionOperationSettings.toBuilder();
       listAuthzExtensionsSettings = settings.listAuthzExtensionsSettings.toBuilder();
       getAuthzExtensionSettings = settings.getAuthzExtensionSettings.toBuilder();
       createAuthzExtensionSettings = settings.createAuthzExtensionSettings.toBuilder();
@@ -1037,6 +1238,11 @@ public class DepServiceStubSettings extends StubSettings<DepServiceStubSettings>
               createLbRouteExtensionSettings,
               updateLbRouteExtensionSettings,
               deleteLbRouteExtensionSettings,
+              listLbEdgeExtensionsSettings,
+              getLbEdgeExtensionSettings,
+              createLbEdgeExtensionSettings,
+              updateLbEdgeExtensionSettings,
+              deleteLbEdgeExtensionSettings,
               listAuthzExtensionsSettings,
               getAuthzExtensionSettings,
               createAuthzExtensionSettings,
@@ -1121,6 +1327,31 @@ public class DepServiceStubSettings extends StubSettings<DepServiceStubSettings>
 
       builder
           .deleteLbRouteExtensionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listLbEdgeExtensionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getLbEdgeExtensionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .createLbEdgeExtensionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .updateLbEdgeExtensionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .deleteLbEdgeExtensionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -1299,6 +1530,78 @@ public class DepServiceStubSettings extends StubSettings<DepServiceStubSettings>
           .setInitialCallSettings(
               UnaryCallSettings
                   .<DeleteLbRouteExtensionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createLbEdgeExtensionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateLbEdgeExtensionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(LbEdgeExtension.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateLbEdgeExtensionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateLbEdgeExtensionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(LbEdgeExtension.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteLbEdgeExtensionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteLbEdgeExtensionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
                   .build())
@@ -1512,6 +1815,59 @@ public class DepServiceStubSettings extends StubSettings<DepServiceStubSettings>
     public OperationCallSettings.Builder<DeleteLbRouteExtensionRequest, Empty, OperationMetadata>
         deleteLbRouteExtensionOperationSettings() {
       return deleteLbRouteExtensionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLbEdgeExtensions. */
+    public PagedCallSettings.Builder<
+            ListLbEdgeExtensionsRequest,
+            ListLbEdgeExtensionsResponse,
+            ListLbEdgeExtensionsPagedResponse>
+        listLbEdgeExtensionsSettings() {
+      return listLbEdgeExtensionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLbEdgeExtension. */
+    public UnaryCallSettings.Builder<GetLbEdgeExtensionRequest, LbEdgeExtension>
+        getLbEdgeExtensionSettings() {
+      return getLbEdgeExtensionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createLbEdgeExtension. */
+    public UnaryCallSettings.Builder<CreateLbEdgeExtensionRequest, Operation>
+        createLbEdgeExtensionSettings() {
+      return createLbEdgeExtensionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createLbEdgeExtension. */
+    public OperationCallSettings.Builder<
+            CreateLbEdgeExtensionRequest, LbEdgeExtension, OperationMetadata>
+        createLbEdgeExtensionOperationSettings() {
+      return createLbEdgeExtensionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateLbEdgeExtension. */
+    public UnaryCallSettings.Builder<UpdateLbEdgeExtensionRequest, Operation>
+        updateLbEdgeExtensionSettings() {
+      return updateLbEdgeExtensionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateLbEdgeExtension. */
+    public OperationCallSettings.Builder<
+            UpdateLbEdgeExtensionRequest, LbEdgeExtension, OperationMetadata>
+        updateLbEdgeExtensionOperationSettings() {
+      return updateLbEdgeExtensionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteLbEdgeExtension. */
+    public UnaryCallSettings.Builder<DeleteLbEdgeExtensionRequest, Operation>
+        deleteLbEdgeExtensionSettings() {
+      return deleteLbEdgeExtensionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteLbEdgeExtension. */
+    public OperationCallSettings.Builder<DeleteLbEdgeExtensionRequest, Empty, OperationMetadata>
+        deleteLbEdgeExtensionOperationSettings() {
+      return deleteLbEdgeExtensionOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listAuthzExtensions. */

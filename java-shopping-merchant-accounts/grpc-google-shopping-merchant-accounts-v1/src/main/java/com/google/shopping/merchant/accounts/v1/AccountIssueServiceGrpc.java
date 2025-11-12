@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to support `AccountIssueService` API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/accounts/v1/accountissue.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AccountIssueServiceGrpc {
 
@@ -264,8 +261,9 @@ public final class AccountIssueServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1.ListAccountIssuesResponse listAccountIssues(
-        com.google.shopping.merchant.accounts.v1.ListAccountIssuesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.ListAccountIssuesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAccountIssuesMethod(), getCallOptions(), request);
     }
   }

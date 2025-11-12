@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * APIs for Identity-Aware Proxy Admin configurations.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/iap/v1/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class IdentityAwareProxyAdminServiceGrpc {
 
@@ -1063,8 +1060,9 @@ public final class IdentityAwareProxyAdminServiceGrpc {
      * https://cloud.google.com/iap/docs/managing-access#managing_access_via_the_api
      * </pre>
      */
-    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1078,8 +1076,9 @@ public final class IdentityAwareProxyAdminServiceGrpc {
      * https://cloud.google.com/iap/docs/managing-access#managing_access_via_the_api
      * </pre>
      */
-    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1094,8 +1093,8 @@ public final class IdentityAwareProxyAdminServiceGrpc {
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
-        com.google.iam.v1.TestIamPermissionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.iam.v1.TestIamPermissionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
 
@@ -1107,8 +1106,8 @@ public final class IdentityAwareProxyAdminServiceGrpc {
      * </pre>
      */
     public com.google.cloud.iap.v1.IapSettings getIapSettings(
-        com.google.cloud.iap.v1.GetIapSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.iap.v1.GetIapSettingsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIapSettingsMethod(), getCallOptions(), request);
     }
 
@@ -1121,8 +1120,8 @@ public final class IdentityAwareProxyAdminServiceGrpc {
      * </pre>
      */
     public com.google.cloud.iap.v1.IapSettings updateIapSettings(
-        com.google.cloud.iap.v1.UpdateIapSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.iap.v1.UpdateIapSettingsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateIapSettingsMethod(), getCallOptions(), request);
     }
 
@@ -1135,8 +1134,9 @@ public final class IdentityAwareProxyAdminServiceGrpc {
      */
     public com.google.cloud.iap.v1.ValidateIapAttributeExpressionResponse
         validateIapAttributeExpression(
-            com.google.cloud.iap.v1.ValidateIapAttributeExpressionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.iap.v1.ValidateIapAttributeExpressionRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getValidateIapAttributeExpressionMethod(), getCallOptions(), request);
     }
 
@@ -1150,8 +1150,9 @@ public final class IdentityAwareProxyAdminServiceGrpc {
      * </pre>
      */
     public com.google.cloud.iap.v1.ListTunnelDestGroupsResponse listTunnelDestGroups(
-        com.google.cloud.iap.v1.ListTunnelDestGroupsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.iap.v1.ListTunnelDestGroupsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTunnelDestGroupsMethod(), getCallOptions(), request);
     }
 
@@ -1163,8 +1164,9 @@ public final class IdentityAwareProxyAdminServiceGrpc {
      * </pre>
      */
     public com.google.cloud.iap.v1.TunnelDestGroup createTunnelDestGroup(
-        com.google.cloud.iap.v1.CreateTunnelDestGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.iap.v1.CreateTunnelDestGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTunnelDestGroupMethod(), getCallOptions(), request);
     }
 
@@ -1176,8 +1178,8 @@ public final class IdentityAwareProxyAdminServiceGrpc {
      * </pre>
      */
     public com.google.cloud.iap.v1.TunnelDestGroup getTunnelDestGroup(
-        com.google.cloud.iap.v1.GetTunnelDestGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.iap.v1.GetTunnelDestGroupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTunnelDestGroupMethod(), getCallOptions(), request);
     }
 
@@ -1189,8 +1191,9 @@ public final class IdentityAwareProxyAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteTunnelDestGroup(
-        com.google.cloud.iap.v1.DeleteTunnelDestGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.iap.v1.DeleteTunnelDestGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTunnelDestGroupMethod(), getCallOptions(), request);
     }
 
@@ -1202,8 +1205,9 @@ public final class IdentityAwareProxyAdminServiceGrpc {
      * </pre>
      */
     public com.google.cloud.iap.v1.TunnelDestGroup updateTunnelDestGroup(
-        com.google.cloud.iap.v1.UpdateTunnelDestGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.iap.v1.UpdateTunnelDestGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateTunnelDestGroupMethod(), getCallOptions(), request);
     }
   }

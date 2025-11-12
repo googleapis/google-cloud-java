@@ -19,6 +19,21 @@
             "CreateCloudVmCluster": {
               "methods": ["createCloudVmClusterAsync", "createCloudVmClusterAsync", "createCloudVmClusterAsync", "createCloudVmClusterOperationCallable", "createCloudVmClusterCallable"]
             },
+            "CreateDbSystem": {
+              "methods": ["createDbSystemAsync", "createDbSystemAsync", "createDbSystemAsync", "createDbSystemOperationCallable", "createDbSystemCallable"]
+            },
+            "CreateExadbVmCluster": {
+              "methods": ["createExadbVmClusterAsync", "createExadbVmClusterAsync", "createExadbVmClusterAsync", "createExadbVmClusterOperationCallable", "createExadbVmClusterCallable"]
+            },
+            "CreateExascaleDbStorageVault": {
+              "methods": ["createExascaleDbStorageVaultAsync", "createExascaleDbStorageVaultAsync", "createExascaleDbStorageVaultAsync", "createExascaleDbStorageVaultOperationCallable", "createExascaleDbStorageVaultCallable"]
+            },
+            "CreateOdbNetwork": {
+              "methods": ["createOdbNetworkAsync", "createOdbNetworkAsync", "createOdbNetworkAsync", "createOdbNetworkOperationCallable", "createOdbNetworkCallable"]
+            },
+            "CreateOdbSubnet": {
+              "methods": ["createOdbSubnetAsync", "createOdbSubnetAsync", "createOdbSubnetAsync", "createOdbSubnetOperationCallable", "createOdbSubnetCallable"]
+            },
             "DeleteAutonomousDatabase": {
               "methods": ["deleteAutonomousDatabaseAsync", "deleteAutonomousDatabaseAsync", "deleteAutonomousDatabaseAsync", "deleteAutonomousDatabaseOperationCallable", "deleteAutonomousDatabaseCallable"]
             },
@@ -27,6 +42,24 @@
             },
             "DeleteCloudVmCluster": {
               "methods": ["deleteCloudVmClusterAsync", "deleteCloudVmClusterAsync", "deleteCloudVmClusterAsync", "deleteCloudVmClusterOperationCallable", "deleteCloudVmClusterCallable"]
+            },
+            "DeleteDbSystem": {
+              "methods": ["deleteDbSystemAsync", "deleteDbSystemAsync", "deleteDbSystemAsync", "deleteDbSystemOperationCallable", "deleteDbSystemCallable"]
+            },
+            "DeleteExadbVmCluster": {
+              "methods": ["deleteExadbVmClusterAsync", "deleteExadbVmClusterAsync", "deleteExadbVmClusterAsync", "deleteExadbVmClusterOperationCallable", "deleteExadbVmClusterCallable"]
+            },
+            "DeleteExascaleDbStorageVault": {
+              "methods": ["deleteExascaleDbStorageVaultAsync", "deleteExascaleDbStorageVaultAsync", "deleteExascaleDbStorageVaultAsync", "deleteExascaleDbStorageVaultOperationCallable", "deleteExascaleDbStorageVaultCallable"]
+            },
+            "DeleteOdbNetwork": {
+              "methods": ["deleteOdbNetworkAsync", "deleteOdbNetworkAsync", "deleteOdbNetworkAsync", "deleteOdbNetworkOperationCallable", "deleteOdbNetworkCallable"]
+            },
+            "DeleteOdbSubnet": {
+              "methods": ["deleteOdbSubnetAsync", "deleteOdbSubnetAsync", "deleteOdbSubnetAsync", "deleteOdbSubnetOperationCallable", "deleteOdbSubnetCallable"]
+            },
+            "FailoverAutonomousDatabase": {
+              "methods": ["failoverAutonomousDatabaseAsync", "failoverAutonomousDatabaseAsync", "failoverAutonomousDatabaseAsync", "failoverAutonomousDatabaseAsync", "failoverAutonomousDatabaseAsync", "failoverAutonomousDatabaseOperationCallable", "failoverAutonomousDatabaseCallable"]
             },
             "GenerateAutonomousDatabaseWallet": {
               "methods": ["generateAutonomousDatabaseWallet", "generateAutonomousDatabaseWallet", "generateAutonomousDatabaseWallet", "generateAutonomousDatabaseWalletCallable"]
@@ -40,8 +73,29 @@
             "GetCloudVmCluster": {
               "methods": ["getCloudVmCluster", "getCloudVmCluster", "getCloudVmCluster", "getCloudVmClusterCallable"]
             },
+            "GetDatabase": {
+              "methods": ["getDatabase", "getDatabase", "getDatabase", "getDatabaseCallable"]
+            },
+            "GetDbSystem": {
+              "methods": ["getDbSystem", "getDbSystem", "getDbSystem", "getDbSystemCallable"]
+            },
+            "GetExadbVmCluster": {
+              "methods": ["getExadbVmCluster", "getExadbVmCluster", "getExadbVmCluster", "getExadbVmClusterCallable"]
+            },
+            "GetExascaleDbStorageVault": {
+              "methods": ["getExascaleDbStorageVault", "getExascaleDbStorageVault", "getExascaleDbStorageVault", "getExascaleDbStorageVaultCallable"]
+            },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetOdbNetwork": {
+              "methods": ["getOdbNetwork", "getOdbNetwork", "getOdbNetwork", "getOdbNetworkCallable"]
+            },
+            "GetOdbSubnet": {
+              "methods": ["getOdbSubnet", "getOdbSubnet", "getOdbSubnet", "getOdbSubnetCallable"]
+            },
+            "GetPluggableDatabase": {
+              "methods": ["getPluggableDatabase", "getPluggableDatabase", "getPluggableDatabase", "getPluggableDatabaseCallable"]
             },
             "ListAutonomousDatabaseBackups": {
               "methods": ["listAutonomousDatabaseBackups", "listAutonomousDatabaseBackups", "listAutonomousDatabaseBackups", "listAutonomousDatabaseBackupsPagedCallable", "listAutonomousDatabaseBackupsCallable"]
@@ -61,23 +115,59 @@
             "ListCloudVmClusters": {
               "methods": ["listCloudVmClusters", "listCloudVmClusters", "listCloudVmClusters", "listCloudVmClustersPagedCallable", "listCloudVmClustersCallable"]
             },
+            "ListDatabaseCharacterSets": {
+              "methods": ["listDatabaseCharacterSets", "listDatabaseCharacterSets", "listDatabaseCharacterSets", "listDatabaseCharacterSetsPagedCallable", "listDatabaseCharacterSetsCallable"]
+            },
+            "ListDatabases": {
+              "methods": ["listDatabases", "listDatabases", "listDatabases", "listDatabasesPagedCallable", "listDatabasesCallable"]
+            },
             "ListDbNodes": {
-              "methods": ["listDbNodes", "listDbNodes", "listDbNodes", "listDbNodesPagedCallable", "listDbNodesCallable"]
+              "methods": ["listDbNodes", "listDbNodes", "listDbNodes", "listDbNodes", "listDbNodesPagedCallable", "listDbNodesCallable"]
             },
             "ListDbServers": {
               "methods": ["listDbServers", "listDbServers", "listDbServers", "listDbServersPagedCallable", "listDbServersCallable"]
             },
+            "ListDbSystemInitialStorageSizes": {
+              "methods": ["listDbSystemInitialStorageSizes", "listDbSystemInitialStorageSizes", "listDbSystemInitialStorageSizes", "listDbSystemInitialStorageSizesPagedCallable", "listDbSystemInitialStorageSizesCallable"]
+            },
             "ListDbSystemShapes": {
               "methods": ["listDbSystemShapes", "listDbSystemShapes", "listDbSystemShapes", "listDbSystemShapesPagedCallable", "listDbSystemShapesCallable"]
             },
+            "ListDbSystems": {
+              "methods": ["listDbSystems", "listDbSystems", "listDbSystems", "listDbSystemsPagedCallable", "listDbSystemsCallable"]
+            },
+            "ListDbVersions": {
+              "methods": ["listDbVersions", "listDbVersions", "listDbVersions", "listDbVersionsPagedCallable", "listDbVersionsCallable"]
+            },
             "ListEntitlements": {
               "methods": ["listEntitlements", "listEntitlements", "listEntitlements", "listEntitlementsPagedCallable", "listEntitlementsCallable"]
+            },
+            "ListExadbVmClusters": {
+              "methods": ["listExadbVmClusters", "listExadbVmClusters", "listExadbVmClusters", "listExadbVmClustersPagedCallable", "listExadbVmClustersCallable"]
+            },
+            "ListExascaleDbStorageVaults": {
+              "methods": ["listExascaleDbStorageVaults", "listExascaleDbStorageVaults", "listExascaleDbStorageVaults", "listExascaleDbStorageVaultsPagedCallable", "listExascaleDbStorageVaultsCallable"]
             },
             "ListGiVersions": {
               "methods": ["listGiVersions", "listGiVersions", "listGiVersions", "listGiVersionsPagedCallable", "listGiVersionsCallable"]
             },
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListMinorVersions": {
+              "methods": ["listMinorVersions", "listMinorVersions", "listMinorVersions", "listMinorVersionsPagedCallable", "listMinorVersionsCallable"]
+            },
+            "ListOdbNetworks": {
+              "methods": ["listOdbNetworks", "listOdbNetworks", "listOdbNetworks", "listOdbNetworksPagedCallable", "listOdbNetworksCallable"]
+            },
+            "ListOdbSubnets": {
+              "methods": ["listOdbSubnets", "listOdbSubnets", "listOdbSubnets", "listOdbSubnetsPagedCallable", "listOdbSubnetsCallable"]
+            },
+            "ListPluggableDatabases": {
+              "methods": ["listPluggableDatabases", "listPluggableDatabases", "listPluggableDatabases", "listPluggableDatabasesPagedCallable", "listPluggableDatabasesCallable"]
+            },
+            "RemoveVirtualMachineExadbVmCluster": {
+              "methods": ["removeVirtualMachineExadbVmClusterAsync", "removeVirtualMachineExadbVmClusterAsync", "removeVirtualMachineExadbVmClusterAsync", "removeVirtualMachineExadbVmClusterOperationCallable", "removeVirtualMachineExadbVmClusterCallable"]
             },
             "RestartAutonomousDatabase": {
               "methods": ["restartAutonomousDatabaseAsync", "restartAutonomousDatabaseAsync", "restartAutonomousDatabaseAsync", "restartAutonomousDatabaseOperationCallable", "restartAutonomousDatabaseCallable"]
@@ -90,6 +180,15 @@
             },
             "StopAutonomousDatabase": {
               "methods": ["stopAutonomousDatabaseAsync", "stopAutonomousDatabaseAsync", "stopAutonomousDatabaseAsync", "stopAutonomousDatabaseOperationCallable", "stopAutonomousDatabaseCallable"]
+            },
+            "SwitchoverAutonomousDatabase": {
+              "methods": ["switchoverAutonomousDatabaseAsync", "switchoverAutonomousDatabaseAsync", "switchoverAutonomousDatabaseAsync", "switchoverAutonomousDatabaseAsync", "switchoverAutonomousDatabaseAsync", "switchoverAutonomousDatabaseOperationCallable", "switchoverAutonomousDatabaseCallable"]
+            },
+            "UpdateAutonomousDatabase": {
+              "methods": ["updateAutonomousDatabaseAsync", "updateAutonomousDatabaseAsync", "updateAutonomousDatabaseOperationCallable", "updateAutonomousDatabaseCallable"]
+            },
+            "UpdateExadbVmCluster": {
+              "methods": ["updateExadbVmClusterAsync", "updateExadbVmClusterAsync", "updateExadbVmClusterOperationCallable", "updateExadbVmClusterCallable"]
             }
           }
         }

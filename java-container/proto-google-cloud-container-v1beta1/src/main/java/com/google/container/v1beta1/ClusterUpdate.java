@@ -572,7 +572,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_master_authorized_networks_config is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3526
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3522
    * @return Whether the desiredMasterAuthorizedNetworksConfig field is set.
    */
   @java.lang.Override
@@ -597,7 +597,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_master_authorized_networks_config is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3526
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3522
    * @return The desiredMasterAuthorizedNetworksConfig.
    */
   @java.lang.Override
@@ -1016,7 +1016,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_private_cluster_config is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3567
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3563
    * @return Whether the desiredPrivateClusterConfig field is set.
    */
   @java.lang.Override
@@ -1046,7 +1046,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_private_cluster_config is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3567
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3563
    * @return The desiredPrivateClusterConfig.
    */
   @java.lang.Override
@@ -1325,7 +1325,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.private_cluster_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3584
+   *     google/container/v1beta1/cluster_service.proto;l=3580
    * @return Whether the privateClusterConfig field is set.
    */
   @java.lang.Override
@@ -1348,7 +1348,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.private_cluster_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3584
+   *     google/container/v1beta1/cluster_service.proto;l=3580
    * @return The privateClusterConfig.
    */
   @java.lang.Override
@@ -1396,7 +1396,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.container.v1beta1.TpuConfig desired_tpu_config = 38 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_tpu_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3589
+   *     google/container/v1beta1/cluster_service.proto;l=3585
    * @return Whether the desiredTpuConfig field is set.
    */
   @java.lang.Override
@@ -1417,7 +1417,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.container.v1beta1.TpuConfig desired_tpu_config = 38 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_tpu_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3589
+   *     google/container/v1beta1/cluster_service.proto;l=3585
    * @return The desiredTpuConfig.
    */
   @java.lang.Override
@@ -2576,7 +2576,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_enable_private_endpoint is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3673
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3669
    * @return Whether the desiredEnablePrivateEndpoint field is set.
    */
   @java.lang.Override
@@ -2600,7 +2600,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_enable_private_endpoint is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3673
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3669
    * @return The desiredEnablePrivateEndpoint.
    */
   @java.lang.Override
@@ -2792,7 +2792,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3691
+   *     google/container/v1beta1/cluster_service.proto;l=3687
    * @return Whether the desiredProtectConfig field is set.
    */
   @java.lang.Override
@@ -2814,7 +2814,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3691
+   *     google/container/v1beta1/cluster_service.proto;l=3687
    * @return The desiredProtectConfig.
    */
   @java.lang.Override
@@ -4183,7 +4183,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.user_managed_keys_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3783
+   *     google/container/v1beta1/cluster_service.proto;l=3779
    * @return Whether the userManagedKeysConfig field is set.
    */
   @java.lang.Override
@@ -4209,7 +4209,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.user_managed_keys_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3783
+   *     google/container/v1beta1/cluster_service.proto;l=3779
    * @return The userManagedKeysConfig.
    */
   @java.lang.Override
@@ -4385,7 +4385,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_enterprise_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3796
+   *     google/container/v1beta1/cluster_service.proto;l=3792
    * @return Whether the desiredEnterpriseConfig field is set.
    */
   @java.lang.Override
@@ -4409,7 +4409,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_enterprise_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3796
+   *     google/container/v1beta1/cluster_service.proto;l=3792
    * @return The desiredEnterpriseConfig.
    */
   @java.lang.Override
@@ -4831,6 +4831,60 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         : desiredNetworkTierConfig_;
   }
 
+  public static final int DESIRED_SECRET_SYNC_CONFIG_FIELD_NUMBER = 158;
+  private com.google.container.v1beta1.SecretSyncConfig desiredSecretSyncConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for sync Secret Manager secrets as k8s secrets.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.SecretSyncConfig desired_secret_sync_config = 158;</code>
+   *
+   * @return Whether the desiredSecretSyncConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredSecretSyncConfig() {
+    return ((bitField2_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for sync Secret Manager secrets as k8s secrets.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.SecretSyncConfig desired_secret_sync_config = 158;</code>
+   *
+   * @return The desiredSecretSyncConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.SecretSyncConfig getDesiredSecretSyncConfig() {
+    return desiredSecretSyncConfig_ == null
+        ? com.google.container.v1beta1.SecretSyncConfig.getDefaultInstance()
+        : desiredSecretSyncConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for sync Secret Manager secrets as k8s secrets.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.SecretSyncConfig desired_secret_sync_config = 158;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.SecretSyncConfigOrBuilder
+      getDesiredSecretSyncConfigOrBuilder() {
+    return desiredSecretSyncConfig_ == null
+        ? com.google.container.v1beta1.SecretSyncConfig.getDefaultInstance()
+        : desiredSecretSyncConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -5093,6 +5147,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField2_ & 0x00000008) != 0)) {
       output.writeMessage(156, getDesiredAnonymousAuthenticationConfig());
+    }
+    if (((bitField2_ & 0x00000040) != 0)) {
+      output.writeMessage(158, getDesiredSecretSyncConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -5474,6 +5531,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               156, getDesiredAnonymousAuthenticationConfig());
     }
+    if (((bitField2_ & 0x00000040) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              158, getDesiredSecretSyncConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -5848,6 +5910,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (hasDesiredNetworkTierConfig()) {
       if (!getDesiredNetworkTierConfig().equals(other.getDesiredNetworkTierConfig())) return false;
     }
+    if (hasDesiredSecretSyncConfig() != other.hasDesiredSecretSyncConfig()) return false;
+    if (hasDesiredSecretSyncConfig()) {
+      if (!getDesiredSecretSyncConfig().equals(other.getDesiredSecretSyncConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -6175,6 +6241,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DESIRED_NETWORK_TIER_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredNetworkTierConfig().hashCode();
     }
+    if (hasDesiredSecretSyncConfig()) {
+      hash = (37 * hash) + DESIRED_SECRET_SYNC_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredSecretSyncConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -6381,6 +6451,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         getDesiredAnonymousAuthenticationConfigFieldBuilder();
         getGkeAutoUpgradeConfigFieldBuilder();
         getDesiredNetworkTierConfigFieldBuilder();
+        getDesiredSecretSyncConfigFieldBuilder();
       }
     }
 
@@ -6722,6 +6793,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       if (desiredNetworkTierConfigBuilder_ != null) {
         desiredNetworkTierConfigBuilder_.dispose();
         desiredNetworkTierConfigBuilder_ = null;
+      }
+      desiredSecretSyncConfig_ = null;
+      if (desiredSecretSyncConfigBuilder_ != null) {
+        desiredSecretSyncConfigBuilder_.dispose();
+        desiredSecretSyncConfigBuilder_ = null;
       }
       return this;
     }
@@ -7278,6 +7354,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
                 : desiredNetworkTierConfigBuilder_.build();
         to_bitField2_ |= 0x00000020;
       }
+      if (((from_bitField2_ & 0x00020000) != 0)) {
+        result.desiredSecretSyncConfig_ =
+            desiredSecretSyncConfigBuilder_ == null
+                ? desiredSecretSyncConfig_
+                : desiredSecretSyncConfigBuilder_.build();
+        to_bitField2_ |= 0x00000040;
+      }
       result.bitField1_ |= to_bitField1_;
       result.bitField2_ |= to_bitField2_;
     }
@@ -7596,6 +7679,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasDesiredNetworkTierConfig()) {
         mergeDesiredNetworkTierConfig(other.getDesiredNetworkTierConfig());
+      }
+      if (other.hasDesiredSecretSyncConfig()) {
+        mergeDesiredSecretSyncConfig(other.getDesiredSecretSyncConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -8188,6 +8274,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
                 bitField2_ |= 0x00004000;
                 break;
               } // case 1250
+            case 1266:
+              {
+                input.readMessage(
+                    getDesiredSecretSyncConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField2_ |= 0x00020000;
+                break;
+              } // case 1266
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -9466,7 +9559,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.desired_master_authorized_networks_config
-     *     is deprecated. See google/container/v1beta1/cluster_service.proto;l=3526
+     *     is deprecated. See google/container/v1beta1/cluster_service.proto;l=3522
      * @return Whether the desiredMasterAuthorizedNetworksConfig field is set.
      */
     @java.lang.Deprecated
@@ -9490,7 +9583,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.desired_master_authorized_networks_config
-     *     is deprecated. See google/container/v1beta1/cluster_service.proto;l=3526
+     *     is deprecated. See google/container/v1beta1/cluster_service.proto;l=3522
      * @return The desiredMasterAuthorizedNetworksConfig.
      */
     @java.lang.Deprecated
@@ -10948,7 +11041,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.desired_private_cluster_config is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3567
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3563
      * @return Whether the desiredPrivateClusterConfig field is set.
      */
     @java.lang.Deprecated
@@ -10977,7 +11070,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.desired_private_cluster_config is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3567
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3563
      * @return The desiredPrivateClusterConfig.
      */
     @java.lang.Deprecated
@@ -12068,7 +12161,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.private_cluster_config is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3584
+     *     google/container/v1beta1/cluster_service.proto;l=3580
      * @return Whether the privateClusterConfig field is set.
      */
     @java.lang.Deprecated
@@ -12090,7 +12183,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.private_cluster_config is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3584
+     *     google/container/v1beta1/cluster_service.proto;l=3580
      * @return The privateClusterConfig.
      */
     @java.lang.Deprecated
@@ -12314,7 +12407,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1beta1.TpuConfig desired_tpu_config = 38 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.desired_tpu_config is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3589
+     *     google/container/v1beta1/cluster_service.proto;l=3585
      * @return Whether the desiredTpuConfig field is set.
      */
     @java.lang.Deprecated
@@ -12334,7 +12427,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1beta1.TpuConfig desired_tpu_config = 38 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.desired_tpu_config is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3589
+     *     google/container/v1beta1/cluster_service.proto;l=3585
      * @return The desiredTpuConfig.
      */
     @java.lang.Deprecated
@@ -16415,7 +16508,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.desired_enable_private_endpoint is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3673
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3669
      * @return Whether the desiredEnablePrivateEndpoint field is set.
      */
     @java.lang.Override
@@ -16439,7 +16532,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.desired_enable_private_endpoint is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3673
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3669
      * @return The desiredEnablePrivateEndpoint.
      */
     @java.lang.Override
@@ -16463,7 +16556,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.desired_enable_private_endpoint is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3673
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3669
      * @param value The desiredEnablePrivateEndpoint to set.
      * @return This builder for chaining.
      */
@@ -16491,7 +16584,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.desired_enable_private_endpoint is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3673
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3669
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -17058,7 +17151,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3691
+     *     google/container/v1beta1/cluster_service.proto;l=3687
      * @return Whether the desiredProtectConfig field is set.
      */
     @java.lang.Deprecated
@@ -17079,7 +17172,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3691
+     *     google/container/v1beta1/cluster_service.proto;l=3687
      * @return The desiredProtectConfig.
      */
     @java.lang.Deprecated
@@ -21686,7 +21779,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.user_managed_keys_config is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=3783
+     *     See google/container/v1beta1/cluster_service.proto;l=3779
      * @return Whether the userManagedKeysConfig field is set.
      */
     @java.lang.Deprecated
@@ -21711,7 +21804,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.user_managed_keys_config is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=3783
+     *     See google/container/v1beta1/cluster_service.proto;l=3779
      * @return The userManagedKeysConfig.
      */
     @java.lang.Deprecated
@@ -22398,7 +22491,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.desired_enterprise_config is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=3796
+     *     See google/container/v1beta1/cluster_service.proto;l=3792
      * @return Whether the desiredEnterpriseConfig field is set.
      */
     @java.lang.Deprecated
@@ -22421,7 +22514,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.desired_enterprise_config is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=3796
+     *     See google/container/v1beta1/cluster_service.proto;l=3792
      * @return The desiredEnterpriseConfig.
      */
     @java.lang.Deprecated
@@ -23985,6 +24078,205 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredNetworkTierConfig_ = null;
       }
       return desiredNetworkTierConfigBuilder_;
+    }
+
+    private com.google.container.v1beta1.SecretSyncConfig desiredSecretSyncConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.SecretSyncConfig,
+            com.google.container.v1beta1.SecretSyncConfig.Builder,
+            com.google.container.v1beta1.SecretSyncConfigOrBuilder>
+        desiredSecretSyncConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for sync Secret Manager secrets as k8s secrets.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SecretSyncConfig desired_secret_sync_config = 158;</code>
+     *
+     * @return Whether the desiredSecretSyncConfig field is set.
+     */
+    public boolean hasDesiredSecretSyncConfig() {
+      return ((bitField2_ & 0x00020000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for sync Secret Manager secrets as k8s secrets.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SecretSyncConfig desired_secret_sync_config = 158;</code>
+     *
+     * @return The desiredSecretSyncConfig.
+     */
+    public com.google.container.v1beta1.SecretSyncConfig getDesiredSecretSyncConfig() {
+      if (desiredSecretSyncConfigBuilder_ == null) {
+        return desiredSecretSyncConfig_ == null
+            ? com.google.container.v1beta1.SecretSyncConfig.getDefaultInstance()
+            : desiredSecretSyncConfig_;
+      } else {
+        return desiredSecretSyncConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for sync Secret Manager secrets as k8s secrets.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SecretSyncConfig desired_secret_sync_config = 158;</code>
+     */
+    public Builder setDesiredSecretSyncConfig(com.google.container.v1beta1.SecretSyncConfig value) {
+      if (desiredSecretSyncConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredSecretSyncConfig_ = value;
+      } else {
+        desiredSecretSyncConfigBuilder_.setMessage(value);
+      }
+      bitField2_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for sync Secret Manager secrets as k8s secrets.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SecretSyncConfig desired_secret_sync_config = 158;</code>
+     */
+    public Builder setDesiredSecretSyncConfig(
+        com.google.container.v1beta1.SecretSyncConfig.Builder builderForValue) {
+      if (desiredSecretSyncConfigBuilder_ == null) {
+        desiredSecretSyncConfig_ = builderForValue.build();
+      } else {
+        desiredSecretSyncConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField2_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for sync Secret Manager secrets as k8s secrets.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SecretSyncConfig desired_secret_sync_config = 158;</code>
+     */
+    public Builder mergeDesiredSecretSyncConfig(
+        com.google.container.v1beta1.SecretSyncConfig value) {
+      if (desiredSecretSyncConfigBuilder_ == null) {
+        if (((bitField2_ & 0x00020000) != 0)
+            && desiredSecretSyncConfig_ != null
+            && desiredSecretSyncConfig_
+                != com.google.container.v1beta1.SecretSyncConfig.getDefaultInstance()) {
+          getDesiredSecretSyncConfigBuilder().mergeFrom(value);
+        } else {
+          desiredSecretSyncConfig_ = value;
+        }
+      } else {
+        desiredSecretSyncConfigBuilder_.mergeFrom(value);
+      }
+      if (desiredSecretSyncConfig_ != null) {
+        bitField2_ |= 0x00020000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for sync Secret Manager secrets as k8s secrets.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SecretSyncConfig desired_secret_sync_config = 158;</code>
+     */
+    public Builder clearDesiredSecretSyncConfig() {
+      bitField2_ = (bitField2_ & ~0x00020000);
+      desiredSecretSyncConfig_ = null;
+      if (desiredSecretSyncConfigBuilder_ != null) {
+        desiredSecretSyncConfigBuilder_.dispose();
+        desiredSecretSyncConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for sync Secret Manager secrets as k8s secrets.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SecretSyncConfig desired_secret_sync_config = 158;</code>
+     */
+    public com.google.container.v1beta1.SecretSyncConfig.Builder
+        getDesiredSecretSyncConfigBuilder() {
+      bitField2_ |= 0x00020000;
+      onChanged();
+      return getDesiredSecretSyncConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for sync Secret Manager secrets as k8s secrets.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SecretSyncConfig desired_secret_sync_config = 158;</code>
+     */
+    public com.google.container.v1beta1.SecretSyncConfigOrBuilder
+        getDesiredSecretSyncConfigOrBuilder() {
+      if (desiredSecretSyncConfigBuilder_ != null) {
+        return desiredSecretSyncConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredSecretSyncConfig_ == null
+            ? com.google.container.v1beta1.SecretSyncConfig.getDefaultInstance()
+            : desiredSecretSyncConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for sync Secret Manager secrets as k8s secrets.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SecretSyncConfig desired_secret_sync_config = 158;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.SecretSyncConfig,
+            com.google.container.v1beta1.SecretSyncConfig.Builder,
+            com.google.container.v1beta1.SecretSyncConfigOrBuilder>
+        getDesiredSecretSyncConfigFieldBuilder() {
+      if (desiredSecretSyncConfigBuilder_ == null) {
+        desiredSecretSyncConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.SecretSyncConfig,
+                com.google.container.v1beta1.SecretSyncConfig.Builder,
+                com.google.container.v1beta1.SecretSyncConfigOrBuilder>(
+                getDesiredSecretSyncConfig(), getParentForChildren(), isClean());
+        desiredSecretSyncConfig_ = null;
+      }
+      return desiredSecretSyncConfigBuilder_;
     }
 
     @java.lang.Override

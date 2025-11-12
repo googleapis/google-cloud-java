@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Engine VM instances to run the jobs.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/batch/v1alpha/batch.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class BatchServiceGrpc {
 
@@ -1132,8 +1129,8 @@ public final class BatchServiceGrpc {
      * </pre>
      */
     public com.google.cloud.batch.v1alpha.Job createJob(
-        com.google.cloud.batch.v1alpha.CreateJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.batch.v1alpha.CreateJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateJobMethod(), getCallOptions(), request);
     }
 
@@ -1145,8 +1142,8 @@ public final class BatchServiceGrpc {
      * </pre>
      */
     public com.google.cloud.batch.v1alpha.Job getJob(
-        com.google.cloud.batch.v1alpha.GetJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.batch.v1alpha.GetJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetJobMethod(), getCallOptions(), request);
     }
 
@@ -1158,8 +1155,8 @@ public final class BatchServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteJob(
-        com.google.cloud.batch.v1alpha.DeleteJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.batch.v1alpha.DeleteJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteJobMethod(), getCallOptions(), request);
     }
 
@@ -1171,8 +1168,8 @@ public final class BatchServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation cancelJob(
-        com.google.cloud.batch.v1alpha.CancelJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.batch.v1alpha.CancelJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCancelJobMethod(), getCallOptions(), request);
     }
 
@@ -1184,8 +1181,8 @@ public final class BatchServiceGrpc {
      * </pre>
      */
     public com.google.cloud.batch.v1alpha.Job updateJob(
-        com.google.cloud.batch.v1alpha.UpdateJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.batch.v1alpha.UpdateJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateJobMethod(), getCallOptions(), request);
     }
 
@@ -1197,8 +1194,8 @@ public final class BatchServiceGrpc {
      * </pre>
      */
     public com.google.cloud.batch.v1alpha.ListJobsResponse listJobs(
-        com.google.cloud.batch.v1alpha.ListJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.batch.v1alpha.ListJobsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListJobsMethod(), getCallOptions(), request);
     }
 
@@ -1210,8 +1207,8 @@ public final class BatchServiceGrpc {
      * </pre>
      */
     public com.google.cloud.batch.v1alpha.Task getTask(
-        com.google.cloud.batch.v1alpha.GetTaskRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.batch.v1alpha.GetTaskRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTaskMethod(), getCallOptions(), request);
     }
 
@@ -1223,8 +1220,8 @@ public final class BatchServiceGrpc {
      * </pre>
      */
     public com.google.cloud.batch.v1alpha.ListTasksResponse listTasks(
-        com.google.cloud.batch.v1alpha.ListTasksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.batch.v1alpha.ListTasksRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTasksMethod(), getCallOptions(), request);
     }
 
@@ -1236,8 +1233,9 @@ public final class BatchServiceGrpc {
      * </pre>
      */
     public com.google.cloud.batch.v1alpha.ResourceAllowance createResourceAllowance(
-        com.google.cloud.batch.v1alpha.CreateResourceAllowanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.batch.v1alpha.CreateResourceAllowanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateResourceAllowanceMethod(), getCallOptions(), request);
     }
 
@@ -1249,8 +1247,9 @@ public final class BatchServiceGrpc {
      * </pre>
      */
     public com.google.cloud.batch.v1alpha.ResourceAllowance getResourceAllowance(
-        com.google.cloud.batch.v1alpha.GetResourceAllowanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.batch.v1alpha.GetResourceAllowanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetResourceAllowanceMethod(), getCallOptions(), request);
     }
 
@@ -1262,8 +1261,9 @@ public final class BatchServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteResourceAllowance(
-        com.google.cloud.batch.v1alpha.DeleteResourceAllowanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.batch.v1alpha.DeleteResourceAllowanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteResourceAllowanceMethod(), getCallOptions(), request);
     }
 
@@ -1275,8 +1275,9 @@ public final class BatchServiceGrpc {
      * </pre>
      */
     public com.google.cloud.batch.v1alpha.ListResourceAllowancesResponse listResourceAllowances(
-        com.google.cloud.batch.v1alpha.ListResourceAllowancesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.batch.v1alpha.ListResourceAllowancesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListResourceAllowancesMethod(), getCallOptions(), request);
     }
 
@@ -1288,8 +1289,9 @@ public final class BatchServiceGrpc {
      * </pre>
      */
     public com.google.cloud.batch.v1alpha.ResourceAllowance updateResourceAllowance(
-        com.google.cloud.batch.v1alpha.UpdateResourceAllowanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.batch.v1alpha.UpdateResourceAllowanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateResourceAllowanceMethod(), getCallOptions(), request);
     }
   }

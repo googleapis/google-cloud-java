@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * Request message for creating a CloudControl
+ * The request message for [CreateCloudControl][].
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.CreateCloudControlRequest}
@@ -77,6 +77,7 @@ public final class CreateCloudControlRequest extends com.google.protobuf.Generat
    * <pre>
    * Required. The parent resource name, in the format
    * `organizations/{organization}/locations/{location}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -104,6 +105,7 @@ public final class CreateCloudControlRequest extends com.google.protobuf.Generat
    * <pre>
    * Required. The parent resource name, in the format
    * `organizations/{organization}/locations/{location}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -134,9 +136,9 @@ public final class CreateCloudControlRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. ID of the CloudControl.
-   * This is the last segment of the CloudControl resource name.
-   * Format: `^[a-zA-Z][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]$`.
+   * Required. The identifier for the cloud control, which is the last segment
+   * of the cloud control name. The format is
+   * `^[a-zA-Z][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]$`.
    * </pre>
    *
    * <code>string cloud_control_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -160,9 +162,9 @@ public final class CreateCloudControlRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. ID of the CloudControl.
-   * This is the last segment of the CloudControl resource name.
-   * Format: `^[a-zA-Z][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]$`.
+   * Required. The identifier for the cloud control, which is the last segment
+   * of the cloud control name. The format is
+   * `^[a-zA-Z][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]$`.
    * </pre>
    *
    * <code>string cloud_control_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -189,7 +191,7 @@ public final class CreateCloudControlRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The resource being created
+   * Required. The cloud control that's being created.
    * </pre>
    *
    * <code>
@@ -207,7 +209,7 @@ public final class CreateCloudControlRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The resource being created
+   * Required. The cloud control that's being created.
    * </pre>
    *
    * <code>
@@ -227,7 +229,7 @@ public final class CreateCloudControlRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The resource being created
+   * Required. The cloud control that's being created.
    * </pre>
    *
    * <code>
@@ -431,7 +433,7 @@ public final class CreateCloudControlRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Request message for creating a CloudControl
+   * The request message for [CreateCloudControl][].
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.CreateCloudControlRequest}
@@ -670,6 +672,7 @@ public final class CreateCloudControlRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The parent resource name, in the format
      * `organizations/{organization}/locations/{location}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -696,6 +699,7 @@ public final class CreateCloudControlRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The parent resource name, in the format
      * `organizations/{organization}/locations/{location}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -722,6 +726,7 @@ public final class CreateCloudControlRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The parent resource name, in the format
      * `organizations/{organization}/locations/{location}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -747,6 +752,7 @@ public final class CreateCloudControlRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The parent resource name, in the format
      * `organizations/{organization}/locations/{location}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -768,6 +774,7 @@ public final class CreateCloudControlRequest extends com.google.protobuf.Generat
      * <pre>
      * Required. The parent resource name, in the format
      * `organizations/{organization}/locations/{location}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -794,9 +801,9 @@ public final class CreateCloudControlRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. ID of the CloudControl.
-     * This is the last segment of the CloudControl resource name.
-     * Format: `^[a-zA-Z][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]$`.
+     * Required. The identifier for the cloud control, which is the last segment
+     * of the cloud control name. The format is
+     * `^[a-zA-Z][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]$`.
      * </pre>
      *
      * <code>string cloud_control_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -819,9 +826,9 @@ public final class CreateCloudControlRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. ID of the CloudControl.
-     * This is the last segment of the CloudControl resource name.
-     * Format: `^[a-zA-Z][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]$`.
+     * Required. The identifier for the cloud control, which is the last segment
+     * of the cloud control name. The format is
+     * `^[a-zA-Z][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]$`.
      * </pre>
      *
      * <code>string cloud_control_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -844,9 +851,9 @@ public final class CreateCloudControlRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. ID of the CloudControl.
-     * This is the last segment of the CloudControl resource name.
-     * Format: `^[a-zA-Z][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]$`.
+     * Required. The identifier for the cloud control, which is the last segment
+     * of the cloud control name. The format is
+     * `^[a-zA-Z][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]$`.
      * </pre>
      *
      * <code>string cloud_control_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -868,9 +875,9 @@ public final class CreateCloudControlRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. ID of the CloudControl.
-     * This is the last segment of the CloudControl resource name.
-     * Format: `^[a-zA-Z][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]$`.
+     * Required. The identifier for the cloud control, which is the last segment
+     * of the cloud control name. The format is
+     * `^[a-zA-Z][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]$`.
      * </pre>
      *
      * <code>string cloud_control_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -888,9 +895,9 @@ public final class CreateCloudControlRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. ID of the CloudControl.
-     * This is the last segment of the CloudControl resource name.
-     * Format: `^[a-zA-Z][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]$`.
+     * Required. The identifier for the cloud control, which is the last segment
+     * of the cloud control name. The format is
+     * `^[a-zA-Z][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]$`.
      * </pre>
      *
      * <code>string cloud_control_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -920,7 +927,7 @@ public final class CreateCloudControlRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The resource being created
+     * Required. The cloud control that's being created.
      * </pre>
      *
      * <code>
@@ -937,7 +944,7 @@ public final class CreateCloudControlRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The resource being created
+     * Required. The cloud control that's being created.
      * </pre>
      *
      * <code>
@@ -960,7 +967,7 @@ public final class CreateCloudControlRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The resource being created
+     * Required. The cloud control that's being created.
      * </pre>
      *
      * <code>
@@ -985,7 +992,7 @@ public final class CreateCloudControlRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The resource being created
+     * Required. The cloud control that's being created.
      * </pre>
      *
      * <code>
@@ -1008,7 +1015,7 @@ public final class CreateCloudControlRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The resource being created
+     * Required. The cloud control that's being created.
      * </pre>
      *
      * <code>
@@ -1040,7 +1047,7 @@ public final class CreateCloudControlRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The resource being created
+     * Required. The cloud control that's being created.
      * </pre>
      *
      * <code>
@@ -1062,7 +1069,7 @@ public final class CreateCloudControlRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The resource being created
+     * Required. The cloud control that's being created.
      * </pre>
      *
      * <code>
@@ -1080,7 +1087,7 @@ public final class CreateCloudControlRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The resource being created
+     * Required. The cloud control that's being created.
      * </pre>
      *
      * <code>
@@ -1102,7 +1109,7 @@ public final class CreateCloudControlRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The resource being created
+     * Required. The cloud control that's being created.
      * </pre>
      *
      * <code>

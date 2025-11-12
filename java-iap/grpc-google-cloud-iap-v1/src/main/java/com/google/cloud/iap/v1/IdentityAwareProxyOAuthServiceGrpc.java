@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * clients.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/iap/v1/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class IdentityAwareProxyOAuthServiceGrpc {
 
@@ -833,8 +830,8 @@ public final class IdentityAwareProxyOAuthServiceGrpc {
      * </pre>
      */
     public com.google.cloud.iap.v1.ListBrandsResponse listBrands(
-        com.google.cloud.iap.v1.ListBrandsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.iap.v1.ListBrandsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListBrandsMethod(), getCallOptions(), request);
     }
 
@@ -853,8 +850,8 @@ public final class IdentityAwareProxyOAuthServiceGrpc {
      * </pre>
      */
     public com.google.cloud.iap.v1.Brand createBrand(
-        com.google.cloud.iap.v1.CreateBrandRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.iap.v1.CreateBrandRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateBrandMethod(), getCallOptions(), request);
     }
 
@@ -865,8 +862,9 @@ public final class IdentityAwareProxyOAuthServiceGrpc {
      * Retrieves the OAuth brand of the project.
      * </pre>
      */
-    public com.google.cloud.iap.v1.Brand getBrand(com.google.cloud.iap.v1.GetBrandRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.cloud.iap.v1.Brand getBrand(com.google.cloud.iap.v1.GetBrandRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetBrandMethod(), getCallOptions(), request);
     }
 
@@ -880,8 +878,9 @@ public final class IdentityAwareProxyOAuthServiceGrpc {
      * </pre>
      */
     public com.google.cloud.iap.v1.IdentityAwareProxyClient createIdentityAwareProxyClient(
-        com.google.cloud.iap.v1.CreateIdentityAwareProxyClientRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.iap.v1.CreateIdentityAwareProxyClientRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateIdentityAwareProxyClientMethod(), getCallOptions(), request);
     }
 
@@ -894,8 +893,9 @@ public final class IdentityAwareProxyOAuthServiceGrpc {
      */
     public com.google.cloud.iap.v1.ListIdentityAwareProxyClientsResponse
         listIdentityAwareProxyClients(
-            com.google.cloud.iap.v1.ListIdentityAwareProxyClientsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.iap.v1.ListIdentityAwareProxyClientsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListIdentityAwareProxyClientsMethod(), getCallOptions(), request);
     }
 
@@ -908,8 +908,9 @@ public final class IdentityAwareProxyOAuthServiceGrpc {
      * </pre>
      */
     public com.google.cloud.iap.v1.IdentityAwareProxyClient getIdentityAwareProxyClient(
-        com.google.cloud.iap.v1.GetIdentityAwareProxyClientRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.iap.v1.GetIdentityAwareProxyClientRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIdentityAwareProxyClientMethod(), getCallOptions(), request);
     }
 
@@ -922,8 +923,9 @@ public final class IdentityAwareProxyOAuthServiceGrpc {
      * </pre>
      */
     public com.google.cloud.iap.v1.IdentityAwareProxyClient resetIdentityAwareProxyClientSecret(
-        com.google.cloud.iap.v1.ResetIdentityAwareProxyClientSecretRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.iap.v1.ResetIdentityAwareProxyClientSecretRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getResetIdentityAwareProxyClientSecretMethod(), getCallOptions(), request);
     }
 
@@ -937,8 +939,9 @@ public final class IdentityAwareProxyOAuthServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteIdentityAwareProxyClient(
-        com.google.cloud.iap.v1.DeleteIdentityAwareProxyClientRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.iap.v1.DeleteIdentityAwareProxyClientRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteIdentityAwareProxyClientMethod(), getCallOptions(), request);
     }
   }

@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service for executing queries on Reasoning Engine.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1/reasoning_engine_execution_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ReasoningEngineExecutionServiceGrpc {
 
@@ -333,8 +330,9 @@ public final class ReasoningEngineExecutionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.QueryReasoningEngineResponse queryReasoningEngine(
-        com.google.cloud.aiplatform.v1.QueryReasoningEngineRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.QueryReasoningEngineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getQueryReasoningEngineMethod(), getCallOptions(), request);
     }
 

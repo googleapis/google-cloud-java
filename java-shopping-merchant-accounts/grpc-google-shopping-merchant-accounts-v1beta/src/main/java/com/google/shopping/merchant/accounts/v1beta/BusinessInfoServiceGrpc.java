@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to support business info API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/accounts/v1beta/businessinfo.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class BusinessInfoServiceGrpc {
 
@@ -326,8 +323,9 @@ public final class BusinessInfoServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.BusinessInfo getBusinessInfo(
-        com.google.shopping.merchant.accounts.v1beta.GetBusinessInfoRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.GetBusinessInfoRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetBusinessInfoMethod(), getCallOptions(), request);
     }
 
@@ -340,8 +338,9 @@ public final class BusinessInfoServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.BusinessInfo updateBusinessInfo(
-        com.google.shopping.merchant.accounts.v1beta.UpdateBusinessInfoRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.UpdateBusinessInfoRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateBusinessInfoMethod(), getCallOptions(), request);
     }
   }

@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Readonly service to query available ImageVersions.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/orchestration/airflow/service/v1/image_versions.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ImageVersionsGrpc {
 
@@ -247,8 +244,9 @@ public final class ImageVersionsGrpc {
      */
     public com.google.cloud.orchestration.airflow.service.v1.ListImageVersionsResponse
         listImageVersions(
-            com.google.cloud.orchestration.airflow.service.v1.ListImageVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.orchestration.airflow.service.v1.ListImageVersionsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListImageVersionsMethod(), getCallOptions(), request);
     }
   }

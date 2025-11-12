@@ -17,6 +17,7 @@
 package com.google.cloud.backupdr.v1;
 
 import static com.google.cloud.backupdr.v1.BackupDRClient.FetchBackupPlanAssociationsForResourceTypePagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.FetchBackupsForResourceTypePagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.FetchDataSourceReferencesForResourceTypePagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.FetchUsableBackupVaultsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlanAssociationsPagedResponse;
@@ -24,6 +25,7 @@ import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlanRevision
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlansPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupVaultsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupsPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListDataSourceReferencesPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListDataSourcesPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListLocationsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListManagementServersPagedResponse;
@@ -1601,6 +1603,116 @@ public class BackupDRClientHttpJsonTest {
       String parent =
           "projects/project-9790/locations/location-9790/backupVaults/backupVault-9790/dataSources/dataSource-9790";
       client.listBackups(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchBackupsForResourceTypeTest() throws Exception {
+    Backup responsesElement = Backup.newBuilder().build();
+    FetchBackupsForResourceTypeResponse expectedResponse =
+        FetchBackupsForResourceTypeResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBackups(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DataSourceName parent =
+        DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]");
+    String resourceType = "resourceType-384364440";
+
+    FetchBackupsForResourceTypePagedResponse pagedListResponse =
+        client.fetchBackupsForResourceType(parent, resourceType);
+
+    List<Backup> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBackupsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void fetchBackupsForResourceTypeExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DataSourceName parent =
+          DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]");
+      String resourceType = "resourceType-384364440";
+      client.fetchBackupsForResourceType(parent, resourceType);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchBackupsForResourceTypeTest2() throws Exception {
+    Backup responsesElement = Backup.newBuilder().build();
+    FetchBackupsForResourceTypeResponse expectedResponse =
+        FetchBackupsForResourceTypeResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBackups(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent =
+        "projects/project-9790/locations/location-9790/backupVaults/backupVault-9790/dataSources/dataSource-9790";
+    String resourceType = "resourceType-384364440";
+
+    FetchBackupsForResourceTypePagedResponse pagedListResponse =
+        client.fetchBackupsForResourceType(parent, resourceType);
+
+    List<Backup> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBackupsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void fetchBackupsForResourceTypeExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-9790/locations/location-9790/backupVaults/backupVault-9790/dataSources/dataSource-9790";
+      String resourceType = "resourceType-384364440";
+      client.fetchBackupsForResourceType(parent, resourceType);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -3607,6 +3719,7 @@ public class BackupDRClientHttpJsonTest {
             .setDataSourceBackupCount(-1620010527)
             .setDataSourceBackupConfigInfo(DataSourceBackupConfigInfo.newBuilder().build())
             .setDataSourceGcpResourceInfo(DataSourceGcpResourceInfo.newBuilder().build())
+            .setTotalStoredBytes(1181597162)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3663,6 +3776,7 @@ public class BackupDRClientHttpJsonTest {
             .setDataSourceBackupCount(-1620010527)
             .setDataSourceBackupConfigInfo(DataSourceBackupConfigInfo.newBuilder().build())
             .setDataSourceGcpResourceInfo(DataSourceGcpResourceInfo.newBuilder().build())
+            .setTotalStoredBytes(1181597162)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3698,6 +3812,108 @@ public class BackupDRClientHttpJsonTest {
       String name =
           "projects/project-4429/locations/location-4429/dataSourceReferences/dataSourceReference-4429";
       client.getDataSourceReference(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDataSourceReferencesTest() throws Exception {
+    DataSourceReference responsesElement = DataSourceReference.newBuilder().build();
+    ListDataSourceReferencesResponse expectedResponse =
+        ListDataSourceReferencesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDataSourceReferences(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListDataSourceReferencesPagedResponse pagedListResponse =
+        client.listDataSourceReferences(parent);
+
+    List<DataSourceReference> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDataSourceReferencesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDataSourceReferencesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listDataSourceReferences(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDataSourceReferencesTest2() throws Exception {
+    DataSourceReference responsesElement = DataSourceReference.newBuilder().build();
+    ListDataSourceReferencesResponse expectedResponse =
+        ListDataSourceReferencesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDataSourceReferences(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListDataSourceReferencesPagedResponse pagedListResponse =
+        client.listDataSourceReferences(parent);
+
+    List<DataSourceReference> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDataSourceReferencesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDataSourceReferencesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listDataSourceReferences(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

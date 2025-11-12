@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Manages a collection of models for human agent assistant.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/v2/conversation_model.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ConversationModelsGrpc {
 
@@ -980,8 +977,9 @@ public final class ConversationModelsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createConversationModel(
-        com.google.cloud.dialogflow.v2.CreateConversationModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.CreateConversationModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateConversationModelMethod(), getCallOptions(), request);
     }
 
@@ -993,8 +991,9 @@ public final class ConversationModelsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.ConversationModel getConversationModel(
-        com.google.cloud.dialogflow.v2.GetConversationModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.GetConversationModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetConversationModelMethod(), getCallOptions(), request);
     }
 
@@ -1006,8 +1005,9 @@ public final class ConversationModelsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.ListConversationModelsResponse listConversationModels(
-        com.google.cloud.dialogflow.v2.ListConversationModelsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.ListConversationModelsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListConversationModelsMethod(), getCallOptions(), request);
     }
 
@@ -1026,8 +1026,9 @@ public final class ConversationModelsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteConversationModel(
-        com.google.cloud.dialogflow.v2.DeleteConversationModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.DeleteConversationModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteConversationModelMethod(), getCallOptions(), request);
     }
 
@@ -1049,8 +1050,9 @@ public final class ConversationModelsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deployConversationModel(
-        com.google.cloud.dialogflow.v2.DeployConversationModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.DeployConversationModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeployConversationModelMethod(), getCallOptions(), request);
     }
 
@@ -1072,8 +1074,9 @@ public final class ConversationModelsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation undeployConversationModel(
-        com.google.cloud.dialogflow.v2.UndeployConversationModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.UndeployConversationModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUndeployConversationModelMethod(), getCallOptions(), request);
     }
 
@@ -1086,8 +1089,9 @@ public final class ConversationModelsGrpc {
      */
     public com.google.cloud.dialogflow.v2.ConversationModelEvaluation
         getConversationModelEvaluation(
-            com.google.cloud.dialogflow.v2.GetConversationModelEvaluationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.dialogflow.v2.GetConversationModelEvaluationRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetConversationModelEvaluationMethod(), getCallOptions(), request);
     }
 
@@ -1100,8 +1104,9 @@ public final class ConversationModelsGrpc {
      */
     public com.google.cloud.dialogflow.v2.ListConversationModelEvaluationsResponse
         listConversationModelEvaluations(
-            com.google.cloud.dialogflow.v2.ListConversationModelEvaluationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.dialogflow.v2.ListConversationModelEvaluationsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListConversationModelEvaluationsMethod(), getCallOptions(), request);
     }
 
@@ -1113,8 +1118,9 @@ public final class ConversationModelsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createConversationModelEvaluation(
-        com.google.cloud.dialogflow.v2.CreateConversationModelEvaluationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2.CreateConversationModelEvaluationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateConversationModelEvaluationMethod(), getCallOptions(), request);
     }
   }

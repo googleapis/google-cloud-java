@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * This service lets you manage document.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/contentwarehouse/v1/document_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DocumentServiceGrpc {
 
@@ -793,8 +790,9 @@ public final class DocumentServiceGrpc {
      * </pre>
      */
     public com.google.cloud.contentwarehouse.v1.CreateDocumentResponse createDocument(
-        com.google.cloud.contentwarehouse.v1.CreateDocumentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contentwarehouse.v1.CreateDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDocumentMethod(), getCallOptions(), request);
     }
 
@@ -806,8 +804,9 @@ public final class DocumentServiceGrpc {
      * </pre>
      */
     public com.google.cloud.contentwarehouse.v1.Document getDocument(
-        com.google.cloud.contentwarehouse.v1.GetDocumentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contentwarehouse.v1.GetDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDocumentMethod(), getCallOptions(), request);
     }
 
@@ -820,8 +819,9 @@ public final class DocumentServiceGrpc {
      * </pre>
      */
     public com.google.cloud.contentwarehouse.v1.UpdateDocumentResponse updateDocument(
-        com.google.cloud.contentwarehouse.v1.UpdateDocumentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contentwarehouse.v1.UpdateDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDocumentMethod(), getCallOptions(), request);
     }
 
@@ -833,8 +833,9 @@ public final class DocumentServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteDocument(
-        com.google.cloud.contentwarehouse.v1.DeleteDocumentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contentwarehouse.v1.DeleteDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDocumentMethod(), getCallOptions(), request);
     }
 
@@ -849,8 +850,9 @@ public final class DocumentServiceGrpc {
      * </pre>
      */
     public com.google.cloud.contentwarehouse.v1.SearchDocumentsResponse searchDocuments(
-        com.google.cloud.contentwarehouse.v1.SearchDocumentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contentwarehouse.v1.SearchDocumentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchDocumentsMethod(), getCallOptions(), request);
     }
 
@@ -862,8 +864,9 @@ public final class DocumentServiceGrpc {
      * </pre>
      */
     public com.google.cloud.contentwarehouse.v1.Document lockDocument(
-        com.google.cloud.contentwarehouse.v1.LockDocumentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contentwarehouse.v1.LockDocumentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getLockDocumentMethod(), getCallOptions(), request);
     }
 
@@ -877,8 +880,9 @@ public final class DocumentServiceGrpc {
      * </pre>
      */
     public com.google.cloud.contentwarehouse.v1.FetchAclResponse fetchAcl(
-        com.google.cloud.contentwarehouse.v1.FetchAclRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contentwarehouse.v1.FetchAclRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchAclMethod(), getCallOptions(), request);
     }
 
@@ -891,8 +895,8 @@ public final class DocumentServiceGrpc {
      * </pre>
      */
     public com.google.cloud.contentwarehouse.v1.SetAclResponse setAcl(
-        com.google.cloud.contentwarehouse.v1.SetAclRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contentwarehouse.v1.SetAclRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetAclMethod(), getCallOptions(), request);
     }
   }

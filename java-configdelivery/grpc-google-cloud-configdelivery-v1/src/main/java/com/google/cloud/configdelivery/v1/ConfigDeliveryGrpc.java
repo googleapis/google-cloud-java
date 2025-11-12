@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * a fleet of kubernetes clusters.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/configdelivery/v1/config_delivery.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ConfigDeliveryGrpc {
 
@@ -2075,8 +2072,9 @@ public final class ConfigDeliveryGrpc {
      * </pre>
      */
     public com.google.cloud.configdelivery.v1.ListResourceBundlesResponse listResourceBundles(
-        com.google.cloud.configdelivery.v1.ListResourceBundlesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.configdelivery.v1.ListResourceBundlesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListResourceBundlesMethod(), getCallOptions(), request);
     }
 
@@ -2088,8 +2086,9 @@ public final class ConfigDeliveryGrpc {
      * </pre>
      */
     public com.google.cloud.configdelivery.v1.ResourceBundle getResourceBundle(
-        com.google.cloud.configdelivery.v1.GetResourceBundleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.configdelivery.v1.GetResourceBundleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetResourceBundleMethod(), getCallOptions(), request);
     }
 
@@ -2101,8 +2100,9 @@ public final class ConfigDeliveryGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createResourceBundle(
-        com.google.cloud.configdelivery.v1.CreateResourceBundleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.configdelivery.v1.CreateResourceBundleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateResourceBundleMethod(), getCallOptions(), request);
     }
 
@@ -2114,8 +2114,9 @@ public final class ConfigDeliveryGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateResourceBundle(
-        com.google.cloud.configdelivery.v1.UpdateResourceBundleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.configdelivery.v1.UpdateResourceBundleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateResourceBundleMethod(), getCallOptions(), request);
     }
 
@@ -2127,8 +2128,9 @@ public final class ConfigDeliveryGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteResourceBundle(
-        com.google.cloud.configdelivery.v1.DeleteResourceBundleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.configdelivery.v1.DeleteResourceBundleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteResourceBundleMethod(), getCallOptions(), request);
     }
 
@@ -2140,8 +2142,9 @@ public final class ConfigDeliveryGrpc {
      * </pre>
      */
     public com.google.cloud.configdelivery.v1.ListFleetPackagesResponse listFleetPackages(
-        com.google.cloud.configdelivery.v1.ListFleetPackagesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.configdelivery.v1.ListFleetPackagesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListFleetPackagesMethod(), getCallOptions(), request);
     }
 
@@ -2153,8 +2156,9 @@ public final class ConfigDeliveryGrpc {
      * </pre>
      */
     public com.google.cloud.configdelivery.v1.FleetPackage getFleetPackage(
-        com.google.cloud.configdelivery.v1.GetFleetPackageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.configdelivery.v1.GetFleetPackageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetFleetPackageMethod(), getCallOptions(), request);
     }
 
@@ -2166,8 +2170,9 @@ public final class ConfigDeliveryGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createFleetPackage(
-        com.google.cloud.configdelivery.v1.CreateFleetPackageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.configdelivery.v1.CreateFleetPackageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateFleetPackageMethod(), getCallOptions(), request);
     }
 
@@ -2179,8 +2184,9 @@ public final class ConfigDeliveryGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateFleetPackage(
-        com.google.cloud.configdelivery.v1.UpdateFleetPackageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.configdelivery.v1.UpdateFleetPackageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateFleetPackageMethod(), getCallOptions(), request);
     }
 
@@ -2192,8 +2198,9 @@ public final class ConfigDeliveryGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteFleetPackage(
-        com.google.cloud.configdelivery.v1.DeleteFleetPackageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.configdelivery.v1.DeleteFleetPackageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteFleetPackageMethod(), getCallOptions(), request);
     }
 
@@ -2205,8 +2212,9 @@ public final class ConfigDeliveryGrpc {
      * </pre>
      */
     public com.google.cloud.configdelivery.v1.ListReleasesResponse listReleases(
-        com.google.cloud.configdelivery.v1.ListReleasesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.configdelivery.v1.ListReleasesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListReleasesMethod(), getCallOptions(), request);
     }
 
@@ -2218,8 +2226,9 @@ public final class ConfigDeliveryGrpc {
      * </pre>
      */
     public com.google.cloud.configdelivery.v1.Release getRelease(
-        com.google.cloud.configdelivery.v1.GetReleaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.configdelivery.v1.GetReleaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetReleaseMethod(), getCallOptions(), request);
     }
 
@@ -2231,8 +2240,9 @@ public final class ConfigDeliveryGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createRelease(
-        com.google.cloud.configdelivery.v1.CreateReleaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.configdelivery.v1.CreateReleaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateReleaseMethod(), getCallOptions(), request);
     }
 
@@ -2244,8 +2254,9 @@ public final class ConfigDeliveryGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateRelease(
-        com.google.cloud.configdelivery.v1.UpdateReleaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.configdelivery.v1.UpdateReleaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateReleaseMethod(), getCallOptions(), request);
     }
 
@@ -2257,8 +2268,9 @@ public final class ConfigDeliveryGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteRelease(
-        com.google.cloud.configdelivery.v1.DeleteReleaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.configdelivery.v1.DeleteReleaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteReleaseMethod(), getCallOptions(), request);
     }
 
@@ -2270,8 +2282,9 @@ public final class ConfigDeliveryGrpc {
      * </pre>
      */
     public com.google.cloud.configdelivery.v1.ListVariantsResponse listVariants(
-        com.google.cloud.configdelivery.v1.ListVariantsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.configdelivery.v1.ListVariantsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListVariantsMethod(), getCallOptions(), request);
     }
 
@@ -2283,8 +2296,9 @@ public final class ConfigDeliveryGrpc {
      * </pre>
      */
     public com.google.cloud.configdelivery.v1.Variant getVariant(
-        com.google.cloud.configdelivery.v1.GetVariantRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.configdelivery.v1.GetVariantRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetVariantMethod(), getCallOptions(), request);
     }
 
@@ -2297,8 +2311,9 @@ public final class ConfigDeliveryGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createVariant(
-        com.google.cloud.configdelivery.v1.CreateVariantRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.configdelivery.v1.CreateVariantRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateVariantMethod(), getCallOptions(), request);
     }
 
@@ -2310,8 +2325,9 @@ public final class ConfigDeliveryGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateVariant(
-        com.google.cloud.configdelivery.v1.UpdateVariantRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.configdelivery.v1.UpdateVariantRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateVariantMethod(), getCallOptions(), request);
     }
 
@@ -2323,8 +2339,9 @@ public final class ConfigDeliveryGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteVariant(
-        com.google.cloud.configdelivery.v1.DeleteVariantRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.configdelivery.v1.DeleteVariantRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteVariantMethod(), getCallOptions(), request);
     }
 
@@ -2336,8 +2353,9 @@ public final class ConfigDeliveryGrpc {
      * </pre>
      */
     public com.google.cloud.configdelivery.v1.ListRolloutsResponse listRollouts(
-        com.google.cloud.configdelivery.v1.ListRolloutsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.configdelivery.v1.ListRolloutsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRolloutsMethod(), getCallOptions(), request);
     }
 
@@ -2349,8 +2367,9 @@ public final class ConfigDeliveryGrpc {
      * </pre>
      */
     public com.google.cloud.configdelivery.v1.Rollout getRollout(
-        com.google.cloud.configdelivery.v1.GetRolloutRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.configdelivery.v1.GetRolloutRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRolloutMethod(), getCallOptions(), request);
     }
 
@@ -2362,8 +2381,9 @@ public final class ConfigDeliveryGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation suspendRollout(
-        com.google.cloud.configdelivery.v1.SuspendRolloutRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.configdelivery.v1.SuspendRolloutRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSuspendRolloutMethod(), getCallOptions(), request);
     }
 
@@ -2375,8 +2395,9 @@ public final class ConfigDeliveryGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation resumeRollout(
-        com.google.cloud.configdelivery.v1.ResumeRolloutRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.configdelivery.v1.ResumeRolloutRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getResumeRolloutMethod(), getCallOptions(), request);
     }
 
@@ -2388,8 +2409,9 @@ public final class ConfigDeliveryGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation abortRollout(
-        com.google.cloud.configdelivery.v1.AbortRolloutRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.configdelivery.v1.AbortRolloutRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAbortRolloutMethod(), getCallOptions(), request);
     }
   }

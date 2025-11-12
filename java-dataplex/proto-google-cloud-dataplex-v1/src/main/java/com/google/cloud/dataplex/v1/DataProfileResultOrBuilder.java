@@ -166,4 +166,51 @@ public interface DataProfileResultOrBuilder
    */
   com.google.cloud.dataplex.v1.DataProfileResult.PostScanActionsResultOrBuilder
       getPostScanActionsResultOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of publishing the data scan as Dataplex Universal
+   * Catalog metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataScanCatalogPublishingStatus catalog_publishing_status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the catalogPublishingStatus field is set.
+   */
+  boolean hasCatalogPublishingStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of publishing the data scan as Dataplex Universal
+   * Catalog metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataScanCatalogPublishingStatus catalog_publishing_status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The catalogPublishingStatus.
+   */
+  com.google.cloud.dataplex.v1.DataScanCatalogPublishingStatus getCatalogPublishingStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of publishing the data scan as Dataplex Universal
+   * Catalog metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataScanCatalogPublishingStatus catalog_publishing_status = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.DataScanCatalogPublishingStatusOrBuilder
+      getCatalogPublishingStatusOrBuilder();
 }

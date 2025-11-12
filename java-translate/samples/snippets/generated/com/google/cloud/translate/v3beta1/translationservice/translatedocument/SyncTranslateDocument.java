@@ -19,6 +19,7 @@ package com.google.cloud.translate.v3beta1.samples;
 // [START translate_v3beta1_generated_TranslationService_TranslateDocument_sync]
 import com.google.cloud.translate.v3beta1.DocumentInputConfig;
 import com.google.cloud.translate.v3beta1.DocumentOutputConfig;
+import com.google.cloud.translate.v3beta1.LocationName;
 import com.google.cloud.translate.v3beta1.TranslateDocumentRequest;
 import com.google.cloud.translate.v3beta1.TranslateDocumentResponse;
 import com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig;
@@ -40,7 +41,7 @@ public class SyncTranslateDocument {
     try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
       TranslateDocumentRequest request =
           TranslateDocumentRequest.newBuilder()
-              .setParent("parent-995424086")
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setSourceLanguageCode("sourceLanguageCode1645917472")
               .setTargetLanguageCode("targetLanguageCode-106414698")
               .setDocumentInputConfig(DocumentInputConfig.newBuilder().build())

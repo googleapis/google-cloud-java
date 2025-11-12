@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [Environments][google.cloud.dialogflow.cx.v3.Environment].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/cx/v3/environment.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class EnvironmentsGrpc {
 
@@ -931,8 +928,9 @@ public final class EnvironmentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.ListEnvironmentsResponse listEnvironments(
-        com.google.cloud.dialogflow.cx.v3.ListEnvironmentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.ListEnvironmentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEnvironmentsMethod(), getCallOptions(), request);
     }
 
@@ -945,8 +943,9 @@ public final class EnvironmentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.Environment getEnvironment(
-        com.google.cloud.dialogflow.cx.v3.GetEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.GetEnvironmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEnvironmentMethod(), getCallOptions(), request);
     }
 
@@ -965,8 +964,9 @@ public final class EnvironmentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createEnvironment(
-        com.google.cloud.dialogflow.cx.v3.CreateEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.CreateEnvironmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEnvironmentMethod(), getCallOptions(), request);
     }
 
@@ -985,8 +985,9 @@ public final class EnvironmentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateEnvironment(
-        com.google.cloud.dialogflow.cx.v3.UpdateEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.UpdateEnvironmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateEnvironmentMethod(), getCallOptions(), request);
     }
 
@@ -999,8 +1000,9 @@ public final class EnvironmentsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteEnvironment(
-        com.google.cloud.dialogflow.cx.v3.DeleteEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.DeleteEnvironmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteEnvironmentMethod(), getCallOptions(), request);
     }
 
@@ -1014,8 +1016,9 @@ public final class EnvironmentsGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.LookupEnvironmentHistoryResponse
         lookupEnvironmentHistory(
-            com.google.cloud.dialogflow.cx.v3.LookupEnvironmentHistoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.dialogflow.cx.v3.LookupEnvironmentHistoryRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getLookupEnvironmentHistoryMethod(), getCallOptions(), request);
     }
 
@@ -1035,8 +1038,9 @@ public final class EnvironmentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation runContinuousTest(
-        com.google.cloud.dialogflow.cx.v3.RunContinuousTestRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.RunContinuousTestRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRunContinuousTestMethod(), getCallOptions(), request);
     }
 
@@ -1049,8 +1053,9 @@ public final class EnvironmentsGrpc {
      */
     public com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsResponse
         listContinuousTestResults(
-            com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListContinuousTestResultsMethod(), getCallOptions(), request);
     }
 
@@ -1070,8 +1075,9 @@ public final class EnvironmentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deployFlow(
-        com.google.cloud.dialogflow.cx.v3.DeployFlowRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.DeployFlowRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeployFlowMethod(), getCallOptions(), request);
     }
   }

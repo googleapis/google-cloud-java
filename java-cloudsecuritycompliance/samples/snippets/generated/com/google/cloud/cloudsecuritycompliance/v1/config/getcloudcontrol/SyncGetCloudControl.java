@@ -39,6 +39,7 @@ public class SyncGetCloudControl {
           GetCloudControlRequest.newBuilder()
               .setName(
                   CloudControlName.of("[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]").toString())
+              .setMajorRevisionId(612576889)
               .build();
       CloudControl response = configClient.getCloudControl(request);
     }

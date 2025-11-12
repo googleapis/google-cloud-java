@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [SessionEntityTypes][google.cloud.dialogflow.v2beta1.SessionEntityType].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/v2beta1/session_entity_type.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SessionEntityTypesGrpc {
 
@@ -620,8 +617,9 @@ public final class SessionEntityTypesGrpc {
      */
     public com.google.cloud.dialogflow.v2beta1.ListSessionEntityTypesResponse
         listSessionEntityTypes(
-            com.google.cloud.dialogflow.v2beta1.ListSessionEntityTypesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.dialogflow.v2beta1.ListSessionEntityTypesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSessionEntityTypesMethod(), getCallOptions(), request);
     }
 
@@ -636,8 +634,9 @@ public final class SessionEntityTypesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.SessionEntityType getSessionEntityType(
-        com.google.cloud.dialogflow.v2beta1.GetSessionEntityTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.GetSessionEntityTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSessionEntityTypeMethod(), getCallOptions(), request);
     }
 
@@ -654,8 +653,9 @@ public final class SessionEntityTypesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.SessionEntityType createSessionEntityType(
-        com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSessionEntityTypeMethod(), getCallOptions(), request);
     }
 
@@ -670,8 +670,9 @@ public final class SessionEntityTypesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.SessionEntityType updateSessionEntityType(
-        com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSessionEntityTypeMethod(), getCallOptions(), request);
     }
 
@@ -686,8 +687,9 @@ public final class SessionEntityTypesGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteSessionEntityType(
-        com.google.cloud.dialogflow.v2beta1.DeleteSessionEntityTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.DeleteSessionEntityTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSessionEntityTypeMethod(), getCallOptions(), request);
     }
   }

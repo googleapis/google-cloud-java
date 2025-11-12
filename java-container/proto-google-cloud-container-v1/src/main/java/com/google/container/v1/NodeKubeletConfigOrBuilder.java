@@ -240,7 +240,7 @@ public interface NodeKubeletConfigOrBuilder
    * The string must be a sequence of decimal numbers, each with optional
    * fraction and a unit suffix, such as "300ms".
    * Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h".
-   * The value must be a positive duration.
+   * The value must be a positive duration between 1ms and 1 second, inclusive.
    * </pre>
    *
    * <code>string cpu_cfs_quota_period = 3;</code>
@@ -258,7 +258,7 @@ public interface NodeKubeletConfigOrBuilder
    * The string must be a sequence of decimal numbers, each with optional
    * fraction and a unit suffix, such as "300ms".
    * Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h".
-   * The value must be a positive duration.
+   * The value must be a positive duration between 1ms and 1 second, inclusive.
    * </pre>
    *
    * <code>string cpu_cfs_quota_period = 3;</code>

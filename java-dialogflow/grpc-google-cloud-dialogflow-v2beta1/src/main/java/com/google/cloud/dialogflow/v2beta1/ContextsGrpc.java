@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing [Contexts][google.cloud.dialogflow.v2beta1.Context].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/v2beta1/context.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ContextsGrpc {
 
@@ -605,8 +602,9 @@ public final class ContextsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.ListContextsResponse listContexts(
-        com.google.cloud.dialogflow.v2beta1.ListContextsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.ListContextsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListContextsMethod(), getCallOptions(), request);
     }
 
@@ -618,8 +616,9 @@ public final class ContextsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.Context getContext(
-        com.google.cloud.dialogflow.v2beta1.GetContextRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.GetContextRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetContextMethod(), getCallOptions(), request);
     }
 
@@ -632,8 +631,9 @@ public final class ContextsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.Context createContext(
-        com.google.cloud.dialogflow.v2beta1.CreateContextRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.CreateContextRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateContextMethod(), getCallOptions(), request);
     }
 
@@ -645,8 +645,9 @@ public final class ContextsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.Context updateContext(
-        com.google.cloud.dialogflow.v2beta1.UpdateContextRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.UpdateContextRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateContextMethod(), getCallOptions(), request);
     }
 
@@ -658,8 +659,9 @@ public final class ContextsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteContext(
-        com.google.cloud.dialogflow.v2beta1.DeleteContextRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.DeleteContextRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteContextMethod(), getCallOptions(), request);
     }
 
@@ -671,8 +673,9 @@ public final class ContextsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteAllContexts(
-        com.google.cloud.dialogflow.v2beta1.DeleteAllContextsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.DeleteAllContextsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAllContextsMethod(), getCallOptions(), request);
     }
   }

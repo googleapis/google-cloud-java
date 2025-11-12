@@ -33,6 +33,7 @@ import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -99,6 +100,25 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> createConversationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteConversation</td>
+ *      <td><p> Deletes a conversation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteConversation(DeleteConversationRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteConversation(ConversationName name)
+ *           <li><p> deleteConversation(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteConversationCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -474,6 +494,120 @@ public class DataChatServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<CreateConversationRequest, Conversation> createConversationCallable() {
     return stub.createConversationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a conversation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataChatServiceClient dataChatServiceClient = DataChatServiceClient.create()) {
+   *   ConversationName name = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+   *   dataChatServiceClient.deleteConversation(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource. Format:
+   *     `projects/{project}/locations/{location}/conversations/{conversation}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteConversation(ConversationName name) {
+    DeleteConversationRequest request =
+        DeleteConversationRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteConversation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a conversation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataChatServiceClient dataChatServiceClient = DataChatServiceClient.create()) {
+   *   String name = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString();
+   *   dataChatServiceClient.deleteConversation(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource. Format:
+   *     `projects/{project}/locations/{location}/conversations/{conversation}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteConversation(String name) {
+    DeleteConversationRequest request =
+        DeleteConversationRequest.newBuilder().setName(name).build();
+    deleteConversation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a conversation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataChatServiceClient dataChatServiceClient = DataChatServiceClient.create()) {
+   *   DeleteConversationRequest request =
+   *       DeleteConversationRequest.newBuilder()
+   *           .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+   *           .build();
+   *   dataChatServiceClient.deleteConversation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteConversation(DeleteConversationRequest request) {
+    deleteConversationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a conversation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataChatServiceClient dataChatServiceClient = DataChatServiceClient.create()) {
+   *   DeleteConversationRequest request =
+   *       DeleteConversationRequest.newBuilder()
+   *           .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       dataChatServiceClient.deleteConversationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteConversationRequest, Empty> deleteConversationCallable() {
+    return stub.deleteConversationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

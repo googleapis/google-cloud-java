@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service definition for the Solar API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/maps/solar/v1/solar_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SolarGrpc {
 
@@ -382,8 +379,9 @@ public final class SolarGrpc {
      * </pre>
      */
     public com.google.maps.solar.v1.BuildingInsights findClosestBuildingInsights(
-        com.google.maps.solar.v1.FindClosestBuildingInsightsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.solar.v1.FindClosestBuildingInsightsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFindClosestBuildingInsightsMethod(), getCallOptions(), request);
     }
 
@@ -397,8 +395,8 @@ public final class SolarGrpc {
      * </pre>
      */
     public com.google.maps.solar.v1.DataLayers getDataLayers(
-        com.google.maps.solar.v1.GetDataLayersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.solar.v1.GetDataLayersRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDataLayersMethod(), getCallOptions(), request);
     }
 
@@ -409,8 +407,9 @@ public final class SolarGrpc {
      * Returns an image by its ID.
      * </pre>
      */
-    public com.google.api.HttpBody getGeoTiff(com.google.maps.solar.v1.GetGeoTiffRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.api.HttpBody getGeoTiff(com.google.maps.solar.v1.GetGeoTiffRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetGeoTiffMethod(), getCallOptions(), request);
     }
   }

@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * the time-varying values of a metric.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/monitoring/v3/query_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class QueryServiceGrpc {
 
@@ -261,8 +258,8 @@ public final class QueryServiceGrpc {
      */
     @java.lang.Deprecated
     public com.google.monitoring.v3.QueryTimeSeriesResponse queryTimeSeries(
-        com.google.monitoring.v3.QueryTimeSeriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.QueryTimeSeriesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getQueryTimeSeriesMethod(), getCallOptions(), request);
     }
   }

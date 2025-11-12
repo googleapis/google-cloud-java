@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * BinAuthz Attestor verification
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/binaryauthorization/v1/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ValidationHelperV1Grpc {
 
@@ -276,8 +273,9 @@ public final class ValidationHelperV1Grpc {
         validateAttestationOccurrence(
             com.google.protos.google.cloud.binaryauthorization.v1.Service
                     .ValidateAttestationOccurrenceRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getValidateAttestationOccurrenceMethod(), getCallOptions(), request);
     }
   }

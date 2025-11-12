@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * out of Google Cloud.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/devtools/cloudprofiler/v2/profiler.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ExportServiceGrpc {
 
@@ -249,8 +246,9 @@ public final class ExportServiceGrpc {
      * </pre>
      */
     public com.google.devtools.cloudprofiler.v2.ListProfilesResponse listProfiles(
-        com.google.devtools.cloudprofiler.v2.ListProfilesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.cloudprofiler.v2.ListProfilesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListProfilesMethod(), getCallOptions(), request);
     }
   }

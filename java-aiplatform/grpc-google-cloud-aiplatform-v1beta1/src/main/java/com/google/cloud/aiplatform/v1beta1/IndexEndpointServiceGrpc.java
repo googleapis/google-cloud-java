@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service for managing Vertex AI's IndexEndpoints.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1beta1/index_endpoint_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class IndexEndpointServiceGrpc {
 
@@ -800,8 +797,9 @@ public final class IndexEndpointServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createIndexEndpoint(
-        com.google.cloud.aiplatform.v1beta1.CreateIndexEndpointRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.CreateIndexEndpointRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateIndexEndpointMethod(), getCallOptions(), request);
     }
 
@@ -813,8 +811,9 @@ public final class IndexEndpointServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.IndexEndpoint getIndexEndpoint(
-        com.google.cloud.aiplatform.v1beta1.GetIndexEndpointRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.GetIndexEndpointRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIndexEndpointMethod(), getCallOptions(), request);
     }
 
@@ -826,8 +825,9 @@ public final class IndexEndpointServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ListIndexEndpointsResponse listIndexEndpoints(
-        com.google.cloud.aiplatform.v1beta1.ListIndexEndpointsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.ListIndexEndpointsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListIndexEndpointsMethod(), getCallOptions(), request);
     }
 
@@ -839,8 +839,9 @@ public final class IndexEndpointServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.IndexEndpoint updateIndexEndpoint(
-        com.google.cloud.aiplatform.v1beta1.UpdateIndexEndpointRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.UpdateIndexEndpointRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateIndexEndpointMethod(), getCallOptions(), request);
     }
 
@@ -852,8 +853,9 @@ public final class IndexEndpointServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteIndexEndpoint(
-        com.google.cloud.aiplatform.v1beta1.DeleteIndexEndpointRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.DeleteIndexEndpointRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteIndexEndpointMethod(), getCallOptions(), request);
     }
 
@@ -867,8 +869,9 @@ public final class IndexEndpointServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deployIndex(
-        com.google.cloud.aiplatform.v1beta1.DeployIndexRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.DeployIndexRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeployIndexMethod(), getCallOptions(), request);
     }
 
@@ -881,8 +884,9 @@ public final class IndexEndpointServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation undeployIndex(
-        com.google.cloud.aiplatform.v1beta1.UndeployIndexRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.UndeployIndexRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUndeployIndexMethod(), getCallOptions(), request);
     }
 
@@ -894,8 +898,9 @@ public final class IndexEndpointServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation mutateDeployedIndex(
-        com.google.cloud.aiplatform.v1beta1.MutateDeployedIndexRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.MutateDeployedIndexRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getMutateDeployedIndexMethod(), getCallOptions(), request);
     }
   }

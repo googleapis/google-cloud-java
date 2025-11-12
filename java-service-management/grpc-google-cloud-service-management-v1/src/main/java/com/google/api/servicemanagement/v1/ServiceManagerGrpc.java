@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * API](https://cloud.google.com/service-infrastructure/docs/overview)
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/api/servicemanagement/v1/servicemanager.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ServiceManagerGrpc {
 
@@ -1297,8 +1294,9 @@ public final class ServiceManagerGrpc {
      * </pre>
      */
     public com.google.api.servicemanagement.v1.ListServicesResponse listServices(
-        com.google.api.servicemanagement.v1.ListServicesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.servicemanagement.v1.ListServicesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListServicesMethod(), getCallOptions(), request);
     }
 
@@ -1311,8 +1309,9 @@ public final class ServiceManagerGrpc {
      * </pre>
      */
     public com.google.api.servicemanagement.v1.ManagedService getService(
-        com.google.api.servicemanagement.v1.GetServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.servicemanagement.v1.GetServiceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetServiceMethod(), getCallOptions(), request);
     }
 
@@ -1331,8 +1330,9 @@ public final class ServiceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createService(
-        com.google.api.servicemanagement.v1.CreateServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.servicemanagement.v1.CreateServiceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateServiceMethod(), getCallOptions(), request);
     }
 
@@ -1350,8 +1350,9 @@ public final class ServiceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteService(
-        com.google.api.servicemanagement.v1.DeleteServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.servicemanagement.v1.DeleteServiceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteServiceMethod(), getCallOptions(), request);
     }
 
@@ -1367,8 +1368,9 @@ public final class ServiceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation undeleteService(
-        com.google.api.servicemanagement.v1.UndeleteServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.servicemanagement.v1.UndeleteServiceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUndeleteServiceMethod(), getCallOptions(), request);
     }
 
@@ -1381,8 +1383,9 @@ public final class ServiceManagerGrpc {
      * </pre>
      */
     public com.google.api.servicemanagement.v1.ListServiceConfigsResponse listServiceConfigs(
-        com.google.api.servicemanagement.v1.ListServiceConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.servicemanagement.v1.ListServiceConfigsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListServiceConfigsMethod(), getCallOptions(), request);
     }
 
@@ -1394,8 +1397,9 @@ public final class ServiceManagerGrpc {
      * </pre>
      */
     public com.google.api.Service getServiceConfig(
-        com.google.api.servicemanagement.v1.GetServiceConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.servicemanagement.v1.GetServiceConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetServiceConfigMethod(), getCallOptions(), request);
     }
 
@@ -1413,8 +1417,9 @@ public final class ServiceManagerGrpc {
      * </pre>
      */
     public com.google.api.Service createServiceConfig(
-        com.google.api.servicemanagement.v1.CreateServiceConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.servicemanagement.v1.CreateServiceConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateServiceConfigMethod(), getCallOptions(), request);
     }
 
@@ -1437,8 +1442,9 @@ public final class ServiceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation submitConfigSource(
-        com.google.api.servicemanagement.v1.SubmitConfigSourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.servicemanagement.v1.SubmitConfigSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSubmitConfigSourceMethod(), getCallOptions(), request);
     }
 
@@ -1451,8 +1457,9 @@ public final class ServiceManagerGrpc {
      * </pre>
      */
     public com.google.api.servicemanagement.v1.ListServiceRolloutsResponse listServiceRollouts(
-        com.google.api.servicemanagement.v1.ListServiceRolloutsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.servicemanagement.v1.ListServiceRolloutsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListServiceRolloutsMethod(), getCallOptions(), request);
     }
 
@@ -1465,8 +1472,9 @@ public final class ServiceManagerGrpc {
      * </pre>
      */
     public com.google.api.servicemanagement.v1.Rollout getServiceRollout(
-        com.google.api.servicemanagement.v1.GetServiceRolloutRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.servicemanagement.v1.GetServiceRolloutRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetServiceRolloutMethod(), getCallOptions(), request);
     }
 
@@ -1488,8 +1496,9 @@ public final class ServiceManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createServiceRollout(
-        com.google.api.servicemanagement.v1.CreateServiceRolloutRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.servicemanagement.v1.CreateServiceRolloutRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateServiceRolloutMethod(), getCallOptions(), request);
     }
 
@@ -1510,8 +1519,9 @@ public final class ServiceManagerGrpc {
      * </pre>
      */
     public com.google.api.servicemanagement.v1.GenerateConfigReportResponse generateConfigReport(
-        com.google.api.servicemanagement.v1.GenerateConfigReportRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.servicemanagement.v1.GenerateConfigReportRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateConfigReportMethod(), getCallOptions(), request);
     }
   }

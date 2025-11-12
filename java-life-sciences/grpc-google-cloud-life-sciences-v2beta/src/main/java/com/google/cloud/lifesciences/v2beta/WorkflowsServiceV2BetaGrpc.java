@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * containers.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/lifesciences/v2beta/workflows.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class WorkflowsServiceV2BetaGrpc {
 
@@ -285,8 +282,9 @@ public final class WorkflowsServiceV2BetaGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation runPipeline(
-        com.google.cloud.lifesciences.v2beta.RunPipelineRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.lifesciences.v2beta.RunPipelineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRunPipelineMethod(), getCallOptions(), request);
     }
   }

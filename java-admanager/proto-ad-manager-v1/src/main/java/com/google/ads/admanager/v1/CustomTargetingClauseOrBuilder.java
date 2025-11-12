@@ -91,4 +91,139 @@ public interface CustomTargetingClauseOrBuilder
    */
   com.google.ads.admanager.v1.CustomTargetingLiteralOrBuilder getCustomTargetingLiteralsOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Leaf targeting expressions for audience segments.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AudienceSegmentTargeting audience_segment_targetings = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.ads.admanager.v1.AudienceSegmentTargeting>
+      getAudienceSegmentTargetingsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Leaf targeting expressions for audience segments.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AudienceSegmentTargeting audience_segment_targetings = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.AudienceSegmentTargeting getAudienceSegmentTargetings(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Leaf targeting expressions for audience segments.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AudienceSegmentTargeting audience_segment_targetings = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getAudienceSegmentTargetingsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Leaf targeting expressions for audience segments.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AudienceSegmentTargeting audience_segment_targetings = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.ads.admanager.v1.AudienceSegmentTargetingOrBuilder>
+      getAudienceSegmentTargetingsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Leaf targeting expressions for audience segments.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AudienceSegmentTargeting audience_segment_targetings = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.AudienceSegmentTargetingOrBuilder
+      getAudienceSegmentTargetingsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Leaf targeting expressions for cms metadata.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CmsMetadataTargeting cms_metadata_targetings = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.ads.admanager.v1.CmsMetadataTargeting> getCmsMetadataTargetingsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Leaf targeting expressions for cms metadata.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CmsMetadataTargeting cms_metadata_targetings = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.CmsMetadataTargeting getCmsMetadataTargetings(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Leaf targeting expressions for cms metadata.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CmsMetadataTargeting cms_metadata_targetings = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getCmsMetadataTargetingsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Leaf targeting expressions for cms metadata.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CmsMetadataTargeting cms_metadata_targetings = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.ads.admanager.v1.CmsMetadataTargetingOrBuilder>
+      getCmsMetadataTargetingsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Leaf targeting expressions for cms metadata.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CmsMetadataTargeting cms_metadata_targetings = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.CmsMetadataTargetingOrBuilder getCmsMetadataTargetingsOrBuilder(
+      int index);
 }

@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * enhancing product image content.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/productstudio/v1alpha/image.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ImageServiceGrpc {
 
@@ -461,8 +458,9 @@ public final class ImageServiceGrpc {
     public com.google.shopping.merchant.productstudio.v1alpha.GenerateProductImageBackgroundResponse
         generateProductImageBackground(
             com.google.shopping.merchant.productstudio.v1alpha.GenerateProductImageBackgroundRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateProductImageBackgroundMethod(), getCallOptions(), request);
     }
 
@@ -477,8 +475,9 @@ public final class ImageServiceGrpc {
     public com.google.shopping.merchant.productstudio.v1alpha.RemoveProductImageBackgroundResponse
         removeProductImageBackground(
             com.google.shopping.merchant.productstudio.v1alpha.RemoveProductImageBackgroundRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRemoveProductImageBackgroundMethod(), getCallOptions(), request);
     }
 
@@ -492,8 +491,9 @@ public final class ImageServiceGrpc {
      */
     public com.google.shopping.merchant.productstudio.v1alpha.UpscaleProductImageResponse
         upscaleProductImage(
-            com.google.shopping.merchant.productstudio.v1alpha.UpscaleProductImageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.shopping.merchant.productstudio.v1alpha.UpscaleProductImageRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpscaleProductImageMethod(), getCallOptions(), request);
     }
   }

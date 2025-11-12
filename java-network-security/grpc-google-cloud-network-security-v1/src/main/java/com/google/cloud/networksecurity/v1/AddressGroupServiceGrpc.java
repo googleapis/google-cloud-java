@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * all the IP or Domain Names from the Address Group.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/networksecurity/v1/address_group.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AddressGroupServiceGrpc {
 
@@ -895,8 +892,9 @@ public final class AddressGroupServiceGrpc {
      * </pre>
      */
     public com.google.cloud.networksecurity.v1.ListAddressGroupsResponse listAddressGroups(
-        com.google.cloud.networksecurity.v1.ListAddressGroupsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networksecurity.v1.ListAddressGroupsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAddressGroupsMethod(), getCallOptions(), request);
     }
 
@@ -908,8 +906,9 @@ public final class AddressGroupServiceGrpc {
      * </pre>
      */
     public com.google.cloud.networksecurity.v1.AddressGroup getAddressGroup(
-        com.google.cloud.networksecurity.v1.GetAddressGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networksecurity.v1.GetAddressGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAddressGroupMethod(), getCallOptions(), request);
     }
 
@@ -921,8 +920,9 @@ public final class AddressGroupServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createAddressGroup(
-        com.google.cloud.networksecurity.v1.CreateAddressGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networksecurity.v1.CreateAddressGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAddressGroupMethod(), getCallOptions(), request);
     }
 
@@ -934,8 +934,9 @@ public final class AddressGroupServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateAddressGroup(
-        com.google.cloud.networksecurity.v1.UpdateAddressGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networksecurity.v1.UpdateAddressGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAddressGroupMethod(), getCallOptions(), request);
     }
 
@@ -947,8 +948,9 @@ public final class AddressGroupServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation addAddressGroupItems(
-        com.google.cloud.networksecurity.v1.AddAddressGroupItemsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networksecurity.v1.AddAddressGroupItemsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAddAddressGroupItemsMethod(), getCallOptions(), request);
     }
 
@@ -960,8 +962,9 @@ public final class AddressGroupServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation removeAddressGroupItems(
-        com.google.cloud.networksecurity.v1.RemoveAddressGroupItemsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networksecurity.v1.RemoveAddressGroupItemsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRemoveAddressGroupItemsMethod(), getCallOptions(), request);
     }
 
@@ -973,8 +976,9 @@ public final class AddressGroupServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation cloneAddressGroupItems(
-        com.google.cloud.networksecurity.v1.CloneAddressGroupItemsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networksecurity.v1.CloneAddressGroupItemsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCloneAddressGroupItemsMethod(), getCallOptions(), request);
     }
 
@@ -986,8 +990,9 @@ public final class AddressGroupServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteAddressGroup(
-        com.google.cloud.networksecurity.v1.DeleteAddressGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networksecurity.v1.DeleteAddressGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAddressGroupMethod(), getCallOptions(), request);
     }
 
@@ -1000,8 +1005,9 @@ public final class AddressGroupServiceGrpc {
      */
     public com.google.cloud.networksecurity.v1.ListAddressGroupReferencesResponse
         listAddressGroupReferences(
-            com.google.cloud.networksecurity.v1.ListAddressGroupReferencesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.networksecurity.v1.ListAddressGroupReferencesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAddressGroupReferencesMethod(), getCallOptions(), request);
     }
   }

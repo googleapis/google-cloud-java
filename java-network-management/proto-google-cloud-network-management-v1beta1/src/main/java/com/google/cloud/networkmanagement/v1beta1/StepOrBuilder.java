@@ -351,6 +351,43 @@ public interface StepOrBuilder
    *
    *
    * <pre>
+   * Display information of a hybrid subnet.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo hybrid_subnet = 36;</code>
+   *
+   * @return Whether the hybridSubnet field is set.
+   */
+  boolean hasHybridSubnet();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a hybrid subnet.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo hybrid_subnet = 36;</code>
+   *
+   * @return The hybridSubnet.
+   */
+  com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo getHybridSubnet();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a hybrid subnet.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.HybridSubnetInfo hybrid_subnet = 36;</code>
+   */
+  com.google.cloud.networkmanagement.v1beta1.HybridSubnetInfoOrBuilder getHybridSubnetOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Display information of a Compute Engine VPN gateway.
    * </pre>
    *
@@ -420,6 +457,50 @@ public interface StepOrBuilder
    * <code>.google.cloud.networkmanagement.v1beta1.VpnTunnelInfo vpn_tunnel = 11;</code>
    */
   com.google.cloud.networkmanagement.v1beta1.VpnTunnelInfoOrBuilder getVpnTunnelOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of an interconnect attachment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo interconnect_attachment = 35;
+   * </code>
+   *
+   * @return Whether the interconnectAttachment field is set.
+   */
+  boolean hasInterconnectAttachment();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of an interconnect attachment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo interconnect_attachment = 35;
+   * </code>
+   *
+   * @return The interconnectAttachment.
+   */
+  com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo getInterconnectAttachment();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of an interconnect attachment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfo interconnect_attachment = 35;
+   * </code>
+   */
+  com.google.cloud.networkmanagement.v1beta1.InterconnectAttachmentInfoOrBuilder
+      getInterconnectAttachmentOrBuilder();
 
   /**
    *
@@ -709,7 +790,7 @@ public interface StepOrBuilder
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=272
+   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=286
    * @return Whether the loadBalancer field is set.
    */
   @java.lang.Deprecated
@@ -728,7 +809,7 @@ public interface StepOrBuilder
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=272
+   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=286
    * @return The loadBalancer.
    */
   @java.lang.Deprecated

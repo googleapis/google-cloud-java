@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Manages Google Cloud Projects.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/resourcemanager/v3/projects.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ProjectsGrpc {
 
@@ -1173,8 +1170,9 @@ public final class ProjectsGrpc {
      * </pre>
      */
     public com.google.cloud.resourcemanager.v3.Project getProject(
-        com.google.cloud.resourcemanager.v3.GetProjectRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.resourcemanager.v3.GetProjectRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetProjectMethod(), getCallOptions(), request);
     }
 
@@ -1191,8 +1189,9 @@ public final class ProjectsGrpc {
      * </pre>
      */
     public com.google.cloud.resourcemanager.v3.ListProjectsResponse listProjects(
-        com.google.cloud.resourcemanager.v3.ListProjectsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.resourcemanager.v3.ListProjectsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListProjectsMethod(), getCallOptions(), request);
     }
 
@@ -1211,8 +1210,9 @@ public final class ProjectsGrpc {
      * </pre>
      */
     public com.google.cloud.resourcemanager.v3.SearchProjectsResponse searchProjects(
-        com.google.cloud.resourcemanager.v3.SearchProjectsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.resourcemanager.v3.SearchProjectsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchProjectsMethod(), getCallOptions(), request);
     }
 
@@ -1228,8 +1228,9 @@ public final class ProjectsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createProject(
-        com.google.cloud.resourcemanager.v3.CreateProjectRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.resourcemanager.v3.CreateProjectRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateProjectMethod(), getCallOptions(), request);
     }
 
@@ -1245,8 +1246,9 @@ public final class ProjectsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateProject(
-        com.google.cloud.resourcemanager.v3.UpdateProjectRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.resourcemanager.v3.UpdateProjectRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateProjectMethod(), getCallOptions(), request);
     }
 
@@ -1268,8 +1270,9 @@ public final class ProjectsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation moveProject(
-        com.google.cloud.resourcemanager.v3.MoveProjectRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.resourcemanager.v3.MoveProjectRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getMoveProjectMethod(), getCallOptions(), request);
     }
 
@@ -1307,8 +1310,9 @@ public final class ProjectsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteProject(
-        com.google.cloud.resourcemanager.v3.DeleteProjectRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.resourcemanager.v3.DeleteProjectRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteProjectMethod(), getCallOptions(), request);
     }
 
@@ -1327,8 +1331,9 @@ public final class ProjectsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation undeleteProject(
-        com.google.cloud.resourcemanager.v3.UndeleteProjectRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.resourcemanager.v3.UndeleteProjectRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUndeleteProjectMethod(), getCallOptions(), request);
     }
 
@@ -1341,8 +1346,9 @@ public final class ProjectsGrpc {
      * Permission is denied if the policy or the resource do not exist.
      * </pre>
      */
-    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1384,8 +1390,9 @@ public final class ProjectsGrpc {
      * owners, potentially making the organization inaccessible.
      * </pre>
      */
-    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1398,8 +1405,8 @@ public final class ProjectsGrpc {
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
-        com.google.iam.v1.TestIamPermissionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.iam.v1.TestIamPermissionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
   }

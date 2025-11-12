@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * A parameter spec of the cloud control.
+ * The parameter specification for the cloud control.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.ParameterSpec}
@@ -73,7 +73,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type of the parameter value.
+   * The type of parameter value.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.cloudsecuritycompliance.v1.ParameterSpec.ValueType}
@@ -93,7 +93,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * String value.
+     * A string value.
      * </pre>
      *
      * <code>STRING = 3;</code>
@@ -103,7 +103,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Boolean value.
+     * A boolean value.
      * </pre>
      *
      * <code>BOOLEAN = 4;</code>
@@ -113,7 +113,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * String list value.
+     * A string list value.
      * </pre>
      *
      * <code>STRINGLIST = 5;</code>
@@ -123,7 +123,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Numeric value.
+     * A numeric value.
      * </pre>
      *
      * <code>NUMBER = 6;</code>
@@ -133,7 +133,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * OneOf value.
+     * A oneOf value.
      * </pre>
      *
      * <code>ONEOF = 7;</code>
@@ -157,7 +157,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * String value.
+     * A string value.
      * </pre>
      *
      * <code>STRING = 3;</code>
@@ -168,7 +168,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Boolean value.
+     * A boolean value.
      * </pre>
      *
      * <code>BOOLEAN = 4;</code>
@@ -179,7 +179,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * String list value.
+     * A string list value.
      * </pre>
      *
      * <code>STRINGLIST = 5;</code>
@@ -190,7 +190,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Numeric value.
+     * A numeric value.
      * </pre>
      *
      * <code>NUMBER = 6;</code>
@@ -201,7 +201,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * OneOf value.
+     * A oneOf value.
      * </pre>
      *
      * <code>ONEOF = 7;</code>
@@ -362,7 +362,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The display name of the parameter. The maximum length is 200
+   * Optional. The friendly name of the parameter. The maximum length is 200
    * characters.
    * </pre>
    *
@@ -387,7 +387,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The display name of the parameter. The maximum length is 200
+   * Optional. The friendly name of the parameter. The maximum length is 200
    * characters.
    * </pre>
    *
@@ -470,7 +470,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. if the parameter is required
+   * Required. Whether the parameter is required.
    * </pre>
    *
    * <code>bool is_required = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -489,7 +489,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Parameter value type.
+   * Required. The parameter value type.
    * </pre>
    *
    * <code>
@@ -507,7 +507,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Parameter value type.
+   * Required. The parameter value type.
    * </pre>
    *
    * <code>
@@ -595,7 +595,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. List of parameter substitutions.
+   * Optional. The list of parameter substitutions.
    * </pre>
    *
    * <code>
@@ -612,7 +612,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. List of parameter substitutions.
+   * Optional. The list of parameter substitutions.
    * </pre>
    *
    * <code>
@@ -630,7 +630,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. List of parameter substitutions.
+   * Optional. The list of parameter substitutions.
    * </pre>
    *
    * <code>
@@ -646,7 +646,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. List of parameter substitutions.
+   * Optional. The list of parameter substitutions.
    * </pre>
    *
    * <code>
@@ -663,7 +663,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. List of parameter substitutions.
+   * Optional. The list of parameter substitutions.
    * </pre>
    *
    * <code>
@@ -685,7 +685,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. ParameterSpec for oneof attributes.
+   * Optional. The parameter specification for `oneOf` attributes.
    * </pre>
    *
    * <code>
@@ -702,7 +702,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. ParameterSpec for oneof attributes.
+   * Optional. The parameter specification for `oneOf` attributes.
    * </pre>
    *
    * <code>
@@ -720,7 +720,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. ParameterSpec for oneof attributes.
+   * Optional. The parameter specification for `oneOf` attributes.
    * </pre>
    *
    * <code>
@@ -736,7 +736,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. ParameterSpec for oneof attributes.
+   * Optional. The parameter specification for `oneOf` attributes.
    * </pre>
    *
    * <code>
@@ -752,7 +752,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. ParameterSpec for oneof attributes.
+   * Optional. The parameter specification for `oneOf` attributes.
    * </pre>
    *
    * <code>
@@ -772,7 +772,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The allowed set of values for the parameter.
+   * Optional. The permitted set of values for the parameter.
    * </pre>
    *
    * <code>
@@ -790,7 +790,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The allowed set of values for the parameter.
+   * Optional. The permitted set of values for the parameter.
    * </pre>
    *
    * <code>
@@ -810,7 +810,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The allowed set of values for the parameter.
+   * Optional. The permitted set of values for the parameter.
    * </pre>
    *
    * <code>
@@ -1082,7 +1082,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A parameter spec of the cloud control.
+   * The parameter specification for the cloud control.
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.ParameterSpec}
@@ -1605,7 +1605,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The display name of the parameter. The maximum length is 200
+     * Optional. The friendly name of the parameter. The maximum length is 200
      * characters.
      * </pre>
      *
@@ -1629,7 +1629,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The display name of the parameter. The maximum length is 200
+     * Optional. The friendly name of the parameter. The maximum length is 200
      * characters.
      * </pre>
      *
@@ -1653,7 +1653,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The display name of the parameter. The maximum length is 200
+     * Optional. The friendly name of the parameter. The maximum length is 200
      * characters.
      * </pre>
      *
@@ -1676,7 +1676,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The display name of the parameter. The maximum length is 200
+     * Optional. The friendly name of the parameter. The maximum length is 200
      * characters.
      * </pre>
      *
@@ -1695,7 +1695,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The display name of the parameter. The maximum length is 200
+     * Optional. The friendly name of the parameter. The maximum length is 200
      * characters.
      * </pre>
      *
@@ -1837,7 +1837,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. if the parameter is required
+     * Required. Whether the parameter is required.
      * </pre>
      *
      * <code>bool is_required = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1853,7 +1853,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. if the parameter is required
+     * Required. Whether the parameter is required.
      * </pre>
      *
      * <code>bool is_required = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1873,7 +1873,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. if the parameter is required
+     * Required. Whether the parameter is required.
      * </pre>
      *
      * <code>bool is_required = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1893,7 +1893,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Parameter value type.
+     * Required. The parameter value type.
      * </pre>
      *
      * <code>
@@ -1911,7 +1911,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Parameter value type.
+     * Required. The parameter value type.
      * </pre>
      *
      * <code>
@@ -1932,7 +1932,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Parameter value type.
+     * Required. The parameter value type.
      * </pre>
      *
      * <code>
@@ -1954,7 +1954,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Parameter value type.
+     * Required. The parameter value type.
      * </pre>
      *
      * <code>
@@ -1979,7 +1979,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Parameter value type.
+     * Required. The parameter value type.
      * </pre>
      *
      * <code>
@@ -2233,7 +2233,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. List of parameter substitutions.
+     * Optional. The list of parameter substitutions.
      * </pre>
      *
      * <code>
@@ -2253,7 +2253,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. List of parameter substitutions.
+     * Optional. The list of parameter substitutions.
      * </pre>
      *
      * <code>
@@ -2272,7 +2272,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. List of parameter substitutions.
+     * Optional. The list of parameter substitutions.
      * </pre>
      *
      * <code>
@@ -2292,7 +2292,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. List of parameter substitutions.
+     * Optional. The list of parameter substitutions.
      * </pre>
      *
      * <code>
@@ -2318,7 +2318,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. List of parameter substitutions.
+     * Optional. The list of parameter substitutions.
      * </pre>
      *
      * <code>
@@ -2343,7 +2343,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. List of parameter substitutions.
+     * Optional. The list of parameter substitutions.
      * </pre>
      *
      * <code>
@@ -2369,7 +2369,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. List of parameter substitutions.
+     * Optional. The list of parameter substitutions.
      * </pre>
      *
      * <code>
@@ -2395,7 +2395,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. List of parameter substitutions.
+     * Optional. The list of parameter substitutions.
      * </pre>
      *
      * <code>
@@ -2419,7 +2419,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. List of parameter substitutions.
+     * Optional. The list of parameter substitutions.
      * </pre>
      *
      * <code>
@@ -2444,7 +2444,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. List of parameter substitutions.
+     * Optional. The list of parameter substitutions.
      * </pre>
      *
      * <code>
@@ -2469,7 +2469,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. List of parameter substitutions.
+     * Optional. The list of parameter substitutions.
      * </pre>
      *
      * <code>
@@ -2491,7 +2491,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. List of parameter substitutions.
+     * Optional. The list of parameter substitutions.
      * </pre>
      *
      * <code>
@@ -2513,7 +2513,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. List of parameter substitutions.
+     * Optional. The list of parameter substitutions.
      * </pre>
      *
      * <code>
@@ -2529,7 +2529,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. List of parameter substitutions.
+     * Optional. The list of parameter substitutions.
      * </pre>
      *
      * <code>
@@ -2549,7 +2549,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. List of parameter substitutions.
+     * Optional. The list of parameter substitutions.
      * </pre>
      *
      * <code>
@@ -2571,7 +2571,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. List of parameter substitutions.
+     * Optional. The list of parameter substitutions.
      * </pre>
      *
      * <code>
@@ -2590,7 +2590,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. List of parameter substitutions.
+     * Optional. The list of parameter substitutions.
      * </pre>
      *
      * <code>
@@ -2610,7 +2610,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. List of parameter substitutions.
+     * Optional. The list of parameter substitutions.
      * </pre>
      *
      * <code>
@@ -2665,7 +2665,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. ParameterSpec for oneof attributes.
+     * Optional. The parameter specification for `oneOf` attributes.
      * </pre>
      *
      * <code>
@@ -2685,7 +2685,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. ParameterSpec for oneof attributes.
+     * Optional. The parameter specification for `oneOf` attributes.
      * </pre>
      *
      * <code>
@@ -2704,7 +2704,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. ParameterSpec for oneof attributes.
+     * Optional. The parameter specification for `oneOf` attributes.
      * </pre>
      *
      * <code>
@@ -2723,7 +2723,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. ParameterSpec for oneof attributes.
+     * Optional. The parameter specification for `oneOf` attributes.
      * </pre>
      *
      * <code>
@@ -2749,7 +2749,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. ParameterSpec for oneof attributes.
+     * Optional. The parameter specification for `oneOf` attributes.
      * </pre>
      *
      * <code>
@@ -2773,7 +2773,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. ParameterSpec for oneof attributes.
+     * Optional. The parameter specification for `oneOf` attributes.
      * </pre>
      *
      * <code>
@@ -2799,7 +2799,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. ParameterSpec for oneof attributes.
+     * Optional. The parameter specification for `oneOf` attributes.
      * </pre>
      *
      * <code>
@@ -2825,7 +2825,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. ParameterSpec for oneof attributes.
+     * Optional. The parameter specification for `oneOf` attributes.
      * </pre>
      *
      * <code>
@@ -2848,7 +2848,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. ParameterSpec for oneof attributes.
+     * Optional. The parameter specification for `oneOf` attributes.
      * </pre>
      *
      * <code>
@@ -2872,7 +2872,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. ParameterSpec for oneof attributes.
+     * Optional. The parameter specification for `oneOf` attributes.
      * </pre>
      *
      * <code>
@@ -2896,7 +2896,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. ParameterSpec for oneof attributes.
+     * Optional. The parameter specification for `oneOf` attributes.
      * </pre>
      *
      * <code>
@@ -2918,7 +2918,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. ParameterSpec for oneof attributes.
+     * Optional. The parameter specification for `oneOf` attributes.
      * </pre>
      *
      * <code>
@@ -2940,7 +2940,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. ParameterSpec for oneof attributes.
+     * Optional. The parameter specification for `oneOf` attributes.
      * </pre>
      *
      * <code>
@@ -2956,7 +2956,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. ParameterSpec for oneof attributes.
+     * Optional. The parameter specification for `oneOf` attributes.
      * </pre>
      *
      * <code>
@@ -2976,7 +2976,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. ParameterSpec for oneof attributes.
+     * Optional. The parameter specification for `oneOf` attributes.
      * </pre>
      *
      * <code>
@@ -2997,7 +2997,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. ParameterSpec for oneof attributes.
+     * Optional. The parameter specification for `oneOf` attributes.
      * </pre>
      *
      * <code>
@@ -3015,7 +3015,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. ParameterSpec for oneof attributes.
+     * Optional. The parameter specification for `oneOf` attributes.
      * </pre>
      *
      * <code>
@@ -3034,7 +3034,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. ParameterSpec for oneof attributes.
+     * Optional. The parameter specification for `oneOf` attributes.
      * </pre>
      *
      * <code>
@@ -3077,7 +3077,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The allowed set of values for the parameter.
+     * Optional. The permitted set of values for the parameter.
      * </pre>
      *
      * <code>
@@ -3094,7 +3094,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The allowed set of values for the parameter.
+     * Optional. The permitted set of values for the parameter.
      * </pre>
      *
      * <code>
@@ -3117,7 +3117,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The allowed set of values for the parameter.
+     * Optional. The permitted set of values for the parameter.
      * </pre>
      *
      * <code>
@@ -3142,7 +3142,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The allowed set of values for the parameter.
+     * Optional. The permitted set of values for the parameter.
      * </pre>
      *
      * <code>
@@ -3165,7 +3165,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The allowed set of values for the parameter.
+     * Optional. The permitted set of values for the parameter.
      * </pre>
      *
      * <code>
@@ -3196,7 +3196,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The allowed set of values for the parameter.
+     * Optional. The permitted set of values for the parameter.
      * </pre>
      *
      * <code>
@@ -3218,7 +3218,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The allowed set of values for the parameter.
+     * Optional. The permitted set of values for the parameter.
      * </pre>
      *
      * <code>
@@ -3235,7 +3235,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The allowed set of values for the parameter.
+     * Optional. The permitted set of values for the parameter.
      * </pre>
      *
      * <code>
@@ -3257,7 +3257,7 @@ public final class ParameterSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The allowed set of values for the parameter.
+     * Optional. The permitted set of values for the parameter.
      * </pre>
      *
      * <code>

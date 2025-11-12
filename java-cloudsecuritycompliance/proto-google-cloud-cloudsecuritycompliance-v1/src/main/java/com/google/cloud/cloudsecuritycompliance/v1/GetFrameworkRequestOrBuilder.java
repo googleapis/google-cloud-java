@@ -28,9 +28,9 @@ public interface GetFrameworkRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the framework to retrieve.
-   * Format:
-   * organizations/{organization}/locations/{location}/frameworks/{framework_id}
+   * Required. The name of the framework to retrieve, in the format
+   * `organizations/{organization}/locations/{location}/frameworks/{framework_id}`
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -45,9 +45,9 @@ public interface GetFrameworkRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the framework to retrieve.
-   * Format:
-   * organizations/{organization}/locations/{location}/frameworks/{framework_id}
+   * Required. The name of the framework to retrieve, in the format
+   * `organizations/{organization}/locations/{location}/frameworks/{framework_id}`
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -62,8 +62,8 @@ public interface GetFrameworkRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The Framework major version to retrieve. If not specified, the
-   * most recently updated revision_id is retrieved.
+   * Optional. The framework major version to retrieve. If not specified, the
+   * most recently updated `revision_id` is retrieved.
    * </pre>
    *
    * <code>int64 major_revision_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

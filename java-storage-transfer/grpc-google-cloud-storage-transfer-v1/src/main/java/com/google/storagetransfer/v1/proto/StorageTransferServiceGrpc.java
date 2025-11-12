@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * source external to Google to a Cloud Storage bucket.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/storagetransfer/v1/transfer.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class StorageTransferServiceGrpc {
 
@@ -1357,8 +1354,9 @@ public final class StorageTransferServiceGrpc {
     public com.google.storagetransfer.v1.proto.TransferTypes.GoogleServiceAccount
         getGoogleServiceAccount(
             com.google.storagetransfer.v1.proto.TransferProto.GetGoogleServiceAccountRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetGoogleServiceAccountMethod(), getCallOptions(), request);
     }
 
@@ -1370,8 +1368,9 @@ public final class StorageTransferServiceGrpc {
      * </pre>
      */
     public com.google.storagetransfer.v1.proto.TransferTypes.TransferJob createTransferJob(
-        com.google.storagetransfer.v1.proto.TransferProto.CreateTransferJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.storagetransfer.v1.proto.TransferProto.CreateTransferJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTransferJobMethod(), getCallOptions(), request);
     }
 
@@ -1389,8 +1388,9 @@ public final class StorageTransferServiceGrpc {
      * </pre>
      */
     public com.google.storagetransfer.v1.proto.TransferTypes.TransferJob updateTransferJob(
-        com.google.storagetransfer.v1.proto.TransferProto.UpdateTransferJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.storagetransfer.v1.proto.TransferProto.UpdateTransferJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateTransferJobMethod(), getCallOptions(), request);
     }
 
@@ -1402,8 +1402,9 @@ public final class StorageTransferServiceGrpc {
      * </pre>
      */
     public com.google.storagetransfer.v1.proto.TransferTypes.TransferJob getTransferJob(
-        com.google.storagetransfer.v1.proto.TransferProto.GetTransferJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.storagetransfer.v1.proto.TransferProto.GetTransferJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTransferJobMethod(), getCallOptions(), request);
     }
 
@@ -1416,8 +1417,9 @@ public final class StorageTransferServiceGrpc {
      */
     public com.google.storagetransfer.v1.proto.TransferProto.ListTransferJobsResponse
         listTransferJobs(
-            com.google.storagetransfer.v1.proto.TransferProto.ListTransferJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.storagetransfer.v1.proto.TransferProto.ListTransferJobsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTransferJobsMethod(), getCallOptions(), request);
     }
 
@@ -1429,8 +1431,9 @@ public final class StorageTransferServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty pauseTransferOperation(
-        com.google.storagetransfer.v1.proto.TransferProto.PauseTransferOperationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.storagetransfer.v1.proto.TransferProto.PauseTransferOperationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPauseTransferOperationMethod(), getCallOptions(), request);
     }
 
@@ -1442,8 +1445,9 @@ public final class StorageTransferServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty resumeTransferOperation(
-        com.google.storagetransfer.v1.proto.TransferProto.ResumeTransferOperationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.storagetransfer.v1.proto.TransferProto.ResumeTransferOperationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getResumeTransferOperationMethod(), getCallOptions(), request);
     }
 
@@ -1458,8 +1462,9 @@ public final class StorageTransferServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation runTransferJob(
-        com.google.storagetransfer.v1.proto.TransferProto.RunTransferJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.storagetransfer.v1.proto.TransferProto.RunTransferJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRunTransferJobMethod(), getCallOptions(), request);
     }
 
@@ -1472,8 +1477,9 @@ public final class StorageTransferServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteTransferJob(
-        com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTransferJobMethod(), getCallOptions(), request);
     }
 
@@ -1485,8 +1491,9 @@ public final class StorageTransferServiceGrpc {
      * </pre>
      */
     public com.google.storagetransfer.v1.proto.TransferTypes.AgentPool createAgentPool(
-        com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAgentPoolMethod(), getCallOptions(), request);
     }
 
@@ -1498,8 +1505,9 @@ public final class StorageTransferServiceGrpc {
      * </pre>
      */
     public com.google.storagetransfer.v1.proto.TransferTypes.AgentPool updateAgentPool(
-        com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAgentPoolMethod(), getCallOptions(), request);
     }
 
@@ -1511,8 +1519,9 @@ public final class StorageTransferServiceGrpc {
      * </pre>
      */
     public com.google.storagetransfer.v1.proto.TransferTypes.AgentPool getAgentPool(
-        com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAgentPoolMethod(), getCallOptions(), request);
     }
 
@@ -1524,8 +1533,9 @@ public final class StorageTransferServiceGrpc {
      * </pre>
      */
     public com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse listAgentPools(
-        com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAgentPoolsMethod(), getCallOptions(), request);
     }
 
@@ -1537,8 +1547,9 @@ public final class StorageTransferServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteAgentPool(
-        com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAgentPoolMethod(), getCallOptions(), request);
     }
   }

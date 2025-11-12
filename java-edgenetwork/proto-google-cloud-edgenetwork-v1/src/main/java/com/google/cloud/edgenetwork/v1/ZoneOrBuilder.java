@@ -213,7 +213,7 @@ public interface ZoneOrBuilder
    * <code>string layout_name = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.edgenetwork.v1.Zone.layout_name is deprecated. See
-   *     google/cloud/edgenetwork/v1/resources.proto;l=79
+   *     google/cloud/edgenetwork/v1/resources.proto;l=92
    * @return The layoutName.
    */
   @java.lang.Deprecated
@@ -230,7 +230,7 @@ public interface ZoneOrBuilder
    * <code>string layout_name = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.edgenetwork.v1.Zone.layout_name is deprecated. See
-   *     google/cloud/edgenetwork/v1/resources.proto;l=79
+   *     google/cloud/edgenetwork/v1/resources.proto;l=92
    * @return The bytes for layoutName.
    */
   @java.lang.Deprecated

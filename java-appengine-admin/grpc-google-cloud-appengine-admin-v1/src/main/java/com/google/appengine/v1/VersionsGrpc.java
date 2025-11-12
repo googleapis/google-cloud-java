@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Manages versions of a service.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/appengine/v1/appengine.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class VersionsGrpc {
 
@@ -562,8 +559,8 @@ public final class VersionsGrpc {
      * </pre>
      */
     public com.google.appengine.v1.ListVersionsResponse listVersions(
-        com.google.appengine.v1.ListVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.appengine.v1.ListVersionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListVersionsMethod(), getCallOptions(), request);
     }
 
@@ -577,8 +574,8 @@ public final class VersionsGrpc {
      * </pre>
      */
     public com.google.appengine.v1.Version getVersion(
-        com.google.appengine.v1.GetVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.appengine.v1.GetVersionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetVersionMethod(), getCallOptions(), request);
     }
 
@@ -590,8 +587,8 @@ public final class VersionsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createVersion(
-        com.google.appengine.v1.CreateVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.appengine.v1.CreateVersionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateVersionMethod(), getCallOptions(), request);
     }
 
@@ -626,8 +623,8 @@ public final class VersionsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateVersion(
-        com.google.appengine.v1.UpdateVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.appengine.v1.UpdateVersionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateVersionMethod(), getCallOptions(), request);
     }
 
@@ -639,8 +636,8 @@ public final class VersionsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteVersion(
-        com.google.appengine.v1.DeleteVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.appengine.v1.DeleteVersionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteVersionMethod(), getCallOptions(), request);
     }
   }

@@ -38,9 +38,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *     * at least one of latitude and longitude must be non-zero.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/maps/routeoptimization/v1/route_optimization_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class RouteOptimizationGrpc {
 
@@ -692,8 +689,9 @@ public final class RouteOptimizationGrpc {
      * </pre>
      */
     public com.google.maps.routeoptimization.v1.OptimizeToursResponse optimizeTours(
-        com.google.maps.routeoptimization.v1.OptimizeToursRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.routeoptimization.v1.OptimizeToursRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getOptimizeToursMethod(), getCallOptions(), request);
     }
 
@@ -722,8 +720,9 @@ public final class RouteOptimizationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation batchOptimizeTours(
-        com.google.maps.routeoptimization.v1.BatchOptimizeToursRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.routeoptimization.v1.BatchOptimizeToursRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchOptimizeToursMethod(), getCallOptions(), request);
     }
 
@@ -752,8 +751,9 @@ public final class RouteOptimizationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation optimizeToursLongRunning(
-        com.google.maps.routeoptimization.v1.OptimizeToursRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.routeoptimization.v1.OptimizeToursRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getOptimizeToursLongRunningMethod(), getCallOptions(), request);
     }
 
@@ -787,8 +787,9 @@ public final class RouteOptimizationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation optimizeToursUri(
-        com.google.maps.routeoptimization.v1.OptimizeToursUriRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.routeoptimization.v1.OptimizeToursUriRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getOptimizeToursUriMethod(), getCallOptions(), request);
     }
   }

@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * `regions` resource and API to manage regions definitions.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/inventories/v1/regionalinventory.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class RegionalInventoryServiceGrpc {
 
@@ -461,8 +458,9 @@ public final class RegionalInventoryServiceGrpc {
      */
     public com.google.shopping.merchant.inventories.v1.ListRegionalInventoriesResponse
         listRegionalInventories(
-            com.google.shopping.merchant.inventories.v1.ListRegionalInventoriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.shopping.merchant.inventories.v1.ListRegionalInventoriesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRegionalInventoriesMethod(), getCallOptions(), request);
     }
 
@@ -480,8 +478,9 @@ public final class RegionalInventoryServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.inventories.v1.RegionalInventory insertRegionalInventory(
-        com.google.shopping.merchant.inventories.v1.InsertRegionalInventoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.inventories.v1.InsertRegionalInventoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getInsertRegionalInventoryMethod(), getCallOptions(), request);
     }
 
@@ -497,8 +496,9 @@ public final class RegionalInventoryServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteRegionalInventory(
-        com.google.shopping.merchant.inventories.v1.DeleteRegionalInventoryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.inventories.v1.DeleteRegionalInventoryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteRegionalInventoryMethod(), getCallOptions(), request);
     }
   }

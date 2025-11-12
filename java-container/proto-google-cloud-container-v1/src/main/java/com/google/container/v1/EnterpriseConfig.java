@@ -24,10 +24,14 @@ package com.google.container.v1;
  *
  * <pre>
  * EnterpriseConfig is the cluster enterprise configuration.
+ *
+ * Deprecated: GKE Enterprise features are now available without an Enterprise
+ * tier.
  * </pre>
  *
  * Protobuf type {@code google.container.v1.EnterpriseConfig}
  */
+@java.lang.Deprecated
 public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.container.v1.EnterpriseConfig)
@@ -70,10 +74,14 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Premium tiers for GKE Cluster.
+   *
+   * Deprecated: GKE Enterprise features are now available without an Enterprise
+   * tier.
    * </pre>
    *
    * Protobuf enum {@code google.container.v1.EnterpriseConfig.ClusterTier}
    */
+  @java.lang.Deprecated
   public enum ClusterTier implements com.google.protobuf.ProtocolMessageEnum {
     /**
      *
@@ -487,6 +495,9 @@ public final class EnterpriseConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * EnterpriseConfig is the cluster enterprise configuration.
+   *
+   * Deprecated: GKE Enterprise features are now available without an Enterprise
+   * tier.
    * </pre>
    *
    * Protobuf type {@code google.container.v1.EnterpriseConfig}

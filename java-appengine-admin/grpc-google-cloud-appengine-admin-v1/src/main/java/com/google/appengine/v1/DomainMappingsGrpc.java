@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Manages domains serving an application.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/appengine/v1/appengine.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DomainMappingsGrpc {
 
@@ -552,8 +549,8 @@ public final class DomainMappingsGrpc {
      * </pre>
      */
     public com.google.appengine.v1.ListDomainMappingsResponse listDomainMappings(
-        com.google.appengine.v1.ListDomainMappingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.appengine.v1.ListDomainMappingsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDomainMappingsMethod(), getCallOptions(), request);
     }
 
@@ -565,8 +562,8 @@ public final class DomainMappingsGrpc {
      * </pre>
      */
     public com.google.appengine.v1.DomainMapping getDomainMapping(
-        com.google.appengine.v1.GetDomainMappingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.appengine.v1.GetDomainMappingRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDomainMappingMethod(), getCallOptions(), request);
     }
 
@@ -580,8 +577,8 @@ public final class DomainMappingsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createDomainMapping(
-        com.google.appengine.v1.CreateDomainMappingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.appengine.v1.CreateDomainMappingRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDomainMappingMethod(), getCallOptions(), request);
     }
 
@@ -596,8 +593,8 @@ public final class DomainMappingsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateDomainMapping(
-        com.google.appengine.v1.UpdateDomainMappingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.appengine.v1.UpdateDomainMappingRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDomainMappingMethod(), getCallOptions(), request);
     }
 
@@ -611,8 +608,8 @@ public final class DomainMappingsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteDomainMapping(
-        com.google.appengine.v1.DeleteDomainMappingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.appengine.v1.DeleteDomainMappingRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDomainMappingMethod(), getCallOptions(), request);
     }
   }

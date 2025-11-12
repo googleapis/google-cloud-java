@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for interacting with Cloud Workstations.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/workstations/v1beta/workstations.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class WorkstationsGrpc {
 
@@ -1765,8 +1762,9 @@ public final class WorkstationsGrpc {
      * </pre>
      */
     public com.google.cloud.workstations.v1beta.WorkstationCluster getWorkstationCluster(
-        com.google.cloud.workstations.v1beta.GetWorkstationClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.workstations.v1beta.GetWorkstationClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetWorkstationClusterMethod(), getCallOptions(), request);
     }
 
@@ -1779,8 +1777,9 @@ public final class WorkstationsGrpc {
      */
     public com.google.cloud.workstations.v1beta.ListWorkstationClustersResponse
         listWorkstationClusters(
-            com.google.cloud.workstations.v1beta.ListWorkstationClustersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.workstations.v1beta.ListWorkstationClustersRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListWorkstationClustersMethod(), getCallOptions(), request);
     }
 
@@ -1792,8 +1791,9 @@ public final class WorkstationsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createWorkstationCluster(
-        com.google.cloud.workstations.v1beta.CreateWorkstationClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.workstations.v1beta.CreateWorkstationClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateWorkstationClusterMethod(), getCallOptions(), request);
     }
 
@@ -1805,8 +1805,9 @@ public final class WorkstationsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateWorkstationCluster(
-        com.google.cloud.workstations.v1beta.UpdateWorkstationClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.workstations.v1beta.UpdateWorkstationClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateWorkstationClusterMethod(), getCallOptions(), request);
     }
 
@@ -1818,8 +1819,9 @@ public final class WorkstationsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteWorkstationCluster(
-        com.google.cloud.workstations.v1beta.DeleteWorkstationClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.workstations.v1beta.DeleteWorkstationClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteWorkstationClusterMethod(), getCallOptions(), request);
     }
 
@@ -1831,8 +1833,9 @@ public final class WorkstationsGrpc {
      * </pre>
      */
     public com.google.cloud.workstations.v1beta.WorkstationConfig getWorkstationConfig(
-        com.google.cloud.workstations.v1beta.GetWorkstationConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.workstations.v1beta.GetWorkstationConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetWorkstationConfigMethod(), getCallOptions(), request);
     }
 
@@ -1845,8 +1848,9 @@ public final class WorkstationsGrpc {
      */
     public com.google.cloud.workstations.v1beta.ListWorkstationConfigsResponse
         listWorkstationConfigs(
-            com.google.cloud.workstations.v1beta.ListWorkstationConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.workstations.v1beta.ListWorkstationConfigsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListWorkstationConfigsMethod(), getCallOptions(), request);
     }
 
@@ -1860,8 +1864,9 @@ public final class WorkstationsGrpc {
      */
     public com.google.cloud.workstations.v1beta.ListUsableWorkstationConfigsResponse
         listUsableWorkstationConfigs(
-            com.google.cloud.workstations.v1beta.ListUsableWorkstationConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.workstations.v1beta.ListUsableWorkstationConfigsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListUsableWorkstationConfigsMethod(), getCallOptions(), request);
     }
 
@@ -1873,8 +1878,9 @@ public final class WorkstationsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createWorkstationConfig(
-        com.google.cloud.workstations.v1beta.CreateWorkstationConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.workstations.v1beta.CreateWorkstationConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateWorkstationConfigMethod(), getCallOptions(), request);
     }
 
@@ -1886,8 +1892,9 @@ public final class WorkstationsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateWorkstationConfig(
-        com.google.cloud.workstations.v1beta.UpdateWorkstationConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.workstations.v1beta.UpdateWorkstationConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateWorkstationConfigMethod(), getCallOptions(), request);
     }
 
@@ -1899,8 +1906,9 @@ public final class WorkstationsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteWorkstationConfig(
-        com.google.cloud.workstations.v1beta.DeleteWorkstationConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.workstations.v1beta.DeleteWorkstationConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteWorkstationConfigMethod(), getCallOptions(), request);
     }
 
@@ -1912,8 +1920,9 @@ public final class WorkstationsGrpc {
      * </pre>
      */
     public com.google.cloud.workstations.v1beta.Workstation getWorkstation(
-        com.google.cloud.workstations.v1beta.GetWorkstationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.workstations.v1beta.GetWorkstationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetWorkstationMethod(), getCallOptions(), request);
     }
 
@@ -1925,8 +1934,9 @@ public final class WorkstationsGrpc {
      * </pre>
      */
     public com.google.cloud.workstations.v1beta.ListWorkstationsResponse listWorkstations(
-        com.google.cloud.workstations.v1beta.ListWorkstationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.workstations.v1beta.ListWorkstationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListWorkstationsMethod(), getCallOptions(), request);
     }
 
@@ -1940,8 +1950,9 @@ public final class WorkstationsGrpc {
      */
     public com.google.cloud.workstations.v1beta.ListUsableWorkstationsResponse
         listUsableWorkstations(
-            com.google.cloud.workstations.v1beta.ListUsableWorkstationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.workstations.v1beta.ListUsableWorkstationsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListUsableWorkstationsMethod(), getCallOptions(), request);
     }
 
@@ -1953,8 +1964,9 @@ public final class WorkstationsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createWorkstation(
-        com.google.cloud.workstations.v1beta.CreateWorkstationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.workstations.v1beta.CreateWorkstationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateWorkstationMethod(), getCallOptions(), request);
     }
 
@@ -1966,8 +1978,9 @@ public final class WorkstationsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateWorkstation(
-        com.google.cloud.workstations.v1beta.UpdateWorkstationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.workstations.v1beta.UpdateWorkstationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateWorkstationMethod(), getCallOptions(), request);
     }
 
@@ -1979,8 +1992,9 @@ public final class WorkstationsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteWorkstation(
-        com.google.cloud.workstations.v1beta.DeleteWorkstationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.workstations.v1beta.DeleteWorkstationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteWorkstationMethod(), getCallOptions(), request);
     }
 
@@ -1992,8 +2006,9 @@ public final class WorkstationsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation startWorkstation(
-        com.google.cloud.workstations.v1beta.StartWorkstationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.workstations.v1beta.StartWorkstationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getStartWorkstationMethod(), getCallOptions(), request);
     }
 
@@ -2005,8 +2020,9 @@ public final class WorkstationsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation stopWorkstation(
-        com.google.cloud.workstations.v1beta.StopWorkstationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.workstations.v1beta.StopWorkstationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getStopWorkstationMethod(), getCallOptions(), request);
     }
 
@@ -2019,8 +2035,9 @@ public final class WorkstationsGrpc {
      * </pre>
      */
     public com.google.cloud.workstations.v1beta.GenerateAccessTokenResponse generateAccessToken(
-        com.google.cloud.workstations.v1beta.GenerateAccessTokenRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.workstations.v1beta.GenerateAccessTokenRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateAccessTokenMethod(), getCallOptions(), request);
     }
   }

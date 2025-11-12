@@ -450,4 +450,54 @@ public interface LinuxNodeConfigOrBuilder
    * @return The transparentHugepageDefrag.
    */
   com.google.container.v1.LinuxNodeConfig.TransparentHugepageDefrag getTransparentHugepageDefrag();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for kernel module loading on nodes.
+   * When enabled, the node pool will be provisioned with a Container-Optimized
+   * OS image that enforces kernel module signature verification.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading node_kernel_module_loading = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the nodeKernelModuleLoading field is set.
+   */
+  boolean hasNodeKernelModuleLoading();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for kernel module loading on nodes.
+   * When enabled, the node pool will be provisioned with a Container-Optimized
+   * OS image that enforces kernel module signature verification.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading node_kernel_module_loading = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The nodeKernelModuleLoading.
+   */
+  com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading getNodeKernelModuleLoading();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for kernel module loading on nodes.
+   * When enabled, the node pool will be provisioned with a Container-Optimized
+   * OS image that enforces kernel module signature verification.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.LinuxNodeConfig.NodeKernelModuleLoading node_kernel_module_loading = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1.LinuxNodeConfig.NodeKernelModuleLoadingOrBuilder
+      getNodeKernelModuleLoadingOrBuilder();
 }

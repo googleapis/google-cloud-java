@@ -40,6 +40,9 @@
             "FetchBackupPlanAssociationsForResourceType": {
               "methods": ["fetchBackupPlanAssociationsForResourceType", "fetchBackupPlanAssociationsForResourceType", "fetchBackupPlanAssociationsForResourceType", "fetchBackupPlanAssociationsForResourceTypePagedCallable", "fetchBackupPlanAssociationsForResourceTypeCallable"]
             },
+            "FetchBackupsForResourceType": {
+              "methods": ["fetchBackupsForResourceType", "fetchBackupsForResourceType", "fetchBackupsForResourceType", "fetchBackupsForResourceTypePagedCallable", "fetchBackupsForResourceTypeCallable"]
+            },
             "FetchDataSourceReferencesForResourceType": {
               "methods": ["fetchDataSourceReferencesForResourceType", "fetchDataSourceReferencesForResourceType", "fetchDataSourceReferencesForResourceType", "fetchDataSourceReferencesForResourceTypePagedCallable", "fetchDataSourceReferencesForResourceTypeCallable"]
             },
@@ -93,6 +96,9 @@
             },
             "ListBackups": {
               "methods": ["listBackups", "listBackups", "listBackups", "listBackupsPagedCallable", "listBackupsCallable"]
+            },
+            "ListDataSourceReferences": {
+              "methods": ["listDataSourceReferences", "listDataSourceReferences", "listDataSourceReferences", "listDataSourceReferencesPagedCallable", "listDataSourceReferencesCallable"]
             },
             "ListDataSources": {
               "methods": ["listDataSources", "listDataSources", "listDataSources", "listDataSourcesPagedCallable", "listDataSourcesCallable"]

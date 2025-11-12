@@ -34,9 +34,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * from the infrastructure.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/monitoring/v3/group_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class GroupServiceGrpc {
 
@@ -636,8 +633,8 @@ public final class GroupServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.ListGroupsResponse listGroups(
-        com.google.monitoring.v3.ListGroupsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.ListGroupsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListGroupsMethod(), getCallOptions(), request);
     }
 
@@ -648,9 +645,9 @@ public final class GroupServiceGrpc {
      * Gets a single group.
      * </pre>
      */
-    public com.google.monitoring.v3.Group getGroup(
-        com.google.monitoring.v3.GetGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.monitoring.v3.Group getGroup(com.google.monitoring.v3.GetGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetGroupMethod(), getCallOptions(), request);
     }
 
@@ -662,8 +659,8 @@ public final class GroupServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.Group createGroup(
-        com.google.monitoring.v3.CreateGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.CreateGroupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateGroupMethod(), getCallOptions(), request);
     }
 
@@ -676,8 +673,8 @@ public final class GroupServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.Group updateGroup(
-        com.google.monitoring.v3.UpdateGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.UpdateGroupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateGroupMethod(), getCallOptions(), request);
     }
 
@@ -689,8 +686,8 @@ public final class GroupServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteGroup(
-        com.google.monitoring.v3.DeleteGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.DeleteGroupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteGroupMethod(), getCallOptions(), request);
     }
 
@@ -702,8 +699,8 @@ public final class GroupServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.ListGroupMembersResponse listGroupMembers(
-        com.google.monitoring.v3.ListGroupMembersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.ListGroupMembersRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListGroupMembersMethod(), getCallOptions(), request);
     }
   }

@@ -35,9 +35,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * * `projects/my-memcached-project/locations/us-central1/instances/my-memcached`
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/memcache/v1beta2/cloud_memcache.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CloudMemcacheGrpc {
 
@@ -909,8 +906,9 @@ public final class CloudMemcacheGrpc {
      * </pre>
      */
     public com.google.cloud.memcache.v1beta2.ListInstancesResponse listInstances(
-        com.google.cloud.memcache.v1beta2.ListInstancesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.memcache.v1beta2.ListInstancesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListInstancesMethod(), getCallOptions(), request);
     }
 
@@ -922,8 +920,9 @@ public final class CloudMemcacheGrpc {
      * </pre>
      */
     public com.google.cloud.memcache.v1beta2.Instance getInstance(
-        com.google.cloud.memcache.v1beta2.GetInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.memcache.v1beta2.GetInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetInstanceMethod(), getCallOptions(), request);
     }
 
@@ -935,8 +934,9 @@ public final class CloudMemcacheGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createInstance(
-        com.google.cloud.memcache.v1beta2.CreateInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.memcache.v1beta2.CreateInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateInstanceMethod(), getCallOptions(), request);
     }
 
@@ -948,8 +948,9 @@ public final class CloudMemcacheGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateInstance(
-        com.google.cloud.memcache.v1beta2.UpdateInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.memcache.v1beta2.UpdateInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateInstanceMethod(), getCallOptions(), request);
     }
 
@@ -964,8 +965,9 @@ public final class CloudMemcacheGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateParameters(
-        com.google.cloud.memcache.v1beta2.UpdateParametersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.memcache.v1beta2.UpdateParametersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateParametersMethod(), getCallOptions(), request);
     }
 
@@ -977,8 +979,9 @@ public final class CloudMemcacheGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteInstance(
-        com.google.cloud.memcache.v1beta2.DeleteInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.memcache.v1beta2.DeleteInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteInstanceMethod(), getCallOptions(), request);
     }
 
@@ -991,8 +994,9 @@ public final class CloudMemcacheGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation applyParameters(
-        com.google.cloud.memcache.v1beta2.ApplyParametersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.memcache.v1beta2.ApplyParametersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getApplyParametersMethod(), getCallOptions(), request);
     }
 
@@ -1004,8 +1008,9 @@ public final class CloudMemcacheGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation applySoftwareUpdate(
-        com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getApplySoftwareUpdateMethod(), getCallOptions(), request);
     }
 
@@ -1017,8 +1022,9 @@ public final class CloudMemcacheGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation rescheduleMaintenance(
-        com.google.cloud.memcache.v1beta2.RescheduleMaintenanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.memcache.v1beta2.RescheduleMaintenanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRescheduleMaintenanceMethod(), getCallOptions(), request);
     }
   }

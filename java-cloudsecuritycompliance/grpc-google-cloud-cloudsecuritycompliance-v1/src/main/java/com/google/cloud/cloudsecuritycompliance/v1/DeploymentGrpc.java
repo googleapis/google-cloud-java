@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Cloud Controls on a target resource.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/cloudsecuritycompliance/v1/deployment.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DeploymentGrpc {
 
@@ -416,7 +413,10 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Creates a new FrameworkDeployment in a given parent resource.
+     * Creates a framework deployment in a given parent resource. A
+     * framework deployment lets you assign a particular framework version to an
+     * organization, folder, or project so that you can control and monitor
+     * those resources using the framework's cloud controls.
      * </pre>
      */
     default void createFrameworkDeployment(
@@ -430,7 +430,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Deletes a single FrameworkDeployment.
+     * Deletes a framework deployment.
      * </pre>
      */
     default void deleteFrameworkDeployment(
@@ -444,7 +444,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Gets details of a single FrameworkDeployment.
+     * Gets details about a framework deployment.
      * </pre>
      */
     default void getFrameworkDeployment(
@@ -459,7 +459,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Lists FrameworkDeployments in a given parent resource.
+     * Lists the framework deployments in a given parent resource.
      * </pre>
      */
     default void listFrameworkDeployments(
@@ -475,7 +475,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Gets details of a single CloudControlDeployment.
+     * Gets details about a cloud control deployment.
      * </pre>
      */
     default void getCloudControlDeployment(
@@ -491,7 +491,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Lists CloudControlDeployments in a given parent resource.
+     * Lists the cloud conrol deployments in a given parent resource.
      * </pre>
      */
     default void listCloudControlDeployments(
@@ -542,7 +542,10 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Creates a new FrameworkDeployment in a given parent resource.
+     * Creates a framework deployment in a given parent resource. A
+     * framework deployment lets you assign a particular framework version to an
+     * organization, folder, or project so that you can control and monitor
+     * those resources using the framework's cloud controls.
      * </pre>
      */
     public void createFrameworkDeployment(
@@ -558,7 +561,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Deletes a single FrameworkDeployment.
+     * Deletes a framework deployment.
      * </pre>
      */
     public void deleteFrameworkDeployment(
@@ -574,7 +577,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Gets details of a single FrameworkDeployment.
+     * Gets details about a framework deployment.
      * </pre>
      */
     public void getFrameworkDeployment(
@@ -591,7 +594,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Lists FrameworkDeployments in a given parent resource.
+     * Lists the framework deployments in a given parent resource.
      * </pre>
      */
     public void listFrameworkDeployments(
@@ -609,7 +612,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Gets details of a single CloudControlDeployment.
+     * Gets details about a cloud control deployment.
      * </pre>
      */
     public void getCloudControlDeployment(
@@ -627,7 +630,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Lists CloudControlDeployments in a given parent resource.
+     * Lists the cloud conrol deployments in a given parent resource.
      * </pre>
      */
     public void listCloudControlDeployments(
@@ -666,12 +669,16 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Creates a new FrameworkDeployment in a given parent resource.
+     * Creates a framework deployment in a given parent resource. A
+     * framework deployment lets you assign a particular framework version to an
+     * organization, folder, or project so that you can control and monitor
+     * those resources using the framework's cloud controls.
      * </pre>
      */
     public com.google.longrunning.Operation createFrameworkDeployment(
-        com.google.cloud.cloudsecuritycompliance.v1.CreateFrameworkDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudsecuritycompliance.v1.CreateFrameworkDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateFrameworkDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -679,12 +686,13 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Deletes a single FrameworkDeployment.
+     * Deletes a framework deployment.
      * </pre>
      */
     public com.google.longrunning.Operation deleteFrameworkDeployment(
-        com.google.cloud.cloudsecuritycompliance.v1.DeleteFrameworkDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudsecuritycompliance.v1.DeleteFrameworkDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteFrameworkDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -692,12 +700,13 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Gets details of a single FrameworkDeployment.
+     * Gets details about a framework deployment.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.FrameworkDeployment getFrameworkDeployment(
-        com.google.cloud.cloudsecuritycompliance.v1.GetFrameworkDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.cloudsecuritycompliance.v1.GetFrameworkDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetFrameworkDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -705,13 +714,14 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Lists FrameworkDeployments in a given parent resource.
+     * Lists the framework deployments in a given parent resource.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.ListFrameworkDeploymentsResponse
         listFrameworkDeployments(
-            com.google.cloud.cloudsecuritycompliance.v1.ListFrameworkDeploymentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.cloudsecuritycompliance.v1.ListFrameworkDeploymentsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListFrameworkDeploymentsMethod(), getCallOptions(), request);
     }
 
@@ -719,13 +729,14 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Gets details of a single CloudControlDeployment.
+     * Gets details about a cloud control deployment.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment
         getCloudControlDeployment(
-            com.google.cloud.cloudsecuritycompliance.v1.GetCloudControlDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.cloudsecuritycompliance.v1.GetCloudControlDeploymentRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCloudControlDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -733,14 +744,14 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Lists CloudControlDeployments in a given parent resource.
+     * Lists the cloud conrol deployments in a given parent resource.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.ListCloudControlDeploymentsResponse
         listCloudControlDeployments(
-            com.google.cloud.cloudsecuritycompliance.v1.ListCloudControlDeploymentsRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.cloudsecuritycompliance.v1.ListCloudControlDeploymentsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCloudControlDeploymentsMethod(), getCallOptions(), request);
     }
   }
@@ -769,7 +780,10 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Creates a new FrameworkDeployment in a given parent resource.
+     * Creates a framework deployment in a given parent resource. A
+     * framework deployment lets you assign a particular framework version to an
+     * organization, folder, or project so that you can control and monitor
+     * those resources using the framework's cloud controls.
      * </pre>
      */
     public com.google.longrunning.Operation createFrameworkDeployment(
@@ -782,7 +796,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Deletes a single FrameworkDeployment.
+     * Deletes a framework deployment.
      * </pre>
      */
     public com.google.longrunning.Operation deleteFrameworkDeployment(
@@ -795,7 +809,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Gets details of a single FrameworkDeployment.
+     * Gets details about a framework deployment.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.FrameworkDeployment getFrameworkDeployment(
@@ -808,7 +822,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Lists FrameworkDeployments in a given parent resource.
+     * Lists the framework deployments in a given parent resource.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.ListFrameworkDeploymentsResponse
@@ -822,7 +836,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Gets details of a single CloudControlDeployment.
+     * Gets details about a cloud control deployment.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment
@@ -836,7 +850,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Lists CloudControlDeployments in a given parent resource.
+     * Lists the cloud conrol deployments in a given parent resource.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.ListCloudControlDeploymentsResponse
@@ -871,7 +885,10 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Creates a new FrameworkDeployment in a given parent resource.
+     * Creates a framework deployment in a given parent resource. A
+     * framework deployment lets you assign a particular framework version to an
+     * organization, folder, or project so that you can control and monitor
+     * those resources using the framework's cloud controls.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -885,7 +902,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Deletes a single FrameworkDeployment.
+     * Deletes a framework deployment.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -899,7 +916,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Gets details of a single FrameworkDeployment.
+     * Gets details about a framework deployment.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -914,7 +931,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Lists FrameworkDeployments in a given parent resource.
+     * Lists the framework deployments in a given parent resource.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -929,7 +946,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Gets details of a single CloudControlDeployment.
+     * Gets details about a cloud control deployment.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -944,7 +961,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Lists CloudControlDeployments in a given parent resource.
+     * Lists the cloud conrol deployments in a given parent resource.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * The service for CrossNetworkAutomation resources.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/networkconnectivity/v1/cross_network_automation.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CrossNetworkAutomationServiceGrpc {
 
@@ -1685,8 +1682,9 @@ public final class CrossNetworkAutomationServiceGrpc {
      */
     public com.google.cloud.networkconnectivity.v1.ListServiceConnectionMapsResponse
         listServiceConnectionMaps(
-            com.google.cloud.networkconnectivity.v1.ListServiceConnectionMapsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.networkconnectivity.v1.ListServiceConnectionMapsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListServiceConnectionMapsMethod(), getCallOptions(), request);
     }
 
@@ -1698,8 +1696,9 @@ public final class CrossNetworkAutomationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.networkconnectivity.v1.ServiceConnectionMap getServiceConnectionMap(
-        com.google.cloud.networkconnectivity.v1.GetServiceConnectionMapRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkconnectivity.v1.GetServiceConnectionMapRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetServiceConnectionMapMethod(), getCallOptions(), request);
     }
 
@@ -1711,8 +1710,9 @@ public final class CrossNetworkAutomationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createServiceConnectionMap(
-        com.google.cloud.networkconnectivity.v1.CreateServiceConnectionMapRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkconnectivity.v1.CreateServiceConnectionMapRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateServiceConnectionMapMethod(), getCallOptions(), request);
     }
 
@@ -1724,8 +1724,9 @@ public final class CrossNetworkAutomationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateServiceConnectionMap(
-        com.google.cloud.networkconnectivity.v1.UpdateServiceConnectionMapRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkconnectivity.v1.UpdateServiceConnectionMapRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateServiceConnectionMapMethod(), getCallOptions(), request);
     }
 
@@ -1737,8 +1738,9 @@ public final class CrossNetworkAutomationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteServiceConnectionMap(
-        com.google.cloud.networkconnectivity.v1.DeleteServiceConnectionMapRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkconnectivity.v1.DeleteServiceConnectionMapRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteServiceConnectionMapMethod(), getCallOptions(), request);
     }
 
@@ -1751,8 +1753,9 @@ public final class CrossNetworkAutomationServiceGrpc {
      */
     public com.google.cloud.networkconnectivity.v1.ListServiceConnectionPoliciesResponse
         listServiceConnectionPolicies(
-            com.google.cloud.networkconnectivity.v1.ListServiceConnectionPoliciesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.networkconnectivity.v1.ListServiceConnectionPoliciesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListServiceConnectionPoliciesMethod(), getCallOptions(), request);
     }
 
@@ -1765,8 +1768,9 @@ public final class CrossNetworkAutomationServiceGrpc {
      */
     public com.google.cloud.networkconnectivity.v1.ServiceConnectionPolicy
         getServiceConnectionPolicy(
-            com.google.cloud.networkconnectivity.v1.GetServiceConnectionPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.networkconnectivity.v1.GetServiceConnectionPolicyRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetServiceConnectionPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1778,8 +1782,9 @@ public final class CrossNetworkAutomationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createServiceConnectionPolicy(
-        com.google.cloud.networkconnectivity.v1.CreateServiceConnectionPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkconnectivity.v1.CreateServiceConnectionPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateServiceConnectionPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1791,8 +1796,9 @@ public final class CrossNetworkAutomationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateServiceConnectionPolicy(
-        com.google.cloud.networkconnectivity.v1.UpdateServiceConnectionPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkconnectivity.v1.UpdateServiceConnectionPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateServiceConnectionPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1804,8 +1810,9 @@ public final class CrossNetworkAutomationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteServiceConnectionPolicy(
-        com.google.cloud.networkconnectivity.v1.DeleteServiceConnectionPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkconnectivity.v1.DeleteServiceConnectionPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteServiceConnectionPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1817,8 +1824,9 @@ public final class CrossNetworkAutomationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.networkconnectivity.v1.ListServiceClassesResponse listServiceClasses(
-        com.google.cloud.networkconnectivity.v1.ListServiceClassesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkconnectivity.v1.ListServiceClassesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListServiceClassesMethod(), getCallOptions(), request);
     }
 
@@ -1830,8 +1838,9 @@ public final class CrossNetworkAutomationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.networkconnectivity.v1.ServiceClass getServiceClass(
-        com.google.cloud.networkconnectivity.v1.GetServiceClassRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkconnectivity.v1.GetServiceClassRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetServiceClassMethod(), getCallOptions(), request);
     }
 
@@ -1843,8 +1852,9 @@ public final class CrossNetworkAutomationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateServiceClass(
-        com.google.cloud.networkconnectivity.v1.UpdateServiceClassRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkconnectivity.v1.UpdateServiceClassRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateServiceClassMethod(), getCallOptions(), request);
     }
 
@@ -1856,8 +1866,9 @@ public final class CrossNetworkAutomationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteServiceClass(
-        com.google.cloud.networkconnectivity.v1.DeleteServiceClassRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkconnectivity.v1.DeleteServiceClassRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteServiceClassMethod(), getCallOptions(), request);
     }
 
@@ -1869,8 +1880,9 @@ public final class CrossNetworkAutomationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.networkconnectivity.v1.ServiceConnectionToken getServiceConnectionToken(
-        com.google.cloud.networkconnectivity.v1.GetServiceConnectionTokenRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkconnectivity.v1.GetServiceConnectionTokenRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetServiceConnectionTokenMethod(), getCallOptions(), request);
     }
 
@@ -1883,8 +1895,9 @@ public final class CrossNetworkAutomationServiceGrpc {
      */
     public com.google.cloud.networkconnectivity.v1.ListServiceConnectionTokensResponse
         listServiceConnectionTokens(
-            com.google.cloud.networkconnectivity.v1.ListServiceConnectionTokensRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.networkconnectivity.v1.ListServiceConnectionTokensRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListServiceConnectionTokensMethod(), getCallOptions(), request);
     }
 
@@ -1896,8 +1909,9 @@ public final class CrossNetworkAutomationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createServiceConnectionToken(
-        com.google.cloud.networkconnectivity.v1.CreateServiceConnectionTokenRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkconnectivity.v1.CreateServiceConnectionTokenRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateServiceConnectionTokenMethod(), getCallOptions(), request);
     }
 
@@ -1909,8 +1923,9 @@ public final class CrossNetworkAutomationServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteServiceConnectionToken(
-        com.google.cloud.networkconnectivity.v1.DeleteServiceConnectionTokenRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkconnectivity.v1.DeleteServiceConnectionTokenRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteServiceConnectionTokenMethod(), getCallOptions(), request);
     }
   }

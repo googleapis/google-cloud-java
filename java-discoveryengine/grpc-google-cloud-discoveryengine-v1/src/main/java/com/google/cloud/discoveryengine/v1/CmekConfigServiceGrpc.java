@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing CMEK related tasks
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1/cmek_config_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CmekConfigServiceGrpc {
 
@@ -484,8 +481,9 @@ public final class CmekConfigServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateCmekConfig(
-        com.google.cloud.discoveryengine.v1.UpdateCmekConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.UpdateCmekConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateCmekConfigMethod(), getCallOptions(), request);
     }
 
@@ -497,8 +495,9 @@ public final class CmekConfigServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1.CmekConfig getCmekConfig(
-        com.google.cloud.discoveryengine.v1.GetCmekConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.GetCmekConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCmekConfigMethod(), getCallOptions(), request);
     }
 
@@ -511,8 +510,9 @@ public final class CmekConfigServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1.ListCmekConfigsResponse listCmekConfigs(
-        com.google.cloud.discoveryengine.v1.ListCmekConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.ListCmekConfigsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCmekConfigsMethod(), getCallOptions(), request);
     }
 
@@ -524,8 +524,9 @@ public final class CmekConfigServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteCmekConfig(
-        com.google.cloud.discoveryengine.v1.DeleteCmekConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.DeleteCmekConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteCmekConfigMethod(), getCallOptions(), request);
     }
   }

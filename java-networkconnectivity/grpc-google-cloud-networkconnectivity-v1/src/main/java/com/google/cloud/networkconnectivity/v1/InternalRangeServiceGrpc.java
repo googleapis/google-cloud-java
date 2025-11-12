@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * operations within a VPC network.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/networkconnectivity/v1/internal_range.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class InternalRangeServiceGrpc {
 
@@ -569,8 +566,9 @@ public final class InternalRangeServiceGrpc {
      * </pre>
      */
     public com.google.cloud.networkconnectivity.v1.ListInternalRangesResponse listInternalRanges(
-        com.google.cloud.networkconnectivity.v1.ListInternalRangesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkconnectivity.v1.ListInternalRangesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListInternalRangesMethod(), getCallOptions(), request);
     }
 
@@ -582,8 +580,9 @@ public final class InternalRangeServiceGrpc {
      * </pre>
      */
     public com.google.cloud.networkconnectivity.v1.InternalRange getInternalRange(
-        com.google.cloud.networkconnectivity.v1.GetInternalRangeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkconnectivity.v1.GetInternalRangeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetInternalRangeMethod(), getCallOptions(), request);
     }
 
@@ -595,8 +594,9 @@ public final class InternalRangeServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createInternalRange(
-        com.google.cloud.networkconnectivity.v1.CreateInternalRangeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkconnectivity.v1.CreateInternalRangeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateInternalRangeMethod(), getCallOptions(), request);
     }
 
@@ -608,8 +608,9 @@ public final class InternalRangeServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateInternalRange(
-        com.google.cloud.networkconnectivity.v1.UpdateInternalRangeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkconnectivity.v1.UpdateInternalRangeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateInternalRangeMethod(), getCallOptions(), request);
     }
 
@@ -621,8 +622,9 @@ public final class InternalRangeServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteInternalRange(
-        com.google.cloud.networkconnectivity.v1.DeleteInternalRangeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.networkconnectivity.v1.DeleteInternalRangeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteInternalRangeMethod(), getCallOptions(), request);
     }
   }

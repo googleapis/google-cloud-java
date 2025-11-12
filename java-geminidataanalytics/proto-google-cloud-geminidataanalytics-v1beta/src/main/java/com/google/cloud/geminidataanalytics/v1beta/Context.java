@@ -42,6 +42,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
   private Context() {
     systemInstruction_ = "";
     exampleQueries_ = java.util.Collections.emptyList();
+    glossaryTerms_ = java.util.Collections.emptyList();
+    schemaRelationships_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -63,6 +65,3238 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.geminidataanalytics.v1beta.Context.class,
             com.google.cloud.geminidataanalytics.v1beta.Context.Builder.class);
+  }
+
+  public interface SchemaRelationshipOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * An ordered list of fields for the join from the first table.
+     * The size of this list must be the same as `right_schema_paths`.
+     * Each field at index i in this list must correspond to a field at the same
+     * index in the `right_schema_paths` list.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths left_schema_paths = 1;
+     * </code>
+     *
+     * @return Whether the leftSchemaPaths field is set.
+     */
+    boolean hasLeftSchemaPaths();
+
+    /**
+     *
+     *
+     * <pre>
+     * An ordered list of fields for the join from the first table.
+     * The size of this list must be the same as `right_schema_paths`.
+     * Each field at index i in this list must correspond to a field at the same
+     * index in the `right_schema_paths` list.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths left_schema_paths = 1;
+     * </code>
+     *
+     * @return The leftSchemaPaths.
+     */
+    com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+        getLeftSchemaPaths();
+
+    /**
+     *
+     *
+     * <pre>
+     * An ordered list of fields for the join from the first table.
+     * The size of this list must be the same as `right_schema_paths`.
+     * Each field at index i in this list must correspond to a field at the same
+     * index in the `right_schema_paths` list.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths left_schema_paths = 1;
+     * </code>
+     */
+    com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPathsOrBuilder
+        getLeftSchemaPathsOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * An ordered list of fields for the join from the second table.
+     * The size of this list must be the same as `left_schema_paths`.
+     * Each field at index i in this list must correspond to a field at the same
+     * index in the `left_schema_paths` list.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths right_schema_paths = 2;
+     * </code>
+     *
+     * @return Whether the rightSchemaPaths field is set.
+     */
+    boolean hasRightSchemaPaths();
+
+    /**
+     *
+     *
+     * <pre>
+     * An ordered list of fields for the join from the second table.
+     * The size of this list must be the same as `left_schema_paths`.
+     * Each field at index i in this list must correspond to a field at the same
+     * index in the `left_schema_paths` list.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths right_schema_paths = 2;
+     * </code>
+     *
+     * @return The rightSchemaPaths.
+     */
+    com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+        getRightSchemaPaths();
+
+    /**
+     *
+     *
+     * <pre>
+     * An ordered list of fields for the join from the second table.
+     * The size of this list must be the same as `left_schema_paths`.
+     * Each field at index i in this list must correspond to a field at the same
+     * index in the `left_schema_paths` list.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths right_schema_paths = 2;
+     * </code>
+     */
+    com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPathsOrBuilder
+        getRightSchemaPathsOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Sources which generated the schema relation edge.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+     * </code>
+     *
+     * @return A list containing the sources.
+     */
+    java.util.List<com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source>
+        getSourcesList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Sources which generated the schema relation edge.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+     * </code>
+     *
+     * @return The count of sources.
+     */
+    int getSourcesCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Sources which generated the schema relation edge.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The sources at the given index.
+     */
+    com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source getSources(
+        int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Sources which generated the schema relation edge.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for sources.
+     */
+    java.util.List<java.lang.Integer> getSourcesValueList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Sources which generated the schema relation edge.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of sources at the given index.
+     */
+    int getSourcesValue(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * A confidence score for the suggested relationship.
+     * Manually added edges have the highest confidence score.
+     * </pre>
+     *
+     * <code>float confidence_score = 4;</code>
+     *
+     * @return The confidenceScore.
+     */
+    float getConfidenceScore();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The relationship between two tables, including referencing and referenced
+   * columns. This is a derived context retrieved from Dataplex Dataset
+   * Insights.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship}
+   */
+  public static final class SchemaRelationship extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship)
+      SchemaRelationshipOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use SchemaRelationship.newBuilder() to construct.
+    private SchemaRelationship(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SchemaRelationship() {
+      sources_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SchemaRelationship();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.geminidataanalytics.v1beta.ContextProto
+          .internal_static_google_cloud_geminidataanalytics_v1beta_Context_SchemaRelationship_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.geminidataanalytics.v1beta.ContextProto
+          .internal_static_google_cloud_geminidataanalytics_v1beta_Context_SchemaRelationship_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.class,
+              com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Source which generated the schema relation edge.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source}
+     */
+    public enum Source implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * The source of the schema relationship is unspecified.
+       * </pre>
+       *
+       * <code>SOURCE_UNSPECIFIED = 0;</code>
+       */
+      SOURCE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * The source of the schema relationship is BigQuery job history.
+       * </pre>
+       *
+       * <code>BIGQUERY_JOB_HISTORY = 1;</code>
+       */
+      BIGQUERY_JOB_HISTORY(1),
+      /**
+       *
+       *
+       * <pre>
+       * The source of the schema relationship is LLM suggested.
+       * </pre>
+       *
+       * <code>LLM_SUGGESTED = 2;</code>
+       */
+      LLM_SUGGESTED(2),
+      /**
+       *
+       *
+       * <pre>
+       * The source of the schema relationship is BigQuery table constraints.
+       * </pre>
+       *
+       * <code>BIGQUERY_TABLE_CONSTRAINTS = 3;</code>
+       */
+      BIGQUERY_TABLE_CONSTRAINTS(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * The source of the schema relationship is unspecified.
+       * </pre>
+       *
+       * <code>SOURCE_UNSPECIFIED = 0;</code>
+       */
+      public static final int SOURCE_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * The source of the schema relationship is BigQuery job history.
+       * </pre>
+       *
+       * <code>BIGQUERY_JOB_HISTORY = 1;</code>
+       */
+      public static final int BIGQUERY_JOB_HISTORY_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * The source of the schema relationship is LLM suggested.
+       * </pre>
+       *
+       * <code>LLM_SUGGESTED = 2;</code>
+       */
+      public static final int LLM_SUGGESTED_VALUE = 2;
+
+      /**
+       *
+       *
+       * <pre>
+       * The source of the schema relationship is BigQuery table constraints.
+       * </pre>
+       *
+       * <code>BIGQUERY_TABLE_CONSTRAINTS = 3;</code>
+       */
+      public static final int BIGQUERY_TABLE_CONSTRAINTS_VALUE = 3;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Source valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Source forNumber(int value) {
+        switch (value) {
+          case 0:
+            return SOURCE_UNSPECIFIED;
+          case 1:
+            return BIGQUERY_JOB_HISTORY;
+          case 2:
+            return LLM_SUGGESTED;
+          case 3:
+            return BIGQUERY_TABLE_CONSTRAINTS;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Source> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<Source> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Source>() {
+            public Source findValueByNumber(int number) {
+              return Source.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+            .getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final Source[] VALUES = values();
+
+      public static Source valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Source(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source)
+    }
+
+    public interface SchemaPathsOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The service-qualified full resource name of the table
+       * Ex:
+       * bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+       * </pre>
+       *
+       * <code>string table_fqn = 1;</code>
+       *
+       * @return The tableFqn.
+       */
+      java.lang.String getTableFqn();
+
+      /**
+       *
+       *
+       * <pre>
+       * The service-qualified full resource name of the table
+       * Ex:
+       * bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+       * </pre>
+       *
+       * <code>string table_fqn = 1;</code>
+       *
+       * @return The bytes for tableFqn.
+       */
+      com.google.protobuf.ByteString getTableFqnBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * The ordered list of paths within the table schema.
+       * </pre>
+       *
+       * <code>repeated string paths = 2;</code>
+       *
+       * @return A list containing the paths.
+       */
+      java.util.List<java.lang.String> getPathsList();
+
+      /**
+       *
+       *
+       * <pre>
+       * The ordered list of paths within the table schema.
+       * </pre>
+       *
+       * <code>repeated string paths = 2;</code>
+       *
+       * @return The count of paths.
+       */
+      int getPathsCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * The ordered list of paths within the table schema.
+       * </pre>
+       *
+       * <code>repeated string paths = 2;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The paths at the given index.
+       */
+      java.lang.String getPaths(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * The ordered list of paths within the table schema.
+       * </pre>
+       *
+       * <code>repeated string paths = 2;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the paths at the given index.
+       */
+      com.google.protobuf.ByteString getPathsBytes(int index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents an ordered set of paths within the table schema.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths}
+     */
+    public static final class SchemaPaths extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths)
+        SchemaPathsOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use SchemaPaths.newBuilder() to construct.
+      private SchemaPaths(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private SchemaPaths() {
+        tableFqn_ = "";
+        paths_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new SchemaPaths();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.geminidataanalytics.v1beta.ContextProto
+            .internal_static_google_cloud_geminidataanalytics_v1beta_Context_SchemaRelationship_SchemaPaths_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.geminidataanalytics.v1beta.ContextProto
+            .internal_static_google_cloud_geminidataanalytics_v1beta_Context_SchemaRelationship_SchemaPaths_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+                    .class,
+                com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+                    .Builder.class);
+      }
+
+      public static final int TABLE_FQN_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object tableFqn_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The service-qualified full resource name of the table
+       * Ex:
+       * bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+       * </pre>
+       *
+       * <code>string table_fqn = 1;</code>
+       *
+       * @return The tableFqn.
+       */
+      @java.lang.Override
+      public java.lang.String getTableFqn() {
+        java.lang.Object ref = tableFqn_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          tableFqn_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The service-qualified full resource name of the table
+       * Ex:
+       * bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+       * </pre>
+       *
+       * <code>string table_fqn = 1;</code>
+       *
+       * @return The bytes for tableFqn.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getTableFqnBytes() {
+        java.lang.Object ref = tableFqn_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          tableFqn_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int PATHS_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList paths_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      /**
+       *
+       *
+       * <pre>
+       * The ordered list of paths within the table schema.
+       * </pre>
+       *
+       * <code>repeated string paths = 2;</code>
+       *
+       * @return A list containing the paths.
+       */
+      public com.google.protobuf.ProtocolStringList getPathsList() {
+        return paths_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The ordered list of paths within the table schema.
+       * </pre>
+       *
+       * <code>repeated string paths = 2;</code>
+       *
+       * @return The count of paths.
+       */
+      public int getPathsCount() {
+        return paths_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The ordered list of paths within the table schema.
+       * </pre>
+       *
+       * <code>repeated string paths = 2;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The paths at the given index.
+       */
+      public java.lang.String getPaths(int index) {
+        return paths_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The ordered list of paths within the table schema.
+       * </pre>
+       *
+       * <code>repeated string paths = 2;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the paths at the given index.
+       */
+      public com.google.protobuf.ByteString getPathsBytes(int index) {
+        return paths_.getByteString(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableFqn_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tableFqn_);
+        }
+        for (int i = 0; i < paths_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, paths_.getRaw(i));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableFqn_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tableFqn_);
+        }
+        {
+          int dataSize = 0;
+          for (int i = 0; i < paths_.size(); i++) {
+            dataSize += computeStringSizeNoTag(paths_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getPathsList().size();
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths other =
+            (com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths)
+                obj;
+
+        if (!getTableFqn().equals(other.getTableFqn())) return false;
+        if (!getPathsList().equals(other.getPathsList())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + TABLE_FQN_FIELD_NUMBER;
+        hash = (53 * hash) + getTableFqn().hashCode();
+        if (getPathsCount() > 0) {
+          hash = (37 * hash) + PATHS_FIELD_NUMBER;
+          hash = (53 * hash) + getPathsList().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+              .SchemaPaths
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+              .SchemaPaths
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+              .SchemaPaths
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+              .SchemaPaths
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+              .SchemaPaths
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+              .SchemaPaths
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+              .SchemaPaths
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+              .SchemaPaths
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+              .SchemaPaths
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+              .SchemaPaths
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+              .SchemaPaths
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+              .SchemaPaths
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Represents an ordered set of paths within the table schema.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths)
+          com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+              .SchemaPathsOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.geminidataanalytics.v1beta.ContextProto
+              .internal_static_google_cloud_geminidataanalytics_v1beta_Context_SchemaRelationship_SchemaPaths_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.geminidataanalytics.v1beta.ContextProto
+              .internal_static_google_cloud_geminidataanalytics_v1beta_Context_SchemaRelationship_SchemaPaths_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+                      .class,
+                  com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          tableFqn_ = "";
+          paths_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.geminidataanalytics.v1beta.ContextProto
+              .internal_static_google_cloud_geminidataanalytics_v1beta_Context_SchemaRelationship_SchemaPaths_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+            getDefaultInstanceForType() {
+          return com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+            build() {
+          com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+            buildPartial() {
+          com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+              result =
+                  new com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+                      .SchemaPaths(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.tableFqn_ = tableFqn_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            paths_.makeImmutable();
+            result.paths_ = paths_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths) {
+            return mergeFrom(
+                (com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+                other) {
+          if (other
+              == com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+                  .getDefaultInstance()) return this;
+          if (!other.getTableFqn().isEmpty()) {
+            tableFqn_ = other.tableFqn_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (!other.paths_.isEmpty()) {
+            if (paths_.isEmpty()) {
+              paths_ = other.paths_;
+              bitField0_ |= 0x00000002;
+            } else {
+              ensurePathsIsMutable();
+              paths_.addAll(other.paths_);
+            }
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    tableFqn_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensurePathsIsMutable();
+                    paths_.add(s);
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object tableFqn_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * The service-qualified full resource name of the table
+         * Ex:
+         * bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+         * </pre>
+         *
+         * <code>string table_fqn = 1;</code>
+         *
+         * @return The tableFqn.
+         */
+        public java.lang.String getTableFqn() {
+          java.lang.Object ref = tableFqn_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            tableFqn_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The service-qualified full resource name of the table
+         * Ex:
+         * bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+         * </pre>
+         *
+         * <code>string table_fqn = 1;</code>
+         *
+         * @return The bytes for tableFqn.
+         */
+        public com.google.protobuf.ByteString getTableFqnBytes() {
+          java.lang.Object ref = tableFqn_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            tableFqn_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The service-qualified full resource name of the table
+         * Ex:
+         * bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+         * </pre>
+         *
+         * <code>string table_fqn = 1;</code>
+         *
+         * @param value The tableFqn to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTableFqn(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          tableFqn_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The service-qualified full resource name of the table
+         * Ex:
+         * bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+         * </pre>
+         *
+         * <code>string table_fqn = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearTableFqn() {
+          tableFqn_ = getDefaultInstance().getTableFqn();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The service-qualified full resource name of the table
+         * Ex:
+         * bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+         * </pre>
+         *
+         * <code>string table_fqn = 1;</code>
+         *
+         * @param value The bytes for tableFqn to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTableFqnBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          tableFqn_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.LazyStringArrayList paths_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensurePathsIsMutable() {
+          if (!paths_.isModifiable()) {
+            paths_ = new com.google.protobuf.LazyStringArrayList(paths_);
+          }
+          bitField0_ |= 0x00000002;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The ordered list of paths within the table schema.
+         * </pre>
+         *
+         * <code>repeated string paths = 2;</code>
+         *
+         * @return A list containing the paths.
+         */
+        public com.google.protobuf.ProtocolStringList getPathsList() {
+          paths_.makeImmutable();
+          return paths_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The ordered list of paths within the table schema.
+         * </pre>
+         *
+         * <code>repeated string paths = 2;</code>
+         *
+         * @return The count of paths.
+         */
+        public int getPathsCount() {
+          return paths_.size();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The ordered list of paths within the table schema.
+         * </pre>
+         *
+         * <code>repeated string paths = 2;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The paths at the given index.
+         */
+        public java.lang.String getPaths(int index) {
+          return paths_.get(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The ordered list of paths within the table schema.
+         * </pre>
+         *
+         * <code>repeated string paths = 2;</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the paths at the given index.
+         */
+        public com.google.protobuf.ByteString getPathsBytes(int index) {
+          return paths_.getByteString(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The ordered list of paths within the table schema.
+         * </pre>
+         *
+         * <code>repeated string paths = 2;</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The paths to set.
+         * @return This builder for chaining.
+         */
+        public Builder setPaths(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePathsIsMutable();
+          paths_.set(index, value);
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The ordered list of paths within the table schema.
+         * </pre>
+         *
+         * <code>repeated string paths = 2;</code>
+         *
+         * @param value The paths to add.
+         * @return This builder for chaining.
+         */
+        public Builder addPaths(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePathsIsMutable();
+          paths_.add(value);
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The ordered list of paths within the table schema.
+         * </pre>
+         *
+         * <code>repeated string paths = 2;</code>
+         *
+         * @param values The paths to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllPaths(java.lang.Iterable<java.lang.String> values) {
+          ensurePathsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, paths_);
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The ordered list of paths within the table schema.
+         * </pre>
+         *
+         * <code>repeated string paths = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearPaths() {
+          paths_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          ;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The ordered list of paths within the table schema.
+         * </pre>
+         *
+         * <code>repeated string paths = 2;</code>
+         *
+         * @param value The bytes of the paths to add.
+         * @return This builder for chaining.
+         */
+        public Builder addPathsBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensurePathsIsMutable();
+          paths_.add(value);
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths)
+      private static final com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+              .SchemaPaths
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+                .SchemaPaths();
+      }
+
+      public static com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+              .SchemaPaths
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<SchemaPaths> PARSER =
+          new com.google.protobuf.AbstractParser<SchemaPaths>() {
+            @java.lang.Override
+            public SchemaPaths parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<SchemaPaths> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<SchemaPaths> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
+    public static final int LEFT_SCHEMA_PATHS_FIELD_NUMBER = 1;
+    private com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+        leftSchemaPaths_;
+
+    /**
+     *
+     *
+     * <pre>
+     * An ordered list of fields for the join from the first table.
+     * The size of this list must be the same as `right_schema_paths`.
+     * Each field at index i in this list must correspond to a field at the same
+     * index in the `right_schema_paths` list.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths left_schema_paths = 1;
+     * </code>
+     *
+     * @return Whether the leftSchemaPaths field is set.
+     */
+    @java.lang.Override
+    public boolean hasLeftSchemaPaths() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An ordered list of fields for the join from the first table.
+     * The size of this list must be the same as `right_schema_paths`.
+     * Each field at index i in this list must correspond to a field at the same
+     * index in the `right_schema_paths` list.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths left_schema_paths = 1;
+     * </code>
+     *
+     * @return The leftSchemaPaths.
+     */
+    @java.lang.Override
+    public com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+        getLeftSchemaPaths() {
+      return leftSchemaPaths_ == null
+          ? com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+              .getDefaultInstance()
+          : leftSchemaPaths_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An ordered list of fields for the join from the first table.
+     * The size of this list must be the same as `right_schema_paths`.
+     * Each field at index i in this list must correspond to a field at the same
+     * index in the `right_schema_paths` list.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths left_schema_paths = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+            .SchemaPathsOrBuilder
+        getLeftSchemaPathsOrBuilder() {
+      return leftSchemaPaths_ == null
+          ? com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+              .getDefaultInstance()
+          : leftSchemaPaths_;
+    }
+
+    public static final int RIGHT_SCHEMA_PATHS_FIELD_NUMBER = 2;
+    private com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+        rightSchemaPaths_;
+
+    /**
+     *
+     *
+     * <pre>
+     * An ordered list of fields for the join from the second table.
+     * The size of this list must be the same as `left_schema_paths`.
+     * Each field at index i in this list must correspond to a field at the same
+     * index in the `left_schema_paths` list.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths right_schema_paths = 2;
+     * </code>
+     *
+     * @return Whether the rightSchemaPaths field is set.
+     */
+    @java.lang.Override
+    public boolean hasRightSchemaPaths() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An ordered list of fields for the join from the second table.
+     * The size of this list must be the same as `left_schema_paths`.
+     * Each field at index i in this list must correspond to a field at the same
+     * index in the `left_schema_paths` list.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths right_schema_paths = 2;
+     * </code>
+     *
+     * @return The rightSchemaPaths.
+     */
+    @java.lang.Override
+    public com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+        getRightSchemaPaths() {
+      return rightSchemaPaths_ == null
+          ? com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+              .getDefaultInstance()
+          : rightSchemaPaths_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An ordered list of fields for the join from the second table.
+     * The size of this list must be the same as `left_schema_paths`.
+     * Each field at index i in this list must correspond to a field at the same
+     * index in the `left_schema_paths` list.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths right_schema_paths = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+            .SchemaPathsOrBuilder
+        getRightSchemaPathsOrBuilder() {
+      return rightSchemaPaths_ == null
+          ? com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+              .getDefaultInstance()
+          : rightSchemaPaths_;
+    }
+
+    public static final int SOURCES_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private java.util.List<java.lang.Integer> sources_;
+
+    private static final com.google.protobuf.Internal.ListAdapter.Converter<
+            java.lang.Integer,
+            com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source>
+        sources_converter_ =
+            new com.google.protobuf.Internal.ListAdapter.Converter<
+                java.lang.Integer,
+                com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source>() {
+              public com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source
+                  convert(java.lang.Integer from) {
+                com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source
+                    result =
+                        com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+                            .Source.forNumber(from);
+                return result == null
+                    ? com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source
+                        .UNRECOGNIZED
+                    : result;
+              }
+            };
+
+    /**
+     *
+     *
+     * <pre>
+     * Sources which generated the schema relation edge.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+     * </code>
+     *
+     * @return A list containing the sources.
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source>
+        getSourcesList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer,
+          com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source>(
+          sources_, sources_converter_);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sources which generated the schema relation edge.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+     * </code>
+     *
+     * @return The count of sources.
+     */
+    @java.lang.Override
+    public int getSourcesCount() {
+      return sources_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sources which generated the schema relation edge.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The sources at the given index.
+     */
+    @java.lang.Override
+    public com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source getSources(
+        int index) {
+      return sources_converter_.convert(sources_.get(index));
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sources which generated the schema relation edge.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for sources.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer> getSourcesValueList() {
+      return sources_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sources which generated the schema relation edge.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of sources at the given index.
+     */
+    @java.lang.Override
+    public int getSourcesValue(int index) {
+      return sources_.get(index);
+    }
+
+    private int sourcesMemoizedSerializedSize;
+
+    public static final int CONFIDENCE_SCORE_FIELD_NUMBER = 4;
+    private float confidenceScore_ = 0F;
+
+    /**
+     *
+     *
+     * <pre>
+     * A confidence score for the suggested relationship.
+     * Manually added edges have the highest confidence score.
+     * </pre>
+     *
+     * <code>float confidence_score = 4;</code>
+     *
+     * @return The confidenceScore.
+     */
+    @java.lang.Override
+    public float getConfidenceScore() {
+      return confidenceScore_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getLeftSchemaPaths());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(2, getRightSchemaPaths());
+      }
+      if (getSourcesList().size() > 0) {
+        output.writeUInt32NoTag(26);
+        output.writeUInt32NoTag(sourcesMemoizedSerializedSize);
+      }
+      for (int i = 0; i < sources_.size(); i++) {
+        output.writeEnumNoTag(sources_.get(i));
+      }
+      if (java.lang.Float.floatToRawIntBits(confidenceScore_) != 0) {
+        output.writeFloat(4, confidenceScore_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getLeftSchemaPaths());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getRightSchemaPaths());
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < sources_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(sources_.get(i));
+        }
+        size += dataSize;
+        if (!getSourcesList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+        }
+        sourcesMemoizedSerializedSize = dataSize;
+      }
+      if (java.lang.Float.floatToRawIntBits(confidenceScore_) != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, confidenceScore_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship other =
+          (com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship) obj;
+
+      if (hasLeftSchemaPaths() != other.hasLeftSchemaPaths()) return false;
+      if (hasLeftSchemaPaths()) {
+        if (!getLeftSchemaPaths().equals(other.getLeftSchemaPaths())) return false;
+      }
+      if (hasRightSchemaPaths() != other.hasRightSchemaPaths()) return false;
+      if (hasRightSchemaPaths()) {
+        if (!getRightSchemaPaths().equals(other.getRightSchemaPaths())) return false;
+      }
+      if (!sources_.equals(other.sources_)) return false;
+      if (java.lang.Float.floatToIntBits(getConfidenceScore())
+          != java.lang.Float.floatToIntBits(other.getConfidenceScore())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasLeftSchemaPaths()) {
+        hash = (37 * hash) + LEFT_SCHEMA_PATHS_FIELD_NUMBER;
+        hash = (53 * hash) + getLeftSchemaPaths().hashCode();
+      }
+      if (hasRightSchemaPaths()) {
+        hash = (37 * hash) + RIGHT_SCHEMA_PATHS_FIELD_NUMBER;
+        hash = (53 * hash) + getRightSchemaPaths().hashCode();
+      }
+      if (getSourcesCount() > 0) {
+        hash = (37 * hash) + SOURCES_FIELD_NUMBER;
+        hash = (53 * hash) + sources_.hashCode();
+      }
+      hash = (37 * hash) + CONFIDENCE_SCORE_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getConfidenceScore());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The relationship between two tables, including referencing and referenced
+     * columns. This is a derived context retrieved from Dataplex Dataset
+     * Insights.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship)
+        com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationshipOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.geminidataanalytics.v1beta.ContextProto
+            .internal_static_google_cloud_geminidataanalytics_v1beta_Context_SchemaRelationship_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.geminidataanalytics.v1beta.ContextProto
+            .internal_static_google_cloud_geminidataanalytics_v1beta_Context_SchemaRelationship_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.class,
+                com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getLeftSchemaPathsFieldBuilder();
+          getRightSchemaPathsFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        leftSchemaPaths_ = null;
+        if (leftSchemaPathsBuilder_ != null) {
+          leftSchemaPathsBuilder_.dispose();
+          leftSchemaPathsBuilder_ = null;
+        }
+        rightSchemaPaths_ = null;
+        if (rightSchemaPathsBuilder_ != null) {
+          rightSchemaPathsBuilder_.dispose();
+          rightSchemaPathsBuilder_ = null;
+        }
+        sources_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        confidenceScore_ = 0F;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.geminidataanalytics.v1beta.ContextProto
+            .internal_static_google_cloud_geminidataanalytics_v1beta_Context_SchemaRelationship_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+          getDefaultInstanceForType() {
+        return com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship build() {
+        com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship buildPartial() {
+        com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship result =
+            new com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship result) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          sources_ = java.util.Collections.unmodifiableList(sources_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.sources_ = sources_;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.leftSchemaPaths_ =
+              leftSchemaPathsBuilder_ == null ? leftSchemaPaths_ : leftSchemaPathsBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.rightSchemaPaths_ =
+              rightSchemaPathsBuilder_ == null
+                  ? rightSchemaPaths_
+                  : rightSchemaPathsBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.confidenceScore_ = confidenceScore_;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship) {
+          return mergeFrom(
+              (com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship other) {
+        if (other
+            == com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+                .getDefaultInstance()) return this;
+        if (other.hasLeftSchemaPaths()) {
+          mergeLeftSchemaPaths(other.getLeftSchemaPaths());
+        }
+        if (other.hasRightSchemaPaths()) {
+          mergeRightSchemaPaths(other.getRightSchemaPaths());
+        }
+        if (!other.sources_.isEmpty()) {
+          if (sources_.isEmpty()) {
+            sources_ = other.sources_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureSourcesIsMutable();
+            sources_.addAll(other.sources_);
+          }
+          onChanged();
+        }
+        if (other.getConfidenceScore() != 0F) {
+          setConfidenceScore(other.getConfidenceScore());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getLeftSchemaPathsFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      getRightSchemaPathsFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 24:
+                {
+                  int tmpRaw = input.readEnum();
+                  ensureSourcesIsMutable();
+                  sources_.add(tmpRaw);
+                  break;
+                } // case 24
+              case 26:
+                {
+                  int length = input.readRawVarint32();
+                  int oldLimit = input.pushLimit(length);
+                  while (input.getBytesUntilLimit() > 0) {
+                    int tmpRaw = input.readEnum();
+                    ensureSourcesIsMutable();
+                    sources_.add(tmpRaw);
+                  }
+                  input.popLimit(oldLimit);
+                  break;
+                } // case 26
+              case 37:
+                {
+                  confidenceScore_ = input.readFloat();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 37
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+          leftSchemaPaths_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths,
+              com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+                  .Builder,
+              com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+                  .SchemaPathsOrBuilder>
+          leftSchemaPathsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of fields for the join from the first table.
+       * The size of this list must be the same as `right_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `right_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths left_schema_paths = 1;
+       * </code>
+       *
+       * @return Whether the leftSchemaPaths field is set.
+       */
+      public boolean hasLeftSchemaPaths() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of fields for the join from the first table.
+       * The size of this list must be the same as `right_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `right_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths left_schema_paths = 1;
+       * </code>
+       *
+       * @return The leftSchemaPaths.
+       */
+      public com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+          getLeftSchemaPaths() {
+        if (leftSchemaPathsBuilder_ == null) {
+          return leftSchemaPaths_ == null
+              ? com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+                  .getDefaultInstance()
+              : leftSchemaPaths_;
+        } else {
+          return leftSchemaPathsBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of fields for the join from the first table.
+       * The size of this list must be the same as `right_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `right_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths left_schema_paths = 1;
+       * </code>
+       */
+      public Builder setLeftSchemaPaths(
+          com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+              value) {
+        if (leftSchemaPathsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          leftSchemaPaths_ = value;
+        } else {
+          leftSchemaPathsBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of fields for the join from the first table.
+       * The size of this list must be the same as `right_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `right_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths left_schema_paths = 1;
+       * </code>
+       */
+      public Builder setLeftSchemaPaths(
+          com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths.Builder
+              builderForValue) {
+        if (leftSchemaPathsBuilder_ == null) {
+          leftSchemaPaths_ = builderForValue.build();
+        } else {
+          leftSchemaPathsBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of fields for the join from the first table.
+       * The size of this list must be the same as `right_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `right_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths left_schema_paths = 1;
+       * </code>
+       */
+      public Builder mergeLeftSchemaPaths(
+          com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+              value) {
+        if (leftSchemaPathsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && leftSchemaPaths_ != null
+              && leftSchemaPaths_
+                  != com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+                      .SchemaPaths.getDefaultInstance()) {
+            getLeftSchemaPathsBuilder().mergeFrom(value);
+          } else {
+            leftSchemaPaths_ = value;
+          }
+        } else {
+          leftSchemaPathsBuilder_.mergeFrom(value);
+        }
+        if (leftSchemaPaths_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of fields for the join from the first table.
+       * The size of this list must be the same as `right_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `right_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths left_schema_paths = 1;
+       * </code>
+       */
+      public Builder clearLeftSchemaPaths() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        leftSchemaPaths_ = null;
+        if (leftSchemaPathsBuilder_ != null) {
+          leftSchemaPathsBuilder_.dispose();
+          leftSchemaPathsBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of fields for the join from the first table.
+       * The size of this list must be the same as `right_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `right_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths left_schema_paths = 1;
+       * </code>
+       */
+      public com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+              .Builder
+          getLeftSchemaPathsBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getLeftSchemaPathsFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of fields for the join from the first table.
+       * The size of this list must be the same as `right_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `right_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths left_schema_paths = 1;
+       * </code>
+       */
+      public com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+              .SchemaPathsOrBuilder
+          getLeftSchemaPathsOrBuilder() {
+        if (leftSchemaPathsBuilder_ != null) {
+          return leftSchemaPathsBuilder_.getMessageOrBuilder();
+        } else {
+          return leftSchemaPaths_ == null
+              ? com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+                  .getDefaultInstance()
+              : leftSchemaPaths_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of fields for the join from the first table.
+       * The size of this list must be the same as `right_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `right_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths left_schema_paths = 1;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths,
+              com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+                  .Builder,
+              com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+                  .SchemaPathsOrBuilder>
+          getLeftSchemaPathsFieldBuilder() {
+        if (leftSchemaPathsBuilder_ == null) {
+          leftSchemaPathsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+                      .SchemaPaths,
+                  com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+                      .Builder,
+                  com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+                      .SchemaPathsOrBuilder>(
+                  getLeftSchemaPaths(), getParentForChildren(), isClean());
+          leftSchemaPaths_ = null;
+        }
+        return leftSchemaPathsBuilder_;
+      }
+
+      private com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+          rightSchemaPaths_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths,
+              com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+                  .Builder,
+              com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+                  .SchemaPathsOrBuilder>
+          rightSchemaPathsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of fields for the join from the second table.
+       * The size of this list must be the same as `left_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `left_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths right_schema_paths = 2;
+       * </code>
+       *
+       * @return Whether the rightSchemaPaths field is set.
+       */
+      public boolean hasRightSchemaPaths() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of fields for the join from the second table.
+       * The size of this list must be the same as `left_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `left_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths right_schema_paths = 2;
+       * </code>
+       *
+       * @return The rightSchemaPaths.
+       */
+      public com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+          getRightSchemaPaths() {
+        if (rightSchemaPathsBuilder_ == null) {
+          return rightSchemaPaths_ == null
+              ? com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+                  .getDefaultInstance()
+              : rightSchemaPaths_;
+        } else {
+          return rightSchemaPathsBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of fields for the join from the second table.
+       * The size of this list must be the same as `left_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `left_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths right_schema_paths = 2;
+       * </code>
+       */
+      public Builder setRightSchemaPaths(
+          com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+              value) {
+        if (rightSchemaPathsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          rightSchemaPaths_ = value;
+        } else {
+          rightSchemaPathsBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of fields for the join from the second table.
+       * The size of this list must be the same as `left_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `left_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths right_schema_paths = 2;
+       * </code>
+       */
+      public Builder setRightSchemaPaths(
+          com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths.Builder
+              builderForValue) {
+        if (rightSchemaPathsBuilder_ == null) {
+          rightSchemaPaths_ = builderForValue.build();
+        } else {
+          rightSchemaPathsBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of fields for the join from the second table.
+       * The size of this list must be the same as `left_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `left_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths right_schema_paths = 2;
+       * </code>
+       */
+      public Builder mergeRightSchemaPaths(
+          com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+              value) {
+        if (rightSchemaPathsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && rightSchemaPaths_ != null
+              && rightSchemaPaths_
+                  != com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+                      .SchemaPaths.getDefaultInstance()) {
+            getRightSchemaPathsBuilder().mergeFrom(value);
+          } else {
+            rightSchemaPaths_ = value;
+          }
+        } else {
+          rightSchemaPathsBuilder_.mergeFrom(value);
+        }
+        if (rightSchemaPaths_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of fields for the join from the second table.
+       * The size of this list must be the same as `left_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `left_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths right_schema_paths = 2;
+       * </code>
+       */
+      public Builder clearRightSchemaPaths() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        rightSchemaPaths_ = null;
+        if (rightSchemaPathsBuilder_ != null) {
+          rightSchemaPathsBuilder_.dispose();
+          rightSchemaPathsBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of fields for the join from the second table.
+       * The size of this list must be the same as `left_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `left_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths right_schema_paths = 2;
+       * </code>
+       */
+      public com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+              .Builder
+          getRightSchemaPathsBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getRightSchemaPathsFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of fields for the join from the second table.
+       * The size of this list must be the same as `left_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `left_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths right_schema_paths = 2;
+       * </code>
+       */
+      public com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+              .SchemaPathsOrBuilder
+          getRightSchemaPathsOrBuilder() {
+        if (rightSchemaPathsBuilder_ != null) {
+          return rightSchemaPathsBuilder_.getMessageOrBuilder();
+        } else {
+          return rightSchemaPaths_ == null
+              ? com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+                  .getDefaultInstance()
+              : rightSchemaPaths_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An ordered list of fields for the join from the second table.
+       * The size of this list must be the same as `left_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `left_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths right_schema_paths = 2;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths,
+              com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+                  .Builder,
+              com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+                  .SchemaPathsOrBuilder>
+          getRightSchemaPathsFieldBuilder() {
+        if (rightSchemaPathsBuilder_ == null) {
+          rightSchemaPathsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+                      .SchemaPaths,
+                  com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.SchemaPaths
+                      .Builder,
+                  com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+                      .SchemaPathsOrBuilder>(
+                  getRightSchemaPaths(), getParentForChildren(), isClean());
+          rightSchemaPaths_ = null;
+        }
+        return rightSchemaPathsBuilder_;
+      }
+
+      private java.util.List<java.lang.Integer> sources_ = java.util.Collections.emptyList();
+
+      private void ensureSourcesIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          sources_ = new java.util.ArrayList<java.lang.Integer>(sources_);
+          bitField0_ |= 0x00000004;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Sources which generated the schema relation edge.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+       * </code>
+       *
+       * @return A list containing the sources.
+       */
+      public java.util.List<
+              com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source>
+          getSourcesList() {
+        return new com.google.protobuf.Internal.ListAdapter<
+            java.lang.Integer,
+            com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source>(
+            sources_, sources_converter_);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Sources which generated the schema relation edge.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+       * </code>
+       *
+       * @return The count of sources.
+       */
+      public int getSourcesCount() {
+        return sources_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Sources which generated the schema relation edge.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The sources at the given index.
+       */
+      public com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source
+          getSources(int index) {
+        return sources_converter_.convert(sources_.get(index));
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Sources which generated the schema relation edge.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The sources to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSources(
+          int index,
+          com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSourcesIsMutable();
+        sources_.set(index, value.getNumber());
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Sources which generated the schema relation edge.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+       * </code>
+       *
+       * @param value The sources to add.
+       * @return This builder for chaining.
+       */
+      public Builder addSources(
+          com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSourcesIsMutable();
+        sources_.add(value.getNumber());
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Sources which generated the schema relation edge.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+       * </code>
+       *
+       * @param values The sources to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllSources(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source>
+              values) {
+        ensureSourcesIsMutable();
+        for (com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source value :
+            values) {
+          sources_.add(value.getNumber());
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Sources which generated the schema relation edge.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSources() {
+        sources_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Sources which generated the schema relation edge.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+       * </code>
+       *
+       * @return A list containing the enum numeric values on the wire for sources.
+       */
+      public java.util.List<java.lang.Integer> getSourcesValueList() {
+        return java.util.Collections.unmodifiableList(sources_);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Sources which generated the schema relation edge.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The enum numeric value on the wire of sources at the given index.
+       */
+      public int getSourcesValue(int index) {
+        return sources_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Sources which generated the schema relation edge.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The enum numeric value on the wire for sources to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSourcesValue(int index, int value) {
+        ensureSourcesIsMutable();
+        sources_.set(index, value);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Sources which generated the schema relation edge.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for sources to add.
+       * @return This builder for chaining.
+       */
+      public Builder addSourcesValue(int value) {
+        ensureSourcesIsMutable();
+        sources_.add(value);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Sources which generated the schema relation edge.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+       * </code>
+       *
+       * @param values The enum numeric values on the wire for sources to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllSourcesValue(java.lang.Iterable<java.lang.Integer> values) {
+        ensureSourcesIsMutable();
+        for (int value : values) {
+          sources_.add(value);
+        }
+        onChanged();
+        return this;
+      }
+
+      private float confidenceScore_;
+
+      /**
+       *
+       *
+       * <pre>
+       * A confidence score for the suggested relationship.
+       * Manually added edges have the highest confidence score.
+       * </pre>
+       *
+       * <code>float confidence_score = 4;</code>
+       *
+       * @return The confidenceScore.
+       */
+      @java.lang.Override
+      public float getConfidenceScore() {
+        return confidenceScore_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A confidence score for the suggested relationship.
+       * Manually added edges have the highest confidence score.
+       * </pre>
+       *
+       * <code>float confidence_score = 4;</code>
+       *
+       * @param value The confidenceScore to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConfidenceScore(float value) {
+
+        confidenceScore_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A confidence score for the suggested relationship.
+       * Manually added edges have the highest confidence score.
+       * </pre>
+       *
+       * <code>float confidence_score = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearConfidenceScore() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        confidenceScore_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship)
+    private static final com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship();
+    }
+
+    public static com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SchemaRelationship> PARSER =
+        new com.google.protobuf.AbstractParser<SchemaRelationship>() {
+          @java.lang.Override
+          public SchemaRelationship parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SchemaRelationship> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SchemaRelationship> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   private int bitField0_;
@@ -261,7 +3495,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A list of example queries, providing examples of relevant and
    * commonly used SQL queries and their corresponding natural language queries
-   * optionally present.
+   * optionally present. Currently only used for BigQuery data sources.
    * </pre>
    *
    * <code>
@@ -280,7 +3514,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A list of example queries, providing examples of relevant and
    * commonly used SQL queries and their corresponding natural language queries
-   * optionally present.
+   * optionally present. Currently only used for BigQuery data sources.
    * </pre>
    *
    * <code>
@@ -299,7 +3533,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A list of example queries, providing examples of relevant and
    * commonly used SQL queries and their corresponding natural language queries
-   * optionally present.
+   * optionally present. Currently only used for BigQuery data sources.
    * </pre>
    *
    * <code>
@@ -317,7 +3551,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A list of example queries, providing examples of relevant and
    * commonly used SQL queries and their corresponding natural language queries
-   * optionally present.
+   * optionally present. Currently only used for BigQuery data sources.
    * </pre>
    *
    * <code>
@@ -335,7 +3569,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A list of example queries, providing examples of relevant and
    * commonly used SQL queries and their corresponding natural language queries
-   * optionally present.
+   * optionally present. Currently only used for BigQuery data sources.
    * </pre>
    *
    * <code>
@@ -346,6 +3580,190 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.geminidataanalytics.v1beta.ExampleQueryOrBuilder
       getExampleQueriesOrBuilder(int index) {
     return exampleQueries_.get(index);
+  }
+
+  public static final int GLOSSARY_TERMS_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.geminidataanalytics.v1beta.GlossaryTerm> glossaryTerms_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Term definitions (currently, only user authored)
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.GlossaryTerm glossary_terms = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.geminidataanalytics.v1beta.GlossaryTerm>
+      getGlossaryTermsList() {
+    return glossaryTerms_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Term definitions (currently, only user authored)
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.GlossaryTerm glossary_terms = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.geminidataanalytics.v1beta.GlossaryTermOrBuilder>
+      getGlossaryTermsOrBuilderList() {
+    return glossaryTerms_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Term definitions (currently, only user authored)
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.GlossaryTerm glossary_terms = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getGlossaryTermsCount() {
+    return glossaryTerms_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Term definitions (currently, only user authored)
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.GlossaryTerm glossary_terms = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.GlossaryTerm getGlossaryTerms(int index) {
+    return glossaryTerms_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Term definitions (currently, only user authored)
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.GlossaryTerm glossary_terms = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.GlossaryTermOrBuilder
+      getGlossaryTermsOrBuilder(int index) {
+    return glossaryTerms_.get(index);
+  }
+
+  public static final int SCHEMA_RELATIONSHIPS_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship>
+      schemaRelationships_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Relationships between table schema, including referencing and
+   * referenced columns.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship schema_relationships = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship>
+      getSchemaRelationshipsList() {
+    return schemaRelationships_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Relationships between table schema, including referencing and
+   * referenced columns.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship schema_relationships = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationshipOrBuilder>
+      getSchemaRelationshipsOrBuilderList() {
+    return schemaRelationships_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Relationships between table schema, including referencing and
+   * referenced columns.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship schema_relationships = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getSchemaRelationshipsCount() {
+    return schemaRelationships_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Relationships between table schema, including referencing and
+   * referenced columns.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship schema_relationships = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+      getSchemaRelationships(int index) {
+    return schemaRelationships_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Relationships between table schema, including referencing and
+   * referenced columns.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship schema_relationships = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationshipOrBuilder
+      getSchemaRelationshipsOrBuilder(int index) {
+    return schemaRelationships_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -374,6 +3792,12 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(7, getDatasourceReferences());
     }
+    for (int i = 0; i < glossaryTerms_.size(); i++) {
+      output.writeMessage(8, glossaryTerms_.get(i));
+    }
+    for (int i = 0; i < schemaRelationships_.size(); i++) {
+      output.writeMessage(9, schemaRelationships_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -395,6 +3819,13 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(7, getDatasourceReferences());
+    }
+    for (int i = 0; i < glossaryTerms_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, glossaryTerms_.get(i));
+    }
+    for (int i = 0; i < schemaRelationships_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(9, schemaRelationships_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -422,6 +3853,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
       if (!getOptions().equals(other.getOptions())) return false;
     }
     if (!getExampleQueriesList().equals(other.getExampleQueriesList())) return false;
+    if (!getGlossaryTermsList().equals(other.getGlossaryTermsList())) return false;
+    if (!getSchemaRelationshipsList().equals(other.getSchemaRelationshipsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -446,6 +3879,14 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
     if (getExampleQueriesCount() > 0) {
       hash = (37 * hash) + EXAMPLE_QUERIES_FIELD_NUMBER;
       hash = (53 * hash) + getExampleQueriesList().hashCode();
+    }
+    if (getGlossaryTermsCount() > 0) {
+      hash = (37 * hash) + GLOSSARY_TERMS_FIELD_NUMBER;
+      hash = (53 * hash) + getGlossaryTermsList().hashCode();
+    }
+    if (getSchemaRelationshipsCount() > 0) {
+      hash = (37 * hash) + SCHEMA_RELATIONSHIPS_FIELD_NUMBER;
+      hash = (53 * hash) + getSchemaRelationshipsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -591,6 +4032,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
         getDatasourceReferencesFieldBuilder();
         getOptionsFieldBuilder();
         getExampleQueriesFieldBuilder();
+        getGlossaryTermsFieldBuilder();
+        getSchemaRelationshipsFieldBuilder();
       }
     }
 
@@ -616,6 +4059,20 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
         exampleQueriesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000008);
+      if (glossaryTermsBuilder_ == null) {
+        glossaryTerms_ = java.util.Collections.emptyList();
+      } else {
+        glossaryTerms_ = null;
+        glossaryTermsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000010);
+      if (schemaRelationshipsBuilder_ == null) {
+        schemaRelationships_ = java.util.Collections.emptyList();
+      } else {
+        schemaRelationships_ = null;
+        schemaRelationshipsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -661,6 +4118,24 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
         result.exampleQueries_ = exampleQueries_;
       } else {
         result.exampleQueries_ = exampleQueriesBuilder_.build();
+      }
+      if (glossaryTermsBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)) {
+          glossaryTerms_ = java.util.Collections.unmodifiableList(glossaryTerms_);
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.glossaryTerms_ = glossaryTerms_;
+      } else {
+        result.glossaryTerms_ = glossaryTermsBuilder_.build();
+      }
+      if (schemaRelationshipsBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)) {
+          schemaRelationships_ = java.util.Collections.unmodifiableList(schemaRelationships_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.schemaRelationships_ = schemaRelationships_;
+      } else {
+        result.schemaRelationships_ = schemaRelationshipsBuilder_.build();
       }
     }
 
@@ -768,6 +4243,60 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (glossaryTermsBuilder_ == null) {
+        if (!other.glossaryTerms_.isEmpty()) {
+          if (glossaryTerms_.isEmpty()) {
+            glossaryTerms_ = other.glossaryTerms_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureGlossaryTermsIsMutable();
+            glossaryTerms_.addAll(other.glossaryTerms_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.glossaryTerms_.isEmpty()) {
+          if (glossaryTermsBuilder_.isEmpty()) {
+            glossaryTermsBuilder_.dispose();
+            glossaryTermsBuilder_ = null;
+            glossaryTerms_ = other.glossaryTerms_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+            glossaryTermsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getGlossaryTermsFieldBuilder()
+                    : null;
+          } else {
+            glossaryTermsBuilder_.addAllMessages(other.glossaryTerms_);
+          }
+        }
+      }
+      if (schemaRelationshipsBuilder_ == null) {
+        if (!other.schemaRelationships_.isEmpty()) {
+          if (schemaRelationships_.isEmpty()) {
+            schemaRelationships_ = other.schemaRelationships_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureSchemaRelationshipsIsMutable();
+            schemaRelationships_.addAll(other.schemaRelationships_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.schemaRelationships_.isEmpty()) {
+          if (schemaRelationshipsBuilder_.isEmpty()) {
+            schemaRelationshipsBuilder_.dispose();
+            schemaRelationshipsBuilder_ = null;
+            schemaRelationships_ = other.schemaRelationships_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            schemaRelationshipsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getSchemaRelationshipsFieldBuilder()
+                    : null;
+          } else {
+            schemaRelationshipsBuilder_.addAllMessages(other.schemaRelationships_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -827,6 +4356,35 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 58
+            case 66:
+              {
+                com.google.cloud.geminidataanalytics.v1beta.GlossaryTerm m =
+                    input.readMessage(
+                        com.google.cloud.geminidataanalytics.v1beta.GlossaryTerm.parser(),
+                        extensionRegistry);
+                if (glossaryTermsBuilder_ == null) {
+                  ensureGlossaryTermsIsMutable();
+                  glossaryTerms_.add(m);
+                } else {
+                  glossaryTermsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
+            case 74:
+              {
+                com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship m =
+                    input.readMessage(
+                        com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+                            .parser(),
+                        extensionRegistry);
+                if (schemaRelationshipsBuilder_ == null) {
+                  ensureSchemaRelationshipsIsMutable();
+                  schemaRelationships_.add(m);
+                } else {
+                  schemaRelationshipsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1445,7 +5003,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present.
+     * optionally present. Currently only used for BigQuery data sources.
      * </pre>
      *
      * <code>
@@ -1467,7 +5025,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present.
+     * optionally present. Currently only used for BigQuery data sources.
      * </pre>
      *
      * <code>
@@ -1488,7 +5046,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present.
+     * optionally present. Currently only used for BigQuery data sources.
      * </pre>
      *
      * <code>
@@ -1509,7 +5067,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present.
+     * optionally present. Currently only used for BigQuery data sources.
      * </pre>
      *
      * <code>
@@ -1537,7 +5095,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present.
+     * optionally present. Currently only used for BigQuery data sources.
      * </pre>
      *
      * <code>
@@ -1563,7 +5121,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present.
+     * optionally present. Currently only used for BigQuery data sources.
      * </pre>
      *
      * <code>
@@ -1591,7 +5149,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present.
+     * optionally present. Currently only used for BigQuery data sources.
      * </pre>
      *
      * <code>
@@ -1619,7 +5177,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present.
+     * optionally present. Currently only used for BigQuery data sources.
      * </pre>
      *
      * <code>
@@ -1644,7 +5202,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present.
+     * optionally present. Currently only used for BigQuery data sources.
      * </pre>
      *
      * <code>
@@ -1670,7 +5228,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present.
+     * optionally present. Currently only used for BigQuery data sources.
      * </pre>
      *
      * <code>
@@ -1696,7 +5254,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present.
+     * optionally present. Currently only used for BigQuery data sources.
      * </pre>
      *
      * <code>
@@ -1720,7 +5278,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present.
+     * optionally present. Currently only used for BigQuery data sources.
      * </pre>
      *
      * <code>
@@ -1744,7 +5302,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present.
+     * optionally present. Currently only used for BigQuery data sources.
      * </pre>
      *
      * <code>
@@ -1762,7 +5320,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present.
+     * optionally present. Currently only used for BigQuery data sources.
      * </pre>
      *
      * <code>
@@ -1784,7 +5342,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present.
+     * optionally present. Currently only used for BigQuery data sources.
      * </pre>
      *
      * <code>
@@ -1807,7 +5365,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present.
+     * optionally present. Currently only used for BigQuery data sources.
      * </pre>
      *
      * <code>
@@ -1827,7 +5385,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present.
+     * optionally present. Currently only used for BigQuery data sources.
      * </pre>
      *
      * <code>
@@ -1847,7 +5405,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present.
+     * optionally present. Currently only used for BigQuery data sources.
      * </pre>
      *
      * <code>
@@ -1877,6 +5435,879 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
         exampleQueries_ = null;
       }
       return exampleQueriesBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.geminidataanalytics.v1beta.GlossaryTerm>
+        glossaryTerms_ = java.util.Collections.emptyList();
+
+    private void ensureGlossaryTermsIsMutable() {
+      if (!((bitField0_ & 0x00000010) != 0)) {
+        glossaryTerms_ =
+            new java.util.ArrayList<com.google.cloud.geminidataanalytics.v1beta.GlossaryTerm>(
+                glossaryTerms_);
+        bitField0_ |= 0x00000010;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.geminidataanalytics.v1beta.GlossaryTerm,
+            com.google.cloud.geminidataanalytics.v1beta.GlossaryTerm.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.GlossaryTermOrBuilder>
+        glossaryTermsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Term definitions (currently, only user authored)
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.GlossaryTerm glossary_terms = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.geminidataanalytics.v1beta.GlossaryTerm>
+        getGlossaryTermsList() {
+      if (glossaryTermsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(glossaryTerms_);
+      } else {
+        return glossaryTermsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Term definitions (currently, only user authored)
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.GlossaryTerm glossary_terms = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getGlossaryTermsCount() {
+      if (glossaryTermsBuilder_ == null) {
+        return glossaryTerms_.size();
+      } else {
+        return glossaryTermsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Term definitions (currently, only user authored)
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.GlossaryTerm glossary_terms = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.GlossaryTerm getGlossaryTerms(int index) {
+      if (glossaryTermsBuilder_ == null) {
+        return glossaryTerms_.get(index);
+      } else {
+        return glossaryTermsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Term definitions (currently, only user authored)
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.GlossaryTerm glossary_terms = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGlossaryTerms(
+        int index, com.google.cloud.geminidataanalytics.v1beta.GlossaryTerm value) {
+      if (glossaryTermsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGlossaryTermsIsMutable();
+        glossaryTerms_.set(index, value);
+        onChanged();
+      } else {
+        glossaryTermsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Term definitions (currently, only user authored)
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.GlossaryTerm glossary_terms = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGlossaryTerms(
+        int index,
+        com.google.cloud.geminidataanalytics.v1beta.GlossaryTerm.Builder builderForValue) {
+      if (glossaryTermsBuilder_ == null) {
+        ensureGlossaryTermsIsMutable();
+        glossaryTerms_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        glossaryTermsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Term definitions (currently, only user authored)
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.GlossaryTerm glossary_terms = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addGlossaryTerms(
+        com.google.cloud.geminidataanalytics.v1beta.GlossaryTerm value) {
+      if (glossaryTermsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGlossaryTermsIsMutable();
+        glossaryTerms_.add(value);
+        onChanged();
+      } else {
+        glossaryTermsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Term definitions (currently, only user authored)
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.GlossaryTerm glossary_terms = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addGlossaryTerms(
+        int index, com.google.cloud.geminidataanalytics.v1beta.GlossaryTerm value) {
+      if (glossaryTermsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGlossaryTermsIsMutable();
+        glossaryTerms_.add(index, value);
+        onChanged();
+      } else {
+        glossaryTermsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Term definitions (currently, only user authored)
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.GlossaryTerm glossary_terms = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addGlossaryTerms(
+        com.google.cloud.geminidataanalytics.v1beta.GlossaryTerm.Builder builderForValue) {
+      if (glossaryTermsBuilder_ == null) {
+        ensureGlossaryTermsIsMutable();
+        glossaryTerms_.add(builderForValue.build());
+        onChanged();
+      } else {
+        glossaryTermsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Term definitions (currently, only user authored)
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.GlossaryTerm glossary_terms = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addGlossaryTerms(
+        int index,
+        com.google.cloud.geminidataanalytics.v1beta.GlossaryTerm.Builder builderForValue) {
+      if (glossaryTermsBuilder_ == null) {
+        ensureGlossaryTermsIsMutable();
+        glossaryTerms_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        glossaryTermsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Term definitions (currently, only user authored)
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.GlossaryTerm glossary_terms = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllGlossaryTerms(
+        java.lang.Iterable<? extends com.google.cloud.geminidataanalytics.v1beta.GlossaryTerm>
+            values) {
+      if (glossaryTermsBuilder_ == null) {
+        ensureGlossaryTermsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, glossaryTerms_);
+        onChanged();
+      } else {
+        glossaryTermsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Term definitions (currently, only user authored)
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.GlossaryTerm glossary_terms = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearGlossaryTerms() {
+      if (glossaryTermsBuilder_ == null) {
+        glossaryTerms_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+      } else {
+        glossaryTermsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Term definitions (currently, only user authored)
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.GlossaryTerm glossary_terms = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeGlossaryTerms(int index) {
+      if (glossaryTermsBuilder_ == null) {
+        ensureGlossaryTermsIsMutable();
+        glossaryTerms_.remove(index);
+        onChanged();
+      } else {
+        glossaryTermsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Term definitions (currently, only user authored)
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.GlossaryTerm glossary_terms = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.GlossaryTerm.Builder getGlossaryTermsBuilder(
+        int index) {
+      return getGlossaryTermsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Term definitions (currently, only user authored)
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.GlossaryTerm glossary_terms = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.GlossaryTermOrBuilder
+        getGlossaryTermsOrBuilder(int index) {
+      if (glossaryTermsBuilder_ == null) {
+        return glossaryTerms_.get(index);
+      } else {
+        return glossaryTermsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Term definitions (currently, only user authored)
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.GlossaryTerm glossary_terms = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.geminidataanalytics.v1beta.GlossaryTermOrBuilder>
+        getGlossaryTermsOrBuilderList() {
+      if (glossaryTermsBuilder_ != null) {
+        return glossaryTermsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(glossaryTerms_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Term definitions (currently, only user authored)
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.GlossaryTerm glossary_terms = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.GlossaryTerm.Builder
+        addGlossaryTermsBuilder() {
+      return getGlossaryTermsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.geminidataanalytics.v1beta.GlossaryTerm.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Term definitions (currently, only user authored)
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.GlossaryTerm glossary_terms = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.GlossaryTerm.Builder addGlossaryTermsBuilder(
+        int index) {
+      return getGlossaryTermsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.geminidataanalytics.v1beta.GlossaryTerm.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Term definitions (currently, only user authored)
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.GlossaryTerm glossary_terms = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.geminidataanalytics.v1beta.GlossaryTerm.Builder>
+        getGlossaryTermsBuilderList() {
+      return getGlossaryTermsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.geminidataanalytics.v1beta.GlossaryTerm,
+            com.google.cloud.geminidataanalytics.v1beta.GlossaryTerm.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.GlossaryTermOrBuilder>
+        getGlossaryTermsFieldBuilder() {
+      if (glossaryTermsBuilder_ == null) {
+        glossaryTermsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.geminidataanalytics.v1beta.GlossaryTerm,
+                com.google.cloud.geminidataanalytics.v1beta.GlossaryTerm.Builder,
+                com.google.cloud.geminidataanalytics.v1beta.GlossaryTermOrBuilder>(
+                glossaryTerms_,
+                ((bitField0_ & 0x00000010) != 0),
+                getParentForChildren(),
+                isClean());
+        glossaryTerms_ = null;
+      }
+      return glossaryTermsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship>
+        schemaRelationships_ = java.util.Collections.emptyList();
+
+    private void ensureSchemaRelationshipsIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        schemaRelationships_ =
+            new java.util.ArrayList<
+                com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship>(
+                schemaRelationships_);
+        bitField0_ |= 0x00000020;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship,
+            com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationshipOrBuilder>
+        schemaRelationshipsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Relationships between table schema, including referencing and
+     * referenced columns.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship schema_relationships = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship>
+        getSchemaRelationshipsList() {
+      if (schemaRelationshipsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(schemaRelationships_);
+      } else {
+        return schemaRelationshipsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Relationships between table schema, including referencing and
+     * referenced columns.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship schema_relationships = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getSchemaRelationshipsCount() {
+      if (schemaRelationshipsBuilder_ == null) {
+        return schemaRelationships_.size();
+      } else {
+        return schemaRelationshipsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Relationships between table schema, including referencing and
+     * referenced columns.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship schema_relationships = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+        getSchemaRelationships(int index) {
+      if (schemaRelationshipsBuilder_ == null) {
+        return schemaRelationships_.get(index);
+      } else {
+        return schemaRelationshipsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Relationships between table schema, including referencing and
+     * referenced columns.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship schema_relationships = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSchemaRelationships(
+        int index, com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship value) {
+      if (schemaRelationshipsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSchemaRelationshipsIsMutable();
+        schemaRelationships_.set(index, value);
+        onChanged();
+      } else {
+        schemaRelationshipsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Relationships between table schema, including referencing and
+     * referenced columns.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship schema_relationships = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSchemaRelationships(
+        int index,
+        com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Builder
+            builderForValue) {
+      if (schemaRelationshipsBuilder_ == null) {
+        ensureSchemaRelationshipsIsMutable();
+        schemaRelationships_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        schemaRelationshipsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Relationships between table schema, including referencing and
+     * referenced columns.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship schema_relationships = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addSchemaRelationships(
+        com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship value) {
+      if (schemaRelationshipsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSchemaRelationshipsIsMutable();
+        schemaRelationships_.add(value);
+        onChanged();
+      } else {
+        schemaRelationshipsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Relationships between table schema, including referencing and
+     * referenced columns.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship schema_relationships = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addSchemaRelationships(
+        int index, com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship value) {
+      if (schemaRelationshipsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSchemaRelationshipsIsMutable();
+        schemaRelationships_.add(index, value);
+        onChanged();
+      } else {
+        schemaRelationshipsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Relationships between table schema, including referencing and
+     * referenced columns.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship schema_relationships = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addSchemaRelationships(
+        com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Builder
+            builderForValue) {
+      if (schemaRelationshipsBuilder_ == null) {
+        ensureSchemaRelationshipsIsMutable();
+        schemaRelationships_.add(builderForValue.build());
+        onChanged();
+      } else {
+        schemaRelationshipsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Relationships between table schema, including referencing and
+     * referenced columns.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship schema_relationships = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addSchemaRelationships(
+        int index,
+        com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Builder
+            builderForValue) {
+      if (schemaRelationshipsBuilder_ == null) {
+        ensureSchemaRelationshipsIsMutable();
+        schemaRelationships_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        schemaRelationshipsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Relationships between table schema, including referencing and
+     * referenced columns.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship schema_relationships = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllSchemaRelationships(
+        java.lang.Iterable<
+                ? extends com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship>
+            values) {
+      if (schemaRelationshipsBuilder_ == null) {
+        ensureSchemaRelationshipsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, schemaRelationships_);
+        onChanged();
+      } else {
+        schemaRelationshipsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Relationships between table schema, including referencing and
+     * referenced columns.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship schema_relationships = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSchemaRelationships() {
+      if (schemaRelationshipsBuilder_ == null) {
+        schemaRelationships_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+      } else {
+        schemaRelationshipsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Relationships between table schema, including referencing and
+     * referenced columns.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship schema_relationships = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeSchemaRelationships(int index) {
+      if (schemaRelationshipsBuilder_ == null) {
+        ensureSchemaRelationshipsIsMutable();
+        schemaRelationships_.remove(index);
+        onChanged();
+      } else {
+        schemaRelationshipsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Relationships between table schema, including referencing and
+     * referenced columns.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship schema_relationships = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Builder
+        getSchemaRelationshipsBuilder(int index) {
+      return getSchemaRelationshipsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Relationships between table schema, including referencing and
+     * referenced columns.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship schema_relationships = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationshipOrBuilder
+        getSchemaRelationshipsOrBuilder(int index) {
+      if (schemaRelationshipsBuilder_ == null) {
+        return schemaRelationships_.get(index);
+      } else {
+        return schemaRelationshipsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Relationships between table schema, including referencing and
+     * referenced columns.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship schema_relationships = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationshipOrBuilder>
+        getSchemaRelationshipsOrBuilderList() {
+      if (schemaRelationshipsBuilder_ != null) {
+        return schemaRelationshipsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(schemaRelationships_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Relationships between table schema, including referencing and
+     * referenced columns.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship schema_relationships = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Builder
+        addSchemaRelationshipsBuilder() {
+      return getSchemaRelationshipsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Relationships between table schema, including referencing and
+     * referenced columns.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship schema_relationships = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Builder
+        addSchemaRelationshipsBuilder(int index) {
+      return getSchemaRelationshipsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Relationships between table schema, including referencing and
+     * referenced columns.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship schema_relationships = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Builder>
+        getSchemaRelationshipsBuilderList() {
+      return getSchemaRelationshipsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship,
+            com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationshipOrBuilder>
+        getSchemaRelationshipsFieldBuilder() {
+      if (schemaRelationshipsBuilder_ == null) {
+        schemaRelationshipsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship,
+                com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Builder,
+                com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationshipOrBuilder>(
+                schemaRelationships_,
+                ((bitField0_ & 0x00000020) != 0),
+                getParentForChildren(),
+                isClean());
+        schemaRelationships_ = null;
+      }
+      return schemaRelationshipsBuilder_;
     }
 
     @java.lang.Override

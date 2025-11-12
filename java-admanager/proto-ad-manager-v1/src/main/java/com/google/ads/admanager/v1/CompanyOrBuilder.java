@@ -59,7 +59,20 @@ public interface CompanyOrBuilder
    * Output only. `Company` ID.
    * </pre>
    *
-   * <code>int64 company_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional int64 company_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the companyId field is set.
+   */
+  boolean hasCompanyId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. `Company` ID.
+   * </pre>
+   *
+   * <code>optional int64 company_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The companyId.
    */
@@ -74,7 +87,22 @@ public interface CompanyOrBuilder
    * This value has a maximum length of 127 characters.
    * </pre>
    *
-   * <code>string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the displayName field is set.
+   */
+  boolean hasDisplayName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The display name of the `Company`.
+   *
+   * This value has a maximum length of 127 characters.
+   * </pre>
+   *
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The displayName.
    */
@@ -89,7 +117,7 @@ public interface CompanyOrBuilder
    * This value has a maximum length of 127 characters.
    * </pre>
    *
-   * <code>string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for displayName.
    */
@@ -103,7 +131,22 @@ public interface CompanyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.CompanyTypeEnum.CompanyType type = 4 [(.google.api.field_behavior) = REQUIRED];
+   * optional .google.ads.admanager.v1.CompanyTypeEnum.CompanyType type = 4 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the type field is set.
+   */
+  boolean hasType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The type of the `Company`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CompanyTypeEnum.CompanyType type = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The enum numeric value on the wire for type.
@@ -118,7 +161,7 @@ public interface CompanyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.CompanyTypeEnum.CompanyType type = 4 [(.google.api.field_behavior) = REQUIRED];
+   * optional .google.ads.admanager.v1.CompanyTypeEnum.CompanyType type = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The type.
@@ -134,7 +177,22 @@ public interface CompanyOrBuilder
    * This value has a maximum length of 1024 characters.
    * </pre>
    *
-   * <code>string address = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string address = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the address field is set.
+   */
+  boolean hasAddress();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The address for the `Company`.
+   *
+   * This value has a maximum length of 1024 characters.
+   * </pre>
+   *
+   * <code>optional string address = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The address.
    */
@@ -149,7 +207,7 @@ public interface CompanyOrBuilder
    * This value has a maximum length of 1024 characters.
    * </pre>
    *
-   * <code>string address = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string address = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for address.
    */
@@ -164,7 +222,22 @@ public interface CompanyOrBuilder
    * This value has a maximum length of 128 characters.
    * </pre>
    *
-   * <code>string email = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string email = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the email field is set.
+   */
+  boolean hasEmail();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The email for the `Company`.
+   *
+   * This value has a maximum length of 128 characters.
+   * </pre>
+   *
+   * <code>optional string email = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The email.
    */
@@ -179,7 +252,7 @@ public interface CompanyOrBuilder
    * This value has a maximum length of 128 characters.
    * </pre>
    *
-   * <code>string email = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string email = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for email.
    */
@@ -194,7 +267,22 @@ public interface CompanyOrBuilder
    * This value has a maximum length of 63 characters.
    * </pre>
    *
-   * <code>string fax = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string fax = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the fax field is set.
+   */
+  boolean hasFax();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The fax number for the `Company`.
+   *
+   * This value has a maximum length of 63 characters.
+   * </pre>
+   *
+   * <code>optional string fax = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The fax.
    */
@@ -209,7 +297,7 @@ public interface CompanyOrBuilder
    * This value has a maximum length of 63 characters.
    * </pre>
    *
-   * <code>string fax = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string fax = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for fax.
    */
@@ -224,7 +312,22 @@ public interface CompanyOrBuilder
    * This value has a maximum length of 63 characters.
    * </pre>
    *
-   * <code>string phone = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string phone = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the phone field is set.
+   */
+  boolean hasPhone();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The phone number for the `Company`.
+   *
+   * This value has a maximum length of 63 characters.
+   * </pre>
+   *
+   * <code>optional string phone = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The phone.
    */
@@ -239,7 +342,7 @@ public interface CompanyOrBuilder
    * This value has a maximum length of 63 characters.
    * </pre>
    *
-   * <code>string phone = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string phone = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for phone.
    */
@@ -254,7 +357,22 @@ public interface CompanyOrBuilder
    * This value has a maximum length of 255 characters.
    * </pre>
    *
-   * <code>string external_id = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string external_id = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the externalId field is set.
+   */
+  boolean hasExternalId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The external ID for the `Company`.
+   *
+   * This value has a maximum length of 255 characters.
+   * </pre>
+   *
+   * <code>optional string external_id = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The externalId.
    */
@@ -269,7 +387,7 @@ public interface CompanyOrBuilder
    * This value has a maximum length of 255 characters.
    * </pre>
    *
-   * <code>string external_id = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string external_id = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for externalId.
    */
@@ -284,7 +402,22 @@ public interface CompanyOrBuilder
    * This value has a maximum length of 1024 characters.
    * </pre>
    *
-   * <code>string comment = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string comment = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the comment field is set.
+   */
+  boolean hasComment();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Comments about the `Company`.
+   *
+   * This value has a maximum length of 1024 characters.
+   * </pre>
+   *
+   * <code>optional string comment = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The comment.
    */
@@ -299,7 +432,7 @@ public interface CompanyOrBuilder
    * This value has a maximum length of 1024 characters.
    * </pre>
    *
-   * <code>string comment = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string comment = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for comment.
    */
@@ -316,7 +449,25 @@ public interface CompanyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.CompanyCreditStatusEnum.CompanyCreditStatus credit_status = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * optional .google.ads.admanager.v1.CompanyCreditStatusEnum.CompanyCreditStatus credit_status = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the creditStatus field is set.
+   */
+  boolean hasCreditStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The credit status of the `Company`.
+   *
+   * This attribute defaults to `ACTIVE` if basic settings are enabled and
+   * `ON_HOLD` if advance settings are enabled.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CompanyCreditStatusEnum.CompanyCreditStatus credit_status = 11 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for creditStatus.
@@ -334,7 +485,7 @@ public interface CompanyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.CompanyCreditStatusEnum.CompanyCreditStatus credit_status = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * optional .google.ads.admanager.v1.CompanyCreditStatusEnum.CompanyCreditStatus credit_status = 11 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The creditStatus.
@@ -529,7 +680,23 @@ public interface CompanyOrBuilder
    * `Company`.
    * </pre>
    *
-   * <code>int64 third_party_company_id = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional int64 third_party_company_id = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the thirdPartyCompanyId field is set.
+   */
+  boolean hasThirdPartyCompanyId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ID of the Google-recognized canonicalized form of the
+   * `Company`.
+   * </pre>
+   *
+   * <code>optional int64 third_party_company_id = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The thirdPartyCompanyId.
    */
@@ -542,7 +709,8 @@ public interface CompanyOrBuilder
    * Output only. The time the `Company` was last modified.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional .google.protobuf.Timestamp update_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the updateTime field is set.
@@ -556,7 +724,8 @@ public interface CompanyOrBuilder
    * Output only. The time the `Company` was last modified.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional .google.protobuf.Timestamp update_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The updateTime.
@@ -570,7 +739,8 @@ public interface CompanyOrBuilder
    * Output only. The time the `Company` was last modified.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional .google.protobuf.Timestamp update_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();

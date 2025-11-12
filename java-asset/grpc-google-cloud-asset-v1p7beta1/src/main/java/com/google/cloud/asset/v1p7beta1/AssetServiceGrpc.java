@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Asset service definition.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/asset/v1p7beta1/asset_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AssetServiceGrpc {
 
@@ -263,8 +260,9 @@ public final class AssetServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportAssets(
-        com.google.cloud.asset.v1p7beta1.ExportAssetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.asset.v1p7beta1.ExportAssetsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportAssetsMethod(), getCallOptions(), request);
     }
   }

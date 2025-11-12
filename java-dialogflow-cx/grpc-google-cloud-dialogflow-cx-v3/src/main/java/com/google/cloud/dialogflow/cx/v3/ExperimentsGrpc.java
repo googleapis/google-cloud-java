@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing [Experiments][google.cloud.dialogflow.cx.v3.Experiment].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/cx/v3/experiment.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ExperimentsGrpc {
 
@@ -718,8 +715,9 @@ public final class ExperimentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.ListExperimentsResponse listExperiments(
-        com.google.cloud.dialogflow.cx.v3.ListExperimentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.ListExperimentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListExperimentsMethod(), getCallOptions(), request);
     }
 
@@ -732,8 +730,9 @@ public final class ExperimentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.Experiment getExperiment(
-        com.google.cloud.dialogflow.cx.v3.GetExperimentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.GetExperimentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetExperimentMethod(), getCallOptions(), request);
     }
 
@@ -746,8 +745,9 @@ public final class ExperimentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.Experiment createExperiment(
-        com.google.cloud.dialogflow.cx.v3.CreateExperimentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.CreateExperimentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateExperimentMethod(), getCallOptions(), request);
     }
 
@@ -760,8 +760,9 @@ public final class ExperimentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.Experiment updateExperiment(
-        com.google.cloud.dialogflow.cx.v3.UpdateExperimentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.UpdateExperimentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateExperimentMethod(), getCallOptions(), request);
     }
 
@@ -774,8 +775,9 @@ public final class ExperimentsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteExperiment(
-        com.google.cloud.dialogflow.cx.v3.DeleteExperimentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.DeleteExperimentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteExperimentMethod(), getCallOptions(), request);
     }
 
@@ -789,8 +791,9 @@ public final class ExperimentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.Experiment startExperiment(
-        com.google.cloud.dialogflow.cx.v3.StartExperimentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.StartExperimentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getStartExperimentMethod(), getCallOptions(), request);
     }
 
@@ -803,8 +806,9 @@ public final class ExperimentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.Experiment stopExperiment(
-        com.google.cloud.dialogflow.cx.v3.StopExperimentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.StopExperimentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getStopExperimentMethod(), getCallOptions(), request);
     }
   }

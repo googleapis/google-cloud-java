@@ -67,33 +67,36 @@ public final class BackupvaultCloudSqlProto {
           + "e_installed_version\030\002 \001(\tB\003\340A\003\022=\n\024instan"
           + "ce_create_time\030\003 \001(\0132\032.google.protobuf.T"
           + "imestampB\003\340A\003\022\032\n\rinstance_tier\030\005 \001(\tB\003\340A"
-          + "\003\"\305\001\n CloudSqlInstanceBackupProperties\022\'"
+          + "\003\"\303\002\n CloudSqlInstanceBackupProperties\022\'"
           + "\n\032database_installed_version\030\002 \001(\tB\003\340A\003\022"
           + "\031\n\014final_backup\030\003 \001(\010B\003\340A\003\022A\n\017source_ins"
           + "tance\030\004 \001(\tB(\340A\003\372A\"\n sqladmin.googleapis"
-          + ".com/Instance\022\032\n\rinstance_tier\030\006 \001(\tB\003\340A"
-          + "\003\"\353\001\n-CloudSqlInstanceDataSourceReferenc"
-          + "eProperties\0226\n\004name\030\001 \001(\tB(\340A\003\372A\"\n sqlad"
-          + "min.googleapis.com/Instance\022\'\n\032database_"
-          + "installed_version\030\002 \001(\tB\003\340A\003\022=\n\024instance"
-          + "_create_time\030\003 \001(\0132\032.google.protobuf.Tim"
-          + "estampB\003\340A\003\022\032\n\rinstance_tier\030\005 \001(\tB\003\340A\003\""
-          + "\315\001\n$CloudSqlInstanceInitializationConfig"
-          + "\022\\\n\007edition\030\001 \001(\0162F.google.cloud.backupd"
-          + "r.v1.CloudSqlInstanceInitializationConfi"
-          + "g.EditionB\003\340A\002\"G\n\007Edition\022\027\n\023EDITION_UNS"
-          + "PECIFIED\020\000\022\016\n\nENTERPRISE\020\001\022\023\n\017ENTERPRISE"
-          + "_PLUS\020\002\"p\n/CloudSqlInstanceBackupPlanAss"
-          + "ociationProperties\022=\n\024instance_create_ti"
-          + "me\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A"
-          + "\003B\226\002\n\034com.google.cloud.backupdr.v1B\030Back"
-          + "upvaultCloudSqlProtoP\001Z8cloud.google.com"
-          + "/go/backupdr/apiv1/backupdrpb;backupdrpb"
-          + "\252\002\030Google.Cloud.BackupDR.V1\312\002\030Google\\Clo"
-          + "ud\\BackupDR\\V1\352\002\033Google::Cloud::BackupDR"
-          + "::V1\352AK\n sqladmin.googleapis.com/Instanc"
-          + "e\022\'projects/{project}/instances/{instanc"
-          + "e}b\006proto3"
+          + ".com/Instance\022=\n\024instance_create_time\030\005 "
+          + "\001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\032\n\r"
+          + "instance_tier\030\006 \001(\tB\003\340A\003\022=\n\024instance_del"
+          + "ete_time\030\010 \001(\0132\032.google.protobuf.Timesta"
+          + "mpB\003\340A\003\"\353\001\n-CloudSqlInstanceDataSourceRe"
+          + "ferenceProperties\0226\n\004name\030\001 \001(\tB(\340A\003\372A\"\n"
+          + " sqladmin.googleapis.com/Instance\022\'\n\032dat"
+          + "abase_installed_version\030\002 \001(\tB\003\340A\003\022=\n\024in"
+          + "stance_create_time\030\003 \001(\0132\032.google.protob"
+          + "uf.TimestampB\003\340A\003\022\032\n\rinstance_tier\030\005 \001(\t"
+          + "B\003\340A\003\"\315\001\n$CloudSqlInstanceInitialization"
+          + "Config\022\\\n\007edition\030\001 \001(\0162F.google.cloud.b"
+          + "ackupdr.v1.CloudSqlInstanceInitializatio"
+          + "nConfig.EditionB\003\340A\002\"G\n\007Edition\022\027\n\023EDITI"
+          + "ON_UNSPECIFIED\020\000\022\016\n\nENTERPRISE\020\001\022\023\n\017ENTE"
+          + "RPRISE_PLUS\020\002\"p\n/CloudSqlInstanceBackupP"
+          + "lanAssociationProperties\022=\n\024instance_cre"
+          + "ate_time\030\001 \001(\0132\032.google.protobuf.Timesta"
+          + "mpB\003\340A\003B\226\002\n\034com.google.cloud.backupdr.v1"
+          + "B\030BackupvaultCloudSqlProtoP\001Z8cloud.goog"
+          + "le.com/go/backupdr/apiv1/backupdrpb;back"
+          + "updrpb\252\002\030Google.Cloud.BackupDR.V1\312\002\030Goog"
+          + "le\\Cloud\\BackupDR\\V1\352\002\033Google::Cloud::Ba"
+          + "ckupDR::V1\352AK\n sqladmin.googleapis.com/I"
+          + "nstance\022\'projects/{project}/instances/{i"
+          + "nstance}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -117,7 +120,12 @@ public final class BackupvaultCloudSqlProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_backupdr_v1_CloudSqlInstanceBackupProperties_descriptor,
             new java.lang.String[] {
-              "DatabaseInstalledVersion", "FinalBackup", "SourceInstance", "InstanceTier",
+              "DatabaseInstalledVersion",
+              "FinalBackup",
+              "SourceInstance",
+              "InstanceCreateTime",
+              "InstanceTier",
+              "InstanceDeleteTime",
             });
     internal_static_google_cloud_backupdr_v1_CloudSqlInstanceDataSourceReferenceProperties_descriptor =
         getDescriptor().getMessageTypes().get(2);

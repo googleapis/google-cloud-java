@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Cloud Run Build Control Plane API
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/run/v2/build.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class BuildsGrpc {
 
@@ -228,8 +225,8 @@ public final class BuildsGrpc {
      * </pre>
      */
     public com.google.cloud.run.v2.SubmitBuildResponse submitBuild(
-        com.google.cloud.run.v2.SubmitBuildRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.run.v2.SubmitBuildRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSubmitBuildMethod(), getCallOptions(), request);
     }
   }

@@ -71,4 +71,50 @@ public interface ContainerdConfigOrBuilder
    */
   com.google.container.v1.ContainerdConfig.PrivateRegistryAccessConfigOrBuilder
       getPrivateRegistryAccessConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. WritableCgroups defines writable cgroups configuration for the
+   * node pool.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.ContainerdConfig.WritableCgroups writable_cgroups = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the writableCgroups field is set.
+   */
+  boolean hasWritableCgroups();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. WritableCgroups defines writable cgroups configuration for the
+   * node pool.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.ContainerdConfig.WritableCgroups writable_cgroups = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The writableCgroups.
+   */
+  com.google.container.v1.ContainerdConfig.WritableCgroups getWritableCgroups();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. WritableCgroups defines writable cgroups configuration for the
+   * node pool.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.ContainerdConfig.WritableCgroups writable_cgroups = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1.ContainerdConfig.WritableCgroupsOrBuilder getWritableCgroupsOrBuilder();
 }

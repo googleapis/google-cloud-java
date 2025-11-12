@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * configuration.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1/engine_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class EngineServiceGrpc {
 
@@ -543,8 +540,9 @@ public final class EngineServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createEngine(
-        com.google.cloud.discoveryengine.v1.CreateEngineRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.CreateEngineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEngineMethod(), getCallOptions(), request);
     }
 
@@ -556,8 +554,9 @@ public final class EngineServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteEngine(
-        com.google.cloud.discoveryengine.v1.DeleteEngineRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.DeleteEngineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteEngineMethod(), getCallOptions(), request);
     }
 
@@ -569,8 +568,9 @@ public final class EngineServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1.Engine updateEngine(
-        com.google.cloud.discoveryengine.v1.UpdateEngineRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.UpdateEngineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateEngineMethod(), getCallOptions(), request);
     }
 
@@ -582,8 +582,9 @@ public final class EngineServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1.Engine getEngine(
-        com.google.cloud.discoveryengine.v1.GetEngineRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.GetEngineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEngineMethod(), getCallOptions(), request);
     }
 
@@ -596,8 +597,9 @@ public final class EngineServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1.ListEnginesResponse listEngines(
-        com.google.cloud.discoveryengine.v1.ListEnginesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.ListEnginesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEnginesMethod(), getCallOptions(), request);
     }
   }

@@ -80,26 +80,25 @@ public final class DatasourcetypesProto {
       "\n"
           + "=google/shopping/merchant/datasources/v1/datasourcetypes.proto\022\'google.shopping"
           + ".merchant.datasources.v1\032\037google/api/field_behavior.proto\032"
-          + " google/shopping/type/types.proto\"\235\006\n"
+          + " google/shopping/type/types.proto\"\371\005\n"
           + "\030PrimaryProductDataSource\022\034\n"
           + "\014legacy_local\030\013 \001(\010B\006\340A\001\340A\005\022\037\n\n"
           + "feed_label\030\004 \001(\tB\006\340A\001\340A\005H\000\210\001\001\022%\n"
           + "\020content_language\030\005 \001(\tB\006\340A\001\340A\005H\001\210\001\001\022\026\n"
           + "\tcountries\030\006 \003(\tB\003\340A\001\022h\n"
           + "\014default_rule\030\007 \001(\0132M.google.sh"
-          + "opping.merchant.datasources.v1.PrimaryProductDataSource.DefaultRuleB\003\340A\001\022\"\n"
-          + "\025contains_custom_rules\030\t \001(\010B\003\340A\003\022h\n"
+          + "opping.merchant.datasources.v1.PrimaryProductDataSource.DefaultRuleB\003\340A\001\022h\n"
           + "\014destinations\030\n"
-          + " \003(\0132M.google.shopping.merchant.da"
-          + "tasources.v1.PrimaryProductDataSource.DestinationB\003\340A\001\032p\n"
+          + " \003(\0132M.google.shopping.merchan"
+          + "t.datasources.v1.PrimaryProductDataSource.DestinationB\003\340A\001\032p\n"
           + "\013DefaultRule\022a\n"
-          + "\026take_from_data_sources\030\001 \003(\0132<.google.shopping."
-          + "merchant.datasources.v1.DataSourceReferenceB\003\340A\002\032\364\001\n"
+          + "\026take_from_data_sources\030\001 \003(\0132<.google.shopp"
+          + "ing.merchant.datasources.v1.DataSourceReferenceB\003\340A\002\032\364\001\n"
           + "\013Destination\022F\n"
           + "\013destination\030\001"
           + " \001(\01621.google.shopping.type.Destination.DestinationEnum\022b\n"
-          + "\005state\030\002 \001(\0162S.google"
-          + ".shopping.merchant.datasources.v1.PrimaryProductDataSource.Destination.State\"9\n"
+          + "\005state\030\002 \001(\0162S.google.shopping.merchant.datasources.v1.Pr"
+          + "imaryProductDataSource.Destination.State\"9\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\013\n"
           + "\007ENABLED\020\001\022\014\n"
@@ -109,8 +108,8 @@ public final class DatasourcetypesProto {
           + "\035SupplementalProductDataSource\022\037\n\n"
           + "feed_label\030\004 \001(\tB\006\340A\001\340A\005H\000\210\001\001\022%\n"
           + "\020content_language\030\005 \001(\tB\006\340A\001\340A\005H\001\210\001\001\022k\n"
-          + " referencing_primary_data_sources\030\007 \003(\0132"
-          + "<.google.shopping.merchant.datasources.v1.DataSourceReferenceB\003\340A\003B\r\n"
+          + " referencing_primary_data_sources\030\007 "
+          + "\003(\0132<.google.shopping.merchant.datasources.v1.DataSourceReferenceB\003\340A\003B\r\n"
           + "\013_feed_labelB\023\n"
           + "\021_content_language\"X\n"
           + "\030LocalInventoryDataSource\022\032\n\n"
@@ -129,11 +128,11 @@ public final class DatasourcetypesProto {
           + "\030primary_data_source_name\030\003 \001(\tB\003\340A\001H\000\022,\n"
           + "\035supplemental_data_source_name\030\002 \001(\tB\003\340A\001H\000B\020\n"
           + "\016data_source_idB\234\002\n"
-          + "+com.google.shopping.merchant.datasources.v1B\024DatasourcetypesP"
-          + "rotoP\001ZScloud.google.com/go/shopping/merchant/datasources/apiv1/datasourcespb;da"
-          + "tasourcespb\252\002\'Google.Shopping.Merchant.D"
-          + "ataSources.V1\312\002\'Google\\Shopping\\Merchant"
-          + "\\DataSources\\V1\352\002+Google::Shopping::Merchant::DataSources::V1b\006proto3"
+          + "+com.google.shopping.merchant.datasources.v1B\024Datasourcety"
+          + "pesProtoP\001ZScloud.google.com/go/shopping/merchant/datasources/apiv1/datasourcesp"
+          + "b;datasourcespb\252\002\'Google.Shopping.Mercha"
+          + "nt.DataSources.V1\312\002\'Google\\Shopping\\Merc"
+          + "hant\\DataSources\\V1\352\002+Google::Shopping::Merchant::DataSources::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -153,7 +152,6 @@ public final class DatasourcetypesProto {
               "ContentLanguage",
               "Countries",
               "DefaultRule",
-              "ContainsCustomRules",
               "Destinations",
             });
     internal_static_google_shopping_merchant_datasources_v1_PrimaryProductDataSource_DefaultRule_descriptor =

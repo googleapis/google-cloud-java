@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service for creating and managing Vertex AI's jobs.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1/job_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class JobServiceGrpc {
 
@@ -3061,8 +3058,9 @@ public final class JobServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.CustomJob createCustomJob(
-        com.google.cloud.aiplatform.v1.CreateCustomJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.CreateCustomJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCustomJobMethod(), getCallOptions(), request);
     }
 
@@ -3074,8 +3072,8 @@ public final class JobServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.CustomJob getCustomJob(
-        com.google.cloud.aiplatform.v1.GetCustomJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.GetCustomJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCustomJobMethod(), getCallOptions(), request);
     }
 
@@ -3087,8 +3085,9 @@ public final class JobServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ListCustomJobsResponse listCustomJobs(
-        com.google.cloud.aiplatform.v1.ListCustomJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ListCustomJobsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCustomJobsMethod(), getCallOptions(), request);
     }
 
@@ -3100,8 +3099,9 @@ public final class JobServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteCustomJob(
-        com.google.cloud.aiplatform.v1.DeleteCustomJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.DeleteCustomJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteCustomJobMethod(), getCallOptions(), request);
     }
 
@@ -3125,8 +3125,9 @@ public final class JobServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty cancelCustomJob(
-        com.google.cloud.aiplatform.v1.CancelCustomJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.CancelCustomJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCancelCustomJobMethod(), getCallOptions(), request);
     }
 
@@ -3138,8 +3139,9 @@ public final class JobServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.DataLabelingJob createDataLabelingJob(
-        com.google.cloud.aiplatform.v1.CreateDataLabelingJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.CreateDataLabelingJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDataLabelingJobMethod(), getCallOptions(), request);
     }
 
@@ -3151,8 +3153,9 @@ public final class JobServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.DataLabelingJob getDataLabelingJob(
-        com.google.cloud.aiplatform.v1.GetDataLabelingJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.GetDataLabelingJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDataLabelingJobMethod(), getCallOptions(), request);
     }
 
@@ -3164,8 +3167,9 @@ public final class JobServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ListDataLabelingJobsResponse listDataLabelingJobs(
-        com.google.cloud.aiplatform.v1.ListDataLabelingJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ListDataLabelingJobsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDataLabelingJobsMethod(), getCallOptions(), request);
     }
 
@@ -3177,8 +3181,9 @@ public final class JobServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteDataLabelingJob(
-        com.google.cloud.aiplatform.v1.DeleteDataLabelingJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.DeleteDataLabelingJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDataLabelingJobMethod(), getCallOptions(), request);
     }
 
@@ -3190,8 +3195,9 @@ public final class JobServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty cancelDataLabelingJob(
-        com.google.cloud.aiplatform.v1.CancelDataLabelingJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.CancelDataLabelingJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCancelDataLabelingJobMethod(), getCallOptions(), request);
     }
 
@@ -3203,8 +3209,9 @@ public final class JobServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.HyperparameterTuningJob createHyperparameterTuningJob(
-        com.google.cloud.aiplatform.v1.CreateHyperparameterTuningJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.CreateHyperparameterTuningJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateHyperparameterTuningJobMethod(), getCallOptions(), request);
     }
 
@@ -3216,8 +3223,9 @@ public final class JobServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.HyperparameterTuningJob getHyperparameterTuningJob(
-        com.google.cloud.aiplatform.v1.GetHyperparameterTuningJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.GetHyperparameterTuningJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetHyperparameterTuningJobMethod(), getCallOptions(), request);
     }
 
@@ -3230,8 +3238,9 @@ public final class JobServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1.ListHyperparameterTuningJobsResponse
         listHyperparameterTuningJobs(
-            com.google.cloud.aiplatform.v1.ListHyperparameterTuningJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.aiplatform.v1.ListHyperparameterTuningJobsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListHyperparameterTuningJobsMethod(), getCallOptions(), request);
     }
 
@@ -3243,8 +3252,9 @@ public final class JobServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteHyperparameterTuningJob(
-        com.google.cloud.aiplatform.v1.DeleteHyperparameterTuningJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.DeleteHyperparameterTuningJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteHyperparameterTuningJobMethod(), getCallOptions(), request);
     }
 
@@ -3269,8 +3279,9 @@ public final class JobServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty cancelHyperparameterTuningJob(
-        com.google.cloud.aiplatform.v1.CancelHyperparameterTuningJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.CancelHyperparameterTuningJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCancelHyperparameterTuningJobMethod(), getCallOptions(), request);
     }
 
@@ -3282,8 +3293,8 @@ public final class JobServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.NasJob createNasJob(
-        com.google.cloud.aiplatform.v1.CreateNasJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.CreateNasJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateNasJobMethod(), getCallOptions(), request);
     }
 
@@ -3295,8 +3306,8 @@ public final class JobServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.NasJob getNasJob(
-        com.google.cloud.aiplatform.v1.GetNasJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.GetNasJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetNasJobMethod(), getCallOptions(), request);
     }
 
@@ -3308,8 +3319,8 @@ public final class JobServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ListNasJobsResponse listNasJobs(
-        com.google.cloud.aiplatform.v1.ListNasJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ListNasJobsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListNasJobsMethod(), getCallOptions(), request);
     }
 
@@ -3321,8 +3332,8 @@ public final class JobServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteNasJob(
-        com.google.cloud.aiplatform.v1.DeleteNasJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.DeleteNasJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteNasJobMethod(), getCallOptions(), request);
     }
 
@@ -3346,8 +3357,8 @@ public final class JobServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty cancelNasJob(
-        com.google.cloud.aiplatform.v1.CancelNasJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.CancelNasJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCancelNasJobMethod(), getCallOptions(), request);
     }
 
@@ -3359,8 +3370,9 @@ public final class JobServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.NasTrialDetail getNasTrialDetail(
-        com.google.cloud.aiplatform.v1.GetNasTrialDetailRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.GetNasTrialDetailRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetNasTrialDetailMethod(), getCallOptions(), request);
     }
 
@@ -3372,8 +3384,9 @@ public final class JobServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ListNasTrialDetailsResponse listNasTrialDetails(
-        com.google.cloud.aiplatform.v1.ListNasTrialDetailsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ListNasTrialDetailsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListNasTrialDetailsMethod(), getCallOptions(), request);
     }
 
@@ -3386,8 +3399,9 @@ public final class JobServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.BatchPredictionJob createBatchPredictionJob(
-        com.google.cloud.aiplatform.v1.CreateBatchPredictionJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.CreateBatchPredictionJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateBatchPredictionJobMethod(), getCallOptions(), request);
     }
 
@@ -3399,8 +3413,9 @@ public final class JobServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.BatchPredictionJob getBatchPredictionJob(
-        com.google.cloud.aiplatform.v1.GetBatchPredictionJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.GetBatchPredictionJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetBatchPredictionJobMethod(), getCallOptions(), request);
     }
 
@@ -3412,8 +3427,9 @@ public final class JobServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ListBatchPredictionJobsResponse listBatchPredictionJobs(
-        com.google.cloud.aiplatform.v1.ListBatchPredictionJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ListBatchPredictionJobsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListBatchPredictionJobsMethod(), getCallOptions(), request);
     }
 
@@ -3426,8 +3442,9 @@ public final class JobServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteBatchPredictionJob(
-        com.google.cloud.aiplatform.v1.DeleteBatchPredictionJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.DeleteBatchPredictionJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteBatchPredictionJobMethod(), getCallOptions(), request);
     }
 
@@ -3449,8 +3466,9 @@ public final class JobServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty cancelBatchPredictionJob(
-        com.google.cloud.aiplatform.v1.CancelBatchPredictionJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.CancelBatchPredictionJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCancelBatchPredictionJobMethod(), getCallOptions(), request);
     }
 
@@ -3464,8 +3482,9 @@ public final class JobServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
         createModelDeploymentMonitoringJob(
-            com.google.cloud.aiplatform.v1.CreateModelDeploymentMonitoringJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.aiplatform.v1.CreateModelDeploymentMonitoringJobRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateModelDeploymentMonitoringJobMethod(), getCallOptions(), request);
     }
 
@@ -3479,8 +3498,9 @@ public final class JobServiceGrpc {
     public com.google.cloud.aiplatform.v1.SearchModelDeploymentMonitoringStatsAnomaliesResponse
         searchModelDeploymentMonitoringStatsAnomalies(
             com.google.cloud.aiplatform.v1.SearchModelDeploymentMonitoringStatsAnomaliesRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getSearchModelDeploymentMonitoringStatsAnomaliesMethod(),
           getCallOptions(),
@@ -3496,8 +3516,9 @@ public final class JobServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1.ModelDeploymentMonitoringJob
         getModelDeploymentMonitoringJob(
-            com.google.cloud.aiplatform.v1.GetModelDeploymentMonitoringJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.aiplatform.v1.GetModelDeploymentMonitoringJobRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetModelDeploymentMonitoringJobMethod(), getCallOptions(), request);
     }
 
@@ -3510,8 +3531,9 @@ public final class JobServiceGrpc {
      */
     public com.google.cloud.aiplatform.v1.ListModelDeploymentMonitoringJobsResponse
         listModelDeploymentMonitoringJobs(
-            com.google.cloud.aiplatform.v1.ListModelDeploymentMonitoringJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.aiplatform.v1.ListModelDeploymentMonitoringJobsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListModelDeploymentMonitoringJobsMethod(), getCallOptions(), request);
     }
 
@@ -3523,8 +3545,9 @@ public final class JobServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateModelDeploymentMonitoringJob(
-        com.google.cloud.aiplatform.v1.UpdateModelDeploymentMonitoringJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.UpdateModelDeploymentMonitoringJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateModelDeploymentMonitoringJobMethod(), getCallOptions(), request);
     }
 
@@ -3536,8 +3559,9 @@ public final class JobServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteModelDeploymentMonitoringJob(
-        com.google.cloud.aiplatform.v1.DeleteModelDeploymentMonitoringJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.DeleteModelDeploymentMonitoringJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteModelDeploymentMonitoringJobMethod(), getCallOptions(), request);
     }
 
@@ -3552,8 +3576,9 @@ public final class JobServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty pauseModelDeploymentMonitoringJob(
-        com.google.cloud.aiplatform.v1.PauseModelDeploymentMonitoringJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.PauseModelDeploymentMonitoringJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPauseModelDeploymentMonitoringJobMethod(), getCallOptions(), request);
     }
 
@@ -3567,8 +3592,9 @@ public final class JobServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty resumeModelDeploymentMonitoringJob(
-        com.google.cloud.aiplatform.v1.ResumeModelDeploymentMonitoringJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ResumeModelDeploymentMonitoringJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getResumeModelDeploymentMonitoringJobMethod(), getCallOptions(), request);
     }
   }

@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * - [LfpProvider][google.shopping.merchant.accounts.v1.LfpProvider]
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/accounts/v1beta/lfpproviders.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class LfpProvidersServiceGrpc {
 
@@ -337,8 +334,9 @@ public final class LfpProvidersServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.FindLfpProvidersResponse findLfpProviders(
-        com.google.shopping.merchant.accounts.v1beta.FindLfpProvidersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.FindLfpProvidersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFindLfpProvidersMethod(), getCallOptions(), request);
     }
 
@@ -350,8 +348,9 @@ public final class LfpProvidersServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.LinkLfpProviderResponse linkLfpProvider(
-        com.google.shopping.merchant.accounts.v1beta.LinkLfpProviderRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.LinkLfpProviderRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getLinkLfpProviderMethod(), getCallOptions(), request);
     }
   }

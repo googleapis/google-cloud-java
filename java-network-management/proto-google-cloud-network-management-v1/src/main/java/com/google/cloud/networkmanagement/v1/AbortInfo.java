@@ -395,13 +395,24 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Aborted because a PSC endpoint selection for the Google-managed service
+     * Aborted because PSC endpoint selection for the Google-managed service
      * is ambiguous (several PSC endpoints satisfy test input).
      * </pre>
      *
      * <code>GOOGLE_MANAGED_SERVICE_AMBIGUOUS_PSC_ENDPOINT = 19;</code>
      */
     GOOGLE_MANAGED_SERVICE_AMBIGUOUS_PSC_ENDPOINT(19),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because endpoint selection for the Google-managed service is
+     * ambiguous (several endpoints satisfy test input).
+     * </pre>
+     *
+     * <code>GOOGLE_MANAGED_SERVICE_AMBIGUOUS_ENDPOINT = 39;</code>
+     */
+    GOOGLE_MANAGED_SERVICE_AMBIGUOUS_ENDPOINT(39),
     /**
      *
      *
@@ -488,6 +499,17 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>NO_SERVERLESS_IP_RANGES = 37;</code>
      */
     NO_SERVERLESS_IP_RANGES(37),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because the used protocol is not supported for the used IP
+     * version.
+     * </pre>
+     *
+     * <code>IP_VERSION_PROTOCOL_MISMATCH = 40;</code>
+     */
+    IP_VERSION_PROTOCOL_MISMATCH(40),
     UNRECOGNIZED(-1),
     ;
 
@@ -829,13 +851,25 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Aborted because a PSC endpoint selection for the Google-managed service
+     * Aborted because PSC endpoint selection for the Google-managed service
      * is ambiguous (several PSC endpoints satisfy test input).
      * </pre>
      *
      * <code>GOOGLE_MANAGED_SERVICE_AMBIGUOUS_PSC_ENDPOINT = 19;</code>
      */
     public static final int GOOGLE_MANAGED_SERVICE_AMBIGUOUS_PSC_ENDPOINT_VALUE = 19;
+
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because endpoint selection for the Google-managed service is
+     * ambiguous (several endpoints satisfy test input).
+     * </pre>
+     *
+     * <code>GOOGLE_MANAGED_SERVICE_AMBIGUOUS_ENDPOINT = 39;</code>
+     */
+    public static final int GOOGLE_MANAGED_SERVICE_AMBIGUOUS_ENDPOINT_VALUE = 39;
 
     /**
      *
@@ -931,6 +965,18 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int NO_SERVERLESS_IP_RANGES_VALUE = 37;
 
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because the used protocol is not supported for the used IP
+     * version.
+     * </pre>
+     *
+     * <code>IP_VERSION_PROTOCOL_MISMATCH = 40;</code>
+     */
+    public static final int IP_VERSION_PROTOCOL_MISMATCH_VALUE = 40;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -1013,6 +1059,8 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
           return ROUTE_CONFIG_NOT_FOUND;
         case 19:
           return GOOGLE_MANAGED_SERVICE_AMBIGUOUS_PSC_ENDPOINT;
+        case 39:
+          return GOOGLE_MANAGED_SERVICE_AMBIGUOUS_ENDPOINT;
         case 20:
           return SOURCE_PSC_CLOUD_SQL_UNSUPPORTED;
         case 34:
@@ -1029,6 +1077,8 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
           return UNSUPPORTED_GOOGLE_MANAGED_PROJECT_CONFIG;
         case 37:
           return NO_SERVERLESS_IP_RANGES;
+        case 40:
+          return IP_VERSION_PROTOCOL_MISMATCH;
         default:
           return null;
       }

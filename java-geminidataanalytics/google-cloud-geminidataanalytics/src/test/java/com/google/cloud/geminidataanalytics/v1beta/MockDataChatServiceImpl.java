@@ -19,6 +19,7 @@ package com.google.cloud.geminidataanalytics.v1beta;
 import com.google.api.core.BetaApi;
 import com.google.cloud.geminidataanalytics.v1beta.DataChatServiceGrpc.DataChatServiceImplBase;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -95,6 +96,27 @@ public class MockDataChatServiceImpl extends DataChatServiceImplBase {
                   "Unrecognized response type %s for method CreateConversation, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Conversation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteConversation(
+      DeleteConversationRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteConversation, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
                   Exception.class.getName())));
     }
   }

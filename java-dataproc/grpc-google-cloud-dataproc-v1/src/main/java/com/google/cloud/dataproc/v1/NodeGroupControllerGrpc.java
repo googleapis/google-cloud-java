@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * of Compute Engine managed instances.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dataproc/v1/node_groups.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class NodeGroupControllerGrpc {
 
@@ -401,8 +398,9 @@ public final class NodeGroupControllerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createNodeGroup(
-        com.google.cloud.dataproc.v1.CreateNodeGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.CreateNodeGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateNodeGroupMethod(), getCallOptions(), request);
     }
 
@@ -416,8 +414,9 @@ public final class NodeGroupControllerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation resizeNodeGroup(
-        com.google.cloud.dataproc.v1.ResizeNodeGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.ResizeNodeGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getResizeNodeGroupMethod(), getCallOptions(), request);
     }
 
@@ -430,8 +429,8 @@ public final class NodeGroupControllerGrpc {
      * </pre>
      */
     public com.google.cloud.dataproc.v1.NodeGroup getNodeGroup(
-        com.google.cloud.dataproc.v1.GetNodeGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.GetNodeGroupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetNodeGroupMethod(), getCallOptions(), request);
     }
   }

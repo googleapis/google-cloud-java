@@ -344,4 +344,36 @@ public interface InterconnectAttachmentOrBuilder
    * @return The state.
    */
   com.google.cloud.edgenetwork.v1.ResourceState getState();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The remote peering network type of the underlying interconnect.
+   * It is required when peering separation is enabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.edgenetwork.v1.RemotePeeringNetworkType peering_type = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for peeringType.
+   */
+  int getPeeringTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The remote peering network type of the underlying interconnect.
+   * It is required when peering separation is enabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.edgenetwork.v1.RemotePeeringNetworkType peering_type = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The peeringType.
+   */
+  com.google.cloud.edgenetwork.v1.RemotePeeringNetworkType getPeeringType();
 }

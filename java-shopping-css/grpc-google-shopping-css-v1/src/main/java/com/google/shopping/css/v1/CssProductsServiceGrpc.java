@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * internally).
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/css/v1/css_products.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CssProductsServiceGrpc {
 
@@ -335,8 +332,8 @@ public final class CssProductsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.css.v1.CssProduct getCssProduct(
-        com.google.shopping.css.v1.GetCssProductRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.css.v1.GetCssProductRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCssProductMethod(), getCallOptions(), request);
     }
 
@@ -353,8 +350,8 @@ public final class CssProductsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.css.v1.ListCssProductsResponse listCssProducts(
-        com.google.shopping.css.v1.ListCssProductsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.css.v1.ListCssProductsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCssProductsMethod(), getCallOptions(), request);
     }
   }

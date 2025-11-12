@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to determine the likelihood an event is legitimate.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/recaptchaenterprise/v1beta1/recaptchaenterprise.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
 
@@ -342,8 +339,9 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
      * </pre>
      */
     public com.google.recaptchaenterprise.v1beta1.Assessment createAssessment(
-        com.google.recaptchaenterprise.v1beta1.CreateAssessmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.recaptchaenterprise.v1beta1.CreateAssessmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAssessmentMethod(), getCallOptions(), request);
     }
 
@@ -356,8 +354,9 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
      * </pre>
      */
     public com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentResponse annotateAssessment(
-        com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAnnotateAssessmentMethod(), getCallOptions(), request);
     }
   }

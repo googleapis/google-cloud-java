@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for ranking text records.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1/rank_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class RankServiceGrpc {
 
@@ -234,8 +231,8 @@ public final class RankServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1.RankResponse rank(
-        com.google.cloud.discoveryengine.v1.RankRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.RankRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRankMethod(), getCallOptions(), request);
     }
   }

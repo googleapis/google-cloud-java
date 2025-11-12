@@ -32,6 +32,8 @@ import com.google.cloud.aiplatform.v1.DirectPredictRequest;
 import com.google.cloud.aiplatform.v1.DirectPredictResponse;
 import com.google.cloud.aiplatform.v1.DirectRawPredictRequest;
 import com.google.cloud.aiplatform.v1.DirectRawPredictResponse;
+import com.google.cloud.aiplatform.v1.EmbedContentRequest;
+import com.google.cloud.aiplatform.v1.EmbedContentResponse;
 import com.google.cloud.aiplatform.v1.ExplainRequest;
 import com.google.cloud.aiplatform.v1.ExplainResponse;
 import com.google.cloud.aiplatform.v1.GenerateContentRequest;
@@ -223,6 +225,17 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<EmbedContentRequest, EmbedContentResponse>
+      embedContentMethodDescriptor =
+          MethodDescriptor.<EmbedContentRequest, EmbedContentResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1.PredictionService/EmbedContent")
+              .setRequestMarshaller(ProtoUtils.marshaller(EmbedContentRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(EmbedContentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -295,6 +308,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
       generateContentCallable;
   private final ServerStreamingCallable<GenerateContentRequest, GenerateContentResponse>
       streamGenerateContentCallable;
+  private final UnaryCallable<EmbedContentRequest, EmbedContentResponse> embedContentCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -463,6 +477,16 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<EmbedContentRequest, EmbedContentResponse> embedContentTransportSettings =
+        GrpcCallSettings.<EmbedContentRequest, EmbedContentResponse>newBuilder()
+            .setMethodDescriptor(embedContentMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("model", String.valueOf(request.getModel()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -564,6 +588,9 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
             streamGenerateContentTransportSettings,
             settings.streamGenerateContentSettings(),
             clientContext);
+    this.embedContentCallable =
+        callableFactory.createUnaryCallable(
+            embedContentTransportSettings, settings.embedContentSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -663,6 +690,11 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
   public ServerStreamingCallable<GenerateContentRequest, GenerateContentResponse>
       streamGenerateContentCallable() {
     return streamGenerateContentCallable;
+  }
+
+  @Override
+  public UnaryCallable<EmbedContentRequest, EmbedContentResponse> embedContentCallable() {
+    return embedContentCallable;
   }
 
   @Override

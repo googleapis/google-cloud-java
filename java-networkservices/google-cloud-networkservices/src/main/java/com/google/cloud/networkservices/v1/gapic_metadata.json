@@ -13,6 +13,9 @@
             "CreateAuthzExtension": {
               "methods": ["createAuthzExtensionAsync", "createAuthzExtensionAsync", "createAuthzExtensionAsync", "createAuthzExtensionOperationCallable", "createAuthzExtensionCallable"]
             },
+            "CreateLbEdgeExtension": {
+              "methods": ["createLbEdgeExtensionAsync", "createLbEdgeExtensionAsync", "createLbEdgeExtensionAsync", "createLbEdgeExtensionOperationCallable", "createLbEdgeExtensionCallable"]
+            },
             "CreateLbRouteExtension": {
               "methods": ["createLbRouteExtensionAsync", "createLbRouteExtensionAsync", "createLbRouteExtensionAsync", "createLbRouteExtensionOperationCallable", "createLbRouteExtensionCallable"]
             },
@@ -21,6 +24,9 @@
             },
             "DeleteAuthzExtension": {
               "methods": ["deleteAuthzExtensionAsync", "deleteAuthzExtensionAsync", "deleteAuthzExtensionAsync", "deleteAuthzExtensionOperationCallable", "deleteAuthzExtensionCallable"]
+            },
+            "DeleteLbEdgeExtension": {
+              "methods": ["deleteLbEdgeExtensionAsync", "deleteLbEdgeExtensionAsync", "deleteLbEdgeExtensionAsync", "deleteLbEdgeExtensionOperationCallable", "deleteLbEdgeExtensionCallable"]
             },
             "DeleteLbRouteExtension": {
               "methods": ["deleteLbRouteExtensionAsync", "deleteLbRouteExtensionAsync", "deleteLbRouteExtensionAsync", "deleteLbRouteExtensionOperationCallable", "deleteLbRouteExtensionCallable"]
@@ -34,6 +40,9 @@
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
             },
+            "GetLbEdgeExtension": {
+              "methods": ["getLbEdgeExtension", "getLbEdgeExtension", "getLbEdgeExtension", "getLbEdgeExtensionCallable"]
+            },
             "GetLbRouteExtension": {
               "methods": ["getLbRouteExtension", "getLbRouteExtension", "getLbRouteExtension", "getLbRouteExtensionCallable"]
             },
@@ -45,6 +54,9 @@
             },
             "ListAuthzExtensions": {
               "methods": ["listAuthzExtensions", "listAuthzExtensions", "listAuthzExtensions", "listAuthzExtensionsPagedCallable", "listAuthzExtensionsCallable"]
+            },
+            "ListLbEdgeExtensions": {
+              "methods": ["listLbEdgeExtensions", "listLbEdgeExtensions", "listLbEdgeExtensions", "listLbEdgeExtensionsPagedCallable", "listLbEdgeExtensionsCallable"]
             },
             "ListLbRouteExtensions": {
               "methods": ["listLbRouteExtensions", "listLbRouteExtensions", "listLbRouteExtensions", "listLbRouteExtensionsPagedCallable", "listLbRouteExtensionsCallable"]
@@ -63,6 +75,9 @@
             },
             "UpdateAuthzExtension": {
               "methods": ["updateAuthzExtensionAsync", "updateAuthzExtensionAsync", "updateAuthzExtensionOperationCallable", "updateAuthzExtensionCallable"]
+            },
+            "UpdateLbEdgeExtension": {
+              "methods": ["updateLbEdgeExtensionAsync", "updateLbEdgeExtensionAsync", "updateLbEdgeExtensionOperationCallable", "updateLbEdgeExtensionCallable"]
             },
             "UpdateLbRouteExtension": {
               "methods": ["updateLbRouteExtensionAsync", "updateLbRouteExtensionAsync", "updateLbRouteExtensionOperationCallable", "updateLbRouteExtensionCallable"]

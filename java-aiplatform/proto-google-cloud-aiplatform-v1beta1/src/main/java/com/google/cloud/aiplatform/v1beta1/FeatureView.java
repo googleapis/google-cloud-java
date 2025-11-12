@@ -15783,7 +15783,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
     return satisfiesPzi_;
   }
 
-  public static final int BIGTABLE_METADATA_FIELD_NUMBER = 21;
+  public static final int BIGTABLE_METADATA_FIELD_NUMBER = 22;
   private com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtableMetadata_;
 
   /**
@@ -15794,7 +15794,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the bigtableMetadata field is set.
@@ -15812,7 +15812,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The bigtableMetadata.
@@ -15832,7 +15832,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -15911,7 +15911,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       output.writeBool(20, satisfiesPzi_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
-      output.writeMessage(21, getBigtableMetadata());
+      output.writeMessage(22, getBigtableMetadata());
     }
     getUnknownFields().writeTo(output);
   }
@@ -15987,7 +15987,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(20, satisfiesPzi_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getBigtableMetadata());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getBigtableMetadata());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -16711,13 +16711,13 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00008000;
                 break;
               } // case 160
-            case 170:
+            case 178:
               {
                 input.readMessage(
                     getBigtableMetadataFieldBuilder().getBuilder(), extensionRegistry);
                 bitField0_ |= 0x00010000;
                 break;
-              } // case 170
+              } // case 178
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -19730,7 +19730,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return Whether the bigtableMetadata field is set.
@@ -19747,7 +19747,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The bigtableMetadata.
@@ -19770,7 +19770,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setBigtableMetadata(
@@ -19796,7 +19796,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setBigtableMetadata(
@@ -19819,7 +19819,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder mergeBigtableMetadata(
@@ -19852,7 +19852,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder clearBigtableMetadata() {
@@ -19874,7 +19874,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata.Builder
@@ -19892,7 +19892,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadataOrBuilder
@@ -19914,7 +19914,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

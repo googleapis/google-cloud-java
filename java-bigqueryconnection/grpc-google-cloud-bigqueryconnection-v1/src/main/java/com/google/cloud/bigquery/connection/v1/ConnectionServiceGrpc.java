@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Manages external data source connections and credentials.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/bigquery/connection/v1/connection.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ConnectionServiceGrpc {
 
@@ -790,8 +787,9 @@ public final class ConnectionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.connection.v1.Connection createConnection(
-        com.google.cloud.bigquery.connection.v1.CreateConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.connection.v1.CreateConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateConnectionMethod(), getCallOptions(), request);
     }
 
@@ -803,8 +801,9 @@ public final class ConnectionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.connection.v1.Connection getConnection(
-        com.google.cloud.bigquery.connection.v1.GetConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.connection.v1.GetConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetConnectionMethod(), getCallOptions(), request);
     }
 
@@ -816,8 +815,9 @@ public final class ConnectionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.connection.v1.ListConnectionsResponse listConnections(
-        com.google.cloud.bigquery.connection.v1.ListConnectionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.connection.v1.ListConnectionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListConnectionsMethod(), getCallOptions(), request);
     }
 
@@ -830,8 +830,9 @@ public final class ConnectionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.connection.v1.Connection updateConnection(
-        com.google.cloud.bigquery.connection.v1.UpdateConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.connection.v1.UpdateConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateConnectionMethod(), getCallOptions(), request);
     }
 
@@ -843,8 +844,9 @@ public final class ConnectionServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteConnection(
-        com.google.cloud.bigquery.connection.v1.DeleteConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.connection.v1.DeleteConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteConnectionMethod(), getCallOptions(), request);
     }
 
@@ -857,8 +859,9 @@ public final class ConnectionServiceGrpc {
      * set.
      * </pre>
      */
-    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -871,8 +874,9 @@ public final class ConnectionServiceGrpc {
      * Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
      * </pre>
      */
-    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -889,8 +893,8 @@ public final class ConnectionServiceGrpc {
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
-        com.google.iam.v1.TestIamPermissionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.iam.v1.TestIamPermissionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
   }

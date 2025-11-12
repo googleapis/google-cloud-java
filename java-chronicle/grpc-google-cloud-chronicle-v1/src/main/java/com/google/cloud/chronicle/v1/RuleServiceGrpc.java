@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * RuleService provides interface for user-created rules.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/chronicle/v1/rule.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class RuleServiceGrpc {
 
@@ -1054,8 +1051,8 @@ public final class RuleServiceGrpc {
      * </pre>
      */
     public com.google.cloud.chronicle.v1.Rule createRule(
-        com.google.cloud.chronicle.v1.CreateRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.chronicle.v1.CreateRuleRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateRuleMethod(), getCallOptions(), request);
     }
 
@@ -1067,8 +1064,8 @@ public final class RuleServiceGrpc {
      * </pre>
      */
     public com.google.cloud.chronicle.v1.Rule getRule(
-        com.google.cloud.chronicle.v1.GetRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.chronicle.v1.GetRuleRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRuleMethod(), getCallOptions(), request);
     }
 
@@ -1080,8 +1077,8 @@ public final class RuleServiceGrpc {
      * </pre>
      */
     public com.google.cloud.chronicle.v1.ListRulesResponse listRules(
-        com.google.cloud.chronicle.v1.ListRulesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.chronicle.v1.ListRulesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRulesMethod(), getCallOptions(), request);
     }
 
@@ -1093,8 +1090,8 @@ public final class RuleServiceGrpc {
      * </pre>
      */
     public com.google.cloud.chronicle.v1.Rule updateRule(
-        com.google.cloud.chronicle.v1.UpdateRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.chronicle.v1.UpdateRuleRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateRuleMethod(), getCallOptions(), request);
     }
 
@@ -1106,8 +1103,8 @@ public final class RuleServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteRule(
-        com.google.cloud.chronicle.v1.DeleteRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.chronicle.v1.DeleteRuleRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteRuleMethod(), getCallOptions(), request);
     }
 
@@ -1119,8 +1116,9 @@ public final class RuleServiceGrpc {
      * </pre>
      */
     public com.google.cloud.chronicle.v1.ListRuleRevisionsResponse listRuleRevisions(
-        com.google.cloud.chronicle.v1.ListRuleRevisionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.chronicle.v1.ListRuleRevisionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRuleRevisionsMethod(), getCallOptions(), request);
     }
 
@@ -1132,8 +1130,9 @@ public final class RuleServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createRetrohunt(
-        com.google.cloud.chronicle.v1.CreateRetrohuntRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.chronicle.v1.CreateRetrohuntRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateRetrohuntMethod(), getCallOptions(), request);
     }
 
@@ -1145,8 +1144,8 @@ public final class RuleServiceGrpc {
      * </pre>
      */
     public com.google.cloud.chronicle.v1.Retrohunt getRetrohunt(
-        com.google.cloud.chronicle.v1.GetRetrohuntRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.chronicle.v1.GetRetrohuntRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRetrohuntMethod(), getCallOptions(), request);
     }
 
@@ -1158,8 +1157,9 @@ public final class RuleServiceGrpc {
      * </pre>
      */
     public com.google.cloud.chronicle.v1.ListRetrohuntsResponse listRetrohunts(
-        com.google.cloud.chronicle.v1.ListRetrohuntsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.chronicle.v1.ListRetrohuntsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRetrohuntsMethod(), getCallOptions(), request);
     }
 
@@ -1171,8 +1171,9 @@ public final class RuleServiceGrpc {
      * </pre>
      */
     public com.google.cloud.chronicle.v1.RuleDeployment getRuleDeployment(
-        com.google.cloud.chronicle.v1.GetRuleDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.chronicle.v1.GetRuleDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRuleDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -1184,8 +1185,9 @@ public final class RuleServiceGrpc {
      * </pre>
      */
     public com.google.cloud.chronicle.v1.ListRuleDeploymentsResponse listRuleDeployments(
-        com.google.cloud.chronicle.v1.ListRuleDeploymentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.chronicle.v1.ListRuleDeploymentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRuleDeploymentsMethod(), getCallOptions(), request);
     }
 
@@ -1200,8 +1202,9 @@ public final class RuleServiceGrpc {
      * </pre>
      */
     public com.google.cloud.chronicle.v1.RuleDeployment updateRuleDeployment(
-        com.google.cloud.chronicle.v1.UpdateRuleDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.chronicle.v1.UpdateRuleDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateRuleDeploymentMethod(), getCallOptions(), request);
     }
   }

@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Center](https://support.google.com/merchants/answer/7439058) help article.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/datasources/v1beta/datasources.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DataSourcesServiceGrpc {
 
@@ -657,8 +654,9 @@ public final class DataSourcesServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.datasources.v1beta.DataSource getDataSource(
-        com.google.shopping.merchant.datasources.v1beta.GetDataSourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.datasources.v1beta.GetDataSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDataSourceMethod(), getCallOptions(), request);
     }
 
@@ -670,8 +668,9 @@ public final class DataSourcesServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.datasources.v1beta.ListDataSourcesResponse listDataSources(
-        com.google.shopping.merchant.datasources.v1beta.ListDataSourcesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.datasources.v1beta.ListDataSourcesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDataSourcesMethod(), getCallOptions(), request);
     }
 
@@ -683,8 +682,9 @@ public final class DataSourcesServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.datasources.v1beta.DataSource createDataSource(
-        com.google.shopping.merchant.datasources.v1beta.CreateDataSourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.datasources.v1beta.CreateDataSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDataSourceMethod(), getCallOptions(), request);
     }
 
@@ -697,8 +697,9 @@ public final class DataSourcesServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.datasources.v1beta.DataSource updateDataSource(
-        com.google.shopping.merchant.datasources.v1beta.UpdateDataSourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.datasources.v1beta.UpdateDataSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDataSourceMethod(), getCallOptions(), request);
     }
 
@@ -710,8 +711,9 @@ public final class DataSourcesServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteDataSource(
-        com.google.shopping.merchant.datasources.v1beta.DeleteDataSourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.datasources.v1beta.DeleteDataSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDataSourceMethod(), getCallOptions(), request);
     }
 
@@ -727,8 +729,9 @@ public final class DataSourcesServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty fetchDataSource(
-        com.google.shopping.merchant.datasources.v1beta.FetchDataSourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.datasources.v1beta.FetchDataSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchDataSourceMethod(), getCallOptions(), request);
     }
   }

@@ -85,6 +85,36 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ListOrganizations</td>
+ *      <td><p> Returns a list of organizations that the user has access to.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listOrganizations(ListOrganizationsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listOrganizationsPagedCallable()
+ *           <li><p> listOrganizationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> FindSalesPartnerManagedClients</td>
+ *      <td><p> Returns a list of clients managed by the sales partner organization.
+ * <p>  User needs to be an OrgAdmin/BillingAdmin on the sales partner organization in order to view the end clients.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> findSalesPartnerManagedClients(FindSalesPartnerManagedClientsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> findSalesPartnerManagedClientsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListAnalyticsAccountLinks</td>
  *      <td><p> Lists the Google Analytics accounts link to the specified Google Marketing Platform organization.</td>
  *      <td>
@@ -159,6 +189,26 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> setPropertyServiceLevelCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ReportPropertyUsage</td>
+ *      <td><p> Get the usage and billing data for properties within the organization for the specified month.
+ * <p>  Per direct client org, user needs to be OrgAdmin/BillingAdmin on the organization in order to view the billing and usage data.
+ * <p>  Per sales partner client org, user needs to be OrgAdmin/BillingAdmin on the sales partner org in order to view the billing and usage data, or OrgAdmin/BillingAdmin on the sales partner client org in order to view the usage data only.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> reportPropertyUsage(ReportPropertyUsageRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> reportPropertyUsage(String organization)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> reportPropertyUsageCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -386,6 +436,184 @@ public class MarketingplatformAdminServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<GetOrganizationRequest, Organization> getOrganizationCallable() {
     return stub.getOrganizationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of organizations that the user has access to.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MarketingplatformAdminServiceClient marketingplatformAdminServiceClient =
+   *     MarketingplatformAdminServiceClient.create()) {
+   *   ListOrganizationsRequest request =
+   *       ListOrganizationsRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Organization element :
+   *       marketingplatformAdminServiceClient.listOrganizations(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListOrganizationsPagedResponse listOrganizations(ListOrganizationsRequest request) {
+    return listOrganizationsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of organizations that the user has access to.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MarketingplatformAdminServiceClient marketingplatformAdminServiceClient =
+   *     MarketingplatformAdminServiceClient.create()) {
+   *   ListOrganizationsRequest request =
+   *       ListOrganizationsRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Organization> future =
+   *       marketingplatformAdminServiceClient.listOrganizationsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Organization element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListOrganizationsRequest, ListOrganizationsPagedResponse>
+      listOrganizationsPagedCallable() {
+    return stub.listOrganizationsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of organizations that the user has access to.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MarketingplatformAdminServiceClient marketingplatformAdminServiceClient =
+   *     MarketingplatformAdminServiceClient.create()) {
+   *   ListOrganizationsRequest request =
+   *       ListOrganizationsRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListOrganizationsResponse response =
+   *         marketingplatformAdminServiceClient.listOrganizationsCallable().call(request);
+   *     for (Organization element : response.getOrganizationsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListOrganizationsRequest, ListOrganizationsResponse>
+      listOrganizationsCallable() {
+    return stub.listOrganizationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of clients managed by the sales partner organization.
+   *
+   * <p>User needs to be an OrgAdmin/BillingAdmin on the sales partner organization in order to view
+   * the end clients.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MarketingplatformAdminServiceClient marketingplatformAdminServiceClient =
+   *     MarketingplatformAdminServiceClient.create()) {
+   *   FindSalesPartnerManagedClientsRequest request =
+   *       FindSalesPartnerManagedClientsRequest.newBuilder()
+   *           .setOrganization(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setIsActive(true)
+   *           .build();
+   *   FindSalesPartnerManagedClientsResponse response =
+   *       marketingplatformAdminServiceClient.findSalesPartnerManagedClients(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FindSalesPartnerManagedClientsResponse findSalesPartnerManagedClients(
+      FindSalesPartnerManagedClientsRequest request) {
+    return findSalesPartnerManagedClientsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of clients managed by the sales partner organization.
+   *
+   * <p>User needs to be an OrgAdmin/BillingAdmin on the sales partner organization in order to view
+   * the end clients.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MarketingplatformAdminServiceClient marketingplatformAdminServiceClient =
+   *     MarketingplatformAdminServiceClient.create()) {
+   *   FindSalesPartnerManagedClientsRequest request =
+   *       FindSalesPartnerManagedClientsRequest.newBuilder()
+   *           .setOrganization(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setIsActive(true)
+   *           .build();
+   *   ApiFuture<FindSalesPartnerManagedClientsResponse> future =
+   *       marketingplatformAdminServiceClient
+   *           .findSalesPartnerManagedClientsCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   FindSalesPartnerManagedClientsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          FindSalesPartnerManagedClientsRequest, FindSalesPartnerManagedClientsResponse>
+      findSalesPartnerManagedClientsCallable() {
+    return stub.findSalesPartnerManagedClientsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -969,6 +1197,119 @@ public class MarketingplatformAdminServiceClient implements BackgroundResource {
     return stub.setPropertyServiceLevelCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get the usage and billing data for properties within the organization for the specified month.
+   *
+   * <p>Per direct client org, user needs to be OrgAdmin/BillingAdmin on the organization in order
+   * to view the billing and usage data.
+   *
+   * <p>Per sales partner client org, user needs to be OrgAdmin/BillingAdmin on the sales partner
+   * org in order to view the billing and usage data, or OrgAdmin/BillingAdmin on the sales partner
+   * client org in order to view the usage data only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MarketingplatformAdminServiceClient marketingplatformAdminServiceClient =
+   *     MarketingplatformAdminServiceClient.create()) {
+   *   String organization = "organization1178922291";
+   *   ReportPropertyUsageResponse response =
+   *       marketingplatformAdminServiceClient.reportPropertyUsage(organization);
+   * }
+   * }</pre>
+   *
+   * @param organization Required. Specifies the organization whose property usage will be listed.
+   *     <p>Format: organizations/{org_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReportPropertyUsageResponse reportPropertyUsage(String organization) {
+    ReportPropertyUsageRequest request =
+        ReportPropertyUsageRequest.newBuilder().setOrganization(organization).build();
+    return reportPropertyUsage(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get the usage and billing data for properties within the organization for the specified month.
+   *
+   * <p>Per direct client org, user needs to be OrgAdmin/BillingAdmin on the organization in order
+   * to view the billing and usage data.
+   *
+   * <p>Per sales partner client org, user needs to be OrgAdmin/BillingAdmin on the sales partner
+   * org in order to view the billing and usage data, or OrgAdmin/BillingAdmin on the sales partner
+   * client org in order to view the usage data only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MarketingplatformAdminServiceClient marketingplatformAdminServiceClient =
+   *     MarketingplatformAdminServiceClient.create()) {
+   *   ReportPropertyUsageRequest request =
+   *       ReportPropertyUsageRequest.newBuilder()
+   *           .setOrganization("organization1178922291")
+   *           .setMonth("month104080000")
+   *           .build();
+   *   ReportPropertyUsageResponse response =
+   *       marketingplatformAdminServiceClient.reportPropertyUsage(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReportPropertyUsageResponse reportPropertyUsage(ReportPropertyUsageRequest request) {
+    return reportPropertyUsageCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get the usage and billing data for properties within the organization for the specified month.
+   *
+   * <p>Per direct client org, user needs to be OrgAdmin/BillingAdmin on the organization in order
+   * to view the billing and usage data.
+   *
+   * <p>Per sales partner client org, user needs to be OrgAdmin/BillingAdmin on the sales partner
+   * org in order to view the billing and usage data, or OrgAdmin/BillingAdmin on the sales partner
+   * client org in order to view the usage data only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MarketingplatformAdminServiceClient marketingplatformAdminServiceClient =
+   *     MarketingplatformAdminServiceClient.create()) {
+   *   ReportPropertyUsageRequest request =
+   *       ReportPropertyUsageRequest.newBuilder()
+   *           .setOrganization("organization1178922291")
+   *           .setMonth("month104080000")
+   *           .build();
+   *   ApiFuture<ReportPropertyUsageResponse> future =
+   *       marketingplatformAdminServiceClient.reportPropertyUsageCallable().futureCall(request);
+   *   // Do something.
+   *   ReportPropertyUsageResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ReportPropertyUsageRequest, ReportPropertyUsageResponse>
+      reportPropertyUsageCallable() {
+    return stub.reportPropertyUsageCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -997,6 +1338,86 @@ public class MarketingplatformAdminServiceClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ListOrganizationsPagedResponse
+      extends AbstractPagedListResponse<
+          ListOrganizationsRequest,
+          ListOrganizationsResponse,
+          Organization,
+          ListOrganizationsPage,
+          ListOrganizationsFixedSizeCollection> {
+
+    public static ApiFuture<ListOrganizationsPagedResponse> createAsync(
+        PageContext<ListOrganizationsRequest, ListOrganizationsResponse, Organization> context,
+        ApiFuture<ListOrganizationsResponse> futureResponse) {
+      ApiFuture<ListOrganizationsPage> futurePage =
+          ListOrganizationsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListOrganizationsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListOrganizationsPagedResponse(ListOrganizationsPage page) {
+      super(page, ListOrganizationsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListOrganizationsPage
+      extends AbstractPage<
+          ListOrganizationsRequest,
+          ListOrganizationsResponse,
+          Organization,
+          ListOrganizationsPage> {
+
+    private ListOrganizationsPage(
+        PageContext<ListOrganizationsRequest, ListOrganizationsResponse, Organization> context,
+        ListOrganizationsResponse response) {
+      super(context, response);
+    }
+
+    private static ListOrganizationsPage createEmptyPage() {
+      return new ListOrganizationsPage(null, null);
+    }
+
+    @Override
+    protected ListOrganizationsPage createPage(
+        PageContext<ListOrganizationsRequest, ListOrganizationsResponse, Organization> context,
+        ListOrganizationsResponse response) {
+      return new ListOrganizationsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListOrganizationsPage> createPageAsync(
+        PageContext<ListOrganizationsRequest, ListOrganizationsResponse, Organization> context,
+        ApiFuture<ListOrganizationsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListOrganizationsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListOrganizationsRequest,
+          ListOrganizationsResponse,
+          Organization,
+          ListOrganizationsPage,
+          ListOrganizationsFixedSizeCollection> {
+
+    private ListOrganizationsFixedSizeCollection(
+        List<ListOrganizationsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListOrganizationsFixedSizeCollection createEmptyCollection() {
+      return new ListOrganizationsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListOrganizationsFixedSizeCollection createCollection(
+        List<ListOrganizationsPage> pages, int collectionSize) {
+      return new ListOrganizationsFixedSizeCollection(pages, collectionSize);
+    }
   }
 
   public static class ListAnalyticsAccountLinksPagedResponse

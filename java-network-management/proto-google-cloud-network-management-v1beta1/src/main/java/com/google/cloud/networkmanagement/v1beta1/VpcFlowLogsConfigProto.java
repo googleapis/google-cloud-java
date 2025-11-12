@@ -36,6 +36,10 @@ public final class VpcFlowLogsConfigProto {
       internal_static_google_cloud_networkmanagement_v1beta1_VpcFlowLogsConfig_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_networkmanagement_v1beta1_VpcFlowLogsConfig_LabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_networkmanagement_v1beta1_EffectiveVpcFlowLogsConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_networkmanagement_v1beta1_EffectiveVpcFlowLogsConfig_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -117,14 +121,50 @@ public final class VpcFlowLogsConfigProto {
           + "\t_metadataB\016\n"
           + "\014_filter_exprB\031\n"
           + "\027_cross_project_metadataB\030\n"
-          + "\026_target_resource_stateB\213\003\n"
-          + "*com.google.cloud.networkmanagement.v1beta1B\026VpcFlowLogsConfigProtoP\001ZXcloud.go"
-          + "ogle.com/go/networkmanagement/apiv1beta1/networkmanagementpb;networkmanagementpb"
-          + "\252\002&Google.Cloud.NetworkManagement.V1Beta"
-          + "1\312\002&Google\\Cloud\\NetworkManagement\\V1bet"
-          + "a1\352\002)Google::Cloud::NetworkManagement::V1beta1\352Aj\n"
-          + "5networkmanagement.googleapis.com/OrganizationLocation\0221organizations/"
-          + "{organization}/locations/{location}b\006proto3"
+          + "\026_target_resource_state\"\347\007\n"
+          + "\032EffectiveVpcFlowLogsConfig\022\014\n"
+          + "\004name\030\001 \001(\t\022S\n"
+          + "\005state\030\003 \001(\0162?.google.cloud.network"
+          + "management.v1beta1.VpcFlowLogsConfig.StateH\001\210\001\001\022p\n"
+          + "\024aggregation_interval\030\004 \001(\0162M.google.cloud.networkmanagement.v1beta1.V"
+          + "pcFlowLogsConfig.AggregationIntervalH\002\210\001\001\022\032\n\r"
+          + "flow_sampling\030\005 \001(\002H\003\210\001\001\022Y\n"
+          + "\010metadata\030\006 \001(\0162B.google.cloud.networkmanagement"
+          + ".v1beta1.VpcFlowLogsConfig.MetadataH\004\210\001\001\022\027\n"
+          + "\017metadata_fields\030\007 \003(\t\022\030\n"
+          + "\013filter_expr\030\010 \001(\tH\005\210\001\001\022s\n"
+          + "\026cross_project_metadata\030\r"
+          + " \001(\0162N.google.cloud.networkmanagement.v1b"
+          + "eta1.VpcFlowLogsConfig.CrossProjectMetadataH\006\210\001\001\022\021\n"
+          + "\007network\030d \001(\tH\000\022\020\n"
+          + "\006subnet\030e \001(\tH\000\022!\n"
+          + "\027interconnect_attachment\030f \001(\tH\000\022\024\n\n"
+          + "vpn_tunnel\030g \001(\tH\000\022\\\n"
+          + "\005scope\030\014 \001(\0162H."
+          + "google.cloud.networkmanagement.v1beta1.EffectiveVpcFlowLogsConfig.ScopeH\007\210\001\001\"\216\001\n"
+          + "\005Scope\022\025\n"
+          + "\021SCOPE_UNSPECIFIED\020\000\022\n\n"
+          + "\006SUBNET\020\001\022\026\n"
+          + "\022COMPUTE_API_SUBNET\020\002\022\013\n"
+          + "\007NETWORK\020\003\022\016\n\n"
+          + "VPN_TUNNEL\020\004\022\033\n"
+          + "\027INTERCONNECT_ATTACHMENT\020\005\022\020\n"
+          + "\014ORGANIZATION\020\006B\021\n"
+          + "\017target_resourceB\010\n"
+          + "\006_stateB\027\n"
+          + "\025_aggregation_intervalB\020\n"
+          + "\016_flow_samplingB\013\n"
+          + "\t_metadataB\016\n"
+          + "\014_filter_exprB\031\n"
+          + "\027_cross_project_metadataB\010\n"
+          + "\006_scopeB\213\003\n"
+          + "*com.google.cloud.networkmanagement.v1beta1B\026VpcFlowLogsConfigProtoP\001ZXcloud."
+          + "google.com/go/networkmanagement/apiv1beta1/networkmanagementpb;networkmanagement"
+          + "pb\252\002&Google.Cloud.NetworkManagement.V1Be"
+          + "ta1\312\002&Google\\Cloud\\NetworkManagement\\V1b"
+          + "eta1\352\002)Google::Cloud::NetworkManagement::V1beta1\352Aj\n"
+          + "5networkmanagement.googleapis.com/OrganizationLocation\0221organization"
+          + "s/{organization}/locations/{location}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -168,6 +208,27 @@ public final class VpcFlowLogsConfigProto {
             internal_static_google_cloud_networkmanagement_v1beta1_VpcFlowLogsConfig_LabelsEntry_descriptor,
             new java.lang.String[] {
               "Key", "Value",
+            });
+    internal_static_google_cloud_networkmanagement_v1beta1_EffectiveVpcFlowLogsConfig_descriptor =
+        getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_networkmanagement_v1beta1_EffectiveVpcFlowLogsConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_networkmanagement_v1beta1_EffectiveVpcFlowLogsConfig_descriptor,
+            new java.lang.String[] {
+              "Name",
+              "State",
+              "AggregationInterval",
+              "FlowSampling",
+              "Metadata",
+              "MetadataFields",
+              "FilterExpr",
+              "CrossProjectMetadata",
+              "Network",
+              "Subnet",
+              "InterconnectAttachment",
+              "VpnTunnel",
+              "Scope",
+              "TargetResource",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

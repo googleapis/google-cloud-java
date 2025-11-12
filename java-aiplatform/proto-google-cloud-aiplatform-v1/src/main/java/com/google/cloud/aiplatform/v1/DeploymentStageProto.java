@@ -38,18 +38,20 @@ public final class DeploymentStageProto {
     java.lang.String[] descriptorData = {
       "\n1google/cloud/aiplatform/v1/deployment_"
           + "stage.proto\022\032google.cloud.aiplatform.v1*"
-          + "\201\002\n\017DeploymentStage\022 \n\034DEPLOYMENT_STAGE_"
+          + "\262\002\n\017DeploymentStage\022 \n\034DEPLOYMENT_STAGE_"
           + "UNSPECIFIED\020\000\022\027\n\023STARTING_DEPLOYMENT\020\005\022\023"
           + "\n\017PREPARING_MODEL\020\006\022\034\n\030CREATING_SERVING_"
           + "CLUSTER\020\007\022\033\n\027ADDING_NODES_TO_CLUSTER\020\010\022\033"
           + "\n\027GETTING_CONTAINER_IMAGE\020\t\022\031\n\025STARTING_"
           + "MODEL_SERVER\020\003\022\020\n\014FINISHING_UP\020\004\022\031\n\025DEPL"
-          + "OYMENT_TERMINATED\020\nB\322\001\n\036com.google.cloud"
-          + ".aiplatform.v1B\024DeploymentStageProtoP\001Z>"
-          + "cloud.google.com/go/aiplatform/apiv1/aip"
-          + "latformpb;aiplatformpb\252\002\032Google.Cloud.AI"
-          + "Platform.V1\312\002\032Google\\Cloud\\AIPlatform\\V1"
-          + "\352\002\035Google::Cloud::AIPlatform::V1b\006proto3"
+          + "OYMENT_TERMINATED\020\n\022\031\n\025SUCCESSFULLY_DEPL"
+          + "OYED\020\013\022\024\n\020FAILED_TO_DEPLOY\020\014B\322\001\n\036com.goo"
+          + "gle.cloud.aiplatform.v1B\024DeploymentStage"
+          + "ProtoP\001Z>cloud.google.com/go/aiplatform/"
+          + "apiv1/aiplatformpb;aiplatformpb\252\002\032Google"
+          + ".Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\AIPl"
+          + "atform\\V1\352\002\035Google::Cloud::AIPlatform::V"
+          + "1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

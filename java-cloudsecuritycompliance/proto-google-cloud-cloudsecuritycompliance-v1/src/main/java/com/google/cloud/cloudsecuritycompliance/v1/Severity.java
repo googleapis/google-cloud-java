@@ -33,8 +33,7 @@ public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * This value is used for findings when a source doesn't write a severity
-   * value.
+   * Default value. This value is unused.
    * </pre>
    *
    * <code>SEVERITY_UNSPECIFIED = 0;</code>
@@ -44,7 +43,6 @@ public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Vulnerability:
    * A critical vulnerability is easily discoverable by an external actor,
    * exploitable, and results in the direct ability to execute arbitrary code,
    * exfiltrate data, and otherwise gain additional access and privileges to
@@ -52,8 +50,7 @@ public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
    * unprotected user data and public SSH access with weak or no
    * passwords.
    *
-   * Threat:
-   * Indicates a threat that is able to access, modify, or delete data or
+   * A critical threat is a threat that can access, modify, or delete data or
    * execute unauthorized code within existing resources.
    * </pre>
    *
@@ -64,19 +61,17 @@ public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Vulnerability:
-   * A high risk vulnerability can be easily discovered and exploited in
-   * combination with other vulnerabilities in order to gain direct access and
+   * A high-risk vulnerability can be easily discovered and exploited in
+   * combination with other vulnerabilities to gain direct access and
    * the ability to execute arbitrary code, exfiltrate data, and otherwise
    * gain additional access and privileges to cloud resources and workloads.
    * An example is a database with weak or no passwords that is only
    * accessible internally. This database could easily be compromised by an
    * actor that had access to the internal network.
    *
-   * Threat:
-   * Indicates a threat that is able to create new computational resources in
-   * an environment but not able to access data or execute code in existing
-   * resources.
+   * A high-risk threat is a threat that can create new computational
+   * resources in an environment but can't access data or execute code in
+   * existing resources.
    * </pre>
    *
    * <code>HIGH = 2;</code>
@@ -86,8 +81,7 @@ public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Vulnerability:
-   * A medium risk vulnerability could be used by an actor to gain access to
+   * A medium-risk vulnerability can be used by an actor to gain access to
    * resources or privileges that enable them to eventually (through multiple
    * steps or a complex exploit) gain access and the ability to execute
    * arbitrary code or exfiltrate data. An example is a service account with
@@ -95,8 +89,7 @@ public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
    * the service account, they could potentially use that access to manipulate
    * a project the service account was not intended to.
    *
-   * Threat:
-   * Indicates a threat that is able to cause operational impact but may not
+   * A medium-risk threat can cause operational impact but might not
    * access data or execute unauthorized code.
    * </pre>
    *
@@ -107,15 +100,13 @@ public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Vulnerability:
-   * A low risk vulnerability hampers a security organization's ability to
+   * A low-risk vulnerability hampers a security organization's ability to
    * detect vulnerabilities or active threats in their deployment, or prevents
    * the root cause investigation of security issues. An example is monitoring
    * and logs being disabled for resource configurations and access.
    *
-   * Threat:
-   * Indicates a threat that has obtained minimal access to an environment but
-   * is not able to access data, execute code, or create resources.
+   * A low-risk threat is a threat that has obtained minimal access to an
+   * environment but can't access data, execute code, or create resources.
    * </pre>
    *
    * <code>LOW = 4;</code>
@@ -128,8 +119,7 @@ public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * This value is used for findings when a source doesn't write a severity
-   * value.
+   * Default value. This value is unused.
    * </pre>
    *
    * <code>SEVERITY_UNSPECIFIED = 0;</code>
@@ -140,7 +130,6 @@ public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Vulnerability:
    * A critical vulnerability is easily discoverable by an external actor,
    * exploitable, and results in the direct ability to execute arbitrary code,
    * exfiltrate data, and otherwise gain additional access and privileges to
@@ -148,8 +137,7 @@ public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
    * unprotected user data and public SSH access with weak or no
    * passwords.
    *
-   * Threat:
-   * Indicates a threat that is able to access, modify, or delete data or
+   * A critical threat is a threat that can access, modify, or delete data or
    * execute unauthorized code within existing resources.
    * </pre>
    *
@@ -161,19 +149,17 @@ public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Vulnerability:
-   * A high risk vulnerability can be easily discovered and exploited in
-   * combination with other vulnerabilities in order to gain direct access and
+   * A high-risk vulnerability can be easily discovered and exploited in
+   * combination with other vulnerabilities to gain direct access and
    * the ability to execute arbitrary code, exfiltrate data, and otherwise
    * gain additional access and privileges to cloud resources and workloads.
    * An example is a database with weak or no passwords that is only
    * accessible internally. This database could easily be compromised by an
    * actor that had access to the internal network.
    *
-   * Threat:
-   * Indicates a threat that is able to create new computational resources in
-   * an environment but not able to access data or execute code in existing
-   * resources.
+   * A high-risk threat is a threat that can create new computational
+   * resources in an environment but can't access data or execute code in
+   * existing resources.
    * </pre>
    *
    * <code>HIGH = 2;</code>
@@ -184,8 +170,7 @@ public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Vulnerability:
-   * A medium risk vulnerability could be used by an actor to gain access to
+   * A medium-risk vulnerability can be used by an actor to gain access to
    * resources or privileges that enable them to eventually (through multiple
    * steps or a complex exploit) gain access and the ability to execute
    * arbitrary code or exfiltrate data. An example is a service account with
@@ -193,8 +178,7 @@ public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
    * the service account, they could potentially use that access to manipulate
    * a project the service account was not intended to.
    *
-   * Threat:
-   * Indicates a threat that is able to cause operational impact but may not
+   * A medium-risk threat can cause operational impact but might not
    * access data or execute unauthorized code.
    * </pre>
    *
@@ -206,15 +190,13 @@ public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Vulnerability:
-   * A low risk vulnerability hampers a security organization's ability to
+   * A low-risk vulnerability hampers a security organization's ability to
    * detect vulnerabilities or active threats in their deployment, or prevents
    * the root cause investigation of security issues. An example is monitoring
    * and logs being disabled for resource configurations and access.
    *
-   * Threat:
-   * Indicates a threat that has obtained minimal access to an environment but
-   * is not able to access data, execute code, or create resources.
+   * A low-risk threat is a threat that has obtained minimal access to an
+   * environment but can't access data, execute code, or create resources.
    * </pre>
    *
    * <code>LOW = 4;</code>
@@ -286,7 +268,7 @@ public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.cloudsecuritycompliance.v1.CommonProto.getDescriptor()
         .getEnumTypes()
-        .get(4);
+        .get(5);
   }
 
   private static final Severity[] VALUES = values();

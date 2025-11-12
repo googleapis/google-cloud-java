@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * the public certificate authority service.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/security/publicca/v1beta1/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class PublicCertificateAuthorityServiceGrpc {
 
@@ -272,8 +269,9 @@ public final class PublicCertificateAuthorityServiceGrpc {
      * </pre>
      */
     public com.google.cloud.security.publicca.v1beta1.ExternalAccountKey createExternalAccountKey(
-        com.google.cloud.security.publicca.v1beta1.CreateExternalAccountKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.security.publicca.v1beta1.CreateExternalAccountKeyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateExternalAccountKeyMethod(), getCallOptions(), request);
     }
   }

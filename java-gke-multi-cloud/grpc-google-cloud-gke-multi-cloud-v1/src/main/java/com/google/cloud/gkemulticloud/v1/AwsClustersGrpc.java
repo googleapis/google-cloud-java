@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * to create and manage Anthos clusters that run on AWS infrastructure.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/gkemulticloud/v1/aws_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AwsClustersGrpc {
 
@@ -1495,8 +1492,9 @@ public final class AwsClustersGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createAwsCluster(
-        com.google.cloud.gkemulticloud.v1.CreateAwsClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.CreateAwsClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAwsClusterMethod(), getCallOptions(), request);
     }
 
@@ -1508,8 +1506,9 @@ public final class AwsClustersGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateAwsCluster(
-        com.google.cloud.gkemulticloud.v1.UpdateAwsClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.UpdateAwsClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAwsClusterMethod(), getCallOptions(), request);
     }
 
@@ -1522,8 +1521,9 @@ public final class AwsClustersGrpc {
      * </pre>
      */
     public com.google.cloud.gkemulticloud.v1.AwsCluster getAwsCluster(
-        com.google.cloud.gkemulticloud.v1.GetAwsClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.GetAwsClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAwsClusterMethod(), getCallOptions(), request);
     }
 
@@ -1536,8 +1536,9 @@ public final class AwsClustersGrpc {
      * </pre>
      */
     public com.google.cloud.gkemulticloud.v1.ListAwsClustersResponse listAwsClusters(
-        com.google.cloud.gkemulticloud.v1.ListAwsClustersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.ListAwsClustersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAwsClustersMethod(), getCallOptions(), request);
     }
 
@@ -1555,8 +1556,9 @@ public final class AwsClustersGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteAwsCluster(
-        com.google.cloud.gkemulticloud.v1.DeleteAwsClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.DeleteAwsClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAwsClusterMethod(), getCallOptions(), request);
     }
 
@@ -1569,8 +1571,9 @@ public final class AwsClustersGrpc {
      */
     public com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenResponse
         generateAwsClusterAgentToken(
-            com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateAwsClusterAgentTokenMethod(), getCallOptions(), request);
     }
 
@@ -1583,8 +1586,9 @@ public final class AwsClustersGrpc {
      * </pre>
      */
     public com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenResponse generateAwsAccessToken(
-        com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateAwsAccessTokenMethod(), getCallOptions(), request);
     }
 
@@ -1600,8 +1604,9 @@ public final class AwsClustersGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createAwsNodePool(
-        com.google.cloud.gkemulticloud.v1.CreateAwsNodePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.CreateAwsNodePoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAwsNodePoolMethod(), getCallOptions(), request);
     }
 
@@ -1613,8 +1618,9 @@ public final class AwsClustersGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateAwsNodePool(
-        com.google.cloud.gkemulticloud.v1.UpdateAwsNodePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.UpdateAwsNodePoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAwsNodePoolMethod(), getCallOptions(), request);
     }
 
@@ -1631,8 +1637,9 @@ public final class AwsClustersGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation rollbackAwsNodePoolUpdate(
-        com.google.cloud.gkemulticloud.v1.RollbackAwsNodePoolUpdateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.RollbackAwsNodePoolUpdateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRollbackAwsNodePoolUpdateMethod(), getCallOptions(), request);
     }
 
@@ -1645,8 +1652,9 @@ public final class AwsClustersGrpc {
      * </pre>
      */
     public com.google.cloud.gkemulticloud.v1.AwsNodePool getAwsNodePool(
-        com.google.cloud.gkemulticloud.v1.GetAwsNodePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.GetAwsNodePoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAwsNodePoolMethod(), getCallOptions(), request);
     }
 
@@ -1660,8 +1668,9 @@ public final class AwsClustersGrpc {
      * </pre>
      */
     public com.google.cloud.gkemulticloud.v1.ListAwsNodePoolsResponse listAwsNodePools(
-        com.google.cloud.gkemulticloud.v1.ListAwsNodePoolsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.ListAwsNodePoolsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAwsNodePoolsMethod(), getCallOptions(), request);
     }
 
@@ -1677,8 +1686,9 @@ public final class AwsClustersGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteAwsNodePool(
-        com.google.cloud.gkemulticloud.v1.DeleteAwsNodePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.DeleteAwsNodePoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAwsNodePoolMethod(), getCallOptions(), request);
     }
 
@@ -1694,8 +1704,9 @@ public final class AwsClustersGrpc {
      * </pre>
      */
     public com.google.cloud.gkemulticloud.v1.AwsOpenIdConfig getAwsOpenIdConfig(
-        com.google.cloud.gkemulticloud.v1.GetAwsOpenIdConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.GetAwsOpenIdConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAwsOpenIdConfigMethod(), getCallOptions(), request);
     }
 
@@ -1708,8 +1719,9 @@ public final class AwsClustersGrpc {
      * </pre>
      */
     public com.google.cloud.gkemulticloud.v1.AwsJsonWebKeys getAwsJsonWebKeys(
-        com.google.cloud.gkemulticloud.v1.GetAwsJsonWebKeysRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.GetAwsJsonWebKeysRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAwsJsonWebKeysMethod(), getCallOptions(), request);
     }
 
@@ -1722,8 +1734,9 @@ public final class AwsClustersGrpc {
      * </pre>
      */
     public com.google.cloud.gkemulticloud.v1.AwsServerConfig getAwsServerConfig(
-        com.google.cloud.gkemulticloud.v1.GetAwsServerConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.GetAwsServerConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAwsServerConfigMethod(), getCallOptions(), request);
     }
   }

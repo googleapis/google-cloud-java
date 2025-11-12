@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Managed Apache Airflow Environments.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/orchestration/airflow/service/v1beta1/environments.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class EnvironmentsGrpc {
 
@@ -2372,8 +2369,9 @@ public final class EnvironmentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createEnvironment(
-        com.google.cloud.orchestration.airflow.service.v1beta1.CreateEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.orchestration.airflow.service.v1beta1.CreateEnvironmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEnvironmentMethod(), getCallOptions(), request);
     }
 
@@ -2385,8 +2383,9 @@ public final class EnvironmentsGrpc {
      * </pre>
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1.Environment getEnvironment(
-        com.google.cloud.orchestration.airflow.service.v1beta1.GetEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.orchestration.airflow.service.v1beta1.GetEnvironmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEnvironmentMethod(), getCallOptions(), request);
     }
 
@@ -2399,9 +2398,9 @@ public final class EnvironmentsGrpc {
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1.ListEnvironmentsResponse
         listEnvironments(
-            com.google.cloud.orchestration.airflow.service.v1beta1.ListEnvironmentsRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.orchestration.airflow.service.v1beta1.ListEnvironmentsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEnvironmentsMethod(), getCallOptions(), request);
     }
 
@@ -2413,8 +2412,9 @@ public final class EnvironmentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateEnvironment(
-        com.google.cloud.orchestration.airflow.service.v1beta1.UpdateEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.orchestration.airflow.service.v1beta1.UpdateEnvironmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateEnvironmentMethod(), getCallOptions(), request);
     }
 
@@ -2426,8 +2426,9 @@ public final class EnvironmentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteEnvironment(
-        com.google.cloud.orchestration.airflow.service.v1beta1.DeleteEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.orchestration.airflow.service.v1beta1.DeleteEnvironmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteEnvironmentMethod(), getCallOptions(), request);
     }
 
@@ -2439,8 +2440,9 @@ public final class EnvironmentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation restartWebServer(
-        com.google.cloud.orchestration.airflow.service.v1beta1.RestartWebServerRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.orchestration.airflow.service.v1beta1.RestartWebServerRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRestartWebServerMethod(), getCallOptions(), request);
     }
 
@@ -2453,8 +2455,9 @@ public final class EnvironmentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation checkUpgrade(
-        com.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCheckUpgradeMethod(), getCallOptions(), request);
     }
 
@@ -2468,8 +2471,9 @@ public final class EnvironmentsGrpc {
     public com.google.cloud.orchestration.airflow.service.v1beta1.ExecuteAirflowCommandResponse
         executeAirflowCommand(
             com.google.cloud.orchestration.airflow.service.v1beta1.ExecuteAirflowCommandRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExecuteAirflowCommandMethod(), getCallOptions(), request);
     }
 
@@ -2483,8 +2487,9 @@ public final class EnvironmentsGrpc {
     public com.google.cloud.orchestration.airflow.service.v1beta1.StopAirflowCommandResponse
         stopAirflowCommand(
             com.google.cloud.orchestration.airflow.service.v1beta1.StopAirflowCommandRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getStopAirflowCommandMethod(), getCallOptions(), request);
     }
 
@@ -2498,8 +2503,9 @@ public final class EnvironmentsGrpc {
     public com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandResponse
         pollAirflowCommand(
             com.google.cloud.orchestration.airflow.service.v1beta1.PollAirflowCommandRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPollAirflowCommandMethod(), getCallOptions(), request);
     }
 
@@ -2515,8 +2521,9 @@ public final class EnvironmentsGrpc {
      */
     public com.google.cloud.orchestration.airflow.service.v1beta1.ListWorkloadsResponse
         listWorkloads(
-            com.google.cloud.orchestration.airflow.service.v1beta1.ListWorkloadsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.orchestration.airflow.service.v1beta1.ListWorkloadsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListWorkloadsMethod(), getCallOptions(), request);
     }
 
@@ -2532,8 +2539,9 @@ public final class EnvironmentsGrpc {
     public com.google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsSecret
         createUserWorkloadsSecret(
             com.google.cloud.orchestration.airflow.service.v1beta1.CreateUserWorkloadsSecretRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateUserWorkloadsSecretMethod(), getCallOptions(), request);
     }
 
@@ -2550,8 +2558,9 @@ public final class EnvironmentsGrpc {
     public com.google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsSecret
         getUserWorkloadsSecret(
             com.google.cloud.orchestration.airflow.service.v1beta1.GetUserWorkloadsSecretRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetUserWorkloadsSecretMethod(), getCallOptions(), request);
     }
 
@@ -2567,8 +2576,9 @@ public final class EnvironmentsGrpc {
     public com.google.cloud.orchestration.airflow.service.v1beta1.ListUserWorkloadsSecretsResponse
         listUserWorkloadsSecrets(
             com.google.cloud.orchestration.airflow.service.v1beta1.ListUserWorkloadsSecretsRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListUserWorkloadsSecretsMethod(), getCallOptions(), request);
     }
 
@@ -2584,8 +2594,9 @@ public final class EnvironmentsGrpc {
     public com.google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsSecret
         updateUserWorkloadsSecret(
             com.google.cloud.orchestration.airflow.service.v1beta1.UpdateUserWorkloadsSecretRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateUserWorkloadsSecretMethod(), getCallOptions(), request);
     }
 
@@ -2600,8 +2611,9 @@ public final class EnvironmentsGrpc {
      */
     public com.google.protobuf.Empty deleteUserWorkloadsSecret(
         com.google.cloud.orchestration.airflow.service.v1beta1.DeleteUserWorkloadsSecretRequest
-            request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteUserWorkloadsSecretMethod(), getCallOptions(), request);
     }
 
@@ -2618,8 +2630,9 @@ public final class EnvironmentsGrpc {
         createUserWorkloadsConfigMap(
             com.google.cloud.orchestration.airflow.service.v1beta1
                     .CreateUserWorkloadsConfigMapRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateUserWorkloadsConfigMapMethod(), getCallOptions(), request);
     }
 
@@ -2635,8 +2648,9 @@ public final class EnvironmentsGrpc {
     public com.google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsConfigMap
         getUserWorkloadsConfigMap(
             com.google.cloud.orchestration.airflow.service.v1beta1.GetUserWorkloadsConfigMapRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetUserWorkloadsConfigMapMethod(), getCallOptions(), request);
     }
 
@@ -2654,8 +2668,9 @@ public final class EnvironmentsGrpc {
         listUserWorkloadsConfigMaps(
             com.google.cloud.orchestration.airflow.service.v1beta1
                     .ListUserWorkloadsConfigMapsRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListUserWorkloadsConfigMapsMethod(), getCallOptions(), request);
     }
 
@@ -2672,8 +2687,9 @@ public final class EnvironmentsGrpc {
         updateUserWorkloadsConfigMap(
             com.google.cloud.orchestration.airflow.service.v1beta1
                     .UpdateUserWorkloadsConfigMapRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateUserWorkloadsConfigMapMethod(), getCallOptions(), request);
     }
 
@@ -2688,8 +2704,9 @@ public final class EnvironmentsGrpc {
      */
     public com.google.protobuf.Empty deleteUserWorkloadsConfigMap(
         com.google.cloud.orchestration.airflow.service.v1beta1.DeleteUserWorkloadsConfigMapRequest
-            request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteUserWorkloadsConfigMapMethod(), getCallOptions(), request);
     }
 
@@ -2703,8 +2720,9 @@ public final class EnvironmentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation saveSnapshot(
-        com.google.cloud.orchestration.airflow.service.v1beta1.SaveSnapshotRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.orchestration.airflow.service.v1beta1.SaveSnapshotRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSaveSnapshotMethod(), getCallOptions(), request);
     }
 
@@ -2718,8 +2736,9 @@ public final class EnvironmentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation loadSnapshot(
-        com.google.cloud.orchestration.airflow.service.v1beta1.LoadSnapshotRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.orchestration.airflow.service.v1beta1.LoadSnapshotRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getLoadSnapshotMethod(), getCallOptions(), request);
     }
 
@@ -2731,8 +2750,9 @@ public final class EnvironmentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation databaseFailover(
-        com.google.cloud.orchestration.airflow.service.v1beta1.DatabaseFailoverRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.orchestration.airflow.service.v1beta1.DatabaseFailoverRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDatabaseFailoverMethod(), getCallOptions(), request);
     }
 
@@ -2746,8 +2766,9 @@ public final class EnvironmentsGrpc {
     public com.google.cloud.orchestration.airflow.service.v1beta1.FetchDatabasePropertiesResponse
         fetchDatabaseProperties(
             com.google.cloud.orchestration.airflow.service.v1beta1.FetchDatabasePropertiesRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchDatabasePropertiesMethod(), getCallOptions(), request);
     }
   }

@@ -17,6 +17,7 @@
 package com.google.ads.marketingplatform.admin.v1alpha;
 
 import static com.google.ads.marketingplatform.admin.v1alpha.MarketingplatformAdminServiceClient.ListAnalyticsAccountLinksPagedResponse;
+import static com.google.ads.marketingplatform.admin.v1alpha.MarketingplatformAdminServiceClient.ListOrganizationsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -30,6 +31,7 @@ import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
@@ -152,6 +154,108 @@ public class MarketingplatformAdminServiceClientTest {
     try {
       String name = "name3373707";
       client.getOrganization(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listOrganizationsTest() throws Exception {
+    Organization responsesElement = Organization.newBuilder().build();
+    ListOrganizationsResponse expectedResponse =
+        ListOrganizationsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllOrganizations(Arrays.asList(responsesElement))
+            .build();
+    mockMarketingplatformAdminService.addResponse(expectedResponse);
+
+    ListOrganizationsRequest request =
+        ListOrganizationsRequest.newBuilder()
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+
+    ListOrganizationsPagedResponse pagedListResponse = client.listOrganizations(request);
+
+    List<Organization> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getOrganizationsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockMarketingplatformAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListOrganizationsRequest actualRequest = ((ListOrganizationsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
+    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listOrganizationsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMarketingplatformAdminService.addException(exception);
+
+    try {
+      ListOrganizationsRequest request =
+          ListOrganizationsRequest.newBuilder()
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      client.listOrganizations(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void findSalesPartnerManagedClientsTest() throws Exception {
+    FindSalesPartnerManagedClientsResponse expectedResponse =
+        FindSalesPartnerManagedClientsResponse.newBuilder()
+            .addAllClientData(new ArrayList<FindSalesPartnerManagedClientsResponse.ClientData>())
+            .build();
+    mockMarketingplatformAdminService.addResponse(expectedResponse);
+
+    FindSalesPartnerManagedClientsRequest request =
+        FindSalesPartnerManagedClientsRequest.newBuilder()
+            .setOrganization(OrganizationName.of("[ORGANIZATION]").toString())
+            .setIsActive(true)
+            .build();
+
+    FindSalesPartnerManagedClientsResponse actualResponse =
+        client.findSalesPartnerManagedClients(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockMarketingplatformAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FindSalesPartnerManagedClientsRequest actualRequest =
+        ((FindSalesPartnerManagedClientsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getOrganization(), actualRequest.getOrganization());
+    Assert.assertEquals(request.getIsActive(), actualRequest.getIsActive());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void findSalesPartnerManagedClientsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMarketingplatformAdminService.addException(exception);
+
+    try {
+      FindSalesPartnerManagedClientsRequest request =
+          FindSalesPartnerManagedClientsRequest.newBuilder()
+              .setOrganization(OrganizationName.of("[ORGANIZATION]").toString())
+              .setIsActive(true)
+              .build();
+      client.findSalesPartnerManagedClients(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -450,6 +554,45 @@ public class MarketingplatformAdminServiceClientTest {
     try {
       String analyticsAccountLink = "analyticsAccountLink-397570975";
       client.setPropertyServiceLevel(analyticsAccountLink);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void reportPropertyUsageTest() throws Exception {
+    ReportPropertyUsageResponse expectedResponse =
+        ReportPropertyUsageResponse.newBuilder()
+            .addAllPropertyUsages(new ArrayList<ReportPropertyUsageResponse.PropertyUsage>())
+            .setBillInfo(ReportPropertyUsageResponse.BillInfo.newBuilder().build())
+            .build();
+    mockMarketingplatformAdminService.addResponse(expectedResponse);
+
+    String organization = "organization1178922291";
+
+    ReportPropertyUsageResponse actualResponse = client.reportPropertyUsage(organization);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockMarketingplatformAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ReportPropertyUsageRequest actualRequest = ((ReportPropertyUsageRequest) actualRequests.get(0));
+
+    Assert.assertEquals(organization, actualRequest.getOrganization());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void reportPropertyUsageExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMarketingplatformAdminService.addException(exception);
+
+    try {
+      String organization = "organization1178922291";
+      client.reportPropertyUsage(organization);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

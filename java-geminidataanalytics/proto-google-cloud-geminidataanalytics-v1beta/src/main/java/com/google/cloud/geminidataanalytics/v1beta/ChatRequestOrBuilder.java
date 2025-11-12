@@ -171,6 +171,60 @@ public interface ChatRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. Context with client managed resources.
+   * Some clients may not use GDA managed resources including
+   * conversations and agents, instead they create and manage their own
+   * conversations and agents resources.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext client_managed_resource_context = 105 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the clientManagedResourceContext field is set.
+   */
+  boolean hasClientManagedResourceContext();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Context with client managed resources.
+   * Some clients may not use GDA managed resources including
+   * conversations and agents, instead they create and manage their own
+   * conversations and agents resources.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext client_managed_resource_context = 105 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The clientManagedResourceContext.
+   */
+  com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext
+      getClientManagedResourceContext();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Context with client managed resources.
+   * Some clients may not use GDA managed resources including
+   * conversations and agents, instead they create and manage their own
+   * conversations and agents resources.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext client_managed_resource_context = 105 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContextOrBuilder
+      getClientManagedResourceContextOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The Google Cloud project to be used for quota and billing.
    * </pre>
    *
@@ -179,7 +233,7 @@ public interface ChatRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=164
+   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=181
    * @return The project.
    */
   @java.lang.Deprecated
@@ -197,7 +251,7 @@ public interface ChatRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=164
+   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=181
    * @return The bytes for project.
    */
   @java.lang.Deprecated

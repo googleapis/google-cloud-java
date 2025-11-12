@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service that handles company management, including CRUD and enumeration.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/talent/v4/company_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CompanyServiceGrpc {
 
@@ -524,8 +521,8 @@ public final class CompanyServiceGrpc {
      * </pre>
      */
     public com.google.cloud.talent.v4.Company createCompany(
-        com.google.cloud.talent.v4.CreateCompanyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.talent.v4.CreateCompanyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCompanyMethod(), getCallOptions(), request);
     }
 
@@ -537,8 +534,8 @@ public final class CompanyServiceGrpc {
      * </pre>
      */
     public com.google.cloud.talent.v4.Company getCompany(
-        com.google.cloud.talent.v4.GetCompanyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.talent.v4.GetCompanyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCompanyMethod(), getCallOptions(), request);
     }
 
@@ -550,8 +547,8 @@ public final class CompanyServiceGrpc {
      * </pre>
      */
     public com.google.cloud.talent.v4.Company updateCompany(
-        com.google.cloud.talent.v4.UpdateCompanyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.talent.v4.UpdateCompanyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateCompanyMethod(), getCallOptions(), request);
     }
 
@@ -564,8 +561,8 @@ public final class CompanyServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteCompany(
-        com.google.cloud.talent.v4.DeleteCompanyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.talent.v4.DeleteCompanyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteCompanyMethod(), getCallOptions(), request);
     }
 
@@ -577,8 +574,8 @@ public final class CompanyServiceGrpc {
      * </pre>
      */
     public com.google.cloud.talent.v4.ListCompaniesResponse listCompanies(
-        com.google.cloud.talent.v4.ListCompaniesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.talent.v4.ListCompaniesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCompaniesMethod(), getCallOptions(), request);
     }
   }

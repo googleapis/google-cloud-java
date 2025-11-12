@@ -19,6 +19,7 @@ package com.google.cloud.networkmanagement.v1beta1;
 import static com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsServiceClient.ListVpcFlowLogsConfigsPagedResponse;
 import static com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsServiceClient.QueryOrgVpcFlowLogsConfigsPagedResponse;
+import static com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsServiceClient.ShowEffectiveFlowLogsConfigsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -1003,6 +1004,72 @@ public class VpcFlowLogsServiceClientHttpJsonTest {
               .setFilter("filter-1274492040")
               .build();
       client.queryOrgVpcFlowLogsConfigs(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void showEffectiveFlowLogsConfigsTest() throws Exception {
+    EffectiveVpcFlowLogsConfig responsesElement = EffectiveVpcFlowLogsConfig.newBuilder().build();
+    ShowEffectiveFlowLogsConfigsResponse expectedResponse =
+        ShowEffectiveFlowLogsConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEffectiveFlowLogsConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ShowEffectiveFlowLogsConfigsRequest request =
+        ShowEffectiveFlowLogsConfigsRequest.newBuilder()
+            .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setResource("resource-341064690")
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .setFilter("filter-1274492040")
+            .build();
+
+    ShowEffectiveFlowLogsConfigsPagedResponse pagedListResponse =
+        client.showEffectiveFlowLogsConfigs(request);
+
+    List<EffectiveVpcFlowLogsConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getEffectiveFlowLogsConfigsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void showEffectiveFlowLogsConfigsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ShowEffectiveFlowLogsConfigsRequest request =
+          ShowEffectiveFlowLogsConfigsRequest.newBuilder()
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setResource("resource-341064690")
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .setFilter("filter-1274492040")
+              .build();
+      client.showEffectiveFlowLogsConfigs(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

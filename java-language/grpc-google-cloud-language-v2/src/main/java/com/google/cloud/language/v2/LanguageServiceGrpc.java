@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * recognition.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/language/v2/language_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class LanguageServiceGrpc {
 
@@ -566,8 +563,9 @@ public final class LanguageServiceGrpc {
      * </pre>
      */
     public com.google.cloud.language.v2.AnalyzeSentimentResponse analyzeSentiment(
-        com.google.cloud.language.v2.AnalyzeSentimentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.language.v2.AnalyzeSentimentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAnalyzeSentimentMethod(), getCallOptions(), request);
     }
 
@@ -581,8 +579,9 @@ public final class LanguageServiceGrpc {
      * </pre>
      */
     public com.google.cloud.language.v2.AnalyzeEntitiesResponse analyzeEntities(
-        com.google.cloud.language.v2.AnalyzeEntitiesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.language.v2.AnalyzeEntitiesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAnalyzeEntitiesMethod(), getCallOptions(), request);
     }
 
@@ -594,8 +593,8 @@ public final class LanguageServiceGrpc {
      * </pre>
      */
     public com.google.cloud.language.v2.ClassifyTextResponse classifyText(
-        com.google.cloud.language.v2.ClassifyTextRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.language.v2.ClassifyTextRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getClassifyTextMethod(), getCallOptions(), request);
     }
 
@@ -607,8 +606,8 @@ public final class LanguageServiceGrpc {
      * </pre>
      */
     public com.google.cloud.language.v2.ModerateTextResponse moderateText(
-        com.google.cloud.language.v2.ModerateTextRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.language.v2.ModerateTextRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getModerateTextMethod(), getCallOptions(), request);
     }
 
@@ -620,8 +619,8 @@ public final class LanguageServiceGrpc {
      * </pre>
      */
     public com.google.cloud.language.v2.AnnotateTextResponse annotateText(
-        com.google.cloud.language.v2.AnnotateTextRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.language.v2.AnnotateTextRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAnnotateTextMethod(), getCallOptions(), request);
     }
   }

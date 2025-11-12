@@ -41,23 +41,40 @@ public final class TeamMessagesProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n+google/ads/admanager/v1/team_messages."
-          + "proto\022\027google.ads.admanager.v1\032\037google/a"
-          + "pi/field_behavior.proto\032\031google/api/reso"
-          + "urce.proto\"p\n\004Team\022\021\n\004name\030\001 \001(\tB\003\340A\010:U\352"
-          + "AR\n\035admanager.googleapis.com/Team\022$netwo"
-          + "rks/{network_code}/teams/{team}*\005teams2\004"
-          + "teamB\305\001\n\033com.google.ads.admanager.v1B\021Te"
-          + "amMessagesProtoP\001Z@google.golang.org/gen"
-          + "proto/googleapis/ads/admanager/v1;admana"
-          + "ger\252\002\027Google.Ads.AdManager.V1\312\002\027Google\\A"
-          + "ds\\AdManager\\V1\352\002\032Google::Ads::AdManager"
-          + "::V1b\006proto3"
+      "\n"
+          + "+google/ads/admanager/v1/team_messages."
+          + "proto\022\027google.ads.admanager.v1\032(google/a"
+          + "ds/admanager/v1/team_enums.proto\032\037google"
+          + "/api/field_behavior.proto\032\031google/api/resource.proto\"\226\004\n"
+          + "\004Team\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\036\n"
+          + "\014display_name\030\003 \001(\tB\003\340A\002H\000\210\001\001\022\035\n"
+          + "\013description\030\004 \001(\tB\003\340A\001H\001\210\001\001\022L\n"
+          + "\006status\030\005 \001(\0162"
+          + "2.google.ads.admanager.v1.TeamStatusEnum.TeamStatusB\003\340A\003H\002\210\001\001\022&\n"
+          + "\024all_companies_access\030\006 \001(\010B\003\340A\001H\003\210\001\001\022&\n"
+          + "\024all_inventory_access\030\007 \001(\010B\003\340A\001H\004\210\001\001\022Y\n"
+          + "\013access_type\030\010 \001"
+          + "(\0162:.google.ads.admanager.v1.TeamAccessTypeEnum.TeamAccessTypeB\003\340A\001H\005\210\001\001:U\352AR\n"
+          + "\035admanager.googleapis.com/Team\022$networks/{"
+          + "network_code}/teams/{team}*\005teams2\004teamB\017\n\r"
+          + "_display_nameB\016\n"
+          + "\014_descriptionB\t\n"
+          + "\007_statusB\027\n"
+          + "\025_all_companies_accessB\027\n"
+          + "\025_all_inventory_accessB\016\n"
+          + "\014_access_typeB\305\001\n"
+          + "\033com.google.ads.admanager.v1B\021TeamMessagesProto"
+          + "P\001Z@google.golang.org/genproto/googleapi"
+          + "s/ads/admanager/v1;admanager\252\002\027Google.Ad"
+          + "s.AdManager.V1\312\002\027Google\\Ads\\AdManager\\V1"
+          + "\352\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.ads.admanager.v1.TeamEnumsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
             });
@@ -68,6 +85,12 @@ public final class TeamMessagesProto {
             internal_static_google_ads_admanager_v1_Team_descriptor,
             new java.lang.String[] {
               "Name",
+              "DisplayName",
+              "Description",
+              "Status",
+              "AllCompaniesAccess",
+              "AllInventoryAccess",
+              "AccessType",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -75,6 +98,7 @@ public final class TeamMessagesProto {
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.ads.admanager.v1.TeamEnumsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
   }

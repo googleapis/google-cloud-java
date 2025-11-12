@@ -262,12 +262,12 @@ public interface ProbingDetailsOrBuilder
    *
    *
    * <pre>
-   * The EdgeLocation from which a packet destined for/originating from the
-   * internet will egress/ingress the Google network.
+   * The EdgeLocation from which a packet, destined to the internet, will egress
+   * the Google network.
    * This will only be populated for a connectivity test which has an internet
-   * destination/source address.
+   * destination address.
    * The absence of this field *must not* be used as an indication that the
-   * destination/source is part of the Google network.
+   * destination is part of the Google network.
    * </pre>
    *
    * <code>
@@ -282,12 +282,12 @@ public interface ProbingDetailsOrBuilder
    *
    *
    * <pre>
-   * The EdgeLocation from which a packet destined for/originating from the
-   * internet will egress/ingress the Google network.
+   * The EdgeLocation from which a packet, destined to the internet, will egress
+   * the Google network.
    * This will only be populated for a connectivity test which has an internet
-   * destination/source address.
+   * destination address.
    * The absence of this field *must not* be used as an indication that the
-   * destination/source is part of the Google network.
+   * destination is part of the Google network.
    * </pre>
    *
    * <code>
@@ -302,12 +302,12 @@ public interface ProbingDetailsOrBuilder
    *
    *
    * <pre>
-   * The EdgeLocation from which a packet destined for/originating from the
-   * internet will egress/ingress the Google network.
+   * The EdgeLocation from which a packet, destined to the internet, will egress
+   * the Google network.
    * This will only be populated for a connectivity test which has an internet
-   * destination/source address.
+   * destination address.
    * The absence of this field *must not* be used as an indication that the
-   * destination/source is part of the Google network.
+   * destination is part of the Google network.
    * </pre>
    *
    * <code>
@@ -316,4 +316,88 @@ public interface ProbingDetailsOrBuilder
    */
   com.google.cloud.networkmanagement.v1.ProbingDetails.EdgeLocationOrBuilder
       getDestinationEgressLocationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Probing results for all edge devices.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.networkmanagement.v1.ProbingDetails.SingleEdgeResponse edge_responses = 10;
+   * </code>
+   */
+  java.util.List<com.google.cloud.networkmanagement.v1.ProbingDetails.SingleEdgeResponse>
+      getEdgeResponsesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Probing results for all edge devices.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.networkmanagement.v1.ProbingDetails.SingleEdgeResponse edge_responses = 10;
+   * </code>
+   */
+  com.google.cloud.networkmanagement.v1.ProbingDetails.SingleEdgeResponse getEdgeResponses(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Probing results for all edge devices.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.networkmanagement.v1.ProbingDetails.SingleEdgeResponse edge_responses = 10;
+   * </code>
+   */
+  int getEdgeResponsesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Probing results for all edge devices.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.networkmanagement.v1.ProbingDetails.SingleEdgeResponse edge_responses = 10;
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.cloud.networkmanagement.v1.ProbingDetails.SingleEdgeResponseOrBuilder>
+      getEdgeResponsesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Probing results for all edge devices.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.networkmanagement.v1.ProbingDetails.SingleEdgeResponse edge_responses = 10;
+   * </code>
+   */
+  com.google.cloud.networkmanagement.v1.ProbingDetails.SingleEdgeResponseOrBuilder
+      getEdgeResponsesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether all relevant edge devices were probed.
+   * </pre>
+   *
+   * <code>bool probed_all_devices = 11;</code>
+   *
+   * @return The probedAllDevices.
+   */
+  boolean getProbedAllDevices();
 }

@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing [Webhooks][google.cloud.dialogflow.cx.v3beta1.Webhook].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/cx/v3beta1/webhook.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class WebhooksGrpc {
 
@@ -536,8 +533,9 @@ public final class WebhooksGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.ListWebhooksResponse listWebhooks(
-        com.google.cloud.dialogflow.cx.v3beta1.ListWebhooksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.ListWebhooksRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListWebhooksMethod(), getCallOptions(), request);
     }
 
@@ -549,8 +547,9 @@ public final class WebhooksGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Webhook getWebhook(
-        com.google.cloud.dialogflow.cx.v3beta1.GetWebhookRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.GetWebhookRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetWebhookMethod(), getCallOptions(), request);
     }
 
@@ -562,8 +561,9 @@ public final class WebhooksGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Webhook createWebhook(
-        com.google.cloud.dialogflow.cx.v3beta1.CreateWebhookRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.CreateWebhookRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateWebhookMethod(), getCallOptions(), request);
     }
 
@@ -575,8 +575,9 @@ public final class WebhooksGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Webhook updateWebhook(
-        com.google.cloud.dialogflow.cx.v3beta1.UpdateWebhookRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.UpdateWebhookRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateWebhookMethod(), getCallOptions(), request);
     }
 
@@ -588,8 +589,9 @@ public final class WebhooksGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteWebhook(
-        com.google.cloud.dialogflow.cx.v3beta1.DeleteWebhookRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.DeleteWebhookRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteWebhookMethod(), getCallOptions(), request);
     }
   }

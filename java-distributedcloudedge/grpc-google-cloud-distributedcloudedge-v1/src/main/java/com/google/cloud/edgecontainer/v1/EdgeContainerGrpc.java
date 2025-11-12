@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Cloud deployments.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/edgecontainer/v1/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class EdgeContainerGrpc {
 
@@ -1697,8 +1694,9 @@ public final class EdgeContainerGrpc {
      * </pre>
      */
     public com.google.cloud.edgecontainer.v1.ListClustersResponse listClusters(
-        com.google.cloud.edgecontainer.v1.ListClustersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgecontainer.v1.ListClustersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListClustersMethod(), getCallOptions(), request);
     }
 
@@ -1710,8 +1708,9 @@ public final class EdgeContainerGrpc {
      * </pre>
      */
     public com.google.cloud.edgecontainer.v1.Cluster getCluster(
-        com.google.cloud.edgecontainer.v1.GetClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgecontainer.v1.GetClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetClusterMethod(), getCallOptions(), request);
     }
 
@@ -1723,8 +1722,9 @@ public final class EdgeContainerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createCluster(
-        com.google.cloud.edgecontainer.v1.CreateClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgecontainer.v1.CreateClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateClusterMethod(), getCallOptions(), request);
     }
 
@@ -1736,8 +1736,9 @@ public final class EdgeContainerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateCluster(
-        com.google.cloud.edgecontainer.v1.UpdateClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgecontainer.v1.UpdateClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateClusterMethod(), getCallOptions(), request);
     }
 
@@ -1749,8 +1750,9 @@ public final class EdgeContainerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation upgradeCluster(
-        com.google.cloud.edgecontainer.v1.UpgradeClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgecontainer.v1.UpgradeClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpgradeClusterMethod(), getCallOptions(), request);
     }
 
@@ -1762,8 +1764,9 @@ public final class EdgeContainerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteCluster(
-        com.google.cloud.edgecontainer.v1.DeleteClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgecontainer.v1.DeleteClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteClusterMethod(), getCallOptions(), request);
     }
 
@@ -1775,8 +1778,9 @@ public final class EdgeContainerGrpc {
      * </pre>
      */
     public com.google.cloud.edgecontainer.v1.GenerateAccessTokenResponse generateAccessToken(
-        com.google.cloud.edgecontainer.v1.GenerateAccessTokenRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgecontainer.v1.GenerateAccessTokenRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateAccessTokenMethod(), getCallOptions(), request);
     }
 
@@ -1789,8 +1793,9 @@ public final class EdgeContainerGrpc {
      */
     public com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialResponse
         generateOfflineCredential(
-            com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateOfflineCredentialMethod(), getCallOptions(), request);
     }
 
@@ -1802,8 +1807,9 @@ public final class EdgeContainerGrpc {
      * </pre>
      */
     public com.google.cloud.edgecontainer.v1.ListNodePoolsResponse listNodePools(
-        com.google.cloud.edgecontainer.v1.ListNodePoolsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgecontainer.v1.ListNodePoolsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListNodePoolsMethod(), getCallOptions(), request);
     }
 
@@ -1815,8 +1821,9 @@ public final class EdgeContainerGrpc {
      * </pre>
      */
     public com.google.cloud.edgecontainer.v1.NodePool getNodePool(
-        com.google.cloud.edgecontainer.v1.GetNodePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgecontainer.v1.GetNodePoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetNodePoolMethod(), getCallOptions(), request);
     }
 
@@ -1828,8 +1835,9 @@ public final class EdgeContainerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createNodePool(
-        com.google.cloud.edgecontainer.v1.CreateNodePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgecontainer.v1.CreateNodePoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateNodePoolMethod(), getCallOptions(), request);
     }
 
@@ -1841,8 +1849,9 @@ public final class EdgeContainerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateNodePool(
-        com.google.cloud.edgecontainer.v1.UpdateNodePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgecontainer.v1.UpdateNodePoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateNodePoolMethod(), getCallOptions(), request);
     }
 
@@ -1854,8 +1863,9 @@ public final class EdgeContainerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteNodePool(
-        com.google.cloud.edgecontainer.v1.DeleteNodePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgecontainer.v1.DeleteNodePoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteNodePoolMethod(), getCallOptions(), request);
     }
 
@@ -1867,8 +1877,9 @@ public final class EdgeContainerGrpc {
      * </pre>
      */
     public com.google.cloud.edgecontainer.v1.ListMachinesResponse listMachines(
-        com.google.cloud.edgecontainer.v1.ListMachinesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgecontainer.v1.ListMachinesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMachinesMethod(), getCallOptions(), request);
     }
 
@@ -1880,8 +1891,9 @@ public final class EdgeContainerGrpc {
      * </pre>
      */
     public com.google.cloud.edgecontainer.v1.Machine getMachine(
-        com.google.cloud.edgecontainer.v1.GetMachineRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgecontainer.v1.GetMachineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetMachineMethod(), getCallOptions(), request);
     }
 
@@ -1893,8 +1905,9 @@ public final class EdgeContainerGrpc {
      * </pre>
      */
     public com.google.cloud.edgecontainer.v1.ListVpnConnectionsResponse listVpnConnections(
-        com.google.cloud.edgecontainer.v1.ListVpnConnectionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgecontainer.v1.ListVpnConnectionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListVpnConnectionsMethod(), getCallOptions(), request);
     }
 
@@ -1906,8 +1919,9 @@ public final class EdgeContainerGrpc {
      * </pre>
      */
     public com.google.cloud.edgecontainer.v1.VpnConnection getVpnConnection(
-        com.google.cloud.edgecontainer.v1.GetVpnConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgecontainer.v1.GetVpnConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetVpnConnectionMethod(), getCallOptions(), request);
     }
 
@@ -1919,8 +1933,9 @@ public final class EdgeContainerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createVpnConnection(
-        com.google.cloud.edgecontainer.v1.CreateVpnConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgecontainer.v1.CreateVpnConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateVpnConnectionMethod(), getCallOptions(), request);
     }
 
@@ -1932,8 +1947,9 @@ public final class EdgeContainerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteVpnConnection(
-        com.google.cloud.edgecontainer.v1.DeleteVpnConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgecontainer.v1.DeleteVpnConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteVpnConnectionMethod(), getCallOptions(), request);
     }
 
@@ -1945,8 +1961,9 @@ public final class EdgeContainerGrpc {
      * </pre>
      */
     public com.google.cloud.edgecontainer.v1.ServerConfig getServerConfig(
-        com.google.cloud.edgecontainer.v1.GetServerConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgecontainer.v1.GetServerConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetServerConfigMethod(), getCallOptions(), request);
     }
   }

@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * topics and consumer groups.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/managedkafka/v1/managed_kafka.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ManagedKafkaGrpc {
 
@@ -1727,8 +1724,9 @@ public final class ManagedKafkaGrpc {
      * </pre>
      */
     public com.google.cloud.managedkafka.v1.ListClustersResponse listClusters(
-        com.google.cloud.managedkafka.v1.ListClustersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.ListClustersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListClustersMethod(), getCallOptions(), request);
     }
 
@@ -1740,8 +1738,8 @@ public final class ManagedKafkaGrpc {
      * </pre>
      */
     public com.google.cloud.managedkafka.v1.Cluster getCluster(
-        com.google.cloud.managedkafka.v1.GetClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.GetClusterRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetClusterMethod(), getCallOptions(), request);
     }
 
@@ -1753,8 +1751,9 @@ public final class ManagedKafkaGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createCluster(
-        com.google.cloud.managedkafka.v1.CreateClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.CreateClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateClusterMethod(), getCallOptions(), request);
     }
 
@@ -1766,8 +1765,9 @@ public final class ManagedKafkaGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateCluster(
-        com.google.cloud.managedkafka.v1.UpdateClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.UpdateClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateClusterMethod(), getCallOptions(), request);
     }
 
@@ -1779,8 +1779,9 @@ public final class ManagedKafkaGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteCluster(
-        com.google.cloud.managedkafka.v1.DeleteClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.DeleteClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteClusterMethod(), getCallOptions(), request);
     }
 
@@ -1792,8 +1793,8 @@ public final class ManagedKafkaGrpc {
      * </pre>
      */
     public com.google.cloud.managedkafka.v1.ListTopicsResponse listTopics(
-        com.google.cloud.managedkafka.v1.ListTopicsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.ListTopicsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTopicsMethod(), getCallOptions(), request);
     }
 
@@ -1805,8 +1806,8 @@ public final class ManagedKafkaGrpc {
      * </pre>
      */
     public com.google.cloud.managedkafka.v1.Topic getTopic(
-        com.google.cloud.managedkafka.v1.GetTopicRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.GetTopicRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTopicMethod(), getCallOptions(), request);
     }
 
@@ -1818,8 +1819,9 @@ public final class ManagedKafkaGrpc {
      * </pre>
      */
     public com.google.cloud.managedkafka.v1.Topic createTopic(
-        com.google.cloud.managedkafka.v1.CreateTopicRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.CreateTopicRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTopicMethod(), getCallOptions(), request);
     }
 
@@ -1831,8 +1833,9 @@ public final class ManagedKafkaGrpc {
      * </pre>
      */
     public com.google.cloud.managedkafka.v1.Topic updateTopic(
-        com.google.cloud.managedkafka.v1.UpdateTopicRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.UpdateTopicRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateTopicMethod(), getCallOptions(), request);
     }
 
@@ -1844,8 +1847,9 @@ public final class ManagedKafkaGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteTopic(
-        com.google.cloud.managedkafka.v1.DeleteTopicRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.DeleteTopicRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTopicMethod(), getCallOptions(), request);
     }
 
@@ -1857,8 +1861,9 @@ public final class ManagedKafkaGrpc {
      * </pre>
      */
     public com.google.cloud.managedkafka.v1.ListConsumerGroupsResponse listConsumerGroups(
-        com.google.cloud.managedkafka.v1.ListConsumerGroupsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.ListConsumerGroupsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListConsumerGroupsMethod(), getCallOptions(), request);
     }
 
@@ -1870,8 +1875,9 @@ public final class ManagedKafkaGrpc {
      * </pre>
      */
     public com.google.cloud.managedkafka.v1.ConsumerGroup getConsumerGroup(
-        com.google.cloud.managedkafka.v1.GetConsumerGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.GetConsumerGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetConsumerGroupMethod(), getCallOptions(), request);
     }
 
@@ -1883,8 +1889,9 @@ public final class ManagedKafkaGrpc {
      * </pre>
      */
     public com.google.cloud.managedkafka.v1.ConsumerGroup updateConsumerGroup(
-        com.google.cloud.managedkafka.v1.UpdateConsumerGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.UpdateConsumerGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateConsumerGroupMethod(), getCallOptions(), request);
     }
 
@@ -1896,8 +1903,9 @@ public final class ManagedKafkaGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteConsumerGroup(
-        com.google.cloud.managedkafka.v1.DeleteConsumerGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.DeleteConsumerGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteConsumerGroupMethod(), getCallOptions(), request);
     }
 
@@ -1909,8 +1917,8 @@ public final class ManagedKafkaGrpc {
      * </pre>
      */
     public com.google.cloud.managedkafka.v1.ListAclsResponse listAcls(
-        com.google.cloud.managedkafka.v1.ListAclsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.ListAclsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAclsMethod(), getCallOptions(), request);
     }
 
@@ -1922,8 +1930,8 @@ public final class ManagedKafkaGrpc {
      * </pre>
      */
     public com.google.cloud.managedkafka.v1.Acl getAcl(
-        com.google.cloud.managedkafka.v1.GetAclRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.GetAclRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAclMethod(), getCallOptions(), request);
     }
 
@@ -1935,8 +1943,8 @@ public final class ManagedKafkaGrpc {
      * </pre>
      */
     public com.google.cloud.managedkafka.v1.Acl createAcl(
-        com.google.cloud.managedkafka.v1.CreateAclRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.CreateAclRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAclMethod(), getCallOptions(), request);
     }
 
@@ -1948,8 +1956,8 @@ public final class ManagedKafkaGrpc {
      * </pre>
      */
     public com.google.cloud.managedkafka.v1.Acl updateAcl(
-        com.google.cloud.managedkafka.v1.UpdateAclRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.UpdateAclRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAclMethod(), getCallOptions(), request);
     }
 
@@ -1961,8 +1969,8 @@ public final class ManagedKafkaGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteAcl(
-        com.google.cloud.managedkafka.v1.DeleteAclRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.DeleteAclRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAclMethod(), getCallOptions(), request);
     }
 
@@ -1975,8 +1983,9 @@ public final class ManagedKafkaGrpc {
      * </pre>
      */
     public com.google.cloud.managedkafka.v1.AddAclEntryResponse addAclEntry(
-        com.google.cloud.managedkafka.v1.AddAclEntryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.AddAclEntryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAddAclEntryMethod(), getCallOptions(), request);
     }
 
@@ -1990,8 +1999,9 @@ public final class ManagedKafkaGrpc {
      * </pre>
      */
     public com.google.cloud.managedkafka.v1.RemoveAclEntryResponse removeAclEntry(
-        com.google.cloud.managedkafka.v1.RemoveAclEntryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.managedkafka.v1.RemoveAclEntryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRemoveAclEntryMethod(), getCallOptions(), request);
     }
   }

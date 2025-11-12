@@ -17,14 +17,21 @@
 package com.google.ads.marketingplatform.admin.v1alpha.stub;
 
 import static com.google.ads.marketingplatform.admin.v1alpha.MarketingplatformAdminServiceClient.ListAnalyticsAccountLinksPagedResponse;
+import static com.google.ads.marketingplatform.admin.v1alpha.MarketingplatformAdminServiceClient.ListOrganizationsPagedResponse;
 
 import com.google.ads.marketingplatform.admin.v1alpha.AnalyticsAccountLink;
 import com.google.ads.marketingplatform.admin.v1alpha.CreateAnalyticsAccountLinkRequest;
 import com.google.ads.marketingplatform.admin.v1alpha.DeleteAnalyticsAccountLinkRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.FindSalesPartnerManagedClientsRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.FindSalesPartnerManagedClientsResponse;
 import com.google.ads.marketingplatform.admin.v1alpha.GetOrganizationRequest;
 import com.google.ads.marketingplatform.admin.v1alpha.ListAnalyticsAccountLinksRequest;
 import com.google.ads.marketingplatform.admin.v1alpha.ListAnalyticsAccountLinksResponse;
+import com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsResponse;
 import com.google.ads.marketingplatform.admin.v1alpha.Organization;
+import com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageResponse;
 import com.google.ads.marketingplatform.admin.v1alpha.SetPropertyServiceLevelRequest;
 import com.google.ads.marketingplatform.admin.v1alpha.SetPropertyServiceLevelResponse;
 import com.google.api.core.BetaApi;
@@ -45,6 +52,23 @@ public abstract class MarketingplatformAdminServiceStub implements BackgroundRes
 
   public UnaryCallable<GetOrganizationRequest, Organization> getOrganizationCallable() {
     throw new UnsupportedOperationException("Not implemented: getOrganizationCallable()");
+  }
+
+  public UnaryCallable<ListOrganizationsRequest, ListOrganizationsPagedResponse>
+      listOrganizationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listOrganizationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListOrganizationsRequest, ListOrganizationsResponse>
+      listOrganizationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listOrganizationsCallable()");
+  }
+
+  public UnaryCallable<
+          FindSalesPartnerManagedClientsRequest, FindSalesPartnerManagedClientsResponse>
+      findSalesPartnerManagedClientsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: findSalesPartnerManagedClientsCallable()");
   }
 
   public UnaryCallable<ListAnalyticsAccountLinksRequest, ListAnalyticsAccountLinksPagedResponse>
@@ -73,6 +97,11 @@ public abstract class MarketingplatformAdminServiceStub implements BackgroundRes
   public UnaryCallable<SetPropertyServiceLevelRequest, SetPropertyServiceLevelResponse>
       setPropertyServiceLevelCallable() {
     throw new UnsupportedOperationException("Not implemented: setPropertyServiceLevelCallable()");
+  }
+
+  public UnaryCallable<ReportPropertyUsageRequest, ReportPropertyUsageResponse>
+      reportPropertyUsageCallable() {
+    throw new UnsupportedOperationException("Not implemented: reportPropertyUsageCallable()");
   }
 
   @Override

@@ -919,7 +919,55 @@ public interface BackupOrBuilder
    */
   boolean getSatisfiesPzi();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Unique identifier of the GCP resource that is being backed
+   * up.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.BackupGcpResource gcp_resource = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the gcpResource field is set.
+   */
+  boolean hasGcpResource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Unique identifier of the GCP resource that is being backed
+   * up.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.BackupGcpResource gcp_resource = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The gcpResource.
+   */
+  com.google.cloud.backupdr.v1.BackupGcpResource getGcpResource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Unique identifier of the GCP resource that is being backed
+   * up.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.BackupGcpResource gcp_resource = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.backupdr.v1.BackupGcpResourceOrBuilder getGcpResourceOrBuilder();
+
   com.google.cloud.backupdr.v1.Backup.BackupPropertiesCase getBackupPropertiesCase();
 
   com.google.cloud.backupdr.v1.Backup.PlanInfoCase getPlanInfoCase();
+
+  com.google.cloud.backupdr.v1.Backup.SourceResourceCase getSourceResourceCase();
 }

@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service for fetching feature values from the online store.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1/feature_online_store_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class FeatureOnlineStoreServiceGrpc {
 
@@ -515,8 +512,9 @@ public final class FeatureOnlineStoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.FetchFeatureValuesResponse fetchFeatureValues(
-        com.google.cloud.aiplatform.v1.FetchFeatureValuesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.FetchFeatureValuesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchFeatureValuesMethod(), getCallOptions(), request);
     }
 
@@ -530,8 +528,9 @@ public final class FeatureOnlineStoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.SearchNearestEntitiesResponse searchNearestEntities(
-        com.google.cloud.aiplatform.v1.SearchNearestEntitiesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.SearchNearestEntitiesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchNearestEntitiesMethod(), getCallOptions(), request);
     }
 
@@ -562,8 +561,9 @@ public final class FeatureOnlineStoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.GenerateFetchAccessTokenResponse generateFetchAccessToken(
-        com.google.cloud.aiplatform.v1.GenerateFetchAccessTokenRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.GenerateFetchAccessTokenRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateFetchAccessTokenMethod(), getCallOptions(), request);
     }
   }

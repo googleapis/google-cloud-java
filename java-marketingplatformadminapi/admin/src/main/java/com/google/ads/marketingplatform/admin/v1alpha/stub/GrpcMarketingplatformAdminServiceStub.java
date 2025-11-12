@@ -17,14 +17,21 @@
 package com.google.ads.marketingplatform.admin.v1alpha.stub;
 
 import static com.google.ads.marketingplatform.admin.v1alpha.MarketingplatformAdminServiceClient.ListAnalyticsAccountLinksPagedResponse;
+import static com.google.ads.marketingplatform.admin.v1alpha.MarketingplatformAdminServiceClient.ListOrganizationsPagedResponse;
 
 import com.google.ads.marketingplatform.admin.v1alpha.AnalyticsAccountLink;
 import com.google.ads.marketingplatform.admin.v1alpha.CreateAnalyticsAccountLinkRequest;
 import com.google.ads.marketingplatform.admin.v1alpha.DeleteAnalyticsAccountLinkRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.FindSalesPartnerManagedClientsRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.FindSalesPartnerManagedClientsResponse;
 import com.google.ads.marketingplatform.admin.v1alpha.GetOrganizationRequest;
 import com.google.ads.marketingplatform.admin.v1alpha.ListAnalyticsAccountLinksRequest;
 import com.google.ads.marketingplatform.admin.v1alpha.ListAnalyticsAccountLinksResponse;
+import com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsResponse;
 import com.google.ads.marketingplatform.admin.v1alpha.Organization;
+import com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageResponse;
 import com.google.ads.marketingplatform.admin.v1alpha.SetPropertyServiceLevelRequest;
 import com.google.ads.marketingplatform.admin.v1alpha.SetPropertyServiceLevelResponse;
 import com.google.api.core.BetaApi;
@@ -61,6 +68,36 @@ public class GrpcMarketingplatformAdminServiceStub extends MarketingplatformAdmi
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetOrganizationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Organization.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListOrganizationsRequest, ListOrganizationsResponse>
+      listOrganizationsMethodDescriptor =
+          MethodDescriptor.<ListOrganizationsRequest, ListOrganizationsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.marketingplatform.admin.v1alpha.MarketingplatformAdminService/ListOrganizations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListOrganizationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListOrganizationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          FindSalesPartnerManagedClientsRequest, FindSalesPartnerManagedClientsResponse>
+      findSalesPartnerManagedClientsMethodDescriptor =
+          MethodDescriptor
+              .<FindSalesPartnerManagedClientsRequest, FindSalesPartnerManagedClientsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.marketingplatform.admin.v1alpha.MarketingplatformAdminService/FindSalesPartnerManagedClients")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(FindSalesPartnerManagedClientsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      FindSalesPartnerManagedClientsResponse.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -119,7 +156,27 @@ public class GrpcMarketingplatformAdminServiceStub extends MarketingplatformAdmi
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<ReportPropertyUsageRequest, ReportPropertyUsageResponse>
+      reportPropertyUsageMethodDescriptor =
+          MethodDescriptor.<ReportPropertyUsageRequest, ReportPropertyUsageResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.marketingplatform.admin.v1alpha.MarketingplatformAdminService/ReportPropertyUsage")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ReportPropertyUsageRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ReportPropertyUsageResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private final UnaryCallable<GetOrganizationRequest, Organization> getOrganizationCallable;
+  private final UnaryCallable<ListOrganizationsRequest, ListOrganizationsResponse>
+      listOrganizationsCallable;
+  private final UnaryCallable<ListOrganizationsRequest, ListOrganizationsPagedResponse>
+      listOrganizationsPagedCallable;
+  private final UnaryCallable<
+          FindSalesPartnerManagedClientsRequest, FindSalesPartnerManagedClientsResponse>
+      findSalesPartnerManagedClientsCallable;
   private final UnaryCallable<ListAnalyticsAccountLinksRequest, ListAnalyticsAccountLinksResponse>
       listAnalyticsAccountLinksCallable;
   private final UnaryCallable<
@@ -131,6 +188,8 @@ public class GrpcMarketingplatformAdminServiceStub extends MarketingplatformAdmi
       deleteAnalyticsAccountLinkCallable;
   private final UnaryCallable<SetPropertyServiceLevelRequest, SetPropertyServiceLevelResponse>
       setPropertyServiceLevelCallable;
+  private final UnaryCallable<ReportPropertyUsageRequest, ReportPropertyUsageResponse>
+      reportPropertyUsageCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -189,6 +248,24 @@ public class GrpcMarketingplatformAdminServiceStub extends MarketingplatformAdmi
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ListOrganizationsRequest, ListOrganizationsResponse>
+        listOrganizationsTransportSettings =
+            GrpcCallSettings.<ListOrganizationsRequest, ListOrganizationsResponse>newBuilder()
+                .setMethodDescriptor(listOrganizationsMethodDescriptor)
+                .build();
+    GrpcCallSettings<FindSalesPartnerManagedClientsRequest, FindSalesPartnerManagedClientsResponse>
+        findSalesPartnerManagedClientsTransportSettings =
+            GrpcCallSettings
+                .<FindSalesPartnerManagedClientsRequest, FindSalesPartnerManagedClientsResponse>
+                    newBuilder()
+                .setMethodDescriptor(findSalesPartnerManagedClientsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("organization", String.valueOf(request.getOrganization()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListAnalyticsAccountLinksRequest, ListAnalyticsAccountLinksResponse>
         listAnalyticsAccountLinksTransportSettings =
             GrpcCallSettings
@@ -237,10 +314,36 @@ public class GrpcMarketingplatformAdminServiceStub extends MarketingplatformAdmi
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<ReportPropertyUsageRequest, ReportPropertyUsageResponse>
+        reportPropertyUsageTransportSettings =
+            GrpcCallSettings.<ReportPropertyUsageRequest, ReportPropertyUsageResponse>newBuilder()
+                .setMethodDescriptor(reportPropertyUsageMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("organization", String.valueOf(request.getOrganization()));
+                      return builder.build();
+                    })
+                .build();
 
     this.getOrganizationCallable =
         callableFactory.createUnaryCallable(
             getOrganizationTransportSettings, settings.getOrganizationSettings(), clientContext);
+    this.listOrganizationsCallable =
+        callableFactory.createUnaryCallable(
+            listOrganizationsTransportSettings,
+            settings.listOrganizationsSettings(),
+            clientContext);
+    this.listOrganizationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listOrganizationsTransportSettings,
+            settings.listOrganizationsSettings(),
+            clientContext);
+    this.findSalesPartnerManagedClientsCallable =
+        callableFactory.createUnaryCallable(
+            findSalesPartnerManagedClientsTransportSettings,
+            settings.findSalesPartnerManagedClientsSettings(),
+            clientContext);
     this.listAnalyticsAccountLinksCallable =
         callableFactory.createUnaryCallable(
             listAnalyticsAccountLinksTransportSettings,
@@ -266,6 +369,11 @@ public class GrpcMarketingplatformAdminServiceStub extends MarketingplatformAdmi
             setPropertyServiceLevelTransportSettings,
             settings.setPropertyServiceLevelSettings(),
             clientContext);
+    this.reportPropertyUsageCallable =
+        callableFactory.createUnaryCallable(
+            reportPropertyUsageTransportSettings,
+            settings.reportPropertyUsageSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -278,6 +386,25 @@ public class GrpcMarketingplatformAdminServiceStub extends MarketingplatformAdmi
   @Override
   public UnaryCallable<GetOrganizationRequest, Organization> getOrganizationCallable() {
     return getOrganizationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListOrganizationsRequest, ListOrganizationsResponse>
+      listOrganizationsCallable() {
+    return listOrganizationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListOrganizationsRequest, ListOrganizationsPagedResponse>
+      listOrganizationsPagedCallable() {
+    return listOrganizationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          FindSalesPartnerManagedClientsRequest, FindSalesPartnerManagedClientsResponse>
+      findSalesPartnerManagedClientsCallable() {
+    return findSalesPartnerManagedClientsCallable;
   }
 
   @Override
@@ -308,6 +435,12 @@ public class GrpcMarketingplatformAdminServiceStub extends MarketingplatformAdmi
   public UnaryCallable<SetPropertyServiceLevelRequest, SetPropertyServiceLevelResponse>
       setPropertyServiceLevelCallable() {
     return setPropertyServiceLevelCallable;
+  }
+
+  @Override
+  public UnaryCallable<ReportPropertyUsageRequest, ReportPropertyUsageResponse>
+      reportPropertyUsageCallable() {
+    return reportPropertyUsageCallable;
   }
 
   @Override

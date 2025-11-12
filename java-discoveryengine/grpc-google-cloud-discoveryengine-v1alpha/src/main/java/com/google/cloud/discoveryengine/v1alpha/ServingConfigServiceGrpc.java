@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [ServingConfig][google.cloud.discoveryengine.v1alpha.ServingConfig].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1alpha/serving_config_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ServingConfigServiceGrpc {
 
@@ -419,8 +416,9 @@ public final class ServingConfigServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.ServingConfig updateServingConfig(
-        com.google.cloud.discoveryengine.v1alpha.UpdateServingConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.UpdateServingConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateServingConfigMethod(), getCallOptions(), request);
     }
 
@@ -433,8 +431,9 @@ public final class ServingConfigServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.ServingConfig getServingConfig(
-        com.google.cloud.discoveryengine.v1alpha.GetServingConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.GetServingConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetServingConfigMethod(), getCallOptions(), request);
     }
 
@@ -446,8 +445,9 @@ public final class ServingConfigServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.ListServingConfigsResponse listServingConfigs(
-        com.google.cloud.discoveryengine.v1alpha.ListServingConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.ListServingConfigsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListServingConfigsMethod(), getCallOptions(), request);
     }
   }

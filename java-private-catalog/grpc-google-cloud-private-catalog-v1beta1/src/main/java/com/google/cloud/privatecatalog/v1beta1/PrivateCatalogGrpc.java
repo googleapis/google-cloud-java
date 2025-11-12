@@ -41,9 +41,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [google.cloud.privatecatalogproducer.v1beta.Version][].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/privatecatalog/v1beta1/private_catalog.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class PrivateCatalogGrpc {
 
@@ -491,8 +488,9 @@ public final class PrivateCatalogGrpc {
      * </pre>
      */
     public com.google.cloud.privatecatalog.v1beta1.SearchCatalogsResponse searchCatalogs(
-        com.google.cloud.privatecatalog.v1beta1.SearchCatalogsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.privatecatalog.v1beta1.SearchCatalogsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchCatalogsMethod(), getCallOptions(), request);
     }
 
@@ -505,8 +503,9 @@ public final class PrivateCatalogGrpc {
      * </pre>
      */
     public com.google.cloud.privatecatalog.v1beta1.SearchProductsResponse searchProducts(
-        com.google.cloud.privatecatalog.v1beta1.SearchProductsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.privatecatalog.v1beta1.SearchProductsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchProductsMethod(), getCallOptions(), request);
     }
 
@@ -519,8 +518,9 @@ public final class PrivateCatalogGrpc {
      * </pre>
      */
     public com.google.cloud.privatecatalog.v1beta1.SearchVersionsResponse searchVersions(
-        com.google.cloud.privatecatalog.v1beta1.SearchVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.privatecatalog.v1beta1.SearchVersionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchVersionsMethod(), getCallOptions(), request);
     }
   }

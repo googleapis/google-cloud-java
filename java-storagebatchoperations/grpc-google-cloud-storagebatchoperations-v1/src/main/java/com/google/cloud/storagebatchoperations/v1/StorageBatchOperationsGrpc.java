@@ -27,9 +27,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * performed on Cloud Storage objects.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/storagebatchoperations/v1/storage_batch_operations.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class StorageBatchOperationsGrpc {
 
@@ -549,8 +546,9 @@ public final class StorageBatchOperationsGrpc {
      * </pre>
      */
     public com.google.cloud.storagebatchoperations.v1.ListJobsResponse listJobs(
-        com.google.cloud.storagebatchoperations.v1.ListJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.storagebatchoperations.v1.ListJobsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListJobsMethod(), getCallOptions(), request);
     }
 
@@ -562,8 +560,9 @@ public final class StorageBatchOperationsGrpc {
      * </pre>
      */
     public com.google.cloud.storagebatchoperations.v1.Job getJob(
-        com.google.cloud.storagebatchoperations.v1.GetJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.storagebatchoperations.v1.GetJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetJobMethod(), getCallOptions(), request);
     }
 
@@ -575,8 +574,9 @@ public final class StorageBatchOperationsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createJob(
-        com.google.cloud.storagebatchoperations.v1.CreateJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.storagebatchoperations.v1.CreateJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateJobMethod(), getCallOptions(), request);
     }
 
@@ -588,8 +588,9 @@ public final class StorageBatchOperationsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteJob(
-        com.google.cloud.storagebatchoperations.v1.DeleteJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.storagebatchoperations.v1.DeleteJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteJobMethod(), getCallOptions(), request);
     }
 
@@ -601,8 +602,9 @@ public final class StorageBatchOperationsGrpc {
      * </pre>
      */
     public com.google.cloud.storagebatchoperations.v1.CancelJobResponse cancelJob(
-        com.google.cloud.storagebatchoperations.v1.CancelJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.storagebatchoperations.v1.CancelJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCancelJobMethod(), getCallOptions(), request);
     }
   }

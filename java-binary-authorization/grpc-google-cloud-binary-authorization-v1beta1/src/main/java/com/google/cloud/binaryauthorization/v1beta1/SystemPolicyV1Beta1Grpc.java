@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * API for working with the system policy.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/binaryauthorization/v1beta1/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SystemPolicyV1Beta1Grpc {
 
@@ -243,8 +240,9 @@ public final class SystemPolicyV1Beta1Grpc {
      * </pre>
      */
     public com.google.cloud.binaryauthorization.v1beta1.Policy getSystemPolicy(
-        com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSystemPolicyMethod(), getCallOptions(), request);
     }
   }

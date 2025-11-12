@@ -113,6 +113,14 @@ public final class BackupVaultProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_backupdr_v1_FetchUsableBackupVaultsResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_backupdr_v1_FetchBackupsForResourceTypeRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_backupdr_v1_FetchBackupsForResourceTypeRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_backupdr_v1_FetchBackupsForResourceTypeResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_backupdr_v1_FetchBackupsForResourceTypeResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_backupdr_v1_GetBackupVaultRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_backupdr_v1_GetBackupVaultRequest_fieldAccessorTable;
@@ -176,6 +184,10 @@ public final class BackupVaultProto {
       internal_static_google_cloud_backupdr_v1_GcpResource_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_backupdr_v1_GcpResource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_backupdr_v1_BackupGcpResource_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_backupdr_v1_BackupGcpResource_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -359,23 +371,23 @@ public final class BackupVaultProto {
           + " \001(\01321.google.cloud.backupdr.v1.BackupApplianceLockInfoH\000\022K\n"
           + "\021service_lock_info\030\004"
           + " \001(\0132).google.cloud.backupdr.v1.ServiceLockInfoB\003\340A\003H\000B\020\n"
-          + "\016ClientLockInfo\"\337\020\n"
+          + "\016ClientLockInfo\"\274\021\n"
           + "\006Backup\022\024\n"
           + "\004name\030\001 \001(\tB\006\340A\003\340A\010\022\035\n"
-          + "\013description\030\002 \001(\tB\003\340A\003H\002\210\001\001\0229\n"
+          + "\013description\030\002 \001(\tB\003\340A\003H\003\210\001\001\0229\n"
           + "\013create_time\030\003"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003H\003\210\001\001\0229\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003H\004\210\001\001\0229\n"
           + "\013update_time\030\004"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003H\004\210\001\001\022A\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003H\005\210\001\001\022A\n"
           + "\006labels\030\005 \003(\0132,.google"
           + ".cloud.backupdr.v1.Backup.LabelsEntryB\003\340A\001\022I\n"
           + "\033enforced_retention_end_time\030\006"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\001H\005\210\001\001\0229\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\001H\006\210\001\001\0229\n"
           + "\013expire_time\030\007"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\001H\006\210\001\001\022>\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\001H\007\210\001\001\022>\n"
           + "\020consistency_time\030\t \001"
-          + "(\0132\032.google.protobuf.TimestampB\003\340A\003H\007\210\001\001\022\026\n"
-          + "\004etag\030\013 \001(\tB\003\340A\001H\010\210\001\001\022:\n"
+          + "(\0132\032.google.protobuf.TimestampB\003\340A\003H\010\210\001\001\022\026\n"
+          + "\004etag\030\013 \001(\tB\003\340A\001H\t\210\001\001\022:\n"
           + "\005state\030\017 \001(\0162"
           + "&.google.cloud.backupdr.v1.Backup.StateB\003\340A\003\022@\n\r"
           + "service_locks\030\021"
@@ -395,9 +407,11 @@ public final class BackupVaultProto {
           + "\024gcp_backup_plan_info\030\026 \001(\01322.google.clou"
           + "d.backupdr.v1.Backup.GCPBackupPlanInfoB\003\340A\003H\001\022 \n"
           + "\023resource_size_bytes\030\027 \001(\003B\003\340A\003\022\"\n\r"
-          + "satisfies_pzs\030\030 \001(\010B\006\340A\003\340A\001H\t\210\001\001\022\"\n\r"
-          + "satisfies_pzi\030\031 \001(\010B\006\340A\003\340A\001H\n"
-          + "\210\001\001\032\262\001\n"
+          + "satisfies_pzs\030\030 \001(\010B\006\340A\003\340A\001H\n"
+          + "\210\001\001\022\"\n\r"
+          + "satisfies_pzi\030\031 \001(\010B\006\340A\003\340A\001H\013\210\001\001\022H\n"
+          + "\014gcp_resource\030\037"
+          + " \001(\0132+.google.cloud.backupdr.v1.BackupGcpResourceB\003\340A\003H\002\032\262\001\n"
           + "\021GCPBackupPlanInfo\022<\n"
           + "\013backup_plan\030\001 \001(\tB\'\372A$\n"
           + "\"backupdr.googleapis.com/BackupPlan\022\033\n"
@@ -413,18 +427,18 @@ public final class BackupVaultProto {
           + "\006ACTIVE\020\002\022\014\n"
           + "\010DELETING\020\003\022\t\n"
           + "\005ERROR\020\004\022\r\n"
-          + "\tUPLOADING\020\005\"b\n"
-          + "\n"
+          + "\tUPLOADING\020\005\"b\n\n"
           + "BackupType\022\033\n"
           + "\027BACKUP_TYPE_UNSPECIFIED\020\000\022\r\n"
           + "\tSCHEDULED\020\001\022\r\n"
           + "\tON_DEMAND\020\002\022\031\n"
           + "\025ON_DEMAND_OPERATIONAL\020\003:\243\001\352A\237\001\n"
-          + "\036backupdr.googleapis.com/Backup\022lprojects/{project}/loc"
-          + "ations/{location}/backupVaults/{backupva"
-          + "ult}/dataSources/{datasource}/backups/{backup}*\007backups2\006backupB\023\n"
+          + "\036backupdr.googleapis.com/Backup\022lprojects/{project}/locations"
+          + "/{location}/backupVaults/{backupvault}/d"
+          + "ataSources/{datasource}/backups/{backup}*\007backups2\006backupB\023\n"
           + "\021backup_propertiesB\013\n"
-          + "\tplan_infoB\016\n"
+          + "\tplan_infoB\021\n"
+          + "\017source_resourceB\016\n"
           + "\014_descriptionB\016\n"
           + "\014_create_timeB\016\n"
           + "\014_update_timeB\036\n"
@@ -435,11 +449,11 @@ public final class BackupVaultProto {
           + "\016_satisfies_pzsB\020\n"
           + "\016_satisfies_pzi\"\364\001\n"
           + "\030CreateBackupVaultRequest\022;\n"
-          + "\006parent\030\001 \001("
-          + "\tB+\340A\002\372A%\022#backupdr.googleapis.com/BackupVault\022\034\n"
+          + "\006parent\030\001 \001(\tB+\340"
+          + "A\002\372A%\022#backupdr.googleapis.com/BackupVault\022\034\n"
           + "\017backup_vault_id\030\002 \001(\tB\003\340A\002\022@\n"
-          + "\014backup_vault\030\003 \001("
-          + "\0132%.google.cloud.backupdr.v1.BackupVaultB\003\340A\002\022\037\n\n"
+          + "\014backup_vault\030\003"
+          + " \001(\0132%.google.cloud.backupdr.v1.BackupVaultB\003\340A\002\022\037\n\n"
           + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\022\032\n\r"
           + "validate_only\030\005 \001(\010B\003\340A\001\"\361\001\n"
           + "\027ListBackupVaultsRequest\022;\n"
@@ -449,8 +463,8 @@ public final class BackupVaultProto {
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
           + "\010order_by\030\005 \001(\tB\003\340A\001\022<\n"
-          + "\004view\030\006"
-          + " \001(\0162).google.cloud.backupdr.v1.BackupVaultViewB\003\340A\001\"\206\001\n"
+          + "\004view\030\006 \001(\0162).go"
+          + "ogle.cloud.backupdr.v1.BackupVaultViewB\003\340A\001\"\206\001\n"
           + "\030ListBackupVaultsResponse\022<\n\r"
           + "backup_vaults\030\001 \003(\0132%.google.cloud.backupdr.v1.BackupVault\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\023\n"
@@ -465,16 +479,29 @@ public final class BackupVaultProto {
           + "\037FetchUsableBackupVaultsResponse\022<\n\r"
           + "backup_vaults\030\001 \003(\0132%.google.cloud.backupdr.v1.BackupVault\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\023\n"
-          + "\013unreachable\030\003 \003(\t\"\220\001\n"
+          + "\013unreachable\030\003 \003(\t\"\216\002\n"
+          + "\"FetchBackupsForResourceTypeRequest\0226\n"
+          + "\006parent\030\001 \001(\tB&\340A\002\372A"
+          + " \022\036backupdr.googleapis.com/Backup\022\032\n\r"
+          + "resource_type\030\002 \001(\tB\003\340A\002\022\026\n"
+          + "\tpage_size\030\003 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\004 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\005 \001(\tB\003\340A\001\022\025\n"
+          + "\010order_by\030\006 \001(\tB\003\340A\001\0227\n"
+          + "\004view\030\007 \001(\0162$.google.cloud.backupdr.v1.BackupViewB\003\340A\001\"q\n"
+          + "#FetchBackupsForResourceTypeResponse\0221\n"
+          + "\007backups\030\001 \003(\0132 .google.cloud.backupdr.v1.Backup\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"\220\001\n"
           + "\025GetBackupVaultRequest\0229\n"
           + "\004name\030\001 \001(\tB+\340A\002\372A%\n"
           + "#backupdr.googleapis.com/BackupVault\022<\n"
-          + "\004view\030\002 \001(\0162"
-          + ").google.cloud.backupdr.v1.BackupVaultViewB\003\340A\001\"\221\002\n"
+          + "\004view\030\002 \001(\016"
+          + "2).google.cloud.backupdr.v1.BackupVaultViewB\003\340A\001\"\221\002\n"
           + "\030UpdateBackupVaultRequest\0224\n"
           + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\022@\n"
           + "\014backup_vault\030\002"
-          + " \001(\0132%.google.cloud.backupdr.v1.BackupVaultB\003\340A\002\022\037\n\n"
+          + " \001(\0132%.google.cloud.backupdr.v1.BackupVaultB\003\340A\002\022\037\n"
+          + "\n"
           + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\022\032\n\r"
           + "validate_only\030\004 \001(\010B\003\340A\001\022\022\n"
           + "\005force\030\005 \001(\010B\003\340A\001\022,\n"
@@ -504,8 +531,8 @@ public final class BackupVaultProto {
           + "\"backupdr.googleapis.com/DataSource\"\314\001\n"
           + "\027UpdateDataSourceRequest\0224\n"
           + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\022>\n"
-          + "\013data_source\030\002 \001(\0132$."
-          + "google.cloud.backupdr.v1.DataSourceB\003\340A\002\022\037\n\n"
+          + "\013data_source\030\002 \001(\0132$"
+          + ".google.cloud.backupdr.v1.DataSourceB\003\340A\002\022\037\n\n"
           + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\022\032\n\r"
           + "allow_missing\030\004 \001(\010B\003\340A\001\"\342\001\n"
           + "\022ListBackupsRequest\0226\n"
@@ -538,16 +565,16 @@ public final class BackupVaultProto {
           + "\004name\030\001 \001(\tB&\340A\002\372A \n"
           + "\036backupdr.googleapis.com/Backup\022\037\n\n"
           + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\022i\n"
-          + "#compute_instance_target_environment\030\003"
-          + " \001(\0132:.google.cloud.backupdr.v1.ComputeInstanceTargetEnvironmentH\000\022R\n"
-          + "\027disk_target_environment\030\005 \001(\0132/.google."
-          + "cloud.backupdr.v1.DiskTargetEnvironmentH\000\022_\n"
-          + "\036region_disk_target_environment\030\006 \001("
-          + "\01325.google.cloud.backupdr.v1.RegionDiskTargetEnvironmentH\000\022i\n"
-          + "#compute_instance_restore_properties\030\004 \001(\0132:.google.cloud.b"
-          + "ackupdr.v1.ComputeInstanceRestorePropertiesH\001\022R\n"
-          + "\027disk_restore_properties\030\007 \001(\0132/"
-          + ".google.cloud.backupdr.v1.DiskRestorePropertiesH\001B\024\n"
+          + "#compute_instance_target_environment\030\003 \001(\0132:.google.cloud.backupdr"
+          + ".v1.ComputeInstanceTargetEnvironmentH\000\022R\n"
+          + "\027disk_target_environment\030\005 \001(\0132/.google"
+          + ".cloud.backupdr.v1.DiskTargetEnvironmentH\000\022_\n"
+          + "\036region_disk_target_environment\030\006 \001"
+          + "(\01325.google.cloud.backupdr.v1.RegionDiskTargetEnvironmentH\000\022i\n"
+          + "#compute_instance_restore_properties\030\004 \001(\0132:.google.cloud."
+          + "backupdr.v1.ComputeInstanceRestorePropertiesH\001\022R\n"
+          + "\027disk_restore_properties\030\007 \001(\0132"
+          + "/.google.cloud.backupdr.v1.DiskRestorePropertiesH\001B\024\n"
           + "\022target_environmentB\025\n"
           + "\023instance_properties\"Z\n"
           + "\025RestoreBackupResponse\022A\n"
@@ -556,6 +583,10 @@ public final class BackupVaultProto {
           + "\014gcp_resource\030\001 \001(\0132%.google.cloud.backupdr.v1.GcpResourceH\000B\026\n"
           + "\024target_resource_info\"G\n"
           + "\013GcpResource\022\030\n"
+          + "\020gcp_resourcename\030\001 \001(\t\022\020\n"
+          + "\010location\030\002 \001(\t\022\014\n"
+          + "\004type\030\003 \001(\t\"M\n"
+          + "\021BackupGcpResource\022\030\n"
           + "\020gcp_resourcename\030\001 \001(\t\022\020\n"
           + "\010location\030\002 \001(\t\022\014\n"
           + "\004type\030\003 \001(\t*Q\n"
@@ -785,8 +816,10 @@ public final class BackupVaultProto {
               "ResourceSizeBytes",
               "SatisfiesPzs",
               "SatisfiesPzi",
+              "GcpResource",
               "BackupProperties",
               "PlanInfo",
+              "SourceResource",
             });
     internal_static_google_cloud_backupdr_v1_Backup_GCPBackupPlanInfo_descriptor =
         internal_static_google_cloud_backupdr_v1_Backup_descriptor.getNestedTypes().get(0);
@@ -844,8 +877,24 @@ public final class BackupVaultProto {
             new java.lang.String[] {
               "BackupVaults", "NextPageToken", "Unreachable",
             });
-    internal_static_google_cloud_backupdr_v1_GetBackupVaultRequest_descriptor =
+    internal_static_google_cloud_backupdr_v1_FetchBackupsForResourceTypeRequest_descriptor =
         getDescriptor().getMessageTypes().get(16);
+    internal_static_google_cloud_backupdr_v1_FetchBackupsForResourceTypeRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_backupdr_v1_FetchBackupsForResourceTypeRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "ResourceType", "PageSize", "PageToken", "Filter", "OrderBy", "View",
+            });
+    internal_static_google_cloud_backupdr_v1_FetchBackupsForResourceTypeResponse_descriptor =
+        getDescriptor().getMessageTypes().get(17);
+    internal_static_google_cloud_backupdr_v1_FetchBackupsForResourceTypeResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_backupdr_v1_FetchBackupsForResourceTypeResponse_descriptor,
+            new java.lang.String[] {
+              "Backups", "NextPageToken",
+            });
+    internal_static_google_cloud_backupdr_v1_GetBackupVaultRequest_descriptor =
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_backupdr_v1_GetBackupVaultRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_backupdr_v1_GetBackupVaultRequest_descriptor,
@@ -853,7 +902,7 @@ public final class BackupVaultProto {
               "Name", "View",
             });
     internal_static_google_cloud_backupdr_v1_UpdateBackupVaultRequest_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_backupdr_v1_UpdateBackupVaultRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_backupdr_v1_UpdateBackupVaultRequest_descriptor,
@@ -866,7 +915,7 @@ public final class BackupVaultProto {
               "ForceUpdateAccessRestriction",
             });
     internal_static_google_cloud_backupdr_v1_DeleteBackupVaultRequest_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_backupdr_v1_DeleteBackupVaultRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_backupdr_v1_DeleteBackupVaultRequest_descriptor,
@@ -880,7 +929,7 @@ public final class BackupVaultProto {
               "IgnoreBackupPlanReferences",
             });
     internal_static_google_cloud_backupdr_v1_ListDataSourcesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_backupdr_v1_ListDataSourcesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_backupdr_v1_ListDataSourcesRequest_descriptor,
@@ -888,7 +937,7 @@ public final class BackupVaultProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_backupdr_v1_ListDataSourcesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_backupdr_v1_ListDataSourcesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_backupdr_v1_ListDataSourcesResponse_descriptor,
@@ -896,7 +945,7 @@ public final class BackupVaultProto {
               "DataSources", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_backupdr_v1_GetDataSourceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_backupdr_v1_GetDataSourceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_backupdr_v1_GetDataSourceRequest_descriptor,
@@ -904,7 +953,7 @@ public final class BackupVaultProto {
               "Name",
             });
     internal_static_google_cloud_backupdr_v1_UpdateDataSourceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_backupdr_v1_UpdateDataSourceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_backupdr_v1_UpdateDataSourceRequest_descriptor,
@@ -912,7 +961,7 @@ public final class BackupVaultProto {
               "UpdateMask", "DataSource", "RequestId", "AllowMissing",
             });
     internal_static_google_cloud_backupdr_v1_ListBackupsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_backupdr_v1_ListBackupsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_backupdr_v1_ListBackupsRequest_descriptor,
@@ -920,7 +969,7 @@ public final class BackupVaultProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy", "View",
             });
     internal_static_google_cloud_backupdr_v1_ListBackupsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_cloud_backupdr_v1_ListBackupsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_backupdr_v1_ListBackupsResponse_descriptor,
@@ -928,7 +977,7 @@ public final class BackupVaultProto {
               "Backups", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_backupdr_v1_GetBackupRequest_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_backupdr_v1_GetBackupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_backupdr_v1_GetBackupRequest_descriptor,
@@ -936,7 +985,7 @@ public final class BackupVaultProto {
               "Name", "View",
             });
     internal_static_google_cloud_backupdr_v1_UpdateBackupRequest_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_backupdr_v1_UpdateBackupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_backupdr_v1_UpdateBackupRequest_descriptor,
@@ -944,7 +993,7 @@ public final class BackupVaultProto {
               "UpdateMask", "Backup", "RequestId",
             });
     internal_static_google_cloud_backupdr_v1_DeleteBackupRequest_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_cloud_backupdr_v1_DeleteBackupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_backupdr_v1_DeleteBackupRequest_descriptor,
@@ -952,7 +1001,7 @@ public final class BackupVaultProto {
               "Name", "RequestId",
             });
     internal_static_google_cloud_backupdr_v1_RestoreBackupRequest_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_cloud_backupdr_v1_RestoreBackupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_backupdr_v1_RestoreBackupRequest_descriptor,
@@ -968,7 +1017,7 @@ public final class BackupVaultProto {
               "InstanceProperties",
             });
     internal_static_google_cloud_backupdr_v1_RestoreBackupResponse_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_cloud_backupdr_v1_RestoreBackupResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_backupdr_v1_RestoreBackupResponse_descriptor,
@@ -976,7 +1025,7 @@ public final class BackupVaultProto {
               "TargetResource",
             });
     internal_static_google_cloud_backupdr_v1_TargetResource_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_cloud_backupdr_v1_TargetResource_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_backupdr_v1_TargetResource_descriptor,
@@ -984,10 +1033,18 @@ public final class BackupVaultProto {
               "GcpResource", "TargetResourceInfo",
             });
     internal_static_google_cloud_backupdr_v1_GcpResource_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_cloud_backupdr_v1_GcpResource_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_backupdr_v1_GcpResource_descriptor,
+            new java.lang.String[] {
+              "GcpResourcename", "Location", "Type",
+            });
+    internal_static_google_cloud_backupdr_v1_BackupGcpResource_descriptor =
+        getDescriptor().getMessageTypes().get(34);
+    internal_static_google_cloud_backupdr_v1_BackupGcpResource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_backupdr_v1_BackupGcpResource_descriptor,
             new java.lang.String[] {
               "GcpResourcename", "Location", "Type",
             });

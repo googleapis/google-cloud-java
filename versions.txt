@@ -917,3 +917,12 @@ grpc-google-cloud-locationfinder-v1:0.4.0:0.4.0
 google-cloud-capacityplanner:0.2.0:0.2.0
 proto-google-cloud-capacityplanner-v1beta:0.2.0:0.2.0
 grpc-google-cloud-capacityplanner-v1beta:0.2.0:0.2.0
+data-manager:0.0.0:0.0.1
+proto-data-manager-v1:0.0.0:0.0.1
+grpc-data-manager-v1:0.0.0:0.0.1
+google-cloud-vectorsearch:0.0.0:0.0.1
+proto-google-cloud-vectorsearch-v1:0.0.0:0.0.1
+grpc-google-cloud-vectorsearch-v1:0.0.0:0.0.1
+google-cloud-databasecenter:0.0.0:0.0.1
+proto-google-cloud-databasecenter-v1beta:0.0.0:0.0.1
+grpc-google-cloud-databasecenter-v1beta:0.0.0:0.0.1

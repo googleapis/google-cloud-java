@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to serve order tracking signals public API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/ordertracking/v1/order_tracking_signals.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class OrderTrackingSignalsServiceGrpc {
 
@@ -256,9 +253,9 @@ public final class OrderTrackingSignalsServiceGrpc {
      */
     public com.google.shopping.merchant.ordertracking.v1.OrderTrackingSignal
         createOrderTrackingSignal(
-            com.google.shopping.merchant.ordertracking.v1.CreateOrderTrackingSignalRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.shopping.merchant.ordertracking.v1.CreateOrderTrackingSignalRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateOrderTrackingSignalMethod(), getCallOptions(), request);
     }
   }

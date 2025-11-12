@@ -2914,8 +2914,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    * used for protocol forwarding, Private Service Connect and other network
    * services to provide forwarding information in the control plane. Applicable
    * only to destination endpoint. Format:
-   *  projects/{project}/global/forwardingRules/{id} or
-   *  projects/{project}/regions/{region}/forwardingRules/{id}
+   * `projects/{project}/global/forwardingRules/{id}` or
+   * `projects/{project}/regions/{region}/forwardingRules/{id}`
    * </pre>
    *
    * <code>string forwarding_rule = 13;</code>
@@ -2944,8 +2944,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    * used for protocol forwarding, Private Service Connect and other network
    * services to provide forwarding information in the control plane. Applicable
    * only to destination endpoint. Format:
-   *  projects/{project}/global/forwardingRules/{id} or
-   *  projects/{project}/regions/{region}/forwardingRules/{id}
+   * `projects/{project}/global/forwardingRules/{id}` or
+   * `projects/{project}/regions/{region}/forwardingRules/{id}`
    * </pre>
    *
    * <code>string forwarding_rule = 13;</code>
@@ -4911,8 +4911,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * used for protocol forwarding, Private Service Connect and other network
      * services to provide forwarding information in the control plane. Applicable
      * only to destination endpoint. Format:
-     *  projects/{project}/global/forwardingRules/{id} or
-     *  projects/{project}/regions/{region}/forwardingRules/{id}
+     * `projects/{project}/global/forwardingRules/{id}` or
+     * `projects/{project}/regions/{region}/forwardingRules/{id}`
      * </pre>
      *
      * <code>string forwarding_rule = 13;</code>
@@ -4940,8 +4940,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * used for protocol forwarding, Private Service Connect and other network
      * services to provide forwarding information in the control plane. Applicable
      * only to destination endpoint. Format:
-     *  projects/{project}/global/forwardingRules/{id} or
-     *  projects/{project}/regions/{region}/forwardingRules/{id}
+     * `projects/{project}/global/forwardingRules/{id}` or
+     * `projects/{project}/regions/{region}/forwardingRules/{id}`
      * </pre>
      *
      * <code>string forwarding_rule = 13;</code>
@@ -4969,8 +4969,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * used for protocol forwarding, Private Service Connect and other network
      * services to provide forwarding information in the control plane. Applicable
      * only to destination endpoint. Format:
-     *  projects/{project}/global/forwardingRules/{id} or
-     *  projects/{project}/regions/{region}/forwardingRules/{id}
+     * `projects/{project}/global/forwardingRules/{id}` or
+     * `projects/{project}/regions/{region}/forwardingRules/{id}`
      * </pre>
      *
      * <code>string forwarding_rule = 13;</code>
@@ -4997,8 +4997,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * used for protocol forwarding, Private Service Connect and other network
      * services to provide forwarding information in the control plane. Applicable
      * only to destination endpoint. Format:
-     *  projects/{project}/global/forwardingRules/{id} or
-     *  projects/{project}/regions/{region}/forwardingRules/{id}
+     * `projects/{project}/global/forwardingRules/{id}` or
+     * `projects/{project}/regions/{region}/forwardingRules/{id}`
      * </pre>
      *
      * <code>string forwarding_rule = 13;</code>
@@ -5021,8 +5021,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * used for protocol forwarding, Private Service Connect and other network
      * services to provide forwarding information in the control plane. Applicable
      * only to destination endpoint. Format:
-     *  projects/{project}/global/forwardingRules/{id} or
-     *  projects/{project}/regions/{region}/forwardingRules/{id}
+     * `projects/{project}/global/forwardingRules/{id}` or
+     * `projects/{project}/regions/{region}/forwardingRules/{id}`
      * </pre>
      *
      * <code>string forwarding_rule = 13;</code>

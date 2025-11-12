@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Trip management service.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/maps/fleetengine/v1/trip_api.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class TripServiceGrpc {
 
@@ -589,8 +586,8 @@ public final class TripServiceGrpc {
      * </pre>
      */
     public com.google.maps.fleetengine.v1.Trip createTrip(
-        com.google.maps.fleetengine.v1.CreateTripRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.fleetengine.v1.CreateTripRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTripMethod(), getCallOptions(), request);
     }
 
@@ -602,8 +599,8 @@ public final class TripServiceGrpc {
      * </pre>
      */
     public com.google.maps.fleetengine.v1.Trip getTrip(
-        com.google.maps.fleetengine.v1.GetTripRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.fleetengine.v1.GetTripRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTripMethod(), getCallOptions(), request);
     }
 
@@ -617,8 +614,8 @@ public final class TripServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteTrip(
-        com.google.maps.fleetengine.v1.DeleteTripRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.fleetengine.v1.DeleteTripRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTripMethod(), getCallOptions(), request);
     }
 
@@ -630,8 +627,9 @@ public final class TripServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty reportBillableTrip(
-        com.google.maps.fleetengine.v1.ReportBillableTripRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.fleetengine.v1.ReportBillableTripRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReportBillableTripMethod(), getCallOptions(), request);
     }
 
@@ -643,8 +641,8 @@ public final class TripServiceGrpc {
      * </pre>
      */
     public com.google.maps.fleetengine.v1.SearchTripsResponse searchTrips(
-        com.google.maps.fleetengine.v1.SearchTripsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.fleetengine.v1.SearchTripsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchTripsMethod(), getCallOptions(), request);
     }
 
@@ -656,8 +654,8 @@ public final class TripServiceGrpc {
      * </pre>
      */
     public com.google.maps.fleetengine.v1.Trip updateTrip(
-        com.google.maps.fleetengine.v1.UpdateTripRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.fleetengine.v1.UpdateTripRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateTripMethod(), getCallOptions(), request);
     }
   }

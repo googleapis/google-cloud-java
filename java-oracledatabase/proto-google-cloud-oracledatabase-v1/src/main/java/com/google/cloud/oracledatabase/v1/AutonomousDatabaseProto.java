@@ -37,9 +37,21 @@ public final class AutonomousDatabaseProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_oracledatabase_v1_AutonomousDatabase_LabelsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_oracledatabase_v1_SourceConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_oracledatabase_v1_SourceConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_oracledatabase_v1_AutonomousDatabaseProperties_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_oracledatabase_v1_AutonomousDatabaseProperties_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_oracledatabase_v1_EncryptionKeyHistoryEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_oracledatabase_v1_EncryptionKeyHistoryEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_oracledatabase_v1_EncryptionKey_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_oracledatabase_v1_EncryptionKey_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_oracledatabase_v1_AutonomousDatabaseApex_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -84,7 +96,7 @@ public final class AutonomousDatabaseProto {
           + "loud/oracledatabase/v1/common.proto\032\036goo"
           + "gle/protobuf/duration.proto\032\037google/prot"
           + "obuf/timestamp.proto\032\033google/type/dayofw"
-          + "eek.proto\032\033google/type/timeofday.proto\"\245\005\n"
+          + "eek.proto\032\033google/type/timeofday.proto\"\262\010\n"
           + "\022AutonomousDatabase\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\025\n"
           + "\010database\030\002 \001(\tB\003\340A\001\022\031\n"
@@ -98,26 +110,39 @@ public final class AutonomousDatabaseProto {
           + "\007network\030\t \001(\tB&\340A\001\372A \n"
           + "\036compute.googleapis.com/Network\022\021\n"
           + "\004cidr\030\n"
-          + " \001(\tB\003\340A\001\0224\n"
+          + " \001(\tB\003\340A\001\022E\n"
+          + "\013odb_network\030\020 \001(\tB0\340A\001\372A*\n"
+          + "(oracledatabase.googleapis.com/OdbNetwork\022C\n\n"
+          + "odb_subnet\030\021 \001(\tB/\340A\001\372A)\n"
+          + "\'oracledatabase.googleapis.com/OdbSubnet\022H\n\r"
+          + "source_config\030\013 \001(\0132"
+          + ",.google.cloud.oracledatabase.v1.SourceConfigB\003\340A\001\022[\n"
+          + "\031peer_autonomous_databases\030\014 \003(\tB8\340A\003\372A2\n"
+          + "0oracledatabase.googleapis.com/AutonomousDatabase\0224\n"
           + "\013create_time\030\r"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\032-\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022X\n"
+          + "%disaster_recovery_supported_locations\030\017 \003(\tB)\340A\003\372A#\n"
+          + "!locations.googleapis.com/Location\032-\n"
           + "\013LabelsEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r"
-          + "\n"
+          + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:\262\001\352A\256\001\n"
-          + "0oracledatabase.googleapis.com/AutonomousDatabase\022Qproj"
-          + "ects/{project}/locations/{location}/autonomousDatabases/{autonomous_database}*\023a"
-          + "utonomousDatabases2\022autonomousDatabase\"\267$\n"
+          + "0oracledatabase.googleapis.com/AutonomousDatabase\022Qproject"
+          + "s/{project}/locations/{location}/autonom"
+          + "ousDatabases/{autonomous_database}*\023autonomousDatabases2\022autonomousDatabase\"\231\001\n"
+          + "\014SourceConfig\022U\n"
+          + "\023autonomous_database\030\001 \001(\tB8\340A\001\372A2\n"
+          + "0oracledatabase.googleapis.com/AutonomousDatabase\0222\n"
+          + "%automatic_backups_replication_enabled\030\002 \001(\010B\003\340A\001\"\300\'\n"
           + "\034AutonomousDatabaseProperties\022\021\n"
           + "\004ocid\030\001 \001(\tB\003\340A\003\022\032\n\r"
           + "compute_count\030\002 \001(\002B\003\340A\001\022\033\n"
           + "\016cpu_core_count\030\003 \001(\005B\003\340A\001\022!\n"
           + "\024data_storage_size_tb\030\004 \001(\005B\003\340A\001\022!\n"
           + "\024data_storage_size_gb\030? \001(\005B\003\340A\001\022D\n"
-          + "\013db_workload\030\005 \001(\0162*"
-          + ".google.cloud.oracledatabase.v1.DBWorkloadB\003\340A\002\022e\n\n"
-          + "db_edition\030\006 \001(\0162L.google.clo"
-          + "ud.oracledatabase.v1.AutonomousDatabaseProperties.DatabaseEditionB\003\340A\001\022\032\n\r"
+          + "\013db_workload\030\005 \001(\0162*.google"
+          + ".cloud.oracledatabase.v1.DBWorkloadB\003\340A\002\022e\n\n"
+          + "db_edition\030\006 \001(\0162L.google.cloud.orac"
+          + "ledatabase.v1.AutonomousDatabaseProperties.DatabaseEditionB\003\340A\001\022\032\n\r"
           + "character_set\030\010 \001(\tB\003\340A\001\022\034\n"
           + "\017n_character_set\030\t \001(\tB\003\340A\001\022 \n"
           + "\023private_endpoint_ip\030\n"
@@ -126,14 +151,14 @@ public final class AutonomousDatabaseProto {
           + "db_version\030\014 \001(\tB\003\340A\001\022$\n"
           + "\027is_auto_scaling_enabled\030\016 \001(\010B\003\340A\001\022,\n"
           + "\037is_storage_auto_scaling_enabled\030\017 \001(\010B\003\340A\001\022c\n"
-          + "\014license_type\030\020 \001(\0162H.google.cloud.oracledatabase"
-          + ".v1.AutonomousDatabaseProperties.LicenseTypeB\003\340A\002\022O\n"
-          + "\021customer_contacts\030\021 \003(\0132/.g"
-          + "oogle.cloud.oracledatabase.v1.CustomerContactB\003\340A\001\022\026\n"
+          + "\014license_type\030\020 \001(\0162H.google.cloud.oracledatabase.v1.Aut"
+          + "onomousDatabaseProperties.LicenseTypeB\003\340A\002\022O\n"
+          + "\021customer_contacts\030\021 \003(\0132/.google.c"
+          + "loud.oracledatabase.v1.CustomerContactB\003\340A\001\022\026\n"
           + "\tsecret_id\030\022 \001(\tB\003\340A\001\022\025\n"
           + "\010vault_id\030\023 \001(\tB\003\340A\001\022|\n"
-          + "\031maintenance_schedule_type\030\024 \001(\0162T.google.cloud.oracledataba"
-          + "se.v1.AutonomousDatabaseProperties.MaintenanceScheduleTypeB\003\340A\001\022%\n"
+          + "\031maintenance_schedule_type\030\024 \001(\0162T.google.cloud.oracledatabase.v1.A"
+          + "utonomousDatabaseProperties.MaintenanceScheduleTypeB\003\340A\001\022%\n"
           + "\030mtls_connection_required\030\" \001(\010B\003\340A\001\022)\n"
           + "\034backup_retention_period_days\0309 \001(\005B\003\340A\001\022-\n"
           + " actual_used_data_storage_size_tb\030\025 \001(\001B\003\340A\003\022&\n"
@@ -147,51 +172,62 @@ public final class AutonomousDatabaseProto {
           + " \001(\0162%.google.cloud.oracledatabase.v1.StateB\003\340A\003\022-\n"
           + " autonomous_container_database_id\030\033 \001(\tB\003\340A\003\022\'\n"
           + "\032available_upgrade_versions\030\034 \003(\tB\003\340A\003\022d\n"
-          + "\022connection_strings\030\035 \001(\0132C.google.cloud.oracledata"
-          + "base.v1.AutonomousDatabaseConnectionStringsB\003\340A\003\022^\n"
-          + "\017connection_urls\030\036 \001(\0132@.goog"
-          + "le.cloud.oracledatabase.v1.AutonomousDatabaseConnectionUrlsB\003\340A\003\022E\n"
+          + "\022connection_strings\030\035 \001(\0132C.google.cloud.oracledatabase.v1"
+          + ".AutonomousDatabaseConnectionStringsB\003\340A\003\022^\n"
+          + "\017connection_urls\030\036 \001(\0132@.google.clou"
+          + "d.oracledatabase.v1.AutonomousDatabaseConnectionUrlsB\003\340A\003\022E\n"
           + "\035failed_data_recovery_duration\030\037"
           + " \001(\0132\031.google.protobuf.DurationB\003\340A\003\022\035\n"
           + "\020memory_table_gbs\030  \001(\005B\003\340A\003\022(\n"
           + "\033is_local_data_guard_enabled\030! \001(\010B\003\340A\003\0228\n"
           + "+local_adg_auto_failover_max_data_loss_limit\030# \001(\005B\003\340A\003\022_\n"
-          + "\020local_standby_db\030$ \001(\0132@.google.cloud.oracledataba"
-          + "se.v1.AutonomousDatabaseStandbySummaryB\003\340A\003\022/\n"
+          + "\020local_standby_db\030$"
+          + " \001(\0132@.google.cloud.oracledatabase.v1.AutonomousDatabaseStandbySummaryB\003\340A\003\022/\n"
           + "\"memory_per_oracle_compute_unit_gbs\030% \001(\005B\003\340A\003\022\201\001\n"
-          + "\034local_disaster_recovery_type\030& \001(\0162V.google.cloud.oracledatabas"
-          + "e.v1.AutonomousDatabaseProperties.LocalDisasterRecoveryTypeB\003\340A\003\022h\n"
-          + "\017data_safe_state\030\' \001(\0162J.google.cloud.oracledatabase."
-          + "v1.AutonomousDatabaseProperties.DataSafeStateB\003\340A\003\022|\n"
-          + "\031database_management_state\030( \001(\0162T.google.cloud.oracledatabase.v1.A"
-          + "utonomousDatabaseProperties.DatabaseManagementStateB\003\340A\003\022]\n"
-          + "\topen_mode\030) \001(\0162E.go"
-          + "ogle.cloud.oracledatabase.v1.AutonomousDatabaseProperties.OpenModeB\003\340A\003\022_\n"
-          + "\031operations_insights_state\030* \001(\01627.google.clou"
-          + "d.oracledatabase.v1.OperationsInsightsStateB\003\340A\003\022\030\n"
+          + "\034local_disaster_recovery_type\030& \001(\0162V.google.cloud.oracledatabase.v1.Au"
+          + "tonomousDatabaseProperties.LocalDisasterRecoveryTypeB\003\340A\003\022h\n"
+          + "\017data_safe_state\030\' \001(\0162J.google.cloud.oracledatabase.v1.Auto"
+          + "nomousDatabaseProperties.DataSafeStateB\003\340A\003\022|\n"
+          + "\031database_management_state\030( \001(\0162T.google.cloud.oracledatabase.v1.Autonomo"
+          + "usDatabaseProperties.DatabaseManagementStateB\003\340A\003\022]\n"
+          + "\topen_mode\030) \001(\0162E.google.cl"
+          + "oud.oracledatabase.v1.AutonomousDatabaseProperties.OpenModeB\003\340A\003\022_\n"
+          + "\031operations_insights_state\030* \001(\01627.google.cloud.oracl"
+          + "edatabase.v1.OperationsInsightsStateB\003\340A\003\022\030\n"
           + "\013peer_db_ids\030+ \003(\tB\003\340A\003\022k\n"
-          + "\020permission_level\030, \001(\0162L.google.cloud.orac"
-          + "ledatabase.v1.AutonomousDatabaseProperties.PermissionLevelB\003\340A\003\022\035\n"
+          + "\020permission_level\030, \001(\0162L.google.cloud.oracledatab"
+          + "ase.v1.AutonomousDatabaseProperties.PermissionLevelB\003\340A\003\022\035\n"
           + "\020private_endpoint\030- \001(\tB\003\340A\003\022k\n"
-          + "\020refreshable_mode\030. \001(\0162L.google.cloud.oracledatabase.v1.Autono"
-          + "mousDatabaseProperties.RefreshableModeB\003\340A\003\022m\n"
-          + "\021refreshable_state\030/ \001(\0162M.google."
-          + "cloud.oracledatabase.v1.AutonomousDatabaseProperties.RefreshableStateB\003\340A\003\022T\n"
-          + "\004role\0300 \001(\0162A.google.cloud.oracledatabase.v"
-          + "1.AutonomousDatabaseProperties.RoleB\003\340A\003\022c\n"
-          + "\033scheduled_operation_details\030@ \003(\01329."
-          + "google.cloud.oracledatabase.v1.ScheduledOperationDetailsB\003\340A\003\022\"\n"
+          + "\020refreshable_mode\030. \001(\0162L.goog"
+          + "le.cloud.oracledatabase.v1.AutonomousDatabaseProperties.RefreshableModeB\003\340A\003\022m\n"
+          + "\021refreshable_state\030/ \001(\0162M.google.cloud.o"
+          + "racledatabase.v1.AutonomousDatabaseProperties.RefreshableStateB\003\340A\003\022T\n"
+          + "\004role\0300 \001("
+          + "\0162A.google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.RoleB\003\340A\003\022c\n"
+          + "\033scheduled_operation_details\030@ \003(\01329.google."
+          + "cloud.oracledatabase.v1.ScheduledOperationDetailsB\003\340A\003\022\"\n"
           + "\025sql_web_developer_url\0302 \001(\tB\003\340A\003\022$\n"
           + "\027supported_clone_regions\0303 \003(\tB\003\340A\003\022\'\n"
           + "\032used_data_storage_size_tbs\0305 \001(\005B\003\340A\003\022\024\n"
           + "\007oci_url\0306 \001(\tB\003\340A\003\022/\n"
           + "\"total_auto_backup_storage_size_gbs\030; \001(\002B\003\340A\003\022C\n"
           + "\032next_long_term_backup_time\030<"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022E\n"
+          + "\034data_guard_role_changed_time\030="
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022L\n"
+          + "#disaster_recovery_role_changed_time\030>"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022?\n"
           + "\026maintenance_begin_time\030A"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022=\n"
           + "\024maintenance_end_time\030B"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\"a\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\034\n"
+          + "\017allowlisted_ips\030C \003(\tB\003\340A\001\022J\n"
+          + "\016encryption_key\030D \001(\013"
+          + "2-.google.cloud.oracledatabase.v1.EncryptionKeyB\003\340A\001\022f\n"
+          + "\036encryption_key_history_entries\030E"
+          + " \003(\01329.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntryB\003\340A\003\022"
+          + " \n"
+          + "\023service_agent_email\030F \001(\tB\003\340A\003\"a\n"
           + "\017DatabaseEdition\022 \n"
           + "\034DATABASE_EDITION_UNSPECIFIED\020\000\022\024\n"
           + "\020STANDARD_EDITION\020\001\022\026\n"
@@ -246,34 +282,49 @@ public final class AutonomousDatabaseProto {
           + "\020DISABLED_STANDBY\020\003\022\017\n"
           + "\013BACKUP_COPY\020\004\022\024\n"
           + "\020SNAPSHOT_STANDBY\020\005B#\n"
-          + "!_are_primary_allowlisted_ips_used\"N\n"
+          + "!_are_primary_allowlisted_ips_used\"\241\001\n"
+          + "\031EncryptionKeyHistoryEntry\022J\n"
+          + "\016encryption_key\030\001"
+          + " \001(\0132-.google.cloud.oracledatabase.v1.EncryptionKeyB\003\340A\003\0228\n"
+          + "\017activation_time\030\002"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\"\350\001\n\r"
+          + "EncryptionKey\022M\n"
+          + "\010provider\030\001"
+          + " \001(\01626.google.cloud.oracledatabase.v1.EncryptionKey.ProviderB\003\340A\001\022:\n"
+          + "\007kms_key\030\002 \001(\tB)\340A\001\372A#\n"
+          + "!cloudkms.googleapis.com/CryptoKey\"L\n"
+          + "\010Provider\022\030\n"
+          + "\024PROVIDER_UNSPECIFIED\020\000\022\022\n"
+          + "\016GOOGLE_MANAGED\020\001\022\022\n"
+          + "\016ORACLE_MANAGED\020\002\"N\n"
           + "\026AutonomousDatabaseApex\022\031\n"
           + "\014apex_version\030\001 \001(\tB\003\340A\003\022\031\n"
           + "\014ords_version\030\002 \001(\tB\003\340A\003\"\252\002\n"
           + "#AutonomousDatabaseConnectionStrings\022Y\n"
-          + "\026all_connection_strings\030\001"
-          + " \001(\01324.google.cloud.oracledatabase.v1.AllConnectionStringsB\003\340A\003\022\026\n"
+          + "\026all_connection_strings\030\001 \001("
+          + "\01324.google.cloud.oracledatabase.v1.AllConnectionStringsB\003\340A\003\022\026\n"
           + "\tdedicated\030\002 \001(\tB\003\340A\003\022\021\n"
           + "\004high\030\003 \001(\tB\003\340A\003\022\020\n"
           + "\003low\030\004 \001(\tB\003\340A\003\022\023\n"
           + "\006medium\030\005 \001(\tB\003\340A\003\022V\n"
-          + "\010profiles\030\006 \003(\0132?.google.cloud.oracledat"
-          + "abase.v1.DatabaseConnectionStringProfileB\003\340A\003\"\262\t\n"
+          + "\010profiles\030\006 \003(\013"
+          + "2?.google.cloud.oracledatabase.v1.DatabaseConnectionStringProfileB\003\340A\003\"\262"
+          + "\t\n"
           + "\037DatabaseConnectionStringProfile\022j\n"
-          + "\016consumer_group\030\001 \001(\0162M.google.cloud"
-          + ".oracledatabase.v1.DatabaseConnectionStringProfile.ConsumerGroupB\003\340A\003\022\031\n"
+          + "\016consumer_group\030\001 \001(\0162M.google.cloud.oracledatabase"
+          + ".v1.DatabaseConnectionStringProfile.ConsumerGroupB\003\340A\003\022\031\n"
           + "\014display_name\030\002 \001(\tB\003\340A\003\022d\n"
-          + "\013host_format\030\003 \001(\0162J.google.cloud.oracledatabase.v1.DatabaseC"
-          + "onnectionStringProfile.HostFormatB\003\340A\003\022\030\n"
+          + "\013host_format\030\003 \001(\0162J.google.cloud.or"
+          + "acledatabase.v1.DatabaseConnectionStringProfile.HostFormatB\003\340A\003\022\030\n"
           + "\013is_regional\030\004 \001(\010B\003\340A\003\022_\n"
-          + "\010protocol\030\005 \001(\0162H.google.cloud.oracledatabase.v1.Data"
-          + "baseConnectionStringProfile.ProtocolB\003\340A\003\022f\n"
-          + "\014session_mode\030\006 \001(\0162K.google.cloud.o"
-          + "racledatabase.v1.DatabaseConnectionStringProfile.SessionModeB\003\340A\003\022h\n\r"
-          + "syntax_format\030\007 \001(\0162L.google.cloud.oracledatabase.v"
-          + "1.DatabaseConnectionStringProfile.SyntaxFormatB\003\340A\003\022r\n"
-          + "\022tls_authentication\030\010 \001(\0162Q.google.cloud.oracledatabase.v1.Databas"
-          + "eConnectionStringProfile.TLSAuthenticationB\003\340A\003\022\022\n"
+          + "\010protocol\030\005 \001(\0162H.google.clo"
+          + "ud.oracledatabase.v1.DatabaseConnectionStringProfile.ProtocolB\003\340A\003\022f\n"
+          + "\014session_mode\030\006 \001(\0162K.google.cloud.oracledatabase.v"
+          + "1.DatabaseConnectionStringProfile.SessionModeB\003\340A\003\022h\n\r"
+          + "syntax_format\030\007 \001(\0162L.goog"
+          + "le.cloud.oracledatabase.v1.DatabaseConnectionStringProfile.SyntaxFormatB\003\340A\003\022r\n"
+          + "\022tls_authentication\030\010 \001(\0162Q.google.cloud."
+          + "oracledatabase.v1.DatabaseConnectionStringProfile.TLSAuthenticationB\003\340A\003\022\022\n"
           + "\005value\030\t \001(\tB\003\340A\003\"d\n\r"
           + "ConsumerGroup\022\036\n"
           + "\032CONSUMER_GROUP_UNSPECIFIED\020\000\022\010\n"
@@ -301,8 +352,7 @@ public final class AutonomousDatabaseProto {
           + "EZCONNECTPLUS\020\003\"O\n"
           + "\021TLSAuthentication\022\"\n"
           + "\036TLS_AUTHENTICATION_UNSPECIFIED\020\000\022\n\n"
-          + "\006SERVER\020\001\022\n"
-          + "\n"
+          + "\006SERVER\020\001\022\n\n"
           + "\006MUTUAL\020\002\"P\n"
           + "\024AllConnectionStrings\022\021\n"
           + "\004high\030\001 \001(\tB\003\340A\003\022\020\n"
@@ -328,7 +378,8 @@ public final class AutonomousDatabaseProto {
           + "#disaster_recovery_role_changed_time\030\005"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\"\256\001\n"
           + "\031ScheduledOperationDetails\0220\n"
-          + "\013day_of_week\030\001 \001(\0162\026.google.type.DayOfWeekB\003\340A\003\022/\n\n"
+          + "\013day_of_week\030\001 \001(\0162\026.google.type.DayOfWeekB\003\340A\003\022/\n"
+          + "\n"
           + "start_time\030\004 \001(\0132\026.google.type.TimeOfDayB\003\340A\003\022.\n"
           + "\tstop_time\030\005 \001(\0132\026.google.type.TimeOfDayB\003\340A\003*B\n"
           + "\014GenerateType\022\035\n"
@@ -374,10 +425,11 @@ public final class AutonomousDatabaseProto {
           + "\002DW\020\002\022\007\n"
           + "\003AJD\020\003\022\010\n"
           + "\004APEX\020\004B\361\001\n"
-          + "\"com.google.cloud.oracledatabase.v1B\027AutonomousDatabaseP"
-          + "rotoP\001ZJcloud.google.com/go/oracledatabase/apiv1/oracledatabasepb;oracledatabase"
-          + "pb\252\002\036Google.Cloud.OracleDatabase.V1\312\002\036Go"
-          + "ogle\\Cloud\\OracleDatabase\\V1\352\002!Google::Cloud::OracleDatabase::V1b\006proto3"
+          + "\"com.google.cloud.oracledatabase.v1B\027AutonomousDatabaseProtoP\001ZJcloud.g"
+          + "oogle.com/go/oracledatabase/apiv1/oracle"
+          + "databasepb;oracledatabasepb\252\002\036Google.Clo"
+          + "ud.OracleDatabase.V1\312\002\036Google\\Cloud\\Orac"
+          + "leDatabase\\V1\352\002!Google::Cloud::OracleDatabase::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -406,7 +458,12 @@ public final class AutonomousDatabaseProto {
               "Labels",
               "Network",
               "Cidr",
+              "OdbNetwork",
+              "OdbSubnet",
+              "SourceConfig",
+              "PeerAutonomousDatabases",
               "CreateTime",
+              "DisasterRecoverySupportedLocations",
             });
     internal_static_google_cloud_oracledatabase_v1_AutonomousDatabase_LabelsEntry_descriptor =
         internal_static_google_cloud_oracledatabase_v1_AutonomousDatabase_descriptor
@@ -418,8 +475,16 @@ public final class AutonomousDatabaseProto {
             new java.lang.String[] {
               "Key", "Value",
             });
-    internal_static_google_cloud_oracledatabase_v1_AutonomousDatabaseProperties_descriptor =
+    internal_static_google_cloud_oracledatabase_v1_SourceConfig_descriptor =
         getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_oracledatabase_v1_SourceConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_oracledatabase_v1_SourceConfig_descriptor,
+            new java.lang.String[] {
+              "AutonomousDatabase", "AutomaticBackupsReplicationEnabled",
+            });
+    internal_static_google_cloud_oracledatabase_v1_AutonomousDatabaseProperties_descriptor =
+        getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_oracledatabase_v1_AutonomousDatabaseProperties_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_AutonomousDatabaseProperties_descriptor,
@@ -479,11 +544,33 @@ public final class AutonomousDatabaseProto {
               "OciUrl",
               "TotalAutoBackupStorageSizeGbs",
               "NextLongTermBackupTime",
+              "DataGuardRoleChangedTime",
+              "DisasterRecoveryRoleChangedTime",
               "MaintenanceBeginTime",
               "MaintenanceEndTime",
+              "AllowlistedIps",
+              "EncryptionKey",
+              "EncryptionKeyHistoryEntries",
+              "ServiceAgentEmail",
+            });
+    internal_static_google_cloud_oracledatabase_v1_EncryptionKeyHistoryEntry_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_oracledatabase_v1_EncryptionKeyHistoryEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_oracledatabase_v1_EncryptionKeyHistoryEntry_descriptor,
+            new java.lang.String[] {
+              "EncryptionKey", "ActivationTime",
+            });
+    internal_static_google_cloud_oracledatabase_v1_EncryptionKey_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_oracledatabase_v1_EncryptionKey_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_oracledatabase_v1_EncryptionKey_descriptor,
+            new java.lang.String[] {
+              "Provider", "KmsKey",
             });
     internal_static_google_cloud_oracledatabase_v1_AutonomousDatabaseApex_descriptor =
-        getDescriptor().getMessageTypes().get(2);
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_oracledatabase_v1_AutonomousDatabaseApex_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_AutonomousDatabaseApex_descriptor,
@@ -491,7 +578,7 @@ public final class AutonomousDatabaseProto {
               "ApexVersion", "OrdsVersion",
             });
     internal_static_google_cloud_oracledatabase_v1_AutonomousDatabaseConnectionStrings_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_oracledatabase_v1_AutonomousDatabaseConnectionStrings_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_AutonomousDatabaseConnectionStrings_descriptor,
@@ -499,7 +586,7 @@ public final class AutonomousDatabaseProto {
               "AllConnectionStrings", "Dedicated", "High", "Low", "Medium", "Profiles",
             });
     internal_static_google_cloud_oracledatabase_v1_DatabaseConnectionStringProfile_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_oracledatabase_v1_DatabaseConnectionStringProfile_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_DatabaseConnectionStringProfile_descriptor,
@@ -515,7 +602,7 @@ public final class AutonomousDatabaseProto {
               "Value",
             });
     internal_static_google_cloud_oracledatabase_v1_AllConnectionStrings_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_oracledatabase_v1_AllConnectionStrings_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_AllConnectionStrings_descriptor,
@@ -523,7 +610,7 @@ public final class AutonomousDatabaseProto {
               "High", "Low", "Medium",
             });
     internal_static_google_cloud_oracledatabase_v1_AutonomousDatabaseConnectionUrls_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_oracledatabase_v1_AutonomousDatabaseConnectionUrls_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_AutonomousDatabaseConnectionUrls_descriptor,
@@ -538,7 +625,7 @@ public final class AutonomousDatabaseProto {
               "SqlDevWebUri",
             });
     internal_static_google_cloud_oracledatabase_v1_AutonomousDatabaseStandbySummary_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_oracledatabase_v1_AutonomousDatabaseStandbySummary_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_AutonomousDatabaseStandbySummary_descriptor,
@@ -550,7 +637,7 @@ public final class AutonomousDatabaseProto {
               "DisasterRecoveryRoleChangedTime",
             });
     internal_static_google_cloud_oracledatabase_v1_ScheduledOperationDetails_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_oracledatabase_v1_ScheduledOperationDetails_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_ScheduledOperationDetails_descriptor,

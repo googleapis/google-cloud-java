@@ -37,6 +37,10 @@ public final class PubsubProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_bigquery_analyticshub_v1_PubSubSubscription_LabelsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_analyticshub_v1_PubSubSubscription_TagsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_analyticshub_v1_PubSubSubscription_TagsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_bigquery_analyticshub_v1_RetryPolicy_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_bigquery_analyticshub_v1_RetryPolicy_fieldAccessorTable;
@@ -104,7 +108,7 @@ public final class PubsubProto {
       "\n"
           + "2google/cloud/bigquery/analyticshub/v1/pubsub.proto\022%google.cloud.bigquery.anal"
           + "yticshub.v1\032\037google/api/field_behavior.p"
-          + "roto\032\031google/api/resource.proto\032\036google/protobuf/duration.proto\"\226\010\n"
+          + "roto\032\031google/api/resource.proto\032\036google/protobuf/duration.proto\"\241\t\n"
           + "\022PubSubSubscription\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\002\022K\n"
           + "\013push_config\030\004"
@@ -131,8 +135,14 @@ public final class PubsubProto {
           + "\010detached\030\017 \001(\010B\003\340A\001\022)\n"
           + "\034enable_exactly_once_delivery\030\020 \001(\010B\003\340A\001\022X\n"
           + "\022message_transforms\030\031 "
-          + "\003(\01327.google.cloud.bigquery.analyticshub.v1.MessageTransformB\003\340A\001\032-\n"
+          + "\003(\01327.google.cloud.bigquery.analyticshub.v1.MessageTransformB\003\340A\001\022\\\n"
+          + "\004tags\030\032 \003(\0132"
+          + "C.google.cloud.bigquery.analyticshub.v1.PubSubSubscription.TagsEntryB"
+          + "\t\340A\004\340A\005\340A\001\032-\n"
           + "\013LabelsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\032+\n"
+          + "\tTagsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"\177\n"
           + "\013RetryPolicy\0227\n"
@@ -145,15 +155,15 @@ public final class PubsubProto {
           + "\020ExpirationPolicy\022+\n"
           + "\003ttl\030\001 \001(\0132\031.google.protobuf.DurationB\003\340A\001\"\356\004\n\n"
           + "PushConfig\022V\n\n"
-          + "oidc_token\030\003 \001(\0132;.google.c"
-          + "loud.bigquery.analyticshub.v1.PushConfig.OidcTokenB\003\340A\001H\000\022^\n"
-          + "\016pubsub_wrapper\030\004 \001("
-          + "\0132?.google.cloud.bigquery.analyticshub.v1.PushConfig.PubsubWrapperB\003\340A\001H\001\022V\n\n"
-          + "no_wrapper\030\005 \001(\0132;.google.cloud.bigquery.an"
-          + "alyticshub.v1.PushConfig.NoWrapperB\003\340A\001H\001\022\032\n\r"
+          + "oidc_token\030\003"
+          + " \001(\0132;.google.cloud.bigquery.analyticshub.v1.PushConfig.OidcTokenB\003\340A\001H\000\022^\n"
+          + "\016pubsub_wrapper\030\004 \001(\0132?.google.cloud.bigq"
+          + "uery.analyticshub.v1.PushConfig.PubsubWrapperB\003\340A\001H\001\022V\n\n"
+          + "no_wrapper\030\005 \001(\0132;.googl"
+          + "e.cloud.bigquery.analyticshub.v1.PushConfig.NoWrapperB\003\340A\001H\001\022\032\n\r"
           + "push_endpoint\030\001 \001(\tB\003\340A\001\022Z\n\n"
-          + "attributes\030\002 \003(\0132A.google.cloud.bigquery.analyt"
-          + "icshub.v1.PushConfig.AttributesEntryB\003\340A\001\032F\n"
+          + "attributes\030\002 \003(\0132A.google.cl"
+          + "oud.bigquery.analyticshub.v1.PushConfig.AttributesEntryB\003\340A\001\032F\n"
           + "\tOidcToken\022\"\n"
           + "\025service_account_email\030\001 \001(\tB\003\340A\001\022\025\n"
           + "\010audience\030\002 \001(\tB\003\340A\001\032\017\n\r"
@@ -173,10 +183,10 @@ public final class PubsubProto {
           + "\020use_table_schema\030\006 \001(\010B\003\340A\001\022\"\n"
           + "\025service_account_email\030\007 \001(\tB\003\340A\001\"\306\004\n"
           + "\022CloudStorageConfig\022`\n"
-          + "\013text_config\030\004 \001(\0132D.google.cloud.b"
-          + "igquery.analyticshub.v1.CloudStorageConfig.TextConfigB\003\340A\001H\000\022`\n"
-          + "\013avro_config\030\005 \001(\0132D.google.cloud.bigquery.analyticshub.v"
-          + "1.CloudStorageConfig.AvroConfigB\003\340A\001H\000\022\023\n"
+          + "\013text_config\030\004 \001(\0132D.google.cloud.bigquery.analyticshub."
+          + "v1.CloudStorageConfig.TextConfigB\003\340A\001H\000\022`\n"
+          + "\013avro_config\030\005 \001(\0132D.google.cloud.bigq"
+          + "uery.analyticshub.v1.CloudStorageConfig.AvroConfigB\003\340A\001H\000\022\023\n"
           + "\006bucket\030\001 \001(\tB\003\340A\002\022\034\n"
           + "\017filename_prefix\030\002 \001(\tB\003\340A\001\022\034\n"
           + "\017filename_suffix\030\003 \001(\tB\003\340A\001\022%\n"
@@ -193,19 +203,19 @@ public final class PubsubProto {
           + "\020use_topic_schema\030\002 \001(\010B\003\340A\001B\017\n\r"
           + "output_format\"\243\001\n"
           + "\020MessageTransform\022S\n"
-          + "\016javascript_udf\030\002"
-          + " \001(\01324.google.cloud.bigquery.analyticshub.v1.JavaScriptUDFB\003\340A\001H\000\022\026\n"
+          + "\016javascript_udf\030\002 \001(\01324.google.cl"
+          + "oud.bigquery.analyticshub.v1.JavaScriptUDFB\003\340A\001H\000\022\026\n"
           + "\007enabled\030\003 \001(\010B\005\030\001\340A\001\022\025\n"
           + "\010disabled\030\004 \001(\010B\003\340A\001B\013\n"
           + "\ttransform\">\n\r"
           + "JavaScriptUDF\022\032\n\r"
           + "function_name\030\001 \001(\tB\003\340A\002\022\021\n"
           + "\004code\030\002 \001(\tB\003\340A\002B\205\002\n"
-          + ")com.google.cloud.bigquery.analyticshub.v1"
-          + "B\013PubsubProtoP\001ZMcloud.google.com/go/bigquery/analyticshub/apiv1/analyticshubpb;"
-          + "analyticshubpb\252\002%Google.Cloud.BigQuery.A"
-          + "nalyticsHub.V1\312\002%Google\\Cloud\\BigQuery\\A"
-          + "nalyticsHub\\V1\352\002)Google::Cloud::Bigquery::AnalyticsHub::V1b\006proto3"
+          + ")com.google.cloud.bigquery.analyticshub.v1B\013PubsubProtoP\001ZMclou"
+          + "d.google.com/go/bigquery/analyticshub/apiv1/analyticshubpb;analyticshubpb\252\002%Goog"
+          + "le.Cloud.BigQuery.AnalyticsHub.V1\312\002%Goog"
+          + "le\\Cloud\\BigQuery\\AnalyticsHub\\V1\352\002)Goog"
+          + "le::Cloud::Bigquery::AnalyticsHub::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -237,6 +247,7 @@ public final class PubsubProto {
               "Detached",
               "EnableExactlyOnceDelivery",
               "MessageTransforms",
+              "Tags",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_PubSubSubscription_LabelsEntry_descriptor =
         internal_static_google_cloud_bigquery_analyticshub_v1_PubSubSubscription_descriptor
@@ -245,6 +256,16 @@ public final class PubsubProto {
     internal_static_google_cloud_bigquery_analyticshub_v1_PubSubSubscription_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_PubSubSubscription_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_bigquery_analyticshub_v1_PubSubSubscription_TagsEntry_descriptor =
+        internal_static_google_cloud_bigquery_analyticshub_v1_PubSubSubscription_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_bigquery_analyticshub_v1_PubSubSubscription_TagsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_analyticshub_v1_PubSubSubscription_TagsEntry_descriptor,
             new java.lang.String[] {
               "Key", "Value",
             });

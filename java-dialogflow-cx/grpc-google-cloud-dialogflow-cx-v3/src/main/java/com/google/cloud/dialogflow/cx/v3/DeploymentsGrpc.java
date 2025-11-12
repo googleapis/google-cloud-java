@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing [Deployments][google.cloud.dialogflow.cx.v3.Deployment].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/cx/v3/deployment.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DeploymentsGrpc {
 
@@ -321,8 +318,9 @@ public final class DeploymentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.ListDeploymentsResponse listDeployments(
-        com.google.cloud.dialogflow.cx.v3.ListDeploymentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.ListDeploymentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDeploymentsMethod(), getCallOptions(), request);
     }
 
@@ -335,8 +333,9 @@ public final class DeploymentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.Deployment getDeployment(
-        com.google.cloud.dialogflow.cx.v3.GetDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.GetDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDeploymentMethod(), getCallOptions(), request);
     }
   }

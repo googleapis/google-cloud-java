@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service describing handlers for resources
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/developerconnect/v1/developer_connect.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DeveloperConnectGrpc {
 
@@ -2078,8 +2075,9 @@ public final class DeveloperConnectGrpc {
      * </pre>
      */
     public com.google.cloud.developerconnect.v1.ListConnectionsResponse listConnections(
-        com.google.cloud.developerconnect.v1.ListConnectionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.ListConnectionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListConnectionsMethod(), getCallOptions(), request);
     }
 
@@ -2091,8 +2089,9 @@ public final class DeveloperConnectGrpc {
      * </pre>
      */
     public com.google.cloud.developerconnect.v1.Connection getConnection(
-        com.google.cloud.developerconnect.v1.GetConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.GetConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetConnectionMethod(), getCallOptions(), request);
     }
 
@@ -2104,8 +2103,9 @@ public final class DeveloperConnectGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createConnection(
-        com.google.cloud.developerconnect.v1.CreateConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.CreateConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateConnectionMethod(), getCallOptions(), request);
     }
 
@@ -2117,8 +2117,9 @@ public final class DeveloperConnectGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateConnection(
-        com.google.cloud.developerconnect.v1.UpdateConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.UpdateConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateConnectionMethod(), getCallOptions(), request);
     }
 
@@ -2130,8 +2131,9 @@ public final class DeveloperConnectGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteConnection(
-        com.google.cloud.developerconnect.v1.DeleteConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.DeleteConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteConnectionMethod(), getCallOptions(), request);
     }
 
@@ -2147,8 +2149,9 @@ public final class DeveloperConnectGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createGitRepositoryLink(
-        com.google.cloud.developerconnect.v1.CreateGitRepositoryLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.CreateGitRepositoryLinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateGitRepositoryLinkMethod(), getCallOptions(), request);
     }
 
@@ -2160,8 +2163,9 @@ public final class DeveloperConnectGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteGitRepositoryLink(
-        com.google.cloud.developerconnect.v1.DeleteGitRepositoryLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.DeleteGitRepositoryLinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteGitRepositoryLinkMethod(), getCallOptions(), request);
     }
 
@@ -2174,8 +2178,9 @@ public final class DeveloperConnectGrpc {
      */
     public com.google.cloud.developerconnect.v1.ListGitRepositoryLinksResponse
         listGitRepositoryLinks(
-            com.google.cloud.developerconnect.v1.ListGitRepositoryLinksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.developerconnect.v1.ListGitRepositoryLinksRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListGitRepositoryLinksMethod(), getCallOptions(), request);
     }
 
@@ -2187,8 +2192,9 @@ public final class DeveloperConnectGrpc {
      * </pre>
      */
     public com.google.cloud.developerconnect.v1.GitRepositoryLink getGitRepositoryLink(
-        com.google.cloud.developerconnect.v1.GetGitRepositoryLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.GetGitRepositoryLinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetGitRepositoryLinkMethod(), getCallOptions(), request);
     }
 
@@ -2200,8 +2206,9 @@ public final class DeveloperConnectGrpc {
      * </pre>
      */
     public com.google.cloud.developerconnect.v1.FetchReadWriteTokenResponse fetchReadWriteToken(
-        com.google.cloud.developerconnect.v1.FetchReadWriteTokenRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.FetchReadWriteTokenRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchReadWriteTokenMethod(), getCallOptions(), request);
     }
 
@@ -2213,8 +2220,9 @@ public final class DeveloperConnectGrpc {
      * </pre>
      */
     public com.google.cloud.developerconnect.v1.FetchReadTokenResponse fetchReadToken(
-        com.google.cloud.developerconnect.v1.FetchReadTokenRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.FetchReadTokenRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchReadTokenMethod(), getCallOptions(), request);
     }
 
@@ -2228,8 +2236,9 @@ public final class DeveloperConnectGrpc {
      */
     public com.google.cloud.developerconnect.v1.FetchLinkableGitRepositoriesResponse
         fetchLinkableGitRepositories(
-            com.google.cloud.developerconnect.v1.FetchLinkableGitRepositoriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.developerconnect.v1.FetchLinkableGitRepositoriesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchLinkableGitRepositoriesMethod(), getCallOptions(), request);
     }
 
@@ -2245,8 +2254,9 @@ public final class DeveloperConnectGrpc {
      */
     public com.google.cloud.developerconnect.v1.FetchGitHubInstallationsResponse
         fetchGitHubInstallations(
-            com.google.cloud.developerconnect.v1.FetchGitHubInstallationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.developerconnect.v1.FetchGitHubInstallationsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchGitHubInstallationsMethod(), getCallOptions(), request);
     }
 
@@ -2258,8 +2268,9 @@ public final class DeveloperConnectGrpc {
      * </pre>
      */
     public com.google.cloud.developerconnect.v1.FetchGitRefsResponse fetchGitRefs(
-        com.google.cloud.developerconnect.v1.FetchGitRefsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.FetchGitRefsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchGitRefsMethod(), getCallOptions(), request);
     }
 
@@ -2271,8 +2282,9 @@ public final class DeveloperConnectGrpc {
      * </pre>
      */
     public com.google.cloud.developerconnect.v1.ListAccountConnectorsResponse listAccountConnectors(
-        com.google.cloud.developerconnect.v1.ListAccountConnectorsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.ListAccountConnectorsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAccountConnectorsMethod(), getCallOptions(), request);
     }
 
@@ -2284,8 +2296,9 @@ public final class DeveloperConnectGrpc {
      * </pre>
      */
     public com.google.cloud.developerconnect.v1.AccountConnector getAccountConnector(
-        com.google.cloud.developerconnect.v1.GetAccountConnectorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.GetAccountConnectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAccountConnectorMethod(), getCallOptions(), request);
     }
 
@@ -2297,8 +2310,9 @@ public final class DeveloperConnectGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createAccountConnector(
-        com.google.cloud.developerconnect.v1.CreateAccountConnectorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.CreateAccountConnectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAccountConnectorMethod(), getCallOptions(), request);
     }
 
@@ -2310,8 +2324,9 @@ public final class DeveloperConnectGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateAccountConnector(
-        com.google.cloud.developerconnect.v1.UpdateAccountConnectorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.UpdateAccountConnectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAccountConnectorMethod(), getCallOptions(), request);
     }
 
@@ -2323,8 +2338,9 @@ public final class DeveloperConnectGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteAccountConnector(
-        com.google.cloud.developerconnect.v1.DeleteAccountConnectorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.DeleteAccountConnectorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAccountConnectorMethod(), getCallOptions(), request);
     }
 
@@ -2336,8 +2352,9 @@ public final class DeveloperConnectGrpc {
      * </pre>
      */
     public com.google.cloud.developerconnect.v1.FetchAccessTokenResponse fetchAccessToken(
-        com.google.cloud.developerconnect.v1.FetchAccessTokenRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.FetchAccessTokenRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchAccessTokenMethod(), getCallOptions(), request);
     }
 
@@ -2349,8 +2366,9 @@ public final class DeveloperConnectGrpc {
      * </pre>
      */
     public com.google.cloud.developerconnect.v1.ListUsersResponse listUsers(
-        com.google.cloud.developerconnect.v1.ListUsersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.ListUsersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListUsersMethod(), getCallOptions(), request);
     }
 
@@ -2362,8 +2380,9 @@ public final class DeveloperConnectGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteUser(
-        com.google.cloud.developerconnect.v1.DeleteUserRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.DeleteUserRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteUserMethod(), getCallOptions(), request);
     }
 
@@ -2375,8 +2394,9 @@ public final class DeveloperConnectGrpc {
      * </pre>
      */
     public com.google.cloud.developerconnect.v1.User fetchSelf(
-        com.google.cloud.developerconnect.v1.FetchSelfRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.FetchSelfRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchSelfMethod(), getCallOptions(), request);
     }
 
@@ -2388,8 +2408,9 @@ public final class DeveloperConnectGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteSelf(
-        com.google.cloud.developerconnect.v1.DeleteSelfRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.developerconnect.v1.DeleteSelfRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSelfMethod(), getCallOptions(), request);
     }
   }

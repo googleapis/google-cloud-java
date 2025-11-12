@@ -45,6 +45,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     interconnect_ = "";
     network_ = "";
     state_ = 0;
+    peeringType_ = 0;
   }
 
   @java.lang.Override
@@ -601,6 +602,51 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     return result == null ? com.google.cloud.edgenetwork.v1.ResourceState.UNRECOGNIZED : result;
   }
 
+  public static final int PEERING_TYPE_FIELD_NUMBER = 12;
+  private int peeringType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The remote peering network type of the underlying interconnect.
+   * It is required when peering separation is enabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.edgenetwork.v1.RemotePeeringNetworkType peering_type = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for peeringType.
+   */
+  @java.lang.Override
+  public int getPeeringTypeValue() {
+    return peeringType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The remote peering network type of the underlying interconnect.
+   * It is required when peering separation is enabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.edgenetwork.v1.RemotePeeringNetworkType peering_type = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The peeringType.
+   */
+  @java.lang.Override
+  public com.google.cloud.edgenetwork.v1.RemotePeeringNetworkType getPeeringType() {
+    com.google.cloud.edgenetwork.v1.RemotePeeringNetworkType result =
+        com.google.cloud.edgenetwork.v1.RemotePeeringNetworkType.forNumber(peeringType_);
+    return result == null
+        ? com.google.cloud.edgenetwork.v1.RemotePeeringNetworkType.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -643,6 +689,12 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, network_);
+    }
+    if (peeringType_
+        != com.google.cloud.edgenetwork.v1.RemotePeeringNetworkType
+            .REMOTE_PEERING_NETWORK_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(12, peeringType_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -690,6 +742,12 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, network_);
     }
+    if (peeringType_
+        != com.google.cloud.edgenetwork.v1.RemotePeeringNetworkType
+            .REMOTE_PEERING_NETWORK_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, peeringType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -722,6 +780,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     if (getVlanId() != other.getVlanId()) return false;
     if (getMtu() != other.getMtu()) return false;
     if (state_ != other.state_) return false;
+    if (peeringType_ != other.peeringType_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -759,6 +818,8 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     hash = (53 * hash) + getMtu();
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
+    hash = (37 * hash) + PEERING_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + peeringType_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -950,6 +1011,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       vlanId_ = 0;
       mtu_ = 0;
       state_ = 0;
+      peeringType_ = 0;
       return this;
     }
 
@@ -1019,6 +1081,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.peeringType_ = peeringType_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1105,6 +1170,9 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
+      }
+      if (other.peeringType_ != 0) {
+        setPeeringTypeValue(other.getPeeringTypeValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1198,6 +1266,12 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000040;
                 break;
               } // case 90
+            case 96:
+              {
+                peeringType_ = input.readEnum();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 96
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2516,6 +2590,118 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     public Builder clearState() {
       bitField0_ = (bitField0_ & ~0x00000200);
       state_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int peeringType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The remote peering network type of the underlying interconnect.
+     * It is required when peering separation is enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgenetwork.v1.RemotePeeringNetworkType peering_type = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for peeringType.
+     */
+    @java.lang.Override
+    public int getPeeringTypeValue() {
+      return peeringType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The remote peering network type of the underlying interconnect.
+     * It is required when peering separation is enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgenetwork.v1.RemotePeeringNetworkType peering_type = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for peeringType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPeeringTypeValue(int value) {
+      peeringType_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The remote peering network type of the underlying interconnect.
+     * It is required when peering separation is enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgenetwork.v1.RemotePeeringNetworkType peering_type = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The peeringType.
+     */
+    @java.lang.Override
+    public com.google.cloud.edgenetwork.v1.RemotePeeringNetworkType getPeeringType() {
+      com.google.cloud.edgenetwork.v1.RemotePeeringNetworkType result =
+          com.google.cloud.edgenetwork.v1.RemotePeeringNetworkType.forNumber(peeringType_);
+      return result == null
+          ? com.google.cloud.edgenetwork.v1.RemotePeeringNetworkType.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The remote peering network type of the underlying interconnect.
+     * It is required when peering separation is enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgenetwork.v1.RemotePeeringNetworkType peering_type = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The peeringType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPeeringType(com.google.cloud.edgenetwork.v1.RemotePeeringNetworkType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000400;
+      peeringType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The remote peering network type of the underlying interconnect.
+     * It is required when peering separation is enabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgenetwork.v1.RemotePeeringNetworkType peering_type = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPeeringType() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      peeringType_ = 0;
       onChanged();
       return this;
     }

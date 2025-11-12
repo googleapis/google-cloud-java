@@ -275,6 +275,104 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ListLbEdgeExtensions</td>
+ *      <td><p> Lists `LbEdgeExtension` resources in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listLbEdgeExtensions(ListLbEdgeExtensionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listLbEdgeExtensions(LocationName parent)
+ *           <li><p> listLbEdgeExtensions(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listLbEdgeExtensionsPagedCallable()
+ *           <li><p> listLbEdgeExtensionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetLbEdgeExtension</td>
+ *      <td><p> Gets details of the specified `LbEdgeExtension` resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getLbEdgeExtension(GetLbEdgeExtensionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getLbEdgeExtension(LbEdgeExtensionName name)
+ *           <li><p> getLbEdgeExtension(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getLbEdgeExtensionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateLbEdgeExtension</td>
+ *      <td><p> Creates a new `LbEdgeExtension` resource in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createLbEdgeExtensionAsync(CreateLbEdgeExtensionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createLbEdgeExtensionAsync(LocationName parent, LbEdgeExtension lbEdgeExtension, String lbEdgeExtensionId)
+ *           <li><p> createLbEdgeExtensionAsync(String parent, LbEdgeExtension lbEdgeExtension, String lbEdgeExtensionId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createLbEdgeExtensionOperationCallable()
+ *           <li><p> createLbEdgeExtensionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateLbEdgeExtension</td>
+ *      <td><p> Updates the parameters of the specified `LbEdgeExtension` resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateLbEdgeExtensionAsync(UpdateLbEdgeExtensionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateLbEdgeExtensionAsync(LbEdgeExtension lbEdgeExtension, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateLbEdgeExtensionOperationCallable()
+ *           <li><p> updateLbEdgeExtensionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteLbEdgeExtension</td>
+ *      <td><p> Deletes the specified `LbEdgeExtension` resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteLbEdgeExtensionAsync(DeleteLbEdgeExtensionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteLbEdgeExtensionAsync(LbEdgeExtensionName name)
+ *           <li><p> deleteLbEdgeExtensionAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteLbEdgeExtensionOperationCallable()
+ *           <li><p> deleteLbEdgeExtensionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListAuthzExtensions</td>
  *      <td><p> Lists `AuthzExtension` resources in a given project and location.</td>
  *      <td>
@@ -2107,6 +2205,768 @@ public class DepServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Lists `LbEdgeExtension` resources in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (LbEdgeExtension element : depServiceClient.listLbEdgeExtensions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project and location from which the `LbEdgeExtension` resources are
+   *     listed. These values are specified in the following format:
+   *     `projects/{project}/locations/{location}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLbEdgeExtensionsPagedResponse listLbEdgeExtensions(LocationName parent) {
+    ListLbEdgeExtensionsRequest request =
+        ListLbEdgeExtensionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listLbEdgeExtensions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists `LbEdgeExtension` resources in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (LbEdgeExtension element : depServiceClient.listLbEdgeExtensions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project and location from which the `LbEdgeExtension` resources are
+   *     listed. These values are specified in the following format:
+   *     `projects/{project}/locations/{location}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLbEdgeExtensionsPagedResponse listLbEdgeExtensions(String parent) {
+    ListLbEdgeExtensionsRequest request =
+        ListLbEdgeExtensionsRequest.newBuilder().setParent(parent).build();
+    return listLbEdgeExtensions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists `LbEdgeExtension` resources in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   ListLbEdgeExtensionsRequest request =
+   *       ListLbEdgeExtensionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (LbEdgeExtension element : depServiceClient.listLbEdgeExtensions(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLbEdgeExtensionsPagedResponse listLbEdgeExtensions(
+      ListLbEdgeExtensionsRequest request) {
+    return listLbEdgeExtensionsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists `LbEdgeExtension` resources in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   ListLbEdgeExtensionsRequest request =
+   *       ListLbEdgeExtensionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<LbEdgeExtension> future =
+   *       depServiceClient.listLbEdgeExtensionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (LbEdgeExtension element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsPagedResponse>
+      listLbEdgeExtensionsPagedCallable() {
+    return stub.listLbEdgeExtensionsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists `LbEdgeExtension` resources in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   ListLbEdgeExtensionsRequest request =
+   *       ListLbEdgeExtensionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListLbEdgeExtensionsResponse response =
+   *         depServiceClient.listLbEdgeExtensionsCallable().call(request);
+   *     for (LbEdgeExtension element : response.getLbEdgeExtensionsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsResponse>
+      listLbEdgeExtensionsCallable() {
+    return stub.listLbEdgeExtensionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of the specified `LbEdgeExtension` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   LbEdgeExtensionName name =
+   *       LbEdgeExtensionName.of("[PROJECT]", "[LOCATION]", "[LB_EDGE_EXTENSION]");
+   *   LbEdgeExtension response = depServiceClient.getLbEdgeExtension(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. A name of the `LbEdgeExtension` resource to get. Must be in the format
+   *     `projects/{project}/locations/{location}/lbEdgeExtensions/{lb_edge_extension}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LbEdgeExtension getLbEdgeExtension(LbEdgeExtensionName name) {
+    GetLbEdgeExtensionRequest request =
+        GetLbEdgeExtensionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getLbEdgeExtension(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of the specified `LbEdgeExtension` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   String name =
+   *       LbEdgeExtensionName.of("[PROJECT]", "[LOCATION]", "[LB_EDGE_EXTENSION]").toString();
+   *   LbEdgeExtension response = depServiceClient.getLbEdgeExtension(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. A name of the `LbEdgeExtension` resource to get. Must be in the format
+   *     `projects/{project}/locations/{location}/lbEdgeExtensions/{lb_edge_extension}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LbEdgeExtension getLbEdgeExtension(String name) {
+    GetLbEdgeExtensionRequest request =
+        GetLbEdgeExtensionRequest.newBuilder().setName(name).build();
+    return getLbEdgeExtension(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of the specified `LbEdgeExtension` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   GetLbEdgeExtensionRequest request =
+   *       GetLbEdgeExtensionRequest.newBuilder()
+   *           .setName(
+   *               LbEdgeExtensionName.of("[PROJECT]", "[LOCATION]", "[LB_EDGE_EXTENSION]")
+   *                   .toString())
+   *           .build();
+   *   LbEdgeExtension response = depServiceClient.getLbEdgeExtension(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final LbEdgeExtension getLbEdgeExtension(GetLbEdgeExtensionRequest request) {
+    return getLbEdgeExtensionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of the specified `LbEdgeExtension` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   GetLbEdgeExtensionRequest request =
+   *       GetLbEdgeExtensionRequest.newBuilder()
+   *           .setName(
+   *               LbEdgeExtensionName.of("[PROJECT]", "[LOCATION]", "[LB_EDGE_EXTENSION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<LbEdgeExtension> future =
+   *       depServiceClient.getLbEdgeExtensionCallable().futureCall(request);
+   *   // Do something.
+   *   LbEdgeExtension response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetLbEdgeExtensionRequest, LbEdgeExtension>
+      getLbEdgeExtensionCallable() {
+    return stub.getLbEdgeExtensionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `LbEdgeExtension` resource in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   LbEdgeExtension lbEdgeExtension = LbEdgeExtension.newBuilder().build();
+   *   String lbEdgeExtensionId = "lbEdgeExtensionId673551207";
+   *   LbEdgeExtension response =
+   *       depServiceClient
+   *           .createLbEdgeExtensionAsync(parent, lbEdgeExtension, lbEdgeExtensionId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the `LbEdgeExtension` resource. Must be in the
+   *     format `projects/{project}/locations/{location}`.
+   * @param lbEdgeExtension Required. `LbEdgeExtension` resource to be created.
+   * @param lbEdgeExtensionId Required. User-provided ID of the `LbEdgeExtension` resource to be
+   *     created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<LbEdgeExtension, OperationMetadata> createLbEdgeExtensionAsync(
+      LocationName parent, LbEdgeExtension lbEdgeExtension, String lbEdgeExtensionId) {
+    CreateLbEdgeExtensionRequest request =
+        CreateLbEdgeExtensionRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setLbEdgeExtension(lbEdgeExtension)
+            .setLbEdgeExtensionId(lbEdgeExtensionId)
+            .build();
+    return createLbEdgeExtensionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `LbEdgeExtension` resource in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   LbEdgeExtension lbEdgeExtension = LbEdgeExtension.newBuilder().build();
+   *   String lbEdgeExtensionId = "lbEdgeExtensionId673551207";
+   *   LbEdgeExtension response =
+   *       depServiceClient
+   *           .createLbEdgeExtensionAsync(parent, lbEdgeExtension, lbEdgeExtensionId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the `LbEdgeExtension` resource. Must be in the
+   *     format `projects/{project}/locations/{location}`.
+   * @param lbEdgeExtension Required. `LbEdgeExtension` resource to be created.
+   * @param lbEdgeExtensionId Required. User-provided ID of the `LbEdgeExtension` resource to be
+   *     created.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<LbEdgeExtension, OperationMetadata> createLbEdgeExtensionAsync(
+      String parent, LbEdgeExtension lbEdgeExtension, String lbEdgeExtensionId) {
+    CreateLbEdgeExtensionRequest request =
+        CreateLbEdgeExtensionRequest.newBuilder()
+            .setParent(parent)
+            .setLbEdgeExtension(lbEdgeExtension)
+            .setLbEdgeExtensionId(lbEdgeExtensionId)
+            .build();
+    return createLbEdgeExtensionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `LbEdgeExtension` resource in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   CreateLbEdgeExtensionRequest request =
+   *       CreateLbEdgeExtensionRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setLbEdgeExtensionId("lbEdgeExtensionId673551207")
+   *           .setLbEdgeExtension(LbEdgeExtension.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   LbEdgeExtension response = depServiceClient.createLbEdgeExtensionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<LbEdgeExtension, OperationMetadata> createLbEdgeExtensionAsync(
+      CreateLbEdgeExtensionRequest request) {
+    return createLbEdgeExtensionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `LbEdgeExtension` resource in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   CreateLbEdgeExtensionRequest request =
+   *       CreateLbEdgeExtensionRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setLbEdgeExtensionId("lbEdgeExtensionId673551207")
+   *           .setLbEdgeExtension(LbEdgeExtension.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<LbEdgeExtension, OperationMetadata> future =
+   *       depServiceClient.createLbEdgeExtensionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   LbEdgeExtension response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateLbEdgeExtensionRequest, LbEdgeExtension, OperationMetadata>
+      createLbEdgeExtensionOperationCallable() {
+    return stub.createLbEdgeExtensionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `LbEdgeExtension` resource in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   CreateLbEdgeExtensionRequest request =
+   *       CreateLbEdgeExtensionRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setLbEdgeExtensionId("lbEdgeExtensionId673551207")
+   *           .setLbEdgeExtension(LbEdgeExtension.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       depServiceClient.createLbEdgeExtensionCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateLbEdgeExtensionRequest, Operation>
+      createLbEdgeExtensionCallable() {
+    return stub.createLbEdgeExtensionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of the specified `LbEdgeExtension` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   LbEdgeExtension lbEdgeExtension = LbEdgeExtension.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   LbEdgeExtension response =
+   *       depServiceClient.updateLbEdgeExtensionAsync(lbEdgeExtension, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param lbEdgeExtension Required. `LbEdgeExtension` resource being updated.
+   * @param updateMask Optional. Used to specify the fields to be overwritten in the
+   *     `LbEdgeExtension` resource by the update. The fields specified in the `update_mask` are
+   *     relative to the resource, not the full request. A field is overwritten if it is in the
+   *     mask. If the user does not specify a mask, then all fields are overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<LbEdgeExtension, OperationMetadata> updateLbEdgeExtensionAsync(
+      LbEdgeExtension lbEdgeExtension, FieldMask updateMask) {
+    UpdateLbEdgeExtensionRequest request =
+        UpdateLbEdgeExtensionRequest.newBuilder()
+            .setLbEdgeExtension(lbEdgeExtension)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateLbEdgeExtensionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of the specified `LbEdgeExtension` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   UpdateLbEdgeExtensionRequest request =
+   *       UpdateLbEdgeExtensionRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setLbEdgeExtension(LbEdgeExtension.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   LbEdgeExtension response = depServiceClient.updateLbEdgeExtensionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<LbEdgeExtension, OperationMetadata> updateLbEdgeExtensionAsync(
+      UpdateLbEdgeExtensionRequest request) {
+    return updateLbEdgeExtensionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of the specified `LbEdgeExtension` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   UpdateLbEdgeExtensionRequest request =
+   *       UpdateLbEdgeExtensionRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setLbEdgeExtension(LbEdgeExtension.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<LbEdgeExtension, OperationMetadata> future =
+   *       depServiceClient.updateLbEdgeExtensionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   LbEdgeExtension response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateLbEdgeExtensionRequest, LbEdgeExtension, OperationMetadata>
+      updateLbEdgeExtensionOperationCallable() {
+    return stub.updateLbEdgeExtensionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of the specified `LbEdgeExtension` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   UpdateLbEdgeExtensionRequest request =
+   *       UpdateLbEdgeExtensionRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setLbEdgeExtension(LbEdgeExtension.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       depServiceClient.updateLbEdgeExtensionCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateLbEdgeExtensionRequest, Operation>
+      updateLbEdgeExtensionCallable() {
+    return stub.updateLbEdgeExtensionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified `LbEdgeExtension` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   LbEdgeExtensionName name =
+   *       LbEdgeExtensionName.of("[PROJECT]", "[LOCATION]", "[LB_EDGE_EXTENSION]");
+   *   depServiceClient.deleteLbEdgeExtensionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the `LbEdgeExtension` resource to delete. Must be in the
+   *     format `projects/{project}/locations/{location}/lbEdgeExtensions/{lb_edge_extension}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteLbEdgeExtensionAsync(
+      LbEdgeExtensionName name) {
+    DeleteLbEdgeExtensionRequest request =
+        DeleteLbEdgeExtensionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteLbEdgeExtensionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified `LbEdgeExtension` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   String name =
+   *       LbEdgeExtensionName.of("[PROJECT]", "[LOCATION]", "[LB_EDGE_EXTENSION]").toString();
+   *   depServiceClient.deleteLbEdgeExtensionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the `LbEdgeExtension` resource to delete. Must be in the
+   *     format `projects/{project}/locations/{location}/lbEdgeExtensions/{lb_edge_extension}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteLbEdgeExtensionAsync(String name) {
+    DeleteLbEdgeExtensionRequest request =
+        DeleteLbEdgeExtensionRequest.newBuilder().setName(name).build();
+    return deleteLbEdgeExtensionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified `LbEdgeExtension` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   DeleteLbEdgeExtensionRequest request =
+   *       DeleteLbEdgeExtensionRequest.newBuilder()
+   *           .setName(
+   *               LbEdgeExtensionName.of("[PROJECT]", "[LOCATION]", "[LB_EDGE_EXTENSION]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   depServiceClient.deleteLbEdgeExtensionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteLbEdgeExtensionAsync(
+      DeleteLbEdgeExtensionRequest request) {
+    return deleteLbEdgeExtensionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified `LbEdgeExtension` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   DeleteLbEdgeExtensionRequest request =
+   *       DeleteLbEdgeExtensionRequest.newBuilder()
+   *           .setName(
+   *               LbEdgeExtensionName.of("[PROJECT]", "[LOCATION]", "[LB_EDGE_EXTENSION]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       depServiceClient.deleteLbEdgeExtensionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteLbEdgeExtensionRequest, Empty, OperationMetadata>
+      deleteLbEdgeExtensionOperationCallable() {
+    return stub.deleteLbEdgeExtensionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified `LbEdgeExtension` resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DepServiceClient depServiceClient = DepServiceClient.create()) {
+   *   DeleteLbEdgeExtensionRequest request =
+   *       DeleteLbEdgeExtensionRequest.newBuilder()
+   *           .setName(
+   *               LbEdgeExtensionName.of("[PROJECT]", "[LOCATION]", "[LB_EDGE_EXTENSION]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       depServiceClient.deleteLbEdgeExtensionCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteLbEdgeExtensionRequest, Operation>
+      deleteLbEdgeExtensionCallable() {
+    return stub.deleteLbEdgeExtensionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists `AuthzExtension` resources in a given project and location.
    *
    * <p>Sample code:
@@ -3411,6 +4271,90 @@ public class DepServiceClient implements BackgroundResource {
     protected ListLbRouteExtensionsFixedSizeCollection createCollection(
         List<ListLbRouteExtensionsPage> pages, int collectionSize) {
       return new ListLbRouteExtensionsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListLbEdgeExtensionsPagedResponse
+      extends AbstractPagedListResponse<
+          ListLbEdgeExtensionsRequest,
+          ListLbEdgeExtensionsResponse,
+          LbEdgeExtension,
+          ListLbEdgeExtensionsPage,
+          ListLbEdgeExtensionsFixedSizeCollection> {
+
+    public static ApiFuture<ListLbEdgeExtensionsPagedResponse> createAsync(
+        PageContext<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsResponse, LbEdgeExtension>
+            context,
+        ApiFuture<ListLbEdgeExtensionsResponse> futureResponse) {
+      ApiFuture<ListLbEdgeExtensionsPage> futurePage =
+          ListLbEdgeExtensionsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListLbEdgeExtensionsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListLbEdgeExtensionsPagedResponse(ListLbEdgeExtensionsPage page) {
+      super(page, ListLbEdgeExtensionsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListLbEdgeExtensionsPage
+      extends AbstractPage<
+          ListLbEdgeExtensionsRequest,
+          ListLbEdgeExtensionsResponse,
+          LbEdgeExtension,
+          ListLbEdgeExtensionsPage> {
+
+    private ListLbEdgeExtensionsPage(
+        PageContext<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsResponse, LbEdgeExtension>
+            context,
+        ListLbEdgeExtensionsResponse response) {
+      super(context, response);
+    }
+
+    private static ListLbEdgeExtensionsPage createEmptyPage() {
+      return new ListLbEdgeExtensionsPage(null, null);
+    }
+
+    @Override
+    protected ListLbEdgeExtensionsPage createPage(
+        PageContext<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsResponse, LbEdgeExtension>
+            context,
+        ListLbEdgeExtensionsResponse response) {
+      return new ListLbEdgeExtensionsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListLbEdgeExtensionsPage> createPageAsync(
+        PageContext<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsResponse, LbEdgeExtension>
+            context,
+        ApiFuture<ListLbEdgeExtensionsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListLbEdgeExtensionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListLbEdgeExtensionsRequest,
+          ListLbEdgeExtensionsResponse,
+          LbEdgeExtension,
+          ListLbEdgeExtensionsPage,
+          ListLbEdgeExtensionsFixedSizeCollection> {
+
+    private ListLbEdgeExtensionsFixedSizeCollection(
+        List<ListLbEdgeExtensionsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListLbEdgeExtensionsFixedSizeCollection createEmptyCollection() {
+      return new ListLbEdgeExtensionsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListLbEdgeExtensionsFixedSizeCollection createCollection(
+        List<ListLbEdgeExtensionsPage> pages, int collectionSize) {
+      return new ListLbEdgeExtensionsFixedSizeCollection(pages, collectionSize);
     }
   }
 

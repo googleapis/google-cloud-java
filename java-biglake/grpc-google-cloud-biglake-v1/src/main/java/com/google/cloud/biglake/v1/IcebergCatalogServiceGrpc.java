@@ -48,9 +48,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * permission on the project.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/biglake/v1/iceberg_rest_catalog.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class IcebergCatalogServiceGrpc {
 
@@ -2009,8 +2006,9 @@ public final class IcebergCatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.biglake.v1.IcebergCatalogConfig getIcebergCatalogConfig(
-        com.google.cloud.biglake.v1.GetIcebergCatalogConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.biglake.v1.GetIcebergCatalogConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIcebergCatalogConfigMethod(), getCallOptions(), request);
     }
 
@@ -2023,8 +2021,9 @@ public final class IcebergCatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.biglake.v1.ListIcebergNamespacesResponse listIcebergNamespaces(
-        com.google.cloud.biglake.v1.ListIcebergNamespacesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.biglake.v1.ListIcebergNamespacesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListIcebergNamespacesMethod(), getCallOptions(), request);
     }
 
@@ -2036,8 +2035,9 @@ public final class IcebergCatalogServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty checkIcebergNamespaceExists(
-        com.google.cloud.biglake.v1.GetIcebergNamespaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.biglake.v1.GetIcebergNamespaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCheckIcebergNamespaceExistsMethod(), getCallOptions(), request);
     }
 
@@ -2050,8 +2050,9 @@ public final class IcebergCatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.biglake.v1.IcebergNamespace getIcebergNamespace(
-        com.google.cloud.biglake.v1.GetIcebergNamespaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.biglake.v1.GetIcebergNamespaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIcebergNamespaceMethod(), getCallOptions(), request);
     }
 
@@ -2063,8 +2064,9 @@ public final class IcebergCatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.biglake.v1.IcebergNamespace createIcebergNamespace(
-        com.google.cloud.biglake.v1.CreateIcebergNamespaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.biglake.v1.CreateIcebergNamespaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateIcebergNamespaceMethod(), getCallOptions(), request);
     }
 
@@ -2076,8 +2078,9 @@ public final class IcebergCatalogServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteIcebergNamespace(
-        com.google.cloud.biglake.v1.DeleteIcebergNamespaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.biglake.v1.DeleteIcebergNamespaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteIcebergNamespaceMethod(), getCallOptions(), request);
     }
 
@@ -2089,8 +2092,9 @@ public final class IcebergCatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.biglake.v1.UpdateIcebergNamespaceResponse updateIcebergNamespace(
-        com.google.cloud.biglake.v1.UpdateIcebergNamespaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.biglake.v1.UpdateIcebergNamespaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateIcebergNamespaceMethod(), getCallOptions(), request);
     }
 
@@ -2103,8 +2107,9 @@ public final class IcebergCatalogServiceGrpc {
      */
     public com.google.cloud.biglake.v1.ListIcebergTableIdentifiersResponse
         listIcebergTableIdentifiers(
-            com.google.cloud.biglake.v1.ListIcebergTableIdentifiersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.biglake.v1.ListIcebergTableIdentifiersRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListIcebergTableIdentifiersMethod(), getCallOptions(), request);
     }
 
@@ -2116,8 +2121,9 @@ public final class IcebergCatalogServiceGrpc {
      * </pre>
      */
     public com.google.api.HttpBody createIcebergTable(
-        com.google.cloud.biglake.v1.CreateIcebergTableRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.biglake.v1.CreateIcebergTableRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateIcebergTableMethod(), getCallOptions(), request);
     }
 
@@ -2130,8 +2136,8 @@ public final class IcebergCatalogServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty checkIcebergTableExists(
-        com.google.cloud.biglake.v1.GetIcebergTableRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.biglake.v1.GetIcebergTableRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCheckIcebergTableExistsMethod(), getCallOptions(), request);
     }
 
@@ -2143,8 +2149,9 @@ public final class IcebergCatalogServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteIcebergTable(
-        com.google.cloud.biglake.v1.DeleteIcebergTableRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.biglake.v1.DeleteIcebergTableRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteIcebergTableMethod(), getCallOptions(), request);
     }
 
@@ -2156,8 +2163,8 @@ public final class IcebergCatalogServiceGrpc {
      * </pre>
      */
     public com.google.api.HttpBody getIcebergTable(
-        com.google.cloud.biglake.v1.GetIcebergTableRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.biglake.v1.GetIcebergTableRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIcebergTableMethod(), getCallOptions(), request);
     }
 
@@ -2169,8 +2176,9 @@ public final class IcebergCatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.biglake.v1.LoadIcebergTableCredentialsResponse
-        loadIcebergTableCredentials(com.google.cloud.biglake.v1.GetIcebergTableRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        loadIcebergTableCredentials(com.google.cloud.biglake.v1.GetIcebergTableRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getLoadIcebergTableCredentialsMethod(), getCallOptions(), request);
     }
 
@@ -2183,8 +2191,9 @@ public final class IcebergCatalogServiceGrpc {
      * </pre>
      */
     public com.google.api.HttpBody updateIcebergTable(
-        com.google.cloud.biglake.v1.UpdateIcebergTableRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.biglake.v1.UpdateIcebergTableRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateIcebergTableMethod(), getCallOptions(), request);
     }
 
@@ -2196,8 +2205,9 @@ public final class IcebergCatalogServiceGrpc {
      * </pre>
      */
     public com.google.api.HttpBody registerIcebergTable(
-        com.google.cloud.biglake.v1.RegisterIcebergTableRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.biglake.v1.RegisterIcebergTableRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRegisterIcebergTableMethod(), getCallOptions(), request);
     }
 
@@ -2209,8 +2219,9 @@ public final class IcebergCatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.biglake.v1.IcebergCatalog getIcebergCatalog(
-        com.google.cloud.biglake.v1.GetIcebergCatalogRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.biglake.v1.GetIcebergCatalogRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIcebergCatalogMethod(), getCallOptions(), request);
     }
 
@@ -2222,8 +2233,9 @@ public final class IcebergCatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.biglake.v1.ListIcebergCatalogsResponse listIcebergCatalogs(
-        com.google.cloud.biglake.v1.ListIcebergCatalogsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.biglake.v1.ListIcebergCatalogsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListIcebergCatalogsMethod(), getCallOptions(), request);
     }
 
@@ -2238,8 +2250,9 @@ public final class IcebergCatalogServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteIcebergCatalog(
-        com.google.cloud.biglake.v1.DeleteIcebergCatalogRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.biglake.v1.DeleteIcebergCatalogRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteIcebergCatalogMethod(), getCallOptions(), request);
     }
 
@@ -2251,8 +2264,9 @@ public final class IcebergCatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.biglake.v1.IcebergCatalog updateIcebergCatalog(
-        com.google.cloud.biglake.v1.UpdateIcebergCatalogRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.biglake.v1.UpdateIcebergCatalogRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateIcebergCatalogMethod(), getCallOptions(), request);
     }
 
@@ -2269,8 +2283,9 @@ public final class IcebergCatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.biglake.v1.IcebergCatalog createIcebergCatalog(
-        com.google.cloud.biglake.v1.CreateIcebergCatalogRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.biglake.v1.CreateIcebergCatalogRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateIcebergCatalogMethod(), getCallOptions(), request);
     }
 
@@ -2282,8 +2297,9 @@ public final class IcebergCatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.biglake.v1.FailoverIcebergCatalogResponse failoverIcebergCatalog(
-        com.google.cloud.biglake.v1.FailoverIcebergCatalogRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.biglake.v1.FailoverIcebergCatalogRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFailoverIcebergCatalogMethod(), getCallOptions(), request);
     }
   }

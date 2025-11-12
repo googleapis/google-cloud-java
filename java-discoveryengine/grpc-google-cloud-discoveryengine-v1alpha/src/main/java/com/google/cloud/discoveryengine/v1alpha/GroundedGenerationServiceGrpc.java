@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for grounded generation.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1alpha/grounded_generation_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class GroundedGenerationServiceGrpc {
 
@@ -245,8 +242,9 @@ public final class GroundedGenerationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.CheckGroundingResponse checkGrounding(
-        com.google.cloud.discoveryengine.v1alpha.CheckGroundingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.CheckGroundingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCheckGroundingMethod(), getCallOptions(), request);
     }
   }

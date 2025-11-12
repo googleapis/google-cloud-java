@@ -31,9 +31,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Monitoring, and then clicking on "Uptime".
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/monitoring/v3/uptime_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class UptimeCheckServiceGrpc {
 
@@ -691,8 +688,9 @@ public final class UptimeCheckServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.ListUptimeCheckConfigsResponse listUptimeCheckConfigs(
-        com.google.monitoring.v3.ListUptimeCheckConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.ListUptimeCheckConfigsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListUptimeCheckConfigsMethod(), getCallOptions(), request);
     }
 
@@ -704,8 +702,9 @@ public final class UptimeCheckServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.UptimeCheckConfig getUptimeCheckConfig(
-        com.google.monitoring.v3.GetUptimeCheckConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.GetUptimeCheckConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetUptimeCheckConfigMethod(), getCallOptions(), request);
     }
 
@@ -717,8 +716,9 @@ public final class UptimeCheckServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.UptimeCheckConfig createUptimeCheckConfig(
-        com.google.monitoring.v3.CreateUptimeCheckConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.CreateUptimeCheckConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateUptimeCheckConfigMethod(), getCallOptions(), request);
     }
 
@@ -733,8 +733,9 @@ public final class UptimeCheckServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.UptimeCheckConfig updateUptimeCheckConfig(
-        com.google.monitoring.v3.UpdateUptimeCheckConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.UpdateUptimeCheckConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateUptimeCheckConfigMethod(), getCallOptions(), request);
     }
 
@@ -748,8 +749,9 @@ public final class UptimeCheckServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteUptimeCheckConfig(
-        com.google.monitoring.v3.DeleteUptimeCheckConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.DeleteUptimeCheckConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteUptimeCheckConfigMethod(), getCallOptions(), request);
     }
 
@@ -761,8 +763,8 @@ public final class UptimeCheckServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.ListUptimeCheckIpsResponse listUptimeCheckIps(
-        com.google.monitoring.v3.ListUptimeCheckIpsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.ListUptimeCheckIpsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListUptimeCheckIpsMethod(), getCallOptions(), request);
     }
   }

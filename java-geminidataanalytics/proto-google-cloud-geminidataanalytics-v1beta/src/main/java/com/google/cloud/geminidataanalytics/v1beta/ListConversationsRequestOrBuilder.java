@@ -103,7 +103,7 @@ public interface ListConversationsRequestOrBuilder
    * <pre>
    * Optional. Returned conversations will match criteria specified within the
    * filter. ListConversations allows filtering by:
-   *  * agent_id
+   *  * agents
    *  * labels
    * </pre>
    *
@@ -119,7 +119,7 @@ public interface ListConversationsRequestOrBuilder
    * <pre>
    * Optional. Returned conversations will match criteria specified within the
    * filter. ListConversations allows filtering by:
-   *  * agent_id
+   *  * agents
    *  * labels
    * </pre>
    *

@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * Request message for DeleteFrameworkDeployment.
+ * The request message for [DeleteFrameworkDeployment][].
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.DeleteFrameworkDeploymentRequest}
@@ -76,9 +76,10 @@ public final class DeleteFrameworkDeploymentRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Required. name of the FrameworkDeployment to be deleted in the following
-   * format:
-   * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
+   * Required. The name of the framework deployment that you want to delete,
+   * in the format
+   * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -104,9 +105,10 @@ public final class DeleteFrameworkDeploymentRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Required. name of the FrameworkDeployment to be deleted in the following
-   * format:
-   * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
+   * Required. The name of the framework deployment that you want to delete,
+   * in the format
+   * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -141,7 +143,7 @@ public final class DeleteFrameworkDeploymentRequest extends com.google.protobuf.
    *
    * If you provide this value, then it must match the existing value. If the
    * values don't match, then the request fails with an
-   * [ABORTED][google.rpc.Code.ABORTED] error.
+   * [`ABORTED`][google.rpc.Code.ABORTED] error.
    *
    * If you omit this value, then the resource is deleted regardless of its
    * current `etag` value.
@@ -172,7 +174,7 @@ public final class DeleteFrameworkDeploymentRequest extends com.google.protobuf.
    *
    * If you provide this value, then it must match the existing value. If the
    * values don't match, then the request fails with an
-   * [ABORTED][google.rpc.Code.ABORTED] error.
+   * [`ABORTED`][google.rpc.Code.ABORTED] error.
    *
    * If you omit this value, then the resource is deleted regardless of its
    * current `etag` value.
@@ -376,7 +378,7 @@ public final class DeleteFrameworkDeploymentRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Request message for DeleteFrameworkDeployment.
+   * The request message for [DeleteFrameworkDeployment][].
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.DeleteFrameworkDeploymentRequest}
@@ -587,9 +589,10 @@ public final class DeleteFrameworkDeploymentRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. name of the FrameworkDeployment to be deleted in the following
-     * format:
-     * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
+     * Required. The name of the framework deployment that you want to delete,
+     * in the format
+     * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -614,9 +617,10 @@ public final class DeleteFrameworkDeploymentRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. name of the FrameworkDeployment to be deleted in the following
-     * format:
-     * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
+     * Required. The name of the framework deployment that you want to delete,
+     * in the format
+     * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -641,9 +645,10 @@ public final class DeleteFrameworkDeploymentRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. name of the FrameworkDeployment to be deleted in the following
-     * format:
-     * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
+     * Required. The name of the framework deployment that you want to delete,
+     * in the format
+     * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -667,9 +672,10 @@ public final class DeleteFrameworkDeploymentRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. name of the FrameworkDeployment to be deleted in the following
-     * format:
-     * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
+     * Required. The name of the framework deployment that you want to delete,
+     * in the format
+     * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -689,9 +695,10 @@ public final class DeleteFrameworkDeploymentRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. name of the FrameworkDeployment to be deleted in the following
-     * format:
-     * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
+     * Required. The name of the framework deployment that you want to delete,
+     * in the format
+     * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -722,7 +729,7 @@ public final class DeleteFrameworkDeploymentRequest extends com.google.protobuf.
      *
      * If you provide this value, then it must match the existing value. If the
      * values don't match, then the request fails with an
-     * [ABORTED][google.rpc.Code.ABORTED] error.
+     * [`ABORTED`][google.rpc.Code.ABORTED] error.
      *
      * If you omit this value, then the resource is deleted regardless of its
      * current `etag` value.
@@ -752,7 +759,7 @@ public final class DeleteFrameworkDeploymentRequest extends com.google.protobuf.
      *
      * If you provide this value, then it must match the existing value. If the
      * values don't match, then the request fails with an
-     * [ABORTED][google.rpc.Code.ABORTED] error.
+     * [`ABORTED`][google.rpc.Code.ABORTED] error.
      *
      * If you omit this value, then the resource is deleted regardless of its
      * current `etag` value.
@@ -782,7 +789,7 @@ public final class DeleteFrameworkDeploymentRequest extends com.google.protobuf.
      *
      * If you provide this value, then it must match the existing value. If the
      * values don't match, then the request fails with an
-     * [ABORTED][google.rpc.Code.ABORTED] error.
+     * [`ABORTED`][google.rpc.Code.ABORTED] error.
      *
      * If you omit this value, then the resource is deleted regardless of its
      * current `etag` value.
@@ -811,7 +818,7 @@ public final class DeleteFrameworkDeploymentRequest extends com.google.protobuf.
      *
      * If you provide this value, then it must match the existing value. If the
      * values don't match, then the request fails with an
-     * [ABORTED][google.rpc.Code.ABORTED] error.
+     * [`ABORTED`][google.rpc.Code.ABORTED] error.
      *
      * If you omit this value, then the resource is deleted regardless of its
      * current `etag` value.
@@ -836,7 +843,7 @@ public final class DeleteFrameworkDeploymentRequest extends com.google.protobuf.
      *
      * If you provide this value, then it must match the existing value. If the
      * values don't match, then the request fails with an
-     * [ABORTED][google.rpc.Code.ABORTED] error.
+     * [`ABORTED`][google.rpc.Code.ABORTED] error.
      *
      * If you omit this value, then the resource is deleted regardless of its
      * current `etag` value.

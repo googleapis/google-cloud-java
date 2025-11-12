@@ -34,6 +34,9 @@
             "ListGlossaries": {
               "methods": ["listGlossaries", "listGlossaries", "listGlossaries", "listGlossariesPagedCallable", "listGlossariesCallable"]
             },
+            "RefineText": {
+              "methods": ["refineText", "refineTextCallable"]
+            },
             "TranslateDocument": {
               "methods": ["translateDocument", "translateDocumentCallable"]
             },

@@ -184,6 +184,16 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> BidiStreamingAnalyzeContent</td>
+ *      <td><p> Bidirectional endless streaming version of [StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.StreamingAnalyzeContent].</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> bidiStreamingAnalyzeContentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> SuggestArticles</td>
  *      <td><p> Gets suggested articles for a participant based on specific historical messages.
  * <p>  Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated suggestions, while [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion] will try to compile suggestion based on the provided conversation context in the real time.</td>
@@ -1323,6 +1333,37 @@ public class ParticipantsClient implements BackgroundResource {
           StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
       streamingAnalyzeContentCallable() {
     return stub.streamingAnalyzeContentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Bidirectional endless streaming version of
+   * [StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.StreamingAnalyzeContent].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
+   *   BidiStream<BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+   *       bidiStream = participantsClient.bidiStreamingAnalyzeContentCallable().call();
+   *   BidiStreamingAnalyzeContentRequest request =
+   *       BidiStreamingAnalyzeContentRequest.newBuilder().build();
+   *   bidiStream.send(request);
+   *   for (BidiStreamingAnalyzeContentResponse response : bidiStream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final BidiStreamingCallable<
+          BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+      bidiStreamingAnalyzeContentCallable() {
+    return stub.bidiStreamingAnalyzeContentCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

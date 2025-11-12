@@ -28,9 +28,9 @@ public interface FrameworkOrBuilder
    *
    *
    * <pre>
-   * Required. Identifier. The name of the framework.
-   * Format:
-   * organizations/{organization}/locations/{location}/frameworks/{framework_id}
+   * Required. Identifier. The name of the framework, in the format
+   * `organizations/{organization}/locations/{location}/frameworks/{framework_id}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -45,9 +45,9 @@ public interface FrameworkOrBuilder
    *
    *
    * <pre>
-   * Required. Identifier. The name of the framework.
-   * Format:
-   * organizations/{organization}/locations/{location}/frameworks/{framework_id}
+   * Required. Identifier. The name of the framework, in the format
+   * `organizations/{organization}/locations/{location}/frameworks/{framework_id}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -62,8 +62,8 @@ public interface FrameworkOrBuilder
    *
    *
    * <pre>
-   * Output only. Major revision of the framework incremented in ascending
-   * order.
+   * Output only. The major version of the framework, which is incremented in
+   * ascending order.
    * </pre>
    *
    * <code>int64 major_revision_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -76,7 +76,7 @@ public interface FrameworkOrBuilder
    *
    *
    * <pre>
-   * Optional. Display name of the framework. The maximum length is 200
+   * Optional. The friendly name of the framework. The maximum length is 200
    * characters.
    * </pre>
    *
@@ -90,7 +90,7 @@ public interface FrameworkOrBuilder
    *
    *
    * <pre>
-   * Optional. Display name of the framework. The maximum length is 200
+   * Optional. The friendly name of the framework. The maximum length is 200
    * characters.
    * </pre>
    *
@@ -132,7 +132,7 @@ public interface FrameworkOrBuilder
    *
    *
    * <pre>
-   * Output only. The type of the framework. The default is TYPE_CUSTOM.
+   * Output only. The type of framework.
    * </pre>
    *
    * <code>
@@ -147,7 +147,7 @@ public interface FrameworkOrBuilder
    *
    *
    * <pre>
-   * Output only. The type of the framework. The default is TYPE_CUSTOM.
+   * Output only. The type of framework.
    * </pre>
    *
    * <code>
@@ -162,7 +162,7 @@ public interface FrameworkOrBuilder
    *
    *
    * <pre>
-   * Optional. The details of the cloud controls directly added without any
+   * Optional. The cloud control details that are directly added without any
    * grouping in the framework.
    * </pre>
    *
@@ -177,7 +177,7 @@ public interface FrameworkOrBuilder
    *
    *
    * <pre>
-   * Optional. The details of the cloud controls directly added without any
+   * Optional. The cloud control details that are directly added without any
    * grouping in the framework.
    * </pre>
    *
@@ -191,7 +191,7 @@ public interface FrameworkOrBuilder
    *
    *
    * <pre>
-   * Optional. The details of the cloud controls directly added without any
+   * Optional. The cloud control details that are directly added without any
    * grouping in the framework.
    * </pre>
    *
@@ -205,7 +205,7 @@ public interface FrameworkOrBuilder
    *
    *
    * <pre>
-   * Optional. The details of the cloud controls directly added without any
+   * Optional. The cloud control details that are directly added without any
    * grouping in the framework.
    * </pre>
    *
@@ -220,7 +220,7 @@ public interface FrameworkOrBuilder
    *
    *
    * <pre>
-   * Optional. The details of the cloud controls directly added without any
+   * Optional. The cloud control details that are directly added without any
    * grouping in the framework.
    * </pre>
    *
@@ -312,7 +312,7 @@ public interface FrameworkOrBuilder
    *
    *
    * <pre>
-   * Output only. cloud providers supported
+   * Output only. The cloud providers that are supported by the framework.
    * </pre>
    *
    * <code>
@@ -328,7 +328,7 @@ public interface FrameworkOrBuilder
    *
    *
    * <pre>
-   * Output only. cloud providers supported
+   * Output only. The cloud providers that are supported by the framework.
    * </pre>
    *
    * <code>
@@ -343,7 +343,7 @@ public interface FrameworkOrBuilder
    *
    *
    * <pre>
-   * Output only. cloud providers supported
+   * Output only. The cloud providers that are supported by the framework.
    * </pre>
    *
    * <code>
@@ -359,7 +359,7 @@ public interface FrameworkOrBuilder
    *
    *
    * <pre>
-   * Output only. cloud providers supported
+   * Output only. The cloud providers that are supported by the framework.
    * </pre>
    *
    * <code>
@@ -374,7 +374,7 @@ public interface FrameworkOrBuilder
    *
    *
    * <pre>
-   * Output only. cloud providers supported
+   * Output only. The cloud providers that are supported by the framework.
    * </pre>
    *
    * <code>
@@ -390,7 +390,7 @@ public interface FrameworkOrBuilder
    *
    *
    * <pre>
-   * Output only. target resource types supported by the Framework.
+   * Output only. The target resource types that are supported by the framework.
    * </pre>
    *
    * <code>
@@ -406,7 +406,7 @@ public interface FrameworkOrBuilder
    *
    *
    * <pre>
-   * Output only. target resource types supported by the Framework.
+   * Output only. The target resource types that are supported by the framework.
    * </pre>
    *
    * <code>
@@ -421,7 +421,7 @@ public interface FrameworkOrBuilder
    *
    *
    * <pre>
-   * Output only. target resource types supported by the Framework.
+   * Output only. The target resource types that are supported by the framework.
    * </pre>
    *
    * <code>
@@ -438,7 +438,7 @@ public interface FrameworkOrBuilder
    *
    *
    * <pre>
-   * Output only. target resource types supported by the Framework.
+   * Output only. The target resource types that are supported by the framework.
    * </pre>
    *
    * <code>
@@ -453,7 +453,7 @@ public interface FrameworkOrBuilder
    *
    *
    * <pre>
-   * Output only. target resource types supported by the Framework.
+   * Output only. The target resource types that are supported by the framework.
    * </pre>
    *
    * <code>

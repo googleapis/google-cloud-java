@@ -78,6 +78,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
     INLINE_CONTEXT(101),
     CONVERSATION_REFERENCE(103),
     DATA_AGENT_CONTEXT(104),
+    CLIENT_MANAGED_RESOURCE_CONTEXT(105),
     CONTEXTPROVIDER_NOT_SET(0);
     private final int value;
 
@@ -103,6 +104,8 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
           return CONVERSATION_REFERENCE;
         case 104:
           return DATA_AGENT_CONTEXT;
+        case 105:
+          return CLIENT_MANAGED_RESOURCE_CONTEXT;
         case 0:
           return CONTEXTPROVIDER_NOT_SET;
         default:
@@ -314,6 +317,81 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.geminidataanalytics.v1beta.DataAgentContext.getDefaultInstance();
   }
 
+  public static final int CLIENT_MANAGED_RESOURCE_CONTEXT_FIELD_NUMBER = 105;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Context with client managed resources.
+   * Some clients may not use GDA managed resources including
+   * conversations and agents, instead they create and manage their own
+   * conversations and agents resources.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext client_managed_resource_context = 105 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the clientManagedResourceContext field is set.
+   */
+  @java.lang.Override
+  public boolean hasClientManagedResourceContext() {
+    return contextProviderCase_ == 105;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Context with client managed resources.
+   * Some clients may not use GDA managed resources including
+   * conversations and agents, instead they create and manage their own
+   * conversations and agents resources.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext client_managed_resource_context = 105 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The clientManagedResourceContext.
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext
+      getClientManagedResourceContext() {
+    if (contextProviderCase_ == 105) {
+      return (com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext)
+          contextProvider_;
+    }
+    return com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext
+        .getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Context with client managed resources.
+   * Some clients may not use GDA managed resources including
+   * conversations and agents, instead they create and manage their own
+   * conversations and agents resources.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext client_managed_resource_context = 105 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContextOrBuilder
+      getClientManagedResourceContextOrBuilder() {
+    if (contextProviderCase_ == 105) {
+      return (com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext)
+          contextProvider_;
+    }
+    return com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext
+        .getDefaultInstance();
+  }
+
   public static final int PROJECT_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -331,7 +409,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=164
+   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=181
    * @return The project.
    */
   @java.lang.Override
@@ -360,7 +438,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=164
+   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=181
    * @return The bytes for project.
    */
   @java.lang.Override
@@ -555,6 +633,12 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           104, (com.google.cloud.geminidataanalytics.v1beta.DataAgentContext) contextProvider_);
     }
+    if (contextProviderCase_ == 105) {
+      output.writeMessage(
+          105,
+          (com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext)
+              contextProvider_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -589,6 +673,13 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               104, (com.google.cloud.geminidataanalytics.v1beta.DataAgentContext) contextProvider_);
     }
+    if (contextProviderCase_ == 105) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              105,
+              (com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext)
+                  contextProvider_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -618,6 +709,10 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
         break;
       case 104:
         if (!getDataAgentContext().equals(other.getDataAgentContext())) return false;
+        break;
+      case 105:
+        if (!getClientManagedResourceContext().equals(other.getClientManagedResourceContext()))
+          return false;
         break;
       case 0:
       default:
@@ -653,6 +748,10 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
       case 104:
         hash = (37 * hash) + DATA_AGENT_CONTEXT_FIELD_NUMBER;
         hash = (53 * hash) + getDataAgentContext().hashCode();
+        break;
+      case 105:
+        hash = (37 * hash) + CLIENT_MANAGED_RESOURCE_CONTEXT_FIELD_NUMBER;
+        hash = (53 * hash) + getClientManagedResourceContext().hashCode();
         break;
       case 0:
       default:
@@ -807,6 +906,9 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
       if (dataAgentContextBuilder_ != null) {
         dataAgentContextBuilder_.clear();
       }
+      if (clientManagedResourceContextBuilder_ != null) {
+        clientManagedResourceContextBuilder_.clear();
+      }
       project_ = "";
       parent_ = "";
       if (messagesBuilder_ == null) {
@@ -815,7 +917,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
         messages_ = null;
         messagesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       contextProviderCase_ = 0;
       contextProvider_ = null;
       return this;
@@ -857,9 +959,9 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
     private void buildPartialRepeatedFields(
         com.google.cloud.geminidataanalytics.v1beta.ChatRequest result) {
       if (messagesBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           messages_ = java.util.Collections.unmodifiableList(messages_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.messages_ = messages_;
       } else {
@@ -869,10 +971,10 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.cloud.geminidataanalytics.v1beta.ChatRequest result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.project_ = project_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.parent_ = parent_;
       }
     }
@@ -889,6 +991,9 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
       }
       if (contextProviderCase_ == 104 && dataAgentContextBuilder_ != null) {
         result.contextProvider_ = dataAgentContextBuilder_.build();
+      }
+      if (contextProviderCase_ == 105 && clientManagedResourceContextBuilder_ != null) {
+        result.contextProvider_ = clientManagedResourceContextBuilder_.build();
       }
     }
 
@@ -940,19 +1045,19 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (messagesBuilder_ == null) {
         if (!other.messages_.isEmpty()) {
           if (messages_.isEmpty()) {
             messages_ = other.messages_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureMessagesIsMutable();
             messages_.addAll(other.messages_);
@@ -965,7 +1070,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
             messagesBuilder_.dispose();
             messagesBuilder_ = null;
             messages_ = other.messages_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
             messagesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getMessagesFieldBuilder()
@@ -989,6 +1094,11 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
         case DATA_AGENT_CONTEXT:
           {
             mergeDataAgentContext(other.getDataAgentContext());
+            break;
+          }
+        case CLIENT_MANAGED_RESOURCE_CONTEXT:
+          {
+            mergeClientManagedResourceContext(other.getClientManagedResourceContext());
             break;
           }
         case CONTEXTPROVIDER_NOT_SET:
@@ -1025,7 +1135,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 project_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 10
             case 18:
@@ -1045,7 +1155,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
             case 26:
               {
                 parent_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 26
             case 810:
@@ -1068,6 +1178,13 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
                 contextProviderCase_ = 104;
                 break;
               } // case 834
+            case 842:
+              {
+                input.readMessage(
+                    getClientManagedResourceContextFieldBuilder().getBuilder(), extensionRegistry);
+                contextProviderCase_ = 105;
+                break;
+              } // case 842
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1872,6 +1989,286 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
       return dataAgentContextBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext,
+            com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContextOrBuilder>
+        clientManagedResourceContextBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Context with client managed resources.
+     * Some clients may not use GDA managed resources including
+     * conversations and agents, instead they create and manage their own
+     * conversations and agents resources.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext client_managed_resource_context = 105 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the clientManagedResourceContext field is set.
+     */
+    @java.lang.Override
+    public boolean hasClientManagedResourceContext() {
+      return contextProviderCase_ == 105;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Context with client managed resources.
+     * Some clients may not use GDA managed resources including
+     * conversations and agents, instead they create and manage their own
+     * conversations and agents resources.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext client_managed_resource_context = 105 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The clientManagedResourceContext.
+     */
+    @java.lang.Override
+    public com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext
+        getClientManagedResourceContext() {
+      if (clientManagedResourceContextBuilder_ == null) {
+        if (contextProviderCase_ == 105) {
+          return (com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext)
+              contextProvider_;
+        }
+        return com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext
+            .getDefaultInstance();
+      } else {
+        if (contextProviderCase_ == 105) {
+          return clientManagedResourceContextBuilder_.getMessage();
+        }
+        return com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Context with client managed resources.
+     * Some clients may not use GDA managed resources including
+     * conversations and agents, instead they create and manage their own
+     * conversations and agents resources.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext client_managed_resource_context = 105 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setClientManagedResourceContext(
+        com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext value) {
+      if (clientManagedResourceContextBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        contextProvider_ = value;
+        onChanged();
+      } else {
+        clientManagedResourceContextBuilder_.setMessage(value);
+      }
+      contextProviderCase_ = 105;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Context with client managed resources.
+     * Some clients may not use GDA managed resources including
+     * conversations and agents, instead they create and manage their own
+     * conversations and agents resources.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext client_managed_resource_context = 105 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setClientManagedResourceContext(
+        com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext.Builder
+            builderForValue) {
+      if (clientManagedResourceContextBuilder_ == null) {
+        contextProvider_ = builderForValue.build();
+        onChanged();
+      } else {
+        clientManagedResourceContextBuilder_.setMessage(builderForValue.build());
+      }
+      contextProviderCase_ = 105;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Context with client managed resources.
+     * Some clients may not use GDA managed resources including
+     * conversations and agents, instead they create and manage their own
+     * conversations and agents resources.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext client_managed_resource_context = 105 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeClientManagedResourceContext(
+        com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext value) {
+      if (clientManagedResourceContextBuilder_ == null) {
+        if (contextProviderCase_ == 105
+            && contextProvider_
+                != com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext
+                    .getDefaultInstance()) {
+          contextProvider_ =
+              com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext.newBuilder(
+                      (com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext)
+                          contextProvider_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          contextProvider_ = value;
+        }
+        onChanged();
+      } else {
+        if (contextProviderCase_ == 105) {
+          clientManagedResourceContextBuilder_.mergeFrom(value);
+        } else {
+          clientManagedResourceContextBuilder_.setMessage(value);
+        }
+      }
+      contextProviderCase_ = 105;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Context with client managed resources.
+     * Some clients may not use GDA managed resources including
+     * conversations and agents, instead they create and manage their own
+     * conversations and agents resources.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext client_managed_resource_context = 105 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearClientManagedResourceContext() {
+      if (clientManagedResourceContextBuilder_ == null) {
+        if (contextProviderCase_ == 105) {
+          contextProviderCase_ = 0;
+          contextProvider_ = null;
+          onChanged();
+        }
+      } else {
+        if (contextProviderCase_ == 105) {
+          contextProviderCase_ = 0;
+          contextProvider_ = null;
+        }
+        clientManagedResourceContextBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Context with client managed resources.
+     * Some clients may not use GDA managed resources including
+     * conversations and agents, instead they create and manage their own
+     * conversations and agents resources.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext client_managed_resource_context = 105 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext.Builder
+        getClientManagedResourceContextBuilder() {
+      return getClientManagedResourceContextFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Context with client managed resources.
+     * Some clients may not use GDA managed resources including
+     * conversations and agents, instead they create and manage their own
+     * conversations and agents resources.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext client_managed_resource_context = 105 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContextOrBuilder
+        getClientManagedResourceContextOrBuilder() {
+      if ((contextProviderCase_ == 105) && (clientManagedResourceContextBuilder_ != null)) {
+        return clientManagedResourceContextBuilder_.getMessageOrBuilder();
+      } else {
+        if (contextProviderCase_ == 105) {
+          return (com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext)
+              contextProvider_;
+        }
+        return com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Context with client managed resources.
+     * Some clients may not use GDA managed resources including
+     * conversations and agents, instead they create and manage their own
+     * conversations and agents resources.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext client_managed_resource_context = 105 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext,
+            com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContextOrBuilder>
+        getClientManagedResourceContextFieldBuilder() {
+      if (clientManagedResourceContextBuilder_ == null) {
+        if (!(contextProviderCase_ == 105)) {
+          contextProvider_ =
+              com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext
+                  .getDefaultInstance();
+        }
+        clientManagedResourceContextBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext,
+                com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext.Builder,
+                com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContextOrBuilder>(
+                (com.google.cloud.geminidataanalytics.v1beta.ClientManagedResourceContext)
+                    contextProvider_,
+                getParentForChildren(),
+                isClean());
+        contextProvider_ = null;
+      }
+      contextProviderCase_ = 105;
+      onChanged();
+      return clientManagedResourceContextBuilder_;
+    }
+
     private java.lang.Object project_ = "";
 
     /**
@@ -1886,7 +2283,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=164
+     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=181
      * @return The project.
      */
     @java.lang.Deprecated
@@ -1914,7 +2311,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=164
+     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=181
      * @return The bytes for project.
      */
     @java.lang.Deprecated
@@ -1942,7 +2339,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=164
+     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=181
      * @param value The project to set.
      * @return This builder for chaining.
      */
@@ -1952,7 +2349,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       project_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1969,13 +2366,13 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=164
+     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=181
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearProject() {
       project_ = getDefaultInstance().getProject();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1992,7 +2389,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=164
+     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=181
      * @param value The bytes for project to set.
      * @return This builder for chaining.
      */
@@ -2003,7 +2400,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       project_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2076,7 +2473,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       parent_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2095,7 +2492,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearParent() {
       parent_ = getDefaultInstance().getParent();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2119,7 +2516,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       parent_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2128,10 +2525,10 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureMessagesIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         messages_ =
             new java.util.ArrayList<com.google.cloud.geminidataanalytics.v1beta.Message>(messages_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
       }
     }
 
@@ -2381,7 +2778,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder clearMessages() {
       if (messagesBuilder_ == null) {
         messages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         messagesBuilder_.clear();
@@ -2528,7 +2925,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.geminidataanalytics.v1beta.Message,
                 com.google.cloud.geminidataanalytics.v1beta.Message.Builder,
                 com.google.cloud.geminidataanalytics.v1beta.MessageOrBuilder>(
-                messages_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
+                messages_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
         messages_ = null;
       }
       return messagesBuilder_;

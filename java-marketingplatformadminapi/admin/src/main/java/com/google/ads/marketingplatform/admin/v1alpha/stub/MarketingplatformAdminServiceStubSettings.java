@@ -17,14 +17,21 @@
 package com.google.ads.marketingplatform.admin.v1alpha.stub;
 
 import static com.google.ads.marketingplatform.admin.v1alpha.MarketingplatformAdminServiceClient.ListAnalyticsAccountLinksPagedResponse;
+import static com.google.ads.marketingplatform.admin.v1alpha.MarketingplatformAdminServiceClient.ListOrganizationsPagedResponse;
 
 import com.google.ads.marketingplatform.admin.v1alpha.AnalyticsAccountLink;
 import com.google.ads.marketingplatform.admin.v1alpha.CreateAnalyticsAccountLinkRequest;
 import com.google.ads.marketingplatform.admin.v1alpha.DeleteAnalyticsAccountLinkRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.FindSalesPartnerManagedClientsRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.FindSalesPartnerManagedClientsResponse;
 import com.google.ads.marketingplatform.admin.v1alpha.GetOrganizationRequest;
 import com.google.ads.marketingplatform.admin.v1alpha.ListAnalyticsAccountLinksRequest;
 import com.google.ads.marketingplatform.admin.v1alpha.ListAnalyticsAccountLinksResponse;
+import com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsResponse;
 import com.google.ads.marketingplatform.admin.v1alpha.Organization;
+import com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageResponse;
 import com.google.ads.marketingplatform.admin.v1alpha.SetPropertyServiceLevelRequest;
 import com.google.ads.marketingplatform.admin.v1alpha.SetPropertyServiceLevelResponse;
 import com.google.api.core.ApiFunction;
@@ -128,6 +135,12 @@ public class MarketingplatformAdminServiceStubSettings
 
   private final UnaryCallSettings<GetOrganizationRequest, Organization> getOrganizationSettings;
   private final PagedCallSettings<
+          ListOrganizationsRequest, ListOrganizationsResponse, ListOrganizationsPagedResponse>
+      listOrganizationsSettings;
+  private final UnaryCallSettings<
+          FindSalesPartnerManagedClientsRequest, FindSalesPartnerManagedClientsResponse>
+      findSalesPartnerManagedClientsSettings;
+  private final PagedCallSettings<
           ListAnalyticsAccountLinksRequest,
           ListAnalyticsAccountLinksResponse,
           ListAnalyticsAccountLinksPagedResponse>
@@ -138,6 +151,46 @@ public class MarketingplatformAdminServiceStubSettings
       deleteAnalyticsAccountLinkSettings;
   private final UnaryCallSettings<SetPropertyServiceLevelRequest, SetPropertyServiceLevelResponse>
       setPropertyServiceLevelSettings;
+  private final UnaryCallSettings<ReportPropertyUsageRequest, ReportPropertyUsageResponse>
+      reportPropertyUsageSettings;
+
+  private static final PagedListDescriptor<
+          ListOrganizationsRequest, ListOrganizationsResponse, Organization>
+      LIST_ORGANIZATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListOrganizationsRequest, ListOrganizationsResponse, Organization>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListOrganizationsRequest injectToken(
+                ListOrganizationsRequest payload, String token) {
+              return ListOrganizationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListOrganizationsRequest injectPageSize(
+                ListOrganizationsRequest payload, int pageSize) {
+              return ListOrganizationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListOrganizationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListOrganizationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Organization> extractResources(ListOrganizationsResponse payload) {
+              return payload.getOrganizationsList();
+            }
+          };
 
   private static final PagedListDescriptor<
           ListAnalyticsAccountLinksRequest, ListAnalyticsAccountLinksResponse, AnalyticsAccountLink>
@@ -185,6 +238,27 @@ public class MarketingplatformAdminServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
+          ListOrganizationsRequest, ListOrganizationsResponse, ListOrganizationsPagedResponse>
+      LIST_ORGANIZATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListOrganizationsRequest,
+              ListOrganizationsResponse,
+              ListOrganizationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListOrganizationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListOrganizationsRequest, ListOrganizationsResponse> callable,
+                ListOrganizationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListOrganizationsResponse> futureResponse) {
+              PageContext<ListOrganizationsRequest, ListOrganizationsResponse, Organization>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_ORGANIZATIONS_PAGE_STR_DESC, request, context);
+              return ListOrganizationsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListAnalyticsAccountLinksRequest,
           ListAnalyticsAccountLinksResponse,
           ListAnalyticsAccountLinksPagedResponse>
@@ -217,6 +291,20 @@ public class MarketingplatformAdminServiceStubSettings
     return getOrganizationSettings;
   }
 
+  /** Returns the object with the settings used for calls to listOrganizations. */
+  public PagedCallSettings<
+          ListOrganizationsRequest, ListOrganizationsResponse, ListOrganizationsPagedResponse>
+      listOrganizationsSettings() {
+    return listOrganizationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to findSalesPartnerManagedClients. */
+  public UnaryCallSettings<
+          FindSalesPartnerManagedClientsRequest, FindSalesPartnerManagedClientsResponse>
+      findSalesPartnerManagedClientsSettings() {
+    return findSalesPartnerManagedClientsSettings;
+  }
+
   /** Returns the object with the settings used for calls to listAnalyticsAccountLinks. */
   public PagedCallSettings<
           ListAnalyticsAccountLinksRequest,
@@ -242,6 +330,12 @@ public class MarketingplatformAdminServiceStubSettings
   public UnaryCallSettings<SetPropertyServiceLevelRequest, SetPropertyServiceLevelResponse>
       setPropertyServiceLevelSettings() {
     return setPropertyServiceLevelSettings;
+  }
+
+  /** Returns the object with the settings used for calls to reportPropertyUsage. */
+  public UnaryCallSettings<ReportPropertyUsageRequest, ReportPropertyUsageResponse>
+      reportPropertyUsageSettings() {
+    return reportPropertyUsageSettings;
   }
 
   public MarketingplatformAdminServiceStub createStub() throws IOException {
@@ -358,12 +452,16 @@ public class MarketingplatformAdminServiceStubSettings
     super(settingsBuilder);
 
     getOrganizationSettings = settingsBuilder.getOrganizationSettings().build();
+    listOrganizationsSettings = settingsBuilder.listOrganizationsSettings().build();
+    findSalesPartnerManagedClientsSettings =
+        settingsBuilder.findSalesPartnerManagedClientsSettings().build();
     listAnalyticsAccountLinksSettings = settingsBuilder.listAnalyticsAccountLinksSettings().build();
     createAnalyticsAccountLinkSettings =
         settingsBuilder.createAnalyticsAccountLinkSettings().build();
     deleteAnalyticsAccountLinkSettings =
         settingsBuilder.deleteAnalyticsAccountLinkSettings().build();
     setPropertyServiceLevelSettings = settingsBuilder.setPropertyServiceLevelSettings().build();
+    reportPropertyUsageSettings = settingsBuilder.reportPropertyUsageSettings().build();
   }
 
   /** Builder for MarketingplatformAdminServiceStubSettings. */
@@ -372,6 +470,12 @@ public class MarketingplatformAdminServiceStubSettings
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<GetOrganizationRequest, Organization>
         getOrganizationSettings;
+    private final PagedCallSettings.Builder<
+            ListOrganizationsRequest, ListOrganizationsResponse, ListOrganizationsPagedResponse>
+        listOrganizationsSettings;
+    private final UnaryCallSettings.Builder<
+            FindSalesPartnerManagedClientsRequest, FindSalesPartnerManagedClientsResponse>
+        findSalesPartnerManagedClientsSettings;
     private final PagedCallSettings.Builder<
             ListAnalyticsAccountLinksRequest,
             ListAnalyticsAccountLinksResponse,
@@ -384,6 +488,8 @@ public class MarketingplatformAdminServiceStubSettings
     private final UnaryCallSettings.Builder<
             SetPropertyServiceLevelRequest, SetPropertyServiceLevelResponse>
         setPropertyServiceLevelSettings;
+    private final UnaryCallSettings.Builder<ReportPropertyUsageRequest, ReportPropertyUsageResponse>
+        reportPropertyUsageSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -425,19 +531,25 @@ public class MarketingplatformAdminServiceStubSettings
       super(clientContext);
 
       getOrganizationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listOrganizationsSettings = PagedCallSettings.newBuilder(LIST_ORGANIZATIONS_PAGE_STR_FACT);
+      findSalesPartnerManagedClientsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listAnalyticsAccountLinksSettings =
           PagedCallSettings.newBuilder(LIST_ANALYTICS_ACCOUNT_LINKS_PAGE_STR_FACT);
       createAnalyticsAccountLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteAnalyticsAccountLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setPropertyServiceLevelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      reportPropertyUsageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               getOrganizationSettings,
+              listOrganizationsSettings,
+              findSalesPartnerManagedClientsSettings,
               listAnalyticsAccountLinksSettings,
               createAnalyticsAccountLinkSettings,
               deleteAnalyticsAccountLinkSettings,
-              setPropertyServiceLevelSettings);
+              setPropertyServiceLevelSettings,
+              reportPropertyUsageSettings);
       initDefaults(this);
     }
 
@@ -445,18 +557,25 @@ public class MarketingplatformAdminServiceStubSettings
       super(settings);
 
       getOrganizationSettings = settings.getOrganizationSettings.toBuilder();
+      listOrganizationsSettings = settings.listOrganizationsSettings.toBuilder();
+      findSalesPartnerManagedClientsSettings =
+          settings.findSalesPartnerManagedClientsSettings.toBuilder();
       listAnalyticsAccountLinksSettings = settings.listAnalyticsAccountLinksSettings.toBuilder();
       createAnalyticsAccountLinkSettings = settings.createAnalyticsAccountLinkSettings.toBuilder();
       deleteAnalyticsAccountLinkSettings = settings.deleteAnalyticsAccountLinkSettings.toBuilder();
       setPropertyServiceLevelSettings = settings.setPropertyServiceLevelSettings.toBuilder();
+      reportPropertyUsageSettings = settings.reportPropertyUsageSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               getOrganizationSettings,
+              listOrganizationsSettings,
+              findSalesPartnerManagedClientsSettings,
               listAnalyticsAccountLinksSettings,
               createAnalyticsAccountLinkSettings,
               deleteAnalyticsAccountLinkSettings,
-              setPropertyServiceLevelSettings);
+              setPropertyServiceLevelSettings,
+              reportPropertyUsageSettings);
     }
 
     private static Builder createDefault() {
@@ -490,6 +609,16 @@ public class MarketingplatformAdminServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .listOrganizationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .findSalesPartnerManagedClientsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .listAnalyticsAccountLinksSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -506,6 +635,11 @@ public class MarketingplatformAdminServiceStubSettings
 
       builder
           .setPropertyServiceLevelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .reportPropertyUsageSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -531,6 +665,20 @@ public class MarketingplatformAdminServiceStubSettings
     public UnaryCallSettings.Builder<GetOrganizationRequest, Organization>
         getOrganizationSettings() {
       return getOrganizationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listOrganizations. */
+    public PagedCallSettings.Builder<
+            ListOrganizationsRequest, ListOrganizationsResponse, ListOrganizationsPagedResponse>
+        listOrganizationsSettings() {
+      return listOrganizationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to findSalesPartnerManagedClients. */
+    public UnaryCallSettings.Builder<
+            FindSalesPartnerManagedClientsRequest, FindSalesPartnerManagedClientsResponse>
+        findSalesPartnerManagedClientsSettings() {
+      return findSalesPartnerManagedClientsSettings;
     }
 
     /** Returns the builder for the settings used for calls to listAnalyticsAccountLinks. */
@@ -559,6 +707,12 @@ public class MarketingplatformAdminServiceStubSettings
             SetPropertyServiceLevelRequest, SetPropertyServiceLevelResponse>
         setPropertyServiceLevelSettings() {
       return setPropertyServiceLevelSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to reportPropertyUsage. */
+    public UnaryCallSettings.Builder<ReportPropertyUsageRequest, ReportPropertyUsageResponse>
+        reportPropertyUsageSettings() {
+      return reportPropertyUsageSettings;
     }
 
     @Override

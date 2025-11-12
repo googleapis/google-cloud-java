@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * integrations on Google Chat Platform.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/chat/v1/chat_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ChatServiceGrpc {
 
@@ -3934,9 +3931,9 @@ public final class ChatServiceGrpc {
      * information that was in the request.
      * </pre>
      */
-    public com.google.chat.v1.Message createMessage(
-        com.google.chat.v1.CreateMessageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.chat.v1.Message createMessage(com.google.chat.v1.CreateMessageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateMessageMethod(), getCallOptions(), request);
     }
 
@@ -3961,8 +3958,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.ListMessagesResponse listMessages(
-        com.google.chat.v1.ListMessagesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.ListMessagesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMessagesMethod(), getCallOptions(), request);
     }
 
@@ -4004,8 +4001,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.ListMembershipsResponse listMemberships(
-        com.google.chat.v1.ListMembershipsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.ListMembershipsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMembershipsMethod(), getCallOptions(), request);
     }
 
@@ -4037,8 +4034,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.Membership getMembership(
-        com.google.chat.v1.GetMembershipRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.GetMembershipRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetMembershipMethod(), getCallOptions(), request);
     }
 
@@ -4063,8 +4060,9 @@ public final class ChatServiceGrpc {
      * Note: Might return a message from a blocked member or space.
      * </pre>
      */
-    public com.google.chat.v1.Message getMessage(com.google.chat.v1.GetMessageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.chat.v1.Message getMessage(com.google.chat.v1.GetMessageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetMessageMethod(), getCallOptions(), request);
     }
 
@@ -4094,9 +4092,9 @@ public final class ChatServiceGrpc {
      * created by the calling Chat app.
      * </pre>
      */
-    public com.google.chat.v1.Message updateMessage(
-        com.google.chat.v1.UpdateMessageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.chat.v1.Message updateMessage(com.google.chat.v1.UpdateMessageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateMessageMethod(), getCallOptions(), request);
     }
 
@@ -4123,9 +4121,9 @@ public final class ChatServiceGrpc {
      * created by the calling Chat app.
      * </pre>
      */
-    public com.google.protobuf.Empty deleteMessage(
-        com.google.chat.v1.DeleteMessageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.protobuf.Empty deleteMessage(com.google.chat.v1.DeleteMessageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteMessageMethod(), getCallOptions(), request);
     }
 
@@ -4147,8 +4145,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.Attachment getAttachment(
-        com.google.chat.v1.GetAttachmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.GetAttachmentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAttachmentMethod(), getCallOptions(), request);
     }
 
@@ -4172,8 +4170,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.UploadAttachmentResponse uploadAttachment(
-        com.google.chat.v1.UploadAttachmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.UploadAttachmentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUploadAttachmentMethod(), getCallOptions(), request);
     }
 
@@ -4202,8 +4200,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.ListSpacesResponse listSpaces(
-        com.google.chat.v1.ListSpacesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.ListSpacesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSpacesMethod(), getCallOptions(), request);
     }
 
@@ -4224,8 +4222,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.SearchSpacesResponse searchSpaces(
-        com.google.chat.v1.SearchSpacesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.SearchSpacesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchSpacesMethod(), getCallOptions(), request);
     }
 
@@ -4262,8 +4260,9 @@ public final class ChatServiceGrpc {
      * spaces the app created.
      * </pre>
      */
-    public com.google.chat.v1.Space getSpace(com.google.chat.v1.GetSpaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.chat.v1.Space getSpace(com.google.chat.v1.GetSpaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSpaceMethod(), getCallOptions(), request);
     }
 
@@ -4307,8 +4306,9 @@ public final class ChatServiceGrpc {
      *  the Google Workspace organization might already use this display name.
      * </pre>
      */
-    public com.google.chat.v1.Space createSpace(com.google.chat.v1.CreateSpaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.chat.v1.Space createSpace(com.google.chat.v1.CreateSpaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSpaceMethod(), getCallOptions(), request);
     }
 
@@ -4366,8 +4366,9 @@ public final class ChatServiceGrpc {
      *   - `https://www.googleapis.com/auth/chat.spaces`
      * </pre>
      */
-    public com.google.chat.v1.Space setUpSpace(com.google.chat.v1.SetUpSpaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.chat.v1.Space setUpSpace(com.google.chat.v1.SetUpSpaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetUpSpaceMethod(), getCallOptions(), request);
     }
 
@@ -4405,8 +4406,9 @@ public final class ChatServiceGrpc {
      * authentication.
      * </pre>
      */
-    public com.google.chat.v1.Space updateSpace(com.google.chat.v1.UpdateSpaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.chat.v1.Space updateSpace(com.google.chat.v1.UpdateSpaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSpaceMethod(), getCallOptions(), request);
     }
 
@@ -4440,8 +4442,9 @@ public final class ChatServiceGrpc {
      *         - `https://www.googleapis.com/auth/chat.admin.delete`
      * </pre>
      */
-    public com.google.protobuf.Empty deleteSpace(com.google.chat.v1.DeleteSpaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.protobuf.Empty deleteSpace(com.google.chat.v1.DeleteSpaceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSpaceMethod(), getCallOptions(), request);
     }
 
@@ -4463,8 +4466,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.CompleteImportSpaceResponse completeImportSpace(
-        com.google.chat.v1.CompleteImportSpaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.CompleteImportSpaceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCompleteImportSpaceMethod(), getCallOptions(), request);
     }
 
@@ -4498,8 +4501,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.Space findDirectMessage(
-        com.google.chat.v1.FindDirectMessageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.FindDirectMessageRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFindDirectMessageMethod(), getCallOptions(), request);
     }
 
@@ -4547,8 +4550,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.Membership createMembership(
-        com.google.chat.v1.CreateMembershipRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.CreateMembershipRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateMembershipMethod(), getCallOptions(), request);
     }
 
@@ -4580,8 +4583,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.Membership updateMembership(
-        com.google.chat.v1.UpdateMembershipRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.UpdateMembershipRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateMembershipMethod(), getCallOptions(), request);
     }
 
@@ -4621,8 +4624,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.Membership deleteMembership(
-        com.google.chat.v1.DeleteMembershipRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.DeleteMembershipRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteMembershipMethod(), getCallOptions(), request);
     }
 
@@ -4644,8 +4647,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.Reaction createReaction(
-        com.google.chat.v1.CreateReactionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.CreateReactionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateReactionMethod(), getCallOptions(), request);
     }
 
@@ -4667,8 +4670,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.ListReactionsResponse listReactions(
-        com.google.chat.v1.ListReactionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.ListReactionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListReactionsMethod(), getCallOptions(), request);
     }
 
@@ -4689,8 +4692,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteReaction(
-        com.google.chat.v1.DeleteReactionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.DeleteReactionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteReactionMethod(), getCallOptions(), request);
     }
 
@@ -4713,8 +4716,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.CustomEmoji createCustomEmoji(
-        com.google.chat.v1.CreateCustomEmojiRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.CreateCustomEmojiRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCustomEmojiMethod(), getCallOptions(), request);
     }
 
@@ -4738,8 +4741,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.CustomEmoji getCustomEmoji(
-        com.google.chat.v1.GetCustomEmojiRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.GetCustomEmojiRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCustomEmojiMethod(), getCallOptions(), request);
     }
 
@@ -4763,8 +4766,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.ListCustomEmojisResponse listCustomEmojis(
-        com.google.chat.v1.ListCustomEmojisRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.ListCustomEmojisRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCustomEmojisMethod(), getCallOptions(), request);
     }
 
@@ -4791,8 +4794,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteCustomEmoji(
-        com.google.chat.v1.DeleteCustomEmojiRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.DeleteCustomEmojiRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteCustomEmojiMethod(), getCallOptions(), request);
     }
 
@@ -4813,8 +4816,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.SpaceReadState getSpaceReadState(
-        com.google.chat.v1.GetSpaceReadStateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.GetSpaceReadStateRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSpaceReadStateMethod(), getCallOptions(), request);
     }
 
@@ -4833,8 +4836,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.SpaceReadState updateSpaceReadState(
-        com.google.chat.v1.UpdateSpaceReadStateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.UpdateSpaceReadStateRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSpaceReadStateMethod(), getCallOptions(), request);
     }
 
@@ -4855,8 +4858,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.ThreadReadState getThreadReadState(
-        com.google.chat.v1.GetThreadReadStateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.GetThreadReadStateRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetThreadReadStateMethod(), getCallOptions(), request);
     }
 
@@ -4892,8 +4895,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.SpaceEvent getSpaceEvent(
-        com.google.chat.v1.GetSpaceEventRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.GetSpaceEventRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSpaceEventMethod(), getCallOptions(), request);
     }
 
@@ -4927,8 +4930,8 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.ListSpaceEventsResponse listSpaceEvents(
-        com.google.chat.v1.ListSpaceEventsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.ListSpaceEventsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSpaceEventsMethod(), getCallOptions(), request);
     }
 
@@ -4947,8 +4950,9 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.SpaceNotificationSetting getSpaceNotificationSetting(
-        com.google.chat.v1.GetSpaceNotificationSettingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.GetSpaceNotificationSettingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSpaceNotificationSettingMethod(), getCallOptions(), request);
     }
 
@@ -4967,8 +4971,9 @@ public final class ChatServiceGrpc {
      * </pre>
      */
     public com.google.chat.v1.SpaceNotificationSetting updateSpaceNotificationSetting(
-        com.google.chat.v1.UpdateSpaceNotificationSettingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.chat.v1.UpdateSpaceNotificationSettingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSpaceNotificationSettingMethod(), getCallOptions(), request);
     }
   }

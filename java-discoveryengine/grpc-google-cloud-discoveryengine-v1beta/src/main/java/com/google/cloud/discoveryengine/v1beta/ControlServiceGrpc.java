@@ -27,9 +27,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * request.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1beta/control_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ControlServiceGrpc {
 
@@ -583,8 +580,9 @@ public final class ControlServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1beta.Control createControl(
-        com.google.cloud.discoveryengine.v1beta.CreateControlRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.CreateControlRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateControlMethod(), getCallOptions(), request);
     }
 
@@ -598,8 +596,9 @@ public final class ControlServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteControl(
-        com.google.cloud.discoveryengine.v1beta.DeleteControlRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.DeleteControlRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteControlMethod(), getCallOptions(), request);
     }
 
@@ -614,8 +613,9 @@ public final class ControlServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1beta.Control updateControl(
-        com.google.cloud.discoveryengine.v1beta.UpdateControlRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.UpdateControlRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateControlMethod(), getCallOptions(), request);
     }
 
@@ -627,8 +627,9 @@ public final class ControlServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1beta.Control getControl(
-        com.google.cloud.discoveryengine.v1beta.GetControlRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.GetControlRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetControlMethod(), getCallOptions(), request);
     }
 
@@ -641,8 +642,9 @@ public final class ControlServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1beta.ListControlsResponse listControls(
-        com.google.cloud.discoveryengine.v1beta.ListControlsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.ListControlsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListControlsMethod(), getCallOptions(), request);
     }
   }

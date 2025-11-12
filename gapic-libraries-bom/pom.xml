@@ -429,6 +429,13 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-databasecenter-bom</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-databasecenter:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-datacatalog-bom</artifactId>
         <version>1.85.0</version><!-- {x-version-update:google-cloud-datacatalog:current} -->
         <type>pom</type>
@@ -1260,6 +1267,13 @@
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-valkey-bom</artifactId>
         <version>0.25.0</version><!-- {x-version-update:google-cloud-valkey:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-vectorsearch-bom</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-vectorsearch:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>

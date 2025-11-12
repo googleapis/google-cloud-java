@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Allow users to create and manage tag keys.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/resourcemanager/v3/tag_keys.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class TagKeysGrpc {
 
@@ -853,8 +850,9 @@ public final class TagKeysGrpc {
      * </pre>
      */
     public com.google.cloud.resourcemanager.v3.ListTagKeysResponse listTagKeys(
-        com.google.cloud.resourcemanager.v3.ListTagKeysRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.resourcemanager.v3.ListTagKeysRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTagKeysMethod(), getCallOptions(), request);
     }
 
@@ -867,8 +865,9 @@ public final class TagKeysGrpc {
      * </pre>
      */
     public com.google.cloud.resourcemanager.v3.TagKey getTagKey(
-        com.google.cloud.resourcemanager.v3.GetTagKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.resourcemanager.v3.GetTagKeyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTagKeyMethod(), getCallOptions(), request);
     }
 
@@ -882,8 +881,9 @@ public final class TagKeysGrpc {
      * </pre>
      */
     public com.google.cloud.resourcemanager.v3.TagKey getNamespacedTagKey(
-        com.google.cloud.resourcemanager.v3.GetNamespacedTagKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.resourcemanager.v3.GetNamespacedTagKeyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetNamespacedTagKeyMethod(), getCallOptions(), request);
     }
 
@@ -898,8 +898,9 @@ public final class TagKeysGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createTagKey(
-        com.google.cloud.resourcemanager.v3.CreateTagKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.resourcemanager.v3.CreateTagKeyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTagKeyMethod(), getCallOptions(), request);
     }
 
@@ -911,8 +912,9 @@ public final class TagKeysGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateTagKey(
-        com.google.cloud.resourcemanager.v3.UpdateTagKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.resourcemanager.v3.UpdateTagKeyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateTagKeyMethod(), getCallOptions(), request);
     }
 
@@ -925,8 +927,9 @@ public final class TagKeysGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteTagKey(
-        com.google.cloud.resourcemanager.v3.DeleteTagKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.resourcemanager.v3.DeleteTagKeyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTagKeyMethod(), getCallOptions(), request);
     }
 
@@ -942,8 +945,9 @@ public final class TagKeysGrpc {
      * the specified TagKey.
      * </pre>
      */
-    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -958,8 +962,9 @@ public final class TagKeysGrpc {
      * on the identified tagValue.
      * </pre>
      */
-    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -974,8 +979,8 @@ public final class TagKeysGrpc {
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
-        com.google.iam.v1.TestIamPermissionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.iam.v1.TestIamPermissionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
   }

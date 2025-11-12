@@ -203,6 +203,21 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ShowEffectiveFlowLogsConfigs</td>
+ *      <td><p> ShowEffectiveFlowLogsConfigs returns a list of all VPC Flow Logs configurations applicable to a specified resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> showEffectiveFlowLogsConfigs(ShowEffectiveFlowLogsConfigsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> showEffectiveFlowLogsConfigsPagedCallable()
+ *           <li><p> showEffectiveFlowLogsConfigsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -1636,6 +1651,124 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * ShowEffectiveFlowLogsConfigs returns a list of all VPC Flow Logs configurations applicable to a
+   * specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VpcFlowLogsServiceClient vpcFlowLogsServiceClient = VpcFlowLogsServiceClient.create()) {
+   *   ShowEffectiveFlowLogsConfigsRequest request =
+   *       ShowEffectiveFlowLogsConfigsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setResource("resource-341064690")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (EffectiveVpcFlowLogsConfig element :
+   *       vpcFlowLogsServiceClient.showEffectiveFlowLogsConfigs(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ShowEffectiveFlowLogsConfigsPagedResponse showEffectiveFlowLogsConfigs(
+      ShowEffectiveFlowLogsConfigsRequest request) {
+    return showEffectiveFlowLogsConfigsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * ShowEffectiveFlowLogsConfigs returns a list of all VPC Flow Logs configurations applicable to a
+   * specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VpcFlowLogsServiceClient vpcFlowLogsServiceClient = VpcFlowLogsServiceClient.create()) {
+   *   ShowEffectiveFlowLogsConfigsRequest request =
+   *       ShowEffectiveFlowLogsConfigsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setResource("resource-341064690")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<EffectiveVpcFlowLogsConfig> future =
+   *       vpcFlowLogsServiceClient.showEffectiveFlowLogsConfigsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (EffectiveVpcFlowLogsConfig element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ShowEffectiveFlowLogsConfigsRequest, ShowEffectiveFlowLogsConfigsPagedResponse>
+      showEffectiveFlowLogsConfigsPagedCallable() {
+    return stub.showEffectiveFlowLogsConfigsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * ShowEffectiveFlowLogsConfigs returns a list of all VPC Flow Logs configurations applicable to a
+   * specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VpcFlowLogsServiceClient vpcFlowLogsServiceClient = VpcFlowLogsServiceClient.create()) {
+   *   ShowEffectiveFlowLogsConfigsRequest request =
+   *       ShowEffectiveFlowLogsConfigsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setResource("resource-341064690")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     ShowEffectiveFlowLogsConfigsResponse response =
+   *         vpcFlowLogsServiceClient.showEffectiveFlowLogsConfigsCallable().call(request);
+   *     for (EffectiveVpcFlowLogsConfig element : response.getEffectiveFlowLogsConfigsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ShowEffectiveFlowLogsConfigsRequest, ShowEffectiveFlowLogsConfigsResponse>
+      showEffectiveFlowLogsConfigsCallable() {
+    return stub.showEffectiveFlowLogsConfigsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:
@@ -2195,6 +2328,103 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
     protected QueryOrgVpcFlowLogsConfigsFixedSizeCollection createCollection(
         List<QueryOrgVpcFlowLogsConfigsPage> pages, int collectionSize) {
       return new QueryOrgVpcFlowLogsConfigsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ShowEffectiveFlowLogsConfigsPagedResponse
+      extends AbstractPagedListResponse<
+          ShowEffectiveFlowLogsConfigsRequest,
+          ShowEffectiveFlowLogsConfigsResponse,
+          EffectiveVpcFlowLogsConfig,
+          ShowEffectiveFlowLogsConfigsPage,
+          ShowEffectiveFlowLogsConfigsFixedSizeCollection> {
+
+    public static ApiFuture<ShowEffectiveFlowLogsConfigsPagedResponse> createAsync(
+        PageContext<
+                ShowEffectiveFlowLogsConfigsRequest,
+                ShowEffectiveFlowLogsConfigsResponse,
+                EffectiveVpcFlowLogsConfig>
+            context,
+        ApiFuture<ShowEffectiveFlowLogsConfigsResponse> futureResponse) {
+      ApiFuture<ShowEffectiveFlowLogsConfigsPage> futurePage =
+          ShowEffectiveFlowLogsConfigsPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ShowEffectiveFlowLogsConfigsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ShowEffectiveFlowLogsConfigsPagedResponse(ShowEffectiveFlowLogsConfigsPage page) {
+      super(page, ShowEffectiveFlowLogsConfigsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ShowEffectiveFlowLogsConfigsPage
+      extends AbstractPage<
+          ShowEffectiveFlowLogsConfigsRequest,
+          ShowEffectiveFlowLogsConfigsResponse,
+          EffectiveVpcFlowLogsConfig,
+          ShowEffectiveFlowLogsConfigsPage> {
+
+    private ShowEffectiveFlowLogsConfigsPage(
+        PageContext<
+                ShowEffectiveFlowLogsConfigsRequest,
+                ShowEffectiveFlowLogsConfigsResponse,
+                EffectiveVpcFlowLogsConfig>
+            context,
+        ShowEffectiveFlowLogsConfigsResponse response) {
+      super(context, response);
+    }
+
+    private static ShowEffectiveFlowLogsConfigsPage createEmptyPage() {
+      return new ShowEffectiveFlowLogsConfigsPage(null, null);
+    }
+
+    @Override
+    protected ShowEffectiveFlowLogsConfigsPage createPage(
+        PageContext<
+                ShowEffectiveFlowLogsConfigsRequest,
+                ShowEffectiveFlowLogsConfigsResponse,
+                EffectiveVpcFlowLogsConfig>
+            context,
+        ShowEffectiveFlowLogsConfigsResponse response) {
+      return new ShowEffectiveFlowLogsConfigsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ShowEffectiveFlowLogsConfigsPage> createPageAsync(
+        PageContext<
+                ShowEffectiveFlowLogsConfigsRequest,
+                ShowEffectiveFlowLogsConfigsResponse,
+                EffectiveVpcFlowLogsConfig>
+            context,
+        ApiFuture<ShowEffectiveFlowLogsConfigsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ShowEffectiveFlowLogsConfigsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ShowEffectiveFlowLogsConfigsRequest,
+          ShowEffectiveFlowLogsConfigsResponse,
+          EffectiveVpcFlowLogsConfig,
+          ShowEffectiveFlowLogsConfigsPage,
+          ShowEffectiveFlowLogsConfigsFixedSizeCollection> {
+
+    private ShowEffectiveFlowLogsConfigsFixedSizeCollection(
+        List<ShowEffectiveFlowLogsConfigsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ShowEffectiveFlowLogsConfigsFixedSizeCollection createEmptyCollection() {
+      return new ShowEffectiveFlowLogsConfigsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ShowEffectiveFlowLogsConfigsFixedSizeCollection createCollection(
+        List<ShowEffectiveFlowLogsConfigsPage> pages, int collectionSize) {
+      return new ShowEffectiveFlowLogsConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
 

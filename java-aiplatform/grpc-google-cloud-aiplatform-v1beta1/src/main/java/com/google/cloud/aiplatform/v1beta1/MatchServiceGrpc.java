@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * search at scale.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1beta1/match_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class MatchServiceGrpc {
 
@@ -329,8 +326,9 @@ public final class MatchServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.FindNeighborsResponse findNeighbors(
-        com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFindNeighborsMethod(), getCallOptions(), request);
     }
 
@@ -343,8 +341,9 @@ public final class MatchServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ReadIndexDatapointsResponse readIndexDatapoints(
-        com.google.cloud.aiplatform.v1beta1.ReadIndexDatapointsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.ReadIndexDatapointsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReadIndexDatapointsMethod(), getCallOptions(), request);
     }
   }

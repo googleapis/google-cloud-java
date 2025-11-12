@@ -30,11 +30,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *   `projects/{project_id}/locations/{location_id}/client_connector_services/{client_connector_service_id}`.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments =
-        "Source:"
-            + " google/cloud/beyondcorp/clientconnectorservices/v1/client_connector_services_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ClientConnectorServicesServiceGrpc {
 
@@ -668,8 +663,9 @@ public final class ClientConnectorServicesServiceGrpc {
         listClientConnectorServices(
             com.google.cloud.beyondcorp.clientconnectorservices.v1
                     .ListClientConnectorServicesRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListClientConnectorServicesMethod(), getCallOptions(), request);
     }
 
@@ -683,8 +679,9 @@ public final class ClientConnectorServicesServiceGrpc {
     public com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
         getClientConnectorService(
             com.google.cloud.beyondcorp.clientconnectorservices.v1.GetClientConnectorServiceRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetClientConnectorServiceMethod(), getCallOptions(), request);
     }
 
@@ -697,8 +694,9 @@ public final class ClientConnectorServicesServiceGrpc {
      */
     public com.google.longrunning.Operation createClientConnectorService(
         com.google.cloud.beyondcorp.clientconnectorservices.v1.CreateClientConnectorServiceRequest
-            request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateClientConnectorServiceMethod(), getCallOptions(), request);
     }
 
@@ -711,8 +709,9 @@ public final class ClientConnectorServicesServiceGrpc {
      */
     public com.google.longrunning.Operation updateClientConnectorService(
         com.google.cloud.beyondcorp.clientconnectorservices.v1.UpdateClientConnectorServiceRequest
-            request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateClientConnectorServiceMethod(), getCallOptions(), request);
     }
 
@@ -725,8 +724,9 @@ public final class ClientConnectorServicesServiceGrpc {
      */
     public com.google.longrunning.Operation deleteClientConnectorService(
         com.google.cloud.beyondcorp.clientconnectorservices.v1.DeleteClientConnectorServiceRequest
-            request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteClientConnectorServiceMethod(), getCallOptions(), request);
     }
   }

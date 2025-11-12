@@ -80,6 +80,7 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessageV3
     ANALYSIS(4),
     CHART(5),
     ERROR(6),
+    EXAMPLE_QUERIES(13),
     KIND_NOT_SET(0);
     private final int value;
 
@@ -111,6 +112,8 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessageV3
           return CHART;
         case 6:
           return ERROR;
+        case 13:
+          return EXAMPLE_QUERIES;
         case 0:
           return KIND_NOT_SET;
         default:
@@ -452,6 +455,67 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.geminidataanalytics.v1beta.ErrorMessage.getDefaultInstance();
   }
 
+  public static final int EXAMPLE_QUERIES_FIELD_NUMBER = 13;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A message containing example queries.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.ExampleQueries example_queries = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the exampleQueries field is set.
+   */
+  @java.lang.Override
+  public boolean hasExampleQueries() {
+    return kindCase_ == 13;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A message containing example queries.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.ExampleQueries example_queries = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The exampleQueries.
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.ExampleQueries getExampleQueries() {
+    if (kindCase_ == 13) {
+      return (com.google.cloud.geminidataanalytics.v1beta.ExampleQueries) kind_;
+    }
+    return com.google.cloud.geminidataanalytics.v1beta.ExampleQueries.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A message containing example queries.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.ExampleQueries example_queries = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.ExampleQueriesOrBuilder
+      getExampleQueriesOrBuilder() {
+    if (kindCase_ == 13) {
+      return (com.google.cloud.geminidataanalytics.v1beta.ExampleQueries) kind_;
+    }
+    return com.google.cloud.geminidataanalytics.v1beta.ExampleQueries.getDefaultInstance();
+  }
+
   public static final int GROUP_ID_FIELD_NUMBER = 12;
   private int groupId_ = 0;
 
@@ -526,6 +590,9 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt32(12, groupId_);
     }
+    if (kindCase_ == 13) {
+      output.writeMessage(13, (com.google.cloud.geminidataanalytics.v1beta.ExampleQueries) kind_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -568,6 +635,11 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(12, groupId_);
     }
+    if (kindCase_ == 13) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              13, (com.google.cloud.geminidataanalytics.v1beta.ExampleQueries) kind_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -607,6 +679,9 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessageV3
         break;
       case 6:
         if (!getError().equals(other.getError())) return false;
+        break;
+      case 13:
+        if (!getExampleQueries().equals(other.getExampleQueries())) return false;
         break;
       case 0:
       default:
@@ -650,6 +725,10 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessageV3
       case 6:
         hash = (37 * hash) + ERROR_FIELD_NUMBER;
         hash = (53 * hash) + getError().hashCode();
+        break;
+      case 13:
+        hash = (37 * hash) + EXAMPLE_QUERIES_FIELD_NUMBER;
+        hash = (53 * hash) + getExampleQueries().hashCode();
         break;
       case 0:
       default:
@@ -815,6 +894,9 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessageV3
       if (errorBuilder_ != null) {
         errorBuilder_.clear();
       }
+      if (exampleQueriesBuilder_ != null) {
+        exampleQueriesBuilder_.clear();
+      }
       groupId_ = 0;
       kindCase_ = 0;
       kind_ = null;
@@ -856,7 +938,7 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessageV3
     private void buildPartial0(com.google.cloud.geminidataanalytics.v1beta.SystemMessage result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.groupId_ = groupId_;
         to_bitField0_ |= 0x00000001;
       }
@@ -884,6 +966,9 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessageV3
       }
       if (kindCase_ == 6 && errorBuilder_ != null) {
         result.kind_ = errorBuilder_.build();
+      }
+      if (kindCase_ == 13 && exampleQueriesBuilder_ != null) {
+        result.kind_ = exampleQueriesBuilder_.build();
       }
     }
 
@@ -967,6 +1052,11 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessageV3
             mergeError(other.getError());
             break;
           }
+        case EXAMPLE_QUERIES:
+          {
+            mergeExampleQueries(other.getExampleQueries());
+            break;
+          }
         case KIND_NOT_SET:
           {
             break;
@@ -1037,9 +1127,15 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessageV3
             case 96:
               {
                 groupId_ = input.readInt32();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 96
+            case 106:
+              {
+                input.readMessage(getExampleQueriesFieldBuilder().getBuilder(), extensionRegistry);
+                kindCase_ = 13;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2391,6 +2487,248 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessageV3
       return errorBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.geminidataanalytics.v1beta.ExampleQueries,
+            com.google.cloud.geminidataanalytics.v1beta.ExampleQueries.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.ExampleQueriesOrBuilder>
+        exampleQueriesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A message containing example queries.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ExampleQueries example_queries = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the exampleQueries field is set.
+     */
+    @java.lang.Override
+    public boolean hasExampleQueries() {
+      return kindCase_ == 13;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A message containing example queries.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ExampleQueries example_queries = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The exampleQueries.
+     */
+    @java.lang.Override
+    public com.google.cloud.geminidataanalytics.v1beta.ExampleQueries getExampleQueries() {
+      if (exampleQueriesBuilder_ == null) {
+        if (kindCase_ == 13) {
+          return (com.google.cloud.geminidataanalytics.v1beta.ExampleQueries) kind_;
+        }
+        return com.google.cloud.geminidataanalytics.v1beta.ExampleQueries.getDefaultInstance();
+      } else {
+        if (kindCase_ == 13) {
+          return exampleQueriesBuilder_.getMessage();
+        }
+        return com.google.cloud.geminidataanalytics.v1beta.ExampleQueries.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A message containing example queries.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ExampleQueries example_queries = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setExampleQueries(
+        com.google.cloud.geminidataanalytics.v1beta.ExampleQueries value) {
+      if (exampleQueriesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        kind_ = value;
+        onChanged();
+      } else {
+        exampleQueriesBuilder_.setMessage(value);
+      }
+      kindCase_ = 13;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A message containing example queries.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ExampleQueries example_queries = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setExampleQueries(
+        com.google.cloud.geminidataanalytics.v1beta.ExampleQueries.Builder builderForValue) {
+      if (exampleQueriesBuilder_ == null) {
+        kind_ = builderForValue.build();
+        onChanged();
+      } else {
+        exampleQueriesBuilder_.setMessage(builderForValue.build());
+      }
+      kindCase_ = 13;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A message containing example queries.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ExampleQueries example_queries = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeExampleQueries(
+        com.google.cloud.geminidataanalytics.v1beta.ExampleQueries value) {
+      if (exampleQueriesBuilder_ == null) {
+        if (kindCase_ == 13
+            && kind_
+                != com.google.cloud.geminidataanalytics.v1beta.ExampleQueries
+                    .getDefaultInstance()) {
+          kind_ =
+              com.google.cloud.geminidataanalytics.v1beta.ExampleQueries.newBuilder(
+                      (com.google.cloud.geminidataanalytics.v1beta.ExampleQueries) kind_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          kind_ = value;
+        }
+        onChanged();
+      } else {
+        if (kindCase_ == 13) {
+          exampleQueriesBuilder_.mergeFrom(value);
+        } else {
+          exampleQueriesBuilder_.setMessage(value);
+        }
+      }
+      kindCase_ = 13;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A message containing example queries.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ExampleQueries example_queries = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearExampleQueries() {
+      if (exampleQueriesBuilder_ == null) {
+        if (kindCase_ == 13) {
+          kindCase_ = 0;
+          kind_ = null;
+          onChanged();
+        }
+      } else {
+        if (kindCase_ == 13) {
+          kindCase_ = 0;
+          kind_ = null;
+        }
+        exampleQueriesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A message containing example queries.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ExampleQueries example_queries = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.ExampleQueries.Builder
+        getExampleQueriesBuilder() {
+      return getExampleQueriesFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A message containing example queries.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ExampleQueries example_queries = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.geminidataanalytics.v1beta.ExampleQueriesOrBuilder
+        getExampleQueriesOrBuilder() {
+      if ((kindCase_ == 13) && (exampleQueriesBuilder_ != null)) {
+        return exampleQueriesBuilder_.getMessageOrBuilder();
+      } else {
+        if (kindCase_ == 13) {
+          return (com.google.cloud.geminidataanalytics.v1beta.ExampleQueries) kind_;
+        }
+        return com.google.cloud.geminidataanalytics.v1beta.ExampleQueries.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A message containing example queries.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ExampleQueries example_queries = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.geminidataanalytics.v1beta.ExampleQueries,
+            com.google.cloud.geminidataanalytics.v1beta.ExampleQueries.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.ExampleQueriesOrBuilder>
+        getExampleQueriesFieldBuilder() {
+      if (exampleQueriesBuilder_ == null) {
+        if (!(kindCase_ == 13)) {
+          kind_ = com.google.cloud.geminidataanalytics.v1beta.ExampleQueries.getDefaultInstance();
+        }
+        exampleQueriesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.geminidataanalytics.v1beta.ExampleQueries,
+                com.google.cloud.geminidataanalytics.v1beta.ExampleQueries.Builder,
+                com.google.cloud.geminidataanalytics.v1beta.ExampleQueriesOrBuilder>(
+                (com.google.cloud.geminidataanalytics.v1beta.ExampleQueries) kind_,
+                getParentForChildren(),
+                isClean());
+        kind_ = null;
+      }
+      kindCase_ = 13;
+      onChanged();
+      return exampleQueriesBuilder_;
+    }
+
     private int groupId_;
 
     /**
@@ -2408,7 +2746,7 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasGroupId() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -2446,7 +2784,7 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessageV3
     public Builder setGroupId(int value) {
 
       groupId_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2465,7 +2803,7 @@ public final class SystemMessage extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearGroupId() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       groupId_ = 0;
       onChanged();
       return this;

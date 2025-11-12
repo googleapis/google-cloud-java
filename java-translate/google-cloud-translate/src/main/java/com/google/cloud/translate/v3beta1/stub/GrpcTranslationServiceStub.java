@@ -45,6 +45,8 @@ import com.google.cloud.translate.v3beta1.GetSupportedLanguagesRequest;
 import com.google.cloud.translate.v3beta1.Glossary;
 import com.google.cloud.translate.v3beta1.ListGlossariesRequest;
 import com.google.cloud.translate.v3beta1.ListGlossariesResponse;
+import com.google.cloud.translate.v3beta1.RefineTextRequest;
+import com.google.cloud.translate.v3beta1.RefineTextResponse;
 import com.google.cloud.translate.v3beta1.SupportedLanguages;
 import com.google.cloud.translate.v3beta1.TranslateDocumentRequest;
 import com.google.cloud.translate.v3beta1.TranslateDocumentResponse;
@@ -188,6 +190,16 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<RefineTextRequest, RefineTextResponse>
+      refineTextMethodDescriptor =
+          MethodDescriptor.<RefineTextRequest, RefineTextResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.translation.v3beta1.TranslationService/RefineText")
+              .setRequestMarshaller(ProtoUtils.marshaller(RefineTextRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(RefineTextResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private final UnaryCallable<TranslateTextRequest, TranslateTextResponse> translateTextCallable;
   private final UnaryCallable<DetectLanguageRequest, DetectLanguageResponse> detectLanguageCallable;
   private final UnaryCallable<GetSupportedLanguagesRequest, SupportedLanguages>
@@ -216,6 +228,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
   private final OperationCallable<
           DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
       deleteGlossaryOperationCallable;
+  private final UnaryCallable<RefineTextRequest, RefineTextResponse> refineTextCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -366,6 +379,16 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<RefineTextRequest, RefineTextResponse> refineTextTransportSettings =
+        GrpcCallSettings.<RefineTextRequest, RefineTextResponse>newBuilder()
+            .setMethodDescriptor(refineTextMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
 
     this.translateTextCallable =
         callableFactory.createUnaryCallable(
@@ -432,6 +455,9 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
             settings.deleteGlossaryOperationSettings(),
             clientContext,
             operationsStub);
+    this.refineTextCallable =
+        callableFactory.createUnaryCallable(
+            refineTextTransportSettings, settings.refineTextSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -525,6 +551,11 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
   public OperationCallable<DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
       deleteGlossaryOperationCallable() {
     return deleteGlossaryOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RefineTextRequest, RefineTextResponse> refineTextCallable() {
+    return refineTextCallable;
   }
 
   @Override

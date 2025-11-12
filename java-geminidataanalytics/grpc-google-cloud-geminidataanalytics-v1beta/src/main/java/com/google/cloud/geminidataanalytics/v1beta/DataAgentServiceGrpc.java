@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service describing handlers for resources.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/geminidataanalytics/v1beta/data_agent_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DataAgentServiceGrpc {
 
@@ -779,8 +776,9 @@ public final class DataAgentServiceGrpc {
      * </pre>
      */
     public com.google.cloud.geminidataanalytics.v1beta.ListDataAgentsResponse listDataAgents(
-        com.google.cloud.geminidataanalytics.v1beta.ListDataAgentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.geminidataanalytics.v1beta.ListDataAgentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDataAgentsMethod(), getCallOptions(), request);
     }
 
@@ -794,8 +792,9 @@ public final class DataAgentServiceGrpc {
      */
     public com.google.cloud.geminidataanalytics.v1beta.ListAccessibleDataAgentsResponse
         listAccessibleDataAgents(
-            com.google.cloud.geminidataanalytics.v1beta.ListAccessibleDataAgentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.geminidataanalytics.v1beta.ListAccessibleDataAgentsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAccessibleDataAgentsMethod(), getCallOptions(), request);
     }
 
@@ -807,8 +806,9 @@ public final class DataAgentServiceGrpc {
      * </pre>
      */
     public com.google.cloud.geminidataanalytics.v1beta.DataAgent getDataAgent(
-        com.google.cloud.geminidataanalytics.v1beta.GetDataAgentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.geminidataanalytics.v1beta.GetDataAgentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDataAgentMethod(), getCallOptions(), request);
     }
 
@@ -820,8 +820,9 @@ public final class DataAgentServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createDataAgent(
-        com.google.cloud.geminidataanalytics.v1beta.CreateDataAgentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.geminidataanalytics.v1beta.CreateDataAgentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDataAgentMethod(), getCallOptions(), request);
     }
 
@@ -833,8 +834,9 @@ public final class DataAgentServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateDataAgent(
-        com.google.cloud.geminidataanalytics.v1beta.UpdateDataAgentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.geminidataanalytics.v1beta.UpdateDataAgentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDataAgentMethod(), getCallOptions(), request);
     }
 
@@ -846,8 +848,9 @@ public final class DataAgentServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteDataAgent(
-        com.google.cloud.geminidataanalytics.v1beta.DeleteDataAgentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.geminidataanalytics.v1beta.DeleteDataAgentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDataAgentMethod(), getCallOptions(), request);
     }
 
@@ -858,8 +861,9 @@ public final class DataAgentServiceGrpc {
      * Gets the IAM policy for DataAgent
      * </pre>
      */
-    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -870,8 +874,9 @@ public final class DataAgentServiceGrpc {
      * Sets the IAM policy for a DataAgent.
      * </pre>
      */
-    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
   }

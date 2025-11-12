@@ -95,7 +95,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2182
+   *     google/container/v1/cluster_service.proto;l=2242
    * @return The clusterIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -111,7 +111,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2182
+   *     google/container/v1/cluster_service.proto;l=2242
    * @return The bytes for clusterIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -127,7 +127,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2185
+   *     google/container/v1/cluster_service.proto;l=2245
    * @return The nodeIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -143,7 +143,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2185
+   *     google/container/v1/cluster_service.proto;l=2245
    * @return The bytes for nodeIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -159,7 +159,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2188
+   *     google/container/v1/cluster_service.proto;l=2248
    * @return The servicesIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -175,7 +175,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2188
+   *     google/container/v1/cluster_service.proto;l=2248
    * @return The bytes for servicesIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -444,7 +444,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string tpu_ipv4_cidr_block = 13 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.tpu_ipv4_cidr_block is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2276
+   *     google/container/v1/cluster_service.proto;l=2336
    * @return The tpuIpv4CidrBlock.
    */
   @java.lang.Deprecated
@@ -477,7 +477,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string tpu_ipv4_cidr_block = 13 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.tpu_ipv4_cidr_block is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2276
+   *     google/container/v1/cluster_service.proto;l=2336
    * @return The bytes for tpuIpv4CidrBlock.
    */
   @java.lang.Deprecated
@@ -877,4 +877,47 @@ public interface IPAllocationPolicyOrBuilder
    * </code>
    */
   com.google.container.v1.AutoIpamConfigOrBuilder getAutoIpamConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Cluster-level network tier configuration is used to determine the default
+   * network tier for external IP addresses on cluster resources, such as node
+   * pools and load balancers.
+   * </pre>
+   *
+   * <code>.google.container.v1.NetworkTierConfig network_tier_config = 31;</code>
+   *
+   * @return Whether the networkTierConfig field is set.
+   */
+  boolean hasNetworkTierConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Cluster-level network tier configuration is used to determine the default
+   * network tier for external IP addresses on cluster resources, such as node
+   * pools and load balancers.
+   * </pre>
+   *
+   * <code>.google.container.v1.NetworkTierConfig network_tier_config = 31;</code>
+   *
+   * @return The networkTierConfig.
+   */
+  com.google.container.v1.NetworkTierConfig getNetworkTierConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Cluster-level network tier configuration is used to determine the default
+   * network tier for external IP addresses on cluster resources, such as node
+   * pools and load balancers.
+   * </pre>
+   *
+   * <code>.google.container.v1.NetworkTierConfig network_tier_config = 31;</code>
+   */
+  com.google.container.v1.NetworkTierConfigOrBuilder getNetworkTierConfigOrBuilder();
 }

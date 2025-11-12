@@ -166,7 +166,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A textual description of the table's content and purpose.
    * For example: "Contains information about customer orders in our e-commerce
-   * store."
+   * store." Currently only used for BigQuery data sources.
    * </pre>
    *
    * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -192,7 +192,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. A textual description of the table's content and purpose.
    * For example: "Contains information about customer orders in our e-commerce
-   * store."
+   * store." Currently only used for BigQuery data sources.
    * </pre>
    *
    * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -223,7 +223,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A list of alternative names or synonyms that can be used to refer
-   * to the table. For example: ["sales", "orders", "purchases"]
+   * to the table. For example: ["sales", "orders", "purchases"]. Currently only
+   * used for BigQuery data sources.
    * </pre>
    *
    * <code>repeated string synonyms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -239,7 +240,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A list of alternative names or synonyms that can be used to refer
-   * to the table. For example: ["sales", "orders", "purchases"]
+   * to the table. For example: ["sales", "orders", "purchases"]. Currently only
+   * used for BigQuery data sources.
    * </pre>
    *
    * <code>repeated string synonyms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -255,7 +257,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A list of alternative names or synonyms that can be used to refer
-   * to the table. For example: ["sales", "orders", "purchases"]
+   * to the table. For example: ["sales", "orders", "purchases"]. Currently only
+   * used for BigQuery data sources.
    * </pre>
    *
    * <code>repeated string synonyms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -272,7 +275,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A list of alternative names or synonyms that can be used to refer
-   * to the table. For example: ["sales", "orders", "purchases"]
+   * to the table. For example: ["sales", "orders", "purchases"]. Currently only
+   * used for BigQuery data sources.
    * </pre>
    *
    * <code>repeated string synonyms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -295,7 +299,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A list of tags or keywords associated with the table, used for
-   * categorization. For example: ["transaction", "revenue", "customer_data"]
+   * categorization. For example: ["transaction", "revenue", "customer_data"].
+   * Currently only used for BigQuery data sources.
    * </pre>
    *
    * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -311,7 +316,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A list of tags or keywords associated with the table, used for
-   * categorization. For example: ["transaction", "revenue", "customer_data"]
+   * categorization. For example: ["transaction", "revenue", "customer_data"].
+   * Currently only used for BigQuery data sources.
    * </pre>
    *
    * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -327,7 +333,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A list of tags or keywords associated with the table, used for
-   * categorization. For example: ["transaction", "revenue", "customer_data"]
+   * categorization. For example: ["transaction", "revenue", "customer_data"].
+   * Currently only used for BigQuery data sources.
    * </pre>
    *
    * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -344,7 +351,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. A list of tags or keywords associated with the table, used for
-   * categorization. For example: ["transaction", "revenue", "customer_data"]
+   * categorization. For example: ["transaction", "revenue", "customer_data"].
+   * Currently only used for BigQuery data sources.
    * </pre>
    *
    * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1503,7 +1511,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A textual description of the table's content and purpose.
      * For example: "Contains information about customer orders in our e-commerce
-     * store."
+     * store." Currently only used for BigQuery data sources.
      * </pre>
      *
      * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1528,7 +1536,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A textual description of the table's content and purpose.
      * For example: "Contains information about customer orders in our e-commerce
-     * store."
+     * store." Currently only used for BigQuery data sources.
      * </pre>
      *
      * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1553,7 +1561,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A textual description of the table's content and purpose.
      * For example: "Contains information about customer orders in our e-commerce
-     * store."
+     * store." Currently only used for BigQuery data sources.
      * </pre>
      *
      * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1577,7 +1585,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A textual description of the table's content and purpose.
      * For example: "Contains information about customer orders in our e-commerce
-     * store."
+     * store." Currently only used for BigQuery data sources.
      * </pre>
      *
      * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1597,7 +1605,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. A textual description of the table's content and purpose.
      * For example: "Contains information about customer orders in our e-commerce
-     * store."
+     * store." Currently only used for BigQuery data sources.
      * </pre>
      *
      * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1631,7 +1639,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of alternative names or synonyms that can be used to refer
-     * to the table. For example: ["sales", "orders", "purchases"]
+     * to the table. For example: ["sales", "orders", "purchases"]. Currently only
+     * used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string synonyms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1648,7 +1657,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of alternative names or synonyms that can be used to refer
-     * to the table. For example: ["sales", "orders", "purchases"]
+     * to the table. For example: ["sales", "orders", "purchases"]. Currently only
+     * used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string synonyms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1664,7 +1674,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of alternative names or synonyms that can be used to refer
-     * to the table. For example: ["sales", "orders", "purchases"]
+     * to the table. For example: ["sales", "orders", "purchases"]. Currently only
+     * used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string synonyms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1681,7 +1692,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of alternative names or synonyms that can be used to refer
-     * to the table. For example: ["sales", "orders", "purchases"]
+     * to the table. For example: ["sales", "orders", "purchases"]. Currently only
+     * used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string synonyms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1698,7 +1710,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of alternative names or synonyms that can be used to refer
-     * to the table. For example: ["sales", "orders", "purchases"]
+     * to the table. For example: ["sales", "orders", "purchases"]. Currently only
+     * used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string synonyms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1723,7 +1736,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of alternative names or synonyms that can be used to refer
-     * to the table. For example: ["sales", "orders", "purchases"]
+     * to the table. For example: ["sales", "orders", "purchases"]. Currently only
+     * used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string synonyms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1747,7 +1761,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of alternative names or synonyms that can be used to refer
-     * to the table. For example: ["sales", "orders", "purchases"]
+     * to the table. For example: ["sales", "orders", "purchases"]. Currently only
+     * used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string synonyms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1768,7 +1783,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of alternative names or synonyms that can be used to refer
-     * to the table. For example: ["sales", "orders", "purchases"]
+     * to the table. For example: ["sales", "orders", "purchases"]. Currently only
+     * used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string synonyms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1788,7 +1804,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of alternative names or synonyms that can be used to refer
-     * to the table. For example: ["sales", "orders", "purchases"]
+     * to the table. For example: ["sales", "orders", "purchases"]. Currently only
+     * used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string synonyms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1823,7 +1840,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags or keywords associated with the table, used for
-     * categorization. For example: ["transaction", "revenue", "customer_data"]
+     * categorization. For example: ["transaction", "revenue", "customer_data"].
+     * Currently only used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1840,7 +1858,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags or keywords associated with the table, used for
-     * categorization. For example: ["transaction", "revenue", "customer_data"]
+     * categorization. For example: ["transaction", "revenue", "customer_data"].
+     * Currently only used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1856,7 +1875,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags or keywords associated with the table, used for
-     * categorization. For example: ["transaction", "revenue", "customer_data"]
+     * categorization. For example: ["transaction", "revenue", "customer_data"].
+     * Currently only used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1873,7 +1893,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags or keywords associated with the table, used for
-     * categorization. For example: ["transaction", "revenue", "customer_data"]
+     * categorization. For example: ["transaction", "revenue", "customer_data"].
+     * Currently only used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1890,7 +1911,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags or keywords associated with the table, used for
-     * categorization. For example: ["transaction", "revenue", "customer_data"]
+     * categorization. For example: ["transaction", "revenue", "customer_data"].
+     * Currently only used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1915,7 +1937,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags or keywords associated with the table, used for
-     * categorization. For example: ["transaction", "revenue", "customer_data"]
+     * categorization. For example: ["transaction", "revenue", "customer_data"].
+     * Currently only used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1939,7 +1962,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags or keywords associated with the table, used for
-     * categorization. For example: ["transaction", "revenue", "customer_data"]
+     * categorization. For example: ["transaction", "revenue", "customer_data"].
+     * Currently only used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1960,7 +1984,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags or keywords associated with the table, used for
-     * categorization. For example: ["transaction", "revenue", "customer_data"]
+     * categorization. For example: ["transaction", "revenue", "customer_data"].
+     * Currently only used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1980,7 +2005,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A list of tags or keywords associated with the table, used for
-     * categorization. For example: ["transaction", "revenue", "customer_data"]
+     * categorization. For example: ["transaction", "revenue", "customer_data"].
+     * Currently only used for BigQuery data sources.
      * </pre>
      *
      * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

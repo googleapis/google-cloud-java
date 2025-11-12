@@ -35,9 +35,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * * `projects/redpepper-1290/locations/us-central1/instances/my-redis`
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/redis/v1/cloud_redis.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CloudRedisGrpc {
 
@@ -1082,8 +1079,8 @@ public final class CloudRedisGrpc {
      * </pre>
      */
     public com.google.cloud.redis.v1.ListInstancesResponse listInstances(
-        com.google.cloud.redis.v1.ListInstancesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.v1.ListInstancesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListInstancesMethod(), getCallOptions(), request);
     }
 
@@ -1095,8 +1092,8 @@ public final class CloudRedisGrpc {
      * </pre>
      */
     public com.google.cloud.redis.v1.Instance getInstance(
-        com.google.cloud.redis.v1.GetInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.v1.GetInstanceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetInstanceMethod(), getCallOptions(), request);
     }
 
@@ -1110,8 +1107,9 @@ public final class CloudRedisGrpc {
      * </pre>
      */
     public com.google.cloud.redis.v1.InstanceAuthString getInstanceAuthString(
-        com.google.cloud.redis.v1.GetInstanceAuthStringRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.v1.GetInstanceAuthStringRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetInstanceAuthStringMethod(), getCallOptions(), request);
     }
 
@@ -1131,8 +1129,8 @@ public final class CloudRedisGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createInstance(
-        com.google.cloud.redis.v1.CreateInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.v1.CreateInstanceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateInstanceMethod(), getCallOptions(), request);
     }
 
@@ -1147,8 +1145,8 @@ public final class CloudRedisGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateInstance(
-        com.google.cloud.redis.v1.UpdateInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.v1.UpdateInstanceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateInstanceMethod(), getCallOptions(), request);
     }
 
@@ -1161,8 +1159,8 @@ public final class CloudRedisGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation upgradeInstance(
-        com.google.cloud.redis.v1.UpgradeInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.v1.UpgradeInstanceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpgradeInstanceMethod(), getCallOptions(), request);
     }
 
@@ -1179,8 +1177,8 @@ public final class CloudRedisGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importInstance(
-        com.google.cloud.redis.v1.ImportInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.v1.ImportInstanceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportInstanceMethod(), getCallOptions(), request);
     }
 
@@ -1195,8 +1193,8 @@ public final class CloudRedisGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportInstance(
-        com.google.cloud.redis.v1.ExportInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.v1.ExportInstanceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportInstanceMethod(), getCallOptions(), request);
     }
 
@@ -1209,8 +1207,8 @@ public final class CloudRedisGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation failoverInstance(
-        com.google.cloud.redis.v1.FailoverInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.v1.FailoverInstanceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFailoverInstanceMethod(), getCallOptions(), request);
     }
 
@@ -1223,8 +1221,8 @@ public final class CloudRedisGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteInstance(
-        com.google.cloud.redis.v1.DeleteInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.v1.DeleteInstanceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteInstanceMethod(), getCallOptions(), request);
     }
 
@@ -1237,8 +1235,9 @@ public final class CloudRedisGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation rescheduleMaintenance(
-        com.google.cloud.redis.v1.RescheduleMaintenanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.redis.v1.RescheduleMaintenanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRescheduleMaintenanceMethod(), getCallOptions(), request);
     }
   }

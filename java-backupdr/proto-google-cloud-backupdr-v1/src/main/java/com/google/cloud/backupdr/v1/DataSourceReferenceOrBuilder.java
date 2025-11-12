@@ -258,4 +258,34 @@ public interface DataSourceReferenceOrBuilder
    */
   com.google.cloud.backupdr.v1.DataSourceGcpResourceInfoOrBuilder
       getDataSourceGcpResourceInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Total size of the storage used by all backup resources for the
+   * referenced datasource.
+   * </pre>
+   *
+   * <code>optional int64 total_stored_bytes = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the totalStoredBytes field is set.
+   */
+  boolean hasTotalStoredBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Total size of the storage used by all backup resources for the
+   * referenced datasource.
+   * </pre>
+   *
+   * <code>optional int64 total_stored_bytes = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The totalStoredBytes.
+   */
+  long getTotalStoredBytes();
 }
