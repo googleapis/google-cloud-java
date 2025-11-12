@@ -920,3 +920,6 @@ grpc-google-cloud-capacityplanner-v1beta:0.1.0:0.2.0-SNAPSHOT
 data-manager:0.0.0:0.0.1-SNAPSHOT
 proto-data-manager-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-data-manager-v1:0.0.0:0.0.1-SNAPSHOT
+google-cloud-vectorsearch:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-vectorsearch-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-vectorsearch-v1:0.0.0:0.0.1-SNAPSHOT
