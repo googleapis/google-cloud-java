@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for ingesting and querying logs.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/logging/v2/logging.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class LoggingServiceV2Grpc {
 
@@ -635,8 +632,9 @@ public final class LoggingServiceV2Grpc {
      * delete operation with a timestamp before the operation will be deleted.
      * </pre>
      */
-    public com.google.protobuf.Empty deleteLog(com.google.logging.v2.DeleteLogRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.protobuf.Empty deleteLog(com.google.logging.v2.DeleteLogRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteLogMethod(), getCallOptions(), request);
     }
 
@@ -654,8 +652,8 @@ public final class LoggingServiceV2Grpc {
      * </pre>
      */
     public com.google.logging.v2.WriteLogEntriesResponse writeLogEntries(
-        com.google.logging.v2.WriteLogEntriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.logging.v2.WriteLogEntriesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getWriteLogEntriesMethod(), getCallOptions(), request);
     }
 
@@ -670,8 +668,8 @@ public final class LoggingServiceV2Grpc {
      * </pre>
      */
     public com.google.logging.v2.ListLogEntriesResponse listLogEntries(
-        com.google.logging.v2.ListLogEntriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.logging.v2.ListLogEntriesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListLogEntriesMethod(), getCallOptions(), request);
     }
 
@@ -684,8 +682,9 @@ public final class LoggingServiceV2Grpc {
      */
     public com.google.logging.v2.ListMonitoredResourceDescriptorsResponse
         listMonitoredResourceDescriptors(
-            com.google.logging.v2.ListMonitoredResourceDescriptorsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.logging.v2.ListMonitoredResourceDescriptorsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMonitoredResourceDescriptorsMethod(), getCallOptions(), request);
     }
 
@@ -698,8 +697,8 @@ public final class LoggingServiceV2Grpc {
      * </pre>
      */
     public com.google.logging.v2.ListLogsResponse listLogs(
-        com.google.logging.v2.ListLogsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.logging.v2.ListLogsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListLogsMethod(), getCallOptions(), request);
     }
 
