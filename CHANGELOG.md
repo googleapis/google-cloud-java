@@ -1,5 +1,23 @@
 # Changelog
 
+## [3.18.0](https://github.com/googleapis/java-bigquerystorage/compare/v3.17.3...v3.18.0) (2025-11-13)
+
+
+### Features
+
+* Support picosecond timestamp precision in BigQuery Storage API ([3704f63](https://github.com/googleapis/java-bigquerystorage/commit/3704f63150075eca0aacd100227125656aff39a6))
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.64.1 ([3704f63](https://github.com/googleapis/java-bigquerystorage/commit/3704f63150075eca0aacd100227125656aff39a6))
+* Make location cache expire after 10 minutes ([#3117](https://github.com/googleapis/java-bigquerystorage/issues/3117)) ([f7f3c06](https://github.com/googleapis/java-bigquerystorage/commit/f7f3c063846863360503a14c401d62ee6e9b0df4))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.54.1 ([#3120](https://github.com/googleapis/java-bigquerystorage/issues/3120)) ([19ed2ec](https://github.com/googleapis/java-bigquerystorage/commit/19ed2eccdf07d3b5a211ae0781851ad838601edd))
+
 ## [3.17.3](https://github.com/googleapis/java-bigquerystorage/compare/v3.17.2...v3.17.3) (2025-10-20)
 
 
