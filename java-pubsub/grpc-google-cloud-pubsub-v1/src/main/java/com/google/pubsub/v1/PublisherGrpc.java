@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * messages to a topic.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/pubsub/v1/pubsub.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class PublisherGrpc {
 
@@ -832,8 +829,9 @@ public final class PublisherGrpc {
      * (https://cloud.google.com/pubsub/docs/pubsub-basics#resource_names).
      * </pre>
      */
-    public com.google.pubsub.v1.Topic createTopic(com.google.pubsub.v1.Topic request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.pubsub.v1.Topic createTopic(com.google.pubsub.v1.Topic request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTopicMethod(), getCallOptions(), request);
     }
 
@@ -845,8 +843,9 @@ public final class PublisherGrpc {
      * mask. Note that certain properties of a topic are not modifiable.
      * </pre>
      */
-    public com.google.pubsub.v1.Topic updateTopic(com.google.pubsub.v1.UpdateTopicRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.pubsub.v1.Topic updateTopic(com.google.pubsub.v1.UpdateTopicRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateTopicMethod(), getCallOptions(), request);
     }
 
@@ -858,9 +857,9 @@ public final class PublisherGrpc {
      * does not exist.
      * </pre>
      */
-    public com.google.pubsub.v1.PublishResponse publish(
-        com.google.pubsub.v1.PublishRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.pubsub.v1.PublishResponse publish(com.google.pubsub.v1.PublishRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPublishMethod(), getCallOptions(), request);
     }
 
@@ -871,8 +870,9 @@ public final class PublisherGrpc {
      * Gets the configuration of a topic.
      * </pre>
      */
-    public com.google.pubsub.v1.Topic getTopic(com.google.pubsub.v1.GetTopicRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.pubsub.v1.Topic getTopic(com.google.pubsub.v1.GetTopicRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTopicMethod(), getCallOptions(), request);
     }
 
@@ -884,8 +884,8 @@ public final class PublisherGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.ListTopicsResponse listTopics(
-        com.google.pubsub.v1.ListTopicsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.pubsub.v1.ListTopicsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTopicsMethod(), getCallOptions(), request);
     }
 
@@ -897,8 +897,8 @@ public final class PublisherGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.ListTopicSubscriptionsResponse listTopicSubscriptions(
-        com.google.pubsub.v1.ListTopicSubscriptionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.pubsub.v1.ListTopicSubscriptionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTopicSubscriptionsMethod(), getCallOptions(), request);
     }
 
@@ -914,8 +914,8 @@ public final class PublisherGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.ListTopicSnapshotsResponse listTopicSnapshots(
-        com.google.pubsub.v1.ListTopicSnapshotsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.pubsub.v1.ListTopicSnapshotsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTopicSnapshotsMethod(), getCallOptions(), request);
     }
 
@@ -930,8 +930,9 @@ public final class PublisherGrpc {
      * not deleted, but their `topic` field is set to `_deleted-topic_`.
      * </pre>
      */
-    public com.google.protobuf.Empty deleteTopic(com.google.pubsub.v1.DeleteTopicRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.protobuf.Empty deleteTopic(com.google.pubsub.v1.DeleteTopicRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTopicMethod(), getCallOptions(), request);
     }
 
@@ -946,8 +947,8 @@ public final class PublisherGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.DetachSubscriptionResponse detachSubscription(
-        com.google.pubsub.v1.DetachSubscriptionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.pubsub.v1.DetachSubscriptionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDetachSubscriptionMethod(), getCallOptions(), request);
     }
   }

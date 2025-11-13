@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * establishing a bi-directional stream using the `StreamingPull` method.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/pubsub/v1/pubsub.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SubscriberGrpc {
 
@@ -1450,8 +1447,8 @@ public final class SubscriberGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.Subscription createSubscription(
-        com.google.pubsub.v1.Subscription request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.pubsub.v1.Subscription request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSubscriptionMethod(), getCallOptions(), request);
     }
 
@@ -1463,8 +1460,8 @@ public final class SubscriberGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.Subscription getSubscription(
-        com.google.pubsub.v1.GetSubscriptionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.pubsub.v1.GetSubscriptionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSubscriptionMethod(), getCallOptions(), request);
     }
 
@@ -1478,8 +1475,8 @@ public final class SubscriberGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.Subscription updateSubscription(
-        com.google.pubsub.v1.UpdateSubscriptionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.pubsub.v1.UpdateSubscriptionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSubscriptionMethod(), getCallOptions(), request);
     }
 
@@ -1491,8 +1488,8 @@ public final class SubscriberGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.ListSubscriptionsResponse listSubscriptions(
-        com.google.pubsub.v1.ListSubscriptionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.pubsub.v1.ListSubscriptionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSubscriptionsMethod(), getCallOptions(), request);
     }
 
@@ -1508,8 +1505,8 @@ public final class SubscriberGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteSubscription(
-        com.google.pubsub.v1.DeleteSubscriptionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.pubsub.v1.DeleteSubscriptionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSubscriptionMethod(), getCallOptions(), request);
     }
 
@@ -1525,8 +1522,8 @@ public final class SubscriberGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty modifyAckDeadline(
-        com.google.pubsub.v1.ModifyAckDeadlineRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.pubsub.v1.ModifyAckDeadlineRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getModifyAckDeadlineMethod(), getCallOptions(), request);
     }
 
@@ -1542,8 +1539,9 @@ public final class SubscriberGrpc {
      * than once will not result in an error.
      * </pre>
      */
-    public com.google.protobuf.Empty acknowledge(com.google.pubsub.v1.AcknowledgeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.protobuf.Empty acknowledge(com.google.pubsub.v1.AcknowledgeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAcknowledgeMethod(), getCallOptions(), request);
     }
 
@@ -1554,8 +1552,9 @@ public final class SubscriberGrpc {
      * Pulls messages from the server.
      * </pre>
      */
-    public com.google.pubsub.v1.PullResponse pull(com.google.pubsub.v1.PullRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.pubsub.v1.PullResponse pull(com.google.pubsub.v1.PullRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPullMethod(), getCallOptions(), request);
     }
 
@@ -1592,8 +1591,8 @@ public final class SubscriberGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty modifyPushConfig(
-        com.google.pubsub.v1.ModifyPushConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.pubsub.v1.ModifyPushConfigRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getModifyPushConfigMethod(), getCallOptions(), request);
     }
 
@@ -1609,8 +1608,8 @@ public final class SubscriberGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.Snapshot getSnapshot(
-        com.google.pubsub.v1.GetSnapshotRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.pubsub.v1.GetSnapshotRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSnapshotMethod(), getCallOptions(), request);
     }
 
@@ -1626,8 +1625,8 @@ public final class SubscriberGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.ListSnapshotsResponse listSnapshots(
-        com.google.pubsub.v1.ListSnapshotsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.pubsub.v1.ListSnapshotsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSnapshotsMethod(), getCallOptions(), request);
     }
 
@@ -1654,8 +1653,8 @@ public final class SubscriberGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.Snapshot createSnapshot(
-        com.google.pubsub.v1.CreateSnapshotRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.pubsub.v1.CreateSnapshotRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSnapshotMethod(), getCallOptions(), request);
     }
 
@@ -1672,8 +1671,8 @@ public final class SubscriberGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.Snapshot updateSnapshot(
-        com.google.pubsub.v1.UpdateSnapshotRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.pubsub.v1.UpdateSnapshotRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSnapshotMethod(), getCallOptions(), request);
     }
 
@@ -1693,8 +1692,8 @@ public final class SubscriberGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteSnapshot(
-        com.google.pubsub.v1.DeleteSnapshotRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.pubsub.v1.DeleteSnapshotRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSnapshotMethod(), getCallOptions(), request);
     }
 
@@ -1711,8 +1710,9 @@ public final class SubscriberGrpc {
      * snapshot must be on the same topic.
      * </pre>
      */
-    public com.google.pubsub.v1.SeekResponse seek(com.google.pubsub.v1.SeekRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.pubsub.v1.SeekResponse seek(com.google.pubsub.v1.SeekRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSeekMethod(), getCallOptions(), request);
     }
   }

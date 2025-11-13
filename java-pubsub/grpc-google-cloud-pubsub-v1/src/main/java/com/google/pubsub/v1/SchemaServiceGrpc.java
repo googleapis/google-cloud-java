@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for doing schema-related operations.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/pubsub/v1/schema.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SchemaServiceGrpc {
 
@@ -881,8 +878,8 @@ public final class SchemaServiceGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.Schema createSchema(
-        com.google.pubsub.v1.CreateSchemaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.pubsub.v1.CreateSchemaRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSchemaMethod(), getCallOptions(), request);
     }
 
@@ -893,8 +890,9 @@ public final class SchemaServiceGrpc {
      * Gets a schema.
      * </pre>
      */
-    public com.google.pubsub.v1.Schema getSchema(com.google.pubsub.v1.GetSchemaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.pubsub.v1.Schema getSchema(com.google.pubsub.v1.GetSchemaRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSchemaMethod(), getCallOptions(), request);
     }
 
@@ -906,8 +904,8 @@ public final class SchemaServiceGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.ListSchemasResponse listSchemas(
-        com.google.pubsub.v1.ListSchemasRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.pubsub.v1.ListSchemasRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSchemasMethod(), getCallOptions(), request);
     }
 
@@ -919,8 +917,8 @@ public final class SchemaServiceGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.ListSchemaRevisionsResponse listSchemaRevisions(
-        com.google.pubsub.v1.ListSchemaRevisionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.pubsub.v1.ListSchemaRevisionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSchemaRevisionsMethod(), getCallOptions(), request);
     }
 
@@ -932,8 +930,8 @@ public final class SchemaServiceGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.Schema commitSchema(
-        com.google.pubsub.v1.CommitSchemaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.pubsub.v1.CommitSchemaRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCommitSchemaMethod(), getCallOptions(), request);
     }
 
@@ -945,8 +943,8 @@ public final class SchemaServiceGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.Schema rollbackSchema(
-        com.google.pubsub.v1.RollbackSchemaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.pubsub.v1.RollbackSchemaRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRollbackSchemaMethod(), getCallOptions(), request);
     }
 
@@ -958,8 +956,8 @@ public final class SchemaServiceGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.Schema deleteSchemaRevision(
-        com.google.pubsub.v1.DeleteSchemaRevisionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.pubsub.v1.DeleteSchemaRevisionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSchemaRevisionMethod(), getCallOptions(), request);
     }
 
@@ -970,9 +968,9 @@ public final class SchemaServiceGrpc {
      * Deletes a schema.
      * </pre>
      */
-    public com.google.protobuf.Empty deleteSchema(
-        com.google.pubsub.v1.DeleteSchemaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.protobuf.Empty deleteSchema(com.google.pubsub.v1.DeleteSchemaRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSchemaMethod(), getCallOptions(), request);
     }
 
@@ -984,8 +982,8 @@ public final class SchemaServiceGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.ValidateSchemaResponse validateSchema(
-        com.google.pubsub.v1.ValidateSchemaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.pubsub.v1.ValidateSchemaRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getValidateSchemaMethod(), getCallOptions(), request);
     }
 
@@ -997,8 +995,8 @@ public final class SchemaServiceGrpc {
      * </pre>
      */
     public com.google.pubsub.v1.ValidateMessageResponse validateMessage(
-        com.google.pubsub.v1.ValidateMessageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.pubsub.v1.ValidateMessageRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getValidateMessageMethod(), getCallOptions(), request);
     }
   }
