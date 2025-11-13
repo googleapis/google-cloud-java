@@ -26,7 +26,6 @@ import io.opentelemetry.api.trace.propagation.W3CTraceContextPropagator;
 import io.opentelemetry.context.Context;
 import io.opentelemetry.context.propagation.TextMapGetter;
 import io.opentelemetry.context.propagation.TextMapSetter;
-import io.opentelemetry.semconv.trace.attributes.SemanticAttributes;
 
 /**
  * A wrapper class for a {@link PubsubMessage} object that handles creation and tracking of
@@ -54,6 +53,7 @@ public class PubsubMessageWrapper {
 
   private static final String GOOGCLIENT_PREFIX = "googclient_";
 
+  private static final String MESSAGING_MESSAGE_ID_ATTR_KEY = "messaging.message.id";
   private static final String MESSAGE_RESULT_ATTR_KEY = "messaging.gcp_pubsub.result";
 
   private Span publisherSpan;
@@ -194,7 +194,7 @@ public class PubsubMessageWrapper {
    */
   void setPublisherMessageIdSpanAttribute(String messageId) {
     if (publisherSpan != null) {
-      publisherSpan.setAttribute(SemanticAttributes.MESSAGING_MESSAGE_ID, messageId);
+      publisherSpan.setAttribute(MESSAGING_MESSAGE_ID_ATTR_KEY, messageId);
     }
   }
 

@@ -35,7 +35,6 @@ import io.opentelemetry.sdk.testing.junit4.OpenTelemetryRule;
 import io.opentelemetry.sdk.trace.data.LinkData;
 import io.opentelemetry.sdk.trace.data.SpanData;
 import io.opentelemetry.sdk.trace.data.StatusData;
-import io.opentelemetry.semconv.trace.attributes.SemanticAttributes;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.Test;
@@ -82,6 +81,13 @@ public class OpenTelemetryTest {
   private static final String ACK_START_EVENT = "ack start";
   private static final String ACK_END_EVENT = "ack end";
 
+  private static final String MESSAGING_SYSTEM_ATTR_KEY = "messaging.system";
+  private static final String MESSAGING_DESTINATION_NAME_ATTR_KEY = "messaging.destination.name";
+  private static final String CODE_FUNCTION_ATTR_KEY = "code.function";
+  private static final String MESSAGING_OPERATION_ATTR_KEY = "messaging.operation";
+  private static final String MESSAGING_BATCH_MESSAGE_COUNT_ATTR_KEY =
+      "messaging.batch.message_count";
+  private static final String MESSAGING_MESSAGE_ID_ATTR_KEY = "messaging.message.id";
   private static final String MESSAGING_SYSTEM_VALUE = "gcp_pubsub";
   private static final String PROJECT_ATTR_KEY = "gcp.project_id";
   private static final String MESSAGE_SIZE_ATTR_KEY = "messaging.message.body.size";
@@ -159,12 +165,12 @@ public class OpenTelemetryTest {
     AttributesAssert publishRpcSpanAttributesAssert =
         OpenTelemetryAssertions.assertThat(publishRpcSpanData.getAttributes());
     publishRpcSpanAttributesAssert
-        .containsEntry(SemanticAttributes.MESSAGING_SYSTEM, MESSAGING_SYSTEM_VALUE)
-        .containsEntry(SemanticAttributes.MESSAGING_DESTINATION_NAME, FULL_TOPIC_NAME.getTopic())
+        .containsEntry(MESSAGING_SYSTEM_ATTR_KEY, MESSAGING_SYSTEM_VALUE)
+        .containsEntry(MESSAGING_DESTINATION_NAME_ATTR_KEY, FULL_TOPIC_NAME.getTopic())
         .containsEntry(PROJECT_ATTR_KEY, FULL_TOPIC_NAME.getProject())
-        .containsEntry(SemanticAttributes.CODE_FUNCTION, "publishCall")
-        .containsEntry(SemanticAttributes.MESSAGING_OPERATION, "publish")
-        .containsEntry(SemanticAttributes.MESSAGING_BATCH_MESSAGE_COUNT, messageWrappers.size());
+        .containsEntry(CODE_FUNCTION_ATTR_KEY, "publishCall")
+        .containsEntry(MESSAGING_OPERATION_ATTR_KEY, "publish")
+        .containsEntry(MESSAGING_BATCH_MESSAGE_COUNT_ATTR_KEY, messageWrappers.size());
 
     // Check span data, events, links, and attributes for the publisher create span
     SpanDataAssert publisherSpanDataAssert = OpenTelemetryAssertions.assertThat(publisherSpanData);
@@ -190,14 +196,14 @@ public class OpenTelemetryTest {
     AttributesAssert publisherSpanAttributesAssert =
         OpenTelemetryAssertions.assertThat(publisherSpanData.getAttributes());
     publisherSpanAttributesAssert
-        .containsEntry(SemanticAttributes.MESSAGING_SYSTEM, MESSAGING_SYSTEM_VALUE)
-        .containsEntry(SemanticAttributes.MESSAGING_DESTINATION_NAME, FULL_TOPIC_NAME.getTopic())
+        .containsEntry(MESSAGING_SYSTEM_ATTR_KEY, MESSAGING_SYSTEM_VALUE)
+        .containsEntry(MESSAGING_DESTINATION_NAME_ATTR_KEY, FULL_TOPIC_NAME.getTopic())
         .containsEntry(PROJECT_ATTR_KEY, PROJECT_NAME)
-        .containsEntry(SemanticAttributes.CODE_FUNCTION, "publish")
-        .containsEntry(SemanticAttributes.MESSAGING_OPERATION, "create")
+        .containsEntry(CODE_FUNCTION_ATTR_KEY, "publish")
+        .containsEntry(MESSAGING_OPERATION_ATTR_KEY, "create")
         .containsEntry(ORDERING_KEY_ATTR_KEY, ORDERING_KEY)
         .containsEntry(MESSAGE_SIZE_ATTR_KEY, messageSize)
-        .containsEntry(SemanticAttributes.MESSAGING_MESSAGE_ID, MESSAGE_ID);
+        .containsEntry(MESSAGING_MESSAGE_ID_ATTR_KEY, MESSAGE_ID);
 
     // Check that the message has the attribute containing the trace context.
     PubsubMessage message = messageWrapper.getPubsubMessage();
@@ -393,14 +399,13 @@ public class OpenTelemetryTest {
     AttributesAssert modackRpcSpanAttributesAssert =
         OpenTelemetryAssertions.assertThat(modackRpcSpanData.getAttributes());
     modackRpcSpanAttributesAssert
-        .containsEntry(SemanticAttributes.MESSAGING_SYSTEM, MESSAGING_SYSTEM_VALUE)
+        .containsEntry(MESSAGING_SYSTEM_ATTR_KEY, MESSAGING_SYSTEM_VALUE)
         .containsEntry(
-            SemanticAttributes.MESSAGING_DESTINATION_NAME, FULL_SUBSCRIPTION_NAME.getSubscription())
+            MESSAGING_DESTINATION_NAME_ATTR_KEY, FULL_SUBSCRIPTION_NAME.getSubscription())
         .containsEntry(PROJECT_ATTR_KEY, FULL_TOPIC_NAME.getProject())
-        .containsEntry(SemanticAttributes.CODE_FUNCTION, "sendModAckOperations")
-        .containsEntry(SemanticAttributes.MESSAGING_OPERATION, "modack")
-        .containsEntry(
-            SemanticAttributes.MESSAGING_BATCH_MESSAGE_COUNT, subscribeMessageWrappers.size())
+        .containsEntry(CODE_FUNCTION_ATTR_KEY, "sendModAckOperations")
+        .containsEntry(MESSAGING_OPERATION_ATTR_KEY, "modack")
+        .containsEntry(MESSAGING_BATCH_MESSAGE_COUNT_ATTR_KEY, subscribeMessageWrappers.size())
         .containsEntry(ACK_DEADLINE_ATTR_KEY, 10)
         .containsEntry(RECEIPT_MODACK_ATTR_KEY, true);
 
@@ -420,14 +425,13 @@ public class OpenTelemetryTest {
     AttributesAssert ackRpcSpanAttributesAssert =
         OpenTelemetryAssertions.assertThat(ackRpcSpanData.getAttributes());
     ackRpcSpanAttributesAssert
-        .containsEntry(SemanticAttributes.MESSAGING_SYSTEM, MESSAGING_SYSTEM_VALUE)
+        .containsEntry(MESSAGING_SYSTEM_ATTR_KEY, MESSAGING_SYSTEM_VALUE)
         .containsEntry(
-            SemanticAttributes.MESSAGING_DESTINATION_NAME, FULL_SUBSCRIPTION_NAME.getSubscription())
+            MESSAGING_DESTINATION_NAME_ATTR_KEY, FULL_SUBSCRIPTION_NAME.getSubscription())
         .containsEntry(PROJECT_ATTR_KEY, FULL_TOPIC_NAME.getProject())
-        .containsEntry(SemanticAttributes.CODE_FUNCTION, "sendAckOperations")
-        .containsEntry(SemanticAttributes.MESSAGING_OPERATION, "ack")
-        .containsEntry(
-            SemanticAttributes.MESSAGING_BATCH_MESSAGE_COUNT, subscribeMessageWrappers.size());
+        .containsEntry(CODE_FUNCTION_ATTR_KEY, "sendAckOperations")
+        .containsEntry(MESSAGING_OPERATION_ATTR_KEY, "ack")
+        .containsEntry(MESSAGING_BATCH_MESSAGE_COUNT_ATTR_KEY, subscribeMessageWrappers.size());
 
     // Check span data, links, and attributes for the nack RPC span
     SpanDataAssert nackRpcSpanDataAssert = OpenTelemetryAssertions.assertThat(nackRpcSpanData);
@@ -445,14 +449,13 @@ public class OpenTelemetryTest {
     AttributesAssert nackRpcSpanAttributesAssert =
         OpenTelemetryAssertions.assertThat(nackRpcSpanData.getAttributes());
     nackRpcSpanAttributesAssert
-        .containsEntry(SemanticAttributes.MESSAGING_SYSTEM, MESSAGING_SYSTEM_VALUE)
+        .containsEntry(MESSAGING_SYSTEM_ATTR_KEY, MESSAGING_SYSTEM_VALUE)
         .containsEntry(
-            SemanticAttributes.MESSAGING_DESTINATION_NAME, FULL_SUBSCRIPTION_NAME.getSubscription())
+            MESSAGING_DESTINATION_NAME_ATTR_KEY, FULL_SUBSCRIPTION_NAME.getSubscription())
         .containsEntry(PROJECT_ATTR_KEY, FULL_TOPIC_NAME.getProject())
-        .containsEntry(SemanticAttributes.CODE_FUNCTION, "sendModAckOperations")
-        .containsEntry(SemanticAttributes.MESSAGING_OPERATION, "nack")
-        .containsEntry(
-            SemanticAttributes.MESSAGING_BATCH_MESSAGE_COUNT, subscribeMessageWrappers.size());
+        .containsEntry(CODE_FUNCTION_ATTR_KEY, "sendModAckOperations")
+        .containsEntry(MESSAGING_OPERATION_ATTR_KEY, "nack")
+        .containsEntry(MESSAGING_BATCH_MESSAGE_COUNT_ATTR_KEY, subscribeMessageWrappers.size());
 
     // Check span data, events, links, and attributes for the publisher create span
     SpanDataAssert subscriberSpanDataAssert =
@@ -493,18 +496,18 @@ public class OpenTelemetryTest {
     AttributesAssert subscriberSpanAttributesAssert =
         OpenTelemetryAssertions.assertThat(subscriberSpanData.getAttributes());
     subscriberSpanAttributesAssert
-        .containsEntry(SemanticAttributes.MESSAGING_SYSTEM, MESSAGING_SYSTEM_VALUE)
+        .containsEntry(MESSAGING_SYSTEM_ATTR_KEY, MESSAGING_SYSTEM_VALUE)
         .containsEntry(
-            SemanticAttributes.MESSAGING_DESTINATION_NAME, FULL_SUBSCRIPTION_NAME.getSubscription())
+            MESSAGING_DESTINATION_NAME_ATTR_KEY, FULL_SUBSCRIPTION_NAME.getSubscription())
         .containsEntry(PROJECT_ATTR_KEY, PROJECT_NAME)
-        .containsEntry(SemanticAttributes.CODE_FUNCTION, "onResponse")
+        .containsEntry(CODE_FUNCTION_ATTR_KEY, "onResponse")
         .containsEntry(MESSAGE_SIZE_ATTR_KEY, messageSize)
         .containsEntry(ORDERING_KEY_ATTR_KEY, ORDERING_KEY)
         .containsEntry(MESSAGE_ACK_ID_ATTR_KEY, ACK_ID)
         .containsEntry(MESSAGE_DELIVERY_ATTEMPT_ATTR_KEY, DELIVERY_ATTEMPT)
         .containsEntry(MESSAGE_EXACTLY_ONCE_ATTR_KEY, EXACTLY_ONCE_ENABLED)
         .containsEntry(MESSAGE_RESULT_ATTR_KEY, PROCESS_ACTION)
-        .containsEntry(SemanticAttributes.MESSAGING_MESSAGE_ID, MESSAGE_ID);
+        .containsEntry(MESSAGING_MESSAGE_ID_ATTR_KEY, MESSAGE_ID);
   }
 
   @Test

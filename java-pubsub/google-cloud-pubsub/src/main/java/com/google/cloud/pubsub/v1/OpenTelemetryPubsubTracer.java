@@ -27,7 +27,6 @@ import io.opentelemetry.api.trace.SpanKind;
 import io.opentelemetry.api.trace.StatusCode;
 import io.opentelemetry.api.trace.Tracer;
 import io.opentelemetry.context.Context;
-import io.opentelemetry.semconv.trace.attributes.SemanticAttributes;
 import java.util.List;
 
 public class OpenTelemetryPubsubTracer {
@@ -40,6 +39,13 @@ public class OpenTelemetryPubsubTracer {
       "subscriber concurrency control";
   private static final String SUBSCRIBE_SCHEDULER_SPAN_NAME = "subscriber scheduler";
 
+  private static final String MESSAGING_SYSTEM_ATTR_KEY = "messaging.system";
+  private static final String MESSAGING_DESTINATION_NAME_ATTR_KEY = "messaging.destination.name";
+  private static final String CODE_FUNCTION_ATTR_KEY = "code.function";
+  private static final String MESSAGING_OPERATION_ATTR_KEY = "messaging.operation";
+  private static final String MESSAGING_BATCH_MESSAGE_COUNT_ATTR_KEY =
+      "messaging.batch.message_count";
+  private static final String MESSAGING_MESSAGE_ID_ATTR_KEY = "messaging.message.id";
   private static final String MESSAGE_SIZE_ATTR_KEY = "messaging.message.body.size";
   private static final String ORDERING_KEY_ATTR_KEY = "messaging.gcp_pubsub.message.ordering_key";
   private static final String MESSAGE_ACK_ID_ATTR_KEY = "messaging.gcp_pubsub.message.ack_id";
@@ -66,12 +72,12 @@ public class OpenTelemetryPubsubTracer {
       String destinationName, String projectName, String codeFunction, String operation) {
     AttributesBuilder attributesBuilder =
         Attributes.builder()
-            .put(SemanticAttributes.MESSAGING_SYSTEM, MESSAGING_SYSTEM_VALUE)
-            .put(SemanticAttributes.MESSAGING_DESTINATION_NAME, destinationName)
+            .put(MESSAGING_SYSTEM_ATTR_KEY, MESSAGING_SYSTEM_VALUE)
+            .put(MESSAGING_DESTINATION_NAME_ATTR_KEY, destinationName)
             .put(PROJECT_ATTR_KEY, projectName)
-            .put(SemanticAttributes.CODE_FUNCTION, codeFunction);
+            .put(CODE_FUNCTION_ATTR_KEY, codeFunction);
     if (operation != null) {
-      attributesBuilder.put(SemanticAttributes.MESSAGING_OPERATION, operation);
+      attributesBuilder.put(MESSAGING_OPERATION_ATTR_KEY, operation);
     }
 
     return attributesBuilder;
@@ -179,7 +185,7 @@ public class OpenTelemetryPubsubTracer {
     Attributes attributes =
         createCommonSpanAttributesBuilder(
                 topicName.getTopic(), topicName.getProject(), "publishCall", "publish")
-            .put(SemanticAttributes.MESSAGING_BATCH_MESSAGE_COUNT, messages.size())
+            .put(MESSAGING_BATCH_MESSAGE_COUNT_ATTR_KEY, messages.size())
             .build();
     SpanBuilder publishRpcSpanBuilder =
         tracer
@@ -187,7 +193,7 @@ public class OpenTelemetryPubsubTracer {
             .setSpanKind(SpanKind.CLIENT)
             .setAllAttributes(attributes);
     Attributes linkAttributes =
-        Attributes.builder().put(SemanticAttributes.MESSAGING_OPERATION, "publish").build();
+        Attributes.builder().put(MESSAGING_OPERATION_ATTR_KEY, "publish").build();
     for (PubsubMessageWrapper message : messages) {
       if (message.getPublisherSpan().getSpanContext().isSampled())
         publishRpcSpanBuilder.addLink(message.getPublisherSpan().getSpanContext(), linkAttributes);
@@ -237,7 +243,7 @@ public class OpenTelemetryPubsubTracer {
             message.getSubscriptionName(), message.getSubscriptionProject(), "onResponse", null);
 
     attributesBuilder
-        .put(SemanticAttributes.MESSAGING_MESSAGE_ID, message.getMessageId())
+        .put(MESSAGING_MESSAGE_ID_ATTR_KEY, message.getMessageId())
         .put(MESSAGE_SIZE_ATTR_KEY, message.getDataSize())
         .put(MESSAGE_ACK_ID_ATTR_KEY, message.getAckId())
         .put(MESSAGE_EXACTLY_ONCE_ATTR_KEY, exactlyOnceDeliveryEnabled);
@@ -336,8 +342,7 @@ public class OpenTelemetryPubsubTracer {
     if (subscriberSpan != null) {
       Span subscribeProcessSpan =
           startChildSpan(message.getSubscriptionName() + " process", subscriberSpan);
-      subscribeProcessSpan.setAttribute(
-          SemanticAttributes.MESSAGING_SYSTEM, MESSAGING_SYSTEM_VALUE);
+      subscribeProcessSpan.setAttribute(MESSAGING_SYSTEM_ATTR_KEY, MESSAGING_SYSTEM_VALUE);
       Span publisherSpan = message.getPublisherSpan();
       if (publisherSpan != null) {
         subscribeProcessSpan.addLink(publisherSpan.getSpanContext());
@@ -373,7 +378,7 @@ public class OpenTelemetryPubsubTracer {
                 subscriptionName.getProject(),
                 codeFunction,
                 rpcOperation)
-            .put(SemanticAttributes.MESSAGING_BATCH_MESSAGE_COUNT, messages.size());
+            .put(MESSAGING_BATCH_MESSAGE_COUNT_ATTR_KEY, messages.size());
 
     // Ack deadline and receipt modack are specific to the modack operation
     if (rpcOperation == "modack") {
@@ -388,7 +393,7 @@ public class OpenTelemetryPubsubTracer {
             .setSpanKind(SpanKind.CLIENT)
             .setAllAttributes(attributesBuilder.build());
     Attributes linkAttributes =
-        Attributes.builder().put(SemanticAttributes.MESSAGING_OPERATION, rpcOperation).build();
+        Attributes.builder().put(MESSAGING_OPERATION_ATTR_KEY, rpcOperation).build();
     for (PubsubMessageWrapper message : messages) {
       if (message.getSubscriberSpan().getSpanContext().isSampled()) {
         rpcSpanBuilder.addLink(message.getSubscriberSpan().getSpanContext(), linkAttributes);
