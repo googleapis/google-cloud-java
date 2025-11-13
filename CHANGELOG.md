@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.73.0](https://github.com/googleapis/google-cloud-java/compare/v1.72.0...v1.73.0) (2025-11-10)
+
+
+### Bug Fixes
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.54.1 ([#11783](https://github.com/googleapis/google-cloud-java/issues/11783)) ([498635b](https://github.com/googleapis/google-cloud-java/commit/498635bce111ac4313f9d0344916170f550a4823))
+
 ## [1.72.0](https://github.com/googleapis/google-cloud-java/compare/v1.71.0...v1.72.0) (2025-10-21)
 
 

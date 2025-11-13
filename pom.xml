@@ -74,11 +74,13 @@
     <module>java-containeranalysis</module>
     <module>java-contentwarehouse</module>
     <module>java-data-fusion</module>
+    <module>java-databasecenter</module>
     <module>java-datacatalog</module>
     <module>java-dataflow</module>
     <module>java-dataform</module>
     <module>java-datalabeling</module>
     <module>java-datalineage</module>
+    <module>java-datamanager</module>
     <module>java-dataplex</module>
     <module>java-dataproc</module>
     <module>java-dataproc-metastore</module>
@@ -222,6 +224,7 @@
     <module>java-trace</module>
     <module>java-translate</module>
     <module>java-valkey</module>
+    <module>java-vectorsearch</module>
     <module>java-vertexai</module>
     <module>java-video-intelligence</module>
     <module>java-video-live-stream</module>
