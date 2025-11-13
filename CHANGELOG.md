@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.33.0](https://github.com/googleapis/java-datastore/compare/v2.32.3...v2.33.0) (2025-11-13)
+
+
+### Features
+
+* Enable flag for report generation ([#1991](https://github.com/googleapis/java-datastore/issues/1991)) ([767a558](https://github.com/googleapis/java-datastore/commit/767a558d7cd8b4ba791fe5d304757e660f7935ff))
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.64.1 ([216e771](https://github.com/googleapis/java-datastore/commit/216e771f9181f03f4add7e35bf11c5f64f80b6a7))
+
+
+### Dependencies
+
+* Manage Opentelemetry version from Shared-Deps ([#1995](https://github.com/googleapis/java-datastore/issues/1995)) ([5f6c500](https://github.com/googleapis/java-datastore/commit/5f6c500d3fb092d87669550ff882782b10199a03))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.54.1 ([#1994](https://github.com/googleapis/java-datastore/issues/1994)) ([11265fd](https://github.com/googleapis/java-datastore/commit/11265fdee02b429803d2d2c7d1e7f5a735e11757))
+
 ## [2.32.3](https://github.com/googleapis/java-datastore/compare/v2.32.2...v2.32.3) (2025-10-20)
 
 
