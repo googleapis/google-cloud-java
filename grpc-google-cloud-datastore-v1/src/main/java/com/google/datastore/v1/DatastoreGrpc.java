@@ -29,9 +29,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * the request.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/datastore/v1/datastore.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DatastoreGrpc {
 
@@ -758,8 +755,8 @@ public final class DatastoreGrpc {
      * </pre>
      */
     public com.google.datastore.v1.LookupResponse lookup(
-        com.google.datastore.v1.LookupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.datastore.v1.LookupRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getLookupMethod(), getCallOptions(), request);
     }
 
@@ -771,8 +768,8 @@ public final class DatastoreGrpc {
      * </pre>
      */
     public com.google.datastore.v1.RunQueryResponse runQuery(
-        com.google.datastore.v1.RunQueryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.datastore.v1.RunQueryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRunQueryMethod(), getCallOptions(), request);
     }
 
@@ -784,8 +781,8 @@ public final class DatastoreGrpc {
      * </pre>
      */
     public com.google.datastore.v1.RunAggregationQueryResponse runAggregationQuery(
-        com.google.datastore.v1.RunAggregationQueryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.datastore.v1.RunAggregationQueryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRunAggregationQueryMethod(), getCallOptions(), request);
     }
 
@@ -797,8 +794,8 @@ public final class DatastoreGrpc {
      * </pre>
      */
     public com.google.datastore.v1.BeginTransactionResponse beginTransaction(
-        com.google.datastore.v1.BeginTransactionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.datastore.v1.BeginTransactionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBeginTransactionMethod(), getCallOptions(), request);
     }
 
@@ -811,8 +808,8 @@ public final class DatastoreGrpc {
      * </pre>
      */
     public com.google.datastore.v1.CommitResponse commit(
-        com.google.datastore.v1.CommitRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.datastore.v1.CommitRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCommitMethod(), getCallOptions(), request);
     }
 
@@ -824,8 +821,8 @@ public final class DatastoreGrpc {
      * </pre>
      */
     public com.google.datastore.v1.RollbackResponse rollback(
-        com.google.datastore.v1.RollbackRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.datastore.v1.RollbackRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRollbackMethod(), getCallOptions(), request);
     }
 
@@ -838,8 +835,8 @@ public final class DatastoreGrpc {
      * </pre>
      */
     public com.google.datastore.v1.AllocateIdsResponse allocateIds(
-        com.google.datastore.v1.AllocateIdsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.datastore.v1.AllocateIdsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAllocateIdsMethod(), getCallOptions(), request);
     }
 
@@ -852,8 +849,8 @@ public final class DatastoreGrpc {
      * </pre>
      */
     public com.google.datastore.v1.ReserveIdsResponse reserveIds(
-        com.google.datastore.v1.ReserveIdsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.datastore.v1.ReserveIdsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReserveIdsMethod(), getCallOptions(), request);
     }
   }
