@@ -93,21 +93,29 @@ case ${JOB_TYPE} in
     fi
     ;;
   lint)
-    changed_file_list=$(git diff --name-only "${BASE_SHA}" "${HEAD_SHA}")
-    echo "${changed_file_list}"
-    has_code_change="false"
-    while IFS= read -r changed_file; do
-        if [ -n "${changed_file}" ] && [[ "${changed_file}" == *.java ]]; then
-          echo "Matched: ${changed_file}"
-          has_code_change="true"
-          break
+    if [ -n "${BASE_SHA}" ] && [ -n "${HEAD_SHA}" ]; then
+        changed_file_list=$(git diff --name-only "${BASE_SHA}" "${HEAD_SHA}")
+        echo "${changed_file_list}"
+        
+        has_code_change="false"
+        
+        while IFS= read -r changed_file; do
+            # Checks if the line is not empty AND if it matches a .java file
+            if [ -n "${changed_file}" ] && [[ "${changed_file}" == *.java ]]; then
+                echo "Matched: ${changed_file}"
+                has_code_change="true"
+                break
+            fi
+        done <<< "${changed_file_list}"
+        
+        if [ "${has_code_change}" == "false" ]; then
+            echo "No java modules affected. Skipping linter check."
+            exit 0
         fi
-    done <<< "${changed_file_list}"
-    if [ "${has_code_change}" == "false" ]; then
-        echo "No java modules affected. Skipping linter check."
-        exit 0
+    else
+        echo "BASE_SHA or HEAD_SHA is empty. Skipping file difference check."
     fi
-
+    
     mvn -B -ntp \
       -T 1.5C \
       com.spotify.fmt:fmt-maven-plugin:check
