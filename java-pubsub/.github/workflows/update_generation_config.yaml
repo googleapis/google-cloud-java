@@ -26,7 +26,7 @@ jobs:
       # the branch into which the pull request is merged
       base_branch: main
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
       with:
         fetch-depth: 0
         token: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
