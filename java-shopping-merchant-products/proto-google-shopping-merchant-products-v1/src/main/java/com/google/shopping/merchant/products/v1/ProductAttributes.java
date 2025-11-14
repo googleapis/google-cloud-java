@@ -64,9 +64,6 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     shipping_ = java.util.Collections.emptyList();
     carrierShipping_ = java.util.Collections.emptyList();
     freeShippingThreshold_ = java.util.Collections.emptyList();
-    shippingHandlingBusinessDays_ = java.util.Collections.emptyList();
-    shippingTransitBusinessDays_ = java.util.Collections.emptyList();
-    handlingCutoffTimes_ = java.util.Collections.emptyList();
     shippingLabel_ = "";
     transitTimeLabel_ = "";
     size_ = "";
@@ -1646,1118 +1643,6 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     }
 
     // @@protoc_insertion_point(enum_scope:google.shopping.merchant.products.v1.ProductAttributes.CarrierPriceOption)
-  }
-
-  public interface ShippingBusinessDaysConfigOrBuilder
-      extends
-      // @@protoc_insertion_point(interface_extends:google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     *
-     *
-     * <pre>
-     * The [CLDR territory
-     * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)
-     * of the country to which an item will ship.
-     * </pre>
-     *
-     * <code>optional string country = 1;</code>
-     *
-     * @return Whether the country field is set.
-     */
-    boolean hasCountry();
-
-    /**
-     *
-     *
-     * <pre>
-     * The [CLDR territory
-     * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)
-     * of the country to which an item will ship.
-     * </pre>
-     *
-     * <code>optional string country = 1;</code>
-     *
-     * @return The country.
-     */
-    java.lang.String getCountry();
-
-    /**
-     *
-     *
-     * <pre>
-     * The [CLDR territory
-     * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)
-     * of the country to which an item will ship.
-     * </pre>
-     *
-     * <code>optional string country = 1;</code>
-     *
-     * @return The bytes for country.
-     */
-    com.google.protobuf.ByteString getCountryBytes();
-
-    /**
-     *
-     *
-     * <pre>
-     * Effective days of the week considered for the delivery time calculation.
-     * May not be empty. The more business days included the faster the
-     * delivery. Can be set through individual days (e.g. `MTWRF`), or day
-     * ranges (e.g. `Mon-Fri`). For more information about accepted formats,
-     * see [Shipping handling business
-     * days](https://support.google.com/merchants/answer/16072859).
-     * </pre>
-     *
-     * <code>optional string business_days = 2;</code>
-     *
-     * @return Whether the businessDays field is set.
-     */
-    boolean hasBusinessDays();
-
-    /**
-     *
-     *
-     * <pre>
-     * Effective days of the week considered for the delivery time calculation.
-     * May not be empty. The more business days included the faster the
-     * delivery. Can be set through individual days (e.g. `MTWRF`), or day
-     * ranges (e.g. `Mon-Fri`). For more information about accepted formats,
-     * see [Shipping handling business
-     * days](https://support.google.com/merchants/answer/16072859).
-     * </pre>
-     *
-     * <code>optional string business_days = 2;</code>
-     *
-     * @return The businessDays.
-     */
-    java.lang.String getBusinessDays();
-
-    /**
-     *
-     *
-     * <pre>
-     * Effective days of the week considered for the delivery time calculation.
-     * May not be empty. The more business days included the faster the
-     * delivery. Can be set through individual days (e.g. `MTWRF`), or day
-     * ranges (e.g. `Mon-Fri`). For more information about accepted formats,
-     * see [Shipping handling business
-     * days](https://support.google.com/merchants/answer/16072859).
-     * </pre>
-     *
-     * <code>optional string business_days = 2;</code>
-     *
-     * @return The bytes for businessDays.
-     */
-    com.google.protobuf.ByteString getBusinessDaysBytes();
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * The business days during which orders are on their path to fulfillment.
-   * If not provided, Monday to Friday business days will be assumed.
-   * </pre>
-   *
-   * Protobuf type {@code
-   * google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig}
-   */
-  public static final class ShippingBusinessDaysConfig
-      extends com.google.protobuf.GeneratedMessageV3
-      implements
-      // @@protoc_insertion_point(message_implements:google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig)
-      ShippingBusinessDaysConfigOrBuilder {
-    private static final long serialVersionUID = 0L;
-
-    // Use ShippingBusinessDaysConfig.newBuilder() to construct.
-    private ShippingBusinessDaysConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-
-    private ShippingBusinessDaysConfig() {
-      country_ = "";
-      businessDays_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-      return new ShippingBusinessDaysConfig();
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.shopping.merchant.products.v1.ProductsCommonProto
-          .internal_static_google_shopping_merchant_products_v1_ProductAttributes_ShippingBusinessDaysConfig_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.google.shopping.merchant.products.v1.ProductsCommonProto
-          .internal_static_google_shopping_merchant_products_v1_ProductAttributes_ShippingBusinessDaysConfig_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-                  .class,
-              com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-                  .Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int COUNTRY_FIELD_NUMBER = 1;
-
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object country_ = "";
-
-    /**
-     *
-     *
-     * <pre>
-     * The [CLDR territory
-     * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)
-     * of the country to which an item will ship.
-     * </pre>
-     *
-     * <code>optional string country = 1;</code>
-     *
-     * @return Whether the country field is set.
-     */
-    @java.lang.Override
-    public boolean hasCountry() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The [CLDR territory
-     * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)
-     * of the country to which an item will ship.
-     * </pre>
-     *
-     * <code>optional string country = 1;</code>
-     *
-     * @return The country.
-     */
-    @java.lang.Override
-    public java.lang.String getCountry() {
-      java.lang.Object ref = country_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        country_ = s;
-        return s;
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The [CLDR territory
-     * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)
-     * of the country to which an item will ship.
-     * </pre>
-     *
-     * <code>optional string country = 1;</code>
-     *
-     * @return The bytes for country.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getCountryBytes() {
-      java.lang.Object ref = country_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        country_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int BUSINESS_DAYS_FIELD_NUMBER = 2;
-
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object businessDays_ = "";
-
-    /**
-     *
-     *
-     * <pre>
-     * Effective days of the week considered for the delivery time calculation.
-     * May not be empty. The more business days included the faster the
-     * delivery. Can be set through individual days (e.g. `MTWRF`), or day
-     * ranges (e.g. `Mon-Fri`). For more information about accepted formats,
-     * see [Shipping handling business
-     * days](https://support.google.com/merchants/answer/16072859).
-     * </pre>
-     *
-     * <code>optional string business_days = 2;</code>
-     *
-     * @return Whether the businessDays field is set.
-     */
-    @java.lang.Override
-    public boolean hasBusinessDays() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Effective days of the week considered for the delivery time calculation.
-     * May not be empty. The more business days included the faster the
-     * delivery. Can be set through individual days (e.g. `MTWRF`), or day
-     * ranges (e.g. `Mon-Fri`). For more information about accepted formats,
-     * see [Shipping handling business
-     * days](https://support.google.com/merchants/answer/16072859).
-     * </pre>
-     *
-     * <code>optional string business_days = 2;</code>
-     *
-     * @return The businessDays.
-     */
-    @java.lang.Override
-    public java.lang.String getBusinessDays() {
-      java.lang.Object ref = businessDays_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        businessDays_ = s;
-        return s;
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Effective days of the week considered for the delivery time calculation.
-     * May not be empty. The more business days included the faster the
-     * delivery. Can be set through individual days (e.g. `MTWRF`), or day
-     * ranges (e.g. `Mon-Fri`). For more information about accepted formats,
-     * see [Shipping handling business
-     * days](https://support.google.com/merchants/answer/16072859).
-     * </pre>
-     *
-     * <code>optional string business_days = 2;</code>
-     *
-     * @return The bytes for businessDays.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getBusinessDaysBytes() {
-      java.lang.Object ref = businessDays_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        businessDays_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, country_);
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, businessDays_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, country_);
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, businessDays_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-        return true;
-      }
-      if (!(obj
-          instanceof
-          com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig)) {
-        return super.equals(obj);
-      }
-      com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig other =
-          (com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig)
-              obj;
-
-      if (hasCountry() != other.hasCountry()) return false;
-      if (hasCountry()) {
-        if (!getCountry().equals(other.getCountry())) return false;
-      }
-      if (hasBusinessDays() != other.hasBusinessDays()) return false;
-      if (hasBusinessDays()) {
-        if (!getBusinessDays().equals(other.getBusinessDays())) return false;
-      }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasCountry()) {
-        hash = (37 * hash) + COUNTRY_FIELD_NUMBER;
-        hash = (53 * hash) + getCountry().hashCode();
-      }
-      if (hasBusinessDays()) {
-        hash = (37 * hash) + BUSINESS_DAYS_FIELD_NUMBER;
-        hash = (53 * hash) + getBusinessDays().hashCode();
-      }
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.google.shopping.merchant.products.v1.ProductAttributes
-            .ShippingBusinessDaysConfig
-        parseFrom(java.nio.ByteBuffer data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.shopping.merchant.products.v1.ProductAttributes
-            .ShippingBusinessDaysConfig
-        parseFrom(
-            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.shopping.merchant.products.v1.ProductAttributes
-            .ShippingBusinessDaysConfig
-        parseFrom(com.google.protobuf.ByteString data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.shopping.merchant.products.v1.ProductAttributes
-            .ShippingBusinessDaysConfig
-        parseFrom(
-            com.google.protobuf.ByteString data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.shopping.merchant.products.v1.ProductAttributes
-            .ShippingBusinessDaysConfig
-        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.shopping.merchant.products.v1.ProductAttributes
-            .ShippingBusinessDaysConfig
-        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.shopping.merchant.products.v1.ProductAttributes
-            .ShippingBusinessDaysConfig
-        parseFrom(java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.shopping.merchant.products.v1.ProductAttributes
-            .ShippingBusinessDaysConfig
-        parseFrom(
-            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.shopping.merchant.products.v1.ProductAttributes
-            .ShippingBusinessDaysConfig
-        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static com.google.shopping.merchant.products.v1.ProductAttributes
-            .ShippingBusinessDaysConfig
-        parseDelimitedFrom(
-            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.shopping.merchant.products.v1.ProductAttributes
-            .ShippingBusinessDaysConfig
-        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.shopping.merchant.products.v1.ProductAttributes
-            .ShippingBusinessDaysConfig
-        parseFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() {
-      return newBuilder();
-    }
-
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-
-    public static Builder newBuilder(
-        com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-            prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders are on their path to fulfillment.
-     * If not provided, Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * Protobuf type {@code
-     * google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig}
-     */
-    public static final class Builder
-        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-        implements
-        // @@protoc_insertion_point(builder_implements:google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig)
-        com.google.shopping.merchant.products.v1.ProductAttributes
-            .ShippingBusinessDaysConfigOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.shopping.merchant.products.v1.ProductsCommonProto
-            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_ShippingBusinessDaysConfig_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.google.shopping.merchant.products.v1.ProductsCommonProto
-            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_ShippingBusinessDaysConfig_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.google.shopping.merchant.products.v1.ProductAttributes
-                    .ShippingBusinessDaysConfig.class,
-                com.google.shopping.merchant.products.v1.ProductAttributes
-                    .ShippingBusinessDaysConfig.Builder.class);
-      }
-
-      // Construct using
-      // com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig.newBuilder()
-      private Builder() {}
-
-      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-      }
-
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        bitField0_ = 0;
-        country_ = "";
-        businessDays_ = "";
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.shopping.merchant.products.v1.ProductsCommonProto
-            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_ShippingBusinessDaysConfig_descriptor;
-      }
-
-      @java.lang.Override
-      public com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-          getDefaultInstanceForType() {
-        return com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-            .getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-          build() {
-        com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-            result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-          buildPartial() {
-        com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-            result =
-                new com.google.shopping.merchant.products.v1.ProductAttributes
-                    .ShippingBusinessDaysConfig(this);
-        if (bitField0_ != 0) {
-          buildPartial0(result);
-        }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartial0(
-          com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-              result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.country_ = country_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.businessDays_ = businessDays_;
-          to_bitField0_ |= 0x00000002;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.setField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-
-      @java.lang.Override
-      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index,
-          java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other
-            instanceof
-            com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig) {
-          return mergeFrom(
-              (com.google.shopping.merchant.products.v1.ProductAttributes
-                      .ShippingBusinessDaysConfig)
-                  other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(
-          com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-              other) {
-        if (other
-            == com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-                .getDefaultInstance()) return this;
-        if (other.hasCountry()) {
-          country_ = other.country_;
-          bitField0_ |= 0x00000001;
-          onChanged();
-        }
-        if (other.hasBusinessDays()) {
-          businessDays_ = other.businessDays_;
-          bitField0_ |= 0x00000002;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  country_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000001;
-                  break;
-                } // case 10
-              case 18:
-                {
-                  businessDays_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000002;
-                  break;
-                } // case 18
-              default:
-                {
-                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                    done = true; // was an endgroup tag
-                  }
-                  break;
-                } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-
-      private int bitField0_;
-
-      private java.lang.Object country_ = "";
-
-      /**
-       *
-       *
-       * <pre>
-       * The [CLDR territory
-       * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)
-       * of the country to which an item will ship.
-       * </pre>
-       *
-       * <code>optional string country = 1;</code>
-       *
-       * @return Whether the country field is set.
-       */
-      public boolean hasCountry() {
-        return ((bitField0_ & 0x00000001) != 0);
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * The [CLDR territory
-       * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)
-       * of the country to which an item will ship.
-       * </pre>
-       *
-       * <code>optional string country = 1;</code>
-       *
-       * @return The country.
-       */
-      public java.lang.String getCountry() {
-        java.lang.Object ref = country_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          country_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * The [CLDR territory
-       * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)
-       * of the country to which an item will ship.
-       * </pre>
-       *
-       * <code>optional string country = 1;</code>
-       *
-       * @return The bytes for country.
-       */
-      public com.google.protobuf.ByteString getCountryBytes() {
-        java.lang.Object ref = country_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-          country_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * The [CLDR territory
-       * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)
-       * of the country to which an item will ship.
-       * </pre>
-       *
-       * <code>optional string country = 1;</code>
-       *
-       * @param value The country to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCountry(java.lang.String value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        country_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * The [CLDR territory
-       * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)
-       * of the country to which an item will ship.
-       * </pre>
-       *
-       * <code>optional string country = 1;</code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearCountry() {
-        country_ = getDefaultInstance().getCountry();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * The [CLDR territory
-       * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)
-       * of the country to which an item will ship.
-       * </pre>
-       *
-       * <code>optional string country = 1;</code>
-       *
-       * @param value The bytes for country to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCountryBytes(com.google.protobuf.ByteString value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-        country_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object businessDays_ = "";
-
-      /**
-       *
-       *
-       * <pre>
-       * Effective days of the week considered for the delivery time calculation.
-       * May not be empty. The more business days included the faster the
-       * delivery. Can be set through individual days (e.g. `MTWRF`), or day
-       * ranges (e.g. `Mon-Fri`). For more information about accepted formats,
-       * see [Shipping handling business
-       * days](https://support.google.com/merchants/answer/16072859).
-       * </pre>
-       *
-       * <code>optional string business_days = 2;</code>
-       *
-       * @return Whether the businessDays field is set.
-       */
-      public boolean hasBusinessDays() {
-        return ((bitField0_ & 0x00000002) != 0);
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Effective days of the week considered for the delivery time calculation.
-       * May not be empty. The more business days included the faster the
-       * delivery. Can be set through individual days (e.g. `MTWRF`), or day
-       * ranges (e.g. `Mon-Fri`). For more information about accepted formats,
-       * see [Shipping handling business
-       * days](https://support.google.com/merchants/answer/16072859).
-       * </pre>
-       *
-       * <code>optional string business_days = 2;</code>
-       *
-       * @return The businessDays.
-       */
-      public java.lang.String getBusinessDays() {
-        java.lang.Object ref = businessDays_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          businessDays_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Effective days of the week considered for the delivery time calculation.
-       * May not be empty. The more business days included the faster the
-       * delivery. Can be set through individual days (e.g. `MTWRF`), or day
-       * ranges (e.g. `Mon-Fri`). For more information about accepted formats,
-       * see [Shipping handling business
-       * days](https://support.google.com/merchants/answer/16072859).
-       * </pre>
-       *
-       * <code>optional string business_days = 2;</code>
-       *
-       * @return The bytes for businessDays.
-       */
-      public com.google.protobuf.ByteString getBusinessDaysBytes() {
-        java.lang.Object ref = businessDays_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-          businessDays_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Effective days of the week considered for the delivery time calculation.
-       * May not be empty. The more business days included the faster the
-       * delivery. Can be set through individual days (e.g. `MTWRF`), or day
-       * ranges (e.g. `Mon-Fri`). For more information about accepted formats,
-       * see [Shipping handling business
-       * days](https://support.google.com/merchants/answer/16072859).
-       * </pre>
-       *
-       * <code>optional string business_days = 2;</code>
-       *
-       * @param value The businessDays to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBusinessDays(java.lang.String value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        businessDays_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Effective days of the week considered for the delivery time calculation.
-       * May not be empty. The more business days included the faster the
-       * delivery. Can be set through individual days (e.g. `MTWRF`), or day
-       * ranges (e.g. `Mon-Fri`). For more information about accepted formats,
-       * see [Shipping handling business
-       * days](https://support.google.com/merchants/answer/16072859).
-       * </pre>
-       *
-       * <code>optional string business_days = 2;</code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearBusinessDays() {
-        businessDays_ = getDefaultInstance().getBusinessDays();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Effective days of the week considered for the delivery time calculation.
-       * May not be empty. The more business days included the faster the
-       * delivery. Can be set through individual days (e.g. `MTWRF`), or day
-       * ranges (e.g. `Mon-Fri`). For more information about accepted formats,
-       * see [Shipping handling business
-       * days](https://support.google.com/merchants/answer/16072859).
-       * </pre>
-       *
-       * <code>optional string business_days = 2;</code>
-       *
-       * @param value The bytes for businessDays to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBusinessDaysBytes(com.google.protobuf.ByteString value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-        businessDays_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-      // @@protoc_insertion_point(builder_scope:google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig)
-    private static final com.google.shopping.merchant.products.v1.ProductAttributes
-            .ShippingBusinessDaysConfig
-        DEFAULT_INSTANCE;
-
-    static {
-      DEFAULT_INSTANCE =
-          new com.google.shopping.merchant.products.v1.ProductAttributes
-              .ShippingBusinessDaysConfig();
-    }
-
-    public static com.google.shopping.merchant.products.v1.ProductAttributes
-            .ShippingBusinessDaysConfig
-        getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ShippingBusinessDaysConfig> PARSER =
-        new com.google.protobuf.AbstractParser<ShippingBusinessDaysConfig>() {
-          @java.lang.Override
-          public ShippingBusinessDaysConfig parsePartialFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            Builder builder = newBuilder();
-            try {
-              builder.mergeFrom(input, extensionRegistry);
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              throw e.setUnfinishedMessage(builder.buildPartial());
-            } catch (com.google.protobuf.UninitializedMessageException e) {
-              throw e.asInvalidProtocolBufferException()
-                  .setUnfinishedMessage(builder.buildPartial());
-            } catch (java.io.IOException e) {
-              throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                  .setUnfinishedMessage(builder.buildPartial());
-            }
-            return builder.buildPartial();
-          }
-        };
-
-    public static com.google.protobuf.Parser<ShippingBusinessDaysConfig> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ShippingBusinessDaysConfig> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-        getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
   }
 
   public interface CarrierShippingOrBuilder
@@ -9999,299 +8884,6 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     return minHandlingTime_;
   }
 
-  public static final int SHIPPING_HANDLING_BUSINESS_DAYS_FIELD_NUMBER = 143;
-
-  @SuppressWarnings("serial")
-  private java.util.List<
-          com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig>
-      shippingHandlingBusinessDays_;
-
-  /**
-   *
-   *
-   * <pre>
-   * The business days during which orders can be handled. If not provided,
-   * Monday to Friday business days will be assumed.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_handling_business_days = 143;
-   * </code>
-   */
-  @java.lang.Override
-  public java.util.List<
-          com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig>
-      getShippingHandlingBusinessDaysList() {
-    return shippingHandlingBusinessDays_;
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * The business days during which orders can be handled. If not provided,
-   * Monday to Friday business days will be assumed.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_handling_business_days = 143;
-   * </code>
-   */
-  @java.lang.Override
-  public java.util.List<
-          ? extends
-              com.google.shopping.merchant.products.v1.ProductAttributes
-                  .ShippingBusinessDaysConfigOrBuilder>
-      getShippingHandlingBusinessDaysOrBuilderList() {
-    return shippingHandlingBusinessDays_;
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * The business days during which orders can be handled. If not provided,
-   * Monday to Friday business days will be assumed.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_handling_business_days = 143;
-   * </code>
-   */
-  @java.lang.Override
-  public int getShippingHandlingBusinessDaysCount() {
-    return shippingHandlingBusinessDays_.size();
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * The business days during which orders can be handled. If not provided,
-   * Monday to Friday business days will be assumed.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_handling_business_days = 143;
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-      getShippingHandlingBusinessDays(int index) {
-    return shippingHandlingBusinessDays_.get(index);
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * The business days during which orders can be handled. If not provided,
-   * Monday to Friday business days will be assumed.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_handling_business_days = 143;
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.shopping.merchant.products.v1.ProductAttributes
-          .ShippingBusinessDaysConfigOrBuilder
-      getShippingHandlingBusinessDaysOrBuilder(int index) {
-    return shippingHandlingBusinessDays_.get(index);
-  }
-
-  public static final int SHIPPING_TRANSIT_BUSINESS_DAYS_FIELD_NUMBER = 144;
-
-  @SuppressWarnings("serial")
-  private java.util.List<
-          com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig>
-      shippingTransitBusinessDays_;
-
-  /**
-   *
-   *
-   * <pre>
-   * The business days during which orders are in transit.
-   * If not provided, Monday to Friday business days will be assumed.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_transit_business_days = 144;
-   * </code>
-   */
-  @java.lang.Override
-  public java.util.List<
-          com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig>
-      getShippingTransitBusinessDaysList() {
-    return shippingTransitBusinessDays_;
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * The business days during which orders are in transit.
-   * If not provided, Monday to Friday business days will be assumed.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_transit_business_days = 144;
-   * </code>
-   */
-  @java.lang.Override
-  public java.util.List<
-          ? extends
-              com.google.shopping.merchant.products.v1.ProductAttributes
-                  .ShippingBusinessDaysConfigOrBuilder>
-      getShippingTransitBusinessDaysOrBuilderList() {
-    return shippingTransitBusinessDays_;
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * The business days during which orders are in transit.
-   * If not provided, Monday to Friday business days will be assumed.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_transit_business_days = 144;
-   * </code>
-   */
-  @java.lang.Override
-  public int getShippingTransitBusinessDaysCount() {
-    return shippingTransitBusinessDays_.size();
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * The business days during which orders are in transit.
-   * If not provided, Monday to Friday business days will be assumed.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_transit_business_days = 144;
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-      getShippingTransitBusinessDays(int index) {
-    return shippingTransitBusinessDays_.get(index);
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * The business days during which orders are in transit.
-   * If not provided, Monday to Friday business days will be assumed.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_transit_business_days = 144;
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.shopping.merchant.products.v1.ProductAttributes
-          .ShippingBusinessDaysConfigOrBuilder
-      getShippingTransitBusinessDaysOrBuilder(int index) {
-    return shippingTransitBusinessDays_.get(index);
-  }
-
-  public static final int HANDLING_CUTOFF_TIMES_FIELD_NUMBER = 141;
-
-  @SuppressWarnings("serial")
-  private java.util.List<com.google.shopping.merchant.products.v1.HandlingCutoffTime>
-      handlingCutoffTimes_;
-
-  /**
-   *
-   *
-   * <pre>
-   * The handling cutoff times for shipping.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.shopping.merchant.products.v1.HandlingCutoffTime handling_cutoff_times = 141;
-   * </code>
-   */
-  @java.lang.Override
-  public java.util.List<com.google.shopping.merchant.products.v1.HandlingCutoffTime>
-      getHandlingCutoffTimesList() {
-    return handlingCutoffTimes_;
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * The handling cutoff times for shipping.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.shopping.merchant.products.v1.HandlingCutoffTime handling_cutoff_times = 141;
-   * </code>
-   */
-  @java.lang.Override
-  public java.util.List<
-          ? extends com.google.shopping.merchant.products.v1.HandlingCutoffTimeOrBuilder>
-      getHandlingCutoffTimesOrBuilderList() {
-    return handlingCutoffTimes_;
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * The handling cutoff times for shipping.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.shopping.merchant.products.v1.HandlingCutoffTime handling_cutoff_times = 141;
-   * </code>
-   */
-  @java.lang.Override
-  public int getHandlingCutoffTimesCount() {
-    return handlingCutoffTimes_.size();
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * The handling cutoff times for shipping.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.shopping.merchant.products.v1.HandlingCutoffTime handling_cutoff_times = 141;
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.shopping.merchant.products.v1.HandlingCutoffTime getHandlingCutoffTimes(
-      int index) {
-    return handlingCutoffTimes_.get(index);
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * The handling cutoff times for shipping.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.shopping.merchant.products.v1.HandlingCutoffTime handling_cutoff_times = 141;
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.shopping.merchant.products.v1.HandlingCutoffTimeOrBuilder
-      getHandlingCutoffTimesOrBuilder(int index) {
-    return handlingCutoffTimes_.get(index);
-  }
-
   public static final int SHIPPING_LABEL_FIELD_NUMBER = 46;
 
   @SuppressWarnings("serial")
@@ -13944,17 +12536,8 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     for (int i = 0; i < gtins_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 140, gtins_.getRaw(i));
     }
-    for (int i = 0; i < handlingCutoffTimes_.size(); i++) {
-      output.writeMessage(141, handlingCutoffTimes_.get(i));
-    }
     for (int i = 0; i < carrierShipping_.size(); i++) {
       output.writeMessage(142, carrierShipping_.get(i));
-    }
-    for (int i = 0; i < shippingHandlingBusinessDays_.size(); i++) {
-      output.writeMessage(143, shippingHandlingBusinessDays_.get(i));
-    }
-    for (int i = 0; i < shippingTransitBusinessDays_.size(); i++) {
-      output.writeMessage(144, shippingTransitBusinessDays_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -14329,24 +12912,9 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       size += dataSize;
       size += 2 * getGtinsList().size();
     }
-    for (int i = 0; i < handlingCutoffTimes_.size(); i++) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              141, handlingCutoffTimes_.get(i));
-    }
     for (int i = 0; i < carrierShipping_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(142, carrierShipping_.get(i));
-    }
-    for (int i = 0; i < shippingHandlingBusinessDays_.size(); i++) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              143, shippingHandlingBusinessDays_.get(i));
-    }
-    for (int i = 0; i < shippingTransitBusinessDays_.size(); i++) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              144, shippingTransitBusinessDays_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -14535,11 +13103,6 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     if (hasMinHandlingTime()) {
       if (getMinHandlingTime() != other.getMinHandlingTime()) return false;
     }
-    if (!getShippingHandlingBusinessDaysList().equals(other.getShippingHandlingBusinessDaysList()))
-      return false;
-    if (!getShippingTransitBusinessDaysList().equals(other.getShippingTransitBusinessDaysList()))
-      return false;
-    if (!getHandlingCutoffTimesList().equals(other.getHandlingCutoffTimesList())) return false;
     if (hasShippingLabel() != other.hasShippingLabel()) return false;
     if (hasShippingLabel()) {
       if (!getShippingLabel().equals(other.getShippingLabel())) return false;
@@ -14888,18 +13451,6 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + MIN_HANDLING_TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMinHandlingTime());
     }
-    if (getShippingHandlingBusinessDaysCount() > 0) {
-      hash = (37 * hash) + SHIPPING_HANDLING_BUSINESS_DAYS_FIELD_NUMBER;
-      hash = (53 * hash) + getShippingHandlingBusinessDaysList().hashCode();
-    }
-    if (getShippingTransitBusinessDaysCount() > 0) {
-      hash = (37 * hash) + SHIPPING_TRANSIT_BUSINESS_DAYS_FIELD_NUMBER;
-      hash = (53 * hash) + getShippingTransitBusinessDaysList().hashCode();
-    }
-    if (getHandlingCutoffTimesCount() > 0) {
-      hash = (37 * hash) + HANDLING_CUTOFF_TIMES_FIELD_NUMBER;
-      hash = (53 * hash) + getHandlingCutoffTimesList().hashCode();
-    }
     if (hasShippingLabel()) {
       hash = (37 * hash) + SHIPPING_LABEL_FIELD_NUMBER;
       hash = (53 * hash) + getShippingLabel().hashCode();
@@ -15247,9 +13798,6 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         getShippingLengthFieldBuilder();
         getShippingWidthFieldBuilder();
         getShippingHeightFieldBuilder();
-        getShippingHandlingBusinessDaysFieldBuilder();
-        getShippingTransitBusinessDaysFieldBuilder();
-        getHandlingCutoffTimesFieldBuilder();
         getUnitPricingMeasureFieldBuilder();
         getUnitPricingBaseMeasureFieldBuilder();
         getCostOfGoodsSoldFieldBuilder();
@@ -15413,33 +13961,12 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       maxHandlingTime_ = 0L;
       minHandlingTime_ = 0L;
-      if (shippingHandlingBusinessDaysBuilder_ == null) {
-        shippingHandlingBusinessDays_ = java.util.Collections.emptyList();
-      } else {
-        shippingHandlingBusinessDays_ = null;
-        shippingHandlingBusinessDaysBuilder_.clear();
-      }
-      bitField1_ = (bitField1_ & ~0x00010000);
-      if (shippingTransitBusinessDaysBuilder_ == null) {
-        shippingTransitBusinessDays_ = java.util.Collections.emptyList();
-      } else {
-        shippingTransitBusinessDays_ = null;
-        shippingTransitBusinessDaysBuilder_.clear();
-      }
-      bitField1_ = (bitField1_ & ~0x00020000);
-      if (handlingCutoffTimesBuilder_ == null) {
-        handlingCutoffTimes_ = java.util.Collections.emptyList();
-      } else {
-        handlingCutoffTimes_ = null;
-        handlingCutoffTimesBuilder_.clear();
-      }
-      bitField1_ = (bitField1_ & ~0x00040000);
       shippingLabel_ = "";
       transitTimeLabel_ = "";
       size_ = "";
       sizeSystem_ = 0;
       sizeTypes_ = java.util.Collections.emptyList();
-      bitField1_ = (bitField1_ & ~0x00800000);
+      bitField1_ = (bitField1_ & ~0x00100000);
       energyEfficiencyClass_ = 0;
       minEnergyEfficiencyClass_ = 0;
       maxEnergyEfficiencyClass_ = 0;
@@ -15468,7 +13995,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         productDetails_ = null;
         productDetailsBuilder_.clear();
       }
-      bitField2_ = (bitField2_ & ~0x00000004);
+      bitField1_ = (bitField1_ & ~0x80000000);
       productHighlights_ = com.google.protobuf.LazyStringArrayList.emptyList();
       displayAdsId_ = "";
       displayAdsSimilarIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
@@ -15486,9 +14013,9 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       customLabel3_ = "";
       customLabel4_ = "";
       includedDestinations_ = java.util.Collections.emptyList();
-      bitField2_ = (bitField2_ & ~0x00080000);
+      bitField2_ = (bitField2_ & ~0x00010000);
       excludedDestinations_ = java.util.Collections.emptyList();
-      bitField2_ = (bitField2_ & ~0x00100000);
+      bitField2_ = (bitField2_ & ~0x00020000);
       shoppingAdsExcludedCountries_ = com.google.protobuf.LazyStringArrayList.emptyList();
       externalSellerId_ = "";
       pause_ = 0;
@@ -15499,7 +14026,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         cloudExportAdditionalProperties_ = null;
         cloudExportAdditionalPropertiesBuilder_.clear();
       }
-      bitField2_ = (bitField2_ & ~0x02000000);
+      bitField2_ = (bitField2_ & ~0x00400000);
       virtualModelLink_ = "";
       if (certificationsBuilder_ == null) {
         certifications_ = java.util.Collections.emptyList();
@@ -15507,7 +14034,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         certifications_ = null;
         certificationsBuilder_.clear();
       }
-      bitField2_ = (bitField2_ & ~0x08000000);
+      bitField2_ = (bitField2_ & ~0x01000000);
       structuredTitle_ = null;
       if (structuredTitleBuilder_ != null) {
         structuredTitleBuilder_.dispose();
@@ -15529,7 +14056,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         sustainabilityIncentives_ = null;
         sustainabilityIncentivesBuilder_.clear();
       }
-      bitField2_ = (bitField2_ & ~0x80000000);
+      bitField2_ = (bitField2_ & ~0x10000000);
       return this;
     }
 
@@ -15609,83 +14136,54 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         result.freeShippingThreshold_ = freeShippingThresholdBuilder_.build();
       }
-      if (shippingHandlingBusinessDaysBuilder_ == null) {
-        if (((bitField1_ & 0x00010000) != 0)) {
-          shippingHandlingBusinessDays_ =
-              java.util.Collections.unmodifiableList(shippingHandlingBusinessDays_);
-          bitField1_ = (bitField1_ & ~0x00010000);
-        }
-        result.shippingHandlingBusinessDays_ = shippingHandlingBusinessDays_;
-      } else {
-        result.shippingHandlingBusinessDays_ = shippingHandlingBusinessDaysBuilder_.build();
-      }
-      if (shippingTransitBusinessDaysBuilder_ == null) {
-        if (((bitField1_ & 0x00020000) != 0)) {
-          shippingTransitBusinessDays_ =
-              java.util.Collections.unmodifiableList(shippingTransitBusinessDays_);
-          bitField1_ = (bitField1_ & ~0x00020000);
-        }
-        result.shippingTransitBusinessDays_ = shippingTransitBusinessDays_;
-      } else {
-        result.shippingTransitBusinessDays_ = shippingTransitBusinessDaysBuilder_.build();
-      }
-      if (handlingCutoffTimesBuilder_ == null) {
-        if (((bitField1_ & 0x00040000) != 0)) {
-          handlingCutoffTimes_ = java.util.Collections.unmodifiableList(handlingCutoffTimes_);
-          bitField1_ = (bitField1_ & ~0x00040000);
-        }
-        result.handlingCutoffTimes_ = handlingCutoffTimes_;
-      } else {
-        result.handlingCutoffTimes_ = handlingCutoffTimesBuilder_.build();
-      }
-      if (((bitField1_ & 0x00800000) != 0)) {
+      if (((bitField1_ & 0x00100000) != 0)) {
         sizeTypes_ = java.util.Collections.unmodifiableList(sizeTypes_);
-        bitField1_ = (bitField1_ & ~0x00800000);
+        bitField1_ = (bitField1_ & ~0x00100000);
       }
       result.sizeTypes_ = sizeTypes_;
       if (productDetailsBuilder_ == null) {
-        if (((bitField2_ & 0x00000004) != 0)) {
+        if (((bitField1_ & 0x80000000) != 0)) {
           productDetails_ = java.util.Collections.unmodifiableList(productDetails_);
-          bitField2_ = (bitField2_ & ~0x00000004);
+          bitField1_ = (bitField1_ & ~0x80000000);
         }
         result.productDetails_ = productDetails_;
       } else {
         result.productDetails_ = productDetailsBuilder_.build();
       }
-      if (((bitField2_ & 0x00080000) != 0)) {
+      if (((bitField2_ & 0x00010000) != 0)) {
         includedDestinations_ = java.util.Collections.unmodifiableList(includedDestinations_);
-        bitField2_ = (bitField2_ & ~0x00080000);
+        bitField2_ = (bitField2_ & ~0x00010000);
       }
       result.includedDestinations_ = includedDestinations_;
-      if (((bitField2_ & 0x00100000) != 0)) {
+      if (((bitField2_ & 0x00020000) != 0)) {
         excludedDestinations_ = java.util.Collections.unmodifiableList(excludedDestinations_);
-        bitField2_ = (bitField2_ & ~0x00100000);
+        bitField2_ = (bitField2_ & ~0x00020000);
       }
       result.excludedDestinations_ = excludedDestinations_;
       if (cloudExportAdditionalPropertiesBuilder_ == null) {
-        if (((bitField2_ & 0x02000000) != 0)) {
+        if (((bitField2_ & 0x00400000) != 0)) {
           cloudExportAdditionalProperties_ =
               java.util.Collections.unmodifiableList(cloudExportAdditionalProperties_);
-          bitField2_ = (bitField2_ & ~0x02000000);
+          bitField2_ = (bitField2_ & ~0x00400000);
         }
         result.cloudExportAdditionalProperties_ = cloudExportAdditionalProperties_;
       } else {
         result.cloudExportAdditionalProperties_ = cloudExportAdditionalPropertiesBuilder_.build();
       }
       if (certificationsBuilder_ == null) {
-        if (((bitField2_ & 0x08000000) != 0)) {
+        if (((bitField2_ & 0x01000000) != 0)) {
           certifications_ = java.util.Collections.unmodifiableList(certifications_);
-          bitField2_ = (bitField2_ & ~0x08000000);
+          bitField2_ = (bitField2_ & ~0x01000000);
         }
         result.certifications_ = certifications_;
       } else {
         result.certifications_ = certificationsBuilder_.build();
       }
       if (sustainabilityIncentivesBuilder_ == null) {
-        if (((bitField2_ & 0x80000000) != 0)) {
+        if (((bitField2_ & 0x10000000) != 0)) {
           sustainabilityIncentives_ =
               java.util.Collections.unmodifiableList(sustainabilityIncentives_);
-          bitField2_ = (bitField2_ & ~0x80000000);
+          bitField2_ = (bitField2_ & ~0x10000000);
         }
         result.sustainabilityIncentives_ = sustainabilityIncentives_;
       } else {
@@ -15899,59 +14397,68 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         result.minHandlingTime_ = minHandlingTime_;
         to_bitField1_ |= 0x00000100;
       }
-      if (((from_bitField1_ & 0x00080000) != 0)) {
+      if (((from_bitField1_ & 0x00010000) != 0)) {
         result.shippingLabel_ = shippingLabel_;
         to_bitField1_ |= 0x00000200;
       }
-      if (((from_bitField1_ & 0x00100000) != 0)) {
+      if (((from_bitField1_ & 0x00020000) != 0)) {
         result.transitTimeLabel_ = transitTimeLabel_;
         to_bitField1_ |= 0x00000400;
       }
-      if (((from_bitField1_ & 0x00200000) != 0)) {
+      if (((from_bitField1_ & 0x00040000) != 0)) {
         result.size_ = size_;
         to_bitField1_ |= 0x00000800;
       }
-      if (((from_bitField1_ & 0x00400000) != 0)) {
+      if (((from_bitField1_ & 0x00080000) != 0)) {
         result.sizeSystem_ = sizeSystem_;
         to_bitField1_ |= 0x00001000;
       }
-      if (((from_bitField1_ & 0x01000000) != 0)) {
+      if (((from_bitField1_ & 0x00200000) != 0)) {
         result.energyEfficiencyClass_ = energyEfficiencyClass_;
         to_bitField1_ |= 0x00002000;
       }
-      if (((from_bitField1_ & 0x02000000) != 0)) {
+      if (((from_bitField1_ & 0x00400000) != 0)) {
         result.minEnergyEfficiencyClass_ = minEnergyEfficiencyClass_;
         to_bitField1_ |= 0x00004000;
       }
-      if (((from_bitField1_ & 0x04000000) != 0)) {
+      if (((from_bitField1_ & 0x00800000) != 0)) {
         result.maxEnergyEfficiencyClass_ = maxEnergyEfficiencyClass_;
         to_bitField1_ |= 0x00008000;
       }
-      if (((from_bitField1_ & 0x08000000) != 0)) {
+      if (((from_bitField1_ & 0x01000000) != 0)) {
         result.unitPricingMeasure_ =
             unitPricingMeasureBuilder_ == null
                 ? unitPricingMeasure_
                 : unitPricingMeasureBuilder_.build();
         to_bitField1_ |= 0x00010000;
       }
-      if (((from_bitField1_ & 0x10000000) != 0)) {
+      if (((from_bitField1_ & 0x02000000) != 0)) {
         result.unitPricingBaseMeasure_ =
             unitPricingBaseMeasureBuilder_ == null
                 ? unitPricingBaseMeasure_
                 : unitPricingBaseMeasureBuilder_.build();
         to_bitField1_ |= 0x00020000;
       }
-      if (((from_bitField1_ & 0x20000000) != 0)) {
+      if (((from_bitField1_ & 0x04000000) != 0)) {
         result.multipack_ = multipack_;
         to_bitField1_ |= 0x00040000;
       }
-      if (((from_bitField1_ & 0x40000000) != 0)) {
+      if (((from_bitField1_ & 0x08000000) != 0)) {
         result.adsGrouping_ = adsGrouping_;
         to_bitField1_ |= 0x00080000;
       }
-      if (((from_bitField1_ & 0x80000000) != 0)) {
+      if (((from_bitField1_ & 0x10000000) != 0)) {
         adsLabels_.makeImmutable();
         result.adsLabels_ = adsLabels_;
+      }
+      if (((from_bitField1_ & 0x20000000) != 0)) {
+        result.adsRedirect_ = adsRedirect_;
+        to_bitField1_ |= 0x00100000;
+      }
+      if (((from_bitField1_ & 0x40000000) != 0)) {
+        result.costOfGoodsSold_ =
+            costOfGoodsSoldBuilder_ == null ? costOfGoodsSold_ : costOfGoodsSoldBuilder_.build();
+        to_bitField1_ |= 0x00200000;
       }
       result.bitField0_ |= to_bitField0_;
       result.bitField1_ |= to_bitField1_;
@@ -15959,114 +14466,105 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
 
     private void buildPartial2(com.google.shopping.merchant.products.v1.ProductAttributes result) {
       int from_bitField2_ = bitField2_;
-      int to_bitField1_ = 0;
       if (((from_bitField2_ & 0x00000001) != 0)) {
-        result.adsRedirect_ = adsRedirect_;
-        to_bitField1_ |= 0x00100000;
-      }
-      if (((from_bitField2_ & 0x00000002) != 0)) {
-        result.costOfGoodsSold_ =
-            costOfGoodsSoldBuilder_ == null ? costOfGoodsSold_ : costOfGoodsSoldBuilder_.build();
-        to_bitField1_ |= 0x00200000;
-      }
-      if (((from_bitField2_ & 0x00000008) != 0)) {
         productHighlights_.makeImmutable();
         result.productHighlights_ = productHighlights_;
       }
-      if (((from_bitField2_ & 0x00000010) != 0)) {
+      int to_bitField1_ = 0;
+      if (((from_bitField2_ & 0x00000002) != 0)) {
         result.displayAdsId_ = displayAdsId_;
         to_bitField1_ |= 0x00400000;
       }
-      if (((from_bitField2_ & 0x00000020) != 0)) {
+      if (((from_bitField2_ & 0x00000004) != 0)) {
         displayAdsSimilarIds_.makeImmutable();
         result.displayAdsSimilarIds_ = displayAdsSimilarIds_;
       }
-      if (((from_bitField2_ & 0x00000040) != 0)) {
+      if (((from_bitField2_ & 0x00000008) != 0)) {
         result.displayAdsTitle_ = displayAdsTitle_;
         to_bitField1_ |= 0x00800000;
       }
-      if (((from_bitField2_ & 0x00000080) != 0)) {
+      if (((from_bitField2_ & 0x00000010) != 0)) {
         result.displayAdsLink_ = displayAdsLink_;
         to_bitField1_ |= 0x01000000;
       }
-      if (((from_bitField2_ & 0x00000100) != 0)) {
+      if (((from_bitField2_ & 0x00000020) != 0)) {
         result.displayAdsValue_ = displayAdsValue_;
         to_bitField1_ |= 0x02000000;
       }
-      if (((from_bitField2_ & 0x00000200) != 0)) {
+      if (((from_bitField2_ & 0x00000040) != 0)) {
         promotionIds_.makeImmutable();
         result.promotionIds_ = promotionIds_;
       }
-      if (((from_bitField2_ & 0x00000400) != 0)) {
+      if (((from_bitField2_ & 0x00000080) != 0)) {
         result.pickupMethod_ = pickupMethod_;
         to_bitField1_ |= 0x04000000;
       }
-      if (((from_bitField2_ & 0x00000800) != 0)) {
+      if (((from_bitField2_ & 0x00000100) != 0)) {
         result.pickupSla_ = pickupSla_;
         to_bitField1_ |= 0x08000000;
       }
-      if (((from_bitField2_ & 0x00001000) != 0)) {
+      if (((from_bitField2_ & 0x00000200) != 0)) {
         result.linkTemplate_ = linkTemplate_;
         to_bitField1_ |= 0x10000000;
       }
-      if (((from_bitField2_ & 0x00002000) != 0)) {
+      if (((from_bitField2_ & 0x00000400) != 0)) {
         result.mobileLinkTemplate_ = mobileLinkTemplate_;
         to_bitField1_ |= 0x20000000;
       }
-      if (((from_bitField2_ & 0x00004000) != 0)) {
+      if (((from_bitField2_ & 0x00000800) != 0)) {
         result.customLabel0_ = customLabel0_;
         to_bitField1_ |= 0x40000000;
       }
-      if (((from_bitField2_ & 0x00008000) != 0)) {
+      if (((from_bitField2_ & 0x00001000) != 0)) {
         result.customLabel1_ = customLabel1_;
         to_bitField1_ |= 0x80000000;
       }
       int to_bitField2_ = 0;
-      if (((from_bitField2_ & 0x00010000) != 0)) {
+      if (((from_bitField2_ & 0x00002000) != 0)) {
         result.customLabel2_ = customLabel2_;
         to_bitField2_ |= 0x00000001;
       }
-      if (((from_bitField2_ & 0x00020000) != 0)) {
+      if (((from_bitField2_ & 0x00004000) != 0)) {
         result.customLabel3_ = customLabel3_;
         to_bitField2_ |= 0x00000002;
       }
-      if (((from_bitField2_ & 0x00040000) != 0)) {
+      if (((from_bitField2_ & 0x00008000) != 0)) {
         result.customLabel4_ = customLabel4_;
         to_bitField2_ |= 0x00000004;
       }
-      if (((from_bitField2_ & 0x00200000) != 0)) {
+      if (((from_bitField2_ & 0x00040000) != 0)) {
         shoppingAdsExcludedCountries_.makeImmutable();
         result.shoppingAdsExcludedCountries_ = shoppingAdsExcludedCountries_;
       }
-      if (((from_bitField2_ & 0x00400000) != 0)) {
+      if (((from_bitField2_ & 0x00080000) != 0)) {
         result.externalSellerId_ = externalSellerId_;
         to_bitField2_ |= 0x00000008;
       }
-      if (((from_bitField2_ & 0x00800000) != 0)) {
+      if (((from_bitField2_ & 0x00100000) != 0)) {
         result.pause_ = pause_;
         to_bitField2_ |= 0x00000010;
       }
-      if (((from_bitField2_ & 0x01000000) != 0)) {
+      if (((from_bitField2_ & 0x00200000) != 0)) {
         lifestyleImageLinks_.makeImmutable();
         result.lifestyleImageLinks_ = lifestyleImageLinks_;
       }
-      if (((from_bitField2_ & 0x04000000) != 0)) {
+      if (((from_bitField2_ & 0x00800000) != 0)) {
         result.virtualModelLink_ = virtualModelLink_;
         to_bitField2_ |= 0x00000020;
       }
-      if (((from_bitField2_ & 0x10000000) != 0)) {
+      if (((from_bitField2_ & 0x02000000) != 0)) {
         result.structuredTitle_ =
             structuredTitleBuilder_ == null ? structuredTitle_ : structuredTitleBuilder_.build();
         to_bitField2_ |= 0x00000040;
       }
-      if (((from_bitField2_ & 0x20000000) != 0)) {
+      if (((from_bitField2_ & 0x04000000) != 0)) {
         result.structuredDescription_ =
             structuredDescriptionBuilder_ == null
                 ? structuredDescription_
                 : structuredDescriptionBuilder_.build();
         to_bitField2_ |= 0x00000080;
       }
-      if (((from_bitField2_ & 0x40000000) != 0)) {
+      if (((from_bitField2_ & 0x08000000) != 0)) {
         result.autoPricingMinPrice_ =
             autoPricingMinPriceBuilder_ == null
                 ? autoPricingMinPrice_
@@ -16410,101 +14908,19 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (other.hasMinHandlingTime()) {
         setMinHandlingTime(other.getMinHandlingTime());
       }
-      if (shippingHandlingBusinessDaysBuilder_ == null) {
-        if (!other.shippingHandlingBusinessDays_.isEmpty()) {
-          if (shippingHandlingBusinessDays_.isEmpty()) {
-            shippingHandlingBusinessDays_ = other.shippingHandlingBusinessDays_;
-            bitField1_ = (bitField1_ & ~0x00010000);
-          } else {
-            ensureShippingHandlingBusinessDaysIsMutable();
-            shippingHandlingBusinessDays_.addAll(other.shippingHandlingBusinessDays_);
-          }
-          onChanged();
-        }
-      } else {
-        if (!other.shippingHandlingBusinessDays_.isEmpty()) {
-          if (shippingHandlingBusinessDaysBuilder_.isEmpty()) {
-            shippingHandlingBusinessDaysBuilder_.dispose();
-            shippingHandlingBusinessDaysBuilder_ = null;
-            shippingHandlingBusinessDays_ = other.shippingHandlingBusinessDays_;
-            bitField1_ = (bitField1_ & ~0x00010000);
-            shippingHandlingBusinessDaysBuilder_ =
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
-                    ? getShippingHandlingBusinessDaysFieldBuilder()
-                    : null;
-          } else {
-            shippingHandlingBusinessDaysBuilder_.addAllMessages(
-                other.shippingHandlingBusinessDays_);
-          }
-        }
-      }
-      if (shippingTransitBusinessDaysBuilder_ == null) {
-        if (!other.shippingTransitBusinessDays_.isEmpty()) {
-          if (shippingTransitBusinessDays_.isEmpty()) {
-            shippingTransitBusinessDays_ = other.shippingTransitBusinessDays_;
-            bitField1_ = (bitField1_ & ~0x00020000);
-          } else {
-            ensureShippingTransitBusinessDaysIsMutable();
-            shippingTransitBusinessDays_.addAll(other.shippingTransitBusinessDays_);
-          }
-          onChanged();
-        }
-      } else {
-        if (!other.shippingTransitBusinessDays_.isEmpty()) {
-          if (shippingTransitBusinessDaysBuilder_.isEmpty()) {
-            shippingTransitBusinessDaysBuilder_.dispose();
-            shippingTransitBusinessDaysBuilder_ = null;
-            shippingTransitBusinessDays_ = other.shippingTransitBusinessDays_;
-            bitField1_ = (bitField1_ & ~0x00020000);
-            shippingTransitBusinessDaysBuilder_ =
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
-                    ? getShippingTransitBusinessDaysFieldBuilder()
-                    : null;
-          } else {
-            shippingTransitBusinessDaysBuilder_.addAllMessages(other.shippingTransitBusinessDays_);
-          }
-        }
-      }
-      if (handlingCutoffTimesBuilder_ == null) {
-        if (!other.handlingCutoffTimes_.isEmpty()) {
-          if (handlingCutoffTimes_.isEmpty()) {
-            handlingCutoffTimes_ = other.handlingCutoffTimes_;
-            bitField1_ = (bitField1_ & ~0x00040000);
-          } else {
-            ensureHandlingCutoffTimesIsMutable();
-            handlingCutoffTimes_.addAll(other.handlingCutoffTimes_);
-          }
-          onChanged();
-        }
-      } else {
-        if (!other.handlingCutoffTimes_.isEmpty()) {
-          if (handlingCutoffTimesBuilder_.isEmpty()) {
-            handlingCutoffTimesBuilder_.dispose();
-            handlingCutoffTimesBuilder_ = null;
-            handlingCutoffTimes_ = other.handlingCutoffTimes_;
-            bitField1_ = (bitField1_ & ~0x00040000);
-            handlingCutoffTimesBuilder_ =
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
-                    ? getHandlingCutoffTimesFieldBuilder()
-                    : null;
-          } else {
-            handlingCutoffTimesBuilder_.addAllMessages(other.handlingCutoffTimes_);
-          }
-        }
-      }
       if (other.hasShippingLabel()) {
         shippingLabel_ = other.shippingLabel_;
-        bitField1_ |= 0x00080000;
+        bitField1_ |= 0x00010000;
         onChanged();
       }
       if (other.hasTransitTimeLabel()) {
         transitTimeLabel_ = other.transitTimeLabel_;
-        bitField1_ |= 0x00100000;
+        bitField1_ |= 0x00020000;
         onChanged();
       }
       if (other.hasSize()) {
         size_ = other.size_;
-        bitField1_ |= 0x00200000;
+        bitField1_ |= 0x00040000;
         onChanged();
       }
       if (other.hasSizeSystem()) {
@@ -16513,7 +14929,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!other.sizeTypes_.isEmpty()) {
         if (sizeTypes_.isEmpty()) {
           sizeTypes_ = other.sizeTypes_;
-          bitField1_ = (bitField1_ & ~0x00800000);
+          bitField1_ = (bitField1_ & ~0x00100000);
         } else {
           ensureSizeTypesIsMutable();
           sizeTypes_.addAll(other.sizeTypes_);
@@ -16540,13 +14956,13 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasAdsGrouping()) {
         adsGrouping_ = other.adsGrouping_;
-        bitField1_ |= 0x40000000;
+        bitField1_ |= 0x08000000;
         onChanged();
       }
       if (!other.adsLabels_.isEmpty()) {
         if (adsLabels_.isEmpty()) {
           adsLabels_ = other.adsLabels_;
-          bitField1_ |= 0x80000000;
+          bitField1_ |= 0x10000000;
         } else {
           ensureAdsLabelsIsMutable();
           adsLabels_.addAll(other.adsLabels_);
@@ -16555,7 +14971,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasAdsRedirect()) {
         adsRedirect_ = other.adsRedirect_;
-        bitField2_ |= 0x00000001;
+        bitField1_ |= 0x20000000;
         onChanged();
       }
       if (other.hasCostOfGoodsSold()) {
@@ -16565,7 +14981,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         if (!other.productDetails_.isEmpty()) {
           if (productDetails_.isEmpty()) {
             productDetails_ = other.productDetails_;
-            bitField2_ = (bitField2_ & ~0x00000004);
+            bitField1_ = (bitField1_ & ~0x80000000);
           } else {
             ensureProductDetailsIsMutable();
             productDetails_.addAll(other.productDetails_);
@@ -16578,7 +14994,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             productDetailsBuilder_.dispose();
             productDetailsBuilder_ = null;
             productDetails_ = other.productDetails_;
-            bitField2_ = (bitField2_ & ~0x00000004);
+            bitField1_ = (bitField1_ & ~0x80000000);
             productDetailsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getProductDetailsFieldBuilder()
@@ -16591,7 +15007,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!other.productHighlights_.isEmpty()) {
         if (productHighlights_.isEmpty()) {
           productHighlights_ = other.productHighlights_;
-          bitField2_ |= 0x00000008;
+          bitField2_ |= 0x00000001;
         } else {
           ensureProductHighlightsIsMutable();
           productHighlights_.addAll(other.productHighlights_);
@@ -16600,13 +15016,13 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasDisplayAdsId()) {
         displayAdsId_ = other.displayAdsId_;
-        bitField2_ |= 0x00000010;
+        bitField2_ |= 0x00000002;
         onChanged();
       }
       if (!other.displayAdsSimilarIds_.isEmpty()) {
         if (displayAdsSimilarIds_.isEmpty()) {
           displayAdsSimilarIds_ = other.displayAdsSimilarIds_;
-          bitField2_ |= 0x00000020;
+          bitField2_ |= 0x00000004;
         } else {
           ensureDisplayAdsSimilarIdsIsMutable();
           displayAdsSimilarIds_.addAll(other.displayAdsSimilarIds_);
@@ -16615,12 +15031,12 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasDisplayAdsTitle()) {
         displayAdsTitle_ = other.displayAdsTitle_;
-        bitField2_ |= 0x00000040;
+        bitField2_ |= 0x00000008;
         onChanged();
       }
       if (other.hasDisplayAdsLink()) {
         displayAdsLink_ = other.displayAdsLink_;
-        bitField2_ |= 0x00000080;
+        bitField2_ |= 0x00000010;
         onChanged();
       }
       if (other.hasDisplayAdsValue()) {
@@ -16629,7 +15045,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!other.promotionIds_.isEmpty()) {
         if (promotionIds_.isEmpty()) {
           promotionIds_ = other.promotionIds_;
-          bitField2_ |= 0x00000200;
+          bitField2_ |= 0x00000040;
         } else {
           ensurePromotionIdsIsMutable();
           promotionIds_.addAll(other.promotionIds_);
@@ -16644,43 +15060,43 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasLinkTemplate()) {
         linkTemplate_ = other.linkTemplate_;
-        bitField2_ |= 0x00001000;
+        bitField2_ |= 0x00000200;
         onChanged();
       }
       if (other.hasMobileLinkTemplate()) {
         mobileLinkTemplate_ = other.mobileLinkTemplate_;
-        bitField2_ |= 0x00002000;
+        bitField2_ |= 0x00000400;
         onChanged();
       }
       if (other.hasCustomLabel0()) {
         customLabel0_ = other.customLabel0_;
-        bitField2_ |= 0x00004000;
+        bitField2_ |= 0x00000800;
         onChanged();
       }
       if (other.hasCustomLabel1()) {
         customLabel1_ = other.customLabel1_;
-        bitField2_ |= 0x00008000;
+        bitField2_ |= 0x00001000;
         onChanged();
       }
       if (other.hasCustomLabel2()) {
         customLabel2_ = other.customLabel2_;
-        bitField2_ |= 0x00010000;
+        bitField2_ |= 0x00002000;
         onChanged();
       }
       if (other.hasCustomLabel3()) {
         customLabel3_ = other.customLabel3_;
-        bitField2_ |= 0x00020000;
+        bitField2_ |= 0x00004000;
         onChanged();
       }
       if (other.hasCustomLabel4()) {
         customLabel4_ = other.customLabel4_;
-        bitField2_ |= 0x00040000;
+        bitField2_ |= 0x00008000;
         onChanged();
       }
       if (!other.includedDestinations_.isEmpty()) {
         if (includedDestinations_.isEmpty()) {
           includedDestinations_ = other.includedDestinations_;
-          bitField2_ = (bitField2_ & ~0x00080000);
+          bitField2_ = (bitField2_ & ~0x00010000);
         } else {
           ensureIncludedDestinationsIsMutable();
           includedDestinations_.addAll(other.includedDestinations_);
@@ -16690,7 +15106,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!other.excludedDestinations_.isEmpty()) {
         if (excludedDestinations_.isEmpty()) {
           excludedDestinations_ = other.excludedDestinations_;
-          bitField2_ = (bitField2_ & ~0x00100000);
+          bitField2_ = (bitField2_ & ~0x00020000);
         } else {
           ensureExcludedDestinationsIsMutable();
           excludedDestinations_.addAll(other.excludedDestinations_);
@@ -16700,7 +15116,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!other.shoppingAdsExcludedCountries_.isEmpty()) {
         if (shoppingAdsExcludedCountries_.isEmpty()) {
           shoppingAdsExcludedCountries_ = other.shoppingAdsExcludedCountries_;
-          bitField2_ |= 0x00200000;
+          bitField2_ |= 0x00040000;
         } else {
           ensureShoppingAdsExcludedCountriesIsMutable();
           shoppingAdsExcludedCountries_.addAll(other.shoppingAdsExcludedCountries_);
@@ -16709,7 +15125,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasExternalSellerId()) {
         externalSellerId_ = other.externalSellerId_;
-        bitField2_ |= 0x00400000;
+        bitField2_ |= 0x00080000;
         onChanged();
       }
       if (other.hasPause()) {
@@ -16718,7 +15134,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!other.lifestyleImageLinks_.isEmpty()) {
         if (lifestyleImageLinks_.isEmpty()) {
           lifestyleImageLinks_ = other.lifestyleImageLinks_;
-          bitField2_ |= 0x01000000;
+          bitField2_ |= 0x00200000;
         } else {
           ensureLifestyleImageLinksIsMutable();
           lifestyleImageLinks_.addAll(other.lifestyleImageLinks_);
@@ -16729,7 +15145,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         if (!other.cloudExportAdditionalProperties_.isEmpty()) {
           if (cloudExportAdditionalProperties_.isEmpty()) {
             cloudExportAdditionalProperties_ = other.cloudExportAdditionalProperties_;
-            bitField2_ = (bitField2_ & ~0x02000000);
+            bitField2_ = (bitField2_ & ~0x00400000);
           } else {
             ensureCloudExportAdditionalPropertiesIsMutable();
             cloudExportAdditionalProperties_.addAll(other.cloudExportAdditionalProperties_);
@@ -16742,7 +15158,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             cloudExportAdditionalPropertiesBuilder_.dispose();
             cloudExportAdditionalPropertiesBuilder_ = null;
             cloudExportAdditionalProperties_ = other.cloudExportAdditionalProperties_;
-            bitField2_ = (bitField2_ & ~0x02000000);
+            bitField2_ = (bitField2_ & ~0x00400000);
             cloudExportAdditionalPropertiesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCloudExportAdditionalPropertiesFieldBuilder()
@@ -16755,14 +15171,14 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasVirtualModelLink()) {
         virtualModelLink_ = other.virtualModelLink_;
-        bitField2_ |= 0x04000000;
+        bitField2_ |= 0x00800000;
         onChanged();
       }
       if (certificationsBuilder_ == null) {
         if (!other.certifications_.isEmpty()) {
           if (certifications_.isEmpty()) {
             certifications_ = other.certifications_;
-            bitField2_ = (bitField2_ & ~0x08000000);
+            bitField2_ = (bitField2_ & ~0x01000000);
           } else {
             ensureCertificationsIsMutable();
             certifications_.addAll(other.certifications_);
@@ -16775,7 +15191,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             certificationsBuilder_.dispose();
             certificationsBuilder_ = null;
             certifications_ = other.certifications_;
-            bitField2_ = (bitField2_ & ~0x08000000);
+            bitField2_ = (bitField2_ & ~0x01000000);
             certificationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCertificationsFieldBuilder()
@@ -16798,7 +15214,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         if (!other.sustainabilityIncentives_.isEmpty()) {
           if (sustainabilityIncentives_.isEmpty()) {
             sustainabilityIncentives_ = other.sustainabilityIncentives_;
-            bitField2_ = (bitField2_ & ~0x80000000);
+            bitField2_ = (bitField2_ & ~0x10000000);
           } else {
             ensureSustainabilityIncentivesIsMutable();
             sustainabilityIncentives_.addAll(other.sustainabilityIncentives_);
@@ -16811,7 +15227,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             sustainabilityIncentivesBuilder_.dispose();
             sustainabilityIncentivesBuilder_ = null;
             sustainabilityIncentives_ = other.sustainabilityIncentives_;
-            bitField2_ = (bitField2_ & ~0x80000000);
+            bitField2_ = (bitField2_ & ~0x10000000);
             sustainabilityIncentivesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSustainabilityIncentivesFieldBuilder()
@@ -16850,7 +15266,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 externalSellerId_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00400000;
+                bitField2_ |= 0x00080000;
                 break;
               } // case 10
             case 32:
@@ -16911,7 +15327,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             case 104:
               {
                 pause_ = input.readEnum();
-                bitField2_ |= 0x00800000;
+                bitField2_ |= 0x00100000;
                 break;
               } // case 104
             case 114:
@@ -17110,25 +15526,25 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             case 370:
               {
                 shippingLabel_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00080000;
+                bitField1_ |= 0x00010000;
                 break;
               } // case 370
             case 378:
               {
                 transitTimeLabel_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00100000;
+                bitField1_ |= 0x00020000;
                 break;
               } // case 378
             case 386:
               {
                 size_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00200000;
+                bitField1_ |= 0x00040000;
                 break;
               } // case 386
             case 392:
               {
                 sizeSystem_ = input.readEnum();
-                bitField1_ |= 0x00400000;
+                bitField1_ |= 0x00080000;
                 break;
               } // case 392
             case 400:
@@ -17153,45 +15569,45 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             case 424:
               {
                 energyEfficiencyClass_ = input.readEnum();
-                bitField1_ |= 0x01000000;
+                bitField1_ |= 0x00200000;
                 break;
               } // case 424
             case 432:
               {
                 minEnergyEfficiencyClass_ = input.readEnum();
-                bitField1_ |= 0x02000000;
+                bitField1_ |= 0x00400000;
                 break;
               } // case 432
             case 440:
               {
                 maxEnergyEfficiencyClass_ = input.readEnum();
-                bitField1_ |= 0x04000000;
+                bitField1_ |= 0x00800000;
                 break;
               } // case 440
             case 450:
               {
                 input.readMessage(
                     getUnitPricingMeasureFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x08000000;
+                bitField1_ |= 0x01000000;
                 break;
               } // case 450
             case 458:
               {
                 input.readMessage(
                     getUnitPricingBaseMeasureFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x10000000;
+                bitField1_ |= 0x02000000;
                 break;
               } // case 458
             case 464:
               {
                 multipack_ = input.readInt64();
-                bitField1_ |= 0x20000000;
+                bitField1_ |= 0x04000000;
                 break;
               } // case 464
             case 474:
               {
                 adsGrouping_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x40000000;
+                bitField1_ |= 0x08000000;
                 break;
               } // case 474
             case 482:
@@ -17204,13 +15620,13 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             case 490:
               {
                 adsRedirect_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00000001;
+                bitField1_ |= 0x20000000;
                 break;
               } // case 490
             case 498:
               {
                 input.readMessage(getCostOfGoodsSoldFieldBuilder().getBuilder(), extensionRegistry);
-                bitField2_ |= 0x00000002;
+                bitField1_ |= 0x40000000;
                 break;
               } // case 498
             case 506:
@@ -17237,7 +15653,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             case 522:
               {
                 displayAdsId_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00000010;
+                bitField2_ |= 0x00000002;
                 break;
               } // case 522
             case 530:
@@ -17250,19 +15666,19 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             case 538:
               {
                 displayAdsTitle_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00000040;
+                bitField2_ |= 0x00000008;
                 break;
               } // case 538
             case 546:
               {
                 displayAdsLink_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00000080;
+                bitField2_ |= 0x00000010;
                 break;
               } // case 546
             case 553:
               {
                 displayAdsValue_ = input.readDouble();
-                bitField2_ |= 0x00000100;
+                bitField2_ |= 0x00000020;
                 break;
               } // case 553
             case 562:
@@ -17275,31 +15691,31 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             case 570:
               {
                 customLabel0_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00004000;
+                bitField2_ |= 0x00000800;
                 break;
               } // case 570
             case 578:
               {
                 customLabel1_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00008000;
+                bitField2_ |= 0x00001000;
                 break;
               } // case 578
             case 586:
               {
                 customLabel2_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00010000;
+                bitField2_ |= 0x00002000;
                 break;
               } // case 586
             case 594:
               {
                 customLabel3_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00020000;
+                bitField2_ |= 0x00004000;
                 break;
               } // case 594
             case 602:
               {
                 customLabel4_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00040000;
+                bitField2_ |= 0x00008000;
                 break;
               } // case 602
             case 608:
@@ -17356,25 +15772,25 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             case 640:
               {
                 pickupMethod_ = input.readEnum();
-                bitField2_ |= 0x00000400;
+                bitField2_ |= 0x00000080;
                 break;
               } // case 640
             case 648:
               {
                 pickupSla_ = input.readEnum();
-                bitField2_ |= 0x00000800;
+                bitField2_ |= 0x00000100;
                 break;
               } // case 648
             case 658:
               {
                 linkTemplate_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00001000;
+                bitField2_ |= 0x00000200;
                 break;
               } // case 658
             case 666:
               {
                 mobileLinkTemplate_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00002000;
+                bitField2_ |= 0x00000400;
                 break;
               } // case 666
             case 674:
@@ -17434,26 +15850,26 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
               {
                 input.readMessage(
                     getAutoPricingMinPriceFieldBuilder().getBuilder(), extensionRegistry);
-                bitField2_ |= 0x40000000;
+                bitField2_ |= 0x08000000;
                 break;
               } // case 994
             case 1042:
               {
                 virtualModelLink_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x04000000;
+                bitField2_ |= 0x00800000;
                 break;
               } // case 1042
             case 1058:
               {
                 input.readMessage(getStructuredTitleFieldBuilder().getBuilder(), extensionRegistry);
-                bitField2_ |= 0x10000000;
+                bitField2_ |= 0x02000000;
                 break;
               } // case 1058
             case 1066:
               {
                 input.readMessage(
                     getStructuredDescriptionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField2_ |= 0x20000000;
+                bitField2_ |= 0x04000000;
                 break;
               } // case 1066
             case 1082:
@@ -17513,20 +15929,6 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
                 gtins_.add(s);
                 break;
               } // case 1122
-            case 1130:
-              {
-                com.google.shopping.merchant.products.v1.HandlingCutoffTime m =
-                    input.readMessage(
-                        com.google.shopping.merchant.products.v1.HandlingCutoffTime.parser(),
-                        extensionRegistry);
-                if (handlingCutoffTimesBuilder_ == null) {
-                  ensureHandlingCutoffTimesIsMutable();
-                  handlingCutoffTimes_.add(m);
-                } else {
-                  handlingCutoffTimesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 1130
             case 1138:
               {
                 com.google.shopping.merchant.products.v1.ProductAttributes.CarrierShipping m =
@@ -17542,40 +15944,6 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
                 }
                 break;
               } // case 1138
-            case 1146:
-              {
-                com.google.shopping.merchant.products.v1.ProductAttributes
-                        .ShippingBusinessDaysConfig
-                    m =
-                        input.readMessage(
-                            com.google.shopping.merchant.products.v1.ProductAttributes
-                                .ShippingBusinessDaysConfig.parser(),
-                            extensionRegistry);
-                if (shippingHandlingBusinessDaysBuilder_ == null) {
-                  ensureShippingHandlingBusinessDaysIsMutable();
-                  shippingHandlingBusinessDays_.add(m);
-                } else {
-                  shippingHandlingBusinessDaysBuilder_.addMessage(m);
-                }
-                break;
-              } // case 1146
-            case 1154:
-              {
-                com.google.shopping.merchant.products.v1.ProductAttributes
-                        .ShippingBusinessDaysConfig
-                    m =
-                        input.readMessage(
-                            com.google.shopping.merchant.products.v1.ProductAttributes
-                                .ShippingBusinessDaysConfig.parser(),
-                            extensionRegistry);
-                if (shippingTransitBusinessDaysBuilder_ == null) {
-                  ensureShippingTransitBusinessDaysIsMutable();
-                  shippingTransitBusinessDays_.add(m);
-                } else {
-                  shippingTransitBusinessDaysBuilder_.addMessage(m);
-                }
-                break;
-              } // case 1154
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -26187,1384 +24555,6 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
-    private java.util.List<
-            com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig>
-        shippingHandlingBusinessDays_ = java.util.Collections.emptyList();
-
-    private void ensureShippingHandlingBusinessDaysIsMutable() {
-      if (!((bitField1_ & 0x00010000) != 0)) {
-        shippingHandlingBusinessDays_ =
-            new java.util.ArrayList<
-                com.google.shopping.merchant.products.v1.ProductAttributes
-                    .ShippingBusinessDaysConfig>(shippingHandlingBusinessDays_);
-        bitField1_ |= 0x00010000;
-      }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig,
-            com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-                .Builder,
-            com.google.shopping.merchant.products.v1.ProductAttributes
-                .ShippingBusinessDaysConfigOrBuilder>
-        shippingHandlingBusinessDaysBuilder_;
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders can be handled. If not provided,
-     * Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_handling_business_days = 143;
-     * </code>
-     */
-    public java.util.List<
-            com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig>
-        getShippingHandlingBusinessDaysList() {
-      if (shippingHandlingBusinessDaysBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(shippingHandlingBusinessDays_);
-      } else {
-        return shippingHandlingBusinessDaysBuilder_.getMessageList();
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders can be handled. If not provided,
-     * Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_handling_business_days = 143;
-     * </code>
-     */
-    public int getShippingHandlingBusinessDaysCount() {
-      if (shippingHandlingBusinessDaysBuilder_ == null) {
-        return shippingHandlingBusinessDays_.size();
-      } else {
-        return shippingHandlingBusinessDaysBuilder_.getCount();
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders can be handled. If not provided,
-     * Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_handling_business_days = 143;
-     * </code>
-     */
-    public com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-        getShippingHandlingBusinessDays(int index) {
-      if (shippingHandlingBusinessDaysBuilder_ == null) {
-        return shippingHandlingBusinessDays_.get(index);
-      } else {
-        return shippingHandlingBusinessDaysBuilder_.getMessage(index);
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders can be handled. If not provided,
-     * Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_handling_business_days = 143;
-     * </code>
-     */
-    public Builder setShippingHandlingBusinessDays(
-        int index,
-        com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-            value) {
-      if (shippingHandlingBusinessDaysBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureShippingHandlingBusinessDaysIsMutable();
-        shippingHandlingBusinessDays_.set(index, value);
-        onChanged();
-      } else {
-        shippingHandlingBusinessDaysBuilder_.setMessage(index, value);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders can be handled. If not provided,
-     * Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_handling_business_days = 143;
-     * </code>
-     */
-    public Builder setShippingHandlingBusinessDays(
-        int index,
-        com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-                .Builder
-            builderForValue) {
-      if (shippingHandlingBusinessDaysBuilder_ == null) {
-        ensureShippingHandlingBusinessDaysIsMutable();
-        shippingHandlingBusinessDays_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        shippingHandlingBusinessDaysBuilder_.setMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders can be handled. If not provided,
-     * Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_handling_business_days = 143;
-     * </code>
-     */
-    public Builder addShippingHandlingBusinessDays(
-        com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-            value) {
-      if (shippingHandlingBusinessDaysBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureShippingHandlingBusinessDaysIsMutable();
-        shippingHandlingBusinessDays_.add(value);
-        onChanged();
-      } else {
-        shippingHandlingBusinessDaysBuilder_.addMessage(value);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders can be handled. If not provided,
-     * Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_handling_business_days = 143;
-     * </code>
-     */
-    public Builder addShippingHandlingBusinessDays(
-        int index,
-        com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-            value) {
-      if (shippingHandlingBusinessDaysBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureShippingHandlingBusinessDaysIsMutable();
-        shippingHandlingBusinessDays_.add(index, value);
-        onChanged();
-      } else {
-        shippingHandlingBusinessDaysBuilder_.addMessage(index, value);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders can be handled. If not provided,
-     * Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_handling_business_days = 143;
-     * </code>
-     */
-    public Builder addShippingHandlingBusinessDays(
-        com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-                .Builder
-            builderForValue) {
-      if (shippingHandlingBusinessDaysBuilder_ == null) {
-        ensureShippingHandlingBusinessDaysIsMutable();
-        shippingHandlingBusinessDays_.add(builderForValue.build());
-        onChanged();
-      } else {
-        shippingHandlingBusinessDaysBuilder_.addMessage(builderForValue.build());
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders can be handled. If not provided,
-     * Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_handling_business_days = 143;
-     * </code>
-     */
-    public Builder addShippingHandlingBusinessDays(
-        int index,
-        com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-                .Builder
-            builderForValue) {
-      if (shippingHandlingBusinessDaysBuilder_ == null) {
-        ensureShippingHandlingBusinessDaysIsMutable();
-        shippingHandlingBusinessDays_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        shippingHandlingBusinessDaysBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders can be handled. If not provided,
-     * Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_handling_business_days = 143;
-     * </code>
-     */
-    public Builder addAllShippingHandlingBusinessDays(
-        java.lang.Iterable<
-                ? extends
-                    com.google.shopping.merchant.products.v1.ProductAttributes
-                        .ShippingBusinessDaysConfig>
-            values) {
-      if (shippingHandlingBusinessDaysBuilder_ == null) {
-        ensureShippingHandlingBusinessDaysIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, shippingHandlingBusinessDays_);
-        onChanged();
-      } else {
-        shippingHandlingBusinessDaysBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders can be handled. If not provided,
-     * Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_handling_business_days = 143;
-     * </code>
-     */
-    public Builder clearShippingHandlingBusinessDays() {
-      if (shippingHandlingBusinessDaysBuilder_ == null) {
-        shippingHandlingBusinessDays_ = java.util.Collections.emptyList();
-        bitField1_ = (bitField1_ & ~0x00010000);
-        onChanged();
-      } else {
-        shippingHandlingBusinessDaysBuilder_.clear();
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders can be handled. If not provided,
-     * Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_handling_business_days = 143;
-     * </code>
-     */
-    public Builder removeShippingHandlingBusinessDays(int index) {
-      if (shippingHandlingBusinessDaysBuilder_ == null) {
-        ensureShippingHandlingBusinessDaysIsMutable();
-        shippingHandlingBusinessDays_.remove(index);
-        onChanged();
-      } else {
-        shippingHandlingBusinessDaysBuilder_.remove(index);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders can be handled. If not provided,
-     * Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_handling_business_days = 143;
-     * </code>
-     */
-    public com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-            .Builder
-        getShippingHandlingBusinessDaysBuilder(int index) {
-      return getShippingHandlingBusinessDaysFieldBuilder().getBuilder(index);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders can be handled. If not provided,
-     * Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_handling_business_days = 143;
-     * </code>
-     */
-    public com.google.shopping.merchant.products.v1.ProductAttributes
-            .ShippingBusinessDaysConfigOrBuilder
-        getShippingHandlingBusinessDaysOrBuilder(int index) {
-      if (shippingHandlingBusinessDaysBuilder_ == null) {
-        return shippingHandlingBusinessDays_.get(index);
-      } else {
-        return shippingHandlingBusinessDaysBuilder_.getMessageOrBuilder(index);
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders can be handled. If not provided,
-     * Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_handling_business_days = 143;
-     * </code>
-     */
-    public java.util.List<
-            ? extends
-                com.google.shopping.merchant.products.v1.ProductAttributes
-                    .ShippingBusinessDaysConfigOrBuilder>
-        getShippingHandlingBusinessDaysOrBuilderList() {
-      if (shippingHandlingBusinessDaysBuilder_ != null) {
-        return shippingHandlingBusinessDaysBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(shippingHandlingBusinessDays_);
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders can be handled. If not provided,
-     * Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_handling_business_days = 143;
-     * </code>
-     */
-    public com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-            .Builder
-        addShippingHandlingBusinessDaysBuilder() {
-      return getShippingHandlingBusinessDaysFieldBuilder()
-          .addBuilder(
-              com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-                  .getDefaultInstance());
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders can be handled. If not provided,
-     * Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_handling_business_days = 143;
-     * </code>
-     */
-    public com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-            .Builder
-        addShippingHandlingBusinessDaysBuilder(int index) {
-      return getShippingHandlingBusinessDaysFieldBuilder()
-          .addBuilder(
-              index,
-              com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-                  .getDefaultInstance());
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders can be handled. If not provided,
-     * Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_handling_business_days = 143;
-     * </code>
-     */
-    public java.util.List<
-            com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-                .Builder>
-        getShippingHandlingBusinessDaysBuilderList() {
-      return getShippingHandlingBusinessDaysFieldBuilder().getBuilderList();
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig,
-            com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-                .Builder,
-            com.google.shopping.merchant.products.v1.ProductAttributes
-                .ShippingBusinessDaysConfigOrBuilder>
-        getShippingHandlingBusinessDaysFieldBuilder() {
-      if (shippingHandlingBusinessDaysBuilder_ == null) {
-        shippingHandlingBusinessDaysBuilder_ =
-            new com.google.protobuf.RepeatedFieldBuilderV3<
-                com.google.shopping.merchant.products.v1.ProductAttributes
-                    .ShippingBusinessDaysConfig,
-                com.google.shopping.merchant.products.v1.ProductAttributes
-                    .ShippingBusinessDaysConfig.Builder,
-                com.google.shopping.merchant.products.v1.ProductAttributes
-                    .ShippingBusinessDaysConfigOrBuilder>(
-                shippingHandlingBusinessDays_,
-                ((bitField1_ & 0x00010000) != 0),
-                getParentForChildren(),
-                isClean());
-        shippingHandlingBusinessDays_ = null;
-      }
-      return shippingHandlingBusinessDaysBuilder_;
-    }
-
-    private java.util.List<
-            com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig>
-        shippingTransitBusinessDays_ = java.util.Collections.emptyList();
-
-    private void ensureShippingTransitBusinessDaysIsMutable() {
-      if (!((bitField1_ & 0x00020000) != 0)) {
-        shippingTransitBusinessDays_ =
-            new java.util.ArrayList<
-                com.google.shopping.merchant.products.v1.ProductAttributes
-                    .ShippingBusinessDaysConfig>(shippingTransitBusinessDays_);
-        bitField1_ |= 0x00020000;
-      }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig,
-            com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-                .Builder,
-            com.google.shopping.merchant.products.v1.ProductAttributes
-                .ShippingBusinessDaysConfigOrBuilder>
-        shippingTransitBusinessDaysBuilder_;
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders are in transit.
-     * If not provided, Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_transit_business_days = 144;
-     * </code>
-     */
-    public java.util.List<
-            com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig>
-        getShippingTransitBusinessDaysList() {
-      if (shippingTransitBusinessDaysBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(shippingTransitBusinessDays_);
-      } else {
-        return shippingTransitBusinessDaysBuilder_.getMessageList();
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders are in transit.
-     * If not provided, Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_transit_business_days = 144;
-     * </code>
-     */
-    public int getShippingTransitBusinessDaysCount() {
-      if (shippingTransitBusinessDaysBuilder_ == null) {
-        return shippingTransitBusinessDays_.size();
-      } else {
-        return shippingTransitBusinessDaysBuilder_.getCount();
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders are in transit.
-     * If not provided, Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_transit_business_days = 144;
-     * </code>
-     */
-    public com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-        getShippingTransitBusinessDays(int index) {
-      if (shippingTransitBusinessDaysBuilder_ == null) {
-        return shippingTransitBusinessDays_.get(index);
-      } else {
-        return shippingTransitBusinessDaysBuilder_.getMessage(index);
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders are in transit.
-     * If not provided, Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_transit_business_days = 144;
-     * </code>
-     */
-    public Builder setShippingTransitBusinessDays(
-        int index,
-        com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-            value) {
-      if (shippingTransitBusinessDaysBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureShippingTransitBusinessDaysIsMutable();
-        shippingTransitBusinessDays_.set(index, value);
-        onChanged();
-      } else {
-        shippingTransitBusinessDaysBuilder_.setMessage(index, value);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders are in transit.
-     * If not provided, Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_transit_business_days = 144;
-     * </code>
-     */
-    public Builder setShippingTransitBusinessDays(
-        int index,
-        com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-                .Builder
-            builderForValue) {
-      if (shippingTransitBusinessDaysBuilder_ == null) {
-        ensureShippingTransitBusinessDaysIsMutable();
-        shippingTransitBusinessDays_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        shippingTransitBusinessDaysBuilder_.setMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders are in transit.
-     * If not provided, Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_transit_business_days = 144;
-     * </code>
-     */
-    public Builder addShippingTransitBusinessDays(
-        com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-            value) {
-      if (shippingTransitBusinessDaysBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureShippingTransitBusinessDaysIsMutable();
-        shippingTransitBusinessDays_.add(value);
-        onChanged();
-      } else {
-        shippingTransitBusinessDaysBuilder_.addMessage(value);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders are in transit.
-     * If not provided, Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_transit_business_days = 144;
-     * </code>
-     */
-    public Builder addShippingTransitBusinessDays(
-        int index,
-        com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-            value) {
-      if (shippingTransitBusinessDaysBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureShippingTransitBusinessDaysIsMutable();
-        shippingTransitBusinessDays_.add(index, value);
-        onChanged();
-      } else {
-        shippingTransitBusinessDaysBuilder_.addMessage(index, value);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders are in transit.
-     * If not provided, Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_transit_business_days = 144;
-     * </code>
-     */
-    public Builder addShippingTransitBusinessDays(
-        com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-                .Builder
-            builderForValue) {
-      if (shippingTransitBusinessDaysBuilder_ == null) {
-        ensureShippingTransitBusinessDaysIsMutable();
-        shippingTransitBusinessDays_.add(builderForValue.build());
-        onChanged();
-      } else {
-        shippingTransitBusinessDaysBuilder_.addMessage(builderForValue.build());
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders are in transit.
-     * If not provided, Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_transit_business_days = 144;
-     * </code>
-     */
-    public Builder addShippingTransitBusinessDays(
-        int index,
-        com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-                .Builder
-            builderForValue) {
-      if (shippingTransitBusinessDaysBuilder_ == null) {
-        ensureShippingTransitBusinessDaysIsMutable();
-        shippingTransitBusinessDays_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        shippingTransitBusinessDaysBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders are in transit.
-     * If not provided, Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_transit_business_days = 144;
-     * </code>
-     */
-    public Builder addAllShippingTransitBusinessDays(
-        java.lang.Iterable<
-                ? extends
-                    com.google.shopping.merchant.products.v1.ProductAttributes
-                        .ShippingBusinessDaysConfig>
-            values) {
-      if (shippingTransitBusinessDaysBuilder_ == null) {
-        ensureShippingTransitBusinessDaysIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, shippingTransitBusinessDays_);
-        onChanged();
-      } else {
-        shippingTransitBusinessDaysBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders are in transit.
-     * If not provided, Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_transit_business_days = 144;
-     * </code>
-     */
-    public Builder clearShippingTransitBusinessDays() {
-      if (shippingTransitBusinessDaysBuilder_ == null) {
-        shippingTransitBusinessDays_ = java.util.Collections.emptyList();
-        bitField1_ = (bitField1_ & ~0x00020000);
-        onChanged();
-      } else {
-        shippingTransitBusinessDaysBuilder_.clear();
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders are in transit.
-     * If not provided, Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_transit_business_days = 144;
-     * </code>
-     */
-    public Builder removeShippingTransitBusinessDays(int index) {
-      if (shippingTransitBusinessDaysBuilder_ == null) {
-        ensureShippingTransitBusinessDaysIsMutable();
-        shippingTransitBusinessDays_.remove(index);
-        onChanged();
-      } else {
-        shippingTransitBusinessDaysBuilder_.remove(index);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders are in transit.
-     * If not provided, Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_transit_business_days = 144;
-     * </code>
-     */
-    public com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-            .Builder
-        getShippingTransitBusinessDaysBuilder(int index) {
-      return getShippingTransitBusinessDaysFieldBuilder().getBuilder(index);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders are in transit.
-     * If not provided, Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_transit_business_days = 144;
-     * </code>
-     */
-    public com.google.shopping.merchant.products.v1.ProductAttributes
-            .ShippingBusinessDaysConfigOrBuilder
-        getShippingTransitBusinessDaysOrBuilder(int index) {
-      if (shippingTransitBusinessDaysBuilder_ == null) {
-        return shippingTransitBusinessDays_.get(index);
-      } else {
-        return shippingTransitBusinessDaysBuilder_.getMessageOrBuilder(index);
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders are in transit.
-     * If not provided, Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_transit_business_days = 144;
-     * </code>
-     */
-    public java.util.List<
-            ? extends
-                com.google.shopping.merchant.products.v1.ProductAttributes
-                    .ShippingBusinessDaysConfigOrBuilder>
-        getShippingTransitBusinessDaysOrBuilderList() {
-      if (shippingTransitBusinessDaysBuilder_ != null) {
-        return shippingTransitBusinessDaysBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(shippingTransitBusinessDays_);
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders are in transit.
-     * If not provided, Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_transit_business_days = 144;
-     * </code>
-     */
-    public com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-            .Builder
-        addShippingTransitBusinessDaysBuilder() {
-      return getShippingTransitBusinessDaysFieldBuilder()
-          .addBuilder(
-              com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-                  .getDefaultInstance());
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders are in transit.
-     * If not provided, Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_transit_business_days = 144;
-     * </code>
-     */
-    public com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-            .Builder
-        addShippingTransitBusinessDaysBuilder(int index) {
-      return getShippingTransitBusinessDaysFieldBuilder()
-          .addBuilder(
-              index,
-              com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-                  .getDefaultInstance());
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The business days during which orders are in transit.
-     * If not provided, Monday to Friday business days will be assumed.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig shipping_transit_business_days = 144;
-     * </code>
-     */
-    public java.util.List<
-            com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-                .Builder>
-        getShippingTransitBusinessDaysBuilderList() {
-      return getShippingTransitBusinessDaysFieldBuilder().getBuilderList();
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig,
-            com.google.shopping.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig
-                .Builder,
-            com.google.shopping.merchant.products.v1.ProductAttributes
-                .ShippingBusinessDaysConfigOrBuilder>
-        getShippingTransitBusinessDaysFieldBuilder() {
-      if (shippingTransitBusinessDaysBuilder_ == null) {
-        shippingTransitBusinessDaysBuilder_ =
-            new com.google.protobuf.RepeatedFieldBuilderV3<
-                com.google.shopping.merchant.products.v1.ProductAttributes
-                    .ShippingBusinessDaysConfig,
-                com.google.shopping.merchant.products.v1.ProductAttributes
-                    .ShippingBusinessDaysConfig.Builder,
-                com.google.shopping.merchant.products.v1.ProductAttributes
-                    .ShippingBusinessDaysConfigOrBuilder>(
-                shippingTransitBusinessDays_,
-                ((bitField1_ & 0x00020000) != 0),
-                getParentForChildren(),
-                isClean());
-        shippingTransitBusinessDays_ = null;
-      }
-      return shippingTransitBusinessDaysBuilder_;
-    }
-
-    private java.util.List<com.google.shopping.merchant.products.v1.HandlingCutoffTime>
-        handlingCutoffTimes_ = java.util.Collections.emptyList();
-
-    private void ensureHandlingCutoffTimesIsMutable() {
-      if (!((bitField1_ & 0x00040000) != 0)) {
-        handlingCutoffTimes_ =
-            new java.util.ArrayList<com.google.shopping.merchant.products.v1.HandlingCutoffTime>(
-                handlingCutoffTimes_);
-        bitField1_ |= 0x00040000;
-      }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.shopping.merchant.products.v1.HandlingCutoffTime,
-            com.google.shopping.merchant.products.v1.HandlingCutoffTime.Builder,
-            com.google.shopping.merchant.products.v1.HandlingCutoffTimeOrBuilder>
-        handlingCutoffTimesBuilder_;
-
-    /**
-     *
-     *
-     * <pre>
-     * The handling cutoff times for shipping.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.HandlingCutoffTime handling_cutoff_times = 141;
-     * </code>
-     */
-    public java.util.List<com.google.shopping.merchant.products.v1.HandlingCutoffTime>
-        getHandlingCutoffTimesList() {
-      if (handlingCutoffTimesBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(handlingCutoffTimes_);
-      } else {
-        return handlingCutoffTimesBuilder_.getMessageList();
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The handling cutoff times for shipping.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.HandlingCutoffTime handling_cutoff_times = 141;
-     * </code>
-     */
-    public int getHandlingCutoffTimesCount() {
-      if (handlingCutoffTimesBuilder_ == null) {
-        return handlingCutoffTimes_.size();
-      } else {
-        return handlingCutoffTimesBuilder_.getCount();
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The handling cutoff times for shipping.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.HandlingCutoffTime handling_cutoff_times = 141;
-     * </code>
-     */
-    public com.google.shopping.merchant.products.v1.HandlingCutoffTime getHandlingCutoffTimes(
-        int index) {
-      if (handlingCutoffTimesBuilder_ == null) {
-        return handlingCutoffTimes_.get(index);
-      } else {
-        return handlingCutoffTimesBuilder_.getMessage(index);
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The handling cutoff times for shipping.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.HandlingCutoffTime handling_cutoff_times = 141;
-     * </code>
-     */
-    public Builder setHandlingCutoffTimes(
-        int index, com.google.shopping.merchant.products.v1.HandlingCutoffTime value) {
-      if (handlingCutoffTimesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureHandlingCutoffTimesIsMutable();
-        handlingCutoffTimes_.set(index, value);
-        onChanged();
-      } else {
-        handlingCutoffTimesBuilder_.setMessage(index, value);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The handling cutoff times for shipping.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.HandlingCutoffTime handling_cutoff_times = 141;
-     * </code>
-     */
-    public Builder setHandlingCutoffTimes(
-        int index,
-        com.google.shopping.merchant.products.v1.HandlingCutoffTime.Builder builderForValue) {
-      if (handlingCutoffTimesBuilder_ == null) {
-        ensureHandlingCutoffTimesIsMutable();
-        handlingCutoffTimes_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        handlingCutoffTimesBuilder_.setMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The handling cutoff times for shipping.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.HandlingCutoffTime handling_cutoff_times = 141;
-     * </code>
-     */
-    public Builder addHandlingCutoffTimes(
-        com.google.shopping.merchant.products.v1.HandlingCutoffTime value) {
-      if (handlingCutoffTimesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureHandlingCutoffTimesIsMutable();
-        handlingCutoffTimes_.add(value);
-        onChanged();
-      } else {
-        handlingCutoffTimesBuilder_.addMessage(value);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The handling cutoff times for shipping.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.HandlingCutoffTime handling_cutoff_times = 141;
-     * </code>
-     */
-    public Builder addHandlingCutoffTimes(
-        int index, com.google.shopping.merchant.products.v1.HandlingCutoffTime value) {
-      if (handlingCutoffTimesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureHandlingCutoffTimesIsMutable();
-        handlingCutoffTimes_.add(index, value);
-        onChanged();
-      } else {
-        handlingCutoffTimesBuilder_.addMessage(index, value);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The handling cutoff times for shipping.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.HandlingCutoffTime handling_cutoff_times = 141;
-     * </code>
-     */
-    public Builder addHandlingCutoffTimes(
-        com.google.shopping.merchant.products.v1.HandlingCutoffTime.Builder builderForValue) {
-      if (handlingCutoffTimesBuilder_ == null) {
-        ensureHandlingCutoffTimesIsMutable();
-        handlingCutoffTimes_.add(builderForValue.build());
-        onChanged();
-      } else {
-        handlingCutoffTimesBuilder_.addMessage(builderForValue.build());
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The handling cutoff times for shipping.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.HandlingCutoffTime handling_cutoff_times = 141;
-     * </code>
-     */
-    public Builder addHandlingCutoffTimes(
-        int index,
-        com.google.shopping.merchant.products.v1.HandlingCutoffTime.Builder builderForValue) {
-      if (handlingCutoffTimesBuilder_ == null) {
-        ensureHandlingCutoffTimesIsMutable();
-        handlingCutoffTimes_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        handlingCutoffTimesBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The handling cutoff times for shipping.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.HandlingCutoffTime handling_cutoff_times = 141;
-     * </code>
-     */
-    public Builder addAllHandlingCutoffTimes(
-        java.lang.Iterable<? extends com.google.shopping.merchant.products.v1.HandlingCutoffTime>
-            values) {
-      if (handlingCutoffTimesBuilder_ == null) {
-        ensureHandlingCutoffTimesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, handlingCutoffTimes_);
-        onChanged();
-      } else {
-        handlingCutoffTimesBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The handling cutoff times for shipping.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.HandlingCutoffTime handling_cutoff_times = 141;
-     * </code>
-     */
-    public Builder clearHandlingCutoffTimes() {
-      if (handlingCutoffTimesBuilder_ == null) {
-        handlingCutoffTimes_ = java.util.Collections.emptyList();
-        bitField1_ = (bitField1_ & ~0x00040000);
-        onChanged();
-      } else {
-        handlingCutoffTimesBuilder_.clear();
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The handling cutoff times for shipping.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.HandlingCutoffTime handling_cutoff_times = 141;
-     * </code>
-     */
-    public Builder removeHandlingCutoffTimes(int index) {
-      if (handlingCutoffTimesBuilder_ == null) {
-        ensureHandlingCutoffTimesIsMutable();
-        handlingCutoffTimes_.remove(index);
-        onChanged();
-      } else {
-        handlingCutoffTimesBuilder_.remove(index);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The handling cutoff times for shipping.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.HandlingCutoffTime handling_cutoff_times = 141;
-     * </code>
-     */
-    public com.google.shopping.merchant.products.v1.HandlingCutoffTime.Builder
-        getHandlingCutoffTimesBuilder(int index) {
-      return getHandlingCutoffTimesFieldBuilder().getBuilder(index);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The handling cutoff times for shipping.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.HandlingCutoffTime handling_cutoff_times = 141;
-     * </code>
-     */
-    public com.google.shopping.merchant.products.v1.HandlingCutoffTimeOrBuilder
-        getHandlingCutoffTimesOrBuilder(int index) {
-      if (handlingCutoffTimesBuilder_ == null) {
-        return handlingCutoffTimes_.get(index);
-      } else {
-        return handlingCutoffTimesBuilder_.getMessageOrBuilder(index);
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The handling cutoff times for shipping.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.HandlingCutoffTime handling_cutoff_times = 141;
-     * </code>
-     */
-    public java.util.List<
-            ? extends com.google.shopping.merchant.products.v1.HandlingCutoffTimeOrBuilder>
-        getHandlingCutoffTimesOrBuilderList() {
-      if (handlingCutoffTimesBuilder_ != null) {
-        return handlingCutoffTimesBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(handlingCutoffTimes_);
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The handling cutoff times for shipping.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.HandlingCutoffTime handling_cutoff_times = 141;
-     * </code>
-     */
-    public com.google.shopping.merchant.products.v1.HandlingCutoffTime.Builder
-        addHandlingCutoffTimesBuilder() {
-      return getHandlingCutoffTimesFieldBuilder()
-          .addBuilder(
-              com.google.shopping.merchant.products.v1.HandlingCutoffTime.getDefaultInstance());
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The handling cutoff times for shipping.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.HandlingCutoffTime handling_cutoff_times = 141;
-     * </code>
-     */
-    public com.google.shopping.merchant.products.v1.HandlingCutoffTime.Builder
-        addHandlingCutoffTimesBuilder(int index) {
-      return getHandlingCutoffTimesFieldBuilder()
-          .addBuilder(
-              index,
-              com.google.shopping.merchant.products.v1.HandlingCutoffTime.getDefaultInstance());
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The handling cutoff times for shipping.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.shopping.merchant.products.v1.HandlingCutoffTime handling_cutoff_times = 141;
-     * </code>
-     */
-    public java.util.List<com.google.shopping.merchant.products.v1.HandlingCutoffTime.Builder>
-        getHandlingCutoffTimesBuilderList() {
-      return getHandlingCutoffTimesFieldBuilder().getBuilderList();
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.shopping.merchant.products.v1.HandlingCutoffTime,
-            com.google.shopping.merchant.products.v1.HandlingCutoffTime.Builder,
-            com.google.shopping.merchant.products.v1.HandlingCutoffTimeOrBuilder>
-        getHandlingCutoffTimesFieldBuilder() {
-      if (handlingCutoffTimesBuilder_ == null) {
-        handlingCutoffTimesBuilder_ =
-            new com.google.protobuf.RepeatedFieldBuilderV3<
-                com.google.shopping.merchant.products.v1.HandlingCutoffTime,
-                com.google.shopping.merchant.products.v1.HandlingCutoffTime.Builder,
-                com.google.shopping.merchant.products.v1.HandlingCutoffTimeOrBuilder>(
-                handlingCutoffTimes_,
-                ((bitField1_ & 0x00040000) != 0),
-                getParentForChildren(),
-                isClean());
-        handlingCutoffTimes_ = null;
-      }
-      return handlingCutoffTimesBuilder_;
-    }
-
     private java.lang.Object shippingLabel_ = "";
 
     /**
@@ -27580,7 +24570,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the shippingLabel field is set.
      */
     public boolean hasShippingLabel() {
-      return ((bitField1_ & 0x00080000) != 0);
+      return ((bitField1_ & 0x00010000) != 0);
     }
 
     /**
@@ -27649,7 +24639,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       shippingLabel_ = value;
-      bitField1_ |= 0x00080000;
+      bitField1_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -27668,7 +24658,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearShippingLabel() {
       shippingLabel_ = getDefaultInstance().getShippingLabel();
-      bitField1_ = (bitField1_ & ~0x00080000);
+      bitField1_ = (bitField1_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -27692,7 +24682,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       shippingLabel_ = value;
-      bitField1_ |= 0x00080000;
+      bitField1_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -27712,7 +24702,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the transitTimeLabel field is set.
      */
     public boolean hasTransitTimeLabel() {
-      return ((bitField1_ & 0x00100000) != 0);
+      return ((bitField1_ & 0x00020000) != 0);
     }
 
     /**
@@ -27781,7 +24771,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       transitTimeLabel_ = value;
-      bitField1_ |= 0x00100000;
+      bitField1_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -27800,7 +24790,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearTransitTimeLabel() {
       transitTimeLabel_ = getDefaultInstance().getTransitTimeLabel();
-      bitField1_ = (bitField1_ & ~0x00100000);
+      bitField1_ = (bitField1_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -27824,7 +24814,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       transitTimeLabel_ = value;
-      bitField1_ |= 0x00100000;
+      bitField1_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -27846,7 +24836,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the size field is set.
      */
     public boolean hasSize() {
-      return ((bitField1_ & 0x00200000) != 0);
+      return ((bitField1_ & 0x00040000) != 0);
     }
 
     /**
@@ -27921,7 +24911,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       size_ = value;
-      bitField1_ |= 0x00200000;
+      bitField1_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -27942,7 +24932,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearSize() {
       size_ = getDefaultInstance().getSize();
-      bitField1_ = (bitField1_ & ~0x00200000);
+      bitField1_ = (bitField1_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -27968,7 +24958,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       size_ = value;
-      bitField1_ |= 0x00200000;
+      bitField1_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -27990,7 +24980,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasSizeSystem() {
-      return ((bitField1_ & 0x00400000) != 0);
+      return ((bitField1_ & 0x00080000) != 0);
     }
 
     /**
@@ -28027,7 +25017,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder setSizeSystemValue(int value) {
       sizeSystem_ = value;
-      bitField1_ |= 0x00400000;
+      bitField1_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -28072,7 +25062,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField1_ |= 0x00400000;
+      bitField1_ |= 0x00080000;
       sizeSystem_ = value.getNumber();
       onChanged();
       return this;
@@ -28092,7 +25082,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearSizeSystem() {
-      bitField1_ = (bitField1_ & ~0x00400000);
+      bitField1_ = (bitField1_ & ~0x00080000);
       sizeSystem_ = 0;
       onChanged();
       return this;
@@ -28101,9 +25091,9 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     private java.util.List<java.lang.Integer> sizeTypes_ = java.util.Collections.emptyList();
 
     private void ensureSizeTypesIsMutable() {
-      if (!((bitField1_ & 0x00800000) != 0)) {
+      if (!((bitField1_ & 0x00100000) != 0)) {
         sizeTypes_ = new java.util.ArrayList<java.lang.Integer>(sizeTypes_);
-        bitField1_ |= 0x00800000;
+        bitField1_ |= 0x00100000;
       }
     }
 
@@ -28250,7 +25240,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearSizeTypes() {
       sizeTypes_ = java.util.Collections.emptyList();
-      bitField1_ = (bitField1_ & ~0x00800000);
+      bitField1_ = (bitField1_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -28375,7 +25365,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasEnergyEfficiencyClass() {
-      return ((bitField1_ & 0x01000000) != 0);
+      return ((bitField1_ & 0x00200000) != 0);
     }
 
     /**
@@ -28416,7 +25406,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder setEnergyEfficiencyClassValue(int value) {
       energyEfficiencyClass_ = value;
-      bitField1_ |= 0x01000000;
+      bitField1_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -28468,7 +25458,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField1_ |= 0x01000000;
+      bitField1_ |= 0x00200000;
       energyEfficiencyClass_ = value.getNumber();
       onChanged();
       return this;
@@ -28490,7 +25480,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearEnergyEfficiencyClass() {
-      bitField1_ = (bitField1_ & ~0x01000000);
+      bitField1_ = (bitField1_ & ~0x00200000);
       energyEfficiencyClass_ = 0;
       onChanged();
       return this;
@@ -28515,7 +25505,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasMinEnergyEfficiencyClass() {
-      return ((bitField1_ & 0x02000000) != 0);
+      return ((bitField1_ & 0x00400000) != 0);
     }
 
     /**
@@ -28556,7 +25546,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder setMinEnergyEfficiencyClassValue(int value) {
       minEnergyEfficiencyClass_ = value;
-      bitField1_ |= 0x02000000;
+      bitField1_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -28608,7 +25598,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField1_ |= 0x02000000;
+      bitField1_ |= 0x00400000;
       minEnergyEfficiencyClass_ = value.getNumber();
       onChanged();
       return this;
@@ -28630,7 +25620,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearMinEnergyEfficiencyClass() {
-      bitField1_ = (bitField1_ & ~0x02000000);
+      bitField1_ = (bitField1_ & ~0x00400000);
       minEnergyEfficiencyClass_ = 0;
       onChanged();
       return this;
@@ -28655,7 +25645,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasMaxEnergyEfficiencyClass() {
-      return ((bitField1_ & 0x04000000) != 0);
+      return ((bitField1_ & 0x00800000) != 0);
     }
 
     /**
@@ -28696,7 +25686,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder setMaxEnergyEfficiencyClassValue(int value) {
       maxEnergyEfficiencyClass_ = value;
-      bitField1_ |= 0x04000000;
+      bitField1_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -28748,7 +25738,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField1_ |= 0x04000000;
+      bitField1_ |= 0x00800000;
       maxEnergyEfficiencyClass_ = value.getNumber();
       onChanged();
       return this;
@@ -28770,7 +25760,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearMaxEnergyEfficiencyClass() {
-      bitField1_ = (bitField1_ & ~0x04000000);
+      bitField1_ = (bitField1_ & ~0x00800000);
       maxEnergyEfficiencyClass_ = 0;
       onChanged();
       return this;
@@ -28796,7 +25786,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the unitPricingMeasure field is set.
      */
     public boolean hasUnitPricingMeasure() {
-      return ((bitField1_ & 0x08000000) != 0);
+      return ((bitField1_ & 0x01000000) != 0);
     }
 
     /**
@@ -28841,7 +25831,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         unitPricingMeasureBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x08000000;
+      bitField1_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -28863,7 +25853,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         unitPricingMeasureBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x08000000;
+      bitField1_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -28881,7 +25871,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder mergeUnitPricingMeasure(
         com.google.shopping.merchant.products.v1.UnitPricingMeasure value) {
       if (unitPricingMeasureBuilder_ == null) {
-        if (((bitField1_ & 0x08000000) != 0)
+        if (((bitField1_ & 0x01000000) != 0)
             && unitPricingMeasure_ != null
             && unitPricingMeasure_
                 != com.google.shopping.merchant.products.v1.UnitPricingMeasure
@@ -28894,7 +25884,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         unitPricingMeasureBuilder_.mergeFrom(value);
       }
       if (unitPricingMeasure_ != null) {
-        bitField1_ |= 0x08000000;
+        bitField1_ |= 0x01000000;
         onChanged();
       }
       return this;
@@ -28911,7 +25901,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearUnitPricingMeasure() {
-      bitField1_ = (bitField1_ & ~0x08000000);
+      bitField1_ = (bitField1_ & ~0x01000000);
       unitPricingMeasure_ = null;
       if (unitPricingMeasureBuilder_ != null) {
         unitPricingMeasureBuilder_.dispose();
@@ -28933,7 +25923,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public com.google.shopping.merchant.products.v1.UnitPricingMeasure.Builder
         getUnitPricingMeasureBuilder() {
-      bitField1_ |= 0x08000000;
+      bitField1_ |= 0x01000000;
       onChanged();
       return getUnitPricingMeasureFieldBuilder().getBuilder();
     }
@@ -29007,7 +25997,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the unitPricingBaseMeasure field is set.
      */
     public boolean hasUnitPricingBaseMeasure() {
-      return ((bitField1_ & 0x10000000) != 0);
+      return ((bitField1_ & 0x02000000) != 0);
     }
 
     /**
@@ -29055,7 +26045,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         unitPricingBaseMeasureBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x10000000;
+      bitField1_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -29078,7 +26068,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         unitPricingBaseMeasureBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x10000000;
+      bitField1_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -29097,7 +26087,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder mergeUnitPricingBaseMeasure(
         com.google.shopping.merchant.products.v1.UnitPricingBaseMeasure value) {
       if (unitPricingBaseMeasureBuilder_ == null) {
-        if (((bitField1_ & 0x10000000) != 0)
+        if (((bitField1_ & 0x02000000) != 0)
             && unitPricingBaseMeasure_ != null
             && unitPricingBaseMeasure_
                 != com.google.shopping.merchant.products.v1.UnitPricingBaseMeasure
@@ -29110,7 +26100,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         unitPricingBaseMeasureBuilder_.mergeFrom(value);
       }
       if (unitPricingBaseMeasure_ != null) {
-        bitField1_ |= 0x10000000;
+        bitField1_ |= 0x02000000;
         onChanged();
       }
       return this;
@@ -29128,7 +26118,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearUnitPricingBaseMeasure() {
-      bitField1_ = (bitField1_ & ~0x10000000);
+      bitField1_ = (bitField1_ & ~0x02000000);
       unitPricingBaseMeasure_ = null;
       if (unitPricingBaseMeasureBuilder_ != null) {
         unitPricingBaseMeasureBuilder_.dispose();
@@ -29151,7 +26141,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public com.google.shopping.merchant.products.v1.UnitPricingBaseMeasure.Builder
         getUnitPricingBaseMeasureBuilder() {
-      bitField1_ |= 0x10000000;
+      bitField1_ |= 0x02000000;
       onChanged();
       return getUnitPricingBaseMeasureFieldBuilder().getBuilder();
     }
@@ -29221,7 +26211,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasMultipack() {
-      return ((bitField1_ & 0x20000000) != 0);
+      return ((bitField1_ & 0x04000000) != 0);
     }
 
     /**
@@ -29255,7 +26245,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder setMultipack(long value) {
 
       multipack_ = value;
-      bitField1_ |= 0x20000000;
+      bitField1_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -29272,7 +26262,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearMultipack() {
-      bitField1_ = (bitField1_ & ~0x20000000);
+      bitField1_ = (bitField1_ & ~0x04000000);
       multipack_ = 0L;
       onChanged();
       return this;
@@ -29295,7 +26285,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the adsGrouping field is set.
      */
     public boolean hasAdsGrouping() {
-      return ((bitField1_ & 0x40000000) != 0);
+      return ((bitField1_ & 0x08000000) != 0);
     }
 
     /**
@@ -29370,7 +26360,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       adsGrouping_ = value;
-      bitField1_ |= 0x40000000;
+      bitField1_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -29391,7 +26381,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearAdsGrouping() {
       adsGrouping_ = getDefaultInstance().getAdsGrouping();
-      bitField1_ = (bitField1_ & ~0x40000000);
+      bitField1_ = (bitField1_ & ~0x08000000);
       onChanged();
       return this;
     }
@@ -29417,7 +26407,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       adsGrouping_ = value;
-      bitField1_ |= 0x40000000;
+      bitField1_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -29429,7 +26419,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!adsLabels_.isModifiable()) {
         adsLabels_ = new com.google.protobuf.LazyStringArrayList(adsLabels_);
       }
-      bitField1_ |= 0x80000000;
+      bitField1_ |= 0x10000000;
     }
 
     /**
@@ -29514,7 +26504,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureAdsLabelsIsMutable();
       adsLabels_.set(index, value);
-      bitField1_ |= 0x80000000;
+      bitField1_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -29537,7 +26527,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureAdsLabelsIsMutable();
       adsLabels_.add(value);
-      bitField1_ |= 0x80000000;
+      bitField1_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -29557,7 +26547,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder addAllAdsLabels(java.lang.Iterable<java.lang.String> values) {
       ensureAdsLabelsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, adsLabels_);
-      bitField1_ |= 0x80000000;
+      bitField1_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -29575,7 +26565,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearAdsLabels() {
       adsLabels_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField1_ = (bitField1_ & ~0x80000000);
+      bitField1_ = (bitField1_ & ~0x10000000);
       ;
       onChanged();
       return this;
@@ -29600,7 +26590,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureAdsLabelsIsMutable();
       adsLabels_.add(value);
-      bitField1_ |= 0x80000000;
+      bitField1_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -29620,7 +26610,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the adsRedirect field is set.
      */
     public boolean hasAdsRedirect() {
-      return ((bitField2_ & 0x00000001) != 0);
+      return ((bitField1_ & 0x20000000) != 0);
     }
 
     /**
@@ -29689,7 +26679,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       adsRedirect_ = value;
-      bitField2_ |= 0x00000001;
+      bitField1_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -29708,7 +26698,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearAdsRedirect() {
       adsRedirect_ = getDefaultInstance().getAdsRedirect();
-      bitField2_ = (bitField2_ & ~0x00000001);
+      bitField1_ = (bitField1_ & ~0x20000000);
       onChanged();
       return this;
     }
@@ -29732,7 +26722,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       adsRedirect_ = value;
-      bitField2_ |= 0x00000001;
+      bitField1_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -29756,7 +26746,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the costOfGoodsSold field is set.
      */
     public boolean hasCostOfGoodsSold() {
-      return ((bitField2_ & 0x00000002) != 0);
+      return ((bitField1_ & 0x40000000) != 0);
     }
 
     /**
@@ -29798,7 +26788,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         costOfGoodsSoldBuilder_.setMessage(value);
       }
-      bitField2_ |= 0x00000002;
+      bitField1_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -29818,7 +26808,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         costOfGoodsSoldBuilder_.setMessage(builderForValue.build());
       }
-      bitField2_ |= 0x00000002;
+      bitField1_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -29834,7 +26824,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeCostOfGoodsSold(com.google.shopping.type.Price value) {
       if (costOfGoodsSoldBuilder_ == null) {
-        if (((bitField2_ & 0x00000002) != 0)
+        if (((bitField1_ & 0x40000000) != 0)
             && costOfGoodsSold_ != null
             && costOfGoodsSold_ != com.google.shopping.type.Price.getDefaultInstance()) {
           getCostOfGoodsSoldBuilder().mergeFrom(value);
@@ -29845,7 +26835,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         costOfGoodsSoldBuilder_.mergeFrom(value);
       }
       if (costOfGoodsSold_ != null) {
-        bitField2_ |= 0x00000002;
+        bitField1_ |= 0x40000000;
         onChanged();
       }
       return this;
@@ -29861,7 +26851,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * <code>.google.shopping.type.Price cost_of_goods_sold = 62;</code>
      */
     public Builder clearCostOfGoodsSold() {
-      bitField2_ = (bitField2_ & ~0x00000002);
+      bitField1_ = (bitField1_ & ~0x40000000);
       costOfGoodsSold_ = null;
       if (costOfGoodsSoldBuilder_ != null) {
         costOfGoodsSoldBuilder_.dispose();
@@ -29881,7 +26871,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * <code>.google.shopping.type.Price cost_of_goods_sold = 62;</code>
      */
     public com.google.shopping.type.Price.Builder getCostOfGoodsSoldBuilder() {
-      bitField2_ |= 0x00000002;
+      bitField1_ |= 0x40000000;
       onChanged();
       return getCostOfGoodsSoldFieldBuilder().getBuilder();
     }
@@ -29935,11 +26925,11 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureProductDetailsIsMutable() {
-      if (!((bitField2_ & 0x00000004) != 0)) {
+      if (!((bitField1_ & 0x80000000) != 0)) {
         productDetails_ =
             new java.util.ArrayList<com.google.shopping.merchant.products.v1.ProductDetail>(
                 productDetails_);
-        bitField2_ |= 0x00000004;
+        bitField1_ |= 0x80000000;
       }
     }
 
@@ -30180,7 +27170,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder clearProductDetails() {
       if (productDetailsBuilder_ == null) {
         productDetails_ = java.util.Collections.emptyList();
-        bitField2_ = (bitField2_ & ~0x00000004);
+        bitField1_ = (bitField1_ & ~0x80000000);
         onChanged();
       } else {
         productDetailsBuilder_.clear();
@@ -30322,7 +27312,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
                 com.google.shopping.merchant.products.v1.ProductDetail.Builder,
                 com.google.shopping.merchant.products.v1.ProductDetailOrBuilder>(
                 productDetails_,
-                ((bitField2_ & 0x00000004) != 0),
+                ((bitField1_ & 0x80000000) != 0),
                 getParentForChildren(),
                 isClean());
         productDetails_ = null;
@@ -30337,7 +27327,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!productHighlights_.isModifiable()) {
         productHighlights_ = new com.google.protobuf.LazyStringArrayList(productHighlights_);
       }
-      bitField2_ |= 0x00000008;
+      bitField2_ |= 0x00000001;
     }
 
     /**
@@ -30427,7 +27417,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureProductHighlightsIsMutable();
       productHighlights_.set(index, value);
-      bitField2_ |= 0x00000008;
+      bitField2_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -30451,7 +27441,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureProductHighlightsIsMutable();
       productHighlights_.add(value);
-      bitField2_ |= 0x00000008;
+      bitField2_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -30472,7 +27462,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder addAllProductHighlights(java.lang.Iterable<java.lang.String> values) {
       ensureProductHighlightsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, productHighlights_);
-      bitField2_ |= 0x00000008;
+      bitField2_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -30491,7 +27481,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearProductHighlights() {
       productHighlights_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField2_ = (bitField2_ & ~0x00000008);
+      bitField2_ = (bitField2_ & ~0x00000001);
       ;
       onChanged();
       return this;
@@ -30517,7 +27507,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureProductHighlightsIsMutable();
       productHighlights_.add(value);
-      bitField2_ |= 0x00000008;
+      bitField2_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -30536,7 +27526,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the displayAdsId field is set.
      */
     public boolean hasDisplayAdsId() {
-      return ((bitField2_ & 0x00000010) != 0);
+      return ((bitField2_ & 0x00000002) != 0);
     }
 
     /**
@@ -30602,7 +27592,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       displayAdsId_ = value;
-      bitField2_ |= 0x00000010;
+      bitField2_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -30620,7 +27610,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearDisplayAdsId() {
       displayAdsId_ = getDefaultInstance().getDisplayAdsId();
-      bitField2_ = (bitField2_ & ~0x00000010);
+      bitField2_ = (bitField2_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -30643,7 +27633,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       displayAdsId_ = value;
-      bitField2_ |= 0x00000010;
+      bitField2_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -30655,7 +27645,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!displayAdsSimilarIds_.isModifiable()) {
         displayAdsSimilarIds_ = new com.google.protobuf.LazyStringArrayList(displayAdsSimilarIds_);
       }
-      bitField2_ |= 0x00000020;
+      bitField2_ |= 0x00000004;
     }
 
     /**
@@ -30750,7 +27740,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureDisplayAdsSimilarIdsIsMutable();
       displayAdsSimilarIds_.set(index, value);
-      bitField2_ |= 0x00000020;
+      bitField2_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -30775,7 +27765,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureDisplayAdsSimilarIdsIsMutable();
       displayAdsSimilarIds_.add(value);
-      bitField2_ |= 0x00000020;
+      bitField2_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -30797,7 +27787,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder addAllDisplayAdsSimilarIds(java.lang.Iterable<java.lang.String> values) {
       ensureDisplayAdsSimilarIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, displayAdsSimilarIds_);
-      bitField2_ |= 0x00000020;
+      bitField2_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -30817,7 +27807,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearDisplayAdsSimilarIds() {
       displayAdsSimilarIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField2_ = (bitField2_ & ~0x00000020);
+      bitField2_ = (bitField2_ & ~0x00000004);
       ;
       onChanged();
       return this;
@@ -30844,7 +27834,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureDisplayAdsSimilarIdsIsMutable();
       displayAdsSimilarIds_.add(value);
-      bitField2_ |= 0x00000020;
+      bitField2_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -30863,7 +27853,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the displayAdsTitle field is set.
      */
     public boolean hasDisplayAdsTitle() {
-      return ((bitField2_ & 0x00000040) != 0);
+      return ((bitField2_ & 0x00000008) != 0);
     }
 
     /**
@@ -30929,7 +27919,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       displayAdsTitle_ = value;
-      bitField2_ |= 0x00000040;
+      bitField2_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -30947,7 +27937,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearDisplayAdsTitle() {
       displayAdsTitle_ = getDefaultInstance().getDisplayAdsTitle();
-      bitField2_ = (bitField2_ & ~0x00000040);
+      bitField2_ = (bitField2_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -30970,7 +27960,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       displayAdsTitle_ = value;
-      bitField2_ |= 0x00000040;
+      bitField2_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -30990,7 +27980,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the displayAdsLink field is set.
      */
     public boolean hasDisplayAdsLink() {
-      return ((bitField2_ & 0x00000080) != 0);
+      return ((bitField2_ & 0x00000010) != 0);
     }
 
     /**
@@ -31059,7 +28049,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       displayAdsLink_ = value;
-      bitField2_ |= 0x00000080;
+      bitField2_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -31078,7 +28068,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearDisplayAdsLink() {
       displayAdsLink_ = getDefaultInstance().getDisplayAdsLink();
-      bitField2_ = (bitField2_ & ~0x00000080);
+      bitField2_ = (bitField2_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -31102,7 +28092,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       displayAdsLink_ = value;
-      bitField2_ |= 0x00000080;
+      bitField2_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -31124,7 +28114,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasDisplayAdsValue() {
-      return ((bitField2_ & 0x00000100) != 0);
+      return ((bitField2_ & 0x00000020) != 0);
     }
 
     /**
@@ -31162,7 +28152,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder setDisplayAdsValue(double value) {
 
       displayAdsValue_ = value;
-      bitField2_ |= 0x00000100;
+      bitField2_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -31181,7 +28171,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDisplayAdsValue() {
-      bitField2_ = (bitField2_ & ~0x00000100);
+      bitField2_ = (bitField2_ & ~0x00000020);
       displayAdsValue_ = 0D;
       onChanged();
       return this;
@@ -31194,7 +28184,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!promotionIds_.isModifiable()) {
         promotionIds_ = new com.google.protobuf.LazyStringArrayList(promotionIds_);
       }
-      bitField2_ |= 0x00000200;
+      bitField2_ |= 0x00000040;
     }
 
     /**
@@ -31279,7 +28269,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensurePromotionIdsIsMutable();
       promotionIds_.set(index, value);
-      bitField2_ |= 0x00000200;
+      bitField2_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -31302,7 +28292,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensurePromotionIdsIsMutable();
       promotionIds_.add(value);
-      bitField2_ |= 0x00000200;
+      bitField2_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -31322,7 +28312,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder addAllPromotionIds(java.lang.Iterable<java.lang.String> values) {
       ensurePromotionIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, promotionIds_);
-      bitField2_ |= 0x00000200;
+      bitField2_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -31340,7 +28330,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearPromotionIds() {
       promotionIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField2_ = (bitField2_ & ~0x00000200);
+      bitField2_ = (bitField2_ & ~0x00000040);
       ;
       onChanged();
       return this;
@@ -31365,7 +28355,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensurePromotionIdsIsMutable();
       promotionIds_.add(value);
-      bitField2_ |= 0x00000200;
+      bitField2_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -31386,7 +28376,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasPickupMethod() {
-      return ((bitField2_ & 0x00000400) != 0);
+      return ((bitField2_ & 0x00000080) != 0);
     }
 
     /**
@@ -31421,7 +28411,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder setPickupMethodValue(int value) {
       pickupMethod_ = value;
-      bitField2_ |= 0x00000400;
+      bitField2_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -31464,7 +28454,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField2_ |= 0x00000400;
+      bitField2_ |= 0x00000080;
       pickupMethod_ = value.getNumber();
       onChanged();
       return this;
@@ -31483,7 +28473,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPickupMethod() {
-      bitField2_ = (bitField2_ & ~0x00000400);
+      bitField2_ = (bitField2_ & ~0x00000080);
       pickupMethod_ = 0;
       onChanged();
       return this;
@@ -31505,7 +28495,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasPickupSla() {
-      return ((bitField2_ & 0x00000800) != 0);
+      return ((bitField2_ & 0x00000100) != 0);
     }
 
     /**
@@ -31540,7 +28530,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder setPickupSlaValue(int value) {
       pickupSla_ = value;
-      bitField2_ |= 0x00000800;
+      bitField2_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -31583,7 +28573,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField2_ |= 0x00000800;
+      bitField2_ |= 0x00000100;
       pickupSla_ = value.getNumber();
       onChanged();
       return this;
@@ -31602,7 +28592,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPickupSla() {
-      bitField2_ = (bitField2_ & ~0x00000800);
+      bitField2_ = (bitField2_ & ~0x00000100);
       pickupSla_ = 0;
       onChanged();
       return this;
@@ -31623,7 +28613,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the linkTemplate field is set.
      */
     public boolean hasLinkTemplate() {
-      return ((bitField2_ & 0x00001000) != 0);
+      return ((bitField2_ & 0x00000200) != 0);
     }
 
     /**
@@ -31692,7 +28682,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       linkTemplate_ = value;
-      bitField2_ |= 0x00001000;
+      bitField2_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -31711,7 +28701,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearLinkTemplate() {
       linkTemplate_ = getDefaultInstance().getLinkTemplate();
-      bitField2_ = (bitField2_ & ~0x00001000);
+      bitField2_ = (bitField2_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -31735,7 +28725,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       linkTemplate_ = value;
-      bitField2_ |= 0x00001000;
+      bitField2_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -31756,7 +28746,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the mobileLinkTemplate field is set.
      */
     public boolean hasMobileLinkTemplate() {
-      return ((bitField2_ & 0x00002000) != 0);
+      return ((bitField2_ & 0x00000400) != 0);
     }
 
     /**
@@ -31828,7 +28818,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       mobileLinkTemplate_ = value;
-      bitField2_ |= 0x00002000;
+      bitField2_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -31848,7 +28838,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearMobileLinkTemplate() {
       mobileLinkTemplate_ = getDefaultInstance().getMobileLinkTemplate();
-      bitField2_ = (bitField2_ & ~0x00002000);
+      bitField2_ = (bitField2_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -31873,7 +28863,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       mobileLinkTemplate_ = value;
-      bitField2_ |= 0x00002000;
+      bitField2_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -31893,7 +28883,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the customLabel0 field is set.
      */
     public boolean hasCustomLabel0() {
-      return ((bitField2_ & 0x00004000) != 0);
+      return ((bitField2_ & 0x00000800) != 0);
     }
 
     /**
@@ -31962,7 +28952,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       customLabel0_ = value;
-      bitField2_ |= 0x00004000;
+      bitField2_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -31981,7 +28971,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearCustomLabel0() {
       customLabel0_ = getDefaultInstance().getCustomLabel0();
-      bitField2_ = (bitField2_ & ~0x00004000);
+      bitField2_ = (bitField2_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -32005,7 +28995,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       customLabel0_ = value;
-      bitField2_ |= 0x00004000;
+      bitField2_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -32025,7 +29015,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the customLabel1 field is set.
      */
     public boolean hasCustomLabel1() {
-      return ((bitField2_ & 0x00008000) != 0);
+      return ((bitField2_ & 0x00001000) != 0);
     }
 
     /**
@@ -32094,7 +29084,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       customLabel1_ = value;
-      bitField2_ |= 0x00008000;
+      bitField2_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -32113,7 +29103,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearCustomLabel1() {
       customLabel1_ = getDefaultInstance().getCustomLabel1();
-      bitField2_ = (bitField2_ & ~0x00008000);
+      bitField2_ = (bitField2_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -32137,7 +29127,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       customLabel1_ = value;
-      bitField2_ |= 0x00008000;
+      bitField2_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -32157,7 +29147,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the customLabel2 field is set.
      */
     public boolean hasCustomLabel2() {
-      return ((bitField2_ & 0x00010000) != 0);
+      return ((bitField2_ & 0x00002000) != 0);
     }
 
     /**
@@ -32226,7 +29216,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       customLabel2_ = value;
-      bitField2_ |= 0x00010000;
+      bitField2_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -32245,7 +29235,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearCustomLabel2() {
       customLabel2_ = getDefaultInstance().getCustomLabel2();
-      bitField2_ = (bitField2_ & ~0x00010000);
+      bitField2_ = (bitField2_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -32269,7 +29259,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       customLabel2_ = value;
-      bitField2_ |= 0x00010000;
+      bitField2_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -32289,7 +29279,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the customLabel3 field is set.
      */
     public boolean hasCustomLabel3() {
-      return ((bitField2_ & 0x00020000) != 0);
+      return ((bitField2_ & 0x00004000) != 0);
     }
 
     /**
@@ -32358,7 +29348,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       customLabel3_ = value;
-      bitField2_ |= 0x00020000;
+      bitField2_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -32377,7 +29367,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearCustomLabel3() {
       customLabel3_ = getDefaultInstance().getCustomLabel3();
-      bitField2_ = (bitField2_ & ~0x00020000);
+      bitField2_ = (bitField2_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -32401,7 +29391,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       customLabel3_ = value;
-      bitField2_ |= 0x00020000;
+      bitField2_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -32421,7 +29411,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the customLabel4 field is set.
      */
     public boolean hasCustomLabel4() {
-      return ((bitField2_ & 0x00040000) != 0);
+      return ((bitField2_ & 0x00008000) != 0);
     }
 
     /**
@@ -32490,7 +29480,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       customLabel4_ = value;
-      bitField2_ |= 0x00040000;
+      bitField2_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -32509,7 +29499,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearCustomLabel4() {
       customLabel4_ = getDefaultInstance().getCustomLabel4();
-      bitField2_ = (bitField2_ & ~0x00040000);
+      bitField2_ = (bitField2_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -32533,7 +29523,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       customLabel4_ = value;
-      bitField2_ |= 0x00040000;
+      bitField2_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -32542,9 +29532,9 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureIncludedDestinationsIsMutable() {
-      if (!((bitField2_ & 0x00080000) != 0)) {
+      if (!((bitField2_ & 0x00010000) != 0)) {
         includedDestinations_ = new java.util.ArrayList<java.lang.Integer>(includedDestinations_);
-        bitField2_ |= 0x00080000;
+        bitField2_ |= 0x00010000;
       }
     }
 
@@ -32749,7 +29739,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearIncludedDestinations() {
       includedDestinations_ = java.util.Collections.emptyList();
-      bitField2_ = (bitField2_ & ~0x00080000);
+      bitField2_ = (bitField2_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -32899,9 +29889,9 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureExcludedDestinationsIsMutable() {
-      if (!((bitField2_ & 0x00100000) != 0)) {
+      if (!((bitField2_ & 0x00020000) != 0)) {
         excludedDestinations_ = new java.util.ArrayList<java.lang.Integer>(excludedDestinations_);
-        bitField2_ |= 0x00100000;
+        bitField2_ |= 0x00020000;
       }
     }
 
@@ -33099,7 +30089,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearExcludedDestinations() {
       excludedDestinations_ = java.util.Collections.emptyList();
-      bitField2_ = (bitField2_ & ~0x00100000);
+      bitField2_ = (bitField2_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -33248,7 +30238,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         shoppingAdsExcludedCountries_ =
             new com.google.protobuf.LazyStringArrayList(shoppingAdsExcludedCountries_);
       }
-      bitField2_ |= 0x00200000;
+      bitField2_ |= 0x00040000;
     }
 
     /**
@@ -33348,7 +30338,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureShoppingAdsExcludedCountriesIsMutable();
       shoppingAdsExcludedCountries_.set(index, value);
-      bitField2_ |= 0x00200000;
+      bitField2_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -33374,7 +30364,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureShoppingAdsExcludedCountriesIsMutable();
       shoppingAdsExcludedCountries_.add(value);
-      bitField2_ |= 0x00200000;
+      bitField2_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -33397,7 +30387,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder addAllShoppingAdsExcludedCountries(java.lang.Iterable<java.lang.String> values) {
       ensureShoppingAdsExcludedCountriesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, shoppingAdsExcludedCountries_);
-      bitField2_ |= 0x00200000;
+      bitField2_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -33418,7 +30408,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearShoppingAdsExcludedCountries() {
       shoppingAdsExcludedCountries_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField2_ = (bitField2_ & ~0x00200000);
+      bitField2_ = (bitField2_ & ~0x00040000);
       ;
       onChanged();
       return this;
@@ -33446,7 +30436,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureShoppingAdsExcludedCountriesIsMutable();
       shoppingAdsExcludedCountries_.add(value);
-      bitField2_ |= 0x00200000;
+      bitField2_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -33467,7 +30457,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the externalSellerId field is set.
      */
     public boolean hasExternalSellerId() {
-      return ((bitField2_ & 0x00400000) != 0);
+      return ((bitField2_ & 0x00080000) != 0);
     }
 
     /**
@@ -33539,7 +30529,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       externalSellerId_ = value;
-      bitField2_ |= 0x00400000;
+      bitField2_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -33559,7 +30549,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearExternalSellerId() {
       externalSellerId_ = getDefaultInstance().getExternalSellerId();
-      bitField2_ = (bitField2_ & ~0x00400000);
+      bitField2_ = (bitField2_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -33584,7 +30574,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       externalSellerId_ = value;
-      bitField2_ |= 0x00400000;
+      bitField2_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -33605,7 +30595,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasPause() {
-      return ((bitField2_ & 0x00800000) != 0);
+      return ((bitField2_ & 0x00100000) != 0);
     }
 
     /**
@@ -33640,7 +30630,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder setPauseValue(int value) {
       pause_ = value;
-      bitField2_ |= 0x00800000;
+      bitField2_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -33681,7 +30671,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField2_ |= 0x00800000;
+      bitField2_ |= 0x00100000;
       pause_ = value.getNumber();
       onChanged();
       return this;
@@ -33700,7 +30690,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPause() {
-      bitField2_ = (bitField2_ & ~0x00800000);
+      bitField2_ = (bitField2_ & ~0x00100000);
       pause_ = 0;
       onChanged();
       return this;
@@ -33713,7 +30703,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!lifestyleImageLinks_.isModifiable()) {
         lifestyleImageLinks_ = new com.google.protobuf.LazyStringArrayList(lifestyleImageLinks_);
       }
-      bitField2_ |= 0x01000000;
+      bitField2_ |= 0x00200000;
     }
 
     /**
@@ -33813,7 +30803,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureLifestyleImageLinksIsMutable();
       lifestyleImageLinks_.set(index, value);
-      bitField2_ |= 0x01000000;
+      bitField2_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -33839,7 +30829,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureLifestyleImageLinksIsMutable();
       lifestyleImageLinks_.add(value);
-      bitField2_ |= 0x01000000;
+      bitField2_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -33862,7 +30852,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder addAllLifestyleImageLinks(java.lang.Iterable<java.lang.String> values) {
       ensureLifestyleImageLinksIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, lifestyleImageLinks_);
-      bitField2_ |= 0x01000000;
+      bitField2_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -33883,7 +30873,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearLifestyleImageLinks() {
       lifestyleImageLinks_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField2_ = (bitField2_ & ~0x01000000);
+      bitField2_ = (bitField2_ & ~0x00200000);
       ;
       onChanged();
       return this;
@@ -33911,7 +30901,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureLifestyleImageLinksIsMutable();
       lifestyleImageLinks_.add(value);
-      bitField2_ |= 0x01000000;
+      bitField2_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -33920,12 +30910,12 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         cloudExportAdditionalProperties_ = java.util.Collections.emptyList();
 
     private void ensureCloudExportAdditionalPropertiesIsMutable() {
-      if (!((bitField2_ & 0x02000000) != 0)) {
+      if (!((bitField2_ & 0x00400000) != 0)) {
         cloudExportAdditionalProperties_ =
             new java.util.ArrayList<
                 com.google.shopping.merchant.products.v1.CloudExportAdditionalProperties>(
                 cloudExportAdditionalProperties_);
-        bitField2_ |= 0x02000000;
+        bitField2_ |= 0x00400000;
       }
     }
 
@@ -34186,7 +31176,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder clearCloudExportAdditionalProperties() {
       if (cloudExportAdditionalPropertiesBuilder_ == null) {
         cloudExportAdditionalProperties_ = java.util.Collections.emptyList();
-        bitField2_ = (bitField2_ & ~0x02000000);
+        bitField2_ = (bitField2_ & ~0x00400000);
         onChanged();
       } else {
         cloudExportAdditionalPropertiesBuilder_.clear();
@@ -34342,7 +31332,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
                 com.google.shopping.merchant.products.v1.CloudExportAdditionalProperties.Builder,
                 com.google.shopping.merchant.products.v1.CloudExportAdditionalPropertiesOrBuilder>(
                 cloudExportAdditionalProperties_,
-                ((bitField2_ & 0x02000000) != 0),
+                ((bitField2_ & 0x00400000) != 0),
                 getParentForChildren(),
                 isClean());
         cloudExportAdditionalProperties_ = null;
@@ -34366,7 +31356,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the virtualModelLink field is set.
      */
     public boolean hasVirtualModelLink() {
-      return ((bitField2_ & 0x04000000) != 0);
+      return ((bitField2_ & 0x00800000) != 0);
     }
 
     /**
@@ -34438,7 +31428,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       virtualModelLink_ = value;
-      bitField2_ |= 0x04000000;
+      bitField2_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -34458,7 +31448,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearVirtualModelLink() {
       virtualModelLink_ = getDefaultInstance().getVirtualModelLink();
-      bitField2_ = (bitField2_ & ~0x04000000);
+      bitField2_ = (bitField2_ & ~0x00800000);
       onChanged();
       return this;
     }
@@ -34483,7 +31473,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       virtualModelLink_ = value;
-      bitField2_ |= 0x04000000;
+      bitField2_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -34492,11 +31482,11 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         certifications_ = java.util.Collections.emptyList();
 
     private void ensureCertificationsIsMutable() {
-      if (!((bitField2_ & 0x08000000) != 0)) {
+      if (!((bitField2_ & 0x01000000) != 0)) {
         certifications_ =
             new java.util.ArrayList<com.google.shopping.merchant.products.v1.ProductCertification>(
                 certifications_);
-        bitField2_ |= 0x08000000;
+        bitField2_ |= 0x01000000;
       }
     }
 
@@ -34796,7 +31786,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder clearCertifications() {
       if (certificationsBuilder_ == null) {
         certifications_ = java.util.Collections.emptyList();
-        bitField2_ = (bitField2_ & ~0x08000000);
+        bitField2_ = (bitField2_ & ~0x01000000);
         onChanged();
       } else {
         certificationsBuilder_.clear();
@@ -34976,7 +31966,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
                 com.google.shopping.merchant.products.v1.ProductCertification.Builder,
                 com.google.shopping.merchant.products.v1.ProductCertificationOrBuilder>(
                 certifications_,
-                ((bitField2_ & 0x08000000) != 0),
+                ((bitField2_ & 0x01000000) != 0),
                 getParentForChildren(),
                 isClean());
         certifications_ = null;
@@ -35004,7 +31994,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the structuredTitle field is set.
      */
     public boolean hasStructuredTitle() {
-      return ((bitField2_ & 0x10000000) != 0);
+      return ((bitField2_ & 0x02000000) != 0);
     }
 
     /**
@@ -35049,7 +32039,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         structuredTitleBuilder_.setMessage(value);
       }
-      bitField2_ |= 0x10000000;
+      bitField2_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -35071,7 +32061,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         structuredTitleBuilder_.setMessage(builderForValue.build());
       }
-      bitField2_ |= 0x10000000;
+      bitField2_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -35089,7 +32079,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder mergeStructuredTitle(
         com.google.shopping.merchant.products.v1.StructuredTitle value) {
       if (structuredTitleBuilder_ == null) {
-        if (((bitField2_ & 0x10000000) != 0)
+        if (((bitField2_ & 0x02000000) != 0)
             && structuredTitle_ != null
             && structuredTitle_
                 != com.google.shopping.merchant.products.v1.StructuredTitle.getDefaultInstance()) {
@@ -35101,7 +32091,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         structuredTitleBuilder_.mergeFrom(value);
       }
       if (structuredTitle_ != null) {
-        bitField2_ |= 0x10000000;
+        bitField2_ |= 0x02000000;
         onChanged();
       }
       return this;
@@ -35118,7 +32108,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearStructuredTitle() {
-      bitField2_ = (bitField2_ & ~0x10000000);
+      bitField2_ = (bitField2_ & ~0x02000000);
       structuredTitle_ = null;
       if (structuredTitleBuilder_ != null) {
         structuredTitleBuilder_.dispose();
@@ -35140,7 +32130,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public com.google.shopping.merchant.products.v1.StructuredTitle.Builder
         getStructuredTitleBuilder() {
-      bitField2_ |= 0x10000000;
+      bitField2_ |= 0x02000000;
       onChanged();
       return getStructuredTitleFieldBuilder().getBuilder();
     }
@@ -35214,7 +32204,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the structuredDescription field is set.
      */
     public boolean hasStructuredDescription() {
-      return ((bitField2_ & 0x20000000) != 0);
+      return ((bitField2_ & 0x04000000) != 0);
     }
 
     /**
@@ -35262,7 +32252,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         structuredDescriptionBuilder_.setMessage(value);
       }
-      bitField2_ |= 0x20000000;
+      bitField2_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -35285,7 +32275,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         structuredDescriptionBuilder_.setMessage(builderForValue.build());
       }
-      bitField2_ |= 0x20000000;
+      bitField2_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -35304,7 +32294,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder mergeStructuredDescription(
         com.google.shopping.merchant.products.v1.StructuredDescription value) {
       if (structuredDescriptionBuilder_ == null) {
-        if (((bitField2_ & 0x20000000) != 0)
+        if (((bitField2_ & 0x04000000) != 0)
             && structuredDescription_ != null
             && structuredDescription_
                 != com.google.shopping.merchant.products.v1.StructuredDescription
@@ -35317,7 +32307,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         structuredDescriptionBuilder_.mergeFrom(value);
       }
       if (structuredDescription_ != null) {
-        bitField2_ |= 0x20000000;
+        bitField2_ |= 0x04000000;
         onChanged();
       }
       return this;
@@ -35335,7 +32325,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearStructuredDescription() {
-      bitField2_ = (bitField2_ & ~0x20000000);
+      bitField2_ = (bitField2_ & ~0x04000000);
       structuredDescription_ = null;
       if (structuredDescriptionBuilder_ != null) {
         structuredDescriptionBuilder_.dispose();
@@ -35358,7 +32348,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public com.google.shopping.merchant.products.v1.StructuredDescription.Builder
         getStructuredDescriptionBuilder() {
-      bitField2_ |= 0x20000000;
+      bitField2_ |= 0x04000000;
       onChanged();
       return getStructuredDescriptionFieldBuilder().getBuilder();
     }
@@ -35437,7 +32427,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the autoPricingMinPrice field is set.
      */
     public boolean hasAutoPricingMinPrice() {
-      return ((bitField2_ & 0x40000000) != 0);
+      return ((bitField2_ & 0x08000000) != 0);
     }
 
     /**
@@ -35489,7 +32479,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         autoPricingMinPriceBuilder_.setMessage(value);
       }
-      bitField2_ |= 0x40000000;
+      bitField2_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -35514,7 +32504,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         autoPricingMinPriceBuilder_.setMessage(builderForValue.build());
       }
-      bitField2_ |= 0x40000000;
+      bitField2_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -35535,7 +32525,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeAutoPricingMinPrice(com.google.shopping.type.Price value) {
       if (autoPricingMinPriceBuilder_ == null) {
-        if (((bitField2_ & 0x40000000) != 0)
+        if (((bitField2_ & 0x08000000) != 0)
             && autoPricingMinPrice_ != null
             && autoPricingMinPrice_ != com.google.shopping.type.Price.getDefaultInstance()) {
           getAutoPricingMinPriceBuilder().mergeFrom(value);
@@ -35546,7 +32536,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         autoPricingMinPriceBuilder_.mergeFrom(value);
       }
       if (autoPricingMinPrice_ != null) {
-        bitField2_ |= 0x40000000;
+        bitField2_ |= 0x08000000;
         onChanged();
       }
       return this;
@@ -35567,7 +32557,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * <code>.google.shopping.type.Price auto_pricing_min_price = 124;</code>
      */
     public Builder clearAutoPricingMinPrice() {
-      bitField2_ = (bitField2_ & ~0x40000000);
+      bitField2_ = (bitField2_ & ~0x08000000);
       autoPricingMinPrice_ = null;
       if (autoPricingMinPriceBuilder_ != null) {
         autoPricingMinPriceBuilder_.dispose();
@@ -35592,7 +32582,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * <code>.google.shopping.type.Price auto_pricing_min_price = 124;</code>
      */
     public com.google.shopping.type.Price.Builder getAutoPricingMinPriceBuilder() {
-      bitField2_ |= 0x40000000;
+      bitField2_ |= 0x08000000;
       onChanged();
       return getAutoPricingMinPriceFieldBuilder().getBuilder();
     }
@@ -35656,12 +32646,12 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         sustainabilityIncentives_ = java.util.Collections.emptyList();
 
     private void ensureSustainabilityIncentivesIsMutable() {
-      if (!((bitField2_ & 0x80000000) != 0)) {
+      if (!((bitField2_ & 0x10000000) != 0)) {
         sustainabilityIncentives_ =
             new java.util.ArrayList<
                 com.google.shopping.merchant.products.v1.ProductSustainabilityIncentive>(
                 sustainabilityIncentives_);
-        bitField2_ |= 0x80000000;
+        bitField2_ |= 0x10000000;
       }
     }
 
@@ -35921,7 +32911,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder clearSustainabilityIncentives() {
       if (sustainabilityIncentivesBuilder_ == null) {
         sustainabilityIncentives_ = java.util.Collections.emptyList();
-        bitField2_ = (bitField2_ & ~0x80000000);
+        bitField2_ = (bitField2_ & ~0x10000000);
         onChanged();
       } else {
         sustainabilityIncentivesBuilder_.clear();
@@ -36077,7 +33067,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
                 com.google.shopping.merchant.products.v1.ProductSustainabilityIncentive.Builder,
                 com.google.shopping.merchant.products.v1.ProductSustainabilityIncentiveOrBuilder>(
                 sustainabilityIncentives_,
-                ((bitField2_ & 0x80000000) != 0),
+                ((bitField2_ & 0x10000000) != 0),
                 getParentForChildren(),
                 isClean());
         sustainabilityIncentives_ = null;

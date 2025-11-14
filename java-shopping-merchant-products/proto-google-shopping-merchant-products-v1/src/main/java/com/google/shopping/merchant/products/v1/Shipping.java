@@ -45,8 +45,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
     service_ = "";
     locationGroupName_ = "";
     postalCode_ = "";
-    handlingCutoffTime_ = "";
-    handlingCutoffTimezone_ = "";
   }
 
   @java.lang.Override
@@ -632,168 +630,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
     return maxTransitTime_;
   }
 
-  public static final int HANDLING_CUTOFF_TIME_FIELD_NUMBER = 12;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object handlingCutoffTime_ = "";
-
-  /**
-   *
-   *
-   * <pre>
-   * The handling cutoff time until which an order has to be placed to be
-   * processed in the same day. This is a string in format of HHMM (e.g.
-   * `1530`) for 3:30 PM. If not configured, the cutoff time will be defaulted
-   * to 8AM PST and `handling_cutoff_timezone` will be ignored.
-   * </pre>
-   *
-   * <code>optional string handling_cutoff_time = 12;</code>
-   *
-   * @return Whether the handlingCutoffTime field is set.
-   */
-  @java.lang.Override
-  public boolean hasHandlingCutoffTime() {
-    return ((bitField0_ & 0x00000020) != 0);
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * The handling cutoff time until which an order has to be placed to be
-   * processed in the same day. This is a string in format of HHMM (e.g.
-   * `1530`) for 3:30 PM. If not configured, the cutoff time will be defaulted
-   * to 8AM PST and `handling_cutoff_timezone` will be ignored.
-   * </pre>
-   *
-   * <code>optional string handling_cutoff_time = 12;</code>
-   *
-   * @return The handlingCutoffTime.
-   */
-  @java.lang.Override
-  public java.lang.String getHandlingCutoffTime() {
-    java.lang.Object ref = handlingCutoffTime_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      handlingCutoffTime_ = s;
-      return s;
-    }
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * The handling cutoff time until which an order has to be placed to be
-   * processed in the same day. This is a string in format of HHMM (e.g.
-   * `1530`) for 3:30 PM. If not configured, the cutoff time will be defaulted
-   * to 8AM PST and `handling_cutoff_timezone` will be ignored.
-   * </pre>
-   *
-   * <code>optional string handling_cutoff_time = 12;</code>
-   *
-   * @return The bytes for handlingCutoffTime.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getHandlingCutoffTimeBytes() {
-    java.lang.Object ref = handlingCutoffTime_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      handlingCutoffTime_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int HANDLING_CUTOFF_TIMEZONE_FIELD_NUMBER = 13;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object handlingCutoffTimezone_ = "";
-
-  /**
-   *
-   *
-   * <pre>
-   * [Timezone
-   * identifier](https://developers.google.com/adwords/api/docs/appendix/codes-formats#timezone-ids)
-   * For example `Europe/Zurich`. This field only applies if
-   * `handling_cutoff_time` is set. If `handling_cutoff_time` is set but this
-   * field is not set, the shipping destination timezone will be used. If both
-   * fields are not set, the handling cutoff time will default to 8AM PST.
-   * </pre>
-   *
-   * <code>optional string handling_cutoff_timezone = 13;</code>
-   *
-   * @return Whether the handlingCutoffTimezone field is set.
-   */
-  @java.lang.Override
-  public boolean hasHandlingCutoffTimezone() {
-    return ((bitField0_ & 0x00000040) != 0);
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * [Timezone
-   * identifier](https://developers.google.com/adwords/api/docs/appendix/codes-formats#timezone-ids)
-   * For example `Europe/Zurich`. This field only applies if
-   * `handling_cutoff_time` is set. If `handling_cutoff_time` is set but this
-   * field is not set, the shipping destination timezone will be used. If both
-   * fields are not set, the handling cutoff time will default to 8AM PST.
-   * </pre>
-   *
-   * <code>optional string handling_cutoff_timezone = 13;</code>
-   *
-   * @return The handlingCutoffTimezone.
-   */
-  @java.lang.Override
-  public java.lang.String getHandlingCutoffTimezone() {
-    java.lang.Object ref = handlingCutoffTimezone_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      handlingCutoffTimezone_ = s;
-      return s;
-    }
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * [Timezone
-   * identifier](https://developers.google.com/adwords/api/docs/appendix/codes-formats#timezone-ids)
-   * For example `Europe/Zurich`. This field only applies if
-   * `handling_cutoff_time` is set. If `handling_cutoff_time` is set but this
-   * field is not set, the shipping destination timezone will be used. If both
-   * fields are not set, the handling cutoff time will default to 8AM PST.
-   * </pre>
-   *
-   * <code>optional string handling_cutoff_timezone = 13;</code>
-   *
-   * @return The bytes for handlingCutoffTimezone.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getHandlingCutoffTimezoneBytes() {
-    java.lang.Object ref = handlingCutoffTimezone_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      handlingCutoffTimezone_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -841,12 +677,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeInt64(11, maxTransitTime_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, handlingCutoffTime_);
-    }
-    if (((bitField0_ & 0x00000040) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, handlingCutoffTimezone_);
-    }
     getUnknownFields().writeTo(output);
   }
 
@@ -888,12 +718,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(11, maxTransitTime_);
-    }
-    if (((bitField0_ & 0x00000020) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, handlingCutoffTime_);
-    }
-    if (((bitField0_ & 0x00000040) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, handlingCutoffTimezone_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -937,14 +761,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
     if (hasMaxTransitTime()) {
       if (getMaxTransitTime() != other.getMaxTransitTime()) return false;
     }
-    if (hasHandlingCutoffTime() != other.hasHandlingCutoffTime()) return false;
-    if (hasHandlingCutoffTime()) {
-      if (!getHandlingCutoffTime().equals(other.getHandlingCutoffTime())) return false;
-    }
-    if (hasHandlingCutoffTimezone() != other.hasHandlingCutoffTimezone()) return false;
-    if (hasHandlingCutoffTimezone()) {
-      if (!getHandlingCutoffTimezone().equals(other.getHandlingCutoffTimezone())) return false;
-    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -987,14 +803,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
     if (hasMaxTransitTime()) {
       hash = (37 * hash) + MAX_TRANSIT_TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMaxTransitTime());
-    }
-    if (hasHandlingCutoffTime()) {
-      hash = (37 * hash) + HANDLING_CUTOFF_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getHandlingCutoffTime().hashCode();
-    }
-    if (hasHandlingCutoffTimezone()) {
-      hash = (37 * hash) + HANDLING_CUTOFF_TIMEZONE_FIELD_NUMBER;
-      hash = (53 * hash) + getHandlingCutoffTimezone().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1160,8 +968,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
       maxHandlingTime_ = 0L;
       minTransitTime_ = 0L;
       maxTransitTime_ = 0L;
-      handlingCutoffTime_ = "";
-      handlingCutoffTimezone_ = "";
       return this;
     }
 
@@ -1236,14 +1042,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.maxTransitTime_ = maxTransitTime_;
         to_bitField0_ |= 0x00000010;
-      }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.handlingCutoffTime_ = handlingCutoffTime_;
-        to_bitField0_ |= 0x00000020;
-      }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.handlingCutoffTimezone_ = handlingCutoffTimezone_;
-        to_bitField0_ |= 0x00000040;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1337,16 +1135,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
       if (other.hasMaxTransitTime()) {
         setMaxTransitTime(other.getMaxTransitTime());
       }
-      if (other.hasHandlingCutoffTime()) {
-        handlingCutoffTime_ = other.handlingCutoffTime_;
-        bitField0_ |= 0x00000800;
-        onChanged();
-      }
-      if (other.hasHandlingCutoffTimezone()) {
-        handlingCutoffTimezone_ = other.handlingCutoffTimezone_;
-        bitField0_ |= 0x00001000;
-        onChanged();
-      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1439,18 +1227,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000400;
                 break;
               } // case 88
-            case 98:
-              {
-                handlingCutoffTime_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
-                break;
-              } // case 98
-            case 106:
-              {
-                handlingCutoffTimezone_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
-                break;
-              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2740,306 +2516,6 @@ public final class Shipping extends com.google.protobuf.GeneratedMessageV3
     public Builder clearMaxTransitTime() {
       bitField0_ = (bitField0_ & ~0x00000400);
       maxTransitTime_ = 0L;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object handlingCutoffTime_ = "";
-
-    /**
-     *
-     *
-     * <pre>
-     * The handling cutoff time until which an order has to be placed to be
-     * processed in the same day. This is a string in format of HHMM (e.g.
-     * `1530`) for 3:30 PM. If not configured, the cutoff time will be defaulted
-     * to 8AM PST and `handling_cutoff_timezone` will be ignored.
-     * </pre>
-     *
-     * <code>optional string handling_cutoff_time = 12;</code>
-     *
-     * @return Whether the handlingCutoffTime field is set.
-     */
-    public boolean hasHandlingCutoffTime() {
-      return ((bitField0_ & 0x00000800) != 0);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The handling cutoff time until which an order has to be placed to be
-     * processed in the same day. This is a string in format of HHMM (e.g.
-     * `1530`) for 3:30 PM. If not configured, the cutoff time will be defaulted
-     * to 8AM PST and `handling_cutoff_timezone` will be ignored.
-     * </pre>
-     *
-     * <code>optional string handling_cutoff_time = 12;</code>
-     *
-     * @return The handlingCutoffTime.
-     */
-    public java.lang.String getHandlingCutoffTime() {
-      java.lang.Object ref = handlingCutoffTime_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        handlingCutoffTime_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The handling cutoff time until which an order has to be placed to be
-     * processed in the same day. This is a string in format of HHMM (e.g.
-     * `1530`) for 3:30 PM. If not configured, the cutoff time will be defaulted
-     * to 8AM PST and `handling_cutoff_timezone` will be ignored.
-     * </pre>
-     *
-     * <code>optional string handling_cutoff_time = 12;</code>
-     *
-     * @return The bytes for handlingCutoffTime.
-     */
-    public com.google.protobuf.ByteString getHandlingCutoffTimeBytes() {
-      java.lang.Object ref = handlingCutoffTime_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        handlingCutoffTime_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The handling cutoff time until which an order has to be placed to be
-     * processed in the same day. This is a string in format of HHMM (e.g.
-     * `1530`) for 3:30 PM. If not configured, the cutoff time will be defaulted
-     * to 8AM PST and `handling_cutoff_timezone` will be ignored.
-     * </pre>
-     *
-     * <code>optional string handling_cutoff_time = 12;</code>
-     *
-     * @param value The handlingCutoffTime to set.
-     * @return This builder for chaining.
-     */
-    public Builder setHandlingCutoffTime(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      handlingCutoffTime_ = value;
-      bitField0_ |= 0x00000800;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The handling cutoff time until which an order has to be placed to be
-     * processed in the same day. This is a string in format of HHMM (e.g.
-     * `1530`) for 3:30 PM. If not configured, the cutoff time will be defaulted
-     * to 8AM PST and `handling_cutoff_timezone` will be ignored.
-     * </pre>
-     *
-     * <code>optional string handling_cutoff_time = 12;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearHandlingCutoffTime() {
-      handlingCutoffTime_ = getDefaultInstance().getHandlingCutoffTime();
-      bitField0_ = (bitField0_ & ~0x00000800);
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The handling cutoff time until which an order has to be placed to be
-     * processed in the same day. This is a string in format of HHMM (e.g.
-     * `1530`) for 3:30 PM. If not configured, the cutoff time will be defaulted
-     * to 8AM PST and `handling_cutoff_timezone` will be ignored.
-     * </pre>
-     *
-     * <code>optional string handling_cutoff_time = 12;</code>
-     *
-     * @param value The bytes for handlingCutoffTime to set.
-     * @return This builder for chaining.
-     */
-    public Builder setHandlingCutoffTimeBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      handlingCutoffTime_ = value;
-      bitField0_ |= 0x00000800;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object handlingCutoffTimezone_ = "";
-
-    /**
-     *
-     *
-     * <pre>
-     * [Timezone
-     * identifier](https://developers.google.com/adwords/api/docs/appendix/codes-formats#timezone-ids)
-     * For example `Europe/Zurich`. This field only applies if
-     * `handling_cutoff_time` is set. If `handling_cutoff_time` is set but this
-     * field is not set, the shipping destination timezone will be used. If both
-     * fields are not set, the handling cutoff time will default to 8AM PST.
-     * </pre>
-     *
-     * <code>optional string handling_cutoff_timezone = 13;</code>
-     *
-     * @return Whether the handlingCutoffTimezone field is set.
-     */
-    public boolean hasHandlingCutoffTimezone() {
-      return ((bitField0_ & 0x00001000) != 0);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * [Timezone
-     * identifier](https://developers.google.com/adwords/api/docs/appendix/codes-formats#timezone-ids)
-     * For example `Europe/Zurich`. This field only applies if
-     * `handling_cutoff_time` is set. If `handling_cutoff_time` is set but this
-     * field is not set, the shipping destination timezone will be used. If both
-     * fields are not set, the handling cutoff time will default to 8AM PST.
-     * </pre>
-     *
-     * <code>optional string handling_cutoff_timezone = 13;</code>
-     *
-     * @return The handlingCutoffTimezone.
-     */
-    public java.lang.String getHandlingCutoffTimezone() {
-      java.lang.Object ref = handlingCutoffTimezone_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        handlingCutoffTimezone_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * [Timezone
-     * identifier](https://developers.google.com/adwords/api/docs/appendix/codes-formats#timezone-ids)
-     * For example `Europe/Zurich`. This field only applies if
-     * `handling_cutoff_time` is set. If `handling_cutoff_time` is set but this
-     * field is not set, the shipping destination timezone will be used. If both
-     * fields are not set, the handling cutoff time will default to 8AM PST.
-     * </pre>
-     *
-     * <code>optional string handling_cutoff_timezone = 13;</code>
-     *
-     * @return The bytes for handlingCutoffTimezone.
-     */
-    public com.google.protobuf.ByteString getHandlingCutoffTimezoneBytes() {
-      java.lang.Object ref = handlingCutoffTimezone_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        handlingCutoffTimezone_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * [Timezone
-     * identifier](https://developers.google.com/adwords/api/docs/appendix/codes-formats#timezone-ids)
-     * For example `Europe/Zurich`. This field only applies if
-     * `handling_cutoff_time` is set. If `handling_cutoff_time` is set but this
-     * field is not set, the shipping destination timezone will be used. If both
-     * fields are not set, the handling cutoff time will default to 8AM PST.
-     * </pre>
-     *
-     * <code>optional string handling_cutoff_timezone = 13;</code>
-     *
-     * @param value The handlingCutoffTimezone to set.
-     * @return This builder for chaining.
-     */
-    public Builder setHandlingCutoffTimezone(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      handlingCutoffTimezone_ = value;
-      bitField0_ |= 0x00001000;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * [Timezone
-     * identifier](https://developers.google.com/adwords/api/docs/appendix/codes-formats#timezone-ids)
-     * For example `Europe/Zurich`. This field only applies if
-     * `handling_cutoff_time` is set. If `handling_cutoff_time` is set but this
-     * field is not set, the shipping destination timezone will be used. If both
-     * fields are not set, the handling cutoff time will default to 8AM PST.
-     * </pre>
-     *
-     * <code>optional string handling_cutoff_timezone = 13;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearHandlingCutoffTimezone() {
-      handlingCutoffTimezone_ = getDefaultInstance().getHandlingCutoffTimezone();
-      bitField0_ = (bitField0_ & ~0x00001000);
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * [Timezone
-     * identifier](https://developers.google.com/adwords/api/docs/appendix/codes-formats#timezone-ids)
-     * For example `Europe/Zurich`. This field only applies if
-     * `handling_cutoff_time` is set. If `handling_cutoff_time` is set but this
-     * field is not set, the shipping destination timezone will be used. If both
-     * fields are not set, the handling cutoff time will default to 8AM PST.
-     * </pre>
-     *
-     * <code>optional string handling_cutoff_timezone = 13;</code>
-     *
-     * @param value The bytes for handlingCutoffTimezone to set.
-     * @return This builder for chaining.
-     */
-    public Builder setHandlingCutoffTimezoneBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      handlingCutoffTimezone_ = value;
-      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }

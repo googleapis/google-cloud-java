@@ -84,10 +84,6 @@ public class HttpJsonLocalInventoryServiceStub extends LocalInventoryServiceStub
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                            serializer.putQueryParam(
-                                fields,
-                                "productIdBase64UrlEncoded",
-                                request.getProductIdBase64UrlEncoded());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -123,10 +119,6 @@ public class HttpJsonLocalInventoryServiceStub extends LocalInventoryServiceStub
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<InsertLocalInventoryRequest> serializer =
                                 ProtoRestSerializer.create();
-                            serializer.putQueryParam(
-                                fields,
-                                "productIdBase64UrlEncoded",
-                                request.getProductIdBase64UrlEncoded());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -165,10 +157,6 @@ public class HttpJsonLocalInventoryServiceStub extends LocalInventoryServiceStub
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteLocalInventoryRequest> serializer =
                                 ProtoRestSerializer.create();
-                            serializer.putQueryParam(
-                                fields,
-                                "productIdBase64UrlEncoded",
-                                request.getProductIdBase64UrlEncoded());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })

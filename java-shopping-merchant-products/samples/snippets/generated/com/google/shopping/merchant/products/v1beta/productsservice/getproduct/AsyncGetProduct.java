@@ -39,7 +39,6 @@ public class AsyncGetProduct {
       GetProductRequest request =
           GetProductRequest.newBuilder()
               .setName(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
-              .setProductIdBase64UrlEncoded(true)
               .build();
       ApiFuture<Product> future = productsServiceClient.getProductCallable().futureCall(request);
       // Do something.

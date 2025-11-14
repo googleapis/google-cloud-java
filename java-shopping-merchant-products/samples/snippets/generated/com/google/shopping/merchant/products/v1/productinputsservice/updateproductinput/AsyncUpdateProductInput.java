@@ -42,7 +42,6 @@ public class AsyncUpdateProductInput {
               .setProductInput(ProductInput.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .setDataSource("dataSource1272470629")
-              .setProductIdBase64UrlEncoded(true)
               .build();
       ApiFuture<ProductInput> future =
           productInputsServiceClient.updateProductInputCallable().futureCall(request);

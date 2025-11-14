@@ -78,11 +78,10 @@ public final class ProductsProto {
           + "\023automated_discounts\030\014"
           + " \001(\01328.google.shopping.merchant.products.v1.AutomatedDiscountsB\003\340A\003:N\352AK\n"
           + "\"merchantapi.googleapis.com/Product\022%accounts/{account}/products/{product}B\021\n"
-          + "\017_version_number\"y\n"
+          + "\017_version_number\"M\n"
           + "\021GetProductRequest\0228\n"
           + "\004name\030\001 \001(\tB*\340A\002\372A$\n"
-          + "\"merchantapi.googleapis.com/Product\022*\n"
-          + "\035product_id_base64_url_encoded\030\002 \001(\010B\003\340A\001\"x\n"
+          + "\"merchantapi.googleapis.com/Product\"x\n"
           + "\023ListProductsRequest\022:\n"
           + "\006parent\030\001 \001("
           + "\tB*\340A\002\372A$\022\"merchantapi.googleapis.com/Product\022\021\n"
@@ -93,20 +92,20 @@ public final class ProductsProto {
           + " \003(\0132-.google.shopping.merchant.products.v1.Product\022\027\n"
           + "\017next_page_token\030\002 \001(\t2\317\003\n"
           + "\017ProductsService\022\256\001\n\n"
-          + "GetProduct\0227.google.shopping.merchant.products.v1."
-          + "GetProductRequest\032-.google.shopping.merc"
-          + "hant.products.v1.Product\"8\332A\004name\202\323\344\223\002+\022"
-          + ")/products/v1/{name=accounts/*/products/*}\022\301\001\n"
-          + "\014ListProducts\0229.google.shopping.merchant.products.v1.ListProductsRequest\032:"
-          + ".google.shopping.merchant.products.v1.Li"
-          + "stProductsResponse\":\332A\006parent\202\323\344\223\002+\022)/pr"
-          + "oducts/v1/{parent=accounts/*}/products\032G"
-          + "\312A\032merchantapi.googleapis.com\322A\'https://www.googleapis.com/auth/contentB\273\002\n"
+          + "GetProduct\0227.google.shopping.merchant.products.v1.GetP"
+          + "roductRequest\032-.google.shopping.merchant"
+          + ".products.v1.Product\"8\332A\004name\202\323\344\223\002+\022)/pr"
+          + "oducts/v1/{name=accounts/*/products/*}\022\301\001\n"
+          + "\014ListProducts\0229.google.shopping.mercha"
+          + "nt.products.v1.ListProductsRequest\032:.google.shopping.merchant.products.v1.ListPr"
+          + "oductsResponse\":\332A\006parent\202\323\344\223\002+\022)/produc"
+          + "ts/v1/{parent=accounts/*}/products\032G\312A\032m"
+          + "erchantapi.googleapis.com\322A\'https://www.googleapis.com/auth/contentB\273\002\n"
           + "(com.google.shopping.merchant.products.v1B\r"
-          + "ProductsProtoP\001ZJcloud.google.com/go/shopping/merchant/products/apiv1/productspb;p"
-          + "roductspb\252\002$Google.Shopping.Merchant.Pro"
-          + "ducts.V1\312\002$Google\\Shopping\\Merchant\\Prod"
-          + "ucts\\V1\352\002(Google::Shopping::Merchant::Products::V1\352A8\n"
+          + "ProductsProtoP\001ZJcloud.google.com/go/shopping/"
+          + "merchant/products/apiv1/productspb;productspb\252\002$Google.Shopping.Merchant.Product"
+          + "s.V1\312\002$Google\\Shopping\\Merchant\\Products"
+          + "\\V1\352\002(Google::Shopping::Merchant::Products::V1\352A8\n"
           + "\"merchantapi.googleapis.com/Account\022\022accounts/{account}b\006proto3"
     };
     descriptor =
@@ -144,7 +143,7 @@ public final class ProductsProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_shopping_merchant_products_v1_GetProductRequest_descriptor,
             new java.lang.String[] {
-              "Name", "ProductIdBase64UrlEncoded",
+              "Name",
             });
     internal_static_google_shopping_merchant_products_v1_ListProductsRequest_descriptor =
         getDescriptor().getMessageTypes().get(2);

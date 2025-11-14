@@ -39,7 +39,6 @@ public class SyncDeleteLocalInventory {
       DeleteLocalInventoryRequest request =
           DeleteLocalInventoryRequest.newBuilder()
               .setName(LocalInventoryName.of("[ACCOUNT]", "[PRODUCT]", "[STORE_CODE]").toString())
-              .setProductIdBase64UrlEncoded(true)
               .build();
       localInventoryServiceClient.deleteLocalInventory(request);
     }

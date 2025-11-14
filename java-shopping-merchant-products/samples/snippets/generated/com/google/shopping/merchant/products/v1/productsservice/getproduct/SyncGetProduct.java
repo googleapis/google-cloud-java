@@ -38,7 +38,6 @@ public class SyncGetProduct {
       GetProductRequest request =
           GetProductRequest.newBuilder()
               .setName(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
-              .setProductIdBase64UrlEncoded(true)
               .build();
       Product response = productsServiceClient.getProduct(request);
     }

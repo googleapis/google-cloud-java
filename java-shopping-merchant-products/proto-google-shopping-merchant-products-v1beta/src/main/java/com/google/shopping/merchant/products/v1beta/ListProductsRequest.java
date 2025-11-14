@@ -134,7 +134,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
    * The maximum number of products to return. The service may return fewer than
    * this value.
    * The maximum value is 1000; values above 1000 will be coerced to 1000.
-   * If unspecified, the default page size of 25 products will be returned.
+   * If unspecified, the maximum number of products will be returned.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -736,7 +736,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * The maximum number of products to return. The service may return fewer than
      * this value.
      * The maximum value is 1000; values above 1000 will be coerced to 1000.
-     * If unspecified, the default page size of 25 products will be returned.
+     * If unspecified, the maximum number of products will be returned.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -755,7 +755,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * The maximum number of products to return. The service may return fewer than
      * this value.
      * The maximum value is 1000; values above 1000 will be coerced to 1000.
-     * If unspecified, the default page size of 25 products will be returned.
+     * If unspecified, the maximum number of products will be returned.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -778,7 +778,7 @@ public final class ListProductsRequest extends com.google.protobuf.GeneratedMess
      * The maximum number of products to return. The service may return fewer than
      * this value.
      * The maximum value is 1000; values above 1000 will be coerced to 1000.
-     * If unspecified, the default page size of 25 products will be returned.
+     * If unspecified, the maximum number of products will be returned.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>

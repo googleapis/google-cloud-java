@@ -40,7 +40,6 @@ public class AsyncDeleteLocalInventory {
       DeleteLocalInventoryRequest request =
           DeleteLocalInventoryRequest.newBuilder()
               .setName(LocalInventoryName.of("[ACCOUNT]", "[PRODUCT]", "[STORE_CODE]").toString())
-              .setProductIdBase64UrlEncoded(true)
               .build();
       ApiFuture<Empty> future =
           localInventoryServiceClient.deleteLocalInventoryCallable().futureCall(request);

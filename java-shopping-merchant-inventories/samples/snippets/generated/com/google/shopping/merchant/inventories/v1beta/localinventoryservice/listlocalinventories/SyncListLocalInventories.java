@@ -41,7 +41,6 @@ public class SyncListLocalInventories {
               .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
-              .setProductIdBase64UrlEncoded(true)
               .build();
       for (LocalInventory element :
           localInventoryServiceClient.listLocalInventories(request).iterateAll()) {

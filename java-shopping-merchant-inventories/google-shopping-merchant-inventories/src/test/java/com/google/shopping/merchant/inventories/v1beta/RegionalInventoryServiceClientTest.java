@@ -193,7 +193,6 @@ public class RegionalInventoryServiceClientTest {
         InsertRegionalInventoryRequest.newBuilder()
             .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
             .setRegionalInventory(RegionalInventory.newBuilder().build())
-            .setProductIdBase64UrlEncoded(true)
             .build();
 
     RegionalInventory actualResponse = client.insertRegionalInventory(request);
@@ -206,8 +205,6 @@ public class RegionalInventoryServiceClientTest {
 
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertEquals(request.getRegionalInventory(), actualRequest.getRegionalInventory());
-    Assert.assertEquals(
-        request.getProductIdBase64UrlEncoded(), actualRequest.getProductIdBase64UrlEncoded());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -224,7 +221,6 @@ public class RegionalInventoryServiceClientTest {
           InsertRegionalInventoryRequest.newBuilder()
               .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
               .setRegionalInventory(RegionalInventory.newBuilder().build())
-              .setProductIdBase64UrlEncoded(true)
               .build();
       client.insertRegionalInventory(request);
       Assert.fail("No exception raised");

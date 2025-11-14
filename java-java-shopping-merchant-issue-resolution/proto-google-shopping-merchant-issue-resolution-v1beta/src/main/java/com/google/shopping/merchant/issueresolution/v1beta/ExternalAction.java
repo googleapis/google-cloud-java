@@ -134,17 +134,6 @@ public final class ExternalAction extends com.google.protobuf.GeneratedMessageV3
      * <code>VERIFY_IDENTITY_IN_MERCHANT_CENTER = 4;</code>
      */
     VERIFY_IDENTITY_IN_MERCHANT_CENTER(4),
-    /**
-     *
-     *
-     * <pre>
-     * Redirect to Merchant Center where the business can perform business
-     * video verification.
-     * </pre>
-     *
-     * <code>VERIFY_BUSINESS_VIDEO_IN_MERCHANT_CENTER = 5;</code>
-     */
-    VERIFY_BUSINESS_VIDEO_IN_MERCHANT_CENTER(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -207,18 +196,6 @@ public final class ExternalAction extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int VERIFY_IDENTITY_IN_MERCHANT_CENTER_VALUE = 4;
 
-    /**
-     *
-     *
-     * <pre>
-     * Redirect to Merchant Center where the business can perform business
-     * video verification.
-     * </pre>
-     *
-     * <code>VERIFY_BUSINESS_VIDEO_IN_MERCHANT_CENTER = 5;</code>
-     */
-    public static final int VERIFY_BUSINESS_VIDEO_IN_MERCHANT_CENTER_VALUE = 5;
-
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -253,8 +230,6 @@ public final class ExternalAction extends com.google.protobuf.GeneratedMessageV3
           return LEGAL_APPEAL_IN_HELP_CENTER;
         case 4:
           return VERIFY_IDENTITY_IN_MERCHANT_CENTER;
-        case 5:
-          return VERIFY_BUSINESS_VIDEO_IN_MERCHANT_CENTER;
         default:
           return null;
       }

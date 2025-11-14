@@ -41,7 +41,6 @@ public class AsyncDeleteProductInput {
           DeleteProductInputRequest.newBuilder()
               .setName(ProductInputName.of("[ACCOUNT]", "[PRODUCTINPUT]").toString())
               .setDataSource("dataSource1272470629")
-              .setProductIdBase64UrlEncoded(true)
               .build();
       ApiFuture<Empty> future =
           productInputsServiceClient.deleteProductInputCallable().futureCall(request);

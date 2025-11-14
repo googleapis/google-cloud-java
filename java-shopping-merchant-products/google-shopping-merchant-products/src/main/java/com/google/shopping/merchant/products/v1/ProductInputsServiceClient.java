@@ -64,7 +64,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> InsertProductInput</td>
- *      <td><p> [Uploads a product input to your Merchant Center account](/merchant/api/guides/products/add-manage#add_a_product). You must have a products [data source](/merchant/api/guides/data-sources/api-sources#create-primary-data-source) to be able to insert a product. The unique identifier of the data source is passed as a query parameter in the request URL.
+ *      <td><p> [Uploads a product input to your Merchant Center account](/merchant/api/guides/products/overview#upload-product-input). You must have a products [data source](/merchant/api/guides/data-sources/overview) to be able to insert a product. The unique identifier of the data source is passed as a query parameter in the request URL.
  * <p>  If a product input with the same contentLanguage, offerId, and dataSource already exists, then the product input inserted by this method replaces that entry.
  * <p>  After inserting, updating, or deleting a product input, it may take several minutes before the processed product can be retrieved.</td>
  *      <td>
@@ -228,10 +228,9 @@ public class ProductInputsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * [Uploads a product input to your Merchant Center
-   * account](/merchant/api/guides/products/add-manage#add_a_product). You must have a products
-   * [data source](/merchant/api/guides/data-sources/api-sources#create-primary-data-source) to be
-   * able to insert a product. The unique identifier of the data source is passed as a query
-   * parameter in the request URL.
+   * account](/merchant/api/guides/products/overview#upload-product-input). You must have a products
+   * [data source](/merchant/api/guides/data-sources/overview) to be able to insert a product. The
+   * unique identifier of the data source is passed as a query parameter in the request URL.
    *
    * <p>If a product input with the same contentLanguage, offerId, and dataSource already exists,
    * then the product input inserted by this method replaces that entry.
@@ -269,10 +268,9 @@ public class ProductInputsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * [Uploads a product input to your Merchant Center
-   * account](/merchant/api/guides/products/add-manage#add_a_product). You must have a products
-   * [data source](/merchant/api/guides/data-sources/api-sources#create-primary-data-source) to be
-   * able to insert a product. The unique identifier of the data source is passed as a query
-   * parameter in the request URL.
+   * account](/merchant/api/guides/products/overview#upload-product-input). You must have a products
+   * [data source](/merchant/api/guides/data-sources/overview) to be able to insert a product. The
+   * unique identifier of the data source is passed as a query parameter in the request URL.
    *
    * <p>If a product input with the same contentLanguage, offerId, and dataSource already exists,
    * then the product input inserted by this method replaces that entry.
@@ -376,7 +374,6 @@ public class ProductInputsServiceClient implements BackgroundResource {
    *           .setProductInput(ProductInput.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .setDataSource("dataSource1272470629")
-   *           .setProductIdBase64UrlEncoded(true)
    *           .build();
    *   ProductInput response = productInputsServiceClient.updateProductInput(request);
    * }
@@ -411,7 +408,6 @@ public class ProductInputsServiceClient implements BackgroundResource {
    *           .setProductInput(ProductInput.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .setDataSource("dataSource1272470629")
-   *           .setProductIdBase64UrlEncoded(true)
    *           .build();
    *   ApiFuture<ProductInput> future =
    *       productInputsServiceClient.updateProductInputCallable().futureCall(request);
@@ -515,7 +511,6 @@ public class ProductInputsServiceClient implements BackgroundResource {
    *       DeleteProductInputRequest.newBuilder()
    *           .setName(ProductInputName.of("[ACCOUNT]", "[PRODUCTINPUT]").toString())
    *           .setDataSource("dataSource1272470629")
-   *           .setProductIdBase64UrlEncoded(true)
    *           .build();
    *   productInputsServiceClient.deleteProductInput(request);
    * }
@@ -549,7 +544,6 @@ public class ProductInputsServiceClient implements BackgroundResource {
    *       DeleteProductInputRequest.newBuilder()
    *           .setName(ProductInputName.of("[ACCOUNT]", "[PRODUCTINPUT]").toString())
    *           .setDataSource("dataSource1272470629")
-   *           .setProductIdBase64UrlEncoded(true)
    *           .build();
    *   ApiFuture<Empty> future =
    *       productInputsServiceClient.deleteProductInputCallable().futureCall(request);

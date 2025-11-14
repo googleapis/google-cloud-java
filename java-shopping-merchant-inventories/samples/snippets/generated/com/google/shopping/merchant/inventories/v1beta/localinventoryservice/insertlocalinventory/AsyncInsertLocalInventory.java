@@ -41,7 +41,6 @@ public class AsyncInsertLocalInventory {
           InsertLocalInventoryRequest.newBuilder()
               .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
               .setLocalInventory(LocalInventory.newBuilder().build())
-              .setProductIdBase64UrlEncoded(true)
               .build();
       ApiFuture<LocalInventory> future =
           localInventoryServiceClient.insertLocalInventoryCallable().futureCall(request);

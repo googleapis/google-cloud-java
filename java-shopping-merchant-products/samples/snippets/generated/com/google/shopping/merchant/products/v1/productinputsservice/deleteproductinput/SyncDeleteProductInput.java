@@ -40,7 +40,6 @@ public class SyncDeleteProductInput {
           DeleteProductInputRequest.newBuilder()
               .setName(ProductInputName.of("[ACCOUNT]", "[PRODUCTINPUT]").toString())
               .setDataSource("dataSource1272470629")
-              .setProductIdBase64UrlEncoded(true)
               .build();
       productInputsServiceClient.deleteProductInput(request);
     }

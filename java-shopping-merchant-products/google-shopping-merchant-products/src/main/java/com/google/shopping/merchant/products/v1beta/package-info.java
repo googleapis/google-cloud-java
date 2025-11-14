@@ -21,7 +21,8 @@
  *
  * <p>======================= ProductInputsServiceClient =======================
  *
- * <p>Service Description: Service to use ProductInput resource.
+ * <p>Service Description: Service to use ProductInput resource. This service works for products
+ * with online channel only.
  *
  * <p>Sample for ProductInputsServiceClient:
  *

@@ -235,12 +235,9 @@ public class ProductsServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the product to retrieve. Format:
-   *     `accounts/{account}/products/{product}` where the last section `product` consists of:
-   *     `content_language~feed_label~offer_id` example for product name is
-   *     `accounts/123/products/en~US~sku123`. A legacy local product name would be
-   *     `accounts/123/products/local~en~US~sku123`. Note: For calls to the v1beta version, the
-   *     `product` section consists of: `channel~content_language~feed_label~offer_id`, for example:
-   *     `accounts/123/products/online~en~US~sku123`.
+   *     `accounts/{account}/products/{product}` where the last section `product` consists of 4
+   *     parts: `channel~content_language~feed_label~offer_id` example for product name is
+   *     `accounts/123/products/online~en~US~sku123`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Product getProduct(ProductName name) {
@@ -271,12 +268,9 @@ public class ProductsServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the product to retrieve. Format:
-   *     `accounts/{account}/products/{product}` where the last section `product` consists of:
-   *     `content_language~feed_label~offer_id` example for product name is
-   *     `accounts/123/products/en~US~sku123`. A legacy local product name would be
-   *     `accounts/123/products/local~en~US~sku123`. Note: For calls to the v1beta version, the
-   *     `product` section consists of: `channel~content_language~feed_label~offer_id`, for example:
-   *     `accounts/123/products/online~en~US~sku123`.
+   *     `accounts/{account}/products/{product}` where the last section `product` consists of 4
+   *     parts: `channel~content_language~feed_label~offer_id` example for product name is
+   *     `accounts/123/products/online~en~US~sku123`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Product getProduct(String name) {
@@ -303,7 +297,6 @@ public class ProductsServiceClient implements BackgroundResource {
    *   GetProductRequest request =
    *       GetProductRequest.newBuilder()
    *           .setName(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
-   *           .setProductIdBase64UrlEncoded(true)
    *           .build();
    *   Product response = productsServiceClient.getProduct(request);
    * }
@@ -335,7 +328,6 @@ public class ProductsServiceClient implements BackgroundResource {
    *   GetProductRequest request =
    *       GetProductRequest.newBuilder()
    *           .setName(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
-   *           .setProductIdBase64UrlEncoded(true)
    *           .build();
    *   ApiFuture<Product> future = productsServiceClient.getProductCallable().futureCall(request);
    *   // Do something.

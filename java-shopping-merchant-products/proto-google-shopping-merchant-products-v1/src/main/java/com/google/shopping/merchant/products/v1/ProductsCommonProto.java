@@ -33,10 +33,6 @@ public final class ProductsCommonProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_shopping_merchant_products_v1_ProductAttributes_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_shopping_merchant_products_v1_ProductAttributes_ShippingBusinessDaysConfig_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_shopping_merchant_products_v1_ProductAttributes_ShippingBusinessDaysConfig_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_shopping_merchant_products_v1_ProductAttributes_CarrierShipping_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_shopping_merchant_products_v1_ProductAttributes_CarrierShipping_fieldAccessorTable;
@@ -128,10 +124,6 @@ public final class ProductsCommonProto {
       internal_static_google_shopping_merchant_products_v1_AutomatedDiscounts_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_shopping_merchant_products_v1_AutomatedDiscounts_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_shopping_merchant_products_v1_HandlingCutoffTime_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_shopping_merchant_products_v1_HandlingCutoffTime_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -145,7 +137,7 @@ public final class ProductsCommonProto {
           + ":google/shopping/merchant/products/v1/products_common.proto\022$google.shopping.me"
           + "rchant.products.v1\032\037google/api/field_beh"
           + "avior.proto\032\037google/protobuf/timestamp.proto\032"
-          + " google/shopping/type/types.proto\032\032google/type/interval.proto\"\266D\n"
+          + " google/shopping/type/types.proto\032\032google/type/interval.proto\"\363@\n"
           + "\021ProductAttributes\022\036\n"
           + "\021identifier_exists\030\004 \001(\010H\000\210\001\001\022\026\n"
           + "\tis_bundle\030\005 \001(\010H\001\210\001\001\022\022\n"
@@ -214,36 +206,30 @@ public final class ProductsCommonProto {
           + "\017shipping_height\030+"
           + " \001(\01327.google.shopping.merchant.products.v1.ShippingDimension\022\036\n"
           + "\021max_handling_time\030, \001(\003H\025\210\001\001\022\036\n"
-          + "\021min_handling_time\030- \001(\003H\026\210\001\001\022|\n"
-          + "\037shipping_handling_business_days\030\217\001 \003(\0132R.google.shopping.merc"
-          + "hant.products.v1.ProductAttributes.ShippingBusinessDaysConfig\022{\n"
-          + "\036shipping_transit_business_days\030\220\001 \003(\0132R.google.shopping"
-          + ".merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig\022X\n"
-          + "\025handling_cutoff_times\030\215\001"
-          + " \003(\01328.google.shopping.merchant.products.v1.HandlingCutoffTime\022\033\n"
+          + "\021min_handling_time\030- \001(\003H\026\210\001\001\022\033\n"
           + "\016shipping_label\030. \001(\tH\027\210\001\001\022\037\n"
           + "\022transit_time_label\030/ \001(\tH\030\210\001\001\022\021\n"
           + "\004size\0300 \001(\tH\031\210\001\001\022J\n"
-          + "\013size_system\0301"
-          + " \001(\01620.google.shopping.merchant.products.v1.SizeSystemH\032\210\001\001\022B\n\n"
+          + "\013size_system\0301 \001(\01620."
+          + "google.shopping.merchant.products.v1.SizeSystemH\032\210\001\001\022B\n\n"
           + "size_types\0302 \003(\0162..google.shopping.merchant.products.v1.SizeType\022a\n"
-          + "\027energy_efficiency_class\0305 \001(\0162;.google.shopping.merchan"
-          + "t.products.v1.EnergyEfficiencyClassH\033\210\001\001\022e\n"
-          + "\033min_energy_efficiency_class\0306 \001(\0162;."
-          + "google.shopping.merchant.products.v1.EnergyEfficiencyClassH\034\210\001\001\022e\n"
-          + "\033max_energy_efficiency_class\0307 \001(\0162;.google.shopping.m"
-          + "erchant.products.v1.EnergyEfficiencyClassH\035\210\001\001\022V\n"
-          + "\024unit_pricing_measure\0308 \001(\01328.g"
-          + "oogle.shopping.merchant.products.v1.UnitPricingMeasure\022_\n"
-          + "\031unit_pricing_base_measure\0309"
-          + " \001(\0132<.google.shopping.merchant.products.v1.UnitPricingBaseMeasure\022\026\n"
+          + "\027energy_efficiency_class\0305 \001(\0162;.goog"
+          + "le.shopping.merchant.products.v1.EnergyEfficiencyClassH\033\210\001\001\022e\n"
+          + "\033min_energy_efficiency_class\0306 \001(\0162;.google.shopping.merch"
+          + "ant.products.v1.EnergyEfficiencyClassH\034\210\001\001\022e\n"
+          + "\033max_energy_efficiency_class\0307 \001(\0162"
+          + ";.google.shopping.merchant.products.v1.EnergyEfficiencyClassH\035\210\001\001\022V\n"
+          + "\024unit_pricing_measure\0308"
+          + " \001(\01328.google.shopping.merchant.products.v1.UnitPricingMeasure\022_\n"
+          + "\031unit_pricing_base_measure\0309 \001(\0132<.google.sh"
+          + "opping.merchant.products.v1.UnitPricingBaseMeasure\022\026\n"
           + "\tmultipack\030: \001(\003H\036\210\001\001\022\031\n"
           + "\014ads_grouping\030; \001(\tH\037\210\001\001\022\022\n\n"
           + "ads_labels\030< \003(\t\022\031\n"
           + "\014ads_redirect\030= \001(\tH \210\001\001\0227\n"
           + "\022cost_of_goods_sold\030> \001(\0132\033.google.shopping.type.Price\022L\n"
-          + "\017product_details\030?"
-          + " \003(\01323.google.shopping.merchant.products.v1.ProductDetail\022\032\n"
+          + "\017product_details\030? \003(\01323.google."
+          + "shopping.merchant.products.v1.ProductDetail\022\032\n"
           + "\022product_highlights\030@ \003(\t\022\033\n"
           + "\016display_ads_id\030A \001(\tH!\210\001\001\022\037\n"
           + "\027display_ads_similar_ids\030B \003(\t\022\036\n"
@@ -251,10 +237,10 @@ public final class ProductsCommonProto {
           + "\020display_ads_link\030D \001(\tH#\210\001\001\022\036\n"
           + "\021display_ads_value\030E \001(\001H$\210\001\001\022\025\n\r"
           + "promotion_ids\030F \003(\t\022N\n\r"
-          + "pickup_method\030P"
-          + " \001(\01622.google.shopping.merchant.products.v1.PickupMethodH%\210\001\001\022H\n\n"
-          + "pickup_sla\030Q"
-          + " \001(\0162/.google.shopping.merchant.products.v1.PickupSlaH&\210\001\001\022\032\n\r"
+          + "pickup_method\030P \001(\01622.goo"
+          + "gle.shopping.merchant.products.v1.PickupMethodH%\210\001\001\022H\n\n"
+          + "pickup_sla\030Q \001(\0162/.google"
+          + ".shopping.merchant.products.v1.PickupSlaH&\210\001\001\022\032\n\r"
           + "link_template\030R \001(\tH\'\210\001\001\022!\n"
           + "\024mobile_link_template\030S \001(\tH(\210\001\001\022\033\n"
           + "\016custom_label_0\030G \001(\tH)\210\001\001\022\033\n"
@@ -264,38 +250,33 @@ public final class ProductsCommonProto {
           + "\016custom_label_4\030K \001(\tH-\210\001\001\022P\n"
           + "\025included_destinations\030L"
           + " \003(\01621.google.shopping.type.Destination.DestinationEnum\022P\n"
-          + "\025excluded_destinations\030M \003(\01621.google.sho"
-          + "pping.type.Destination.DestinationEnum\022\'\n"
+          + "\025excluded_destinations\030M"
+          + " \003(\01621.google.shopping.type.Destination.DestinationEnum\022\'\n"
           + "\037shopping_ads_excluded_countries\030N \003(\t\022\037\n"
           + "\022external_seller_id\030\001 \001(\tH.\210\001\001\022?\n"
           + "\005pause\030\r"
           + " \001(\0162+.google.shopping.merchant.products.v1.PauseH/\210\001\001\022\035\n"
           + "\025lifestyle_image_links\030\016 \003(\t\022q\n"
-          + "\"cloud_export_additional_properties\030T \003(\0132E.google.shopping.merchant."
-          + "products.v1.CloudExportAdditionalProperties\022 \n"
+          + "\"cloud_export_additional_properties\030T \003(\0132E.google"
+          + ".shopping.merchant.products.v1.CloudExportAdditionalProperties\022 \n"
           + "\022virtual_model_link\030\202\001 \001(\tH0\210\001\001\022R\n"
-          + "\016certifications\030{ \003(\0132:.google.shopping."
-          + "merchant.products.v1.ProductCertification\022U\n"
-          + "\020structured_title\030\204\001 \001(\01325.google.sh"
-          + "opping.merchant.products.v1.StructuredTitleH1\210\001\001\022a\n"
-          + "\026structured_description\030\205\001 \001("
-          + "\0132;.google.shopping.merchant.products.v1.StructuredDescriptionH2\210\001\001\022;\n"
+          + "\016certifications\030{ \003(\013"
+          + "2:.google.shopping.merchant.products.v1.ProductCertification\022U\n"
+          + "\020structured_title\030\204\001"
+          + " \001(\01325.google.shopping.merchant.products.v1.StructuredTitleH1\210\001\001\022a\n"
+          + "\026structured_description\030\205\001 \001(\0132;.google.shopping.m"
+          + "erchant.products.v1.StructuredDescriptionH2\210\001\001\022;\n"
           + "\026auto_pricing_min_price\030| \001(\0132\033.google.shopping.type.Price\022h\n"
-          + "\031sustainability_incentives\030\212\001"
-          + " \003(\0132D.google.shopping.merchant.products.v1.ProductSustainabilityIncentive\032l\n"
-          + "\032ShippingBusinessDaysConfig\022\024\n"
-          + "\007country\030\001 \001(\tH\000\210\001\001\022\032\n\r"
-          + "business_days\030\002 \001(\tH\001\210\001\001B\n\n"
-          + "\010_countryB\020\n"
-          + "\016_business_days\032\241\007\n"
+          + "\031sustainability_incentives\030\212\001 \003(\0132D.google.shoppin"
+          + "g.merchant.products.v1.ProductSustainabilityIncentive\032\241\007\n"
           + "\017CarrierShipping\022\024\n"
           + "\007country\030\001 \001(\tH\000\210\001\001\022\023\n"
           + "\006region\030\002 \001(\tH\001\210\001\001\022\030\n"
           + "\013postal_code\030\003 \001(\tH\002\210\001\001\022\037\n"
           + "\022origin_postal_code\030\004 \001(\tH\003\210\001\001\0224\n\n"
           + "flat_price\030\005 \001(\0132\033.google.shopping.type.PriceH\004\210\001\001\022f\n\r"
-          + "carrier_price\030\006 \001(\0162J.google.shoppin"
-          + "g.merchant.products.v1.ProductAttributes.CarrierPriceOptionH\005\210\001\001\022G\n"
+          + "carrier_price\030\006 \001(\0162J.google.shopping.merchant."
+          + "products.v1.ProductAttributes.CarrierPriceOptionH\005\210\001\001\022G\n"
           + "\035carrier_price_flat_adjustment\030\007"
           + " \001(\0132\033.google.shopping.type.PriceH\006\210\001\001\0220\n"
           + "#carrier_price_percentage_adjustment\030\010 \001(\001H\007\210\001\001\022\036\n"
@@ -306,8 +287,8 @@ public final class ProductsCommonProto {
           + "\210\001\001\022#\n"
           + "\026fixed_max_transit_time\030\014 \001(\003H\013\210\001\001\022a\n"
           + "\024carrier_transit_time\030\r"
-          + " \001(\0162>.go"
-          + "ogle.shopping.merchant.products.v1.CarrierTransitTimeOptionH\014\210\001\001B\n\n"
+          + " \001(\0162>.google.shoppi"
+          + "ng.merchant.products.v1.CarrierTransitTimeOptionH\014\210\001\001B\n\n"
           + "\010_countryB\t\n"
           + "\007_regionB\016\n"
           + "\014_postal_codeB\025\n"
@@ -392,10 +373,12 @@ public final class ProductsCommonProto {
           + "\014_descriptionB\007\n"
           + "\005_linkB\016\n"
           + "\014_mobile_linkB\021\n"
-          + "\017_canonical_linkB\r\n"
+          + "\017_canonical_linkB\r"
+          + "\n"
           + "\013_image_linkB\010\n"
           + "\006_adultB\014\n\n"
-          + "_age_groupB\017\n\r"
+          + "_age_groupB\017\n"
+          + "\r"
           + "_availabilityB\010\n"
           + "\006_brandB\010\n"
           + "\006_colorB\014\n\n"
@@ -450,8 +433,8 @@ public final class ProductsCommonProto {
           + "\005value\030\001 \001(\001\022\014\n"
           + "\004unit\030\002 \001(\t\"\240\001\n"
           + "\020SubscriptionCost\022H\n"
-          + "\006period\030\001 \001(\01628.google.sho"
-          + "pping.merchant.products.v1.SubscriptionPeriod\022\025\n\r"
+          + "\006period\030\001"
+          + " \001(\01628.google.shopping.merchant.products.v1.SubscriptionPeriod\022\025\n\r"
           + "period_length\030\002 \001(\003\022+\n"
           + "\006amount\030\003 \001(\0132\033.google.shopping.type.Price\"\364\001\n"
           + "\022ProductInstallment\022\016\n"
@@ -459,8 +442,8 @@ public final class ProductsCommonProto {
           + "\006amount\030\002 \001(\0132\033.google.shopping.type.Price\0225\n"
           + "\013downpayment\030\003"
           + " \001(\0132\033.google.shopping.type.PriceH\000\210\001\001\022J\n"
-          + "\013credit_type\030\004 \001(\01620.goog"
-          + "le.shopping.merchant.products.v1.CreditTypeH\001\210\001\001B\016\n"
+          + "\013credit_type\030\004"
+          + " \001(\01620.google.shopping.merchant.products.v1.CreditTypeH\001\210\001\001B\016\n"
           + "\014_downpaymentB\016\n"
           + "\014_credit_type\"B\n\r"
           + "LoyaltyPoints\022\014\n"
@@ -483,7 +466,7 @@ public final class ProductsCommonProto {
           + "\030_cashback_for_future_useB\021\n"
           + "\017_loyalty_pointsB\036\n"
           + "\034_member_price_effective_dateB\021\n"
-          + "\017_shipping_label\"\203\004\n"
+          + "\017_shipping_label\"\203\003\n"
           + "\010Shipping\022*\n"
           + "\005price\030\001 \001(\0132\033.google.shopping.type.Price\022\017\n"
           + "\007country\030\002 \001(\t\022\016\n"
@@ -496,16 +479,11 @@ public final class ProductsCommonProto {
           + "\021max_handling_time\030\t \001(\003H\001\210\001\001\022\035\n"
           + "\020min_transit_time\030\n"
           + " \001(\003H\002\210\001\001\022\035\n"
-          + "\020max_transit_time\030\013 \001(\003H\003\210\001\001\022!\n"
-          + "\024handling_cutoff_time\030\014 \001(\tH\004\210\001\001\022%\n"
-          + "\030handling_cutoff_timezone\030\r"
-          + " \001(\tH\005\210\001\001B\024\n"
+          + "\020max_transit_time\030\013 \001(\003H\003\210\001\001B\024\n"
           + "\022_min_handling_timeB\024\n"
           + "\022_max_handling_timeB\023\n"
           + "\021_min_transit_timeB\023\n"
-          + "\021_max_transit_timeB\027\n"
-          + "\025_handling_cutoff_timeB\033\n"
-          + "\031_handling_cutoff_timezone\"\210\001\n"
+          + "\021_max_transit_time\"\210\001\n"
           + "\025FreeShippingThreshold\022\024\n"
           + "\007country\030\001 \001(\tH\000\210\001\001\0229\n"
           + "\017price_threshold\030\002"
@@ -517,10 +495,10 @@ public final class ProductsCommonProto {
           + "\016attribute_name\030\002 \001(\t\022\027\n"
           + "\017attribute_value\030\003 \001(\t\"\371\002\n"
           + "\024ProductCertification\022b\n"
-          + "\027certification_authority\030\001 "
-          + "\001(\0162<.google.shopping.merchant.products.v1.CertificationAuthorityH\000\210\001\001\022X\n"
-          + "\022certification_name\030\002 \001(\01627.google.shopping.mer"
-          + "chant.products.v1.CertificationNameH\001\210\001\001\022\037\n"
+          + "\027certification_authority\030\001 \001(\0162<.google.shoppi"
+          + "ng.merchant.products.v1.CertificationAuthorityH\000\210\001\001\022X\n"
+          + "\022certification_name\030\002 \001(\0162"
+          + "7.google.shopping.merchant.products.v1.CertificationNameH\001\210\001\001\022\037\n"
           + "\022certification_code\030\003 \001(\tH\002\210\001\001\022 \n"
           + "\023certification_value\030\004 \001(\tH\003\210\001\001B\032\n"
           + "\030_certification_authorityB\025\n"
@@ -528,16 +506,17 @@ public final class ProductsCommonProto {
           + "\023_certification_codeB\026\n"
           + "\024_certification_value\"\246\001\n"
           + "\017StructuredTitle\022Y\n"
-          + "\023digital_source_type\030\001"
-          + " \001(\01627.google.shopping.merchant.products.v1.DigitalSourceTypeH\000\210\001\001\022\024\n"
+          + "\023digital_source_type\030\001 \001(\01627.go"
+          + "ogle.shopping.merchant.products.v1.DigitalSourceTypeH\000\210\001\001\022\024\n"
           + "\007content\030\002 \001(\tH\001\210\001\001B\026\n"
           + "\024_digital_source_typeB\n\n"
           + "\010_content\"\254\001\n"
           + "\025StructuredDescription\022Y\n"
-          + "\023digital_source_type\030\001 \001(\01627.google.s"
-          + "hopping.merchant.products.v1.DigitalSourceTypeH\000\210\001\001\022\024\n"
+          + "\023digital_source_type\030\001"
+          + " \001(\01627.google.shopping.merchant.products.v1.DigitalSourceTypeH\000\210\001\001\022\024\n"
           + "\007content\030\002 \001(\tH\001\210\001\001B\026\n"
-          + "\024_digital_source_typeB\n\n"
+          + "\024_digital_source_typeB\n"
+          + "\n"
           + "\010_content\"9\n"
           + "\020ProductDimension\022\022\n"
           + "\005value\030\001 \001(\001B\003\340A\002\022\021\n"
@@ -546,28 +525,28 @@ public final class ProductsCommonProto {
           + "\005value\030\001 \001(\001B\003\340A\002\022\021\n"
           + "\004unit\030\002 \001(\tB\003\340A\002\"\353\007\n\r"
           + "ProductStatus\022c\n"
-          + "\024destination_statuses\030\003 \003(\0132E.googl"
-          + "e.shopping.merchant.products.v1.ProductStatus.DestinationStatus\022]\n"
-          + "\021item_level_issues\030\004 \003(\0132B.google.shopping.merchant.pr"
-          + "oducts.v1.ProductStatus.ItemLevelIssue\0221\n\r"
+          + "\024destination_statuses\030\003 \003(\0132E.google.shopping.merchant"
+          + ".products.v1.ProductStatus.DestinationStatus\022]\n"
+          + "\021item_level_issues\030\004 \003(\0132B.google"
+          + ".shopping.merchant.products.v1.ProductStatus.ItemLevelIssue\0221\n\r"
           + "creation_date\030\005 \001(\0132\032.google.protobuf.Timestamp\0224\n"
           + "\020last_update_date\030\006 \001(\0132\032.google.protobuf.Timestamp\022:\n"
           + "\026google_expiration_date\030\007"
           + " \001(\0132\032.google.protobuf.Timestamp\032\301\001\n"
           + "\021DestinationStatus\022V\n"
-          + "\021reporting_context\030\001"
-          + " \001(\0162;.google.shopping.type.ReportingContext.ReportingContextEnum\022\032\n"
+          + "\021reporting_context\030\001 \001(\0162;.goog"
+          + "le.shopping.type.ReportingContext.ReportingContextEnum\022\032\n"
           + "\022approved_countries\030\002 \003(\t\022\031\n"
           + "\021pending_countries\030\003 \003(\t\022\035\n"
           + "\025disapproved_countries\030\004 \003(\t\032\254\003\n"
           + "\016ItemLevelIssue\022\014\n"
           + "\004code\030\001 \001(\t\022]\n"
-          + "\010severity\030\002 \001(\0162K.google.shopping.merchant.pr"
-          + "oducts.v1.ProductStatus.ItemLevelIssue.Severity\022\022\n\n"
+          + "\010severity\030\002 \001(\0162K.google"
+          + ".shopping.merchant.products.v1.ProductStatus.ItemLevelIssue.Severity\022\022\n\n"
           + "resolution\030\003 \001(\t\022\021\n"
           + "\tattribute\030\004 \001(\t\022V\n"
-          + "\021reporting_context\030\005 \001(\0162;.goog"
-          + "le.shopping.type.ReportingContext.ReportingContextEnum\022\023\n"
+          + "\021reporting_context\030\005"
+          + " \001(\0162;.google.shopping.type.ReportingContext.ReportingContextEnum\022\023\n"
           + "\013description\030\006 \001(\t\022\016\n"
           + "\006detail\030\007 \001(\t\022\025\n\r"
           + "documentation\030\010 \001(\t\022\034\n"
@@ -594,8 +573,8 @@ public final class ProductsCommonProto {
           + "\036ProductSustainabilityIncentive\022-\n"
           + "\006amount\030\002 \001(\0132\033.google.shopping.type.PriceH\000\022\024\n\n"
           + "percentage\030\003 \001(\001H\000\022\\\n"
-          + "\004type\030\001 \001(\0162I.google.shopping.merchant.products"
-          + ".v1.ProductSustainabilityIncentive.TypeH\001\210\001\001\"F\n"
+          + "\004type\030\001 \001(\0162I.google.shopp"
+          + "ing.merchant.products.v1.ProductSustainabilityIncentive.TypeH\001\210\001\001\"F\n"
           + "\004Type\022\024\n"
           + "\020TYPE_UNSPECIFIED\020\000\022\021\n\r"
           + "EV_TAX_CREDIT\020\001\022\025\n"
@@ -605,16 +584,7 @@ public final class ProductsCommonProto {
           + "\022AutomatedDiscounts\0220\n"
           + "\013prior_price\030\001 \001(\0132\033.google.shopping.type.Price\022<\n"
           + "\027prior_price_progressive\030\002 \001(\0132\033.google.shopping.type.Price\022.\n"
-          + "\tgad_price\030\003 \001(\0132\033.google.shopping.type.Price\"\340\001\n"
-          + "\022HandlingCutoffTime\022\024\n"
-          + "\007country\030\001 \001(\tH\000\210\001\001\022\030\n"
-          + "\013cutoff_time\030\002 \001(\tH\001\210\001\001\022\034\n"
-          + "\017cutoff_timezone\030\003 \001(\tH\002\210\001\001\022*\n"
-          + "\035disable_delivery_after_cutoff\030\004 \001(\010H\003\210\001\001B\n\n"
-          + "\010_countryB\016\n"
-          + "\014_cutoff_timeB\022\n"
-          + "\020_cutoff_timezoneB \n"
-          + "\036_disable_delivery_after_cutoff*N\n"
+          + "\tgad_price\030\003 \001(\0132\033.google.shopping.type.Price*N\n"
           + "\022SubscriptionPeriod\022#\n"
           + "\037SUBSCRIPTION_PERIOD_UNSPECIFIED\020\000\022\t\n"
           + "\005MONTH\020\001\022\010\n"
@@ -750,22 +720,24 @@ public final class ProductsCommonProto {
           + "\030FEDEX_PRIORITY_OVERNIGHT\020\030\022\034\n"
           + "\030FEDEX_STANDARD_OVERNIGHT\020\031\022\016\n\n"
           + "FEDEX_2DAY\020\032\022\023\n"
-          + "\017UPS_2ND_DAY_AIR",
-      "\020\033\022\022\n\016UPS_2ND_DAY_AM\020\034\022\024\n\020UPS_3_DAY_SELE"
-          + "CT\020\035\022\016\n\nUPS_GROUND\020\036\022\024\n\020UPS_NEXT_DAY_AIR"
-          + "\020\037\022\035\n\031UPS_NEXT_DAY_AIR_EARLY_AM\020 \022\032\n\026UPS"
-          + "_NEXT_DAY_AIR_SAVER\020!\022\036\n\032USPS_PRIORITY_M"
-          + "AIL_EXPRESS\020\"\022\023\n\017USPS_MEDIA_MAIL\020#\022 \n\034US"
-          + "PS_GROUND_ADVANTAGE_RETAIL\020$\022\026\n\022USPS_PRI"
-          + "ORITY_MAIL\020%\022$\n USPS_GROUND_ADVANTAGE_CO"
-          + "MMERCIAL\020&\022\031\n\025USPS_FIRST_CLASS_MAIL\020\'B\206\002"
-          + "\n(com.google.shopping.merchant.products."
-          + "v1B\023ProductsCommonProtoP\001ZJcloud.google."
-          + "com/go/shopping/merchant/products/apiv1/"
-          + "productspb;productspb\252\002$Google.Shopping."
-          + "Merchant.Products.V1\312\002$Google\\Shopping\\M"
-          + "erchant\\Products\\V1\352\002(Google::Shopping::"
-          + "Merchant::Products::V1b\006proto3"
+          + "\017UPS_2ND_DAY_AIR\020\033\022\022\n"
+          + "\016UPS_2ND_DAY_AM\020\034\022\024\n"
+          + "\020UPS_3_DAY_SELECT\020\035\022\016\n\n"
+          + "UPS_GROUND\020\036\022\024\n"
+          + "\020UPS_NEXT_DAY_AIR\020\037\022\035\n"
+          + "\031UPS_NEXT_DAY_AIR_EARLY_AM\020 \022\032\n"
+          + "\026UPS_NEXT_DAY_AIR_SAVER\020!\022\036\n"
+          + "\032USPS_PRIORITY_MAIL_EXPRESS\020\"\022\023\n"
+          + "\017USPS_MEDIA_MAIL\020#\022 \n"
+          + "\034USPS_GROUND_ADVANTAGE_RETAIL\020$\022\026\n"
+          + "\022USPS_PRIORITY_MAIL\020%\022$\n"
+          + " USPS_GROUND_ADVANTAGE_COMMERCIAL\020&\022\031\n"
+          + "\025USPS_FIRST_CLASS_MAIL\020\'B\206\002\n"
+          + "(com.google.shopping.merchant.products.v1B\023Pr"
+          + "oductsCommonProtoP\001ZJcloud.google.com/go/shopping/merchant/products/apiv1/produc"
+          + "tspb;productspb\252\002$Google.Shopping.Mercha"
+          + "nt.Products.V1\312\002$Google\\Shopping\\Merchan"
+          + "t\\Products\\V1\352\002(Google::Shopping::Merchant::Products::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -830,9 +802,6 @@ public final class ProductsCommonProto {
               "ShippingHeight",
               "MaxHandlingTime",
               "MinHandlingTime",
-              "ShippingHandlingBusinessDays",
-              "ShippingTransitBusinessDays",
-              "HandlingCutoffTimes",
               "ShippingLabel",
               "TransitTimeLabel",
               "Size",
@@ -879,20 +848,10 @@ public final class ProductsCommonProto {
               "AutoPricingMinPrice",
               "SustainabilityIncentives",
             });
-    internal_static_google_shopping_merchant_products_v1_ProductAttributes_ShippingBusinessDaysConfig_descriptor =
-        internal_static_google_shopping_merchant_products_v1_ProductAttributes_descriptor
-            .getNestedTypes()
-            .get(0);
-    internal_static_google_shopping_merchant_products_v1_ProductAttributes_ShippingBusinessDaysConfig_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_shopping_merchant_products_v1_ProductAttributes_ShippingBusinessDaysConfig_descriptor,
-            new java.lang.String[] {
-              "Country", "BusinessDays",
-            });
     internal_static_google_shopping_merchant_products_v1_ProductAttributes_CarrierShipping_descriptor =
         internal_static_google_shopping_merchant_products_v1_ProductAttributes_descriptor
             .getNestedTypes()
-            .get(1);
+            .get(0);
     internal_static_google_shopping_merchant_products_v1_ProductAttributes_CarrierShipping_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_shopping_merchant_products_v1_ProductAttributes_CarrierShipping_descriptor,
@@ -998,8 +957,6 @@ public final class ProductsCommonProto {
               "MaxHandlingTime",
               "MinTransitTime",
               "MaxTransitTime",
-              "HandlingCutoffTime",
-              "HandlingCutoffTimezone",
             });
     internal_static_google_shopping_merchant_products_v1_FreeShippingThreshold_descriptor =
         getDescriptor().getMessageTypes().get(10);
@@ -1130,14 +1087,6 @@ public final class ProductsCommonProto {
             internal_static_google_shopping_merchant_products_v1_AutomatedDiscounts_descriptor,
             new java.lang.String[] {
               "PriorPrice", "PriorPriceProgressive", "GadPrice",
-            });
-    internal_static_google_shopping_merchant_products_v1_HandlingCutoffTime_descriptor =
-        getDescriptor().getMessageTypes().get(21);
-    internal_static_google_shopping_merchant_products_v1_HandlingCutoffTime_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_shopping_merchant_products_v1_HandlingCutoffTime_descriptor,
-            new java.lang.String[] {
-              "Country", "CutoffTime", "CutoffTimezone", "DisableDeliveryAfterCutoff",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

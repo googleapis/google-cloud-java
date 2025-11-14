@@ -37,7 +37,6 @@
  *       InsertLocalInventoryRequest.newBuilder()
  *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
  *           .setLocalInventory(LocalInventory.newBuilder().build())
- *           .setProductIdBase64UrlEncoded(true)
  *           .build();
  *   LocalInventory response = localInventoryServiceClient.insertLocalInventory(request);
  * }
@@ -62,7 +61,6 @@
  *       InsertRegionalInventoryRequest.newBuilder()
  *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
  *           .setRegionalInventory(RegionalInventory.newBuilder().build())
- *           .setProductIdBase64UrlEncoded(true)
  *           .build();
  *   RegionalInventory response = regionalInventoryServiceClient.insertRegionalInventory(request);
  * }

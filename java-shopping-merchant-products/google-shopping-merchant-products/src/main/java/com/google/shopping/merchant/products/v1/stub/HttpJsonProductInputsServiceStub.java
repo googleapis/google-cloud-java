@@ -116,10 +116,6 @@ public class HttpJsonProductInputsServiceStub extends ProductInputsServiceStub {
                             ProtoRestSerializer<UpdateProductInputRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "dataSource", request.getDataSource());
-                            serializer.putQueryParam(
-                                fields,
-                                "productIdBase64UrlEncoded",
-                                request.getProductIdBase64UrlEncoded());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
@@ -160,10 +156,6 @@ public class HttpJsonProductInputsServiceStub extends ProductInputsServiceStub {
                             ProtoRestSerializer<DeleteProductInputRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "dataSource", request.getDataSource());
-                            serializer.putQueryParam(
-                                fields,
-                                "productIdBase64UrlEncoded",
-                                request.getProductIdBase64UrlEncoded());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })

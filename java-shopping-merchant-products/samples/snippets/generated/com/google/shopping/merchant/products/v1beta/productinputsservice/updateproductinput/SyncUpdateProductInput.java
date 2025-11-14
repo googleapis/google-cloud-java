@@ -41,7 +41,6 @@ public class SyncUpdateProductInput {
               .setProductInput(ProductInput.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .setDataSource("dataSource1272470629")
-              .setProductIdBase64UrlEncoded(true)
               .build();
       ProductInput response = productInputsServiceClient.updateProductInput(request);
     }
