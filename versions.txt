@@ -923,3 +923,6 @@ grpc-data-manager-v1:0.0.0:0.1.0-SNAPSHOT
 google-cloud-databasecenter:0.0.0:0.1.0-SNAPSHOT
 proto-google-cloud-databasecenter-v1beta:0.0.0:0.1.0-SNAPSHOT
 grpc-google-cloud-databasecenter-v1beta:0.0.0:0.1.0-SNAPSHOT
+google-cloud-vectorsearch:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-vectorsearch-v1beta:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-vectorsearch-v1beta:0.0.0:0.0.1-SNAPSHOT
