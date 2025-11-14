@@ -5,14 +5,10 @@
 # https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners#codeowners-syntax
 
 # The @googleapis/api-bigquery is the default owner for changes in this repo
-*                       @googleapis/yoshi-java @googleapis/api-bigquery
-
-# for handwritten libraries, keep codeowner_team in .repo-metadata.json as owner
-**/*.java               @googleapis/api-bigquery
-
+*                       @googleapis/cloud-java-team-teamsync @googleapis/api-bigquery
 
 # The java-samples-reviewers team is the default owner for samples changes
-samples/**/*.java       @googleapis/java-samples-reviewers
+samples/**/*.java       @googleapis/cloud-java-team-teamsync @googleapis/java-samples-reviewers
 
 # Generated snippets should not be owned by samples reviewers
-samples/snippets/generated/       @googleapis/yoshi-java
+samples/snippets/generated/      @googleapis/cloud-java-team-teamsync @googleapis/yoshi-java
