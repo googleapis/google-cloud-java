@@ -14,9 +14,6 @@
 # GitHub action job to test core java library features on
 # downstream client libraries before they are released.
 on:
-  push:
-    branches:
-    - main
   pull_request:
 name: generation diff
 env:
