@@ -43,7 +43,7 @@
 
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-cloud-vectorsearch-v1</artifactId>
+      <artifactId>proto-google-cloud-vectorsearch-v1beta</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
@@ -89,7 +89,7 @@
 
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-cloud-vectorsearch-v1</artifactId>
+      <artifactId>grpc-google-cloud-vectorsearch-v1beta</artifactId>
       <scope>test</scope>
     </dependency>
     <!-- Need testing utility classes for generated gRPC clients tests -->

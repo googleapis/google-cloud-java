@@ -2741,7 +2741,7 @@ libraries:
   group_id: com.google.cloud
   cloud_api: true
   GAPICs:
-  - proto_path: google/ads/datamanager/v1
+  - proto_path: google/cloud/vectorsearch/v1beta
   requires_billing: true
 - api_shortname: videointelligence
   name_pretty: Cloud Video Intelligence
