@@ -23,13 +23,13 @@ deep-preserve-regex:
 - "/java-vectorsearch/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
-- source: "/google/ads/datamanager/(v.*)/.*-java/proto-google-.*/src"
+- source: "/google/cloud/vectorsearch/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-vectorsearch/$1/proto-google-cloud-vectorsearch-$1/src"
-- source: "/google/ads/datamanager/(v.*)/.*-java/grpc-google-.*/src"
+- source: "/google/cloud/vectorsearch/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-vectorsearch/$1/grpc-google-cloud-vectorsearch-$1/src"
-- source: "/google/ads/datamanager/(v.*)/.*-java/gapic-google-.*/src"
+- source: "/google/cloud/vectorsearch/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-vectorsearch/$1/google-cloud-vectorsearch/src"
-- source: "/google/ads/datamanager/(v.*)/.*-java/samples/snippets/generated"
+- source: "/google/cloud/vectorsearch/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-vectorsearch/$1/samples/snippets/generated"
 
 api-name: vectorsearch

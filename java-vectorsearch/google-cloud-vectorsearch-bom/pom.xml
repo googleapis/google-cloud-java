@@ -30,13 +30,13 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-vectorsearch-v1</artifactId>
-        <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-vectorsearch-v1:current} -->
+        <artifactId>grpc-google-cloud-vectorsearch-v1beta</artifactId>
+        <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-vectorsearch-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-vectorsearch-v1</artifactId>
-        <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-vectorsearch-v1:current} -->
+        <artifactId>proto-google-cloud-vectorsearch-v1beta</artifactId>
+        <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-vectorsearch-v1beta:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
