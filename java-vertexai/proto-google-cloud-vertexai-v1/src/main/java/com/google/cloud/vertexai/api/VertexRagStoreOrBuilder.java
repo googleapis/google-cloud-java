@@ -39,7 +39,6 @@ public interface VertexRagStoreOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vertexai.api.VertexRagStore.RagResource> getRagResourcesList();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface VertexRagStoreOrBuilder
    * </code>
    */
   com.google.cloud.vertexai.api.VertexRagStore.RagResource getRagResources(int index);
-
   /**
    *
    *
@@ -71,7 +69,6 @@ public interface VertexRagStoreOrBuilder
    * </code>
    */
   int getRagResourcesCount();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface VertexRagStoreOrBuilder
    */
   java.util.List<? extends com.google.cloud.vertexai.api.VertexRagStore.RagResourceOrBuilder>
       getRagResourcesOrBuilderList();
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public interface VertexRagStoreOrBuilder
    */
   @java.lang.Deprecated
   boolean hasSimilarityTopK();
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public interface VertexRagStoreOrBuilder
    */
   @java.lang.Deprecated
   boolean hasVectorDistanceThreshold();
-
   /**
    *
    *
@@ -194,7 +188,6 @@ public interface VertexRagStoreOrBuilder
    * @return Whether the ragRetrievalConfig field is set.
    */
   boolean hasRagRetrievalConfig();
-
   /**
    *
    *
@@ -209,7 +202,6 @@ public interface VertexRagStoreOrBuilder
    * @return The ragRetrievalConfig.
    */
   com.google.cloud.vertexai.api.RagRetrievalConfig getRagRetrievalConfig();
-
   /**
    *
    *

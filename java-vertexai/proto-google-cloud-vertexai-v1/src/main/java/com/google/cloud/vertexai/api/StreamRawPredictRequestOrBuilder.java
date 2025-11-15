@@ -40,7 +40,6 @@ public interface StreamRawPredictRequestOrBuilder
    * @return The endpoint.
    */
   java.lang.String getEndpoint();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface StreamRawPredictRequestOrBuilder
    * @return Whether the httpBody field is set.
    */
   boolean hasHttpBody();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface StreamRawPredictRequestOrBuilder
    * @return The httpBody.
    */
   com.google.api.HttpBody getHttpBody();
-
   /**
    *
    *
