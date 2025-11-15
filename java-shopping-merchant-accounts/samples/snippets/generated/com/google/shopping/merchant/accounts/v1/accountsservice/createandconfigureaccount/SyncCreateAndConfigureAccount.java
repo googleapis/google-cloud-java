@@ -40,6 +40,8 @@ public class SyncCreateAndConfigureAccount {
               .setAccount(Account.newBuilder().build())
               .addAllUser(new ArrayList<CreateAndConfigureAccountRequest.AddUser>())
               .addAllService(new ArrayList<CreateAndConfigureAccountRequest.AddAccountService>())
+              .addAllSetAlias(
+                  new ArrayList<CreateAndConfigureAccountRequest.SetAliasForRelationship>())
               .build();
       Account response = accountsServiceClient.createAndConfigureAccount(request);
     }

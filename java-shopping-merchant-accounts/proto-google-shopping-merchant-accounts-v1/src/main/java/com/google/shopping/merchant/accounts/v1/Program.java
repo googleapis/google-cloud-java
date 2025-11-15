@@ -34,6 +34,7 @@ package com.google.shopping.merchant.accounts.v1;
  * The following list is the available set of program resource IDs accessible
  * through the API:
  *
+ * * `checkout`
  * * `free-listings`
  * * `shopping-ads`
  * * `youtube-shopping-checkout`
@@ -2159,6 +2160,7 @@ public final class Program extends com.google.protobuf.GeneratedMessageV3
    * The following list is the available set of program resource IDs accessible
    * through the API:
    *
+   * * `checkout`
    * * `free-listings`
    * * `shopping-ads`
    * * `youtube-shopping-checkout`
