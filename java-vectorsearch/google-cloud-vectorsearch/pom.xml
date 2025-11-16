@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-vectorsearch</artifactId>
-  <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-vectorsearch:current} -->
+  <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-vectorsearch:current} -->
   <packaging>jar</packaging>
   <name>Google Vector Search API</name>
   <description>Vector Search API The Vector Search API provides a fully-managed, highly performant, and scalable vector database designed to power next-generation search, recommendation, and generative AI applications. It allows you to store, index, and query your data and its corresponding vector embeddings through a simple, intuitive interface. With Vector Search, you can define custom schemas for your data, insert objects with associated metadata, automatically generate embeddings from your data, and perform fast approximate nearest neighbor (ANN) searches to find semantically similar items at scale.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-vectorsearch-parent</artifactId>
-    <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-vectorsearch:current} -->
+    <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-vectorsearch:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-vectorsearch</site.installationModule>
