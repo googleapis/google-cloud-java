@@ -59,7 +59,8 @@ public class ChannelPoolMetricsTracer implements Runnable {
             .histogramBuilder(OUTSTANDING_RPCS_PER_CHANNEL_NAME)
             .ofLongs()
             .setDescription(
-                "A distribution of the number of outstanding RPCs per connection in the client pool, sampled periodically.")
+                "A distribution of the number of outstanding RPCs per connection in the client"
+                    + " pool, sampled periodically.")
             .setUnit("1")
             .build();
 
