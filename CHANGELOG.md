@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.56.0](https://github.com/googleapis/java-bigquery/compare/v2.55.3...v2.56.0) (2025-11-15)
+
+
+### Features
+
+* New queryWithTimeout method for customer-side wait ([#3995](https://github.com/googleapis/java-bigquery/issues/3995)) ([9c0df54](https://github.com/googleapis/java-bigquery/commit/9c0df5422c05696f7ce4bedf914a58306150dc21))
+
+
+### Dependencies
+
+* Update dependency com.google.apis:google-api-services-bigquery to v2-rev20251012-2.0.0 ([#3923](https://github.com/googleapis/java-bigquery/issues/3923)) ([1d8977d](https://github.com/googleapis/java-bigquery/commit/1d8977df3b1451378e5471cce9fd8b067f80fc9a))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.54.1 ([#3994](https://github.com/googleapis/java-bigquery/issues/3994)) ([4e09f6b](https://github.com/googleapis/java-bigquery/commit/4e09f6bc7a25904ad8f61141a0837535d39dbb4e))
+
 ## [2.55.3](https://github.com/googleapis/java-bigquery/compare/v2.55.2...v2.55.3) (2025-10-21)
 
 
