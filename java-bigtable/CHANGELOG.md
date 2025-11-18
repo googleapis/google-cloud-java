@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.69.0](https://github.com/googleapis/java-bigtable/compare/v2.68.0...v2.69.0) (2025-11-17)
+
+
+### Features
+
+* **bigtable:** Add internal grpc subconnections metric and add outstanding rpcs to INTERNAL_VIEW ([#2700](https://github.com/googleapis/java-bigtable/issues/2700)) ([e3e6e99](https://github.com/googleapis/java-bigtable/commit/e3e6e993ee197f897c166fb8959755db0cb9c3fc))
+* **bigtable:** Expose a metric to track the number of outstanding rpcs (unary , streaming) in channel pool ([#2696](https://github.com/googleapis/java-bigtable/issues/2696)) ([140a1ad](https://github.com/googleapis/java-bigtable/commit/140a1ad81947da26c1539632ff04748dc3498d69))
+* **bigtable:** Populate alts field in channel entry ([#2702](https://github.com/googleapis/java-bigtable/issues/2702)) ([1bfb763](https://github.com/googleapis/java-bigtable/commit/1bfb763e6e4fb6fe8c808abe5dbd4221d3a632c3))
+* Enable ALTS hard bound token in Bigtable w/ direct access ([#2695](https://github.com/googleapis/java-bigtable/issues/2695)) ([d12b37d](https://github.com/googleapis/java-bigtable/commit/d12b37dacf8712d30be05175828999af74159819))
+
 ## [2.68.0](https://github.com/googleapis/java-bigtable/compare/v2.67.1...v2.68.0) (2025-10-22)
 
 
