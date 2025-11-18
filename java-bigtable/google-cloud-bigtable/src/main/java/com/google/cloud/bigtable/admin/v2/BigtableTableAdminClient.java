@@ -666,8 +666,9 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    *
    * <pre>{@code
    * List<String> tableIds = client.listTables();
+   * System.out.println("Got list of tables:");
    * for(String tableId: tableIds) {
-   *   System.out.println(name.getTable());
+   *   System.out.println(tableId);
    * }
    * }</pre>
    */
