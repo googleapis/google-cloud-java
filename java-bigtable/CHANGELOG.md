@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.70.0](https://github.com/googleapis/java-bigtable/compare/v2.69.0...v2.70.0) (2025-11-18)
+
+
+### Features
+
+* Add PeerInfo proto in Bigtable API ([0736694](https://github.com/googleapis/java-bigtable/commit/0736694c74099a98ab9f36ecb011a31458c6d8c6))
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.64.1 ([0736694](https://github.com/googleapis/java-bigtable/commit/0736694c74099a98ab9f36ecb011a31458c6d8c6))
+
+
+### Dependencies
+
+* Update shared dependencies ([#2704](https://github.com/googleapis/java-bigtable/issues/2704)) ([97a8a0e](https://github.com/googleapis/java-bigtable/commit/97a8a0e36281c3154e03e2ba74aed9af00c9a22b))
+
+
+### Documentation
+
+* Update javadoc sample for BigtableTableAdminClient.listTables ([#2308](https://github.com/googleapis/java-bigtable/issues/2308)) ([56237d7](https://github.com/googleapis/java-bigtable/commit/56237d7a8d420f526237e11c868fd85e9f256831))
+
 ## [2.69.0](https://github.com/googleapis/java-bigtable/compare/v2.68.0...v2.69.0) (2025-11-17)
 
 
