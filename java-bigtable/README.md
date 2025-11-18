@@ -247,7 +247,7 @@ your OpenTelemetry instance. You can refer to
 [CustomOpenTelemetryMetricsProvider](https://github.com/googleapis/java-bigtable/blob/main/google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/metrics/CustomOpenTelemetryMetricsProvider.java)
 on how to set it up.
 
-### Disable Bigtbale traces
+### Disable Bigtable traces
 
 If your application already has tracing integration and you want to disable Bigtable
 traces, you can do the following:
