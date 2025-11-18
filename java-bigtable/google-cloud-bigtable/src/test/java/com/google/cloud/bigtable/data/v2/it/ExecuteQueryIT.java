@@ -232,8 +232,11 @@ public class ExecuteQueryIT {
       assertThat(rs.getProtoEnum("enumCol", Genre::forNumber)).isEqualTo(Genre.JAZZ);
       assertThat(rs.getProtoEnum(12, Genre::forNumber)).isEqualTo(Genre.JAZZ);
       assertThat(rs.next()).isFalse();
+    } catch (AssertionError e) {
+      throw e;
+    } finally {
+      deleteTestSchemaBundle();
     }
-    deleteTestSchemaBundle();
   }
 
   @Test
