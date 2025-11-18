@@ -104,4 +104,30 @@ public interface ResponseParamsOrBuilder
    * @return The bytes for clusterId.
    */
   com.google.protobuf.ByteString getClusterIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The AFE ID for the AFE that is served this request.
+   * </pre>
+   *
+   * <code>optional int64 afe_id = 3;</code>
+   *
+   * @return Whether the afeId field is set.
+   */
+  boolean hasAfeId();
+
+  /**
+   *
+   *
+   * <pre>
+   * The AFE ID for the AFE that is served this request.
+   * </pre>
+   *
+   * <code>optional int64 afe_id = 3;</code>
+   *
+   * @return The afeId.
+   */
+  long getAfeId();
 }

@@ -207,6 +207,41 @@ public final class ResponseParams extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int AFE_ID_FIELD_NUMBER = 3;
+  private long afeId_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * The AFE ID for the AFE that is served this request.
+   * </pre>
+   *
+   * <code>optional int64 afe_id = 3;</code>
+   *
+   * @return Whether the afeId field is set.
+   */
+  @java.lang.Override
+  public boolean hasAfeId() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The AFE ID for the AFE that is served this request.
+   * </pre>
+   *
+   * <code>optional int64 afe_id = 3;</code>
+   *
+   * @return The afeId.
+   */
+  @java.lang.Override
+  public long getAfeId() {
+    return afeId_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -227,6 +262,9 @@ public final class ResponseParams extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, clusterId_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeInt64(3, afeId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -241,6 +279,9 @@ public final class ResponseParams extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, clusterId_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, afeId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -265,6 +306,10 @@ public final class ResponseParams extends com.google.protobuf.GeneratedMessageV3
     if (hasClusterId()) {
       if (!getClusterId().equals(other.getClusterId())) return false;
     }
+    if (hasAfeId() != other.hasAfeId()) return false;
+    if (hasAfeId()) {
+      if (getAfeId() != other.getAfeId()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -283,6 +328,10 @@ public final class ResponseParams extends com.google.protobuf.GeneratedMessageV3
     if (hasClusterId()) {
       hash = (37 * hash) + CLUSTER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getClusterId().hashCode();
+    }
+    if (hasAfeId()) {
+      hash = (37 * hash) + AFE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getAfeId());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -425,6 +474,7 @@ public final class ResponseParams extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       zoneId_ = "";
       clusterId_ = "";
+      afeId_ = 0L;
       return this;
     }
 
@@ -469,6 +519,10 @@ public final class ResponseParams extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.clusterId_ = clusterId_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.afeId_ = afeId_;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -528,6 +582,9 @@ public final class ResponseParams extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.hasAfeId()) {
+        setAfeId(other.getAfeId());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -566,6 +623,12 @@ public final class ResponseParams extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 24:
+              {
+                afeId_ = input.readInt64();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -839,6 +902,78 @@ public final class ResponseParams extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       clusterId_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private long afeId_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The AFE ID for the AFE that is served this request.
+     * </pre>
+     *
+     * <code>optional int64 afe_id = 3;</code>
+     *
+     * @return Whether the afeId field is set.
+     */
+    @java.lang.Override
+    public boolean hasAfeId() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The AFE ID for the AFE that is served this request.
+     * </pre>
+     *
+     * <code>optional int64 afe_id = 3;</code>
+     *
+     * @return The afeId.
+     */
+    @java.lang.Override
+    public long getAfeId() {
+      return afeId_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The AFE ID for the AFE that is served this request.
+     * </pre>
+     *
+     * <code>optional int64 afe_id = 3;</code>
+     *
+     * @param value The afeId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAfeId(long value) {
+
+      afeId_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The AFE ID for the AFE that is served this request.
+     * </pre>
+     *
+     * <code>optional int64 afe_id = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAfeId() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      afeId_ = 0L;
       onChanged();
       return this;
     }

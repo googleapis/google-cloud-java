@@ -42,17 +42,19 @@ public final class ResponseParamsProto {
   static {
     java.lang.String[] descriptorData = {
       "\n"
-          + "(google/bigtable/v2/response_params.proto\022\022google.bigtable.v2\"Z\n"
+          + "(google/bigtable/v2/response_params.proto\022\022google.bigtable.v2\"z\n"
           + "\016ResponseParams\022\024\n"
           + "\007zone_id\030\001 \001(\tH\000\210\001\001\022\027\n\n"
-          + "cluster_id\030\002 \001(\tH\001\210\001\001B\n\n"
+          + "cluster_id\030\002 \001(\tH\001\210\001\001\022\023\n"
+          + "\006afe_id\030\003 \001(\003H\002\210\001\001B\n\n"
           + "\010_zone_idB\r\n"
-          + "\013_cluster_idB\275\001\n"
-          + "\026com.google.bigtable.v2B\023ResponseParamsPro"
-          + "toP\001Z8cloud.google.com/go/bigtable/apiv2"
-          + "/bigtablepb;bigtablepb\252\002\030Google.Cloud.Bi"
-          + "gtable.V2\312\002\030Google\\Cloud\\Bigtable\\V2\352\002\033G"
-          + "oogle::Cloud::Bigtable::V2b\006proto3"
+          + "\013_cluster_idB\t\n"
+          + "\007_afe_idB\275\001\n"
+          + "\026com.google.bigtable.v2B\023ResponseParamsProtoP\001Z8cl"
+          + "oud.google.com/go/bigtable/apiv2/bigtabl"
+          + "epb;bigtablepb\252\002\030Google.Cloud.Bigtable.V"
+          + "2\312\002\030Google\\Cloud\\Bigtable\\V2\352\002\033Google::C"
+          + "loud::Bigtable::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -63,7 +65,7 @@ public final class ResponseParamsProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_v2_ResponseParams_descriptor,
             new java.lang.String[] {
-              "ZoneId", "ClusterId",
+              "ZoneId", "ClusterId", "AfeId",
             });
   }
 

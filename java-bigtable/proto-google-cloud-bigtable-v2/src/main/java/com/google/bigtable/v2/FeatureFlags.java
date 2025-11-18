@@ -248,6 +248,25 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     return directAccessRequested_;
   }
 
+  public static final int PEER_INFO_FIELD_NUMBER = 11;
+  private boolean peerInfo_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * If the client can support using BigtablePeerInfo.
+   * </pre>
+   *
+   * <code>bool peer_info = 11;</code>
+   *
+   * @return The peerInfo.
+   */
+  @java.lang.Override
+  public boolean getPeerInfo() {
+    return peerInfo_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -289,6 +308,9 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     if (directAccessRequested_ != false) {
       output.writeBool(10, directAccessRequested_);
     }
+    if (peerInfo_ != false) {
+      output.writeBool(11, peerInfo_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -325,6 +347,9 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     if (directAccessRequested_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, directAccessRequested_);
     }
+    if (peerInfo_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, peerInfo_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -349,6 +374,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     if (getClientSideMetricsEnabled() != other.getClientSideMetricsEnabled()) return false;
     if (getTrafficDirectorEnabled() != other.getTrafficDirectorEnabled()) return false;
     if (getDirectAccessRequested() != other.getDirectAccessRequested()) return false;
+    if (getPeerInfo() != other.getPeerInfo()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -378,6 +404,8 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getTrafficDirectorEnabled());
     hash = (37 * hash) + DIRECT_ACCESS_REQUESTED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDirectAccessRequested());
+    hash = (37 * hash) + PEER_INFO_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPeerInfo());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -533,6 +561,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
       clientSideMetricsEnabled_ = false;
       trafficDirectorEnabled_ = false;
       directAccessRequested_ = false;
+      peerInfo_ = false;
       return this;
     }
 
@@ -594,6 +623,9 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.directAccessRequested_ = directAccessRequested_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.peerInfo_ = peerInfo_;
       }
     }
 
@@ -668,6 +700,9 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getDirectAccessRequested() != false) {
         setDirectAccessRequested(other.getDirectAccessRequested());
+      }
+      if (other.getPeerInfo() != false) {
+        setPeerInfo(other.getPeerInfo());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -749,6 +784,12 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000100;
                 break;
               } // case 80
+            case 88:
+              {
+                peerInfo_ = input.readBool();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 88
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1292,6 +1333,62 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     public Builder clearDirectAccessRequested() {
       bitField0_ = (bitField0_ & ~0x00000100);
       directAccessRequested_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean peerInfo_;
+
+    /**
+     *
+     *
+     * <pre>
+     * If the client can support using BigtablePeerInfo.
+     * </pre>
+     *
+     * <code>bool peer_info = 11;</code>
+     *
+     * @return The peerInfo.
+     */
+    @java.lang.Override
+    public boolean getPeerInfo() {
+      return peerInfo_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If the client can support using BigtablePeerInfo.
+     * </pre>
+     *
+     * <code>bool peer_info = 11;</code>
+     *
+     * @param value The peerInfo to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPeerInfo(boolean value) {
+
+      peerInfo_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If the client can support using BigtablePeerInfo.
+     * </pre>
+     *
+     * <code>bool peer_info = 11;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPeerInfo() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      peerInfo_ = false;
       onChanged();
       return this;
     }

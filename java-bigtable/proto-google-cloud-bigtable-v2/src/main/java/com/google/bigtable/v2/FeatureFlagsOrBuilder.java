@@ -148,4 +148,17 @@ public interface FeatureFlagsOrBuilder
    * @return The directAccessRequested.
    */
   boolean getDirectAccessRequested();
+
+  /**
+   *
+   *
+   * <pre>
+   * If the client can support using BigtablePeerInfo.
+   * </pre>
+   *
+   * <code>bool peer_info = 11;</code>
+   *
+   * @return The peerInfo.
+   */
+  boolean getPeerInfo();
 }

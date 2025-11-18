@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for reading from and writing to existing Bigtable tables.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/bigtable/v2/bigtable.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class BigtableGrpc {
 
@@ -1048,8 +1045,8 @@ public final class BigtableGrpc {
      * </pre>
      */
     public com.google.bigtable.v2.MutateRowResponse mutateRow(
-        com.google.bigtable.v2.MutateRowRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.bigtable.v2.MutateRowRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getMutateRowMethod(), getCallOptions(), request);
     }
 
@@ -1077,8 +1074,8 @@ public final class BigtableGrpc {
      * </pre>
      */
     public com.google.bigtable.v2.CheckAndMutateRowResponse checkAndMutateRow(
-        com.google.bigtable.v2.CheckAndMutateRowRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.bigtable.v2.CheckAndMutateRowRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCheckAndMutateRowMethod(), getCallOptions(), request);
     }
 
@@ -1091,8 +1088,8 @@ public final class BigtableGrpc {
      * </pre>
      */
     public com.google.bigtable.v2.PingAndWarmResponse pingAndWarm(
-        com.google.bigtable.v2.PingAndWarmRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.bigtable.v2.PingAndWarmRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPingAndWarmMethod(), getCallOptions(), request);
     }
 
@@ -1108,8 +1105,8 @@ public final class BigtableGrpc {
      * </pre>
      */
     public com.google.bigtable.v2.ReadModifyWriteRowResponse readModifyWriteRow(
-        com.google.bigtable.v2.ReadModifyWriteRowRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.bigtable.v2.ReadModifyWriteRowRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReadModifyWriteRowMethod(), getCallOptions(), request);
     }
 
@@ -1160,8 +1157,8 @@ public final class BigtableGrpc {
      * </pre>
      */
     public com.google.bigtable.v2.PrepareQueryResponse prepareQuery(
-        com.google.bigtable.v2.PrepareQueryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.bigtable.v2.PrepareQueryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPrepareQueryMethod(), getCallOptions(), request);
     }
 

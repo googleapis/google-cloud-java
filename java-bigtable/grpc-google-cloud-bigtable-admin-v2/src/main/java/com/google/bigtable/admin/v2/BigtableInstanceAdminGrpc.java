@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * tables' metadata or data stored in those tables.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/bigtable/admin/v2/bigtable_instance_admin.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class BigtableInstanceAdminGrpc {
 
@@ -2593,8 +2590,8 @@ public final class BigtableInstanceAdminGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createInstance(
-        com.google.bigtable.admin.v2.CreateInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.bigtable.admin.v2.CreateInstanceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateInstanceMethod(), getCallOptions(), request);
     }
 
@@ -2606,8 +2603,8 @@ public final class BigtableInstanceAdminGrpc {
      * </pre>
      */
     public com.google.bigtable.admin.v2.Instance getInstance(
-        com.google.bigtable.admin.v2.GetInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.bigtable.admin.v2.GetInstanceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetInstanceMethod(), getCallOptions(), request);
     }
 
@@ -2619,8 +2616,8 @@ public final class BigtableInstanceAdminGrpc {
      * </pre>
      */
     public com.google.bigtable.admin.v2.ListInstancesResponse listInstances(
-        com.google.bigtable.admin.v2.ListInstancesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.bigtable.admin.v2.ListInstancesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListInstancesMethod(), getCallOptions(), request);
     }
 
@@ -2634,8 +2631,8 @@ public final class BigtableInstanceAdminGrpc {
      * </pre>
      */
     public com.google.bigtable.admin.v2.Instance updateInstance(
-        com.google.bigtable.admin.v2.Instance request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.bigtable.admin.v2.Instance request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateInstanceMethod(), getCallOptions(), request);
     }
 
@@ -2648,8 +2645,9 @@ public final class BigtableInstanceAdminGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation partialUpdateInstance(
-        com.google.bigtable.admin.v2.PartialUpdateInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.bigtable.admin.v2.PartialUpdateInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPartialUpdateInstanceMethod(), getCallOptions(), request);
     }
 
@@ -2661,8 +2659,8 @@ public final class BigtableInstanceAdminGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteInstance(
-        com.google.bigtable.admin.v2.DeleteInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.bigtable.admin.v2.DeleteInstanceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteInstanceMethod(), getCallOptions(), request);
     }
 
@@ -2679,8 +2677,8 @@ public final class BigtableInstanceAdminGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createCluster(
-        com.google.bigtable.admin.v2.CreateClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.bigtable.admin.v2.CreateClusterRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateClusterMethod(), getCallOptions(), request);
     }
 
@@ -2692,8 +2690,8 @@ public final class BigtableInstanceAdminGrpc {
      * </pre>
      */
     public com.google.bigtable.admin.v2.Cluster getCluster(
-        com.google.bigtable.admin.v2.GetClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.bigtable.admin.v2.GetClusterRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetClusterMethod(), getCallOptions(), request);
     }
 
@@ -2705,8 +2703,8 @@ public final class BigtableInstanceAdminGrpc {
      * </pre>
      */
     public com.google.bigtable.admin.v2.ListClustersResponse listClusters(
-        com.google.bigtable.admin.v2.ListClustersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.bigtable.admin.v2.ListClustersRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListClustersMethod(), getCallOptions(), request);
     }
 
@@ -2721,8 +2719,8 @@ public final class BigtableInstanceAdminGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateCluster(
-        com.google.bigtable.admin.v2.Cluster request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.bigtable.admin.v2.Cluster request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateClusterMethod(), getCallOptions(), request);
     }
 
@@ -2743,8 +2741,9 @@ public final class BigtableInstanceAdminGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation partialUpdateCluster(
-        com.google.bigtable.admin.v2.PartialUpdateClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.bigtable.admin.v2.PartialUpdateClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPartialUpdateClusterMethod(), getCallOptions(), request);
     }
 
@@ -2756,8 +2755,8 @@ public final class BigtableInstanceAdminGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteCluster(
-        com.google.bigtable.admin.v2.DeleteClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.bigtable.admin.v2.DeleteClusterRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteClusterMethod(), getCallOptions(), request);
     }
 
@@ -2769,8 +2768,9 @@ public final class BigtableInstanceAdminGrpc {
      * </pre>
      */
     public com.google.bigtable.admin.v2.AppProfile createAppProfile(
-        com.google.bigtable.admin.v2.CreateAppProfileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.bigtable.admin.v2.CreateAppProfileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAppProfileMethod(), getCallOptions(), request);
     }
 
@@ -2782,8 +2782,8 @@ public final class BigtableInstanceAdminGrpc {
      * </pre>
      */
     public com.google.bigtable.admin.v2.AppProfile getAppProfile(
-        com.google.bigtable.admin.v2.GetAppProfileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.bigtable.admin.v2.GetAppProfileRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAppProfileMethod(), getCallOptions(), request);
     }
 
@@ -2795,8 +2795,9 @@ public final class BigtableInstanceAdminGrpc {
      * </pre>
      */
     public com.google.bigtable.admin.v2.ListAppProfilesResponse listAppProfiles(
-        com.google.bigtable.admin.v2.ListAppProfilesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.bigtable.admin.v2.ListAppProfilesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAppProfilesMethod(), getCallOptions(), request);
     }
 
@@ -2808,8 +2809,9 @@ public final class BigtableInstanceAdminGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateAppProfile(
-        com.google.bigtable.admin.v2.UpdateAppProfileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.bigtable.admin.v2.UpdateAppProfileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAppProfileMethod(), getCallOptions(), request);
     }
 
@@ -2821,8 +2823,9 @@ public final class BigtableInstanceAdminGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteAppProfile(
-        com.google.bigtable.admin.v2.DeleteAppProfileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.bigtable.admin.v2.DeleteAppProfileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAppProfileMethod(), getCallOptions(), request);
     }
 
@@ -2834,8 +2837,9 @@ public final class BigtableInstanceAdminGrpc {
      * policy if an instance exists but does not have a policy set.
      * </pre>
      */
-    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -2847,8 +2851,9 @@ public final class BigtableInstanceAdminGrpc {
      * existing policy.
      * </pre>
      */
-    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -2860,8 +2865,8 @@ public final class BigtableInstanceAdminGrpc {
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
-        com.google.iam.v1.TestIamPermissionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.iam.v1.TestIamPermissionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
 
@@ -2874,8 +2879,8 @@ public final class BigtableInstanceAdminGrpc {
      * </pre>
      */
     public com.google.bigtable.admin.v2.ListHotTabletsResponse listHotTablets(
-        com.google.bigtable.admin.v2.ListHotTabletsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.bigtable.admin.v2.ListHotTabletsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListHotTabletsMethod(), getCallOptions(), request);
     }
 
@@ -2887,8 +2892,9 @@ public final class BigtableInstanceAdminGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createLogicalView(
-        com.google.bigtable.admin.v2.CreateLogicalViewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.bigtable.admin.v2.CreateLogicalViewRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateLogicalViewMethod(), getCallOptions(), request);
     }
 
@@ -2900,8 +2906,8 @@ public final class BigtableInstanceAdminGrpc {
      * </pre>
      */
     public com.google.bigtable.admin.v2.LogicalView getLogicalView(
-        com.google.bigtable.admin.v2.GetLogicalViewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.bigtable.admin.v2.GetLogicalViewRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetLogicalViewMethod(), getCallOptions(), request);
     }
 
@@ -2913,8 +2919,9 @@ public final class BigtableInstanceAdminGrpc {
      * </pre>
      */
     public com.google.bigtable.admin.v2.ListLogicalViewsResponse listLogicalViews(
-        com.google.bigtable.admin.v2.ListLogicalViewsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.bigtable.admin.v2.ListLogicalViewsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListLogicalViewsMethod(), getCallOptions(), request);
     }
 
@@ -2926,8 +2933,9 @@ public final class BigtableInstanceAdminGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateLogicalView(
-        com.google.bigtable.admin.v2.UpdateLogicalViewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.bigtable.admin.v2.UpdateLogicalViewRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateLogicalViewMethod(), getCallOptions(), request);
     }
 
@@ -2939,8 +2947,9 @@ public final class BigtableInstanceAdminGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteLogicalView(
-        com.google.bigtable.admin.v2.DeleteLogicalViewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.bigtable.admin.v2.DeleteLogicalViewRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteLogicalViewMethod(), getCallOptions(), request);
     }
 
@@ -2952,8 +2961,9 @@ public final class BigtableInstanceAdminGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createMaterializedView(
-        com.google.bigtable.admin.v2.CreateMaterializedViewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.bigtable.admin.v2.CreateMaterializedViewRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateMaterializedViewMethod(), getCallOptions(), request);
     }
 
@@ -2965,8 +2975,9 @@ public final class BigtableInstanceAdminGrpc {
      * </pre>
      */
     public com.google.bigtable.admin.v2.MaterializedView getMaterializedView(
-        com.google.bigtable.admin.v2.GetMaterializedViewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.bigtable.admin.v2.GetMaterializedViewRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetMaterializedViewMethod(), getCallOptions(), request);
     }
 
@@ -2978,8 +2989,9 @@ public final class BigtableInstanceAdminGrpc {
      * </pre>
      */
     public com.google.bigtable.admin.v2.ListMaterializedViewsResponse listMaterializedViews(
-        com.google.bigtable.admin.v2.ListMaterializedViewsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.bigtable.admin.v2.ListMaterializedViewsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMaterializedViewsMethod(), getCallOptions(), request);
     }
 
@@ -2991,8 +3003,9 @@ public final class BigtableInstanceAdminGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateMaterializedView(
-        com.google.bigtable.admin.v2.UpdateMaterializedViewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.bigtable.admin.v2.UpdateMaterializedViewRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateMaterializedViewMethod(), getCallOptions(), request);
     }
 
@@ -3004,8 +3017,9 @@ public final class BigtableInstanceAdminGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteMaterializedView(
-        com.google.bigtable.admin.v2.DeleteMaterializedViewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.bigtable.admin.v2.DeleteMaterializedViewRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteMaterializedViewMethod(), getCallOptions(), request);
     }
   }
