@@ -24,11 +24,9 @@ import com.google.api.gax.rpc.FailedPreconditionException;
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
-import com.google.cloud.bigtable.admin.v2.models.CreateInstanceRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateMaterializedViewRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.admin.v2.models.MaterializedView;
-import com.google.cloud.bigtable.admin.v2.models.StorageType;
 import com.google.cloud.bigtable.admin.v2.models.Table;
 import com.google.cloud.bigtable.admin.v2.models.UpdateMaterializedViewRequest;
 import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
@@ -38,7 +36,6 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.List;
 import java.util.logging.Logger;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
@@ -55,9 +52,8 @@ public class BigtableMaterializedViewIT {
   private static final int[] BACKOFF_DURATION = {2, 4, 8, 16, 32, 64, 128, 256, 512, 1024};
 
   private BigtableInstanceAdminClient client;
-  private BigtableTableAdminClient tableAdminClient;
   private Table testTable;
-  private String instanceId = "";
+  private String instanceId = testEnvRule.env().getInstanceId();
 
   // TODO: Update this test once emulator supports InstanceAdmin operation
   // https://github.com/googleapis/google-cloud-go/issues/1069
@@ -72,23 +68,7 @@ public class BigtableMaterializedViewIT {
   @Before
   public void setUp() throws InterruptedException, IOException {
     client = testEnvRule.env().getInstanceAdminClient();
-
-    instanceId = new PrefixGenerator().newPrefix();
-    client.createInstance(
-        CreateInstanceRequest.of(instanceId)
-            .setDisplayName("BigtableMaterializedViewIT")
-            .addCluster(
-                instanceId + "-c1", testEnvRule.env().getPrimaryZone(), 1, StorageType.SSD));
-    tableAdminClient = testEnvRule.env().getTableAdminClientForInstance(instanceId);
-
-    testTable = createTestTable(tableAdminClient);
-  }
-
-  @After
-  public void deleteInstance() {
-    if (!instanceId.isEmpty()) {
-      client.deleteInstance(instanceId);
-    }
+    testTable = createTestTable(testEnvRule.env().getTableAdminClient());
   }
 
   @Test
