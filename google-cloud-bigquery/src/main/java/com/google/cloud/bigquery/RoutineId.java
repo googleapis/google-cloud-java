@@ -63,8 +63,6 @@ public final class RoutineId implements Serializable {
   }
 
   private RoutineId(String project, String dataset, String routine) {
-    checkArgument(!isNullOrEmpty(dataset), "Provided dataset is null or empty");
-    checkArgument(!isNullOrEmpty(routine), "Provided routine is null or empty");
     this.project = project;
     this.dataset = dataset;
     this.routine = routine;

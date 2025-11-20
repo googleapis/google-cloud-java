@@ -16,9 +16,6 @@
 
 package com.google.cloud.bigquery;
 
-import static com.google.common.base.Preconditions.checkArgument;
-import static com.google.common.base.Strings.isNullOrEmpty;
-
 import com.google.api.services.bigquery.model.DatasetReference;
 import io.opentelemetry.api.common.Attributes;
 import java.io.Serializable;
@@ -43,7 +40,6 @@ public final class DatasetId implements Serializable {
   }
 
   private DatasetId(String project, String dataset) {
-    checkArgument(!isNullOrEmpty(dataset), "Provided dataset is null or empty");
     this.project = project;
     this.dataset = dataset;
   }

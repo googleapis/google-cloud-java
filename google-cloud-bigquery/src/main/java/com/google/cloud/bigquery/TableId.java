@@ -71,8 +71,6 @@ public final class TableId implements Serializable {
   }
 
   private TableId(String project, String dataset, String table) {
-    checkArgument(!isNullOrEmpty(dataset), "Provided dataset is null or empty");
-    checkArgument(!isNullOrEmpty(table), "Provided table is null or empty");
     this.project = project;
     this.dataset = dataset;
     this.table = table;

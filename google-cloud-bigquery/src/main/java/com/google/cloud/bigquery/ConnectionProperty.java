@@ -16,8 +16,6 @@
 
 package com.google.cloud.bigquery;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
@@ -82,8 +80,8 @@ public final class ConnectionProperty {
   }
 
   private ConnectionProperty(Builder builder) {
-    this.key = checkNotNull(builder.key, "Required key is null or empty");
-    this.value = checkNotNull(builder.value, "Required value is null or empty");
+    this.key = builder.key;
+    this.value = builder.value;
   }
 
   /** Return the key of property. */
