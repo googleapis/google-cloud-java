@@ -58,9 +58,11 @@ public interface CreateCollectionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Id of the requesting object
-   * If auto-generating Id server-side, remove this field and
-   * collection_id from the method_signature of Create RPC
+   * Required. ID of the Collection to create.
+   * The id must be 1-63 characters long, and comply with
+   * &lt;a href="https://www.ietf.org/rfc/rfc1035.txt" target="_blank"&gt;RFC1035&lt;/a&gt;.
+   * Specifically, it must be 1-63 characters long and match the regular
+   * expression `[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?`.
    * </pre>
    *
    * <code>string collection_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -73,9 +75,11 @@ public interface CreateCollectionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Id of the requesting object
-   * If auto-generating Id server-side, remove this field and
-   * collection_id from the method_signature of Create RPC
+   * Required. ID of the Collection to create.
+   * The id must be 1-63 characters long, and comply with
+   * &lt;a href="https://www.ietf.org/rfc/rfc1035.txt" target="_blank"&gt;RFC1035&lt;/a&gt;.
+   * Specifically, it must be 1-63 characters long and match the regular
+   * expression `[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?`.
    * </pre>
    *
    * <code>string collection_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>

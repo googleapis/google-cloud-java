@@ -31,6 +31,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
 import com.google.shopping.merchant.accounts.v1.DeveloperRegistration;
+import com.google.shopping.merchant.accounts.v1.GetAccountForGcpRegistrationResponse;
 import com.google.shopping.merchant.accounts.v1.GetDeveloperRegistrationRequest;
 import com.google.shopping.merchant.accounts.v1.RegisterGcpRequest;
 import com.google.shopping.merchant.accounts.v1.UnregisterGcpRequest;
@@ -163,10 +164,44 @@ public class HttpJsonDeveloperRegistrationServiceStub extends DeveloperRegistrat
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<Empty, GetAccountForGcpRegistrationResponse>
+      getAccountForGcpRegistrationMethodDescriptor =
+          ApiMethodDescriptor.<Empty, GetAccountForGcpRegistrationResponse>newBuilder()
+              .setFullMethodName(
+                  "google.shopping.merchant.accounts.v1.DeveloperRegistrationService/GetAccountForGcpRegistration")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<Empty>newBuilder()
+                      .setPath(
+                          "/accounts/v1/accounts:getAccountForGcpRegistration",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<Empty> serializer = ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<Empty> serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<GetAccountForGcpRegistrationResponse>newBuilder()
+                      .setDefaultInstance(GetAccountForGcpRegistrationResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<RegisterGcpRequest, DeveloperRegistration> registerGcpCallable;
   private final UnaryCallable<GetDeveloperRegistrationRequest, DeveloperRegistration>
       getDeveloperRegistrationCallable;
   private final UnaryCallable<UnregisterGcpRequest, Empty> unregisterGcpCallable;
+  private final UnaryCallable<Empty, GetAccountForGcpRegistrationResponse>
+      getAccountForGcpRegistrationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -248,6 +283,12 @@ public class HttpJsonDeveloperRegistrationServiceStub extends DeveloperRegistrat
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<Empty, GetAccountForGcpRegistrationResponse>
+        getAccountForGcpRegistrationTransportSettings =
+            HttpJsonCallSettings.<Empty, GetAccountForGcpRegistrationResponse>newBuilder()
+                .setMethodDescriptor(getAccountForGcpRegistrationMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
 
     this.registerGcpCallable =
         callableFactory.createUnaryCallable(
@@ -260,6 +301,11 @@ public class HttpJsonDeveloperRegistrationServiceStub extends DeveloperRegistrat
     this.unregisterGcpCallable =
         callableFactory.createUnaryCallable(
             unregisterGcpTransportSettings, settings.unregisterGcpSettings(), clientContext);
+    this.getAccountForGcpRegistrationCallable =
+        callableFactory.createUnaryCallable(
+            getAccountForGcpRegistrationTransportSettings,
+            settings.getAccountForGcpRegistrationSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -271,6 +317,7 @@ public class HttpJsonDeveloperRegistrationServiceStub extends DeveloperRegistrat
     methodDescriptors.add(registerGcpMethodDescriptor);
     methodDescriptors.add(getDeveloperRegistrationMethodDescriptor);
     methodDescriptors.add(unregisterGcpMethodDescriptor);
+    methodDescriptors.add(getAccountForGcpRegistrationMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -288,6 +335,12 @@ public class HttpJsonDeveloperRegistrationServiceStub extends DeveloperRegistrat
   @Override
   public UnaryCallable<UnregisterGcpRequest, Empty> unregisterGcpCallable() {
     return unregisterGcpCallable;
+  }
+
+  @Override
+  public UnaryCallable<Empty, GetAccountForGcpRegistrationResponse>
+      getAccountForGcpRegistrationCallable() {
+    return getAccountForGcpRegistrationCallable;
   }
 
   @Override

@@ -41,6 +41,8 @@ public class AsyncCreateAndConfigureAccount {
               .setAccount(Account.newBuilder().build())
               .addAllUser(new ArrayList<CreateAndConfigureAccountRequest.AddUser>())
               .addAllService(new ArrayList<CreateAndConfigureAccountRequest.AddAccountService>())
+              .addAllSetAlias(
+                  new ArrayList<CreateAndConfigureAccountRequest.SetAliasForRelationship>())
               .build();
       ApiFuture<Account> future =
           accountsServiceClient.createAndConfigureAccountCallable().futureCall(request);

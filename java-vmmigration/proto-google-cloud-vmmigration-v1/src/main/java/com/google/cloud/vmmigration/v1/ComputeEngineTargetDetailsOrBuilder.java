@@ -770,6 +770,78 @@ public interface ComputeEngineTargetDetailsOrBuilder
    *
    *
    * <pre>
+   * Optional. Modifiers to be used as configuration of the OS adaptation
+   * process.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.vmmigration.v1.AdaptationModifier> getAdaptationModifiersList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Modifiers to be used as configuration of the OS adaptation
+   * process.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.vmmigration.v1.AdaptationModifier getAdaptationModifiers(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Modifiers to be used as configuration of the OS adaptation
+   * process.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getAdaptationModifiersCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Modifiers to be used as configuration of the OS adaptation
+   * process.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.vmmigration.v1.AdaptationModifierOrBuilder>
+      getAdaptationModifiersOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Modifiers to be used as configuration of the OS adaptation
+   * process.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.AdaptationModifier adaptation_modifiers = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.vmmigration.v1.AdaptationModifierOrBuilder getAdaptationModifiersOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Additional replica zones of the target regional disks.
    * If this list is not empty a regional disk will be created. The first
    * supported zone would be the one stated in the
@@ -851,4 +923,40 @@ public interface ComputeEngineTargetDetailsOrBuilder
    * @return The bytes of the diskReplicaZones at the given index.
    */
   com.google.protobuf.ByteString getDiskReplicaZonesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The storage pool used for the VM disks.
+   * If specified this will be the storage pool in which the disk is created.
+   * This is the full path of the storage pool resource, for example:
+   * "projects/my-project/zones/us-central1-a/storagePools/my-storage-pool".
+   * The storage pool must be in the same project and zone as the target disks.
+   * The storage pool's type must match the disk type.
+   * </pre>
+   *
+   * <code>string storage_pool = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The storagePool.
+   */
+  java.lang.String getStoragePool();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The storage pool used for the VM disks.
+   * If specified this will be the storage pool in which the disk is created.
+   * This is the full path of the storage pool resource, for example:
+   * "projects/my-project/zones/us-central1-a/storagePools/my-storage-pool".
+   * The storage pool must be in the same project and zone as the target disks.
+   * The storage pool's type must match the disk type.
+   * </pre>
+   *
+   * <code>string storage_pool = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for storagePool.
+   */
+  com.google.protobuf.ByteString getStoragePoolBytes();
 }

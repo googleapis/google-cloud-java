@@ -81,30 +81,31 @@ public final class MachineResourcesProto {
           + "2google/cloud/aiplatform/v1/machine_resources.proto\022\032google.cloud.aiplatform.v1"
           + "\032\037google/api/field_behavior.proto\0321googl"
           + "e/cloud/aiplatform/v1/accelerator_type.p"
-          + "roto\0325google/cloud/aiplatform/v1/reservation_affinity.proto\"\201\002\n"
+          + "roto\0325google/cloud/aiplatform/v1/reservation_affinity.proto\"\245\002\n"
           + "\013MachineSpec\022\031\n"
           + "\014machine_type\030\001 \001(\tB\003\340A\005\022J\n"
           + "\020accelerator_type\030\002"
           + " \001(\0162+.google.cloud.aiplatform.v1.AcceleratorTypeB\003\340A\005\022\031\n"
-          + "\021accelerator_count\030\003 \001(\005\022\031\n"
+          + "\021accelerator_count\030\003 \001(\005\022\"\n"
+          + "\022gpu_partition_size\030\007 \001(\tB\006\340A\005\340A\001\022\031\n"
           + "\014tpu_topology\030\004 \001(\tB\003\340A\005\022U\n"
-          + "\024reservation_affinity\030\005 \001(\0132/.google.cloud.ai"
-          + "platform.v1.ReservationAffinityB\006\340A\005\340A\001\"\260\002\n"
+          + "\024reservation_affinity\030\005"
+          + " \001(\0132/.google.cloud.aiplatform.v1.ReservationAffinityB\006\340A\005\340A\001\"\260\002\n"
           + "\022DedicatedResources\022E\n"
-          + "\014machine_spec\030\001"
-          + " \001(\0132\'.google.cloud.aiplatform.v1.MachineSpecB\006\340A\002\340A\005\022!\n"
+          + "\014machine_spec\030\001 \001(\013"
+          + "2\'.google.cloud.aiplatform.v1.MachineSpecB\006\340A\002\340A\005\022!\n"
           + "\021min_replica_count\030\002 \001(\005B\006\340A\002\340A\005\022\036\n"
           + "\021max_replica_count\030\003 \001(\005B\003\340A\005\022#\n"
           + "\026required_replica_count\030\t \001(\005B\003\340A\001\022X\n"
-          + "\030autoscaling_metric_specs\030\004 \003(\01321.google"
-          + ".cloud.aiplatform.v1.AutoscalingMetricSpecB\003\340A\005\022\021\n"
+          + "\030autoscaling_metric_specs\030\004 \003(\01321.google.clo"
+          + "ud.aiplatform.v1.AutoscalingMetricSpecB\003\340A\005\022\021\n"
           + "\004spot\030\005 \001(\010B\003\340A\001\"T\n"
           + "\022AutomaticResources\022\036\n"
           + "\021min_replica_count\030\001 \001(\005B\003\340A\005\022\036\n"
           + "\021max_replica_count\030\002 \001(\005B\003\340A\005\"\245\001\n"
           + "\027BatchDedicatedResources\022E\n"
-          + "\014machine_spec\030\001 \001"
-          + "(\0132\'.google.cloud.aiplatform.v1.MachineSpecB\006\340A\002\340A\005\022#\n"
+          + "\014machine_spec\030\001 \001(\0132\'"
+          + ".google.cloud.aiplatform.v1.MachineSpecB\006\340A\002\340A\005\022#\n"
           + "\026starting_replica_count\030\002 \001(\005B\003\340A\005\022\036\n"
           + "\021max_replica_count\030\003 \001(\005B\003\340A\005\"/\n"
           + "\021ResourcesConsumed\022\032\n\r"
@@ -124,11 +125,10 @@ public final class MachineResourcesProto {
           + "\006target\030\002 \001(\005\".\n"
           + "\020ShieldedVmConfig\022\032\n"
           + "\022enable_secure_boot\030\001 \001(\010B\323\001\n"
-          + "\036com.google.cloud.aiplatform.v1B\025MachineResourcesProtoP\001Z>cloud.goog"
-          + "le.com/go/aiplatform/apiv1/aiplatformpb;"
-          + "aiplatformpb\252\002\032Google.Cloud.AIPlatform.V"
-          + "1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google:"
-          + ":Cloud::AIPlatform::V1b\006proto3"
+          + "\036com.google.cloud.aiplatform.v1B\025MachineResourcesProtoP\001Z>cloud.google.c"
+          + "om/go/aiplatform/apiv1/aiplatformpb;aipl"
+          + "atformpb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032"
+          + "Google\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -147,6 +147,7 @@ public final class MachineResourcesProto {
               "MachineType",
               "AcceleratorType",
               "AcceleratorCount",
+              "GpuPartitionSize",
               "TpuTopology",
               "ReservationAffinity",
             });

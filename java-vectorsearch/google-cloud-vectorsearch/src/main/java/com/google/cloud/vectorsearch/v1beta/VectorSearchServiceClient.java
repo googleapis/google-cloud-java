@@ -733,8 +733,10 @@ public class VectorSearchServiceClient implements BackgroundResource {
    *
    * @param parent Required. Value for parent.
    * @param collection Required. The resource being created
-   * @param collectionId Required. Id of the requesting object If auto-generating Id server-side,
-   *     remove this field and collection_id from the method_signature of Create RPC
+   * @param collectionId Required. ID of the Collection to create. The id must be 1-63 characters
+   *     long, and comply with &lt;a href="https://www.ietf.org/rfc/rfc1035.txt"
+   *     target="_blank"&gt;RFC1035&lt;/a&gt;. Specifically, it must be 1-63 characters long and
+   *     match the regular expression `[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Collection, OperationMetadata> createCollectionAsync(
@@ -771,8 +773,10 @@ public class VectorSearchServiceClient implements BackgroundResource {
    *
    * @param parent Required. Value for parent.
    * @param collection Required. The resource being created
-   * @param collectionId Required. Id of the requesting object If auto-generating Id server-side,
-   *     remove this field and collection_id from the method_signature of Create RPC
+   * @param collectionId Required. ID of the Collection to create. The id must be 1-63 characters
+   *     long, and comply with &lt;a href="https://www.ietf.org/rfc/rfc1035.txt"
+   *     target="_blank"&gt;RFC1035&lt;/a&gt;. Specifically, it must be 1-63 characters long and
+   *     match the regular expression `[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Collection, OperationMetadata> createCollectionAsync(
@@ -1462,8 +1466,10 @@ public class VectorSearchServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the Collection for which to create the Index.
    *     Format: `projects/{project}/locations/{location}/collections/{collection}`
    * @param index Required. The resource being created
-   * @param indexId Required. Id of the requesting object If auto-generating Id server-side, remove
-   *     this field and index_id from the method_signature of Create RPC
+   * @param indexId Required. ID of the Index to create. The id must be 1-63 characters long, and
+   *     comply with &lt;a href="https://www.ietf.org/rfc/rfc1035.txt"
+   *     target="_blank"&gt;RFC1035&lt;/a&gt;. Specifically, it must be 1-63 characters long and
+   *     match the regular expression `[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Index, OperationMetadata> createIndexAsync(
@@ -1500,8 +1506,10 @@ public class VectorSearchServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the Collection for which to create the Index.
    *     Format: `projects/{project}/locations/{location}/collections/{collection}`
    * @param index Required. The resource being created
-   * @param indexId Required. Id of the requesting object If auto-generating Id server-side, remove
-   *     this field and index_id from the method_signature of Create RPC
+   * @param indexId Required. ID of the Index to create. The id must be 1-63 characters long, and
+   *     comply with &lt;a href="https://www.ietf.org/rfc/rfc1035.txt"
+   *     target="_blank"&gt;RFC1035&lt;/a&gt;. Specifically, it must be 1-63 characters long and
+   *     match the regular expression `[a-z](?:[-a-z0-9]{0,61}[a-z0-9])?`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Index, OperationMetadata> createIndexAsync(

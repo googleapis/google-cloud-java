@@ -73,6 +73,7 @@ public final class Search extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     VECTOR_SEARCH(1),
     SEMANTIC_SEARCH(2),
+    TEXT_SEARCH(3),
     SEARCHTYPE_NOT_SET(0);
     private final int value;
 
@@ -96,6 +97,8 @@ public final class Search extends com.google.protobuf.GeneratedMessageV3
           return VECTOR_SEARCH;
         case 2:
           return SEMANTIC_SEARCH;
+        case 3:
+          return TEXT_SEARCH;
         case 0:
           return SEARCHTYPE_NOT_SET;
         default:
@@ -220,6 +223,60 @@ public final class Search extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.vectorsearch.v1beta.SemanticSearch.getDefaultInstance();
   }
 
+  public static final int TEXT_SEARCH_FIELD_NUMBER = 3;
+
+  /**
+   *
+   *
+   * <pre>
+   * A text search operation.
+   * </pre>
+   *
+   * <code>.google.cloud.vectorsearch.v1beta.TextSearch text_search = 3;</code>
+   *
+   * @return Whether the textSearch field is set.
+   */
+  @java.lang.Override
+  public boolean hasTextSearch() {
+    return searchTypeCase_ == 3;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A text search operation.
+   * </pre>
+   *
+   * <code>.google.cloud.vectorsearch.v1beta.TextSearch text_search = 3;</code>
+   *
+   * @return The textSearch.
+   */
+  @java.lang.Override
+  public com.google.cloud.vectorsearch.v1beta.TextSearch getTextSearch() {
+    if (searchTypeCase_ == 3) {
+      return (com.google.cloud.vectorsearch.v1beta.TextSearch) searchType_;
+    }
+    return com.google.cloud.vectorsearch.v1beta.TextSearch.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A text search operation.
+   * </pre>
+   *
+   * <code>.google.cloud.vectorsearch.v1beta.TextSearch text_search = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vectorsearch.v1beta.TextSearchOrBuilder getTextSearchOrBuilder() {
+    if (searchTypeCase_ == 3) {
+      return (com.google.cloud.vectorsearch.v1beta.TextSearch) searchType_;
+    }
+    return com.google.cloud.vectorsearch.v1beta.TextSearch.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -240,6 +297,9 @@ public final class Search extends com.google.protobuf.GeneratedMessageV3
     if (searchTypeCase_ == 2) {
       output.writeMessage(2, (com.google.cloud.vectorsearch.v1beta.SemanticSearch) searchType_);
     }
+    if (searchTypeCase_ == 3) {
+      output.writeMessage(3, (com.google.cloud.vectorsearch.v1beta.TextSearch) searchType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -258,6 +318,11 @@ public final class Search extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, (com.google.cloud.vectorsearch.v1beta.SemanticSearch) searchType_);
+    }
+    if (searchTypeCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.cloud.vectorsearch.v1beta.TextSearch) searchType_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -283,6 +348,9 @@ public final class Search extends com.google.protobuf.GeneratedMessageV3
       case 2:
         if (!getSemanticSearch().equals(other.getSemanticSearch())) return false;
         break;
+      case 3:
+        if (!getTextSearch().equals(other.getTextSearch())) return false;
+        break;
       case 0:
       default:
     }
@@ -305,6 +373,10 @@ public final class Search extends com.google.protobuf.GeneratedMessageV3
       case 2:
         hash = (37 * hash) + SEMANTIC_SEARCH_FIELD_NUMBER;
         hash = (53 * hash) + getSemanticSearch().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + TEXT_SEARCH_FIELD_NUMBER;
+        hash = (53 * hash) + getTextSearch().hashCode();
         break;
       case 0:
       default:
@@ -455,6 +527,9 @@ public final class Search extends com.google.protobuf.GeneratedMessageV3
       if (semanticSearchBuilder_ != null) {
         semanticSearchBuilder_.clear();
       }
+      if (textSearchBuilder_ != null) {
+        textSearchBuilder_.clear();
+      }
       searchTypeCase_ = 0;
       searchType_ = null;
       return this;
@@ -504,6 +579,9 @@ public final class Search extends com.google.protobuf.GeneratedMessageV3
       }
       if (searchTypeCase_ == 2 && semanticSearchBuilder_ != null) {
         result.searchType_ = semanticSearchBuilder_.build();
+      }
+      if (searchTypeCase_ == 3 && textSearchBuilder_ != null) {
+        result.searchType_ = textSearchBuilder_.build();
       }
     }
 
@@ -563,6 +641,11 @@ public final class Search extends com.google.protobuf.GeneratedMessageV3
             mergeSemanticSearch(other.getSemanticSearch());
             break;
           }
+        case TEXT_SEARCH:
+          {
+            mergeTextSearch(other.getTextSearch());
+            break;
+          }
         case SEARCHTYPE_NOT_SET:
           {
             break;
@@ -606,6 +689,12 @@ public final class Search extends com.google.protobuf.GeneratedMessageV3
                 searchTypeCase_ = 2;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(getTextSearchFieldBuilder().getBuilder(), extensionRegistry);
+                searchTypeCase_ = 3;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1076,6 +1165,225 @@ public final class Search extends com.google.protobuf.GeneratedMessageV3
       searchTypeCase_ = 2;
       onChanged();
       return semanticSearchBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vectorsearch.v1beta.TextSearch,
+            com.google.cloud.vectorsearch.v1beta.TextSearch.Builder,
+            com.google.cloud.vectorsearch.v1beta.TextSearchOrBuilder>
+        textSearchBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * A text search operation.
+     * </pre>
+     *
+     * <code>.google.cloud.vectorsearch.v1beta.TextSearch text_search = 3;</code>
+     *
+     * @return Whether the textSearch field is set.
+     */
+    @java.lang.Override
+    public boolean hasTextSearch() {
+      return searchTypeCase_ == 3;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A text search operation.
+     * </pre>
+     *
+     * <code>.google.cloud.vectorsearch.v1beta.TextSearch text_search = 3;</code>
+     *
+     * @return The textSearch.
+     */
+    @java.lang.Override
+    public com.google.cloud.vectorsearch.v1beta.TextSearch getTextSearch() {
+      if (textSearchBuilder_ == null) {
+        if (searchTypeCase_ == 3) {
+          return (com.google.cloud.vectorsearch.v1beta.TextSearch) searchType_;
+        }
+        return com.google.cloud.vectorsearch.v1beta.TextSearch.getDefaultInstance();
+      } else {
+        if (searchTypeCase_ == 3) {
+          return textSearchBuilder_.getMessage();
+        }
+        return com.google.cloud.vectorsearch.v1beta.TextSearch.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A text search operation.
+     * </pre>
+     *
+     * <code>.google.cloud.vectorsearch.v1beta.TextSearch text_search = 3;</code>
+     */
+    public Builder setTextSearch(com.google.cloud.vectorsearch.v1beta.TextSearch value) {
+      if (textSearchBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        searchType_ = value;
+        onChanged();
+      } else {
+        textSearchBuilder_.setMessage(value);
+      }
+      searchTypeCase_ = 3;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A text search operation.
+     * </pre>
+     *
+     * <code>.google.cloud.vectorsearch.v1beta.TextSearch text_search = 3;</code>
+     */
+    public Builder setTextSearch(
+        com.google.cloud.vectorsearch.v1beta.TextSearch.Builder builderForValue) {
+      if (textSearchBuilder_ == null) {
+        searchType_ = builderForValue.build();
+        onChanged();
+      } else {
+        textSearchBuilder_.setMessage(builderForValue.build());
+      }
+      searchTypeCase_ = 3;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A text search operation.
+     * </pre>
+     *
+     * <code>.google.cloud.vectorsearch.v1beta.TextSearch text_search = 3;</code>
+     */
+    public Builder mergeTextSearch(com.google.cloud.vectorsearch.v1beta.TextSearch value) {
+      if (textSearchBuilder_ == null) {
+        if (searchTypeCase_ == 3
+            && searchType_
+                != com.google.cloud.vectorsearch.v1beta.TextSearch.getDefaultInstance()) {
+          searchType_ =
+              com.google.cloud.vectorsearch.v1beta.TextSearch.newBuilder(
+                      (com.google.cloud.vectorsearch.v1beta.TextSearch) searchType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          searchType_ = value;
+        }
+        onChanged();
+      } else {
+        if (searchTypeCase_ == 3) {
+          textSearchBuilder_.mergeFrom(value);
+        } else {
+          textSearchBuilder_.setMessage(value);
+        }
+      }
+      searchTypeCase_ = 3;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A text search operation.
+     * </pre>
+     *
+     * <code>.google.cloud.vectorsearch.v1beta.TextSearch text_search = 3;</code>
+     */
+    public Builder clearTextSearch() {
+      if (textSearchBuilder_ == null) {
+        if (searchTypeCase_ == 3) {
+          searchTypeCase_ = 0;
+          searchType_ = null;
+          onChanged();
+        }
+      } else {
+        if (searchTypeCase_ == 3) {
+          searchTypeCase_ = 0;
+          searchType_ = null;
+        }
+        textSearchBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A text search operation.
+     * </pre>
+     *
+     * <code>.google.cloud.vectorsearch.v1beta.TextSearch text_search = 3;</code>
+     */
+    public com.google.cloud.vectorsearch.v1beta.TextSearch.Builder getTextSearchBuilder() {
+      return getTextSearchFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A text search operation.
+     * </pre>
+     *
+     * <code>.google.cloud.vectorsearch.v1beta.TextSearch text_search = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.vectorsearch.v1beta.TextSearchOrBuilder getTextSearchOrBuilder() {
+      if ((searchTypeCase_ == 3) && (textSearchBuilder_ != null)) {
+        return textSearchBuilder_.getMessageOrBuilder();
+      } else {
+        if (searchTypeCase_ == 3) {
+          return (com.google.cloud.vectorsearch.v1beta.TextSearch) searchType_;
+        }
+        return com.google.cloud.vectorsearch.v1beta.TextSearch.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A text search operation.
+     * </pre>
+     *
+     * <code>.google.cloud.vectorsearch.v1beta.TextSearch text_search = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vectorsearch.v1beta.TextSearch,
+            com.google.cloud.vectorsearch.v1beta.TextSearch.Builder,
+            com.google.cloud.vectorsearch.v1beta.TextSearchOrBuilder>
+        getTextSearchFieldBuilder() {
+      if (textSearchBuilder_ == null) {
+        if (!(searchTypeCase_ == 3)) {
+          searchType_ = com.google.cloud.vectorsearch.v1beta.TextSearch.getDefaultInstance();
+        }
+        textSearchBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vectorsearch.v1beta.TextSearch,
+                com.google.cloud.vectorsearch.v1beta.TextSearch.Builder,
+                com.google.cloud.vectorsearch.v1beta.TextSearchOrBuilder>(
+                (com.google.cloud.vectorsearch.v1beta.TextSearch) searchType_,
+                getParentForChildren(),
+                isClean());
+        searchType_ = null;
+      }
+      searchTypeCase_ = 3;
+      onChanged();
+      return textSearchBuilder_;
     }
 
     @java.lang.Override
