@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.74.1](https://github.com/googleapis/google-cloud-java/compare/v1.74.0...v1.74.1) (2025-11-25)
+
+
+### Bug Fixes
+
+* partial release of java-asset and gapic-libraries-bom ([ce3d3fb](https://github.com/googleapis/google-cloud-java/commit/ce3d3fbf5f0f205a38309afc827a7b3d4a230e3c))
+
 ## [1.74.0](https://github.com/googleapis/google-cloud-java/compare/v1.73.0...v1.74.0) (2025-11-14)
 
 
