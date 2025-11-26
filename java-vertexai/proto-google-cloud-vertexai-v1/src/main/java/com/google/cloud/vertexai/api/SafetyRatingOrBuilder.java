@@ -38,7 +38,6 @@ public interface SafetyRatingOrBuilder
    * @return The enum numeric value on the wire for category.
    */
   int getCategoryValue();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface SafetyRatingOrBuilder
    * @return The enum numeric value on the wire for probability.
    */
   int getProbabilityValue();
-
   /**
    *
    *
@@ -111,7 +109,6 @@ public interface SafetyRatingOrBuilder
    * @return The enum numeric value on the wire for severity.
    */
   int getSeverityValue();
-
   /**
    *
    *
