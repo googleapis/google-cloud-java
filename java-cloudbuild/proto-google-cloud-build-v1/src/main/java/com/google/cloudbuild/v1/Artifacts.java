@@ -1505,7 +1505,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Path to an artifact in the build's workspace to be uploaded to
+     * Optional. Path to an artifact in the build's workspace to be uploaded to
      * Artifact Registry.
      * This can be either an absolute path,
      * e.g. /workspace/my-app/target/my-app-1.0.SNAPSHOT.jar
@@ -1513,7 +1513,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * e.g. my-app/target/my-app-1.0.SNAPSHOT.jar.
      * </pre>
      *
-     * <code>string path = 2;</code>
+     * <code>string path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The path.
      */
@@ -1523,7 +1523,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Path to an artifact in the build's workspace to be uploaded to
+     * Optional. Path to an artifact in the build's workspace to be uploaded to
      * Artifact Registry.
      * This can be either an absolute path,
      * e.g. /workspace/my-app/target/my-app-1.0.SNAPSHOT.jar
@@ -1531,7 +1531,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * e.g. my-app/target/my-app-1.0.SNAPSHOT.jar.
      * </pre>
      *
-     * <code>string path = 2;</code>
+     * <code>string path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for path.
      */
@@ -1742,7 +1742,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Path to an artifact in the build's workspace to be uploaded to
+     * Optional. Path to an artifact in the build's workspace to be uploaded to
      * Artifact Registry.
      * This can be either an absolute path,
      * e.g. /workspace/my-app/target/my-app-1.0.SNAPSHOT.jar
@@ -1750,7 +1750,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * e.g. my-app/target/my-app-1.0.SNAPSHOT.jar.
      * </pre>
      *
-     * <code>string path = 2;</code>
+     * <code>string path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The path.
      */
@@ -1771,7 +1771,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Path to an artifact in the build's workspace to be uploaded to
+     * Optional. Path to an artifact in the build's workspace to be uploaded to
      * Artifact Registry.
      * This can be either an absolute path,
      * e.g. /workspace/my-app/target/my-app-1.0.SNAPSHOT.jar
@@ -1779,7 +1779,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      * e.g. my-app/target/my-app-1.0.SNAPSHOT.jar.
      * </pre>
      *
-     * <code>string path = 2;</code>
+     * <code>string path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for path.
      */
@@ -2542,7 +2542,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Path to an artifact in the build's workspace to be uploaded to
+       * Optional. Path to an artifact in the build's workspace to be uploaded to
        * Artifact Registry.
        * This can be either an absolute path,
        * e.g. /workspace/my-app/target/my-app-1.0.SNAPSHOT.jar
@@ -2550,7 +2550,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * e.g. my-app/target/my-app-1.0.SNAPSHOT.jar.
        * </pre>
        *
-       * <code>string path = 2;</code>
+       * <code>string path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The path.
        */
@@ -2570,7 +2570,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Path to an artifact in the build's workspace to be uploaded to
+       * Optional. Path to an artifact in the build's workspace to be uploaded to
        * Artifact Registry.
        * This can be either an absolute path,
        * e.g. /workspace/my-app/target/my-app-1.0.SNAPSHOT.jar
@@ -2578,7 +2578,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * e.g. my-app/target/my-app-1.0.SNAPSHOT.jar.
        * </pre>
        *
-       * <code>string path = 2;</code>
+       * <code>string path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for path.
        */
@@ -2598,7 +2598,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Path to an artifact in the build's workspace to be uploaded to
+       * Optional. Path to an artifact in the build's workspace to be uploaded to
        * Artifact Registry.
        * This can be either an absolute path,
        * e.g. /workspace/my-app/target/my-app-1.0.SNAPSHOT.jar
@@ -2606,7 +2606,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * e.g. my-app/target/my-app-1.0.SNAPSHOT.jar.
        * </pre>
        *
-       * <code>string path = 2;</code>
+       * <code>string path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The path to set.
        * @return This builder for chaining.
@@ -2625,7 +2625,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Path to an artifact in the build's workspace to be uploaded to
+       * Optional. Path to an artifact in the build's workspace to be uploaded to
        * Artifact Registry.
        * This can be either an absolute path,
        * e.g. /workspace/my-app/target/my-app-1.0.SNAPSHOT.jar
@@ -2633,7 +2633,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * e.g. my-app/target/my-app-1.0.SNAPSHOT.jar.
        * </pre>
        *
-       * <code>string path = 2;</code>
+       * <code>string path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -2648,7 +2648,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Path to an artifact in the build's workspace to be uploaded to
+       * Optional. Path to an artifact in the build's workspace to be uploaded to
        * Artifact Registry.
        * This can be either an absolute path,
        * e.g. /workspace/my-app/target/my-app-1.0.SNAPSHOT.jar
@@ -2656,7 +2656,7 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        * e.g. my-app/target/my-app-1.0.SNAPSHOT.jar.
        * </pre>
        *
-       * <code>string path = 2;</code>
+       * <code>string path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for path to set.
        * @return This builder for chaining.
@@ -6033,11 +6033,13 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Path to the package.json.
+     * Optional. Path to the package.json.
      * e.g. workspace/path/to/package
+     *
+     * Only one of `archive` or `package_path` can be specified.
      * </pre>
      *
-     * <code>string package_path = 2;</code>
+     * <code>string package_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The packagePath.
      */
@@ -6047,11 +6049,13 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Path to the package.json.
+     * Optional. Path to the package.json.
      * e.g. workspace/path/to/package
+     *
+     * Only one of `archive` or `package_path` can be specified.
      * </pre>
      *
-     * <code>string package_path = 2;</code>
+     * <code>string package_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for packagePath.
      */
@@ -6175,11 +6179,13 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Path to the package.json.
+     * Optional. Path to the package.json.
      * e.g. workspace/path/to/package
+     *
+     * Only one of `archive` or `package_path` can be specified.
      * </pre>
      *
-     * <code>string package_path = 2;</code>
+     * <code>string package_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The packagePath.
      */
@@ -6200,11 +6206,13 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Path to the package.json.
+     * Optional. Path to the package.json.
      * e.g. workspace/path/to/package
+     *
+     * Only one of `archive` or `package_path` can be specified.
      * </pre>
      *
-     * <code>string package_path = 2;</code>
+     * <code>string package_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for packagePath.
      */
@@ -6730,11 +6738,13 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Path to the package.json.
+       * Optional. Path to the package.json.
        * e.g. workspace/path/to/package
+       *
+       * Only one of `archive` or `package_path` can be specified.
        * </pre>
        *
-       * <code>string package_path = 2;</code>
+       * <code>string package_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The packagePath.
        */
@@ -6754,11 +6764,13 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Path to the package.json.
+       * Optional. Path to the package.json.
        * e.g. workspace/path/to/package
+       *
+       * Only one of `archive` or `package_path` can be specified.
        * </pre>
        *
-       * <code>string package_path = 2;</code>
+       * <code>string package_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for packagePath.
        */
@@ -6778,11 +6790,13 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Path to the package.json.
+       * Optional. Path to the package.json.
        * e.g. workspace/path/to/package
+       *
+       * Only one of `archive` or `package_path` can be specified.
        * </pre>
        *
-       * <code>string package_path = 2;</code>
+       * <code>string package_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The packagePath to set.
        * @return This builder for chaining.
@@ -6801,11 +6815,13 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Path to the package.json.
+       * Optional. Path to the package.json.
        * e.g. workspace/path/to/package
+       *
+       * Only one of `archive` or `package_path` can be specified.
        * </pre>
        *
-       * <code>string package_path = 2;</code>
+       * <code>string package_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -6820,11 +6836,13 @@ public final class Artifacts extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Path to the package.json.
+       * Optional. Path to the package.json.
        * e.g. workspace/path/to/package
+       *
+       * Only one of `archive` or `package_path` can be specified.
        * </pre>
        *
-       * <code>string package_path = 2;</code>
+       * <code>string package_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for packagePath to set.
        * @return This builder for chaining.
