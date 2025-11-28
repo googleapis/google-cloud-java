@@ -469,4 +469,108 @@ public interface GoogleApiSourceOrBuilder
    * </code>
    */
   com.google.cloud.eventarc.v1.LoggingConfigOrBuilder getLoggingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config to enable subscribing to events from all projects in the
+   * GoogleApiSource's org.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription organization_subscription = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the organizationSubscription field is set.
+   */
+  boolean hasOrganizationSubscription();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config to enable subscribing to events from all projects in the
+   * GoogleApiSource's org.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription organization_subscription = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The organizationSubscription.
+   */
+  com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription
+      getOrganizationSubscription();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config to enable subscribing to events from all projects in the
+   * GoogleApiSource's org.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscription organization_subscription = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.eventarc.v1.GoogleApiSource.OrganizationSubscriptionOrBuilder
+      getOrganizationSubscriptionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config to enable subscribing to all events from a list of
+   * projects.
+   *
+   * All the projects must be in the same org as the GoogleApiSource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions project_subscriptions = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the projectSubscriptions field is set.
+   */
+  boolean hasProjectSubscriptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config to enable subscribing to all events from a list of
+   * projects.
+   *
+   * All the projects must be in the same org as the GoogleApiSource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions project_subscriptions = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The projectSubscriptions.
+   */
+  com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions getProjectSubscriptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config to enable subscribing to all events from a list of
+   * projects.
+   *
+   * All the projects must be in the same org as the GoogleApiSource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptions project_subscriptions = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.eventarc.v1.GoogleApiSource.ProjectSubscriptionsOrBuilder
+      getProjectSubscriptionsOrBuilder();
+
+  com.google.cloud.eventarc.v1.GoogleApiSource.WideScopeSubscriptionCase
+      getWideScopeSubscriptionCase();
 }

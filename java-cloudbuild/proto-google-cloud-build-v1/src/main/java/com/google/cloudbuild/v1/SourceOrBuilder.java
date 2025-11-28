@@ -181,5 +181,51 @@ public interface SourceOrBuilder
    */
   com.google.cloudbuild.v1.StorageSourceManifestOrBuilder getStorageSourceManifestOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, get the source from this 2nd-gen Google Cloud
+   * Build repository resource.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.ConnectedRepository connected_repository = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the connectedRepository field is set.
+   */
+  boolean hasConnectedRepository();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, get the source from this 2nd-gen Google Cloud
+   * Build repository resource.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.ConnectedRepository connected_repository = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The connectedRepository.
+   */
+  com.google.cloudbuild.v1.ConnectedRepository getConnectedRepository();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, get the source from this 2nd-gen Google Cloud
+   * Build repository resource.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.ConnectedRepository connected_repository = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloudbuild.v1.ConnectedRepositoryOrBuilder getConnectedRepositoryOrBuilder();
+
   com.google.cloudbuild.v1.Source.SourceCase getSourceCase();
 }

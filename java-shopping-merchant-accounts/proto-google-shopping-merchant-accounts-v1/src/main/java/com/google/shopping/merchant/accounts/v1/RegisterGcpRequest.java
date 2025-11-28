@@ -141,7 +141,9 @@ public final class RegisterGcpRequest extends com.google.protobuf.GeneratedMessa
    * updated to have the new "API notifications" preference. If the developer
    * email provided is not associated with any user we will just add it as a
    * contact. The email preference corresponding to that contact will have the
-   * new "API notifications" preference
+   * new "API notifications" preference. Make sure the email used is associated
+   * with a Google Account (Google Workspace account or Gmail account)
+   * and is not a service account as service accounts can't receive emails.
    * </pre>
    *
    * <code>string developer_email = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -171,7 +173,9 @@ public final class RegisterGcpRequest extends com.google.protobuf.GeneratedMessa
    * updated to have the new "API notifications" preference. If the developer
    * email provided is not associated with any user we will just add it as a
    * contact. The email preference corresponding to that contact will have the
-   * new "API notifications" preference
+   * new "API notifications" preference. Make sure the email used is associated
+   * with a Google Account (Google Workspace account or Gmail account)
+   * and is not a service account as service accounts can't receive emails.
    * </pre>
    *
    * <code>string developer_email = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -702,7 +706,9 @@ public final class RegisterGcpRequest extends com.google.protobuf.GeneratedMessa
      * updated to have the new "API notifications" preference. If the developer
      * email provided is not associated with any user we will just add it as a
      * contact. The email preference corresponding to that contact will have the
-     * new "API notifications" preference
+     * new "API notifications" preference. Make sure the email used is associated
+     * with a Google Account (Google Workspace account or Gmail account)
+     * and is not a service account as service accounts can't receive emails.
      * </pre>
      *
      * <code>string developer_email = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -731,7 +737,9 @@ public final class RegisterGcpRequest extends com.google.protobuf.GeneratedMessa
      * updated to have the new "API notifications" preference. If the developer
      * email provided is not associated with any user we will just add it as a
      * contact. The email preference corresponding to that contact will have the
-     * new "API notifications" preference
+     * new "API notifications" preference. Make sure the email used is associated
+     * with a Google Account (Google Workspace account or Gmail account)
+     * and is not a service account as service accounts can't receive emails.
      * </pre>
      *
      * <code>string developer_email = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -760,7 +768,9 @@ public final class RegisterGcpRequest extends com.google.protobuf.GeneratedMessa
      * updated to have the new "API notifications" preference. If the developer
      * email provided is not associated with any user we will just add it as a
      * contact. The email preference corresponding to that contact will have the
-     * new "API notifications" preference
+     * new "API notifications" preference. Make sure the email used is associated
+     * with a Google Account (Google Workspace account or Gmail account)
+     * and is not a service account as service accounts can't receive emails.
      * </pre>
      *
      * <code>string developer_email = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -788,7 +798,9 @@ public final class RegisterGcpRequest extends com.google.protobuf.GeneratedMessa
      * updated to have the new "API notifications" preference. If the developer
      * email provided is not associated with any user we will just add it as a
      * contact. The email preference corresponding to that contact will have the
-     * new "API notifications" preference
+     * new "API notifications" preference. Make sure the email used is associated
+     * with a Google Account (Google Workspace account or Gmail account)
+     * and is not a service account as service accounts can't receive emails.
      * </pre>
      *
      * <code>string developer_email = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -812,7 +824,9 @@ public final class RegisterGcpRequest extends com.google.protobuf.GeneratedMessa
      * updated to have the new "API notifications" preference. If the developer
      * email provided is not associated with any user we will just add it as a
      * contact. The email preference corresponding to that contact will have the
-     * new "API notifications" preference
+     * new "API notifications" preference. Make sure the email used is associated
+     * with a Google Account (Google Workspace account or Gmail account)
+     * and is not a service account as service accounts can't receive emails.
      * </pre>
      *
      * <code>string developer_email = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>

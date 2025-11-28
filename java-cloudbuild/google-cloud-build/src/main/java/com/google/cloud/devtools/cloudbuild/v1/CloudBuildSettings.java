@@ -43,11 +43,13 @@ import com.google.cloudbuild.v1.CreateBuildRequest;
 import com.google.cloudbuild.v1.CreateBuildTriggerRequest;
 import com.google.cloudbuild.v1.CreateWorkerPoolOperationMetadata;
 import com.google.cloudbuild.v1.CreateWorkerPoolRequest;
+import com.google.cloudbuild.v1.DefaultServiceAccount;
 import com.google.cloudbuild.v1.DeleteBuildTriggerRequest;
 import com.google.cloudbuild.v1.DeleteWorkerPoolOperationMetadata;
 import com.google.cloudbuild.v1.DeleteWorkerPoolRequest;
 import com.google.cloudbuild.v1.GetBuildRequest;
 import com.google.cloudbuild.v1.GetBuildTriggerRequest;
+import com.google.cloudbuild.v1.GetDefaultServiceAccountRequest;
 import com.google.cloudbuild.v1.GetWorkerPoolRequest;
 import com.google.cloudbuild.v1.ListBuildTriggersRequest;
 import com.google.cloudbuild.v1.ListBuildTriggersResponse;
@@ -284,6 +286,12 @@ public class CloudBuildSettings extends ClientSettings<CloudBuildSettings> {
           ListWorkerPoolsRequest, ListWorkerPoolsResponse, ListWorkerPoolsPagedResponse>
       listWorkerPoolsSettings() {
     return ((CloudBuildStubSettings) getStubSettings()).listWorkerPoolsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getDefaultServiceAccount. */
+  public UnaryCallSettings<GetDefaultServiceAccountRequest, DefaultServiceAccount>
+      getDefaultServiceAccountSettings() {
+    return ((CloudBuildStubSettings) getStubSettings()).getDefaultServiceAccountSettings();
   }
 
   public static final CloudBuildSettings create(CloudBuildStubSettings stub) throws IOException {
@@ -543,6 +551,12 @@ public class CloudBuildSettings extends ClientSettings<CloudBuildSettings> {
             ListWorkerPoolsRequest, ListWorkerPoolsResponse, ListWorkerPoolsPagedResponse>
         listWorkerPoolsSettings() {
       return getStubSettingsBuilder().listWorkerPoolsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getDefaultServiceAccount. */
+    public UnaryCallSettings.Builder<GetDefaultServiceAccountRequest, DefaultServiceAccount>
+        getDefaultServiceAccountSettings() {
+      return getStubSettingsBuilder().getDefaultServiceAccountSettings();
     }
 
     @Override

@@ -21,7 +21,7 @@ import com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient;
 import com.google.cloudbuild.v1.Build;
 import com.google.cloudbuild.v1.ListBuildsRequest;
 import com.google.cloudbuild.v1.ListBuildsResponse;
-import com.google.cloudbuild.v1.LocationName;
+import com.google.cloudbuild.v1.ProjectName;
 import com.google.common.base.Strings;
 
 public class AsyncListBuildsPaged {
@@ -39,7 +39,7 @@ public class AsyncListBuildsPaged {
     try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
       ListBuildsRequest request =
           ListBuildsRequest.newBuilder()
-              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setParent(ProjectName.of("[PROJECT]").toString())
               .setProjectId("projectId-894832108")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")

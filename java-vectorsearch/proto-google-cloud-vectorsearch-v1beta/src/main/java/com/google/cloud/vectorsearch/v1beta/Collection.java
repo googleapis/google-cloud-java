@@ -554,7 +554,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Schema for vector fields. Only vector fields in this schema will
-   * be searchable.
+   * be searchable. Field names must contain only alphanumeric characters,
+   * underscores, and hyphens.
    * </pre>
    *
    * <code>
@@ -582,7 +583,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Schema for vector fields. Only vector fields in this schema will
-   * be searchable.
+   * be searchable. Field names must contain only alphanumeric characters,
+   * underscores, and hyphens.
    * </pre>
    *
    * <code>
@@ -600,7 +602,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Schema for vector fields. Only vector fields in this schema will
-   * be searchable.
+   * be searchable. Field names must contain only alphanumeric characters,
+   * underscores, and hyphens.
    * </pre>
    *
    * <code>
@@ -625,7 +628,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Schema for vector fields. Only vector fields in this schema will
-   * be searchable.
+   * be searchable. Field names must contain only alphanumeric characters,
+   * underscores, and hyphens.
    * </pre>
    *
    * <code>
@@ -654,6 +658,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. JSON Schema for data.
+   * Field names must contain only alphanumeric characters,
+   * underscores, and hyphens.
    * </pre>
    *
    * <code>.google.protobuf.Struct data_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -671,6 +677,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. JSON Schema for data.
+   * Field names must contain only alphanumeric characters,
+   * underscores, and hyphens.
    * </pre>
    *
    * <code>.google.protobuf.Struct data_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -688,6 +696,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. JSON Schema for data.
+   * Field names must contain only alphanumeric characters,
+   * underscores, and hyphens.
    * </pre>
    *
    * <code>.google.protobuf.Struct data_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -2549,7 +2559,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Schema for vector fields. Only vector fields in this schema will
-     * be searchable.
+     * be searchable. Field names must contain only alphanumeric characters,
+     * underscores, and hyphens.
      * </pre>
      *
      * <code>
@@ -2577,7 +2588,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Schema for vector fields. Only vector fields in this schema will
-     * be searchable.
+     * be searchable. Field names must contain only alphanumeric characters,
+     * underscores, and hyphens.
      * </pre>
      *
      * <code>
@@ -2595,7 +2607,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Schema for vector fields. Only vector fields in this schema will
-     * be searchable.
+     * be searchable. Field names must contain only alphanumeric characters,
+     * underscores, and hyphens.
      * </pre>
      *
      * <code>
@@ -2620,7 +2633,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Schema for vector fields. Only vector fields in this schema will
-     * be searchable.
+     * be searchable. Field names must contain only alphanumeric characters,
+     * underscores, and hyphens.
      * </pre>
      *
      * <code>
@@ -2652,7 +2666,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Schema for vector fields. Only vector fields in this schema will
-     * be searchable.
+     * be searchable. Field names must contain only alphanumeric characters,
+     * underscores, and hyphens.
      * </pre>
      *
      * <code>
@@ -2680,7 +2695,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Schema for vector fields. Only vector fields in this schema will
-     * be searchable.
+     * be searchable. Field names must contain only alphanumeric characters,
+     * underscores, and hyphens.
      * </pre>
      *
      * <code>
@@ -2705,7 +2721,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Schema for vector fields. Only vector fields in this schema will
-     * be searchable.
+     * be searchable. Field names must contain only alphanumeric characters,
+     * underscores, and hyphens.
      * </pre>
      *
      * <code>
@@ -2730,7 +2747,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Schema for vector fields. Only vector fields in this schema will
-     * be searchable.
+     * be searchable. Field names must contain only alphanumeric characters,
+     * underscores, and hyphens.
      * </pre>
      *
      * <code>
@@ -2765,6 +2783,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. JSON Schema for data.
+     * Field names must contain only alphanumeric characters,
+     * underscores, and hyphens.
      * </pre>
      *
      * <code>.google.protobuf.Struct data_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -2781,6 +2801,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. JSON Schema for data.
+     * Field names must contain only alphanumeric characters,
+     * underscores, and hyphens.
      * </pre>
      *
      * <code>.google.protobuf.Struct data_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -2801,6 +2823,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. JSON Schema for data.
+     * Field names must contain only alphanumeric characters,
+     * underscores, and hyphens.
      * </pre>
      *
      * <code>.google.protobuf.Struct data_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -2825,6 +2849,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. JSON Schema for data.
+     * Field names must contain only alphanumeric characters,
+     * underscores, and hyphens.
      * </pre>
      *
      * <code>.google.protobuf.Struct data_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -2846,6 +2872,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. JSON Schema for data.
+     * Field names must contain only alphanumeric characters,
+     * underscores, and hyphens.
      * </pre>
      *
      * <code>.google.protobuf.Struct data_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -2875,6 +2903,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. JSON Schema for data.
+     * Field names must contain only alphanumeric characters,
+     * underscores, and hyphens.
      * </pre>
      *
      * <code>.google.protobuf.Struct data_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -2896,6 +2926,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. JSON Schema for data.
+     * Field names must contain only alphanumeric characters,
+     * underscores, and hyphens.
      * </pre>
      *
      * <code>.google.protobuf.Struct data_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -2912,6 +2944,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. JSON Schema for data.
+     * Field names must contain only alphanumeric characters,
+     * underscores, and hyphens.
      * </pre>
      *
      * <code>.google.protobuf.Struct data_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -2930,6 +2964,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. JSON Schema for data.
+     * Field names must contain only alphanumeric characters,
+     * underscores, and hyphens.
      * </pre>
      *
      * <code>.google.protobuf.Struct data_schema = 10 [(.google.api.field_behavior) = OPTIONAL];

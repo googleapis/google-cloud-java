@@ -22,4 +22,95 @@ package com.google.cloud.vmmigration.v1;
 public interface DataDiskImageImportOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vmmigration.v1.DataDiskImageImport)
-    com.google.protobuf.MessageOrBuilder {}
+    com.google.protobuf.MessageOrBuilder {
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of guest OS features to apply to the imported image. These
+   * features are flags that are used by Compute Engine to enable certain
+   * capabilities for virtual machine instances that are created from the image.
+   *
+   * This field does not change the OS of the image; it only marks the image
+   * with the specified features. The user must ensure that the OS is
+   * compatible with the features.
+   *
+   * For a list of available features, see
+   * https://cloud.google.com/compute/docs/images/create-custom#guest-os-features.
+   * </pre>
+   *
+   * <code>repeated string guest_os_features = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the guestOsFeatures.
+   */
+  java.util.List<java.lang.String> getGuestOsFeaturesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of guest OS features to apply to the imported image. These
+   * features are flags that are used by Compute Engine to enable certain
+   * capabilities for virtual machine instances that are created from the image.
+   *
+   * This field does not change the OS of the image; it only marks the image
+   * with the specified features. The user must ensure that the OS is
+   * compatible with the features.
+   *
+   * For a list of available features, see
+   * https://cloud.google.com/compute/docs/images/create-custom#guest-os-features.
+   * </pre>
+   *
+   * <code>repeated string guest_os_features = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of guestOsFeatures.
+   */
+  int getGuestOsFeaturesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of guest OS features to apply to the imported image. These
+   * features are flags that are used by Compute Engine to enable certain
+   * capabilities for virtual machine instances that are created from the image.
+   *
+   * This field does not change the OS of the image; it only marks the image
+   * with the specified features. The user must ensure that the OS is
+   * compatible with the features.
+   *
+   * For a list of available features, see
+   * https://cloud.google.com/compute/docs/images/create-custom#guest-os-features.
+   * </pre>
+   *
+   * <code>repeated string guest_os_features = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The guestOsFeatures at the given index.
+   */
+  java.lang.String getGuestOsFeatures(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of guest OS features to apply to the imported image. These
+   * features are flags that are used by Compute Engine to enable certain
+   * capabilities for virtual machine instances that are created from the image.
+   *
+   * This field does not change the OS of the image; it only marks the image
+   * with the specified features. The user must ensure that the OS is
+   * compatible with the features.
+   *
+   * For a list of available features, see
+   * https://cloud.google.com/compute/docs/images/create-custom#guest-os-features.
+   * </pre>
+   *
+   * <code>repeated string guest_os_features = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the guestOsFeatures at the given index.
+   */
+  com.google.protobuf.ByteString getGuestOsFeaturesBytes(int index);
+}

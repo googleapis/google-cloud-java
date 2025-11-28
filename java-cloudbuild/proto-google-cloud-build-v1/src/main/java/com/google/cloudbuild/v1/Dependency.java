@@ -1569,8 +1569,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Developer Connect Git repository link or the url that matches a
-     * repository link in the current project, formatted as
+     * The Developer Connect Git repository link formatted as
      * `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;&#47;gitRepositoryLink/&#42;`
      * </pre>
      *
@@ -1584,8 +1583,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Developer Connect Git repository link or the url that matches a
-     * repository link in the current project, formatted as
+     * The Developer Connect Git repository link formatted as
      * `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;&#47;gitRepositoryLink/&#42;`
      * </pre>
      *
@@ -1599,8 +1597,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Developer Connect Git repository link or the url that matches a
-     * repository link in the current project, formatted as
+     * The Developer Connect Git repository link formatted as
      * `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;&#47;gitRepositoryLink/&#42;`
      * </pre>
      *
@@ -1785,8 +1782,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Developer Connect Git repository link or the url that matches a
-     * repository link in the current project, formatted as
+     * The Developer Connect Git repository link formatted as
      * `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;&#47;gitRepositoryLink/&#42;`
      * </pre>
      *
@@ -1802,8 +1798,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Developer Connect Git repository link or the url that matches a
-     * repository link in the current project, formatted as
+     * The Developer Connect Git repository link formatted as
      * `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;&#47;gitRepositoryLink/&#42;`
      * </pre>
      *
@@ -1832,8 +1827,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Developer Connect Git repository link or the url that matches a
-     * repository link in the current project, formatted as
+     * The Developer Connect Git repository link formatted as
      * `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;&#47;gitRepositoryLink/&#42;`
      * </pre>
      *
@@ -2417,8 +2411,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The Developer Connect Git repository link or the url that matches a
-       * repository link in the current project, formatted as
+       * The Developer Connect Git repository link formatted as
        * `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;&#47;gitRepositoryLink/&#42;`
        * </pre>
        *
@@ -2435,8 +2428,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The Developer Connect Git repository link or the url that matches a
-       * repository link in the current project, formatted as
+       * The Developer Connect Git repository link formatted as
        * `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;&#47;gitRepositoryLink/&#42;`
        * </pre>
        *
@@ -2466,8 +2458,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The Developer Connect Git repository link or the url that matches a
-       * repository link in the current project, formatted as
+       * The Developer Connect Git repository link formatted as
        * `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;&#47;gitRepositoryLink/&#42;`
        * </pre>
        *
@@ -2497,8 +2488,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The Developer Connect Git repository link or the url that matches a
-       * repository link in the current project, formatted as
+       * The Developer Connect Git repository link formatted as
        * `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;&#47;gitRepositoryLink/&#42;`
        * </pre>
        *
@@ -2521,8 +2511,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The Developer Connect Git repository link or the url that matches a
-       * repository link in the current project, formatted as
+       * The Developer Connect Git repository link formatted as
        * `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;&#47;gitRepositoryLink/&#42;`
        * </pre>
        *
@@ -2543,8 +2532,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The Developer Connect Git repository link or the url that matches a
-       * repository link in the current project, formatted as
+       * The Developer Connect Git repository link formatted as
        * `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;&#47;gitRepositoryLink/&#42;`
        * </pre>
        *

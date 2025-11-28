@@ -378,4 +378,83 @@ public interface SimpleExportPolicyRuleOrBuilder
    * @return The kerberos5pReadWrite.
    */
   boolean getKerberos5PReadWrite();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines how user identity squashing is applied for this export
+   * rule. This field is the preferred way to configure squashing behavior and
+   * takes precedence over `has_root_access` if both are provided.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.netapp.v1.SimpleExportPolicyRule.SquashMode squash_mode = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the squashMode field is set.
+   */
+  boolean hasSquashMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines how user identity squashing is applied for this export
+   * rule. This field is the preferred way to configure squashing behavior and
+   * takes precedence over `has_root_access` if both are provided.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.netapp.v1.SimpleExportPolicyRule.SquashMode squash_mode = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for squashMode.
+   */
+  int getSquashModeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines how user identity squashing is applied for this export
+   * rule. This field is the preferred way to configure squashing behavior and
+   * takes precedence over `has_root_access` if both are provided.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.netapp.v1.SimpleExportPolicyRule.SquashMode squash_mode = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The squashMode.
+   */
+  com.google.cloud.netapp.v1.SimpleExportPolicyRule.SquashMode getSquashMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An integer representing the anonymous user ID. Range is 0 to
+   * 4294967295. Required when squash_mode is ROOT_SQUASH or ALL_SQUASH.
+   * </pre>
+   *
+   * <code>optional int64 anon_uid = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the anonUid field is set.
+   */
+  boolean hasAnonUid();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An integer representing the anonymous user ID. Range is 0 to
+   * 4294967295. Required when squash_mode is ROOT_SQUASH or ALL_SQUASH.
+   * </pre>
+   *
+   * <code>optional int64 anon_uid = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The anonUid.
+   */
+  long getAnonUid();
 }

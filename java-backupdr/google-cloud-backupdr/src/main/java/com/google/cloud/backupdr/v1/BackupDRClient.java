@@ -3889,6 +3889,7 @@ public class BackupDRClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]", "[BACKUP]")
    *                   .toString())
    *           .setRequestId("requestId693933066")
+   *           .setClearOverridesFieldMask(FieldMask.newBuilder().build())
    *           .build();
    *   RestoreBackupResponse response = backupDRClient.restoreBackupAsync(request).get();
    * }
@@ -3922,6 +3923,7 @@ public class BackupDRClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]", "[BACKUP]")
    *                   .toString())
    *           .setRequestId("requestId693933066")
+   *           .setClearOverridesFieldMask(FieldMask.newBuilder().build())
    *           .build();
    *   OperationFuture<RestoreBackupResponse, OperationMetadata> future =
    *       backupDRClient.restoreBackupOperationCallable().futureCall(request);
@@ -3955,6 +3957,7 @@ public class BackupDRClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]", "[BACKUP]")
    *                   .toString())
    *           .setRequestId("requestId693933066")
+   *           .setClearOverridesFieldMask(FieldMask.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future = backupDRClient.restoreBackupCallable().futureCall(request);
    *   // Do something.

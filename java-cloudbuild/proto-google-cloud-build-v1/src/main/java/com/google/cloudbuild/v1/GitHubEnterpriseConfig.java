@@ -80,12 +80,12 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional. The full resource name for the GitHubEnterpriseConfig
+   * The full resource name for the GitHubEnterpriseConfig
    * For example:
    * "projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}"
    * </pre>
    *
-   * <code>string name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string name = 7;</code>
    *
    * @return The name.
    */
@@ -106,12 +106,12 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional. The full resource name for the GitHubEnterpriseConfig
+   * The full resource name for the GitHubEnterpriseConfig
    * For example:
    * "projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}"
    * </pre>
    *
-   * <code>string name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string name = 7;</code>
    *
    * @return The bytes for name.
    */
@@ -390,10 +390,12 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Names of secrets in Secret Manager.
+   * Optional. Names of secrets in Secret Manager.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.GitHubEnterpriseSecrets secrets = 10;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.GitHubEnterpriseSecrets secrets = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the secrets field is set.
    */
@@ -406,10 +408,12 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Names of secrets in Secret Manager.
+   * Optional. Names of secrets in Secret Manager.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.GitHubEnterpriseSecrets secrets = 10;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.GitHubEnterpriseSecrets secrets = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The secrets.
    */
@@ -424,10 +428,12 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Names of secrets in Secret Manager.
+   * Optional. Names of secrets in Secret Manager.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.GitHubEnterpriseSecrets secrets = 10;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.GitHubEnterpriseSecrets secrets = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloudbuild.v1.GitHubEnterpriseSecretsOrBuilder getSecretsOrBuilder() {
@@ -445,10 +451,10 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Name to display for this config.
+   * Optional. Name to display for this config.
    * </pre>
    *
-   * <code>string display_name = 11;</code>
+   * <code>string display_name = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The displayName.
    */
@@ -469,10 +475,10 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Name to display for this config.
+   * Optional. Name to display for this config.
    * </pre>
    *
-   * <code>string display_name = 11;</code>
+   * <code>string display_name = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for displayName.
    */
@@ -1110,12 +1116,12 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The full resource name for the GitHubEnterpriseConfig
+     * The full resource name for the GitHubEnterpriseConfig
      * For example:
      * "projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}"
      * </pre>
      *
-     * <code>string name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 7;</code>
      *
      * @return The name.
      */
@@ -1135,12 +1141,12 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The full resource name for the GitHubEnterpriseConfig
+     * The full resource name for the GitHubEnterpriseConfig
      * For example:
      * "projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}"
      * </pre>
      *
-     * <code>string name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 7;</code>
      *
      * @return The bytes for name.
      */
@@ -1160,12 +1166,12 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The full resource name for the GitHubEnterpriseConfig
+     * The full resource name for the GitHubEnterpriseConfig
      * For example:
      * "projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}"
      * </pre>
      *
-     * <code>string name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 7;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1184,12 +1190,12 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The full resource name for the GitHubEnterpriseConfig
+     * The full resource name for the GitHubEnterpriseConfig
      * For example:
      * "projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}"
      * </pre>
      *
-     * <code>string name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 7;</code>
      *
      * @return This builder for chaining.
      */
@@ -1204,12 +1210,12 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The full resource name for the GitHubEnterpriseConfig
+     * The full resource name for the GitHubEnterpriseConfig
      * For example:
      * "projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}"
      * </pre>
      *
-     * <code>string name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string name = 7;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1900,10 +1906,12 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Names of secrets in Secret Manager.
+     * Optional. Names of secrets in Secret Manager.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.GitHubEnterpriseSecrets secrets = 10;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.GitHubEnterpriseSecrets secrets = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the secrets field is set.
      */
@@ -1915,10 +1923,12 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Names of secrets in Secret Manager.
+     * Optional. Names of secrets in Secret Manager.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.GitHubEnterpriseSecrets secrets = 10;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.GitHubEnterpriseSecrets secrets = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The secrets.
      */
@@ -1936,10 +1946,12 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Names of secrets in Secret Manager.
+     * Optional. Names of secrets in Secret Manager.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.GitHubEnterpriseSecrets secrets = 10;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.GitHubEnterpriseSecrets secrets = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setSecrets(com.google.cloudbuild.v1.GitHubEnterpriseSecrets value) {
       if (secretsBuilder_ == null) {
@@ -1959,10 +1971,12 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Names of secrets in Secret Manager.
+     * Optional. Names of secrets in Secret Manager.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.GitHubEnterpriseSecrets secrets = 10;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.GitHubEnterpriseSecrets secrets = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setSecrets(
         com.google.cloudbuild.v1.GitHubEnterpriseSecrets.Builder builderForValue) {
@@ -1980,10 +1994,12 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Names of secrets in Secret Manager.
+     * Optional. Names of secrets in Secret Manager.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.GitHubEnterpriseSecrets secrets = 10;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.GitHubEnterpriseSecrets secrets = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeSecrets(com.google.cloudbuild.v1.GitHubEnterpriseSecrets value) {
       if (secretsBuilder_ == null) {
@@ -2008,10 +2024,12 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Names of secrets in Secret Manager.
+     * Optional. Names of secrets in Secret Manager.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.GitHubEnterpriseSecrets secrets = 10;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.GitHubEnterpriseSecrets secrets = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearSecrets() {
       bitField0_ = (bitField0_ & ~0x00000040);
@@ -2028,10 +2046,12 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Names of secrets in Secret Manager.
+     * Optional. Names of secrets in Secret Manager.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.GitHubEnterpriseSecrets secrets = 10;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.GitHubEnterpriseSecrets secrets = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloudbuild.v1.GitHubEnterpriseSecrets.Builder getSecretsBuilder() {
       bitField0_ |= 0x00000040;
@@ -2043,10 +2063,12 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Names of secrets in Secret Manager.
+     * Optional. Names of secrets in Secret Manager.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.GitHubEnterpriseSecrets secrets = 10;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.GitHubEnterpriseSecrets secrets = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloudbuild.v1.GitHubEnterpriseSecretsOrBuilder getSecretsOrBuilder() {
       if (secretsBuilder_ != null) {
@@ -2062,10 +2084,12 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Names of secrets in Secret Manager.
+     * Optional. Names of secrets in Secret Manager.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.GitHubEnterpriseSecrets secrets = 10;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.GitHubEnterpriseSecrets secrets = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloudbuild.v1.GitHubEnterpriseSecrets,
@@ -2090,10 +2114,10 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Name to display for this config.
+     * Optional. Name to display for this config.
      * </pre>
      *
-     * <code>string display_name = 11;</code>
+     * <code>string display_name = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The displayName.
      */
@@ -2113,10 +2137,10 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Name to display for this config.
+     * Optional. Name to display for this config.
      * </pre>
      *
-     * <code>string display_name = 11;</code>
+     * <code>string display_name = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for displayName.
      */
@@ -2136,10 +2160,10 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Name to display for this config.
+     * Optional. Name to display for this config.
      * </pre>
      *
-     * <code>string display_name = 11;</code>
+     * <code>string display_name = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -2158,10 +2182,10 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Name to display for this config.
+     * Optional. Name to display for this config.
      * </pre>
      *
-     * <code>string display_name = 11;</code>
+     * <code>string display_name = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -2176,10 +2200,10 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Name to display for this config.
+     * Optional. Name to display for this config.
      * </pre>
      *
-     * <code>string display_name = 11;</code>
+     * <code>string display_name = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.

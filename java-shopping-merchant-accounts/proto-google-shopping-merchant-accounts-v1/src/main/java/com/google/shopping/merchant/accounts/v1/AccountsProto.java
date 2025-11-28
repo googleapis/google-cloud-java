@@ -49,6 +49,10 @@ public final class AccountsProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_shopping_merchant_accounts_v1_CreateAndConfigureAccountRequest_AddAccountService_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_accounts_v1_CreateAndConfigureAccountRequest_SetAliasForRelationship_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_shopping_merchant_accounts_v1_CreateAndConfigureAccountRequest_SetAliasForRelationship_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_shopping_merchant_accounts_v1_DeleteAccountRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_shopping_merchant_accounts_v1_DeleteAccountRequest_fieldAccessorTable;
@@ -88,39 +92,55 @@ public final class AccountsProto {
           + "ield_behavior.proto\032\031google/api/resource.proto\032\033google/protobuf/empty.proto\032"
           + " google/protobuf/field_mask.proto\032:google/sh"
           + "opping/merchant/accounts/v1/accountservices.proto\032/google/shopping/merchant/acco"
-          + "unts/v1/user.proto\032\032google/type/datetime.proto\"\271\002\n"
+          + "unts/v1/user.proto\032Cgoogle/shopping/merc"
+          + "hant/accounts/v1/verificationmailsettings.proto\032\032google/type/datetime.proto\"\271\002\n"
           + "\007Account\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\010\022\027\n"
-          + "\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\027\n\n"
           + "account_id\030\002 \001(\003B\003\340A\003\022\031\n"
           + "\014account_name\030\003 \001(\tB\003\340A\002\022\037\n\r"
           + "adult_content\030\004 \001(\010B\003\340A\001H\000\210\001\001\022\031\n"
           + "\014test_account\030\005 \001(\010B\003\340A\003\022-\n"
           + "\ttime_zone\030\006 \001(\0132\025.google.type.TimeZoneB\003\340A\002\022\032\n\r"
           + "language_code\030\007 \001(\tB\003\340A\002:N\352AK\n"
-          + "\"merchanta"
-          + "pi.googleapis.com/Account\022\022accounts/{account}*\010accounts2\007accountB\020\n"
+          + "\"merchantapi.googleap"
+          + "is.com/Account\022\022accounts/{account}*\010accounts2\007accountB\020\n"
           + "\016_adult_content\"M\n"
           + "\021GetAccountRequest\0228\n"
           + "\004name\030\001 \001(\tB*\340A\002\372A$\n"
-          + "\"merchantapi.googleapis.com/Account\"\302\004\n"
+          + "\"merchantapi.googleapis.com/Account\"\373\t\n"
           + " CreateAndConfigureAccountRequest\022C\n"
           + "\007account\030\001"
           + " \001(\0132-.google.shopping.merchant.accounts.v1.AccountB\003\340A\002\022a\n"
-          + "\004user\030\003 \003(\0132N.google.shopping.merchant.accounts.v1"
-          + ".CreateAndConfigureAccountRequest.AddUserB\003\340A\001\022n\n"
-          + "\007service\030\004 \003(\0132X.google.shopping.merchant.accounts.v1.CreateAndConfigur"
-          + "eAccountRequest.AddAccountServiceB\003\340A\002\032^\n"
+          + "\004user\030\003 \003(\0132N.google."
+          + "shopping.merchant.accounts.v1.CreateAndConfigureAccountRequest.AddUserB\003\340A\001\022n\n"
+          + "\007service\030\004 \003(\0132X.google.shopping.merchant."
+          + "accounts.v1.CreateAndConfigureAccountRequest.AddAccountServiceB\003\340A\002\022v\n"
+          + "\tset_alias\030\005 \003(\0132^.google.shopping.merchant.accoun"
+          + "ts.v1.CreateAndConfigureAccountRequest.SetAliasForRelationshipB\003\340A\001\032\307\001\n"
           + "\007AddUser\022\024\n"
           + "\007user_id\030\001 \001(\tB\003\340A\002\022=\n"
-          + "\004user\030\002"
-          + " \001(\0132*.google.shopping.merchant.accounts.v1.UserB\003\340A\001\032\245\001\n"
+          + "\004user\030\002 \001(\0132*.go"
+          + "ogle.shopping.merchant.accounts.v1.UserB\003\340A\001\022g\n"
+          + "\032verification_mail_settings\030\003 \001(\013"
+          + "2>.google.shopping.merchant.accounts.v1.VerificationMailSettingsB\003\340A\001\032\253\004\n"
           + "\021AddAccountService\022W\n"
-          + "\023account_aggregation\030g \001(\01328.google.shopp"
-          + "ing.merchant.accounts.v1.AccountAggregationH\000\022\032\n"
-          + "\010provider\030\001 \001(\tB\003\340A\002H\001\210\001\001B\016\n"
+          + "\023account_aggregation\030g \001(\013"
+          + "28.google.shopping.merchant.accounts.v1.AccountAggregationH\000\022U\n"
+          + "\022account_management\030h"
+          + " \001(\01327.google.shopping.merchant.accounts.v1.AccountManagementH\000\022W\n"
+          + "\023comparison_shopping\030i"
+          + " \001(\01328.google.shopping.merchant.accounts.v1.ComparisonShoppingH\000\022W\n"
+          + "\023products_management\030j \001(\01328.google.shopp"
+          + "ing.merchant.accounts.v1.ProductsManagementH\000\022Y\n"
+          + "\024campaigns_management\030k \001(\01329.go"
+          + "ogle.shopping.merchant.accounts.v1.CampaignsManagementH\000\022\032\n"
+          + "\010provider\030\001 \001(\tB\003\340A\002H\001\210\001\001\022 \n"
+          + "\023external_account_id\030\003 \001(\tB\003\340A\005B\016\n"
           + "\014service_typeB\013\n"
-          + "\t_provider\"d\n"
+          + "\t_provider\032O\n"
+          + "\027SetAliasForRelationship\022\025\n"
+          + "\010provider\030\001 \001(\tB\003\340A\002\022\035\n"
+          + "\020account_id_alias\030\002 \001(\tB\003\340A\002\"d\n"
           + "\024DeleteAccountRequest\0228\n"
           + "\004name\030\001 \001(\tB*\340A\002\372A$\n"
           + "\"merchantapi.googleapis.com/Account\022\022\n"
@@ -147,36 +167,35 @@ public final class AccountsProto {
           + " \003(\0132-.google.shopping.merchant.accounts.v1.Account\022\027\n"
           + "\017next_page_token\030\002 \001(\t2\252\t\n"
           + "\017AccountsService\022\243\001\n\n"
-          + "GetAccount\0227.google.shopping.merchant.acc"
-          + "ounts.v1.GetAccountRequest\032-.google.shop"
-          + "ping.merchant.accounts.v1.Account\"-\332A\004name\202\323\344\223\002"
+          + "GetAccount\0227.google.shopping.merchant.accounts.v1.GetAccountRequest\032-.googl"
+          + "e.shopping.merchant.accounts.v1.Account\"-\332A\004name\202\323\344\223\002"
           + " \022\036/accounts/v1/{name=accounts/*}\022\307\001\n"
-          + "\031CreateAndConfigureAccount\022F.google.shopping.merchant.accounts.v1.CreateAndC"
-          + "onfigureAccountRequest\032-.google.shopping"
-          + ".merchant.accounts.v1.Account\"3\202\323\344\223\002-\"(/"
-          + "accounts/v1/accounts:createAndConfigure:\001*\022\222\001\n\r"
-          + "DeleteAccount\022:.google.shopping.m"
-          + "erchant.accounts.v1.DeleteAccountRequest\032\026.google.protobuf.Empty\"-\332A\004name\202\323\344\223\002"
+          + "\031CreateAndConfigureAccount\022F.google.shopping.merchant.accounts.v1.Crea"
+          + "teAndConfigureAccountRequest\032-.google.sh"
+          + "opping.merchant.accounts.v1.Account\"3\202\323\344"
+          + "\223\002-\"(/accounts/v1/accounts:createAndConfigure:\001*\022\222\001\n\r"
+          + "DeleteAccount\022:.google.shopping.merchant.accounts.v1.DeleteAccountR"
+          + "equest\032\026.google.protobuf.Empty\"-\332A\004name\202\323\344\223\002"
           + " *\036/accounts/v1/{name=accounts/*}\022\311\001\n\r"
-          + "UpdateAccount\022:.google.shopping.merchant.acc"
-          + "ounts.v1.UpdateAccountRequest\032-.google.s"
-          + "hopping.merchant.accounts.v1.Account\"M\332A"
-          + "\023account,update_mask\202\323\344\223\00212&/accounts/v1/{account.name=accounts/*}:\007account\022\244\001\n"
-          + "\014ListAccounts\0229.google.shopping.merchant."
-          + "accounts.v1.ListAccountsRequest\032:.google.shopping.merchant.accounts.v1.ListAccou"
-          + "ntsResponse\"\035\202\323\344\223\002\027\022\025/accounts/v1/accounts\022\325\001\n"
-          + "\017ListSubAccounts\022<.google.shopping.merchant.accounts.v1.ListSubAccountsReq"
-          + "uest\032=.google.shopping.merchant.accounts"
-          + ".v1.ListSubAccountsResponse\"E\332A\010provider"
-          + "\202\323\344\223\0024\0222/accounts/v1/{provider=accounts/"
-          + "*}:listSubaccounts\032G\312A\032merchantapi.googl"
-          + "eapis.com\322A\'https://www.googleapis.com/auth/contentB\200\002\n"
+          + "UpdateAccount\022:.google.shopping.merchant.accounts.v1.UpdateAccountRequest\032-.go"
+          + "ogle.shopping.merchant.accounts.v1.Accou"
+          + "nt\"M\332A\023account,update_mask\202\323\344\223\00212&/accou"
+          + "nts/v1/{account.name=accounts/*}:\007account\022\244\001\n"
+          + "\014ListAccounts\0229.google.shopping.merchant.accounts.v1.ListAccountsRequest\032:."
+          + "google.shopping.merchant.accounts.v1.Lis"
+          + "tAccountsResponse\"\035\202\323\344\223\002\027\022\025/accounts/v1/accounts\022\325\001\n"
+          + "\017ListSubAccounts\022<.google.shopping.merchant.accounts.v1.ListSubAccou"
+          + "ntsRequest\032=.google.shopping.merchant.ac"
+          + "counts.v1.ListSubAccountsResponse\"E\332A\010pr"
+          + "ovider\202\323\344\223\0024\0222/accounts/v1/{provider=acc"
+          + "ounts/*}:listSubaccounts\032G\312A\032merchantapi"
+          + ".googleapis.com\322A\'https://www.googleapis.com/auth/contentB\200\002\n"
           + "(com.google.shopping.merchant.accounts.v1B\r"
-          + "AccountsProtoP\001ZJcloud.google.com/go/shopping/merchant/account"
-          + "s/apiv1/accountspb;accountspb\252\002$Google.S"
-          + "hopping.Merchant.Accounts.V1\312\002$Google\\Sh"
-          + "opping\\Merchant\\Accounts\\V1\352\002(Google::Sh"
-          + "opping::Merchant::Accounts::V1b\006proto3"
+          + "AccountsProtoP\001ZJcloud.google.com/go/shopping/merchant/a"
+          + "ccounts/apiv1/accountspb;accountspb\252\002$Go"
+          + "ogle.Shopping.Merchant.Accounts.V1\312\002$Goo"
+          + "gle\\Shopping\\Merchant\\Accounts\\V1\352\002(Goog"
+          + "le::Shopping::Merchant::Accounts::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -190,6 +209,8 @@ public final class AccountsProto {
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.shopping.merchant.accounts.v1.AccountServicesProto.getDescriptor(),
               com.google.shopping.merchant.accounts.v1.UserProto.getDescriptor(),
+              com.google.shopping.merchant.accounts.v1.VerificationMailSettingsProto
+                  .getDescriptor(),
               com.google.type.DateTimeProto.getDescriptor(),
             });
     internal_static_google_shopping_merchant_accounts_v1_Account_descriptor =
@@ -220,7 +241,7 @@ public final class AccountsProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_shopping_merchant_accounts_v1_CreateAndConfigureAccountRequest_descriptor,
             new java.lang.String[] {
-              "Account", "User", "Service",
+              "Account", "User", "Service", "SetAlias",
             });
     internal_static_google_shopping_merchant_accounts_v1_CreateAndConfigureAccountRequest_AddUser_descriptor =
         internal_static_google_shopping_merchant_accounts_v1_CreateAndConfigureAccountRequest_descriptor
@@ -230,7 +251,7 @@ public final class AccountsProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_shopping_merchant_accounts_v1_CreateAndConfigureAccountRequest_AddUser_descriptor,
             new java.lang.String[] {
-              "UserId", "User",
+              "UserId", "User", "VerificationMailSettings",
             });
     internal_static_google_shopping_merchant_accounts_v1_CreateAndConfigureAccountRequest_AddAccountService_descriptor =
         internal_static_google_shopping_merchant_accounts_v1_CreateAndConfigureAccountRequest_descriptor
@@ -240,7 +261,24 @@ public final class AccountsProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_shopping_merchant_accounts_v1_CreateAndConfigureAccountRequest_AddAccountService_descriptor,
             new java.lang.String[] {
-              "AccountAggregation", "Provider", "ServiceType",
+              "AccountAggregation",
+              "AccountManagement",
+              "ComparisonShopping",
+              "ProductsManagement",
+              "CampaignsManagement",
+              "Provider",
+              "ExternalAccountId",
+              "ServiceType",
+            });
+    internal_static_google_shopping_merchant_accounts_v1_CreateAndConfigureAccountRequest_SetAliasForRelationship_descriptor =
+        internal_static_google_shopping_merchant_accounts_v1_CreateAndConfigureAccountRequest_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_shopping_merchant_accounts_v1_CreateAndConfigureAccountRequest_SetAliasForRelationship_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_shopping_merchant_accounts_v1_CreateAndConfigureAccountRequest_SetAliasForRelationship_descriptor,
+            new java.lang.String[] {
+              "Provider", "AccountIdAlias",
             });
     internal_static_google_shopping_merchant_accounts_v1_DeleteAccountRequest_descriptor =
         getDescriptor().getMessageTypes().get(3);
@@ -309,6 +347,7 @@ public final class AccountsProto {
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.shopping.merchant.accounts.v1.AccountServicesProto.getDescriptor();
     com.google.shopping.merchant.accounts.v1.UserProto.getDescriptor();
+    com.google.shopping.merchant.accounts.v1.VerificationMailSettingsProto.getDescriptor();
     com.google.type.DateTimeProto.getDescriptor();
   }
 

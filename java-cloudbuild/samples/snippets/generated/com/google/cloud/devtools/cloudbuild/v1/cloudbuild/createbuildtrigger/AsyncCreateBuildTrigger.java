@@ -21,7 +21,7 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient;
 import com.google.cloudbuild.v1.BuildTrigger;
 import com.google.cloudbuild.v1.CreateBuildTriggerRequest;
-import com.google.cloudbuild.v1.LocationName;
+import com.google.cloudbuild.v1.ProjectName;
 
 public class AsyncCreateBuildTrigger {
 
@@ -38,7 +38,7 @@ public class AsyncCreateBuildTrigger {
     try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
       CreateBuildTriggerRequest request =
           CreateBuildTriggerRequest.newBuilder()
-              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setParent(ProjectName.of("[PROJECT]").toString())
               .setProjectId("projectId-894832108")
               .setTrigger(BuildTrigger.newBuilder().build())
               .build();

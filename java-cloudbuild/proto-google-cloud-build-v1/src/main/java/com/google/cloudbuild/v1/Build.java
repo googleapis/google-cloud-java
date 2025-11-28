@@ -2805,10 +2805,12 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The location of the source files to build.
+   * Optional. The location of the source files to build.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.Source source = 3;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.Source source = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the source field is set.
    */
@@ -2821,10 +2823,12 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The location of the source files to build.
+   * Optional. The location of the source files to build.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.Source source = 3;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.Source source = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The source.
    */
@@ -2837,10 +2841,12 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The location of the source files to build.
+   * Optional. The location of the source files to build.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.Source source = 3;</code>
+   * <code>
+   * .google.devtools.cloudbuild.v1.Source source = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloudbuild.v1.SourceOrBuilder getSourceOrBuilder() {
@@ -6653,10 +6659,12 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The location of the source files to build.
+     * Optional. The location of the source files to build.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.Source source = 3;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.Source source = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the source field is set.
      */
@@ -6668,10 +6676,12 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The location of the source files to build.
+     * Optional. The location of the source files to build.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.Source source = 3;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.Source source = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The source.
      */
@@ -6687,10 +6697,12 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The location of the source files to build.
+     * Optional. The location of the source files to build.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.Source source = 3;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.Source source = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setSource(com.google.cloudbuild.v1.Source value) {
       if (sourceBuilder_ == null) {
@@ -6710,10 +6722,12 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The location of the source files to build.
+     * Optional. The location of the source files to build.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.Source source = 3;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.Source source = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setSource(com.google.cloudbuild.v1.Source.Builder builderForValue) {
       if (sourceBuilder_ == null) {
@@ -6730,10 +6744,12 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The location of the source files to build.
+     * Optional. The location of the source files to build.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.Source source = 3;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.Source source = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeSource(com.google.cloudbuild.v1.Source value) {
       if (sourceBuilder_ == null) {
@@ -6758,10 +6774,12 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The location of the source files to build.
+     * Optional. The location of the source files to build.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.Source source = 3;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.Source source = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearSource() {
       bitField0_ = (bitField0_ & ~0x00000020);
@@ -6778,10 +6796,12 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The location of the source files to build.
+     * Optional. The location of the source files to build.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.Source source = 3;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.Source source = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloudbuild.v1.Source.Builder getSourceBuilder() {
       bitField0_ |= 0x00000020;
@@ -6793,10 +6813,12 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The location of the source files to build.
+     * Optional. The location of the source files to build.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.Source source = 3;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.Source source = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloudbuild.v1.SourceOrBuilder getSourceOrBuilder() {
       if (sourceBuilder_ != null) {
@@ -6810,10 +6832,12 @@ public final class Build extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The location of the source files to build.
+     * Optional. The location of the source files to build.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.Source source = 3;</code>
+     * <code>
+     * .google.devtools.cloudbuild.v1.Source source = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloudbuild.v1.Source,

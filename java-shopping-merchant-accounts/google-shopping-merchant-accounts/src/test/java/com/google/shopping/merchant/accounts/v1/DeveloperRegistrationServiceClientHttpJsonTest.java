@@ -261,4 +261,47 @@ public class DeveloperRegistrationServiceClientHttpJsonTest {
       // Expected exception.
     }
   }
+
+  @Test
+  public void getAccountForGcpRegistrationTest() throws Exception {
+    GetAccountForGcpRegistrationResponse expectedResponse =
+        GetAccountForGcpRegistrationResponse.newBuilder().setName("name3373707").build();
+    mockService.addResponse(expectedResponse);
+
+    Empty request = Empty.newBuilder().build();
+
+    GetAccountForGcpRegistrationResponse actualResponse =
+        client.getAccountForGcpRegistration(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAccountForGcpRegistrationExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      Empty request = Empty.newBuilder().build();
+      client.getAccountForGcpRegistration(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
 }

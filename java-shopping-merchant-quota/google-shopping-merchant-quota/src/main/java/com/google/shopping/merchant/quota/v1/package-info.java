@@ -19,6 +19,25 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
+ * <p>======================= AccountLimitsServiceClient =======================
+ *
+ * <p>Service Description: Service to retrieve account limits.
+ *
+ * <p>Sample for AccountLimitsServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (AccountLimitsServiceClient accountLimitsServiceClient =
+ *     AccountLimitsServiceClient.create()) {
+ *   AccountLimitName name = AccountLimitName.of("[ACCOUNT]", "[LIMIT]");
+ *   AccountLimit response = accountLimitsServiceClient.getAccountLimit(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= QuotaServiceClient =======================
  *
  * <p>Service Description: Service to get method call quota information per Merchant API method.

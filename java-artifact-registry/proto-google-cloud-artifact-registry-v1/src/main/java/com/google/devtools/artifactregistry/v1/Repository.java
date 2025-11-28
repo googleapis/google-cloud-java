@@ -193,6 +193,16 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * <code>GENERIC = 11;</code>
      */
     GENERIC(11),
+    /**
+     *
+     *
+     * <pre>
+     * Ruby package format.
+     * </pre>
+     *
+     * <code>RUBY = 12;</code>
+     */
+    RUBY(12),
     UNRECOGNIZED(-1),
     ;
 
@@ -306,6 +316,17 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int GENERIC_VALUE = 11;
 
+    /**
+     *
+     *
+     * <pre>
+     * Ruby package format.
+     * </pre>
+     *
+     * <code>RUBY = 12;</code>
+     */
+    public static final int RUBY_VALUE = 12;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -350,6 +371,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           return GO;
         case 11:
           return GENERIC;
+        case 12:
+          return RUBY;
         default:
           return null;
       }
@@ -2350,7 +2373,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Not set. This will be treated as INHERITED.
+       * Not set. This will be treated as INHERITED for Docker repositories and
+       * DISABLED for non-Docker repositories.
        * </pre>
        *
        * <code>ENABLEMENT_CONFIG_UNSPECIFIED = 0;</code>
@@ -2384,7 +2408,8 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Not set. This will be treated as INHERITED.
+       * Not set. This will be treated as INHERITED for Docker repositories and
+       * DISABLED for non-Docker repositories.
        * </pre>
        *
        * <code>ENABLEMENT_CONFIG_UNSPECIFIED = 0;</code>
@@ -5032,7 +5057,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. If set, the repository satisfies physical zone separation.
+   * Output only. Whether or not this repository satisfies PZS.
    * </pre>
    *
    * <code>bool satisfies_pzs = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5158,7 +5183,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. If set, the repository satisfies physical zone isolation.
+   * Output only. Whether or not this repository satisfies PZI.
    * </pre>
    *
    * <code>bool satisfies_pzi = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -8791,7 +8816,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the repository satisfies physical zone separation.
+     * Output only. Whether or not this repository satisfies PZS.
      * </pre>
      *
      * <code>bool satisfies_pzs = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -8807,7 +8832,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the repository satisfies physical zone separation.
+     * Output only. Whether or not this repository satisfies PZS.
      * </pre>
      *
      * <code>bool satisfies_pzs = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -8827,7 +8852,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the repository satisfies physical zone separation.
+     * Output only. Whether or not this repository satisfies PZS.
      * </pre>
      *
      * <code>bool satisfies_pzs = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -9200,7 +9225,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the repository satisfies physical zone isolation.
+     * Output only. Whether or not this repository satisfies PZI.
      * </pre>
      *
      * <code>bool satisfies_pzi = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -9216,7 +9241,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the repository satisfies physical zone isolation.
+     * Output only. Whether or not this repository satisfies PZI.
      * </pre>
      *
      * <code>bool satisfies_pzi = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -9236,7 +9261,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the repository satisfies physical zone isolation.
+     * Output only. Whether or not this repository satisfies PZI.
      * </pre>
      *
      * <code>bool satisfies_pzi = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

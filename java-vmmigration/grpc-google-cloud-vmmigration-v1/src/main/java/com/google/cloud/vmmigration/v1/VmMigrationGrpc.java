@@ -3766,7 +3766,7 @@ public final class VmMigrationGrpc {
      *
      *
      * <pre>
-     * Initiates the cancellation of a running clone job.
+     * Initiates the cancellation of a running ImageImportJob.
      * </pre>
      */
     default void cancelImageImportJob(
@@ -4823,7 +4823,7 @@ public final class VmMigrationGrpc {
      *
      *
      * <pre>
-     * Initiates the cancellation of a running clone job.
+     * Initiates the cancellation of a running ImageImportJob.
      * </pre>
      */
     public void cancelImageImportJob(
@@ -5753,7 +5753,7 @@ public final class VmMigrationGrpc {
      *
      *
      * <pre>
-     * Initiates the cancellation of a running clone job.
+     * Initiates the cancellation of a running ImageImportJob.
      * </pre>
      */
     public com.google.longrunning.Operation cancelImageImportJob(
@@ -6619,7 +6619,7 @@ public final class VmMigrationGrpc {
      *
      *
      * <pre>
-     * Initiates the cancellation of a running clone job.
+     * Initiates the cancellation of a running ImageImportJob.
      * </pre>
      */
     public com.google.longrunning.Operation cancelImageImportJob(
@@ -7508,7 +7508,7 @@ public final class VmMigrationGrpc {
      *
      *
      * <pre>
-     * Initiates the cancellation of a running clone job.
+     * Initiates the cancellation of a running ImageImportJob.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

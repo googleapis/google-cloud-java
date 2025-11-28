@@ -32,11 +32,13 @@ import com.google.cloudbuild.v1.CreateBuildRequest;
 import com.google.cloudbuild.v1.CreateBuildTriggerRequest;
 import com.google.cloudbuild.v1.CreateWorkerPoolOperationMetadata;
 import com.google.cloudbuild.v1.CreateWorkerPoolRequest;
+import com.google.cloudbuild.v1.DefaultServiceAccount;
 import com.google.cloudbuild.v1.DeleteBuildTriggerRequest;
 import com.google.cloudbuild.v1.DeleteWorkerPoolOperationMetadata;
 import com.google.cloudbuild.v1.DeleteWorkerPoolRequest;
 import com.google.cloudbuild.v1.GetBuildRequest;
 import com.google.cloudbuild.v1.GetBuildTriggerRequest;
+import com.google.cloudbuild.v1.GetDefaultServiceAccountRequest;
 import com.google.cloudbuild.v1.GetWorkerPoolRequest;
 import com.google.cloudbuild.v1.ListBuildTriggersRequest;
 import com.google.cloudbuild.v1.ListBuildTriggersResponse;
@@ -195,6 +197,11 @@ public abstract class CloudBuildStub implements BackgroundResource {
 
   public UnaryCallable<ListWorkerPoolsRequest, ListWorkerPoolsResponse> listWorkerPoolsCallable() {
     throw new UnsupportedOperationException("Not implemented: listWorkerPoolsCallable()");
+  }
+
+  public UnaryCallable<GetDefaultServiceAccountRequest, DefaultServiceAccount>
+      getDefaultServiceAccountCallable() {
+    throw new UnsupportedOperationException("Not implemented: getDefaultServiceAccountCallable()");
   }
 
   @Override

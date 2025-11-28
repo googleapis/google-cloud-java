@@ -105,6 +105,13 @@ public class DeveloperRegistrationServiceSettings
     return ((DeveloperRegistrationServiceStubSettings) getStubSettings()).unregisterGcpSettings();
   }
 
+  /** Returns the object with the settings used for calls to getAccountForGcpRegistration. */
+  public UnaryCallSettings<Empty, GetAccountForGcpRegistrationResponse>
+      getAccountForGcpRegistrationSettings() {
+    return ((DeveloperRegistrationServiceStubSettings) getStubSettings())
+        .getAccountForGcpRegistrationSettings();
+  }
+
   public static final DeveloperRegistrationServiceSettings create(
       DeveloperRegistrationServiceStubSettings stub) throws IOException {
     return new DeveloperRegistrationServiceSettings.Builder(stub.toBuilder()).build();
@@ -233,6 +240,12 @@ public class DeveloperRegistrationServiceSettings
     /** Returns the builder for the settings used for calls to unregisterGcp. */
     public UnaryCallSettings.Builder<UnregisterGcpRequest, Empty> unregisterGcpSettings() {
       return getStubSettingsBuilder().unregisterGcpSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAccountForGcpRegistration. */
+    public UnaryCallSettings.Builder<Empty, GetAccountForGcpRegistrationResponse>
+        getAccountForGcpRegistrationSettings() {
+      return getStubSettingsBuilder().getAccountForGcpRegistrationSettings();
     }
 
     @Override

@@ -23,7 +23,8 @@ package com.google.shopping.merchant.accounts.v1;
  *
  *
  * <pre>
- * The access right.
+ * The access right defines the level of permission a
+ * user has within a Merchant Center account.
  * </pre>
  *
  * Protobuf enum {@code google.shopping.merchant.accounts.v1.AccessRight}
@@ -85,7 +86,8 @@ public enum AccessRight implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * Users with this right have access to Merchant API and its notifications.
-   * This role is only accessible to accounts that has a developer registration.
+   * This role is only accessible to accounts that have a developer
+   * registration.
    * </pre>
    *
    * <code>API_DEVELOPER = 5;</code>
@@ -155,7 +157,8 @@ public enum AccessRight implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * Users with this right have access to Merchant API and its notifications.
-   * This role is only accessible to accounts that has a developer registration.
+   * This role is only accessible to accounts that have a developer
+   * registration.
    * </pre>
    *
    * <code>API_DEVELOPER = 5;</code>

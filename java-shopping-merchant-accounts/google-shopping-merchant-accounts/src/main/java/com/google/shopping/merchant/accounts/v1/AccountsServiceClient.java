@@ -99,7 +99,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteAccount</td>
- *      <td><p> Deletes the specified account regardless of its type: standalone, advanced account or sub-account. Deleting an advanced account leads to the deletion of all of its sub-accounts. Executing this method requires admin access. The deletion succeeds only if the account does not provide services to any other account and has no processed offers. You can use the `force` parameter to override this.</td>
+ *      <td><p> Deletes the specified account regardless of its type: standalone, advanced account or sub-account. Deleting an advanced account leads to the deletion of all of its sub-accounts. This also deletes the account's [developer registration entity](/merchant/api/reference/rest/accounts_v1/accounts.developerRegistration) and any associated GCP project to the account. Executing this method requires admin access. The deletion succeeds only if the account does not provide services to any other account and has no processed offers. You can use the `force` parameter to override this.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -404,6 +404,8 @@ public class AccountsServiceClient implements BackgroundResource {
    *           .setAccount(Account.newBuilder().build())
    *           .addAllUser(new ArrayList<CreateAndConfigureAccountRequest.AddUser>())
    *           .addAllService(new ArrayList<CreateAndConfigureAccountRequest.AddAccountService>())
+   *           .addAllSetAlias(
+   *               new ArrayList<CreateAndConfigureAccountRequest.SetAliasForRelationship>())
    *           .build();
    *   Account response = accountsServiceClient.createAndConfigureAccount(request);
    * }
@@ -435,6 +437,8 @@ public class AccountsServiceClient implements BackgroundResource {
    *           .setAccount(Account.newBuilder().build())
    *           .addAllUser(new ArrayList<CreateAndConfigureAccountRequest.AddUser>())
    *           .addAllService(new ArrayList<CreateAndConfigureAccountRequest.AddAccountService>())
+   *           .addAllSetAlias(
+   *               new ArrayList<CreateAndConfigureAccountRequest.SetAliasForRelationship>())
    *           .build();
    *   ApiFuture<Account> future =
    *       accountsServiceClient.createAndConfigureAccountCallable().futureCall(request);
@@ -452,9 +456,11 @@ public class AccountsServiceClient implements BackgroundResource {
   /**
    * Deletes the specified account regardless of its type: standalone, advanced account or
    * sub-account. Deleting an advanced account leads to the deletion of all of its sub-accounts.
-   * Executing this method requires admin access. The deletion succeeds only if the account does not
-   * provide services to any other account and has no processed offers. You can use the `force`
-   * parameter to override this.
+   * This also deletes the account's [developer registration
+   * entity](/merchant/api/reference/rest/accounts_v1/accounts.developerRegistration) and any
+   * associated GCP project to the account. Executing this method requires admin access. The
+   * deletion succeeds only if the account does not provide services to any other account and has no
+   * processed offers. You can use the `force` parameter to override this.
    *
    * <p>Sample code:
    *
@@ -483,9 +489,11 @@ public class AccountsServiceClient implements BackgroundResource {
   /**
    * Deletes the specified account regardless of its type: standalone, advanced account or
    * sub-account. Deleting an advanced account leads to the deletion of all of its sub-accounts.
-   * Executing this method requires admin access. The deletion succeeds only if the account does not
-   * provide services to any other account and has no processed offers. You can use the `force`
-   * parameter to override this.
+   * This also deletes the account's [developer registration
+   * entity](/merchant/api/reference/rest/accounts_v1/accounts.developerRegistration) and any
+   * associated GCP project to the account. Executing this method requires admin access. The
+   * deletion succeeds only if the account does not provide services to any other account and has no
+   * processed offers. You can use the `force` parameter to override this.
    *
    * <p>Sample code:
    *
@@ -513,9 +521,11 @@ public class AccountsServiceClient implements BackgroundResource {
   /**
    * Deletes the specified account regardless of its type: standalone, advanced account or
    * sub-account. Deleting an advanced account leads to the deletion of all of its sub-accounts.
-   * Executing this method requires admin access. The deletion succeeds only if the account does not
-   * provide services to any other account and has no processed offers. You can use the `force`
-   * parameter to override this.
+   * This also deletes the account's [developer registration
+   * entity](/merchant/api/reference/rest/accounts_v1/accounts.developerRegistration) and any
+   * associated GCP project to the account. Executing this method requires admin access. The
+   * deletion succeeds only if the account does not provide services to any other account and has no
+   * processed offers. You can use the `force` parameter to override this.
    *
    * <p>Sample code:
    *
@@ -546,9 +556,11 @@ public class AccountsServiceClient implements BackgroundResource {
   /**
    * Deletes the specified account regardless of its type: standalone, advanced account or
    * sub-account. Deleting an advanced account leads to the deletion of all of its sub-accounts.
-   * Executing this method requires admin access. The deletion succeeds only if the account does not
-   * provide services to any other account and has no processed offers. You can use the `force`
-   * parameter to override this.
+   * This also deletes the account's [developer registration
+   * entity](/merchant/api/reference/rest/accounts_v1/accounts.developerRegistration) and any
+   * associated GCP project to the account. Executing this method requires admin access. The
+   * deletion succeeds only if the account does not provide services to any other account and has no
+   * processed offers. You can use the `force` parameter to override this.
    *
    * <p>Sample code:
    *

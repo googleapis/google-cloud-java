@@ -60,11 +60,13 @@ public interface PubsubConfigOrBuilder
    *
    *
    * <pre>
-   * The name of the topic from which this subscription is receiving messages.
-   * Format is `projects/{project}/topics/{topic}`.
+   * Optional. The name of the topic from which this subscription is receiving
+   * messages. Format is `projects/{project}/topics/{topic}`.
    * </pre>
    *
-   * <code>string topic = 2 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string topic = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The topic.
    */
@@ -74,11 +76,13 @@ public interface PubsubConfigOrBuilder
    *
    *
    * <pre>
-   * The name of the topic from which this subscription is receiving messages.
-   * Format is `projects/{project}/topics/{topic}`.
+   * Optional. The name of the topic from which this subscription is receiving
+   * messages. Format is `projects/{project}/topics/{topic}`.
    * </pre>
    *
-   * <code>string topic = 2 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string topic = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for topic.
    */

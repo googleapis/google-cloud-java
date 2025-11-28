@@ -598,6 +598,58 @@ public interface TriggerOrBuilder
    *
    *
    * <pre>
+   * Optional. The retry policy to use in the Trigger.
+   *
+   * If unset, event delivery will be retried for up to 24 hours by default:
+   * https://cloud.google.com/eventarc/docs/retry-events
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.eventarc.v1.Trigger.RetryPolicy retry_policy = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the retryPolicy field is set.
+   */
+  boolean hasRetryPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The retry policy to use in the Trigger.
+   *
+   * If unset, event delivery will be retried for up to 24 hours by default:
+   * https://cloud.google.com/eventarc/docs/retry-events
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.eventarc.v1.Trigger.RetryPolicy retry_policy = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The retryPolicy.
+   */
+  com.google.cloud.eventarc.v1.Trigger.RetryPolicy getRetryPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The retry policy to use in the Trigger.
+   *
+   * If unset, event delivery will be retried for up to 24 hours by default:
+   * https://cloud.google.com/eventarc/docs/retry-events
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.eventarc.v1.Trigger.RetryPolicy retry_policy = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.eventarc.v1.Trigger.RetryPolicyOrBuilder getRetryPolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. This checksum is computed by the server based on the value of
    * other fields, and might be sent only on create requests to ensure that the
    * client has an up-to-date value before proceeding.
