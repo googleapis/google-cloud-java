@@ -28,12 +28,18 @@ import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.core.Distribution;
 import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.BidiStreamingCallable;
+import com.google.api.gax.rpc.ClientStream;
+import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.StreamController;
 import com.google.cloud.pubsub.v1.stub.SubscriberStub;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Any;
 import com.google.pubsub.v1.AcknowledgeRequest;
 import com.google.pubsub.v1.ModifyAckDeadlineRequest;
+import com.google.pubsub.v1.StreamingPullRequest;
+import com.google.pubsub.v1.StreamingPullResponse;
 import com.google.rpc.ErrorInfo;
 import com.google.rpc.Status;
 import io.grpc.Status.Code;
@@ -44,11 +50,13 @@ import java.util.*;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
+import org.mockito.ArgumentCaptor;
 
 /** Tests for {@link StreamingSubscriberConnection}. */
 public class StreamingSubscriberConnectionTest {
@@ -85,6 +93,10 @@ public class StreamingSubscriberConnectionTest {
   private static int MOCK_ACK_EXTENSION_DEFAULT_SECONDS = 10;
   private static Duration ACK_EXPIRATION_PADDING_DEFAULT_DURATION = Duration.ofSeconds(10);
   private static int MAX_DURATION_PER_ACK_EXTENSION_DEFAULT_SECONDS = 10;
+
+  private static final long KEEP_ALIVE_SUPPORT_VERSION = 1;
+  private static final Duration CLIENT_PING_INTERVAL = Duration.ofSeconds(30);
+  private static final Duration MAX_ACK_EXTENSION_PERIOD = Duration.ofMinutes(60);
 
   @Before
   public void setUp() {
@@ -670,6 +682,155 @@ public class StreamingSubscriberConnectionTest {
     }
   }
 
+  @Test
+  public void testClientPinger_pingSent() {
+    BidiStreamingCallable<StreamingPullRequest, StreamingPullResponse> mockStreamingCallable =
+        mock(BidiStreamingCallable.class);
+    ClientStream<StreamingPullRequest> mockClientStream = mock(ClientStream.class);
+    when(mockSubscriberStub.streamingPullCallable()).thenReturn(mockStreamingCallable);
+    when(mockStreamingCallable.splitCall(any(ResponseObserver.class), any()))
+        .thenReturn(mockClientStream);
+
+    StreamingSubscriberConnection streamingSubscriberConnection =
+        getKeepaliveStreamingSubscriberConnection();
+
+    streamingSubscriberConnection.startAsync();
+    streamingSubscriberConnection.awaitRunning();
+
+    systemExecutor.advanceTime(CLIENT_PING_INTERVAL);
+    systemExecutor.advanceTime(CLIENT_PING_INTERVAL);
+
+    ArgumentCaptor<StreamingPullRequest> requestCaptor =
+        ArgumentCaptor.forClass(StreamingPullRequest.class);
+    // 1 initial request + 3 pings
+    verify(mockClientStream, times(4)).send(requestCaptor.capture());
+    List<StreamingPullRequest> requests = requestCaptor.getAllValues();
+
+    StreamingPullRequest initialRequest = requests.get(0);
+    assertEquals(MOCK_SUBSCRIPTION_NAME, initialRequest.getSubscription());
+    assertEquals(KEEP_ALIVE_SUPPORT_VERSION, initialRequest.getProtocolVersion());
+    assertEquals(0, initialRequest.getMaxOutstandingMessages());
+
+    StreamingPullRequest firstPing = requests.get(1);
+    assertEquals(StreamingPullRequest.getDefaultInstance(), firstPing);
+
+    StreamingPullRequest secondPing = requests.get(2);
+    assertEquals(StreamingPullRequest.getDefaultInstance(), secondPing);
+
+    streamingSubscriberConnection.stopAsync();
+    streamingSubscriberConnection.awaitTerminated();
+
+    // No more pings
+    systemExecutor.advanceTime(CLIENT_PING_INTERVAL);
+    verify(mockClientStream, times(4)).send(any(StreamingPullRequest.class));
+  }
+
+  @Test
+  public void testClientPinger_pingsNotSentWhenDisabled() {
+    BidiStreamingCallable<StreamingPullRequest, StreamingPullResponse> mockStreamingCallable =
+        mock(BidiStreamingCallable.class);
+    ClientStream<StreamingPullRequest> mockClientStream = mock(ClientStream.class);
+    when(mockSubscriberStub.streamingPullCallable()).thenReturn(mockStreamingCallable);
+    when(mockStreamingCallable.splitCall(any(ResponseObserver.class), any()))
+        .thenReturn(mockClientStream);
+
+    StreamingSubscriberConnection streamingSubscriberConnection =
+        getStreamingSubscriberConnection(false); // keepalive disabled
+
+    streamingSubscriberConnection.startAsync();
+    streamingSubscriberConnection.awaitRunning();
+
+    // Initial request.
+    verify(mockClientStream, times(1)).send(any(StreamingPullRequest.class));
+
+    // No pings
+    systemExecutor.advanceTime(CLIENT_PING_INTERVAL);
+    systemExecutor.advanceTime(CLIENT_PING_INTERVAL);
+
+    verify(mockClientStream, times(1)).send(any(StreamingPullRequest.class));
+  }
+
+  @Test
+  public void testServerMonitor_timesOut() {
+    BidiStreamingCallable<StreamingPullRequest, StreamingPullResponse> mockStreamingCallable =
+        mock(BidiStreamingCallable.class);
+    ClientStream<StreamingPullRequest> mockClientStream = mock(ClientStream.class);
+    ArgumentCaptor<ResponseObserver<StreamingPullResponse>> observerCaptor =
+        ArgumentCaptor.forClass(ResponseObserver.class);
+    when(mockSubscriberStub.streamingPullCallable()).thenReturn(mockStreamingCallable);
+    when(mockStreamingCallable.splitCall(observerCaptor.capture(), any()))
+        .thenReturn(mockClientStream);
+
+    // fail pings after the first one to ensure timeout occurs
+    AtomicInteger pingCount = new AtomicInteger(0);
+    doAnswer(
+            (invocation) -> {
+              StreamingPullRequest req = invocation.getArgument(0);
+              // Pings are empty requests
+              if (req.getSubscription().isEmpty()) {
+                if (pingCount.incrementAndGet() > 2) { // allow first 2 pings
+                  throw new RuntimeException("ping failed");
+                }
+              }
+              return null;
+            })
+        .when(mockClientStream)
+        .send(any(StreamingPullRequest.class));
+
+    StreamingSubscriberConnection streamingSubscriberConnection =
+        getKeepaliveStreamingSubscriberConnection();
+
+    streamingSubscriberConnection.startAsync();
+    streamingSubscriberConnection.awaitRunning();
+
+    ResponseObserver<StreamingPullResponse> observer = observerCaptor.getValue();
+    StreamController mockController = mock(StreamController.class);
+    observer.onStart(mockController);
+
+    systemExecutor.advanceTime(CLIENT_PING_INTERVAL);
+    verify(mockClientStream, never()).closeSendWithError(any(Exception.class));
+
+    systemExecutor.advanceTime(CLIENT_PING_INTERVAL);
+    ArgumentCaptor<Exception> exceptionCaptor = ArgumentCaptor.forClass(Exception.class);
+    verify(mockClientStream, times(1)).closeSendWithError(exceptionCaptor.capture());
+    StatusException exception = (StatusException) exceptionCaptor.getValue();
+    assertEquals(Code.UNAVAILABLE, exception.getStatus().getCode());
+    assertEquals("Keepalive timeout with server", exception.getStatus().getDescription());
+  }
+
+  @Test
+  public void testServerMonitor_doesNotTimeOutIfResponseReceived() {
+    BidiStreamingCallable<StreamingPullRequest, StreamingPullResponse> mockStreamingCallable =
+        mock(BidiStreamingCallable.class);
+    ClientStream<StreamingPullRequest> mockClientStream = mock(ClientStream.class);
+    ArgumentCaptor<ResponseObserver<StreamingPullResponse>> observerCaptor =
+        ArgumentCaptor.forClass(ResponseObserver.class);
+    when(mockSubscriberStub.streamingPullCallable()).thenReturn(mockStreamingCallable);
+    when(mockStreamingCallable.splitCall(observerCaptor.capture(), any()))
+        .thenReturn(mockClientStream);
+
+    StreamingSubscriberConnection streamingSubscriberConnection =
+        getKeepaliveStreamingSubscriberConnection();
+
+    streamingSubscriberConnection.startAsync();
+    streamingSubscriberConnection.awaitRunning();
+
+    ResponseObserver<StreamingPullResponse> observer = observerCaptor.getValue();
+    StreamController mockController = mock(StreamController.class);
+    observer.onStart(mockController);
+
+    // t=30s: ping sent.
+    // t=40s: response received.
+    // t=45s: monitor check. lastPing=30, lastResponse=40. lastPing>lastResponse is false -> no
+    // timeout.
+    systemExecutor.advanceTime(Duration.ofSeconds(40));
+    observer.onResponse(StreamingPullResponse.getDefaultInstance());
+    systemExecutor.advanceTime(Duration.ofSeconds(20)); // to t=60s
+    observer.onResponse(StreamingPullResponse.getDefaultInstance());
+
+    verify(mockClientStream, never()).closeSendWithError(any(Exception.class));
+  }
+
   private StreamingSubscriberConnection getStreamingSubscriberConnection(
       boolean exactlyOnceDeliveryEnabled) {
     StreamingSubscriberConnection streamingSubscriberConnection =
@@ -682,11 +843,21 @@ public class StreamingSubscriberConnectionTest {
     return streamingSubscriberConnection;
   }
 
+  private StreamingSubscriberConnection getKeepaliveStreamingSubscriberConnection() {
+    StreamingSubscriberConnection streamingSubscriberConnection =
+        getStreamingSubscriberConnectionFromBuilder(
+            StreamingSubscriberConnection.newBuilder(mock(MessageReceiverWithAckResponse.class))
+                .setProtocolVersion(KEEP_ALIVE_SUPPORT_VERSION));
+
+    return streamingSubscriberConnection;
+  }
+
   private StreamingSubscriberConnection getStreamingSubscriberConnectionFromBuilder(
       StreamingSubscriberConnection.Builder builder) {
     return builder
         .setSubscription(MOCK_SUBSCRIPTION_NAME)
         .setAckExpirationPadding(ACK_EXPIRATION_PADDING_DEFAULT_DURATION)
+        .setMaxAckExtensionPeriod(MAX_ACK_EXTENSION_PERIOD)
         .setAckLatencyDistribution(mock(Distribution.class))
         .setSubscriberStub(mockSubscriberStub)
         .setChannelAffinity(0)

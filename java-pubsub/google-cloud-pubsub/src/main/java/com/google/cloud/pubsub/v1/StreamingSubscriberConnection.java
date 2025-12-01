@@ -63,6 +63,7 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
@@ -95,6 +96,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
 
   private final SubscriberStub subscriberStub;
   private final int channelAffinity;
+  private final long protocolVersion;
   private final String subscription;
   private final SubscriptionName subscriptionNameObject;
   private final ScheduledExecutorService systemExecutor;
@@ -127,6 +129,17 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
   private OpenTelemetryPubsubTracer tracer = new OpenTelemetryPubsubTracer(null, false);
   private final SubscriberShutdownSettings subscriberShutdownSettings;
 
+  private final boolean enableKeepalive;
+  private static final long KEEP_ALIVE_SUPPORT_VERSION = 1;
+  private static final Duration CLIENT_PING_INTERVAL = Duration.ofSeconds(30);
+  private ScheduledFuture<?> pingSchedulerHandle;
+
+  private static final Duration SERVER_MONITOR_INTERVAL = Duration.ofSeconds(10);
+  private static final Duration SERVER_PING_TIMEOUT_DURATION = Duration.ofSeconds(15);
+  private final AtomicLong lastServerResponseTime;
+  private final AtomicLong lastClientPingTime;
+  private ScheduledFuture<?> serverMonitorHandle;
+
   private StreamingSubscriberConnection(Builder builder) {
     subscription = builder.subscription;
     subscriptionNameObject = SubscriptionName.parse(builder.subscription);
@@ -154,6 +167,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
 
     subscriberStub = builder.subscriberStub;
     channelAffinity = builder.channelAffinity;
+    protocolVersion = builder.protocolVersion;
 
     MessageDispatcher.Builder messageDispatcherBuilder;
     if (builder.receiver != null) {
@@ -190,6 +204,9 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
 
     flowControlSettings = builder.flowControlSettings;
     useLegacyFlowControl = builder.useLegacyFlowControl;
+    enableKeepalive = protocolVersion >= KEEP_ALIVE_SUPPORT_VERSION;
+    lastServerResponseTime = new AtomicLong(clock.nanoTime());
+    lastClientPingTime = new AtomicLong(-1L);
   }
 
   public StreamingSubscriberConnection setExactlyOnceDeliveryEnabled(
@@ -218,6 +235,12 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
     } finally {
       lock.unlock();
     }
+
+    if (enableKeepalive) {
+      stopClientPinger();
+      stopServerMonitor();
+    }
+
     runShutdown();
     notifyStopped();
   }
@@ -266,6 +289,10 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
 
     @Override
     public void onResponse(StreamingPullResponse response) {
+      if (enableKeepalive) {
+        lastServerResponseTime.set(clock.nanoTime());
+      }
+
       channelReconnectBackoffMillis.set(INITIAL_CHANNEL_RECONNECT_BACKOFF.toMillis());
 
       boolean exactlyOnceDeliveryEnabledResponse =
@@ -295,11 +322,19 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
 
     @Override
     public void onError(Throwable t) {
+      if (enableKeepalive) {
+        stopClientPinger();
+        stopServerMonitor();
+      }
       errorFuture.setException(t);
     }
 
     @Override
     public void onComplete() {
+      if (enableKeepalive) {
+        stopClientPinger();
+        stopServerMonitor();
+      }
       logger.fine("Streaming pull terminated successfully!");
       errorFuture.set(null);
     }
@@ -336,6 +371,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
                 this.useLegacyFlowControl
                     ? 0
                     : valueOrZero(flowControlSettings.getMaxOutstandingRequestBytes()))
+            .setProtocolVersion(protocolVersion)
             .build());
 
     /**
@@ -348,6 +384,13 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
       this.clientStream = initClientStream;
     } finally {
       lock.unlock();
+    }
+
+    if (enableKeepalive) {
+      lastServerResponseTime.set(clock.nanoTime());
+      lastClientPingTime.set(-1L);
+      startClientPinger();
+      startServerMonitor();
     }
 
     ApiFutures.addCallback(
@@ -366,6 +409,10 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
 
           @Override
           public void onFailure(Throwable cause) {
+            if (enableKeepalive) {
+              stopClientPinger();
+              stopServerMonitor();
+            }
             if (!isAlive()) {
               // we don't care about subscription failures when we're no longer running.
               logger.log(Level.FINE, "pull failure after service no longer running", cause);
@@ -408,6 +455,100 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
   private boolean isAlive() {
     State state = state(); // Read the state only once.
     return state == State.RUNNING || state == State.STARTING;
+  }
+
+  private void startClientPinger() {
+    if (pingSchedulerHandle != null) {
+      pingSchedulerHandle.cancel(false);
+    }
+
+    pingSchedulerHandle =
+        systemExecutor.scheduleAtFixedRate(
+            () -> {
+              try {
+                lock.lock();
+                try {
+                  if (clientStream != null && isAlive()) {
+                    clientStream.send(StreamingPullRequest.newBuilder().build());
+                    lastClientPingTime.set(clock.nanoTime());
+                    logger.log(Level.FINEST, "Sent client keepalive ping");
+                  }
+                } finally {
+                  lock.unlock();
+                }
+              } catch (Exception e) {
+                logger.log(Level.FINE, "Error sending client keepalive ping", e);
+              }
+            },
+            0,
+            CLIENT_PING_INTERVAL.getSeconds(),
+            TimeUnit.SECONDS);
+  }
+
+  private void stopClientPinger() {
+    if (pingSchedulerHandle != null) {
+      pingSchedulerHandle.cancel(false);
+      pingSchedulerHandle = null;
+    }
+  }
+
+  private void startServerMonitor() {
+    if (serverMonitorHandle != null) {
+      serverMonitorHandle.cancel(false);
+    }
+
+    serverMonitorHandle =
+        systemExecutor.scheduleAtFixedRate(
+            () -> {
+              try {
+                if (!isAlive()) {
+                  return;
+                }
+
+                long now = clock.nanoTime();
+                long lastResponse = lastServerResponseTime.get();
+                long lastPing = lastClientPingTime.get();
+
+                if (lastPing <= lastResponse) {
+                  return;
+                }
+
+                Duration elapsedSincePing = Duration.ofNanos(now - lastPing);
+                if (elapsedSincePing.compareTo(SERVER_PING_TIMEOUT_DURATION) < 0) {
+                  return;
+                }
+
+                logger.log(
+                    Level.WARNING,
+                    "No response from server for {0} seconds since last ping. Closing stream.",
+                    elapsedSincePing.getSeconds());
+
+                lock.lock();
+                try {
+                  if (clientStream != null) {
+                    clientStream.closeSendWithError(
+                        Status.UNAVAILABLE
+                            .withDescription("Keepalive timeout with server")
+                            .asException());
+                  }
+                } finally {
+                  lock.unlock();
+                }
+                stopServerMonitor();
+              } catch (Exception e) {
+                logger.log(Level.FINE, "Error in server keepalive monitor", e);
+              }
+            },
+            SERVER_MONITOR_INTERVAL.getSeconds(),
+            SERVER_MONITOR_INTERVAL.getSeconds(),
+            TimeUnit.SECONDS);
+  }
+
+  private void stopServerMonitor() {
+    if (serverMonitorHandle != null) {
+      serverMonitorHandle.cancel(false);
+      serverMonitorHandle = null;
+    }
   }
 
   public void setResponseOutstandingMessages(AckResponse ackResponse) {
@@ -769,6 +910,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
     private Distribution ackLatencyDistribution;
     private SubscriberStub subscriberStub;
     private int channelAffinity;
+    private long protocolVersion;
     private FlowController flowController;
     private FlowControlSettings flowControlSettings;
     private boolean useLegacyFlowControl;
@@ -837,6 +979,11 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
 
     public Builder setChannelAffinity(int channelAffinity) {
       this.channelAffinity = channelAffinity;
+      return this;
+    }
+
+    public Builder setProtocolVersion(long protocolVersion) {
+      this.protocolVersion = protocolVersion;
       return this;
     }
 

@@ -55,14 +55,14 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
   public ScheduledFuture<?> schedule(Runnable command, long delay, TimeUnit unit) {
     return schedulePendingCallable(
         new PendingCallable<>(
-            Duration.ofMillis(unit.toMillis(delay)), command, PendingCallableType.NORMAL));
+            Duration.ofMillis(unit.toMillis(delay)), command, null, PendingCallableType.NORMAL));
   }
 
   @Override
   public <V> ScheduledFuture<V> schedule(Callable<V> callable, long delay, TimeUnit unit) {
     return schedulePendingCallable(
         new PendingCallable<>(
-            Duration.ofMillis(unit.toMillis(delay)), callable, PendingCallableType.NORMAL));
+            Duration.ofMillis(unit.toMillis(delay)), callable, null, PendingCallableType.NORMAL));
   }
 
   @Override
@@ -72,6 +72,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
         new PendingCallable<>(
             Duration.ofMillis(unit.toMillis(initialDelay)),
             command,
+            Duration.ofMillis(unit.toMillis(period)),
             PendingCallableType.FIXED_RATE));
   }
 
@@ -82,6 +83,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
         new PendingCallable<>(
             Duration.ofMillis(unit.toMillis(initialDelay)),
             command,
+            Duration.ofMillis(unit.toMillis(delay)),
             PendingCallableType.FIXED_DELAY));
   }
 
@@ -212,13 +214,15 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
   class PendingCallable<T> implements Comparable<PendingCallable<T>> {
     Instant creationTime = Instant.ofEpochMilli(clock.millisTime());
     Duration delay;
+    Duration period;
     Callable<T> pendingCallable;
     SettableFuture<T> future = SettableFuture.create();
     AtomicBoolean cancelled = new AtomicBoolean(false);
     AtomicBoolean done = new AtomicBoolean(false);
     PendingCallableType type;
 
-    PendingCallable(Duration delay, final Runnable runnable, PendingCallableType type) {
+    PendingCallable(
+        Duration delay, final Runnable runnable, Duration period, PendingCallableType type) {
       pendingCallable =
           new Callable<T>() {
             @Override
@@ -229,12 +233,15 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
           };
       this.type = type;
       this.delay = delay;
+      this.period = period;
     }
 
-    PendingCallable(Duration delay, Callable<T> callable, PendingCallableType type) {
+    PendingCallable(
+        Duration delay, Callable<T> callable, Duration period, PendingCallableType type) {
       pendingCallable = callable;
       this.type = type;
       this.delay = delay;
+      this.period = period;
     }
 
     private Instant getScheduledTime() {
@@ -305,10 +312,12 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
               break;
             case FIXED_DELAY:
               this.creationTime = Instant.ofEpochMilli(clock.millisTime());
+              this.delay = period;
               schedulePendingCallable(this);
               break;
             case FIXED_RATE:
               this.creationTime = this.creationTime.plus(delay);
+              this.delay = period;
               schedulePendingCallable(this);
               break;
             default:
