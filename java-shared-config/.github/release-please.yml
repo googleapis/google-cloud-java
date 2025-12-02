@@ -9,4 +9,4 @@ branches:
 - bumpMinorPreMajor: true
   handleGHRelease: true
   releaseType: java-yoshi
-  branch: test-protobuf-4.x-rc
+  branch: protobuf-4.x-rc
