@@ -286,7 +286,7 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Type of event which happened on the customer.
+   * Type of event which happened for the customer.
    * </pre>
    *
    * <code>.google.cloud.channel.v1.CustomerEvent.Type event_type = 2;</code>
@@ -302,7 +302,7 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Type of event which happened on the customer.
+   * Type of event which happened for the customer.
    * </pre>
    *
    * <code>.google.cloud.channel.v1.CustomerEvent.Type event_type = 2;</code>
@@ -802,7 +802,7 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of event which happened on the customer.
+     * Type of event which happened for the customer.
      * </pre>
      *
      * <code>.google.cloud.channel.v1.CustomerEvent.Type event_type = 2;</code>
@@ -818,7 +818,7 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of event which happened on the customer.
+     * Type of event which happened for the customer.
      * </pre>
      *
      * <code>.google.cloud.channel.v1.CustomerEvent.Type event_type = 2;</code>
@@ -837,7 +837,7 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of event which happened on the customer.
+     * Type of event which happened for the customer.
      * </pre>
      *
      * <code>.google.cloud.channel.v1.CustomerEvent.Type event_type = 2;</code>
@@ -855,7 +855,7 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of event which happened on the customer.
+     * Type of event which happened for the customer.
      * </pre>
      *
      * <code>.google.cloud.channel.v1.CustomerEvent.Type event_type = 2;</code>
@@ -877,7 +877,7 @@ public final class CustomerEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of event which happened on the customer.
+     * Type of event which happened for the customer.
      * </pre>
      *
      * <code>.google.cloud.channel.v1.CustomerEvent.Type event_type = 2;</code>

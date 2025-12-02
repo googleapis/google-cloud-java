@@ -93,7 +93,7 @@ public final class MachineResourcesProto {
           + "7google/cloud/aiplatform/v1beta1/machine_resources.proto\022\037google.cloud.aiplatfo"
           + "rm.v1beta1\032\037google/api/field_behavior.pr"
           + "oto\0326google/cloud/aiplatform/v1beta1/accelerator_type.proto\032:google/cloud/aiplat"
-          + "form/v1beta1/reservation_affinity.proto\032\036google/protobuf/duration.proto\"\331\002\n"
+          + "form/v1beta1/reservation_affinity.proto\032\036google/protobuf/duration.proto\"\201\003\n"
           + "\013MachineSpec\022\031\n"
           + "\014machine_type\030\001 \001(\tB\003\340A\005\022O\n"
           + "\020accelerator_type\030\002"
@@ -103,7 +103,8 @@ public final class MachineResourcesProto {
           + "\014tpu_topology\030\004 \001(\tB\003\340A\005\022(\n"
           + "\030multihost_gpu_node_count\030\006 \001(\005B\006\340A\005\340A\001\022Z\n"
           + "\024reservation_affinity\030\005 \001(\01324."
-          + "google.cloud.aiplatform.v1beta1.ReservationAffinityB\006\340A\005\340A\001\"\233\005\n"
+          + "google.cloud.aiplatform.v1beta1.ReservationAffinityB\006\340A\005\340A\001\022&\n"
+          + "\026min_gpu_driver_version\030\t \001(\tB\006\340A\001\340A\005\"\233\005\n"
           + "\022DedicatedResources\022J\n"
           + "\014machine_spec\030\001 \001(\0132,.google.cloud."
           + "aiplatform.v1beta1.MachineSpecB\006\340A\002\340A\005\022!\n"
@@ -187,6 +188,7 @@ public final class MachineResourcesProto {
               "TpuTopology",
               "MultihostGpuNodeCount",
               "ReservationAffinity",
+              "MinGpuDriverVersion",
             });
     internal_static_google_cloud_aiplatform_v1beta1_DedicatedResources_descriptor =
         getDescriptor().getMessageTypes().get(1);

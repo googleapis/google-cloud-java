@@ -28,10 +28,13 @@ public interface RegisterSubscriberRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the account.
+   * Optional. Resource name of the account. Required if integrator is not
+   * provided. Otherwise, leave this field empty/unset.
    * </pre>
    *
-   * <code>string account = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string account = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The account.
    */
@@ -41,10 +44,13 @@ public interface RegisterSubscriberRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the account.
+   * Optional. Resource name of the account. Required if integrator is not
+   * provided. Otherwise, leave this field empty/unset.
    * </pre>
    *
-   * <code>string account = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string account = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for account.
    */
@@ -77,4 +83,46 @@ public interface RegisterSubscriberRequestOrBuilder
    * @return The bytes for serviceAccount.
    */
   com.google.protobuf.ByteString getServiceAccountBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource name of the integrator. Required if account is not
+   * provided. Otherwise, leave this field empty/unset.
+   * </pre>
+   *
+   * <code>optional string integrator = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the integrator field is set.
+   */
+  boolean hasIntegrator();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource name of the integrator. Required if account is not
+   * provided. Otherwise, leave this field empty/unset.
+   * </pre>
+   *
+   * <code>optional string integrator = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The integrator.
+   */
+  java.lang.String getIntegrator();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource name of the integrator. Required if account is not
+   * provided. Otherwise, leave this field empty/unset.
+   * </pre>
+   *
+   * <code>optional string integrator = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for integrator.
+   */
+  com.google.protobuf.ByteString getIntegratorBytes();
 }

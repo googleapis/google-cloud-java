@@ -18,6 +18,7 @@ package com.google.cloud.channel.v1.samples;
 
 // [START cloudchannel_v1_generated_CloudChannelService_ListSubscribers_async]
 import com.google.api.core.ApiFuture;
+import com.google.cloud.channel.v1.AccountName;
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
 import com.google.cloud.channel.v1.ListSubscribersRequest;
 
@@ -36,9 +37,10 @@ public class AsyncListSubscribers {
     try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
       ListSubscribersRequest request =
           ListSubscribersRequest.newBuilder()
-              .setAccount("account-1177318867")
+              .setAccount(AccountName.of("[ACCOUNT]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setIntegrator("integrator-1902360937")
               .build();
       ApiFuture<String> future =
           cloudChannelServiceClient.listSubscribersPagedCallable().futureCall(request);

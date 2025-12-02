@@ -29,6 +29,9 @@ public interface ListOffersResponseOrBuilder
    *
    * <pre>
    * The list of Offers requested.
+   *
+   * The pricing information for each Offer only includes the base price.
+   * Effective prices and discounts aren't populated.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Offer offers = 1;</code>
@@ -40,6 +43,9 @@ public interface ListOffersResponseOrBuilder
    *
    * <pre>
    * The list of Offers requested.
+   *
+   * The pricing information for each Offer only includes the base price.
+   * Effective prices and discounts aren't populated.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Offer offers = 1;</code>
@@ -51,6 +57,9 @@ public interface ListOffersResponseOrBuilder
    *
    * <pre>
    * The list of Offers requested.
+   *
+   * The pricing information for each Offer only includes the base price.
+   * Effective prices and discounts aren't populated.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Offer offers = 1;</code>
@@ -62,6 +71,9 @@ public interface ListOffersResponseOrBuilder
    *
    * <pre>
    * The list of Offers requested.
+   *
+   * The pricing information for each Offer only includes the base price.
+   * Effective prices and discounts aren't populated.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Offer offers = 1;</code>
@@ -73,6 +85,9 @@ public interface ListOffersResponseOrBuilder
    *
    * <pre>
    * The list of Offers requested.
+   *
+   * The pricing information for each Offer only includes the base price.
+   * Effective prices and discounts aren't populated.
    * </pre>
    *
    * <code>repeated .google.cloud.channel.v1.Offer offers = 1;</code>

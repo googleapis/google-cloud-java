@@ -45,6 +45,7 @@ public class SyncChangeOffer {
               .setPurchaseOrderId("purchaseOrderId2029917384")
               .setRequestId("requestId693933066")
               .setBillingAccount("billingAccount708726578")
+              .setPriceReferenceId("priceReferenceId-5103427")
               .build();
       Entitlement response = cloudChannelServiceClient.changeOfferAsync(request).get();
     }
