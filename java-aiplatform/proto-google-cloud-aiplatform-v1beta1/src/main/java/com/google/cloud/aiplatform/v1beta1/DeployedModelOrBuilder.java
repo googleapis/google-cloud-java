@@ -153,6 +153,50 @@ public interface DeployedModelOrBuilder
    *
    *
    * <pre>
+   * Optional. Resources for a full fine tuned model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FullFineTunedResources full_fine_tuned_resources = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the fullFineTunedResources field is set.
+   */
+  boolean hasFullFineTunedResources();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resources for a full fine tuned model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FullFineTunedResources full_fine_tuned_resources = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The fullFineTunedResources.
+   */
+  com.google.cloud.aiplatform.v1beta1.FullFineTunedResources getFullFineTunedResources();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resources for a full fine tuned model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FullFineTunedResources full_fine_tuned_resources = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.FullFineTunedResourcesOrBuilder
+      getFullFineTunedResourcesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Immutable. The ID of the DeployedModel. If not provided upon deployment,
    * Vertex AI will generate a value for this ID.
    *

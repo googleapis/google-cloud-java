@@ -25,35 +25,35 @@ public interface GenerateAttachedClusterAgentTokenResponseOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string access_token = 1;</code>
+   * <code>string access_token = 1 [json_name = "access_token"];</code>
    *
    * @return The accessToken.
    */
   java.lang.String getAccessToken();
 
   /**
-   * <code>string access_token = 1;</code>
+   * <code>string access_token = 1 [json_name = "access_token"];</code>
    *
    * @return The bytes for accessToken.
    */
   com.google.protobuf.ByteString getAccessTokenBytes();
 
   /**
-   * <code>int32 expires_in = 2;</code>
+   * <code>int32 expires_in = 2 [json_name = "expires_in"];</code>
    *
    * @return The expiresIn.
    */
   int getExpiresIn();
 
   /**
-   * <code>string token_type = 3;</code>
+   * <code>string token_type = 3 [json_name = "token_type"];</code>
    *
    * @return The tokenType.
    */
   java.lang.String getTokenType();
 
   /**
-   * <code>string token_type = 3;</code>
+   * <code>string token_type = 3 [json_name = "token_type"];</code>
    *
    * @return The bytes for tokenType.
    */

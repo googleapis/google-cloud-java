@@ -2587,7 +2587,12 @@ public class ArtifactRegistryClientHttpJsonTest {
   @Test
   public void getTagTest() throws Exception {
     Tag expectedResponse =
-        Tag.newBuilder().setName("name3373707").setVersion("version351608024").build();
+        Tag.newBuilder()
+            .setName(
+                TagName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]", "[TAG]")
+                    .toString())
+            .setVersion("version351608024")
+            .build();
     mockService.addResponse(expectedResponse);
 
     String name =
@@ -2631,7 +2636,12 @@ public class ArtifactRegistryClientHttpJsonTest {
   @Test
   public void createTagTest() throws Exception {
     Tag expectedResponse =
-        Tag.newBuilder().setName("name3373707").setVersion("version351608024").build();
+        Tag.newBuilder()
+            .setName(
+                TagName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]", "[TAG]")
+                    .toString())
+            .setVersion("version351608024")
+            .build();
     mockService.addResponse(expectedResponse);
 
     String parent =
@@ -2679,13 +2689,19 @@ public class ArtifactRegistryClientHttpJsonTest {
   @Test
   public void updateTagTest() throws Exception {
     Tag expectedResponse =
-        Tag.newBuilder().setName("name3373707").setVersion("version351608024").build();
+        Tag.newBuilder()
+            .setName(
+                TagName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]", "[TAG]")
+                    .toString())
+            .setVersion("version351608024")
+            .build();
     mockService.addResponse(expectedResponse);
 
     Tag tag =
         Tag.newBuilder()
             .setName(
-                "projects/project-5748/locations/location-5748/repositories/repositorie-5748/packages/package-5748/tags/tag-5748")
+                TagName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]", "[TAG]")
+                    .toString())
             .setVersion("version351608024")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
@@ -2719,7 +2735,8 @@ public class ArtifactRegistryClientHttpJsonTest {
       Tag tag =
           Tag.newBuilder()
               .setName(
-                  "projects/project-5748/locations/location-5748/repositories/repositorie-5748/packages/package-5748/tags/tag-5748")
+                  TagName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]", "[TAG]")
+                      .toString())
               .setVersion("version351608024")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
@@ -4149,6 +4166,62 @@ public class ArtifactRegistryClientHttpJsonTest {
       String name =
           "projects/project-9108/locations/location-9108/repositories/repositorie-9108/attachments/attachment-9108";
       client.deleteAttachmentAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void exportArtifactTest() throws Exception {
+    ExportArtifactResponse expectedResponse =
+        ExportArtifactResponse.newBuilder()
+            .setExportedVersion(Version.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportArtifactTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ExportArtifactRequest request =
+        ExportArtifactRequest.newBuilder()
+            .setRepository(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .build();
+
+    ExportArtifactResponse actualResponse = client.exportArtifactAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void exportArtifactExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ExportArtifactRequest request =
+          ExportArtifactRequest.newBuilder()
+              .setRepository(
+                  RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+              .build();
+      client.exportArtifactAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }

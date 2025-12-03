@@ -2253,7 +2253,12 @@ public class ArtifactRegistryClientTest {
   @Test
   public void getTagTest() throws Exception {
     Tag expectedResponse =
-        Tag.newBuilder().setName("name3373707").setVersion("version351608024").build();
+        Tag.newBuilder()
+            .setName(
+                TagName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]", "[TAG]")
+                    .toString())
+            .setVersion("version351608024")
+            .build();
     mockArtifactRegistry.addResponse(expectedResponse);
 
     String name = "name3373707";
@@ -2289,7 +2294,12 @@ public class ArtifactRegistryClientTest {
   @Test
   public void createTagTest() throws Exception {
     Tag expectedResponse =
-        Tag.newBuilder().setName("name3373707").setVersion("version351608024").build();
+        Tag.newBuilder()
+            .setName(
+                TagName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]", "[TAG]")
+                    .toString())
+            .setVersion("version351608024")
+            .build();
     mockArtifactRegistry.addResponse(expectedResponse);
 
     String parent = "parent-995424086";
@@ -2331,7 +2341,12 @@ public class ArtifactRegistryClientTest {
   @Test
   public void updateTagTest() throws Exception {
     Tag expectedResponse =
-        Tag.newBuilder().setName("name3373707").setVersion("version351608024").build();
+        Tag.newBuilder()
+            .setName(
+                TagName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]", "[TAG]")
+                    .toString())
+            .setVersion("version351608024")
+            .build();
     mockArtifactRegistry.addResponse(expectedResponse);
 
     Tag tag = Tag.newBuilder().build();
@@ -3594,6 +3609,62 @@ public class ArtifactRegistryClientTest {
     try {
       String name = "name3373707";
       client.deleteAttachmentAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void exportArtifactTest() throws Exception {
+    ExportArtifactResponse expectedResponse =
+        ExportArtifactResponse.newBuilder()
+            .setExportedVersion(Version.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportArtifactTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockArtifactRegistry.addResponse(resultOperation);
+
+    ExportArtifactRequest request =
+        ExportArtifactRequest.newBuilder()
+            .setRepository(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .build();
+
+    ExportArtifactResponse actualResponse = client.exportArtifactAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExportArtifactRequest actualRequest = ((ExportArtifactRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getSourceVersion(), actualRequest.getSourceVersion());
+    Assert.assertEquals(request.getSourceTag(), actualRequest.getSourceTag());
+    Assert.assertEquals(request.getGcsPath(), actualRequest.getGcsPath());
+    Assert.assertEquals(request.getRepository(), actualRequest.getRepository());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void exportArtifactExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockArtifactRegistry.addException(exception);
+
+    try {
+      ExportArtifactRequest request =
+          ExportArtifactRequest.newBuilder()
+              .setRepository(
+                  RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+              .build();
+      client.exportArtifactAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

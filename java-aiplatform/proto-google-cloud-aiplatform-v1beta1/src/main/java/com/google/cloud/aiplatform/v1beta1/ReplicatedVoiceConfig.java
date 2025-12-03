@@ -74,9 +74,10 @@ public final class ReplicatedVoiceConfig extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. The mimetype of the voice sample. Currently only
-   * mime_type=audio/pcm is supported, which is raw mono 16-bit signed
-   * little-endian pcm data, with 24k sampling rate.
+   * Optional. The mimetype of the voice sample. The only currently supported
+   * value is `audio/wav`. This represents 16-bit signed little-endian wav data,
+   * with a 24kHz sampling rate. `mime_type` will default to `audio/wav` if not
+   * set.
    * </pre>
    *
    * <code>string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -100,9 +101,10 @@ public final class ReplicatedVoiceConfig extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. The mimetype of the voice sample. Currently only
-   * mime_type=audio/pcm is supported, which is raw mono 16-bit signed
-   * little-endian pcm data, with 24k sampling rate.
+   * Optional. The mimetype of the voice sample. The only currently supported
+   * value is `audio/wav`. This represents 16-bit signed little-endian wav data,
+   * with a 24kHz sampling rate. `mime_type` will default to `audio/wav` if not
+   * set.
    * </pre>
    *
    * <code>string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -513,9 +515,10 @@ public final class ReplicatedVoiceConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The mimetype of the voice sample. Currently only
-     * mime_type=audio/pcm is supported, which is raw mono 16-bit signed
-     * little-endian pcm data, with 24k sampling rate.
+     * Optional. The mimetype of the voice sample. The only currently supported
+     * value is `audio/wav`. This represents 16-bit signed little-endian wav data,
+     * with a 24kHz sampling rate. `mime_type` will default to `audio/wav` if not
+     * set.
      * </pre>
      *
      * <code>string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -538,9 +541,10 @@ public final class ReplicatedVoiceConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The mimetype of the voice sample. Currently only
-     * mime_type=audio/pcm is supported, which is raw mono 16-bit signed
-     * little-endian pcm data, with 24k sampling rate.
+     * Optional. The mimetype of the voice sample. The only currently supported
+     * value is `audio/wav`. This represents 16-bit signed little-endian wav data,
+     * with a 24kHz sampling rate. `mime_type` will default to `audio/wav` if not
+     * set.
      * </pre>
      *
      * <code>string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -563,9 +567,10 @@ public final class ReplicatedVoiceConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The mimetype of the voice sample. Currently only
-     * mime_type=audio/pcm is supported, which is raw mono 16-bit signed
-     * little-endian pcm data, with 24k sampling rate.
+     * Optional. The mimetype of the voice sample. The only currently supported
+     * value is `audio/wav`. This represents 16-bit signed little-endian wav data,
+     * with a 24kHz sampling rate. `mime_type` will default to `audio/wav` if not
+     * set.
      * </pre>
      *
      * <code>string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -587,9 +592,10 @@ public final class ReplicatedVoiceConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The mimetype of the voice sample. Currently only
-     * mime_type=audio/pcm is supported, which is raw mono 16-bit signed
-     * little-endian pcm data, with 24k sampling rate.
+     * Optional. The mimetype of the voice sample. The only currently supported
+     * value is `audio/wav`. This represents 16-bit signed little-endian wav data,
+     * with a 24kHz sampling rate. `mime_type` will default to `audio/wav` if not
+     * set.
      * </pre>
      *
      * <code>string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -607,9 +613,10 @@ public final class ReplicatedVoiceConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. The mimetype of the voice sample. Currently only
-     * mime_type=audio/pcm is supported, which is raw mono 16-bit signed
-     * little-endian pcm data, with 24k sampling rate.
+     * Optional. The mimetype of the voice sample. The only currently supported
+     * value is `audio/wav`. This represents 16-bit signed little-endian wav data,
+     * with a 24kHz sampling rate. `mime_type` will default to `audio/wav` if not
+     * set.
      * </pre>
      *
      * <code>string mime_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>

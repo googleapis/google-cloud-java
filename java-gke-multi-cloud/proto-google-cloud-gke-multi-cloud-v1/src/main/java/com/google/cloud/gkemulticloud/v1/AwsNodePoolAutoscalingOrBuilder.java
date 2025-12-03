@@ -19,6 +19,7 @@
 // Protobuf Java Version: 3.25.8
 package com.google.cloud.gkemulticloud.v1;
 
+@java.lang.Deprecated
 public interface AwsNodePoolAutoscalingOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.gkemulticloud.v1.AwsNodePoolAutoscaling)

@@ -1004,6 +1004,21 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ExportArtifact</td>
+ *      <td><p> Exports an artifact.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> exportArtifactAsync(ExportArtifactRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> exportArtifactOperationCallable()
+ *           <li><p> exportArtifactCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -6981,6 +6996,96 @@ public class ArtifactRegistryClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteAttachmentRequest, Operation> deleteAttachmentCallable() {
     return stub.deleteAttachmentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports an artifact.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   ExportArtifactRequest request =
+   *       ExportArtifactRequest.newBuilder()
+   *           .setRepository(
+   *               RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .build();
+   *   ExportArtifactResponse response = artifactRegistryClient.exportArtifactAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExportArtifactResponse, ExportArtifactMetadata> exportArtifactAsync(
+      ExportArtifactRequest request) {
+    return exportArtifactOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports an artifact.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   ExportArtifactRequest request =
+   *       ExportArtifactRequest.newBuilder()
+   *           .setRepository(
+   *               RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .build();
+   *   OperationFuture<ExportArtifactResponse, ExportArtifactMetadata> future =
+   *       artifactRegistryClient.exportArtifactOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ExportArtifactResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          ExportArtifactRequest, ExportArtifactResponse, ExportArtifactMetadata>
+      exportArtifactOperationCallable() {
+    return stub.exportArtifactOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports an artifact.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   ExportArtifactRequest request =
+   *       ExportArtifactRequest.newBuilder()
+   *           .setRepository(
+   *               RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       artifactRegistryClient.exportArtifactCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExportArtifactRequest, Operation> exportArtifactCallable() {
+    return stub.exportArtifactCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
