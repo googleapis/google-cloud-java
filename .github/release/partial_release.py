@@ -24,7 +24,8 @@ VERSION_SUFFIX = r"-v[1-9].*$"
 class VersionType(Enum):
     MAJOR = (1,)
     MINOR = (2,)
-    PATCH = 3
+    PATCH = (3,)
+    SNAPSHOT = (4,)
 
 
 @click.group(invoke_without_command=False)
@@ -49,7 +50,7 @@ def main(ctx):
     default="patch",
     type=str,
     help="""
-    The type of version bump, one of major, minor or patch.
+    The type of version bump, one of major, minor, patch.
     """,
 )
 @click.option(
@@ -61,7 +62,14 @@ def main(ctx):
     The path to the versions.txt.
     """,
 )
+
+def bump_snapshot_version(artifact_ids: str, versions: str) -> None:
+    bump_version(artifact_ids, "snapshot", versions)
+
 def bump_released_version(artifact_ids: str, version_type: str, versions: str) -> None:
+    bump_version(artifact_ids, version_type, versions)
+
+def bump_version(artifact_ids: str, version_type: str, versions: str) -> None:
     target_artifact_ids = set(artifact_ids.split(","))
     version_enum = _parse_type_or_raise(version_type)
     newlines = []
@@ -88,6 +96,7 @@ def bump_released_version(artifact_ids: str, version_type: str, versions: str) -
             major, minor, patch = [
                 int(ver_num) for ver_num in released_version.split(".")
             ]
+            suffix=""
             match version_enum:
                 case VersionType.MAJOR:
                     major += 1
@@ -95,8 +104,11 @@ def bump_released_version(artifact_ids: str, version_type: str, versions: str) -
                     minor += 1
                 case VersionType.PATCH:
                     patch += 1
+                case VersionType.SNAPSHOT:
+                    minor += 1
+                    suffix = "-SNAPSHOT"
             newlines.append(
-                f"{artifact_id}:{major}.{minor}.{patch}:{major}.{minor}.{patch}"
+                f"{artifact_id}:{major}.{minor}.{patch}{suffix}:{major}.{minor}.{patch}{suffix}"
             )
     with open(versions, "w") as versions_file:
         versions_file.writelines("\n".join(newlines))
