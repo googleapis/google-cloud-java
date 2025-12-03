@@ -45,6 +45,27 @@ def main(ctx):
     """,
 )
 @click.option(
+    "--versions",
+    required=False,
+    default="./versions.txt",
+    type=str,
+    help="""
+    The path to the versions.txt.
+    """,
+)
+def bump_snapshot_version(artifact_ids: str, versions: str) -> None:
+    bump_version(artifact_ids, "snapshot", versions)
+
+@main.command()
+@click.option(
+    "--artifact-ids",
+    required=True,
+    type=str,
+    help="""
+    Artifact IDs whose version needs to update, separated by comma.
+    """,
+)
+@click.option(
     "--version-type",
     required=False,
     default="patch",
@@ -62,11 +83,6 @@ def main(ctx):
     The path to the versions.txt.
     """,
 )
-
-def bump_snapshot_version(artifact_ids: str, version_type: str, versions: str) -> None:
-    # version_type is ignored for snapshot version bumping.
-    bump_version(artifact_ids, "snapshot", versions)
-
 def bump_released_version(artifact_ids: str, version_type: str, versions: str) -> None:
     bump_version(artifact_ids, version_type, versions)
 
