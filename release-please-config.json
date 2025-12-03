@@ -1,6 +1,8 @@
 {
   "release-type": "java-yoshi-mono-repo",
   "versioning": "always-bump-minor",
+  "prerelease-type": "rc1",
+  "versioning": "prerelease",
   "separate-pull-requests": false,
   "include-component-in-tag": false,
   "group-pull-request-title-pattern": "chore(${branch}): release ${version}",
