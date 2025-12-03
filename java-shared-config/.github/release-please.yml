@@ -10,3 +10,4 @@ branches:
   handleGHRelease: true
   releaseType: java-yoshi
   branch: protobuf-4.x-rc
+  manifest: true
