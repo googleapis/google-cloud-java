@@ -63,7 +63,8 @@ def main(ctx):
     """,
 )
 
-def bump_snapshot_version(artifact_ids: str, versions: str) -> None:
+def bump_snapshot_version(artifact_ids: str, version_type: str, versions: str) -> None:
+    # version_type is ignored for snapshot version bumping.
     bump_version(artifact_ids, "snapshot", versions)
 
 def bump_released_version(artifact_ids: str, version_type: str, versions: str) -> None:
@@ -96,7 +97,6 @@ def bump_version(artifact_ids: str, version_type: str, versions: str) -> None:
             major, minor, patch = [
                 int(ver_num) for ver_num in released_version.split(".")
             ]
-            suffix=""
             match version_enum:
                 case VersionType.MAJOR:
                     major += 1
@@ -105,10 +105,13 @@ def bump_version(artifact_ids: str, version_type: str, versions: str) -> None:
                 case VersionType.PATCH:
                     patch += 1
                 case VersionType.SNAPSHOT:
-                    minor += 1
-                    suffix = "-SNAPSHOT"
+                    # Keep the released version as is.
+                    newlines.append(
+                        f"{artifact_id}:{major}.{minor}.{patch}:{major}.{minor + 1}.0-SNAPSHOT"
+                    )
+                    continue
             newlines.append(
-                f"{artifact_id}:{major}.{minor}.{patch}{suffix}:{major}.{minor}.{patch}{suffix}"
+                f"{artifact_id}:{major}.{minor}.{patch}:{major}.{minor}.{patch}"
             )
     with open(versions, "w") as versions_file:
         versions_file.writelines("\n".join(newlines))
