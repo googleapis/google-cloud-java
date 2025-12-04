@@ -38,6 +38,14 @@ branches:
       - >-
         google-cloud-logging/src/main/java/com/google/cloud/logging/Instrumentation.java
     branch: 3.22.x
+  - bumpMinorPreMajor: true
+    handleGHRelease: true
+    releaseType: java-yoshi
+    extraFiles:
+      - >-
+        google-cloud-logging/src/main/java/com/google/cloud/logging/Instrumentation.java
+    branch: protobuf-4.x-rc
+    manifest: true
 extraFiles:
   - >-
     google-cloud-logging/src/main/java/com/google/cloud/logging/Instrumentation.java
