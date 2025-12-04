@@ -9,4 +9,6 @@
   "packages": {
     ".": {}
   }
+,
+  "prerelease": true
 }
