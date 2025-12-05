@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.75.0-rc1](https://github.com/googleapis/google-cloud-java/compare/v1.74.0...v1.75.0-rc1) (2025-12-05)
+
+
+### Features
+
+* configure rc releases to be on prerelease mode ([c7ca7ec](https://github.com/googleapis/google-cloud-java/commit/c7ca7ece75aca446dc6e8e3c8a6aeffd3447f2ff))
+
+
+### Bug Fixes
+
+* next release candidate ([bc47d6c](https://github.com/googleapis/google-cloud-java/commit/bc47d6cdc3613a50512f860062f953a50804df69))
+* partial release of java-asset and gapic-libraries-bom ([ce3d3fb](https://github.com/googleapis/google-cloud-java/commit/ce3d3fbf5f0f205a38309afc827a7b3d4a230e3c))
+
 ## [1.74.0](https://github.com/googleapis/google-cloud-java/compare/v1.73.0...v1.74.0) (2025-11-14)
 
 
