@@ -1,6 +1,8 @@
 bumpMinorPreMajor: true
 handleGHRelease: true
 releaseType: java-yoshi
+extraFiles:
+  - google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/Version.java
 branches:
   - bumpMinorPreMajor: true
     handleGHRelease: true
@@ -86,5 +88,11 @@ branches:
       - >-
         google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/Version.java
     branch: 2.60.x
-extraFiles:
-  - google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/Version.java
+  - bumpMinorPreMajor: true
+    handleGHRelease: true
+    releaseType: java-yoshi
+    extraFiles:
+      - >-
+        google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/Version.java
+    branch: protobuf-4.x-rc
+    manifest: true
