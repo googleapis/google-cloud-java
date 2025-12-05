@@ -23,7 +23,10 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a reservation resource. A reservation ensures that capacity is held in a specific zone even if the reserved VMs are not running. For more information, read Reserving zonal resources.
+ * Represents a reservation resource.  A reservation ensures that capacity is
+ * held in a specific zone even if the reserved VMs are not running. For more
+ * information, read  Reserving zonal
+ * resources.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Reservation}
@@ -48,6 +51,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     kind_ = "";
     linkedCommitments_ = com.google.protobuf.LazyStringArrayList.emptyList();
     name_ = "";
+    protectionTier_ = "";
     schedulingType_ = "";
     selfLink_ = "";
     status_ = "";
@@ -234,6 +238,206 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * Protection tier for the workload which specifies the workload expectations
+   * in the event of infrastructure failures at data center (e.g. power
+   * and/or cooling failures).
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.Reservation.ProtectionTier}
+   */
+  public enum ProtectionTier implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_PROTECTION_TIER = 0;</code>
+     */
+    UNDEFINED_PROTECTION_TIER(0),
+    /**
+     *
+     *
+     * <pre>
+     * CAPACITY_OPTIMIZED capacity leverages redundancies (e.g. power, cooling)
+     * at the data center during normal operating conditions. In the event of
+     * infrastructure failures at data center (e.g. power and/or cooling
+     * failures), this workload may be disrupted. As a consequence, it has a
+     * weaker availability SLO than STANDARD.
+     * </pre>
+     *
+     * <code>CAPACITY_OPTIMIZED = 17430466;</code>
+     */
+    CAPACITY_OPTIMIZED(17430466),
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified protection tier.
+     * </pre>
+     *
+     * <code>PROTECTION_TIER_UNSPECIFIED = 262261984;</code>
+     */
+    PROTECTION_TIER_UNSPECIFIED(262261984),
+    /**
+     *
+     *
+     * <pre>
+     * STANDARD protection for workload that should be protected by redundancies
+     * (e.g. power, cooling) at the data center level. In the event of
+     * infrastructure failures at data center (e.g. power and/or cooling
+     * failures), this workload is expected to continue as normal using the
+     * redundancies.
+     * </pre>
+     *
+     * <code>STANDARD = 484642493;</code>
+     */
+    STANDARD(484642493),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_PROTECTION_TIER = 0;</code>
+     */
+    public static final int UNDEFINED_PROTECTION_TIER_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * CAPACITY_OPTIMIZED capacity leverages redundancies (e.g. power, cooling)
+     * at the data center during normal operating conditions. In the event of
+     * infrastructure failures at data center (e.g. power and/or cooling
+     * failures), this workload may be disrupted. As a consequence, it has a
+     * weaker availability SLO than STANDARD.
+     * </pre>
+     *
+     * <code>CAPACITY_OPTIMIZED = 17430466;</code>
+     */
+    public static final int CAPACITY_OPTIMIZED_VALUE = 17430466;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified protection tier.
+     * </pre>
+     *
+     * <code>PROTECTION_TIER_UNSPECIFIED = 262261984;</code>
+     */
+    public static final int PROTECTION_TIER_UNSPECIFIED_VALUE = 262261984;
+
+    /**
+     *
+     *
+     * <pre>
+     * STANDARD protection for workload that should be protected by redundancies
+     * (e.g. power, cooling) at the data center level. In the event of
+     * infrastructure failures at data center (e.g. power and/or cooling
+     * failures), this workload is expected to continue as normal using the
+     * redundancies.
+     * </pre>
+     *
+     * <code>STANDARD = 484642493;</code>
+     */
+    public static final int STANDARD_VALUE = 484642493;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ProtectionTier valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ProtectionTier forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_PROTECTION_TIER;
+        case 17430466:
+          return CAPACITY_OPTIMIZED;
+        case 262261984:
+          return PROTECTION_TIER_UNSPECIFIED;
+        case 484642493:
+          return STANDARD;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ProtectionTier> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ProtectionTier> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<ProtectionTier>() {
+          public ProtectionTier findValueByNumber(int number) {
+            return ProtectionTier.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.Reservation.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final ProtectionTier[] VALUES = values();
+
+    public static ProtectionTier valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ProtectionTier(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Reservation.ProtectionTier)
+  }
+
+  /**
+   *
+   *
+   * <pre>
    * The type of maintenance for the reservation.
    * </pre>
    *
@@ -274,7 +478,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maintenance is not synchronized for this reservation. Instead, each instance has its own maintenance window.
+     * Maintenance is not synchronized for this reservation. Instead, each
+     * instance has its own maintenance window.
      * </pre>
      *
      * <code>INDEPENDENT = 127011674;</code>
@@ -320,7 +525,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maintenance is not synchronized for this reservation. Instead, each instance has its own maintenance window.
+     * Maintenance is not synchronized for this reservation. Instead, each
+     * instance has its own maintenance window.
      * </pre>
      *
      * <code>INDEPENDENT = 127011674;</code>
@@ -388,7 +594,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.Reservation.getDescriptor().getEnumTypes().get(1);
+      return com.google.cloud.compute.v1.Reservation.getDescriptor().getEnumTypes().get(2);
     }
 
     private static final SchedulingType[] VALUES = values();
@@ -416,7 +622,15 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress.
+   * [Output Only] The status of the reservation.
+   *
+   *
+   *      - CREATING: Reservation resources are being
+   *        allocated.
+   *      - READY: Reservation resources have been allocated,
+   *        and the reservation is ready for use.
+   *      - DELETING: Reservation deletion is in progress.
+   *      - UPDATING: Reservation update is in progress.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Reservation.Status}
@@ -458,7 +672,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reservation resources have been allocated, and the reservation is ready for use.
+     * Reservation resources have been allocated, and the reservation is ready
+     * for use.
      * </pre>
      *
      * <code>READY = 77848963;</code>
@@ -517,7 +732,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reservation resources have been allocated, and the reservation is ready for use.
+     * Reservation resources have been allocated, and the reservation is ready
+     * for use.
      * </pre>
      *
      * <code>READY = 77848963;</code>
@@ -600,7 +816,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.Reservation.getDescriptor().getEnumTypes().get(2);
+      return com.google.cloud.compute.v1.Reservation.getDescriptor().getEnumTypes().get(3);
     }
 
     private static final Status[] VALUES = values();
@@ -633,7 +849,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Advanced control for cluster management, applicable only to DENSE deployment type reservations.
+   * Advanced control for cluster management, applicable only to DENSE
+   * deployment type reservations.
    * </pre>
    *
    * <code>
@@ -651,7 +868,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Advanced control for cluster management, applicable only to DENSE deployment type reservations.
+   * Advanced control for cluster management, applicable only to DENSE
+   * deployment type reservations.
    * </pre>
    *
    * <code>
@@ -672,7 +890,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Advanced control for cluster management, applicable only to DENSE deployment type reservations.
+   * Advanced control for cluster management, applicable only to DENSE
+   * deployment type reservations.
    * </pre>
    *
    * <code>
@@ -756,7 +975,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
+   * [Output Only] Full or partial URL to a parent commitment. This field
+   * displays for reservations that are tied to a commitment.
    * </pre>
    *
    * <code>optional string commitment = 482134805;</code>
@@ -772,7 +992,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
+   * [Output Only] Full or partial URL to a parent commitment. This field
+   * displays for reservations that are tied to a commitment.
    * </pre>
    *
    * <code>optional string commitment = 482134805;</code>
@@ -796,7 +1017,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
+   * [Output Only] Full or partial URL to a parent commitment. This field
+   * displays for reservations that are tied to a commitment.
    * </pre>
    *
    * <code>optional string commitment = 482134805;</code>
@@ -825,7 +1047,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -841,7 +1064,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -865,7 +1089,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -892,7 +1117,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Duration time relative to reservation creation when Compute Engine will automatically delete this resource.
+   * Duration time relative to reservation creation when Compute Engine will
+   * automatically delete this resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Duration delete_after_duration = 323997099;</code>
@@ -908,7 +1134,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Duration time relative to reservation creation when Compute Engine will automatically delete this resource.
+   * Duration time relative to reservation creation when Compute Engine will
+   * automatically delete this resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Duration delete_after_duration = 323997099;</code>
@@ -926,7 +1153,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Duration time relative to reservation creation when Compute Engine will automatically delete this resource.
+   * Duration time relative to reservation creation when Compute Engine will
+   * automatically delete this resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Duration delete_after_duration = 323997099;</code>
@@ -947,7 +1175,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Absolute time in future when the reservation will be auto-deleted by Compute Engine. Timestamp is represented in RFC3339 text format.
+   * Absolute time in future when the reservation will be
+   *  auto-deleted by Compute Engine. Timestamp is represented inRFC3339 text format.
    * </pre>
    *
    * <code>optional string delete_at_time = 83294405;</code>
@@ -963,7 +1192,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Absolute time in future when the reservation will be auto-deleted by Compute Engine. Timestamp is represented in RFC3339 text format.
+   * Absolute time in future when the reservation will be
+   *  auto-deleted by Compute Engine. Timestamp is represented inRFC3339 text format.
    * </pre>
    *
    * <code>optional string delete_at_time = 83294405;</code>
@@ -987,7 +1217,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Absolute time in future when the reservation will be auto-deleted by Compute Engine. Timestamp is represented in RFC3339 text format.
+   * Absolute time in future when the reservation will be
+   *  auto-deleted by Compute Engine. Timestamp is represented inRFC3339 text format.
    * </pre>
    *
    * <code>optional string delete_at_time = 83294405;</code>
@@ -1088,7 +1319,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -1104,7 +1336,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -1128,7 +1361,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -1155,7 +1389,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Indicates whether Compute Engine allows unplanned maintenance for your VMs; for example, to fix hardware errors.
+   * Indicates whether Compute Engine allows unplanned maintenance for your VMs;
+   * for example, to fix hardware errors.
    * </pre>
    *
    * <code>optional bool enable_emergent_maintenance = 353759497;</code>
@@ -1171,7 +1406,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Indicates whether Compute Engine allows unplanned maintenance for your VMs; for example, to fix hardware errors.
+   * Indicates whether Compute Engine allows unplanned maintenance for your VMs;
+   * for example, to fix hardware errors.
    * </pre>
    *
    * <code>optional bool enable_emergent_maintenance = 353759497;</code>
@@ -1190,7 +1426,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -1206,7 +1443,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -1227,7 +1465,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#reservations for reservations.
+   * [Output Only] Type of the resource. Alwayscompute#reservations for reservations.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1243,7 +1481,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#reservations for reservations.
+   * [Output Only] Type of the resource. Alwayscompute#reservations for reservations.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1267,7 +1505,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#reservations for reservations.
+   * [Output Only] Type of the resource. Alwayscompute#reservations for reservations.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1297,7 +1535,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Full or partial URL to parent commitments. This field displays for reservations that are tied to multiple commitments.
+   * [Output Only] Full or partial URL to parent commitments. This field
+   * displays for reservations that are tied to multiple commitments.
    * </pre>
    *
    * <code>repeated string linked_commitments = 470957784;</code>
@@ -1312,7 +1551,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Full or partial URL to parent commitments. This field displays for reservations that are tied to multiple commitments.
+   * [Output Only] Full or partial URL to parent commitments. This field
+   * displays for reservations that are tied to multiple commitments.
    * </pre>
    *
    * <code>repeated string linked_commitments = 470957784;</code>
@@ -1327,7 +1567,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Full or partial URL to parent commitments. This field displays for reservations that are tied to multiple commitments.
+   * [Output Only] Full or partial URL to parent commitments. This field
+   * displays for reservations that are tied to multiple commitments.
    * </pre>
    *
    * <code>repeated string linked_commitments = 470957784;</code>
@@ -1343,7 +1584,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Full or partial URL to parent commitments. This field displays for reservations that are tied to multiple commitments.
+   * [Output Only] Full or partial URL to parent commitments. This field
+   * displays for reservations that are tied to multiple commitments.
    * </pre>
    *
    * <code>repeated string linked_commitments = 470957784;</code>
@@ -1364,7 +1606,14 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * The name of the resource, provided by the client when initially creating
+   * the resource. The resource name must be 1-63 characters long, and comply
+   * withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be
+   * a dash, lowercase letter, or digit, except the last character, which cannot
+   * be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1380,7 +1629,14 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * The name of the resource, provided by the client when initially creating
+   * the resource. The resource name must be 1-63 characters long, and comply
+   * withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be
+   * a dash, lowercase letter, or digit, except the last character, which cannot
+   * be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1404,7 +1660,14 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * The name of the resource, provided by the client when initially creating
+   * the resource. The resource name must be 1-63 characters long, and comply
+   * withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be
+   * a dash, lowercase letter, or digit, except the last character, which cannot
+   * be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1424,6 +1687,84 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int PROTECTION_TIER_FIELD_NUMBER = 503959432;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object protectionTier_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Protection tier for the workload which specifies the workload expectations
+   * in the event of infrastructure failures at data center (e.g. power
+   * and/or cooling failures).
+   * Check the ProtectionTier enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string protection_tier = 503959432;</code>
+   *
+   * @return Whether the protectionTier field is set.
+   */
+  @java.lang.Override
+  public boolean hasProtectionTier() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Protection tier for the workload which specifies the workload expectations
+   * in the event of infrastructure failures at data center (e.g. power
+   * and/or cooling failures).
+   * Check the ProtectionTier enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string protection_tier = 503959432;</code>
+   *
+   * @return The protectionTier.
+   */
+  @java.lang.Override
+  public java.lang.String getProtectionTier() {
+    java.lang.Object ref = protectionTier_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      protectionTier_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Protection tier for the workload which specifies the workload expectations
+   * in the event of infrastructure failures at data center (e.g. power
+   * and/or cooling failures).
+   * Check the ProtectionTier enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string protection_tier = 503959432;</code>
+   *
+   * @return The bytes for protectionTier.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getProtectionTierBytes() {
+    java.lang.Object ref = protectionTier_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      protectionTier_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int RESERVATION_SHARING_POLICY_FIELD_NUMBER = 205970120;
   private com.google.cloud.compute.v1.AllocationReservationSharingPolicy reservationSharingPolicy_;
 
@@ -1431,7 +1772,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specify the reservation sharing policy. If unspecified, the reservation will not be shared with Google Cloud managed services.
+   * Specify the reservation sharing policy. If unspecified, the reservation
+   * will not be shared with Google Cloud managed services.
    * </pre>
    *
    * <code>
@@ -1442,14 +1784,15 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasReservationSharingPolicy() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * Specify the reservation sharing policy. If unspecified, the reservation will not be shared with Google Cloud managed services.
+   * Specify the reservation sharing policy. If unspecified, the reservation
+   * will not be shared with Google Cloud managed services.
    * </pre>
    *
    * <code>
@@ -1470,7 +1813,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specify the reservation sharing policy. If unspecified, the reservation will not be shared with Google Cloud managed services.
+   * Specify the reservation sharing policy. If unspecified, the reservation
+   * will not be shared with Google Cloud managed services.
    * </pre>
    *
    * <code>
@@ -1518,7 +1862,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+   * Resource policies to be added to this reservation. The key is defined by
+   * user, and the value is resource policy url. This is to define placement
+   * policy with reservation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
@@ -1542,7 +1888,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+   * Resource policies to be added to this reservation. The key is defined by
+   * user, and the value is resource policy url. This is to define placement
+   * policy with reservation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
@@ -1556,7 +1904,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+   * Resource policies to be added to this reservation. The key is defined by
+   * user, and the value is resource policy url. This is to define placement
+   * policy with reservation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
@@ -1577,7 +1927,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+   * Resource policies to be added to this reservation. The key is defined by
+   * user, and the value is resource policy url. This is to define placement
+   * policy with reservation.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
@@ -1611,7 +1963,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasResourceStatus() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
 
   /**
@@ -1667,7 +2019,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSatisfiesPzs() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
 
   /**
@@ -1705,7 +2057,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSchedulingType() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
 
   /**
@@ -1776,7 +2128,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00010000) != 0);
+    return ((bitField0_ & 0x00020000) != 0);
   }
 
   /**
@@ -1834,7 +2186,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specify share-settings to create a shared reservation. This property is optional. For more information about the syntax and options for this field and its subfields, see the guide for creating a shared reservation.
+   * Specify share-settings to create a shared reservation. This property is
+   * optional. For more information about the syntax and options for this
+   * field and its subfields, see the guide for creating
+   * a shared reservation.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
@@ -1843,14 +2198,17 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasShareSettings() {
-    return ((bitField0_ & 0x00020000) != 0);
+    return ((bitField0_ & 0x00040000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * Specify share-settings to create a shared reservation. This property is optional. For more information about the syntax and options for this field and its subfields, see the guide for creating a shared reservation.
+   * Specify share-settings to create a shared reservation. This property is
+   * optional. For more information about the syntax and options for this
+   * field and its subfields, see the guide for creating
+   * a shared reservation.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
@@ -1868,7 +2226,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specify share-settings to create a shared reservation. This property is optional. For more information about the syntax and options for this field and its subfields, see the guide for creating a shared reservation.
+   * Specify share-settings to create a shared reservation. This property is
+   * optional. For more information about the syntax and options for this
+   * field and its subfields, see the guide for creating
+   * a shared reservation.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
@@ -1898,7 +2259,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSpecificReservation() {
-    return ((bitField0_ & 0x00040000) != 0);
+    return ((bitField0_ & 0x00080000) != 0);
   }
 
   /**
@@ -1947,7 +2308,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Indicates whether the reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from this reservation.
+   * Indicates whether the reservation can be consumed by VMs with affinity
+   * for "any" reservation. If the field is set, then only VMs that target
+   * the reservation by name can consume from this reservation.
    * </pre>
    *
    * <code>optional bool specific_reservation_required = 226550687;</code>
@@ -1956,14 +2319,16 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSpecificReservationRequired() {
-    return ((bitField0_ & 0x00080000) != 0);
+    return ((bitField0_ & 0x00100000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * Indicates whether the reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from this reservation.
+   * Indicates whether the reservation can be consumed by VMs with affinity
+   * for "any" reservation. If the field is set, then only VMs that target
+   * the reservation by name can consume from this reservation.
    * </pre>
    *
    * <code>optional bool specific_reservation_required = 226550687;</code>
@@ -1984,7 +2349,15 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress.
+   * [Output Only] The status of the reservation.
+   *
+   *
+   *      - CREATING: Reservation resources are being
+   *        allocated.
+   *      - READY: Reservation resources have been allocated,
+   *        and the reservation is ready for use.
+   *      - DELETING: Reservation deletion is in progress.
+   *      - UPDATING: Reservation update is in progress.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -1994,14 +2367,22 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00100000) != 0);
+    return ((bitField0_ & 0x00200000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress.
+   * [Output Only] The status of the reservation.
+   *
+   *
+   *      - CREATING: Reservation resources are being
+   *        allocated.
+   *      - READY: Reservation resources have been allocated,
+   *        and the reservation is ready for use.
+   *      - DELETING: Reservation deletion is in progress.
+   *      - UPDATING: Reservation update is in progress.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -2026,7 +2407,15 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress.
+   * [Output Only] The status of the reservation.
+   *
+   *
+   *      - CREATING: Reservation resources are being
+   *        allocated.
+   *      - READY: Reservation resources have been allocated,
+   *        and the reservation is ready for use.
+   *      - DELETING: Reservation deletion is in progress.
+   *      - UPDATING: Reservation update is in progress.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -2056,7 +2445,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Zone in which the reservation resides. A zone must be provided if the reservation is created within a commitment.
+   * Zone in which the reservation resides. A zone must be provided if the
+   * reservation is created within a commitment.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -2065,14 +2455,15 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasZone() {
-    return ((bitField0_ & 0x00200000) != 0);
+    return ((bitField0_ & 0x00400000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * Zone in which the reservation resides. A zone must be provided if the reservation is created within a commitment.
+   * Zone in which the reservation resides. A zone must be provided if the
+   * reservation is created within a commitment.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -2096,7 +2487,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Zone in which the reservation resides. A zone must be provided if the reservation is created within a commitment.
+   * Zone in which the reservation resides. A zone must be provided if the
+   * reservation is created within a commitment.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -2139,7 +2531,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -2153,22 +2545,22 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 83294405, deleteAtTime_);
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 199835397, schedulingType_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       output.writeMessage(205970120, getReservationSharingPolicy());
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       output.writeBool(226550687, specificReservationRequired_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       output.writeMessage(249429315, getResourceStatus());
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       output.writeMessage(266668163, getShareSettings());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -2183,7 +2575,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 396722292, deploymentType_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       output.writeMessage(404901951, getSpecificReservation());
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -2192,18 +2584,21 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     for (int i = 0; i < linkedCommitments_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 470957784, linkedCommitments_.getRaw(i));
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       output.writeBool(480964267, satisfiesPzs_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 482134805, commitment_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 503959432, protectionTier_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2223,7 +2618,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
@@ -2244,27 +2639,27 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(83294405, deleteAtTime_);
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(199835397, schedulingType_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               205970120, getReservationSharingPolicy());
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               226550687, specificReservationRequired_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(249429315, getResourceStatus());
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(266668163, getShareSettings());
     }
@@ -2286,7 +2681,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(396722292, deploymentType_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               404901951, getSpecificReservation());
@@ -2299,7 +2694,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     {
@@ -2310,11 +2705,14 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getLinkedCommitmentsList().size();
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(480964267, satisfiesPzs_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(482134805, commitment_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(503959432, protectionTier_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2380,6 +2778,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     if (hasName() != other.hasName()) return false;
     if (hasName()) {
       if (!getName().equals(other.getName())) return false;
+    }
+    if (hasProtectionTier() != other.hasProtectionTier()) return false;
+    if (hasProtectionTier()) {
+      if (!getProtectionTier().equals(other.getProtectionTier())) return false;
     }
     if (hasReservationSharingPolicy() != other.hasReservationSharingPolicy()) return false;
     if (hasReservationSharingPolicy()) {
@@ -2484,6 +2886,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     if (hasName()) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasProtectionTier()) {
+      hash = (37 * hash) + PROTECTION_TIER_FIELD_NUMBER;
+      hash = (53 * hash) + getProtectionTier().hashCode();
     }
     if (hasReservationSharingPolicy()) {
       hash = (37 * hash) + RESERVATION_SHARING_POLICY_FIELD_NUMBER;
@@ -2635,7 +3041,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a reservation resource. A reservation ensures that capacity is held in a specific zone even if the reserved VMs are not running. For more information, read Reserving zonal resources.
+   * Represents a reservation resource.  A reservation ensures that capacity is
+   * held in a specific zone even if the reserved VMs are not running. For more
+   * information, read  Reserving zonal
+   * resources.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Reservation}
@@ -2732,6 +3141,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       kind_ = "";
       linkedCommitments_ = com.google.protobuf.LazyStringArrayList.emptyList();
       name_ = "";
+      protectionTier_ = "";
       reservationSharingPolicy_ = null;
       if (reservationSharingPolicyBuilder_ != null) {
         reservationSharingPolicyBuilder_.dispose();
@@ -2858,56 +3268,60 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.protectionTier_ = protectionTier_;
+        to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.reservationSharingPolicy_ =
             reservationSharingPolicyBuilder_ == null
                 ? reservationSharingPolicy_
                 : reservationSharingPolicyBuilder_.build();
-        to_bitField0_ |= 0x00001000;
+        to_bitField0_ |= 0x00002000;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.resourcePolicies_ = internalGetResourcePolicies();
         result.resourcePolicies_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.resourceStatus_ =
             resourceStatusBuilder_ == null ? resourceStatus_ : resourceStatusBuilder_.build();
-        to_bitField0_ |= 0x00002000;
-      }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.satisfiesPzs_ = satisfiesPzs_;
         to_bitField0_ |= 0x00004000;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.schedulingType_ = schedulingType_;
+        result.satisfiesPzs_ = satisfiesPzs_;
         to_bitField0_ |= 0x00008000;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.selfLink_ = selfLink_;
+        result.schedulingType_ = schedulingType_;
         to_bitField0_ |= 0x00010000;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
-        result.shareSettings_ =
-            shareSettingsBuilder_ == null ? shareSettings_ : shareSettingsBuilder_.build();
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00020000;
       }
       if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.shareSettings_ =
+            shareSettingsBuilder_ == null ? shareSettings_ : shareSettingsBuilder_.build();
+        to_bitField0_ |= 0x00040000;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         result.specificReservation_ =
             specificReservationBuilder_ == null
                 ? specificReservation_
                 : specificReservationBuilder_.build();
-        to_bitField0_ |= 0x00040000;
-      }
-      if (((from_bitField0_ & 0x00200000) != 0)) {
-        result.specificReservationRequired_ = specificReservationRequired_;
         to_bitField0_ |= 0x00080000;
       }
       if (((from_bitField0_ & 0x00400000) != 0)) {
-        result.status_ = status_;
+        result.specificReservationRequired_ = specificReservationRequired_;
         to_bitField0_ |= 0x00100000;
       }
       if (((from_bitField0_ & 0x00800000) != 0)) {
-        result.zone_ = zone_;
+        result.status_ = status_;
         to_bitField0_ |= 0x00200000;
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.zone_ = zone_;
+        to_bitField0_ |= 0x00400000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3017,11 +3431,16 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00001000;
         onChanged();
       }
+      if (other.hasProtectionTier()) {
+        protectionTier_ = other.protectionTier_;
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
       if (other.hasReservationSharingPolicy()) {
         mergeReservationSharingPolicy(other.getReservationSharingPolicy());
       }
       internalGetMutableResourcePolicies().mergeFrom(other.internalGetResourcePolicies());
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       if (other.hasResourceStatus()) {
         mergeResourceStatus(other.getResourceStatus());
       }
@@ -3030,12 +3449,12 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSchedulingType()) {
         schedulingType_ = other.schedulingType_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       if (other.hasShareSettings()) {
@@ -3049,12 +3468,12 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasStatus()) {
         status_ = other.status_;
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       if (other.hasZone()) {
         zone_ = other.zone_;
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x01000000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -3104,7 +3523,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 29957474
             case 177763082:
@@ -3117,7 +3536,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableResourcePolicies()
                     .getMutableMap()
                     .put(resourcePolicies__.getKey(), resourcePolicies__.getValue());
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 177763082
             case 244202930:
@@ -3135,38 +3554,38 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
             case 1450082194:
               {
                 status_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 1450082194
             case 1598683178:
               {
                 schedulingType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 1598683178
             case 1647760962:
               {
                 input.readMessage(
                     getReservationSharingPolicyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 1647760962
             case 1812405496:
               {
                 specificReservationRequired_ = input.readBool();
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 1812405496
             case 1995434522:
               {
                 input.readMessage(getResourceStatusFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 1995434522
             case 2133345306:
               {
                 input.readMessage(getShareSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 2133345306
             case -1962423710:
@@ -3199,7 +3618,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getSpecificReservationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case -1055751686
             case -1010022142:
@@ -3218,7 +3637,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case -645248918
             case -527305022:
@@ -3231,7 +3650,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
             case -447253160:
               {
                 satisfiesPzs_ = input.readBool();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case -447253160
             case -437888854:
@@ -3240,6 +3659,12 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case -437888854
+            case -263291838:
+              {
+                protectionTier_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case -263291838
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3271,7 +3696,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Advanced control for cluster management, applicable only to DENSE deployment type reservations.
+     * Advanced control for cluster management, applicable only to DENSE
+     * deployment type reservations.
      * </pre>
      *
      * <code>
@@ -3288,7 +3714,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Advanced control for cluster management, applicable only to DENSE deployment type reservations.
+     * Advanced control for cluster management, applicable only to DENSE
+     * deployment type reservations.
      * </pre>
      *
      * <code>
@@ -3312,7 +3739,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Advanced control for cluster management, applicable only to DENSE deployment type reservations.
+     * Advanced control for cluster management, applicable only to DENSE
+     * deployment type reservations.
      * </pre>
      *
      * <code>
@@ -3338,7 +3766,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Advanced control for cluster management, applicable only to DENSE deployment type reservations.
+     * Advanced control for cluster management, applicable only to DENSE
+     * deployment type reservations.
      * </pre>
      *
      * <code>
@@ -3361,7 +3790,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Advanced control for cluster management, applicable only to DENSE deployment type reservations.
+     * Advanced control for cluster management, applicable only to DENSE
+     * deployment type reservations.
      * </pre>
      *
      * <code>
@@ -3394,7 +3824,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Advanced control for cluster management, applicable only to DENSE deployment type reservations.
+     * Advanced control for cluster management, applicable only to DENSE
+     * deployment type reservations.
      * </pre>
      *
      * <code>
@@ -3416,7 +3847,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Advanced control for cluster management, applicable only to DENSE deployment type reservations.
+     * Advanced control for cluster management, applicable only to DENSE
+     * deployment type reservations.
      * </pre>
      *
      * <code>
@@ -3434,7 +3866,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Advanced control for cluster management, applicable only to DENSE deployment type reservations.
+     * Advanced control for cluster management, applicable only to DENSE
+     * deployment type reservations.
      * </pre>
      *
      * <code>
@@ -3456,7 +3889,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Advanced control for cluster management, applicable only to DENSE deployment type reservations.
+     * Advanced control for cluster management, applicable only to DENSE
+     * deployment type reservations.
      * </pre>
      *
      * <code>
@@ -3705,7 +4139,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
+     * [Output Only] Full or partial URL to a parent commitment. This field
+     * displays for reservations that are tied to a commitment.
      * </pre>
      *
      * <code>optional string commitment = 482134805;</code>
@@ -3720,7 +4155,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
+     * [Output Only] Full or partial URL to a parent commitment. This field
+     * displays for reservations that are tied to a commitment.
      * </pre>
      *
      * <code>optional string commitment = 482134805;</code>
@@ -3743,7 +4179,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
+     * [Output Only] Full or partial URL to a parent commitment. This field
+     * displays for reservations that are tied to a commitment.
      * </pre>
      *
      * <code>optional string commitment = 482134805;</code>
@@ -3766,7 +4203,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
+     * [Output Only] Full or partial URL to a parent commitment. This field
+     * displays for reservations that are tied to a commitment.
      * </pre>
      *
      * <code>optional string commitment = 482134805;</code>
@@ -3788,7 +4226,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
+     * [Output Only] Full or partial URL to a parent commitment. This field
+     * displays for reservations that are tied to a commitment.
      * </pre>
      *
      * <code>optional string commitment = 482134805;</code>
@@ -3806,7 +4245,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
+     * [Output Only] Full or partial URL to a parent commitment. This field
+     * displays for reservations that are tied to a commitment.
      * </pre>
      *
      * <code>optional string commitment = 482134805;</code>
@@ -3831,7 +4271,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -3846,7 +4287,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -3869,7 +4311,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -3892,7 +4335,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -3914,7 +4358,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -3932,7 +4377,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -3962,7 +4408,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Duration time relative to reservation creation when Compute Engine will automatically delete this resource.
+     * Duration time relative to reservation creation when Compute Engine will
+     * automatically delete this resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration delete_after_duration = 323997099;</code>
@@ -3977,7 +4424,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Duration time relative to reservation creation when Compute Engine will automatically delete this resource.
+     * Duration time relative to reservation creation when Compute Engine will
+     * automatically delete this resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration delete_after_duration = 323997099;</code>
@@ -3998,7 +4446,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Duration time relative to reservation creation when Compute Engine will automatically delete this resource.
+     * Duration time relative to reservation creation when Compute Engine will
+     * automatically delete this resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration delete_after_duration = 323997099;</code>
@@ -4021,7 +4470,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Duration time relative to reservation creation when Compute Engine will automatically delete this resource.
+     * Duration time relative to reservation creation when Compute Engine will
+     * automatically delete this resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration delete_after_duration = 323997099;</code>
@@ -4042,7 +4492,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Duration time relative to reservation creation when Compute Engine will automatically delete this resource.
+     * Duration time relative to reservation creation when Compute Engine will
+     * automatically delete this resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration delete_after_duration = 323997099;</code>
@@ -4070,7 +4521,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Duration time relative to reservation creation when Compute Engine will automatically delete this resource.
+     * Duration time relative to reservation creation when Compute Engine will
+     * automatically delete this resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration delete_after_duration = 323997099;</code>
@@ -4090,7 +4542,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Duration time relative to reservation creation when Compute Engine will automatically delete this resource.
+     * Duration time relative to reservation creation when Compute Engine will
+     * automatically delete this resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration delete_after_duration = 323997099;</code>
@@ -4105,7 +4558,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Duration time relative to reservation creation when Compute Engine will automatically delete this resource.
+     * Duration time relative to reservation creation when Compute Engine will
+     * automatically delete this resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration delete_after_duration = 323997099;</code>
@@ -4124,7 +4578,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Duration time relative to reservation creation when Compute Engine will automatically delete this resource.
+     * Duration time relative to reservation creation when Compute Engine will
+     * automatically delete this resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration delete_after_duration = 323997099;</code>
@@ -4152,7 +4607,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Absolute time in future when the reservation will be auto-deleted by Compute Engine. Timestamp is represented in RFC3339 text format.
+     * Absolute time in future when the reservation will be
+     *  auto-deleted by Compute Engine. Timestamp is represented inRFC3339 text format.
      * </pre>
      *
      * <code>optional string delete_at_time = 83294405;</code>
@@ -4167,7 +4623,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Absolute time in future when the reservation will be auto-deleted by Compute Engine. Timestamp is represented in RFC3339 text format.
+     * Absolute time in future when the reservation will be
+     *  auto-deleted by Compute Engine. Timestamp is represented inRFC3339 text format.
      * </pre>
      *
      * <code>optional string delete_at_time = 83294405;</code>
@@ -4190,7 +4647,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Absolute time in future when the reservation will be auto-deleted by Compute Engine. Timestamp is represented in RFC3339 text format.
+     * Absolute time in future when the reservation will be
+     *  auto-deleted by Compute Engine. Timestamp is represented inRFC3339 text format.
      * </pre>
      *
      * <code>optional string delete_at_time = 83294405;</code>
@@ -4213,7 +4671,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Absolute time in future when the reservation will be auto-deleted by Compute Engine. Timestamp is represented in RFC3339 text format.
+     * Absolute time in future when the reservation will be
+     *  auto-deleted by Compute Engine. Timestamp is represented inRFC3339 text format.
      * </pre>
      *
      * <code>optional string delete_at_time = 83294405;</code>
@@ -4235,7 +4694,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Absolute time in future when the reservation will be auto-deleted by Compute Engine. Timestamp is represented in RFC3339 text format.
+     * Absolute time in future when the reservation will be
+     *  auto-deleted by Compute Engine. Timestamp is represented inRFC3339 text format.
      * </pre>
      *
      * <code>optional string delete_at_time = 83294405;</code>
@@ -4253,7 +4713,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Absolute time in future when the reservation will be auto-deleted by Compute Engine. Timestamp is represented in RFC3339 text format.
+     * Absolute time in future when the reservation will be
+     *  auto-deleted by Compute Engine. Timestamp is represented inRFC3339 text format.
      * </pre>
      *
      * <code>optional string delete_at_time = 83294405;</code>
@@ -4410,7 +4871,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -4425,7 +4887,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -4448,7 +4911,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -4471,7 +4935,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -4493,7 +4958,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -4511,7 +4977,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -4536,7 +5003,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates whether Compute Engine allows unplanned maintenance for your VMs; for example, to fix hardware errors.
+     * Indicates whether Compute Engine allows unplanned maintenance for your VMs;
+     * for example, to fix hardware errors.
      * </pre>
      *
      * <code>optional bool enable_emergent_maintenance = 353759497;</code>
@@ -4552,7 +5020,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates whether Compute Engine allows unplanned maintenance for your VMs; for example, to fix hardware errors.
+     * Indicates whether Compute Engine allows unplanned maintenance for your VMs;
+     * for example, to fix hardware errors.
      * </pre>
      *
      * <code>optional bool enable_emergent_maintenance = 353759497;</code>
@@ -4568,7 +5037,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates whether Compute Engine allows unplanned maintenance for your VMs; for example, to fix hardware errors.
+     * Indicates whether Compute Engine allows unplanned maintenance for your VMs;
+     * for example, to fix hardware errors.
      * </pre>
      *
      * <code>optional bool enable_emergent_maintenance = 353759497;</code>
@@ -4588,7 +5058,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates whether Compute Engine allows unplanned maintenance for your VMs; for example, to fix hardware errors.
+     * Indicates whether Compute Engine allows unplanned maintenance for your VMs;
+     * for example, to fix hardware errors.
      * </pre>
      *
      * <code>optional bool enable_emergent_maintenance = 353759497;</code>
@@ -4608,7 +5079,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -4624,7 +5096,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -4640,7 +5113,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -4660,7 +5134,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -4680,7 +5155,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#reservations for reservations.
+     * [Output Only] Type of the resource. Alwayscompute#reservations for reservations.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4695,7 +5170,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#reservations for reservations.
+     * [Output Only] Type of the resource. Alwayscompute#reservations for reservations.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4718,7 +5193,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#reservations for reservations.
+     * [Output Only] Type of the resource. Alwayscompute#reservations for reservations.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4741,7 +5216,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#reservations for reservations.
+     * [Output Only] Type of the resource. Alwayscompute#reservations for reservations.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4763,7 +5238,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#reservations for reservations.
+     * [Output Only] Type of the resource. Alwayscompute#reservations for reservations.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4781,7 +5256,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#reservations for reservations.
+     * [Output Only] Type of the resource. Alwayscompute#reservations for reservations.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4814,7 +5289,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Full or partial URL to parent commitments. This field displays for reservations that are tied to multiple commitments.
+     * [Output Only] Full or partial URL to parent commitments. This field
+     * displays for reservations that are tied to multiple commitments.
      * </pre>
      *
      * <code>repeated string linked_commitments = 470957784;</code>
@@ -4830,7 +5306,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Full or partial URL to parent commitments. This field displays for reservations that are tied to multiple commitments.
+     * [Output Only] Full or partial URL to parent commitments. This field
+     * displays for reservations that are tied to multiple commitments.
      * </pre>
      *
      * <code>repeated string linked_commitments = 470957784;</code>
@@ -4845,7 +5322,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Full or partial URL to parent commitments. This field displays for reservations that are tied to multiple commitments.
+     * [Output Only] Full or partial URL to parent commitments. This field
+     * displays for reservations that are tied to multiple commitments.
      * </pre>
      *
      * <code>repeated string linked_commitments = 470957784;</code>
@@ -4861,7 +5339,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Full or partial URL to parent commitments. This field displays for reservations that are tied to multiple commitments.
+     * [Output Only] Full or partial URL to parent commitments. This field
+     * displays for reservations that are tied to multiple commitments.
      * </pre>
      *
      * <code>repeated string linked_commitments = 470957784;</code>
@@ -4877,7 +5356,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Full or partial URL to parent commitments. This field displays for reservations that are tied to multiple commitments.
+     * [Output Only] Full or partial URL to parent commitments. This field
+     * displays for reservations that are tied to multiple commitments.
      * </pre>
      *
      * <code>repeated string linked_commitments = 470957784;</code>
@@ -4901,7 +5381,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Full or partial URL to parent commitments. This field displays for reservations that are tied to multiple commitments.
+     * [Output Only] Full or partial URL to parent commitments. This field
+     * displays for reservations that are tied to multiple commitments.
      * </pre>
      *
      * <code>repeated string linked_commitments = 470957784;</code>
@@ -4924,7 +5405,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Full or partial URL to parent commitments. This field displays for reservations that are tied to multiple commitments.
+     * [Output Only] Full or partial URL to parent commitments. This field
+     * displays for reservations that are tied to multiple commitments.
      * </pre>
      *
      * <code>repeated string linked_commitments = 470957784;</code>
@@ -4944,7 +5426,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Full or partial URL to parent commitments. This field displays for reservations that are tied to multiple commitments.
+     * [Output Only] Full or partial URL to parent commitments. This field
+     * displays for reservations that are tied to multiple commitments.
      * </pre>
      *
      * <code>repeated string linked_commitments = 470957784;</code>
@@ -4963,7 +5446,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Full or partial URL to parent commitments. This field displays for reservations that are tied to multiple commitments.
+     * [Output Only] Full or partial URL to parent commitments. This field
+     * displays for reservations that are tied to multiple commitments.
      * </pre>
      *
      * <code>repeated string linked_commitments = 470957784;</code>
@@ -4989,7 +5473,14 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * The name of the resource, provided by the client when initially creating
+     * the resource. The resource name must be 1-63 characters long, and comply
+     * withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -5004,7 +5495,14 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * The name of the resource, provided by the client when initially creating
+     * the resource. The resource name must be 1-63 characters long, and comply
+     * withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -5027,7 +5525,14 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * The name of the resource, provided by the client when initially creating
+     * the resource. The resource name must be 1-63 characters long, and comply
+     * withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -5050,7 +5555,14 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * The name of the resource, provided by the client when initially creating
+     * the resource. The resource name must be 1-63 characters long, and comply
+     * withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -5072,7 +5584,14 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * The name of the resource, provided by the client when initially creating
+     * the resource. The resource name must be 1-63 characters long, and comply
+     * withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -5090,7 +5609,14 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * The name of the resource, provided by the client when initially creating
+     * the resource. The resource name must be 1-63 characters long, and comply
+     * withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -5109,6 +5635,150 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object protectionTier_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Protection tier for the workload which specifies the workload expectations
+     * in the event of infrastructure failures at data center (e.g. power
+     * and/or cooling failures).
+     * Check the ProtectionTier enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string protection_tier = 503959432;</code>
+     *
+     * @return Whether the protectionTier field is set.
+     */
+    public boolean hasProtectionTier() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Protection tier for the workload which specifies the workload expectations
+     * in the event of infrastructure failures at data center (e.g. power
+     * and/or cooling failures).
+     * Check the ProtectionTier enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string protection_tier = 503959432;</code>
+     *
+     * @return The protectionTier.
+     */
+    public java.lang.String getProtectionTier() {
+      java.lang.Object ref = protectionTier_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        protectionTier_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Protection tier for the workload which specifies the workload expectations
+     * in the event of infrastructure failures at data center (e.g. power
+     * and/or cooling failures).
+     * Check the ProtectionTier enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string protection_tier = 503959432;</code>
+     *
+     * @return The bytes for protectionTier.
+     */
+    public com.google.protobuf.ByteString getProtectionTierBytes() {
+      java.lang.Object ref = protectionTier_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        protectionTier_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Protection tier for the workload which specifies the workload expectations
+     * in the event of infrastructure failures at data center (e.g. power
+     * and/or cooling failures).
+     * Check the ProtectionTier enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string protection_tier = 503959432;</code>
+     *
+     * @param value The protectionTier to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProtectionTier(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      protectionTier_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Protection tier for the workload which specifies the workload expectations
+     * in the event of infrastructure failures at data center (e.g. power
+     * and/or cooling failures).
+     * Check the ProtectionTier enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string protection_tier = 503959432;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProtectionTier() {
+      protectionTier_ = getDefaultInstance().getProtectionTier();
+      bitField0_ = (bitField0_ & ~0x00002000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Protection tier for the workload which specifies the workload expectations
+     * in the event of infrastructure failures at data center (e.g. power
+     * and/or cooling failures).
+     * Check the ProtectionTier enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string protection_tier = 503959432;</code>
+     *
+     * @param value The bytes for protectionTier to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProtectionTierBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      protectionTier_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.compute.v1.AllocationReservationSharingPolicy
         reservationSharingPolicy_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -5121,7 +5791,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the reservation sharing policy. If unspecified, the reservation will not be shared with Google Cloud managed services.
+     * Specify the reservation sharing policy. If unspecified, the reservation
+     * will not be shared with Google Cloud managed services.
      * </pre>
      *
      * <code>
@@ -5131,14 +5802,15 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the reservationSharingPolicy field is set.
      */
     public boolean hasReservationSharingPolicy() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Specify the reservation sharing policy. If unspecified, the reservation will not be shared with Google Cloud managed services.
+     * Specify the reservation sharing policy. If unspecified, the reservation
+     * will not be shared with Google Cloud managed services.
      * </pre>
      *
      * <code>
@@ -5162,7 +5834,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the reservation sharing policy. If unspecified, the reservation will not be shared with Google Cloud managed services.
+     * Specify the reservation sharing policy. If unspecified, the reservation
+     * will not be shared with Google Cloud managed services.
      * </pre>
      *
      * <code>
@@ -5179,7 +5852,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       } else {
         reservationSharingPolicyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5188,7 +5861,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the reservation sharing policy. If unspecified, the reservation will not be shared with Google Cloud managed services.
+     * Specify the reservation sharing policy. If unspecified, the reservation
+     * will not be shared with Google Cloud managed services.
      * </pre>
      *
      * <code>
@@ -5202,7 +5876,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       } else {
         reservationSharingPolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5211,7 +5885,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the reservation sharing policy. If unspecified, the reservation will not be shared with Google Cloud managed services.
+     * Specify the reservation sharing policy. If unspecified, the reservation
+     * will not be shared with Google Cloud managed services.
      * </pre>
      *
      * <code>
@@ -5221,7 +5896,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeReservationSharingPolicy(
         com.google.cloud.compute.v1.AllocationReservationSharingPolicy value) {
       if (reservationSharingPolicyBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && reservationSharingPolicy_ != null
             && reservationSharingPolicy_
                 != com.google.cloud.compute.v1.AllocationReservationSharingPolicy
@@ -5234,7 +5909,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         reservationSharingPolicyBuilder_.mergeFrom(value);
       }
       if (reservationSharingPolicy_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -5244,7 +5919,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the reservation sharing policy. If unspecified, the reservation will not be shared with Google Cloud managed services.
+     * Specify the reservation sharing policy. If unspecified, the reservation
+     * will not be shared with Google Cloud managed services.
      * </pre>
      *
      * <code>
@@ -5252,7 +5928,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearReservationSharingPolicy() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       reservationSharingPolicy_ = null;
       if (reservationSharingPolicyBuilder_ != null) {
         reservationSharingPolicyBuilder_.dispose();
@@ -5266,7 +5942,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the reservation sharing policy. If unspecified, the reservation will not be shared with Google Cloud managed services.
+     * Specify the reservation sharing policy. If unspecified, the reservation
+     * will not be shared with Google Cloud managed services.
      * </pre>
      *
      * <code>
@@ -5275,7 +5952,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.compute.v1.AllocationReservationSharingPolicy.Builder
         getReservationSharingPolicyBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getReservationSharingPolicyFieldBuilder().getBuilder();
     }
@@ -5284,7 +5961,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the reservation sharing policy. If unspecified, the reservation will not be shared with Google Cloud managed services.
+     * Specify the reservation sharing policy. If unspecified, the reservation
+     * will not be shared with Google Cloud managed services.
      * </pre>
      *
      * <code>
@@ -5306,7 +5984,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the reservation sharing policy. If unspecified, the reservation will not be shared with Google Cloud managed services.
+     * Specify the reservation sharing policy. If unspecified, the reservation
+     * will not be shared with Google Cloud managed services.
      * </pre>
      *
      * <code>
@@ -5351,7 +6030,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       if (!resourcePolicies_.isMutable()) {
         resourcePolicies_ = resourcePolicies_.copy();
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return resourcePolicies_;
     }
@@ -5364,7 +6043,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+     * Resource policies to be added to this reservation. The key is defined by
+     * user, and the value is resource policy url. This is to define placement
+     * policy with reservation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
@@ -5388,7 +6069,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+     * Resource policies to be added to this reservation. The key is defined by
+     * user, and the value is resource policy url. This is to define placement
+     * policy with reservation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
@@ -5402,7 +6085,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+     * Resource policies to be added to this reservation. The key is defined by
+     * user, and the value is resource policy url. This is to define placement
+     * policy with reservation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
@@ -5424,7 +6109,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+     * Resource policies to be added to this reservation. The key is defined by
+     * user, and the value is resource policy url. This is to define placement
+     * policy with reservation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
@@ -5443,7 +6130,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearResourcePolicies() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       internalGetMutableResourcePolicies().getMutableMap().clear();
       return this;
     }
@@ -5452,7 +6139,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+     * Resource policies to be added to this reservation. The key is defined by
+     * user, and the value is resource policy url. This is to define placement
+     * policy with reservation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
@@ -5468,7 +6157,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableResourcePolicies() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       return internalGetMutableResourcePolicies().getMutableMap();
     }
 
@@ -5476,7 +6165,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+     * Resource policies to be added to this reservation. The key is defined by
+     * user, and the value is resource policy url. This is to define placement
+     * policy with reservation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
@@ -5489,7 +6180,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableResourcePolicies().getMutableMap().put(key, value);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       return this;
     }
 
@@ -5497,7 +6188,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+     * Resource policies to be added to this reservation. The key is defined by
+     * user, and the value is resource policy url. This is to define placement
+     * policy with reservation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
@@ -5505,7 +6198,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllResourcePolicies(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableResourcePolicies().getMutableMap().putAll(values);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       return this;
     }
 
@@ -5529,7 +6222,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the resourceStatus field is set.
      */
     public boolean hasResourceStatus() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -5573,7 +6266,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       } else {
         resourceStatusBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5595,7 +6288,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       } else {
         resourceStatusBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5612,7 +6305,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeResourceStatus(com.google.cloud.compute.v1.AllocationResourceStatus value) {
       if (resourceStatusBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && resourceStatus_ != null
             && resourceStatus_
                 != com.google.cloud.compute.v1.AllocationResourceStatus.getDefaultInstance()) {
@@ -5624,7 +6317,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         resourceStatusBuilder_.mergeFrom(value);
       }
       if (resourceStatus_ != null) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -5641,7 +6334,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearResourceStatus() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       resourceStatus_ = null;
       if (resourceStatusBuilder_ != null) {
         resourceStatusBuilder_.dispose();
@@ -5662,7 +6355,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.compute.v1.AllocationResourceStatus.Builder getResourceStatusBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return getResourceStatusFieldBuilder().getBuilder();
     }
@@ -5730,7 +6423,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasSatisfiesPzs() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -5764,7 +6457,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     public Builder setSatisfiesPzs(boolean value) {
 
       satisfiesPzs_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5781,7 +6474,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzs() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       satisfiesPzs_ = false;
       onChanged();
       return this;
@@ -5802,7 +6495,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the schedulingType field is set.
      */
     public boolean hasSchedulingType() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -5871,7 +6564,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       schedulingType_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5890,7 +6583,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSchedulingType() {
       schedulingType_ = getDefaultInstance().getSchedulingType();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -5914,7 +6607,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       schedulingType_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5933,7 +6626,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -5999,7 +6692,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6017,7 +6710,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -6040,7 +6733,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6056,7 +6749,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify share-settings to create a shared reservation. This property is optional. For more information about the syntax and options for this field and its subfields, see the guide for creating a shared reservation.
+     * Specify share-settings to create a shared reservation. This property is
+     * optional. For more information about the syntax and options for this
+     * field and its subfields, see the guide for creating
+     * a shared reservation.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
@@ -6064,14 +6760,17 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the shareSettings field is set.
      */
     public boolean hasShareSettings() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Specify share-settings to create a shared reservation. This property is optional. For more information about the syntax and options for this field and its subfields, see the guide for creating a shared reservation.
+     * Specify share-settings to create a shared reservation. This property is
+     * optional. For more information about the syntax and options for this
+     * field and its subfields, see the guide for creating
+     * a shared reservation.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
@@ -6092,7 +6791,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify share-settings to create a shared reservation. This property is optional. For more information about the syntax and options for this field and its subfields, see the guide for creating a shared reservation.
+     * Specify share-settings to create a shared reservation. This property is
+     * optional. For more information about the syntax and options for this
+     * field and its subfields, see the guide for creating
+     * a shared reservation.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
@@ -6106,7 +6808,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       } else {
         shareSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6115,7 +6817,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify share-settings to create a shared reservation. This property is optional. For more information about the syntax and options for this field and its subfields, see the guide for creating a shared reservation.
+     * Specify share-settings to create a shared reservation. This property is
+     * optional. For more information about the syntax and options for this
+     * field and its subfields, see the guide for creating
+     * a shared reservation.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
@@ -6127,7 +6832,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       } else {
         shareSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6136,14 +6841,17 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify share-settings to create a shared reservation. This property is optional. For more information about the syntax and options for this field and its subfields, see the guide for creating a shared reservation.
+     * Specify share-settings to create a shared reservation. This property is
+     * optional. For more information about the syntax and options for this
+     * field and its subfields, see the guide for creating
+     * a shared reservation.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
      */
     public Builder mergeShareSettings(com.google.cloud.compute.v1.ShareSettings value) {
       if (shareSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)
+        if (((bitField0_ & 0x00100000) != 0)
             && shareSettings_ != null
             && shareSettings_ != com.google.cloud.compute.v1.ShareSettings.getDefaultInstance()) {
           getShareSettingsBuilder().mergeFrom(value);
@@ -6154,7 +6862,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         shareSettingsBuilder_.mergeFrom(value);
       }
       if (shareSettings_ != null) {
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       return this;
@@ -6164,13 +6872,16 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify share-settings to create a shared reservation. This property is optional. For more information about the syntax and options for this field and its subfields, see the guide for creating a shared reservation.
+     * Specify share-settings to create a shared reservation. This property is
+     * optional. For more information about the syntax and options for this
+     * field and its subfields, see the guide for creating
+     * a shared reservation.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
      */
     public Builder clearShareSettings() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       shareSettings_ = null;
       if (shareSettingsBuilder_ != null) {
         shareSettingsBuilder_.dispose();
@@ -6184,13 +6895,16 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify share-settings to create a shared reservation. This property is optional. For more information about the syntax and options for this field and its subfields, see the guide for creating a shared reservation.
+     * Specify share-settings to create a shared reservation. This property is
+     * optional. For more information about the syntax and options for this
+     * field and its subfields, see the guide for creating
+     * a shared reservation.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
      */
     public com.google.cloud.compute.v1.ShareSettings.Builder getShareSettingsBuilder() {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return getShareSettingsFieldBuilder().getBuilder();
     }
@@ -6199,7 +6913,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify share-settings to create a shared reservation. This property is optional. For more information about the syntax and options for this field and its subfields, see the guide for creating a shared reservation.
+     * Specify share-settings to create a shared reservation. This property is
+     * optional. For more information about the syntax and options for this
+     * field and its subfields, see the guide for creating
+     * a shared reservation.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
@@ -6218,7 +6935,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify share-settings to create a shared reservation. This property is optional. For more information about the syntax and options for this field and its subfields, see the guide for creating a shared reservation.
+     * Specify share-settings to create a shared reservation. This property is
+     * optional. For more information about the syntax and options for this
+     * field and its subfields, see the guide for creating
+     * a shared reservation.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
@@ -6261,7 +6981,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the specificReservation field is set.
      */
     public boolean hasSpecificReservation() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
 
     /**
@@ -6308,7 +7028,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       } else {
         specificReservationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -6331,7 +7051,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       } else {
         specificReservationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -6350,7 +7070,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSpecificReservation(
         com.google.cloud.compute.v1.AllocationSpecificSKUReservation value) {
       if (specificReservationBuilder_ == null) {
-        if (((bitField0_ & 0x00100000) != 0)
+        if (((bitField0_ & 0x00200000) != 0)
             && specificReservation_ != null
             && specificReservation_
                 != com.google.cloud.compute.v1.AllocationSpecificSKUReservation
@@ -6363,7 +7083,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         specificReservationBuilder_.mergeFrom(value);
       }
       if (specificReservation_ != null) {
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       return this;
@@ -6381,7 +7101,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSpecificReservation() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       specificReservation_ = null;
       if (specificReservationBuilder_ != null) {
         specificReservationBuilder_.dispose();
@@ -6404,7 +7124,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.compute.v1.AllocationSpecificSKUReservation.Builder
         getSpecificReservationBuilder() {
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return getSpecificReservationFieldBuilder().getBuilder();
     }
@@ -6465,7 +7185,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates whether the reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from this reservation.
+     * Indicates whether the reservation can be consumed by VMs with affinity
+     * for "any" reservation. If the field is set, then only VMs that target
+     * the reservation by name can consume from this reservation.
      * </pre>
      *
      * <code>optional bool specific_reservation_required = 226550687;</code>
@@ -6474,14 +7196,16 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasSpecificReservationRequired() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Indicates whether the reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from this reservation.
+     * Indicates whether the reservation can be consumed by VMs with affinity
+     * for "any" reservation. If the field is set, then only VMs that target
+     * the reservation by name can consume from this reservation.
      * </pre>
      *
      * <code>optional bool specific_reservation_required = 226550687;</code>
@@ -6497,7 +7221,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates whether the reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from this reservation.
+     * Indicates whether the reservation can be consumed by VMs with affinity
+     * for "any" reservation. If the field is set, then only VMs that target
+     * the reservation by name can consume from this reservation.
      * </pre>
      *
      * <code>optional bool specific_reservation_required = 226550687;</code>
@@ -6508,7 +7234,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     public Builder setSpecificReservationRequired(boolean value) {
 
       specificReservationRequired_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -6517,7 +7243,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates whether the reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from this reservation.
+     * Indicates whether the reservation can be consumed by VMs with affinity
+     * for "any" reservation. If the field is set, then only VMs that target
+     * the reservation by name can consume from this reservation.
      * </pre>
      *
      * <code>optional bool specific_reservation_required = 226550687;</code>
@@ -6525,7 +7253,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSpecificReservationRequired() {
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       specificReservationRequired_ = false;
       onChanged();
       return this;
@@ -6537,7 +7265,15 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress.
+     * [Output Only] The status of the reservation.
+     *
+     *
+     *      - CREATING: Reservation resources are being
+     *        allocated.
+     *      - READY: Reservation resources have been allocated,
+     *        and the reservation is ready for use.
+     *      - DELETING: Reservation deletion is in progress.
+     *      - UPDATING: Reservation update is in progress.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -6546,14 +7282,22 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress.
+     * [Output Only] The status of the reservation.
+     *
+     *
+     *      - CREATING: Reservation resources are being
+     *        allocated.
+     *      - READY: Reservation resources have been allocated,
+     *        and the reservation is ready for use.
+     *      - DELETING: Reservation deletion is in progress.
+     *      - UPDATING: Reservation update is in progress.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -6577,7 +7321,15 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress.
+     * [Output Only] The status of the reservation.
+     *
+     *
+     *      - CREATING: Reservation resources are being
+     *        allocated.
+     *      - READY: Reservation resources have been allocated,
+     *        and the reservation is ready for use.
+     *      - DELETING: Reservation deletion is in progress.
+     *      - UPDATING: Reservation update is in progress.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -6601,7 +7353,15 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress.
+     * [Output Only] The status of the reservation.
+     *
+     *
+     *      - CREATING: Reservation resources are being
+     *        allocated.
+     *      - READY: Reservation resources have been allocated,
+     *        and the reservation is ready for use.
+     *      - DELETING: Reservation deletion is in progress.
+     *      - UPDATING: Reservation update is in progress.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -6615,7 +7375,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       status_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -6624,7 +7384,15 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress.
+     * [Output Only] The status of the reservation.
+     *
+     *
+     *      - CREATING: Reservation resources are being
+     *        allocated.
+     *      - READY: Reservation resources have been allocated,
+     *        and the reservation is ready for use.
+     *      - DELETING: Reservation deletion is in progress.
+     *      - UPDATING: Reservation update is in progress.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -6634,7 +7402,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearStatus() {
       status_ = getDefaultInstance().getStatus();
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       onChanged();
       return this;
     }
@@ -6643,7 +7411,15 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress.
+     * [Output Only] The status of the reservation.
+     *
+     *
+     *      - CREATING: Reservation resources are being
+     *        allocated.
+     *      - READY: Reservation resources have been allocated,
+     *        and the reservation is ready for use.
+     *      - DELETING: Reservation deletion is in progress.
+     *      - UPDATING: Reservation update is in progress.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -6658,7 +7434,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       status_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -6669,7 +7445,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Zone in which the reservation resides. A zone must be provided if the reservation is created within a commitment.
+     * Zone in which the reservation resides. A zone must be provided if the
+     * reservation is created within a commitment.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -6677,14 +7454,15 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the zone field is set.
      */
     public boolean hasZone() {
-      return ((bitField0_ & 0x00800000) != 0);
+      return ((bitField0_ & 0x01000000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Zone in which the reservation resides. A zone must be provided if the reservation is created within a commitment.
+     * Zone in which the reservation resides. A zone must be provided if the
+     * reservation is created within a commitment.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -6707,7 +7485,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Zone in which the reservation resides. A zone must be provided if the reservation is created within a commitment.
+     * Zone in which the reservation resides. A zone must be provided if the
+     * reservation is created within a commitment.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -6730,7 +7509,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Zone in which the reservation resides. A zone must be provided if the reservation is created within a commitment.
+     * Zone in which the reservation resides. A zone must be provided if the
+     * reservation is created within a commitment.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -6743,7 +7523,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       zone_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -6752,7 +7532,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Zone in which the reservation resides. A zone must be provided if the reservation is created within a commitment.
+     * Zone in which the reservation resides. A zone must be provided if the
+     * reservation is created within a commitment.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -6761,7 +7542,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearZone() {
       zone_ = getDefaultInstance().getZone();
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       onChanged();
       return this;
     }
@@ -6770,7 +7551,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Zone in which the reservation resides. A zone must be provided if the reservation is created within a commitment.
+     * Zone in which the reservation resides. A zone must be provided if the
+     * reservation is created within a commitment.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -6784,7 +7566,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       zone_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }

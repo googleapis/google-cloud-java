@@ -23,7 +23,7 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * The speech generation config.
+ * Configuration for speech generation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.SpeechConfig}
@@ -39,7 +39,9 @@ public final class SpeechConfig extends com.google.protobuf.GeneratedMessageV3
     super(builder);
   }
 
-  private SpeechConfig() {}
+  private SpeechConfig() {
+    languageCode_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -70,7 +72,7 @@ public final class SpeechConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The configuration for the speaker to use.
+   * The configuration for the voice to use.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.VoiceConfig voice_config = 1;</code>
@@ -86,7 +88,7 @@ public final class SpeechConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The configuration for the speaker to use.
+   * The configuration for the voice to use.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.VoiceConfig voice_config = 1;</code>
@@ -104,7 +106,7 @@ public final class SpeechConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The configuration for the speaker to use.
+   * The configuration for the voice to use.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.VoiceConfig voice_config = 1;</code>
@@ -114,6 +116,119 @@ public final class SpeechConfig extends com.google.protobuf.GeneratedMessageV3
     return voiceConfig_ == null
         ? com.google.cloud.aiplatform.v1beta1.VoiceConfig.getDefaultInstance()
         : voiceConfig_;
+  }
+
+  public static final int LANGUAGE_CODE_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The language code (ISO 639-1) for the speech synthesis.
+   * </pre>
+   *
+   * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The languageCode.
+   */
+  @java.lang.Override
+  public java.lang.String getLanguageCode() {
+    java.lang.Object ref = languageCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      languageCode_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The language code (ISO 639-1) for the speech synthesis.
+   * </pre>
+   *
+   * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for languageCode.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getLanguageCodeBytes() {
+    java.lang.Object ref = languageCode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      languageCode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MULTI_SPEAKER_VOICE_CONFIG_FIELD_NUMBER = 3;
+  private com.google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig multiSpeakerVoiceConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for a multi-speaker text-to-speech request.
+   * This field is mutually exclusive with `voice_config`.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig multi_speaker_voice_config = 3;
+   * </code>
+   *
+   * @return Whether the multiSpeakerVoiceConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasMultiSpeakerVoiceConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for a multi-speaker text-to-speech request.
+   * This field is mutually exclusive with `voice_config`.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig multi_speaker_voice_config = 3;
+   * </code>
+   *
+   * @return The multiSpeakerVoiceConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig getMultiSpeakerVoiceConfig() {
+    return multiSpeakerVoiceConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig.getDefaultInstance()
+        : multiSpeakerVoiceConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for a multi-speaker text-to-speech request.
+   * This field is mutually exclusive with `voice_config`.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig multi_speaker_voice_config = 3;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfigOrBuilder
+      getMultiSpeakerVoiceConfigOrBuilder() {
+    return multiSpeakerVoiceConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig.getDefaultInstance()
+        : multiSpeakerVoiceConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -133,6 +248,12 @@ public final class SpeechConfig extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getVoiceConfig());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, languageCode_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(3, getMultiSpeakerVoiceConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -144,6 +265,13 @@ public final class SpeechConfig extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getVoiceConfig());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, languageCode_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(3, getMultiSpeakerVoiceConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -165,6 +293,11 @@ public final class SpeechConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasVoiceConfig()) {
       if (!getVoiceConfig().equals(other.getVoiceConfig())) return false;
     }
+    if (!getLanguageCode().equals(other.getLanguageCode())) return false;
+    if (hasMultiSpeakerVoiceConfig() != other.hasMultiSpeakerVoiceConfig()) return false;
+    if (hasMultiSpeakerVoiceConfig()) {
+      if (!getMultiSpeakerVoiceConfig().equals(other.getMultiSpeakerVoiceConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -179,6 +312,12 @@ public final class SpeechConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasVoiceConfig()) {
       hash = (37 * hash) + VOICE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getVoiceConfig().hashCode();
+    }
+    hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getLanguageCode().hashCode();
+    if (hasMultiSpeakerVoiceConfig()) {
+      hash = (37 * hash) + MULTI_SPEAKER_VOICE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getMultiSpeakerVoiceConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -285,7 +424,7 @@ public final class SpeechConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The speech generation config.
+   * Configuration for speech generation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.SpeechConfig}
@@ -322,6 +461,7 @@ public final class SpeechConfig extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getVoiceConfigFieldBuilder();
+        getMultiSpeakerVoiceConfigFieldBuilder();
       }
     }
 
@@ -333,6 +473,12 @@ public final class SpeechConfig extends com.google.protobuf.GeneratedMessageV3
       if (voiceConfigBuilder_ != null) {
         voiceConfigBuilder_.dispose();
         voiceConfigBuilder_ = null;
+      }
+      languageCode_ = "";
+      multiSpeakerVoiceConfig_ = null;
+      if (multiSpeakerVoiceConfigBuilder_ != null) {
+        multiSpeakerVoiceConfigBuilder_.dispose();
+        multiSpeakerVoiceConfigBuilder_ = null;
       }
       return this;
     }
@@ -375,6 +521,16 @@ public final class SpeechConfig extends com.google.protobuf.GeneratedMessageV3
         result.voiceConfig_ =
             voiceConfigBuilder_ == null ? voiceConfig_ : voiceConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.multiSpeakerVoiceConfig_ =
+            multiSpeakerVoiceConfigBuilder_ == null
+                ? multiSpeakerVoiceConfig_
+                : multiSpeakerVoiceConfigBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -428,6 +584,14 @@ public final class SpeechConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.hasVoiceConfig()) {
         mergeVoiceConfig(other.getVoiceConfig());
       }
+      if (!other.getLanguageCode().isEmpty()) {
+        languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (other.hasMultiSpeakerVoiceConfig()) {
+        mergeMultiSpeakerVoiceConfig(other.getMultiSpeakerVoiceConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -460,6 +624,19 @@ public final class SpeechConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                languageCode_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getMultiSpeakerVoiceConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -490,7 +667,7 @@ public final class SpeechConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration for the speaker to use.
+     * The configuration for the voice to use.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.VoiceConfig voice_config = 1;</code>
@@ -505,7 +682,7 @@ public final class SpeechConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration for the speaker to use.
+     * The configuration for the voice to use.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.VoiceConfig voice_config = 1;</code>
@@ -526,7 +703,7 @@ public final class SpeechConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration for the speaker to use.
+     * The configuration for the voice to use.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.VoiceConfig voice_config = 1;</code>
@@ -549,7 +726,7 @@ public final class SpeechConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration for the speaker to use.
+     * The configuration for the voice to use.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.VoiceConfig voice_config = 1;</code>
@@ -570,7 +747,7 @@ public final class SpeechConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration for the speaker to use.
+     * The configuration for the voice to use.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.VoiceConfig voice_config = 1;</code>
@@ -599,7 +776,7 @@ public final class SpeechConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration for the speaker to use.
+     * The configuration for the voice to use.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.VoiceConfig voice_config = 1;</code>
@@ -619,7 +796,7 @@ public final class SpeechConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration for the speaker to use.
+     * The configuration for the voice to use.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.VoiceConfig voice_config = 1;</code>
@@ -634,7 +811,7 @@ public final class SpeechConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration for the speaker to use.
+     * The configuration for the voice to use.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.VoiceConfig voice_config = 1;</code>
@@ -653,7 +830,7 @@ public final class SpeechConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration for the speaker to use.
+     * The configuration for the voice to use.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.VoiceConfig voice_config = 1;</code>
@@ -673,6 +850,346 @@ public final class SpeechConfig extends com.google.protobuf.GeneratedMessageV3
         voiceConfig_ = null;
       }
       return voiceConfigBuilder_;
+    }
+
+    private java.lang.Object languageCode_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The language code (ISO 639-1) for the speech synthesis.
+     * </pre>
+     *
+     * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The languageCode.
+     */
+    public java.lang.String getLanguageCode() {
+      java.lang.Object ref = languageCode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        languageCode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The language code (ISO 639-1) for the speech synthesis.
+     * </pre>
+     *
+     * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for languageCode.
+     */
+    public com.google.protobuf.ByteString getLanguageCodeBytes() {
+      java.lang.Object ref = languageCode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        languageCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The language code (ISO 639-1) for the speech synthesis.
+     * </pre>
+     *
+     * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The languageCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguageCode(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      languageCode_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The language code (ISO 639-1) for the speech synthesis.
+     * </pre>
+     *
+     * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLanguageCode() {
+      languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The language code (ISO 639-1) for the speech synthesis.
+     * </pre>
+     *
+     * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for languageCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      languageCode_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig multiSpeakerVoiceConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig,
+            com.google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfigOrBuilder>
+        multiSpeakerVoiceConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for a multi-speaker text-to-speech request.
+     * This field is mutually exclusive with `voice_config`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig multi_speaker_voice_config = 3;
+     * </code>
+     *
+     * @return Whether the multiSpeakerVoiceConfig field is set.
+     */
+    public boolean hasMultiSpeakerVoiceConfig() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for a multi-speaker text-to-speech request.
+     * This field is mutually exclusive with `voice_config`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig multi_speaker_voice_config = 3;
+     * </code>
+     *
+     * @return The multiSpeakerVoiceConfig.
+     */
+    public com.google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig
+        getMultiSpeakerVoiceConfig() {
+      if (multiSpeakerVoiceConfigBuilder_ == null) {
+        return multiSpeakerVoiceConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig.getDefaultInstance()
+            : multiSpeakerVoiceConfig_;
+      } else {
+        return multiSpeakerVoiceConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for a multi-speaker text-to-speech request.
+     * This field is mutually exclusive with `voice_config`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig multi_speaker_voice_config = 3;
+     * </code>
+     */
+    public Builder setMultiSpeakerVoiceConfig(
+        com.google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig value) {
+      if (multiSpeakerVoiceConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        multiSpeakerVoiceConfig_ = value;
+      } else {
+        multiSpeakerVoiceConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for a multi-speaker text-to-speech request.
+     * This field is mutually exclusive with `voice_config`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig multi_speaker_voice_config = 3;
+     * </code>
+     */
+    public Builder setMultiSpeakerVoiceConfig(
+        com.google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig.Builder builderForValue) {
+      if (multiSpeakerVoiceConfigBuilder_ == null) {
+        multiSpeakerVoiceConfig_ = builderForValue.build();
+      } else {
+        multiSpeakerVoiceConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for a multi-speaker text-to-speech request.
+     * This field is mutually exclusive with `voice_config`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig multi_speaker_voice_config = 3;
+     * </code>
+     */
+    public Builder mergeMultiSpeakerVoiceConfig(
+        com.google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig value) {
+      if (multiSpeakerVoiceConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && multiSpeakerVoiceConfig_ != null
+            && multiSpeakerVoiceConfig_
+                != com.google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig
+                    .getDefaultInstance()) {
+          getMultiSpeakerVoiceConfigBuilder().mergeFrom(value);
+        } else {
+          multiSpeakerVoiceConfig_ = value;
+        }
+      } else {
+        multiSpeakerVoiceConfigBuilder_.mergeFrom(value);
+      }
+      if (multiSpeakerVoiceConfig_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for a multi-speaker text-to-speech request.
+     * This field is mutually exclusive with `voice_config`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig multi_speaker_voice_config = 3;
+     * </code>
+     */
+    public Builder clearMultiSpeakerVoiceConfig() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      multiSpeakerVoiceConfig_ = null;
+      if (multiSpeakerVoiceConfigBuilder_ != null) {
+        multiSpeakerVoiceConfigBuilder_.dispose();
+        multiSpeakerVoiceConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for a multi-speaker text-to-speech request.
+     * This field is mutually exclusive with `voice_config`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig multi_speaker_voice_config = 3;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig.Builder
+        getMultiSpeakerVoiceConfigBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getMultiSpeakerVoiceConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for a multi-speaker text-to-speech request.
+     * This field is mutually exclusive with `voice_config`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig multi_speaker_voice_config = 3;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfigOrBuilder
+        getMultiSpeakerVoiceConfigOrBuilder() {
+      if (multiSpeakerVoiceConfigBuilder_ != null) {
+        return multiSpeakerVoiceConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return multiSpeakerVoiceConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig.getDefaultInstance()
+            : multiSpeakerVoiceConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for a multi-speaker text-to-speech request.
+     * This field is mutually exclusive with `voice_config`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig multi_speaker_voice_config = 3;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig,
+            com.google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfigOrBuilder>
+        getMultiSpeakerVoiceConfigFieldBuilder() {
+      if (multiSpeakerVoiceConfigBuilder_ == null) {
+        multiSpeakerVoiceConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig,
+                com.google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.MultiSpeakerVoiceConfigOrBuilder>(
+                getMultiSpeakerVoiceConfig(), getParentForChildren(), isClean());
+        multiSpeakerVoiceConfig_ = null;
+      }
+      return multiSpeakerVoiceConfigBuilder_;
     }
 
     @java.lang.Override

@@ -70,7 +70,8 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -83,7 +84,8 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -96,7 +98,8 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -109,7 +112,8 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -122,7 +126,8 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -135,7 +140,8 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -187,7 +193,14 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
+   * Fingerprint of this resource. A hash of the contents stored in this object.
+   * This field is used in optimistic locking. This field will be ignored when
+   * inserting a new PublicAdvertisedPrefix. An up-to-date
+   * fingerprint must be provided in order to update thePublicAdvertisedPrefix, otherwise the request will fail with
+   * error 412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve a PublicAdvertisedPrefix.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -200,7 +213,14 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
+   * Fingerprint of this resource. A hash of the contents stored in this object.
+   * This field is used in optimistic locking. This field will be ignored when
+   * inserting a new PublicAdvertisedPrefix. An up-to-date
+   * fingerprint must be provided in order to update thePublicAdvertisedPrefix, otherwise the request will fail with
+   * error 412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve a PublicAdvertisedPrefix.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -213,7 +233,14 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
+   * Fingerprint of this resource. A hash of the contents stored in this object.
+   * This field is used in optimistic locking. This field will be ignored when
+   * inserting a new PublicAdvertisedPrefix. An up-to-date
+   * fingerprint must be provided in order to update thePublicAdvertisedPrefix, otherwise the request will fail with
+   * error 412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve a PublicAdvertisedPrefix.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -226,7 +253,8 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource type. The server generates this identifier.
+   * [Output Only] The unique identifier for the resource type. The server
+   * generates this identifier.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -239,7 +267,8 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource type. The server generates this identifier.
+   * [Output Only] The unique identifier for the resource type. The server
+   * generates this identifier.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -252,7 +281,8 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * The address range, in CIDR format, represented by this public advertised prefix.
+   * The address range, in CIDR format, represented by this public advertised
+   * prefix.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -265,7 +295,8 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * The address range, in CIDR format, represented by this public advertised prefix.
+   * The address range, in CIDR format, represented by this public advertised
+   * prefix.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -278,7 +309,8 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * The address range, in CIDR format, represented by this public advertised prefix.
+   * The address range, in CIDR format, represented by this public advertised
+   * prefix.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -291,7 +323,49 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#publicAdvertisedPrefix for public advertised prefixes.
+   * The internet access type for IPv6 Public Advertised Prefixes.
+   * Check the Ipv6AccessType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_access_type = 504658653;</code>
+   *
+   * @return Whether the ipv6AccessType field is set.
+   */
+  boolean hasIpv6AccessType();
+
+  /**
+   *
+   *
+   * <pre>
+   * The internet access type for IPv6 Public Advertised Prefixes.
+   * Check the Ipv6AccessType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_access_type = 504658653;</code>
+   *
+   * @return The ipv6AccessType.
+   */
+  java.lang.String getIpv6AccessType();
+
+  /**
+   *
+   *
+   * <pre>
+   * The internet access type for IPv6 Public Advertised Prefixes.
+   * Check the Ipv6AccessType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_access_type = 504658653;</code>
+   *
+   * @return The bytes for ipv6AccessType.
+   */
+  com.google.protobuf.ByteString getIpv6AccessTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -304,7 +378,7 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#publicAdvertisedPrefix for public advertised prefixes.
+   * [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -317,7 +391,7 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#publicAdvertisedPrefix for public advertised prefixes.
+   * [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -330,7 +404,13 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -343,7 +423,13 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -356,7 +442,13 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -369,7 +461,17 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * Specifies how child public delegated prefix will be scoped. It could be one of following values: - `REGIONAL`: The public delegated prefix is regional only. The provisioning will take a few minutes. - `GLOBAL`: The public delegated prefix is global only. The provisioning will take ~4 weeks. - `GLOBAL_AND_REGIONAL` [output only]: The public delegated prefixes is BYOIP V1 legacy prefix. This is output only value and no longer supported in BYOIP V2.
+   * Specifies how child public delegated prefix will be scoped. It could
+   * be one of following values:
+   *
+   *
+   *      - `REGIONAL`: The public delegated prefix is regional only. The
+   *      provisioning will take a few minutes.
+   *      - `GLOBAL`: The public delegated prefix is global only. The
+   *      provisioning will take ~4 weeks.
+   *      - `GLOBAL_AND_REGIONAL` [output only]: The public delegated prefixes is
+   *       BYOIP V1 legacy prefix. This is output only value and no longer
+   *       supported in BYOIP V2.
    * Check the PdpScope enum for the list of possible values.
    * </pre>
    *
@@ -383,7 +485,17 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * Specifies how child public delegated prefix will be scoped. It could be one of following values: - `REGIONAL`: The public delegated prefix is regional only. The provisioning will take a few minutes. - `GLOBAL`: The public delegated prefix is global only. The provisioning will take ~4 weeks. - `GLOBAL_AND_REGIONAL` [output only]: The public delegated prefixes is BYOIP V1 legacy prefix. This is output only value and no longer supported in BYOIP V2.
+   * Specifies how child public delegated prefix will be scoped. It could
+   * be one of following values:
+   *
+   *
+   *      - `REGIONAL`: The public delegated prefix is regional only. The
+   *      provisioning will take a few minutes.
+   *      - `GLOBAL`: The public delegated prefix is global only. The
+   *      provisioning will take ~4 weeks.
+   *      - `GLOBAL_AND_REGIONAL` [output only]: The public delegated prefixes is
+   *       BYOIP V1 legacy prefix. This is output only value and no longer
+   *       supported in BYOIP V2.
    * Check the PdpScope enum for the list of possible values.
    * </pre>
    *
@@ -397,7 +509,17 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * Specifies how child public delegated prefix will be scoped. It could be one of following values: - `REGIONAL`: The public delegated prefix is regional only. The provisioning will take a few minutes. - `GLOBAL`: The public delegated prefix is global only. The provisioning will take ~4 weeks. - `GLOBAL_AND_REGIONAL` [output only]: The public delegated prefixes is BYOIP V1 legacy prefix. This is output only value and no longer supported in BYOIP V2.
+   * Specifies how child public delegated prefix will be scoped. It could
+   * be one of following values:
+   *
+   *
+   *      - `REGIONAL`: The public delegated prefix is regional only. The
+   *      provisioning will take a few minutes.
+   *      - `GLOBAL`: The public delegated prefix is global only. The
+   *      provisioning will take ~4 weeks.
+   *      - `GLOBAL_AND_REGIONAL` [output only]: The public delegated prefixes is
+   *       BYOIP V1 legacy prefix. This is output only value and no longer
+   *       supported in BYOIP V2.
    * Check the PdpScope enum for the list of possible values.
    * </pre>
    *
@@ -411,7 +533,8 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The list of public delegated prefixes that exist for this public advertised prefix.
+   * [Output Only] The list of public delegated prefixes that exist for this
+   * public advertised prefix.
    * </pre>
    *
    * <code>
@@ -425,7 +548,8 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The list of public delegated prefixes that exist for this public advertised prefix.
+   * [Output Only] The list of public delegated prefixes that exist for this
+   * public advertised prefix.
    * </pre>
    *
    * <code>
@@ -439,7 +563,8 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The list of public delegated prefixes that exist for this public advertised prefix.
+   * [Output Only] The list of public delegated prefixes that exist for this
+   * public advertised prefix.
    * </pre>
    *
    * <code>
@@ -452,7 +577,8 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The list of public delegated prefixes that exist for this public advertised prefix.
+   * [Output Only] The list of public delegated prefixes that exist for this
+   * public advertised prefix.
    * </pre>
    *
    * <code>
@@ -468,7 +594,8 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The list of public delegated prefixes that exist for this public advertised prefix.
+   * [Output Only] The list of public delegated prefixes that exist for this
+   * public advertised prefix.
    * </pre>
    *
    * <code>
@@ -560,7 +687,17 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * The status of the public advertised prefix. Possible values include: - `INITIAL`: RPKI validation is complete. - `PTR_CONFIGURED`: User has configured the PTR. - `VALIDATED`: Reverse DNS lookup is successful. - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed. - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being configured. - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured. - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
+   * The status of the public advertised prefix. Possible values include:
+   *
+   *
+   *      - `INITIAL`: RPKI validation is complete.
+   *      - `PTR_CONFIGURED`: User has configured the PTR.
+   *      - `VALIDATED`: Reverse DNS lookup is successful.
+   *      - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed.
+   *      - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being
+   *      configured.
+   *      - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured.
+   *      - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -574,7 +711,17 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * The status of the public advertised prefix. Possible values include: - `INITIAL`: RPKI validation is complete. - `PTR_CONFIGURED`: User has configured the PTR. - `VALIDATED`: Reverse DNS lookup is successful. - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed. - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being configured. - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured. - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
+   * The status of the public advertised prefix. Possible values include:
+   *
+   *
+   *      - `INITIAL`: RPKI validation is complete.
+   *      - `PTR_CONFIGURED`: User has configured the PTR.
+   *      - `VALIDATED`: Reverse DNS lookup is successful.
+   *      - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed.
+   *      - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being
+   *      configured.
+   *      - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured.
+   *      - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -588,7 +735,17 @@ public interface PublicAdvertisedPrefixOrBuilder
    *
    *
    * <pre>
-   * The status of the public advertised prefix. Possible values include: - `INITIAL`: RPKI validation is complete. - `PTR_CONFIGURED`: User has configured the PTR. - `VALIDATED`: Reverse DNS lookup is successful. - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed. - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being configured. - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured. - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
+   * The status of the public advertised prefix. Possible values include:
+   *
+   *
+   *      - `INITIAL`: RPKI validation is complete.
+   *      - `PTR_CONFIGURED`: User has configured the PTR.
+   *      - `VALIDATED`: Reverse DNS lookup is successful.
+   *      - `REVERSE_DNS_LOOKUP_FAILED`: Reverse DNS lookup failed.
+   *      - `PREFIX_CONFIGURATION_IN_PROGRESS`: The prefix is being
+   *      configured.
+   *      - `PREFIX_CONFIGURATION_COMPLETE`: The prefix is fully configured.
+   *      - `PREFIX_REMOVAL_IN_PROGRESS`: The prefix is being removed.
    * Check the Status enum for the list of possible values.
    * </pre>
    *

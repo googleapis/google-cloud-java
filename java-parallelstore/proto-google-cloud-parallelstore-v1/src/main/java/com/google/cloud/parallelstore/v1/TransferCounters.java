@@ -189,7 +189,7 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Objects that are failed to write to the data destination.
+   * Objects that failed to be written to the data destination.
    * </pre>
    *
    * <code>int64 objects_failed = 7;</code>
@@ -208,7 +208,7 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Bytes that are failed to write to the data destination.
+   * Bytes that failed to be written to the data destination.
    * </pre>
    *
    * <code>int64 bytes_failed = 8;</code>
@@ -1075,7 +1075,7 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Objects that are failed to write to the data destination.
+     * Objects that failed to be written to the data destination.
      * </pre>
      *
      * <code>int64 objects_failed = 7;</code>
@@ -1091,7 +1091,7 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Objects that are failed to write to the data destination.
+     * Objects that failed to be written to the data destination.
      * </pre>
      *
      * <code>int64 objects_failed = 7;</code>
@@ -1111,7 +1111,7 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Objects that are failed to write to the data destination.
+     * Objects that failed to be written to the data destination.
      * </pre>
      *
      * <code>int64 objects_failed = 7;</code>
@@ -1131,7 +1131,7 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Bytes that are failed to write to the data destination.
+     * Bytes that failed to be written to the data destination.
      * </pre>
      *
      * <code>int64 bytes_failed = 8;</code>
@@ -1147,7 +1147,7 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Bytes that are failed to write to the data destination.
+     * Bytes that failed to be written to the data destination.
      * </pre>
      *
      * <code>int64 bytes_failed = 8;</code>
@@ -1167,7 +1167,7 @@ public final class TransferCounters extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Bytes that are failed to write to the data destination.
+     * Bytes that failed to be written to the data destination.
      * </pre>
      *
      * <code>int64 bytes_failed = 8;</code>

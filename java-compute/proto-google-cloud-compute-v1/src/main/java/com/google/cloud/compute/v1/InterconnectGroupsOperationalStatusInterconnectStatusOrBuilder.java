@@ -54,7 +54,8 @@ public interface InterconnectGroupsOperationalStatusInterconnectStatusOrBuilder
    *
    *
    * <pre>
-   * The diagnostics of the Interconnect, as returned by the existing get-diagnostics method.
+   * The diagnostics of the Interconnect, as returned by the existing
+   * get-diagnostics method.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InterconnectDiagnostics diagnostics = 333355436;</code>
@@ -67,7 +68,8 @@ public interface InterconnectGroupsOperationalStatusInterconnectStatusOrBuilder
    *
    *
    * <pre>
-   * The diagnostics of the Interconnect, as returned by the existing get-diagnostics method.
+   * The diagnostics of the Interconnect, as returned by the existing
+   * get-diagnostics method.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InterconnectDiagnostics diagnostics = 333355436;</code>
@@ -80,7 +82,8 @@ public interface InterconnectGroupsOperationalStatusInterconnectStatusOrBuilder
    *
    *
    * <pre>
-   * The diagnostics of the Interconnect, as returned by the existing get-diagnostics method.
+   * The diagnostics of the Interconnect, as returned by the existing
+   * get-diagnostics method.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InterconnectDiagnostics diagnostics = 333355436;</code>
@@ -130,7 +133,8 @@ public interface InterconnectGroupsOperationalStatusInterconnectStatusOrBuilder
    *
    *
    * <pre>
-   * Whether this interconnect is participating in the redundant configuration.
+   * Whether this interconnect is participating in the redundant
+   * configuration.
    * Check the IsActive enum for the list of possible values.
    * </pre>
    *
@@ -144,7 +148,8 @@ public interface InterconnectGroupsOperationalStatusInterconnectStatusOrBuilder
    *
    *
    * <pre>
-   * Whether this interconnect is participating in the redundant configuration.
+   * Whether this interconnect is participating in the redundant
+   * configuration.
    * Check the IsActive enum for the list of possible values.
    * </pre>
    *
@@ -158,7 +163,8 @@ public interface InterconnectGroupsOperationalStatusInterconnectStatusOrBuilder
    *
    *
    * <pre>
-   * Whether this interconnect is participating in the redundant configuration.
+   * Whether this interconnect is participating in the redundant
+   * configuration.
    * Check the IsActive enum for the list of possible values.
    * </pre>
    *

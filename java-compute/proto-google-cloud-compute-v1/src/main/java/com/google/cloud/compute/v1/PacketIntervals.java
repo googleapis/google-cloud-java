@@ -246,7 +246,8 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Only applies to Echo packets. This shows the intervals between sending and receiving the same packet.
+     * Only applies to Echo packets. This shows the intervals between sending
+     * and receiving the same packet.
      * </pre>
      *
      * <code>LOOPBACK = 356174219;</code>
@@ -292,7 +293,8 @@ public final class PacketIntervals extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Only applies to Echo packets. This shows the intervals between sending and receiving the same packet.
+     * Only applies to Echo packets. This shows the intervals between sending
+     * and receiving the same packet.
      * </pre>
      *
      * <code>LOOPBACK = 356174219;</code>

@@ -134,7 +134,9 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Details of the instance action that triggered this error. May be null, if the error was not caused by an action on an instance. This field is optional.
+   * [Output Only] Details of the instance action that triggered this error.
+   * May be null, if the error was not caused by an action on an instance.
+   * This field is optional.
    * </pre>
    *
    * <code>
@@ -152,7 +154,9 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Details of the instance action that triggered this error. May be null, if the error was not caused by an action on an instance. This field is optional.
+   * [Output Only] Details of the instance action that triggered this error.
+   * May be null, if the error was not caused by an action on an instance.
+   * This field is optional.
    * </pre>
    *
    * <code>
@@ -174,7 +178,9 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Details of the instance action that triggered this error. May be null, if the error was not caused by an action on an instance. This field is optional.
+   * [Output Only] Details of the instance action that triggered this error.
+   * May be null, if the error was not caused by an action on an instance.
+   * This field is optional.
    * </pre>
    *
    * <code>
@@ -199,7 +205,8 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] The time that this error occurred. This value is in RFC3339 text format.
+   * [Output Only] The time that this error occurred.
+   * This value is in RFC3339 text format.
    * </pre>
    *
    * <code>optional string timestamp = 55126294;</code>
@@ -215,7 +222,8 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] The time that this error occurred. This value is in RFC3339 text format.
+   * [Output Only] The time that this error occurred.
+   * This value is in RFC3339 text format.
    * </pre>
    *
    * <code>optional string timestamp = 55126294;</code>
@@ -239,7 +247,8 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] The time that this error occurred. This value is in RFC3339 text format.
+   * [Output Only] The time that this error occurred.
+   * This value is in RFC3339 text format.
    * </pre>
    *
    * <code>optional string timestamp = 55126294;</code>
@@ -924,7 +933,9 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Details of the instance action that triggered this error. May be null, if the error was not caused by an action on an instance. This field is optional.
+     * [Output Only] Details of the instance action that triggered this error.
+     * May be null, if the error was not caused by an action on an instance.
+     * This field is optional.
      * </pre>
      *
      * <code>
@@ -941,7 +952,9 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Details of the instance action that triggered this error. May be null, if the error was not caused by an action on an instance. This field is optional.
+     * [Output Only] Details of the instance action that triggered this error.
+     * May be null, if the error was not caused by an action on an instance.
+     * This field is optional.
      * </pre>
      *
      * <code>
@@ -966,7 +979,9 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Details of the instance action that triggered this error. May be null, if the error was not caused by an action on an instance. This field is optional.
+     * [Output Only] Details of the instance action that triggered this error.
+     * May be null, if the error was not caused by an action on an instance.
+     * This field is optional.
      * </pre>
      *
      * <code>
@@ -992,7 +1007,9 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Details of the instance action that triggered this error. May be null, if the error was not caused by an action on an instance. This field is optional.
+     * [Output Only] Details of the instance action that triggered this error.
+     * May be null, if the error was not caused by an action on an instance.
+     * This field is optional.
      * </pre>
      *
      * <code>
@@ -1016,7 +1033,9 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Details of the instance action that triggered this error. May be null, if the error was not caused by an action on an instance. This field is optional.
+     * [Output Only] Details of the instance action that triggered this error.
+     * May be null, if the error was not caused by an action on an instance.
+     * This field is optional.
      * </pre>
      *
      * <code>
@@ -1049,7 +1068,9 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Details of the instance action that triggered this error. May be null, if the error was not caused by an action on an instance. This field is optional.
+     * [Output Only] Details of the instance action that triggered this error.
+     * May be null, if the error was not caused by an action on an instance.
+     * This field is optional.
      * </pre>
      *
      * <code>
@@ -1071,7 +1092,9 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Details of the instance action that triggered this error. May be null, if the error was not caused by an action on an instance. This field is optional.
+     * [Output Only] Details of the instance action that triggered this error.
+     * May be null, if the error was not caused by an action on an instance.
+     * This field is optional.
      * </pre>
      *
      * <code>
@@ -1089,7 +1112,9 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Details of the instance action that triggered this error. May be null, if the error was not caused by an action on an instance. This field is optional.
+     * [Output Only] Details of the instance action that triggered this error.
+     * May be null, if the error was not caused by an action on an instance.
+     * This field is optional.
      * </pre>
      *
      * <code>
@@ -1112,7 +1137,9 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Details of the instance action that triggered this error. May be null, if the error was not caused by an action on an instance. This field is optional.
+     * [Output Only] Details of the instance action that triggered this error.
+     * May be null, if the error was not caused by an action on an instance.
+     * This field is optional.
      * </pre>
      *
      * <code>
@@ -1143,7 +1170,8 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] The time that this error occurred. This value is in RFC3339 text format.
+     * [Output Only] The time that this error occurred.
+     * This value is in RFC3339 text format.
      * </pre>
      *
      * <code>optional string timestamp = 55126294;</code>
@@ -1158,7 +1186,8 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] The time that this error occurred. This value is in RFC3339 text format.
+     * [Output Only] The time that this error occurred.
+     * This value is in RFC3339 text format.
      * </pre>
      *
      * <code>optional string timestamp = 55126294;</code>
@@ -1181,7 +1210,8 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] The time that this error occurred. This value is in RFC3339 text format.
+     * [Output Only] The time that this error occurred.
+     * This value is in RFC3339 text format.
      * </pre>
      *
      * <code>optional string timestamp = 55126294;</code>
@@ -1204,7 +1234,8 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] The time that this error occurred. This value is in RFC3339 text format.
+     * [Output Only] The time that this error occurred.
+     * This value is in RFC3339 text format.
      * </pre>
      *
      * <code>optional string timestamp = 55126294;</code>
@@ -1226,7 +1257,8 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] The time that this error occurred. This value is in RFC3339 text format.
+     * [Output Only] The time that this error occurred.
+     * This value is in RFC3339 text format.
      * </pre>
      *
      * <code>optional string timestamp = 55126294;</code>
@@ -1244,7 +1276,8 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] The time that this error occurred. This value is in RFC3339 text format.
+     * [Output Only] The time that this error occurred.
+     * This value is in RFC3339 text format.
      * </pre>
      *
      * <code>optional string timestamp = 55126294;</code>

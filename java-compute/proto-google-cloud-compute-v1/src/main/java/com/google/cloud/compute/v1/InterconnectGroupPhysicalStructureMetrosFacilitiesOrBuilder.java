@@ -28,7 +28,9 @@ public interface InterconnectGroupPhysicalStructureMetrosFacilitiesOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The ID of this facility, as a numeric string like "5467". This is the third component of the location of Interconnects in this facility.
+   * [Output Only] The ID of this facility, as a numeric string like
+   * "5467". This is the third component of the location of Interconnects
+   * in this facility.
    * </pre>
    *
    * <code>optional string facility = 501116579;</code>
@@ -41,7 +43,9 @@ public interface InterconnectGroupPhysicalStructureMetrosFacilitiesOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The ID of this facility, as a numeric string like "5467". This is the third component of the location of Interconnects in this facility.
+   * [Output Only] The ID of this facility, as a numeric string like
+   * "5467". This is the third component of the location of Interconnects
+   * in this facility.
    * </pre>
    *
    * <code>optional string facility = 501116579;</code>
@@ -54,7 +58,9 @@ public interface InterconnectGroupPhysicalStructureMetrosFacilitiesOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The ID of this facility, as a numeric string like "5467". This is the third component of the location of Interconnects in this facility.
+   * [Output Only] The ID of this facility, as a numeric string like
+   * "5467". This is the third component of the location of Interconnects
+   * in this facility.
    * </pre>
    *
    * <code>optional string facility = 501116579;</code>

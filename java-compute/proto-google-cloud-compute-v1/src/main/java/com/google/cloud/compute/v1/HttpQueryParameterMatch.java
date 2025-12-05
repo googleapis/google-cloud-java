@@ -76,7 +76,10 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The queryParameterMatch matches if the value of the parameter exactly matches the contents of exactMatch. Only one of presentMatch, exactMatch, or regexMatch must be set.
+   * The queryParameterMatch matches if the value of the
+   * parameter exactly matches the contents of exactMatch.
+   *
+   * Only one of presentMatch, exactMatch, orregexMatch must be set.
    * </pre>
    *
    * <code>optional string exact_match = 457641093;</code>
@@ -92,7 +95,10 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The queryParameterMatch matches if the value of the parameter exactly matches the contents of exactMatch. Only one of presentMatch, exactMatch, or regexMatch must be set.
+   * The queryParameterMatch matches if the value of the
+   * parameter exactly matches the contents of exactMatch.
+   *
+   * Only one of presentMatch, exactMatch, orregexMatch must be set.
    * </pre>
    *
    * <code>optional string exact_match = 457641093;</code>
@@ -116,7 +122,10 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The queryParameterMatch matches if the value of the parameter exactly matches the contents of exactMatch. Only one of presentMatch, exactMatch, or regexMatch must be set.
+   * The queryParameterMatch matches if the value of the
+   * parameter exactly matches the contents of exactMatch.
+   *
+   * Only one of presentMatch, exactMatch, orregexMatch must be set.
    * </pre>
    *
    * <code>optional string exact_match = 457641093;</code>
@@ -145,7 +154,8 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The name of the query parameter to match. The query parameter must exist in the request, in the absence of which the request match fails.
+   * The name of the query parameter to match. The query parameter must exist in
+   * the request, in the absence of which the request match fails.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -161,7 +171,8 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The name of the query parameter to match. The query parameter must exist in the request, in the absence of which the request match fails.
+   * The name of the query parameter to match. The query parameter must exist in
+   * the request, in the absence of which the request match fails.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -185,7 +196,8 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The name of the query parameter to match. The query parameter must exist in the request, in the absence of which the request match fails.
+   * The name of the query parameter to match. The query parameter must exist in
+   * the request, in the absence of which the request match fails.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -212,7 +224,11 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Specifies that the queryParameterMatch matches if the request contains the query parameter, irrespective of whether the parameter has a value or not. Only one of presentMatch, exactMatch, or regexMatch must be set.
+   * Specifies that the queryParameterMatch matches if the
+   * request contains the query parameter, irrespective of whether the
+   * parameter has a value or not.
+   *
+   * Only one of presentMatch, exactMatch, orregexMatch must be set.
    * </pre>
    *
    * <code>optional bool present_match = 67435841;</code>
@@ -228,7 +244,11 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Specifies that the queryParameterMatch matches if the request contains the query parameter, irrespective of whether the parameter has a value or not. Only one of presentMatch, exactMatch, or regexMatch must be set.
+   * Specifies that the queryParameterMatch matches if the
+   * request contains the query parameter, irrespective of whether the
+   * parameter has a value or not.
+   *
+   * Only one of presentMatch, exactMatch, orregexMatch must be set.
    * </pre>
    *
    * <code>optional bool present_match = 67435841;</code>
@@ -249,7 +269,14 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The queryParameterMatch matches if the value of the parameter matches the regular expression specified by regexMatch. For more information about regular expression syntax, see Syntax. Only one of presentMatch, exactMatch, or regexMatch must be set. Regular expressions can only be used when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
+   * The queryParameterMatch matches if the value of the
+   * parameter matches the regular expression specified byregexMatch. For
+   * more information about regular expression syntax, see Syntax.
+   *
+   * Only one of presentMatch, exactMatch, orregexMatch must be set.
+   *
+   * Regular expressions can only be used when the loadBalancingScheme is
+   * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED orINTERNAL_MANAGED.
    * </pre>
    *
    * <code>optional string regex_match = 107387853;</code>
@@ -265,7 +292,14 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The queryParameterMatch matches if the value of the parameter matches the regular expression specified by regexMatch. For more information about regular expression syntax, see Syntax. Only one of presentMatch, exactMatch, or regexMatch must be set. Regular expressions can only be used when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
+   * The queryParameterMatch matches if the value of the
+   * parameter matches the regular expression specified byregexMatch. For
+   * more information about regular expression syntax, see Syntax.
+   *
+   * Only one of presentMatch, exactMatch, orregexMatch must be set.
+   *
+   * Regular expressions can only be used when the loadBalancingScheme is
+   * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED orINTERNAL_MANAGED.
    * </pre>
    *
    * <code>optional string regex_match = 107387853;</code>
@@ -289,7 +323,14 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The queryParameterMatch matches if the value of the parameter matches the regular expression specified by regexMatch. For more information about regular expression syntax, see Syntax. Only one of presentMatch, exactMatch, or regexMatch must be set. Regular expressions can only be used when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
+   * The queryParameterMatch matches if the value of the
+   * parameter matches the regular expression specified byregexMatch. For
+   * more information about regular expression syntax, see Syntax.
+   *
+   * Only one of presentMatch, exactMatch, orregexMatch must be set.
+   *
+   * Regular expressions can only be used when the loadBalancingScheme is
+   * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED orINTERNAL_MANAGED.
    * </pre>
    *
    * <code>optional string regex_match = 107387853;</code>
@@ -754,7 +795,10 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The queryParameterMatch matches if the value of the parameter exactly matches the contents of exactMatch. Only one of presentMatch, exactMatch, or regexMatch must be set.
+     * The queryParameterMatch matches if the value of the
+     * parameter exactly matches the contents of exactMatch.
+     *
+     * Only one of presentMatch, exactMatch, orregexMatch must be set.
      * </pre>
      *
      * <code>optional string exact_match = 457641093;</code>
@@ -769,7 +813,10 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The queryParameterMatch matches if the value of the parameter exactly matches the contents of exactMatch. Only one of presentMatch, exactMatch, or regexMatch must be set.
+     * The queryParameterMatch matches if the value of the
+     * parameter exactly matches the contents of exactMatch.
+     *
+     * Only one of presentMatch, exactMatch, orregexMatch must be set.
      * </pre>
      *
      * <code>optional string exact_match = 457641093;</code>
@@ -792,7 +839,10 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The queryParameterMatch matches if the value of the parameter exactly matches the contents of exactMatch. Only one of presentMatch, exactMatch, or regexMatch must be set.
+     * The queryParameterMatch matches if the value of the
+     * parameter exactly matches the contents of exactMatch.
+     *
+     * Only one of presentMatch, exactMatch, orregexMatch must be set.
      * </pre>
      *
      * <code>optional string exact_match = 457641093;</code>
@@ -815,7 +865,10 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The queryParameterMatch matches if the value of the parameter exactly matches the contents of exactMatch. Only one of presentMatch, exactMatch, or regexMatch must be set.
+     * The queryParameterMatch matches if the value of the
+     * parameter exactly matches the contents of exactMatch.
+     *
+     * Only one of presentMatch, exactMatch, orregexMatch must be set.
      * </pre>
      *
      * <code>optional string exact_match = 457641093;</code>
@@ -837,7 +890,10 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The queryParameterMatch matches if the value of the parameter exactly matches the contents of exactMatch. Only one of presentMatch, exactMatch, or regexMatch must be set.
+     * The queryParameterMatch matches if the value of the
+     * parameter exactly matches the contents of exactMatch.
+     *
+     * Only one of presentMatch, exactMatch, orregexMatch must be set.
      * </pre>
      *
      * <code>optional string exact_match = 457641093;</code>
@@ -855,7 +911,10 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The queryParameterMatch matches if the value of the parameter exactly matches the contents of exactMatch. Only one of presentMatch, exactMatch, or regexMatch must be set.
+     * The queryParameterMatch matches if the value of the
+     * parameter exactly matches the contents of exactMatch.
+     *
+     * Only one of presentMatch, exactMatch, orregexMatch must be set.
      * </pre>
      *
      * <code>optional string exact_match = 457641093;</code>
@@ -880,7 +939,8 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The name of the query parameter to match. The query parameter must exist in the request, in the absence of which the request match fails.
+     * The name of the query parameter to match. The query parameter must exist in
+     * the request, in the absence of which the request match fails.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -895,7 +955,8 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The name of the query parameter to match. The query parameter must exist in the request, in the absence of which the request match fails.
+     * The name of the query parameter to match. The query parameter must exist in
+     * the request, in the absence of which the request match fails.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -918,7 +979,8 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The name of the query parameter to match. The query parameter must exist in the request, in the absence of which the request match fails.
+     * The name of the query parameter to match. The query parameter must exist in
+     * the request, in the absence of which the request match fails.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -941,7 +1003,8 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The name of the query parameter to match. The query parameter must exist in the request, in the absence of which the request match fails.
+     * The name of the query parameter to match. The query parameter must exist in
+     * the request, in the absence of which the request match fails.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -963,7 +1026,8 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The name of the query parameter to match. The query parameter must exist in the request, in the absence of which the request match fails.
+     * The name of the query parameter to match. The query parameter must exist in
+     * the request, in the absence of which the request match fails.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -981,7 +1045,8 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The name of the query parameter to match. The query parameter must exist in the request, in the absence of which the request match fails.
+     * The name of the query parameter to match. The query parameter must exist in
+     * the request, in the absence of which the request match fails.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -1006,7 +1071,11 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Specifies that the queryParameterMatch matches if the request contains the query parameter, irrespective of whether the parameter has a value or not. Only one of presentMatch, exactMatch, or regexMatch must be set.
+     * Specifies that the queryParameterMatch matches if the
+     * request contains the query parameter, irrespective of whether the
+     * parameter has a value or not.
+     *
+     * Only one of presentMatch, exactMatch, orregexMatch must be set.
      * </pre>
      *
      * <code>optional bool present_match = 67435841;</code>
@@ -1022,7 +1091,11 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Specifies that the queryParameterMatch matches if the request contains the query parameter, irrespective of whether the parameter has a value or not. Only one of presentMatch, exactMatch, or regexMatch must be set.
+     * Specifies that the queryParameterMatch matches if the
+     * request contains the query parameter, irrespective of whether the
+     * parameter has a value or not.
+     *
+     * Only one of presentMatch, exactMatch, orregexMatch must be set.
      * </pre>
      *
      * <code>optional bool present_match = 67435841;</code>
@@ -1038,7 +1111,11 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Specifies that the queryParameterMatch matches if the request contains the query parameter, irrespective of whether the parameter has a value or not. Only one of presentMatch, exactMatch, or regexMatch must be set.
+     * Specifies that the queryParameterMatch matches if the
+     * request contains the query parameter, irrespective of whether the
+     * parameter has a value or not.
+     *
+     * Only one of presentMatch, exactMatch, orregexMatch must be set.
      * </pre>
      *
      * <code>optional bool present_match = 67435841;</code>
@@ -1058,7 +1135,11 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Specifies that the queryParameterMatch matches if the request contains the query parameter, irrespective of whether the parameter has a value or not. Only one of presentMatch, exactMatch, or regexMatch must be set.
+     * Specifies that the queryParameterMatch matches if the
+     * request contains the query parameter, irrespective of whether the
+     * parameter has a value or not.
+     *
+     * Only one of presentMatch, exactMatch, orregexMatch must be set.
      * </pre>
      *
      * <code>optional bool present_match = 67435841;</code>
@@ -1078,7 +1159,14 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The queryParameterMatch matches if the value of the parameter matches the regular expression specified by regexMatch. For more information about regular expression syntax, see Syntax. Only one of presentMatch, exactMatch, or regexMatch must be set. Regular expressions can only be used when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
+     * The queryParameterMatch matches if the value of the
+     * parameter matches the regular expression specified byregexMatch. For
+     * more information about regular expression syntax, see Syntax.
+     *
+     * Only one of presentMatch, exactMatch, orregexMatch must be set.
+     *
+     * Regular expressions can only be used when the loadBalancingScheme is
+     * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED orINTERNAL_MANAGED.
      * </pre>
      *
      * <code>optional string regex_match = 107387853;</code>
@@ -1093,7 +1181,14 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The queryParameterMatch matches if the value of the parameter matches the regular expression specified by regexMatch. For more information about regular expression syntax, see Syntax. Only one of presentMatch, exactMatch, or regexMatch must be set. Regular expressions can only be used when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
+     * The queryParameterMatch matches if the value of the
+     * parameter matches the regular expression specified byregexMatch. For
+     * more information about regular expression syntax, see Syntax.
+     *
+     * Only one of presentMatch, exactMatch, orregexMatch must be set.
+     *
+     * Regular expressions can only be used when the loadBalancingScheme is
+     * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED orINTERNAL_MANAGED.
      * </pre>
      *
      * <code>optional string regex_match = 107387853;</code>
@@ -1116,7 +1211,14 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The queryParameterMatch matches if the value of the parameter matches the regular expression specified by regexMatch. For more information about regular expression syntax, see Syntax. Only one of presentMatch, exactMatch, or regexMatch must be set. Regular expressions can only be used when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
+     * The queryParameterMatch matches if the value of the
+     * parameter matches the regular expression specified byregexMatch. For
+     * more information about regular expression syntax, see Syntax.
+     *
+     * Only one of presentMatch, exactMatch, orregexMatch must be set.
+     *
+     * Regular expressions can only be used when the loadBalancingScheme is
+     * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED orINTERNAL_MANAGED.
      * </pre>
      *
      * <code>optional string regex_match = 107387853;</code>
@@ -1139,7 +1241,14 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The queryParameterMatch matches if the value of the parameter matches the regular expression specified by regexMatch. For more information about regular expression syntax, see Syntax. Only one of presentMatch, exactMatch, or regexMatch must be set. Regular expressions can only be used when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
+     * The queryParameterMatch matches if the value of the
+     * parameter matches the regular expression specified byregexMatch. For
+     * more information about regular expression syntax, see Syntax.
+     *
+     * Only one of presentMatch, exactMatch, orregexMatch must be set.
+     *
+     * Regular expressions can only be used when the loadBalancingScheme is
+     * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED orINTERNAL_MANAGED.
      * </pre>
      *
      * <code>optional string regex_match = 107387853;</code>
@@ -1161,7 +1270,14 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The queryParameterMatch matches if the value of the parameter matches the regular expression specified by regexMatch. For more information about regular expression syntax, see Syntax. Only one of presentMatch, exactMatch, or regexMatch must be set. Regular expressions can only be used when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
+     * The queryParameterMatch matches if the value of the
+     * parameter matches the regular expression specified byregexMatch. For
+     * more information about regular expression syntax, see Syntax.
+     *
+     * Only one of presentMatch, exactMatch, orregexMatch must be set.
+     *
+     * Regular expressions can only be used when the loadBalancingScheme is
+     * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED orINTERNAL_MANAGED.
      * </pre>
      *
      * <code>optional string regex_match = 107387853;</code>
@@ -1179,7 +1295,14 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The queryParameterMatch matches if the value of the parameter matches the regular expression specified by regexMatch. For more information about regular expression syntax, see Syntax. Only one of presentMatch, exactMatch, or regexMatch must be set. Regular expressions can only be used when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
+     * The queryParameterMatch matches if the value of the
+     * parameter matches the regular expression specified byregexMatch. For
+     * more information about regular expression syntax, see Syntax.
+     *
+     * Only one of presentMatch, exactMatch, orregexMatch must be set.
+     *
+     * Regular expressions can only be used when the loadBalancingScheme is
+     * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED orINTERNAL_MANAGED.
      * </pre>
      *
      * <code>optional string regex_match = 107387853;</code>

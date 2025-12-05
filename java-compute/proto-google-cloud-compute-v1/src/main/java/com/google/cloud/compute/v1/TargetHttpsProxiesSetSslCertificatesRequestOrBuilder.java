@@ -28,7 +28,10 @@ public interface TargetHttpsProxiesSetSslCertificatesRequestOrBuilder
    *
    *
    * <pre>
-   * New set of SslCertificate resources to associate with this TargetHttpsProxy resource. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
+   * New set of SslCertificate resources to associate
+   * with this TargetHttpsProxy resource. At least one SSL
+   * certificate must be specified. Currently, you may specify up to 15 SSL
+   * certificates.
    * </pre>
    *
    * <code>repeated string ssl_certificates = 366006543;</code>
@@ -41,7 +44,10 @@ public interface TargetHttpsProxiesSetSslCertificatesRequestOrBuilder
    *
    *
    * <pre>
-   * New set of SslCertificate resources to associate with this TargetHttpsProxy resource. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
+   * New set of SslCertificate resources to associate
+   * with this TargetHttpsProxy resource. At least one SSL
+   * certificate must be specified. Currently, you may specify up to 15 SSL
+   * certificates.
    * </pre>
    *
    * <code>repeated string ssl_certificates = 366006543;</code>
@@ -54,7 +60,10 @@ public interface TargetHttpsProxiesSetSslCertificatesRequestOrBuilder
    *
    *
    * <pre>
-   * New set of SslCertificate resources to associate with this TargetHttpsProxy resource. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
+   * New set of SslCertificate resources to associate
+   * with this TargetHttpsProxy resource. At least one SSL
+   * certificate must be specified. Currently, you may specify up to 15 SSL
+   * certificates.
    * </pre>
    *
    * <code>repeated string ssl_certificates = 366006543;</code>
@@ -68,7 +77,10 @@ public interface TargetHttpsProxiesSetSslCertificatesRequestOrBuilder
    *
    *
    * <pre>
-   * New set of SslCertificate resources to associate with this TargetHttpsProxy resource. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
+   * New set of SslCertificate resources to associate
+   * with this TargetHttpsProxy resource. At least one SSL
+   * certificate must be specified. Currently, you may specify up to 15 SSL
+   * certificates.
    * </pre>
    *
    * <code>repeated string ssl_certificates = 366006543;</code>

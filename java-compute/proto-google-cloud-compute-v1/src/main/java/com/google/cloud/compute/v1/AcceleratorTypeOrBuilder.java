@@ -28,7 +28,7 @@ public interface AcceleratorTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -41,7 +41,7 @@ public interface AcceleratorTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -54,7 +54,7 @@ public interface AcceleratorTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -143,7 +143,8 @@ public interface AcceleratorTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -156,7 +157,8 @@ public interface AcceleratorTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -169,7 +171,7 @@ public interface AcceleratorTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Always compute#acceleratorType for accelerator types.
+   * [Output Only] The type of the resource. Alwayscompute#acceleratorType for accelerator types.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -182,7 +184,7 @@ public interface AcceleratorTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Always compute#acceleratorType for accelerator types.
+   * [Output Only] The type of the resource. Alwayscompute#acceleratorType for accelerator types.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -195,7 +197,7 @@ public interface AcceleratorTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Always compute#acceleratorType for accelerator types.
+   * [Output Only] The type of the resource. Alwayscompute#acceleratorType for accelerator types.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -312,7 +314,10 @@ public interface AcceleratorTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of the zone where the accelerator type resides, such as us-central1-a. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * [Output Only] The name of the zone where the accelerator type resides,
+   * such as us-central1-a.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -325,7 +330,10 @@ public interface AcceleratorTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of the zone where the accelerator type resides, such as us-central1-a. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * [Output Only] The name of the zone where the accelerator type resides,
+   * such as us-central1-a.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -338,7 +346,10 @@ public interface AcceleratorTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of the zone where the accelerator type resides, such as us-central1-a. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * [Output Only] The name of the zone where the accelerator type resides,
+   * such as us-central1-a.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>

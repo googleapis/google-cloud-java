@@ -28,7 +28,8 @@ public interface InterconnectLocationRegionInfoOrBuilder
    *
    *
    * <pre>
-   * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
+   * Expected round-trip time in milliseconds, from this InterconnectLocation
+   * to a VM in this region.
    * </pre>
    *
    * <code>optional int64 expected_rtt_ms = 422543866;</code>
@@ -41,7 +42,8 @@ public interface InterconnectLocationRegionInfoOrBuilder
    *
    *
    * <pre>
-   * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
+   * Expected round-trip time in milliseconds, from this InterconnectLocation
+   * to a VM in this region.
    * </pre>
    *
    * <code>optional int64 expected_rtt_ms = 422543866;</code>
@@ -49,6 +51,34 @@ public interface InterconnectLocationRegionInfoOrBuilder
    * @return The expectedRttMs.
    */
   long getExpectedRttMs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Identifies whether L2 Interconnect Attachments can be created in this
+   * region for interconnects that are in this location.
+   * </pre>
+   *
+   * <code>optional bool l2_forwarding_enabled = 241364888;</code>
+   *
+   * @return Whether the l2ForwardingEnabled field is set.
+   */
+  boolean hasL2ForwardingEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Identifies whether L2 Interconnect Attachments can be created in this
+   * region for interconnects that are in this location.
+   * </pre>
+   *
+   * <code>optional bool l2_forwarding_enabled = 241364888;</code>
+   *
+   * @return The l2ForwardingEnabled.
+   */
+  boolean getL2ForwardingEnabled();
 
   /**
    *

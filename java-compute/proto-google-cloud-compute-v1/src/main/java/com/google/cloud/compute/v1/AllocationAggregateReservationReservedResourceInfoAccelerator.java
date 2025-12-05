@@ -113,7 +113,8 @@ public final class AllocationAggregateReservationReservedResourceInfoAccelerator
    *
    *
    * <pre>
-   * Full or partial URL to accelerator type. e.g. "projects/{PROJECT}/zones/{ZONE}/acceleratorTypes/ct4l"
+   * Full or partial URL to accelerator type. e.g.
+   * "projects/{PROJECT}/zones/{ZONE}/acceleratorTypes/ct4l"
    * </pre>
    *
    * <code>optional string accelerator_type = 138031246;</code>
@@ -129,7 +130,8 @@ public final class AllocationAggregateReservationReservedResourceInfoAccelerator
    *
    *
    * <pre>
-   * Full or partial URL to accelerator type. e.g. "projects/{PROJECT}/zones/{ZONE}/acceleratorTypes/ct4l"
+   * Full or partial URL to accelerator type. e.g.
+   * "projects/{PROJECT}/zones/{ZONE}/acceleratorTypes/ct4l"
    * </pre>
    *
    * <code>optional string accelerator_type = 138031246;</code>
@@ -153,7 +155,8 @@ public final class AllocationAggregateReservationReservedResourceInfoAccelerator
    *
    *
    * <pre>
-   * Full or partial URL to accelerator type. e.g. "projects/{PROJECT}/zones/{ZONE}/acceleratorTypes/ct4l"
+   * Full or partial URL to accelerator type. e.g.
+   * "projects/{PROJECT}/zones/{ZONE}/acceleratorTypes/ct4l"
    * </pre>
    *
    * <code>optional string accelerator_type = 138031246;</code>
@@ -679,7 +682,8 @@ public final class AllocationAggregateReservationReservedResourceInfoAccelerator
      *
      *
      * <pre>
-     * Full or partial URL to accelerator type. e.g. "projects/{PROJECT}/zones/{ZONE}/acceleratorTypes/ct4l"
+     * Full or partial URL to accelerator type. e.g.
+     * "projects/{PROJECT}/zones/{ZONE}/acceleratorTypes/ct4l"
      * </pre>
      *
      * <code>optional string accelerator_type = 138031246;</code>
@@ -694,7 +698,8 @@ public final class AllocationAggregateReservationReservedResourceInfoAccelerator
      *
      *
      * <pre>
-     * Full or partial URL to accelerator type. e.g. "projects/{PROJECT}/zones/{ZONE}/acceleratorTypes/ct4l"
+     * Full or partial URL to accelerator type. e.g.
+     * "projects/{PROJECT}/zones/{ZONE}/acceleratorTypes/ct4l"
      * </pre>
      *
      * <code>optional string accelerator_type = 138031246;</code>
@@ -717,7 +722,8 @@ public final class AllocationAggregateReservationReservedResourceInfoAccelerator
      *
      *
      * <pre>
-     * Full or partial URL to accelerator type. e.g. "projects/{PROJECT}/zones/{ZONE}/acceleratorTypes/ct4l"
+     * Full or partial URL to accelerator type. e.g.
+     * "projects/{PROJECT}/zones/{ZONE}/acceleratorTypes/ct4l"
      * </pre>
      *
      * <code>optional string accelerator_type = 138031246;</code>
@@ -740,7 +746,8 @@ public final class AllocationAggregateReservationReservedResourceInfoAccelerator
      *
      *
      * <pre>
-     * Full or partial URL to accelerator type. e.g. "projects/{PROJECT}/zones/{ZONE}/acceleratorTypes/ct4l"
+     * Full or partial URL to accelerator type. e.g.
+     * "projects/{PROJECT}/zones/{ZONE}/acceleratorTypes/ct4l"
      * </pre>
      *
      * <code>optional string accelerator_type = 138031246;</code>
@@ -762,7 +769,8 @@ public final class AllocationAggregateReservationReservedResourceInfoAccelerator
      *
      *
      * <pre>
-     * Full or partial URL to accelerator type. e.g. "projects/{PROJECT}/zones/{ZONE}/acceleratorTypes/ct4l"
+     * Full or partial URL to accelerator type. e.g.
+     * "projects/{PROJECT}/zones/{ZONE}/acceleratorTypes/ct4l"
      * </pre>
      *
      * <code>optional string accelerator_type = 138031246;</code>
@@ -780,7 +788,8 @@ public final class AllocationAggregateReservationReservedResourceInfoAccelerator
      *
      *
      * <pre>
-     * Full or partial URL to accelerator type. e.g. "projects/{PROJECT}/zones/{ZONE}/acceleratorTypes/ct4l"
+     * Full or partial URL to accelerator type. e.g.
+     * "projects/{PROJECT}/zones/{ZONE}/acceleratorTypes/ct4l"
      * </pre>
      *
      * <code>optional string accelerator_type = 138031246;</code>

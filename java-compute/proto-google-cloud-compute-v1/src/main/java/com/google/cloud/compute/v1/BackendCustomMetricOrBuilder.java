@@ -28,7 +28,8 @@ public interface BackendCustomMetricOrBuilder
    *
    *
    * <pre>
-   * If true, the metric data is collected and reported to Cloud Monitoring, but is not used for load balancing.
+   * If true, the metric data is collected and reported to Cloud
+   * Monitoring, but is not used for load balancing.
    * </pre>
    *
    * <code>optional bool dry_run = 323854839;</code>
@@ -41,7 +42,8 @@ public interface BackendCustomMetricOrBuilder
    *
    *
    * <pre>
-   * If true, the metric data is collected and reported to Cloud Monitoring, but is not used for load balancing.
+   * If true, the metric data is collected and reported to Cloud
+   * Monitoring, but is not used for load balancing.
    * </pre>
    *
    * <code>optional bool dry_run = 323854839;</code>
@@ -54,7 +56,8 @@ public interface BackendCustomMetricOrBuilder
    *
    *
    * <pre>
-   * Optional parameter to define a target utilization for the Custom Metrics balancing mode. The valid range is [0.0, 1.0].
+   * Optional parameter to define a target utilization for the Custom Metrics
+   * balancing mode. The valid range is [0.0, 1.0].
    * </pre>
    *
    * <code>optional float max_utilization = 148192199;</code>
@@ -67,7 +70,8 @@ public interface BackendCustomMetricOrBuilder
    *
    *
    * <pre>
-   * Optional parameter to define a target utilization for the Custom Metrics balancing mode. The valid range is [0.0, 1.0].
+   * Optional parameter to define a target utilization for the Custom Metrics
+   * balancing mode. The valid range is [0.0, 1.0].
    * </pre>
    *
    * <code>optional float max_utilization = 148192199;</code>
@@ -80,7 +84,15 @@ public interface BackendCustomMetricOrBuilder
    *
    *
    * <pre>
-   * Name of a custom utilization signal. The name must be 1-64 characters long and match the regular expression [a-z]([-_.a-z0-9]*[a-z0-9])? which means that the first character must be a lowercase letter, and all following characters must be a dash, period, underscore, lowercase letter, or digit, except the last character, which cannot be a dash, period, or underscore. For usage guidelines, see Custom Metrics balancing mode. This field can only be used for a global or regional backend service with the loadBalancingScheme set to EXTERNAL_MANAGED, INTERNAL_MANAGED INTERNAL_SELF_MANAGED.
+   * Name of a custom utilization signal. The name must be 1-64 characters
+   * long and match the regular expression
+   * `[a-z]([-_.a-z0-9]*[a-z0-9])?` which means that the
+   * first character must be a lowercase letter, and all following
+   * characters must be a dash, period, underscore, lowercase letter, or
+   * digit, except the last character, which cannot be a dash, period, or
+   * underscore. For usage guidelines, see Custom Metrics balancing mode. This
+   * field can only be used for a global or regional backend service with the
+   * loadBalancingScheme set to EXTERNAL_MANAGED,INTERNAL_MANAGED INTERNAL_SELF_MANAGED.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -93,7 +105,15 @@ public interface BackendCustomMetricOrBuilder
    *
    *
    * <pre>
-   * Name of a custom utilization signal. The name must be 1-64 characters long and match the regular expression [a-z]([-_.a-z0-9]*[a-z0-9])? which means that the first character must be a lowercase letter, and all following characters must be a dash, period, underscore, lowercase letter, or digit, except the last character, which cannot be a dash, period, or underscore. For usage guidelines, see Custom Metrics balancing mode. This field can only be used for a global or regional backend service with the loadBalancingScheme set to EXTERNAL_MANAGED, INTERNAL_MANAGED INTERNAL_SELF_MANAGED.
+   * Name of a custom utilization signal. The name must be 1-64 characters
+   * long and match the regular expression
+   * `[a-z]([-_.a-z0-9]*[a-z0-9])?` which means that the
+   * first character must be a lowercase letter, and all following
+   * characters must be a dash, period, underscore, lowercase letter, or
+   * digit, except the last character, which cannot be a dash, period, or
+   * underscore. For usage guidelines, see Custom Metrics balancing mode. This
+   * field can only be used for a global or regional backend service with the
+   * loadBalancingScheme set to EXTERNAL_MANAGED,INTERNAL_MANAGED INTERNAL_SELF_MANAGED.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -106,7 +126,15 @@ public interface BackendCustomMetricOrBuilder
    *
    *
    * <pre>
-   * Name of a custom utilization signal. The name must be 1-64 characters long and match the regular expression [a-z]([-_.a-z0-9]*[a-z0-9])? which means that the first character must be a lowercase letter, and all following characters must be a dash, period, underscore, lowercase letter, or digit, except the last character, which cannot be a dash, period, or underscore. For usage guidelines, see Custom Metrics balancing mode. This field can only be used for a global or regional backend service with the loadBalancingScheme set to EXTERNAL_MANAGED, INTERNAL_MANAGED INTERNAL_SELF_MANAGED.
+   * Name of a custom utilization signal. The name must be 1-64 characters
+   * long and match the regular expression
+   * `[a-z]([-_.a-z0-9]*[a-z0-9])?` which means that the
+   * first character must be a lowercase letter, and all following
+   * characters must be a dash, period, underscore, lowercase letter, or
+   * digit, except the last character, which cannot be a dash, period, or
+   * underscore. For usage guidelines, see Custom Metrics balancing mode. This
+   * field can only be used for a global or regional backend service with the
+   * loadBalancingScheme set to EXTERNAL_MANAGED,INTERNAL_MANAGED INTERNAL_SELF_MANAGED.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>

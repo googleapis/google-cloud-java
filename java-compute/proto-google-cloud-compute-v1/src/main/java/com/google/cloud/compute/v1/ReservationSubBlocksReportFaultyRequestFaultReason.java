@@ -115,6 +115,16 @@ public final class ReservationSubBlocksReportFaultyRequestFaultReason
      *
      *
      * <pre>
+     * The subBlock experienced silent data corruption.
+     * </pre>
+     *
+     * <code>SILENT_DATA_CORRUPTION = 111360678;</code>
+     */
+    SILENT_DATA_CORRUPTION(111360678),
+    /**
+     *
+     *
+     * <pre>
      * The subBlock experienced a switch failure.
      * </pre>
      *
@@ -164,6 +174,17 @@ public final class ReservationSubBlocksReportFaultyRequestFaultReason
      *
      *
      * <pre>
+     * The subBlock experienced silent data corruption.
+     * </pre>
+     *
+     * <code>SILENT_DATA_CORRUPTION = 111360678;</code>
+     */
+    public static final int SILENT_DATA_CORRUPTION_VALUE = 111360678;
+
+    /**
+     *
+     *
+     * <pre>
      * The subBlock experienced a switch failure.
      * </pre>
      *
@@ -203,6 +224,8 @@ public final class ReservationSubBlocksReportFaultyRequestFaultReason
           return GPU_ERROR;
         case 135701520:
           return PERFORMANCE;
+        case 111360678:
+          return SILENT_DATA_CORRUPTION;
         case 254909279:
           return SWITCH_FAILURE;
         default:

@@ -1952,8 +1952,13 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             ProtoRestSerializer<RegisterSubscriberRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putPathParam(fields, "account", request.getAccount());
+                            if (request.hasIntegrator()) {
+                              serializer.putPathParam(
+                                  fields, "integrator", request.getIntegrator());
+                            }
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{integrator=integrators/*}:registerSubscriber")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -1965,7 +1970,10 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearAccount().build(), true))
+                                  .toBody(
+                                      "*",
+                                      request.toBuilder().clearAccount().clearIntegrator().build(),
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<RegisterSubscriberResponse>newBuilder()
@@ -1991,8 +1999,13 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             ProtoRestSerializer<UnregisterSubscriberRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putPathParam(fields, "account", request.getAccount());
+                            if (request.hasIntegrator()) {
+                              serializer.putPathParam(
+                                  fields, "integrator", request.getIntegrator());
+                            }
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{integrator=integrators/*}:unregisterSubscriber")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -2004,7 +2017,10 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearAccount().build(), true))
+                                  .toBody(
+                                      "*",
+                                      request.toBuilder().clearAccount().clearIntegrator().build(),
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<UnregisterSubscriberResponse>newBuilder()
@@ -2028,8 +2044,13 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                             ProtoRestSerializer<ListSubscribersRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putPathParam(fields, "account", request.getAccount());
+                            if (request.hasIntegrator()) {
+                              serializer.putPathParam(
+                                  fields, "integrator", request.getIntegrator());
+                            }
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{integrator=integrators/*}:listSubscribers")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -2853,6 +2874,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("account", String.valueOf(request.getAccount()));
+                      builder.add("integrator", String.valueOf(request.getIntegrator()));
                       return builder.build();
                     })
                 .build();
@@ -2866,6 +2888,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("account", String.valueOf(request.getAccount()));
+                      builder.add("integrator", String.valueOf(request.getIntegrator()));
                       return builder.build();
                     })
                 .build();
@@ -2878,6 +2901,7 @@ public class HttpJsonCloudChannelServiceStub extends CloudChannelServiceStub {
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("account", String.valueOf(request.getAccount()));
+                      builder.add("integrator", String.valueOf(request.getIntegrator()));
                       return builder.build();
                     })
                 .build();

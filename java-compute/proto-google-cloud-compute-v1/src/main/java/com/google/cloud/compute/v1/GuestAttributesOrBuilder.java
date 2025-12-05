@@ -28,7 +28,7 @@ public interface GuestAttributesOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#guestAttributes for guest attributes entry.
+   * [Output Only] Type of the resource. Alwayscompute#guestAttributes for guest attributes entry.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -41,7 +41,7 @@ public interface GuestAttributesOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#guestAttributes for guest attributes entry.
+   * [Output Only] Type of the resource. Alwayscompute#guestAttributes for guest attributes entry.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -54,7 +54,7 @@ public interface GuestAttributesOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#guestAttributes for guest attributes entry.
+   * [Output Only] Type of the resource. Alwayscompute#guestAttributes for guest attributes entry.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -67,7 +67,9 @@ public interface GuestAttributesOrBuilder
    *
    *
    * <pre>
-   * The path to be queried. This can be the default namespace ('') or a nested namespace ('&#92;/') or a specified key ('&#92;/&#92;').
+   * The path to be queried. This can be the default namespace ('') or a
+   * nested namespace ('&#92;/') or a specified key
+   * ('&#92;/&#92;').
    * </pre>
    *
    * <code>optional string query_path = 368591164;</code>
@@ -80,7 +82,9 @@ public interface GuestAttributesOrBuilder
    *
    *
    * <pre>
-   * The path to be queried. This can be the default namespace ('') or a nested namespace ('&#92;/') or a specified key ('&#92;/&#92;').
+   * The path to be queried. This can be the default namespace ('') or a
+   * nested namespace ('&#92;/') or a specified key
+   * ('&#92;/&#92;').
    * </pre>
    *
    * <code>optional string query_path = 368591164;</code>
@@ -93,7 +97,9 @@ public interface GuestAttributesOrBuilder
    *
    *
    * <pre>
-   * The path to be queried. This can be the default namespace ('') or a nested namespace ('&#92;/') or a specified key ('&#92;/&#92;').
+   * The path to be queried. This can be the default namespace ('') or a
+   * nested namespace ('&#92;/') or a specified key
+   * ('&#92;/&#92;').
    * </pre>
    *
    * <code>optional string query_path = 368591164;</code>

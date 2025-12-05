@@ -109,7 +109,8 @@ public interface NatIpInfoNatIpInfoMappingOrBuilder
    *
    *
    * <pre>
-   * Specifies whether NAT IP is currently serving at least one endpoint or not.
+   * Specifies whether NAT IP is currently serving at least one endpoint or
+   * not.
    * Check the Usage enum for the list of possible values.
    * </pre>
    *
@@ -123,7 +124,8 @@ public interface NatIpInfoNatIpInfoMappingOrBuilder
    *
    *
    * <pre>
-   * Specifies whether NAT IP is currently serving at least one endpoint or not.
+   * Specifies whether NAT IP is currently serving at least one endpoint or
+   * not.
    * Check the Usage enum for the list of possible values.
    * </pre>
    *
@@ -137,7 +139,8 @@ public interface NatIpInfoNatIpInfoMappingOrBuilder
    *
    *
    * <pre>
-   * Specifies whether NAT IP is currently serving at least one endpoint or not.
+   * Specifies whether NAT IP is currently serving at least one endpoint or
+   * not.
    * Check the Usage enum for the list of possible values.
    * </pre>
    *

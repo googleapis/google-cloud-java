@@ -80,7 +80,8 @@ public interface GroupMaintenanceInfoOrBuilder
    *
    *
    * <pre>
-   * Progress for ongoing maintenance for this group of VMs/hosts. Describes number of hosts in the block that have ongoing maintenance.
+   * Progress for ongoing maintenance for this group of VMs/hosts.
+   * Describes number of hosts in the block that have ongoing maintenance.
    * </pre>
    *
    * <code>optional int32 maintenance_ongoing_count = 219781919;</code>
@@ -93,7 +94,8 @@ public interface GroupMaintenanceInfoOrBuilder
    *
    *
    * <pre>
-   * Progress for ongoing maintenance for this group of VMs/hosts. Describes number of hosts in the block that have ongoing maintenance.
+   * Progress for ongoing maintenance for this group of VMs/hosts.
+   * Describes number of hosts in the block that have ongoing maintenance.
    * </pre>
    *
    * <code>optional int32 maintenance_ongoing_count = 219781919;</code>
@@ -106,7 +108,8 @@ public interface GroupMaintenanceInfoOrBuilder
    *
    *
    * <pre>
-   * Progress for ongoing maintenance for this group of VMs/hosts. Describes number of hosts in the block that have pending maintenance.
+   * Progress for ongoing maintenance for this group of VMs/hosts.
+   * Describes number of hosts in the block that have pending maintenance.
    * </pre>
    *
    * <code>optional int32 maintenance_pending_count = 158783547;</code>
@@ -119,7 +122,8 @@ public interface GroupMaintenanceInfoOrBuilder
    *
    *
    * <pre>
-   * Progress for ongoing maintenance for this group of VMs/hosts. Describes number of hosts in the block that have pending maintenance.
+   * Progress for ongoing maintenance for this group of VMs/hosts.
+   * Describes number of hosts in the block that have pending maintenance.
    * </pre>
    *
    * <code>optional int32 maintenance_pending_count = 158783547;</code>
@@ -174,7 +178,10 @@ public interface GroupMaintenanceInfoOrBuilder
    *
    *
    * <pre>
-   * Describes number of subblock Infrastructure that has ongoing maintenance. Here, Subblock Infrastructure Maintenance pertains to upstream hardware contained in the Subblock that is necessary for a VM Family(e.g. NVLink Domains). Not all VM Families will support this field.
+   * Describes number of subblock Infrastructure that has ongoing maintenance.
+   * Here, Subblock Infrastructure Maintenance pertains to upstream hardware
+   * contained in the Subblock that is necessary for a VM Family(e.g. NVLink
+   * Domains). Not all VM Families will support this field.
    * </pre>
    *
    * <code>optional int32 subblock_infra_maintenance_ongoing_count = 366161790;</code>
@@ -187,7 +194,10 @@ public interface GroupMaintenanceInfoOrBuilder
    *
    *
    * <pre>
-   * Describes number of subblock Infrastructure that has ongoing maintenance. Here, Subblock Infrastructure Maintenance pertains to upstream hardware contained in the Subblock that is necessary for a VM Family(e.g. NVLink Domains). Not all VM Families will support this field.
+   * Describes number of subblock Infrastructure that has ongoing maintenance.
+   * Here, Subblock Infrastructure Maintenance pertains to upstream hardware
+   * contained in the Subblock that is necessary for a VM Family(e.g. NVLink
+   * Domains). Not all VM Families will support this field.
    * </pre>
    *
    * <code>optional int32 subblock_infra_maintenance_ongoing_count = 366161790;</code>
@@ -200,7 +210,10 @@ public interface GroupMaintenanceInfoOrBuilder
    *
    *
    * <pre>
-   * Describes number of subblock Infrastructure that has pending maintenance. Here, Subblock Infrastructure Maintenance pertains to upstream hardware contained in the Subblock that is necessary for a VM Family (e.g. NVLink Domains). Not all VM Families will support this field.
+   * Describes number of subblock Infrastructure that has pending maintenance.
+   *  Here, Subblock Infrastructure Maintenance pertains to upstream hardware
+   *  contained in the Subblock that is necessary for a VM Family (e.g. NVLink
+   *  Domains). Not all VM Families will support this field.
    * </pre>
    *
    * <code>optional int32 subblock_infra_maintenance_pending_count = 305163418;</code>
@@ -213,7 +226,10 @@ public interface GroupMaintenanceInfoOrBuilder
    *
    *
    * <pre>
-   * Describes number of subblock Infrastructure that has pending maintenance. Here, Subblock Infrastructure Maintenance pertains to upstream hardware contained in the Subblock that is necessary for a VM Family (e.g. NVLink Domains). Not all VM Families will support this field.
+   * Describes number of subblock Infrastructure that has pending maintenance.
+   *  Here, Subblock Infrastructure Maintenance pertains to upstream hardware
+   *  contained in the Subblock that is necessary for a VM Family (e.g. NVLink
+   *  Domains). Not all VM Families will support this field.
    * </pre>
    *
    * <code>optional int32 subblock_infra_maintenance_pending_count = 305163418;</code>

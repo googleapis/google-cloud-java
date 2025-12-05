@@ -28,7 +28,8 @@ public interface ImageFamilyViewOrBuilder
    *
    *
    * <pre>
-   * The latest image that is part of the specified image family in the requested location, and that is not deprecated.
+   * The latest image that is part of the specified image family in the
+   * requested location, and that is not deprecated.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Image image = 100313435;</code>
@@ -41,7 +42,8 @@ public interface ImageFamilyViewOrBuilder
    *
    *
    * <pre>
-   * The latest image that is part of the specified image family in the requested location, and that is not deprecated.
+   * The latest image that is part of the specified image family in the
+   * requested location, and that is not deprecated.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Image image = 100313435;</code>
@@ -54,7 +56,8 @@ public interface ImageFamilyViewOrBuilder
    *
    *
    * <pre>
-   * The latest image that is part of the specified image family in the requested location, and that is not deprecated.
+   * The latest image that is part of the specified image family in the
+   * requested location, and that is not deprecated.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Image image = 100313435;</code>

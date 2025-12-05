@@ -28,7 +28,9 @@ public interface TargetHttpsProxiesSetCertificateMapRequestOrBuilder
    *
    *
    * <pre>
-   * URL of the Certificate Map to associate with this TargetHttpsProxy. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
+   * URL of the Certificate Map to associate with this TargetHttpsProxy.
+   *
+   *  Accepted format is//certificatemanager.googleapis.com/projects/{project}/locations/{location}/certificateMaps/{resourceName}.
    * </pre>
    *
    * <code>optional string certificate_map = 156463796;</code>
@@ -41,7 +43,9 @@ public interface TargetHttpsProxiesSetCertificateMapRequestOrBuilder
    *
    *
    * <pre>
-   * URL of the Certificate Map to associate with this TargetHttpsProxy. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
+   * URL of the Certificate Map to associate with this TargetHttpsProxy.
+   *
+   *  Accepted format is//certificatemanager.googleapis.com/projects/{project}/locations/{location}/certificateMaps/{resourceName}.
    * </pre>
    *
    * <code>optional string certificate_map = 156463796;</code>
@@ -54,7 +58,9 @@ public interface TargetHttpsProxiesSetCertificateMapRequestOrBuilder
    *
    *
    * <pre>
-   * URL of the Certificate Map to associate with this TargetHttpsProxy. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
+   * URL of the Certificate Map to associate with this TargetHttpsProxy.
+   *
+   *  Accepted format is//certificatemanager.googleapis.com/projects/{project}/locations/{location}/certificateMaps/{resourceName}.
    * </pre>
    *
    * <code>optional string certificate_map = 156463796;</code>

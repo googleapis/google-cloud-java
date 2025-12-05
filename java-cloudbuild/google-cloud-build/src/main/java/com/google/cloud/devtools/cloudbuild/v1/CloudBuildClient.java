@@ -33,18 +33,23 @@ import com.google.cloud.devtools.cloudbuild.v1.stub.CloudBuildStubSettings;
 import com.google.cloudbuild.v1.ApprovalResult;
 import com.google.cloudbuild.v1.ApproveBuildRequest;
 import com.google.cloudbuild.v1.Build;
+import com.google.cloudbuild.v1.BuildName;
 import com.google.cloudbuild.v1.BuildOperationMetadata;
 import com.google.cloudbuild.v1.BuildTrigger;
+import com.google.cloudbuild.v1.BuildTriggerName;
 import com.google.cloudbuild.v1.CancelBuildRequest;
 import com.google.cloudbuild.v1.CreateBuildRequest;
 import com.google.cloudbuild.v1.CreateBuildTriggerRequest;
 import com.google.cloudbuild.v1.CreateWorkerPoolOperationMetadata;
 import com.google.cloudbuild.v1.CreateWorkerPoolRequest;
+import com.google.cloudbuild.v1.DefaultServiceAccount;
+import com.google.cloudbuild.v1.DefaultServiceAccountName;
 import com.google.cloudbuild.v1.DeleteBuildTriggerRequest;
 import com.google.cloudbuild.v1.DeleteWorkerPoolOperationMetadata;
 import com.google.cloudbuild.v1.DeleteWorkerPoolRequest;
 import com.google.cloudbuild.v1.GetBuildRequest;
 import com.google.cloudbuild.v1.GetBuildTriggerRequest;
+import com.google.cloudbuild.v1.GetDefaultServiceAccountRequest;
 import com.google.cloudbuild.v1.GetWorkerPoolRequest;
 import com.google.cloudbuild.v1.ListBuildTriggersRequest;
 import com.google.cloudbuild.v1.ListBuildTriggersResponse;
@@ -53,6 +58,7 @@ import com.google.cloudbuild.v1.ListBuildsResponse;
 import com.google.cloudbuild.v1.ListWorkerPoolsRequest;
 import com.google.cloudbuild.v1.ListWorkerPoolsResponse;
 import com.google.cloudbuild.v1.LocationName;
+import com.google.cloudbuild.v1.ProjectName;
 import com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest;
 import com.google.cloudbuild.v1.ReceiveTriggerWebhookResponse;
 import com.google.cloudbuild.v1.RepoSource;
@@ -92,9 +98,8 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
- *   String projectId = "projectId-894832108";
- *   String id = "id3355";
- *   Build response = cloudBuildClient.getBuild(projectId, id);
+ *   BuildName name = BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]");
+ *   Build response = cloudBuildClient.getBuild(name);
  * }
  * }</pre>
  *
@@ -119,6 +124,9 @@ import javax.annotation.Generated;
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
+ *           <li><p> createBuildAsync(LocationName parent)
+ *           <li><p> createBuildAsync(ProjectName parent)
+ *           <li><p> createBuildAsync(String parent)
  *           <li><p> createBuildAsync(String projectId, Build build)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
@@ -139,6 +147,8 @@ import javax.annotation.Generated;
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
+ *           <li><p> getBuild(BuildName name)
+ *           <li><p> getBuild(String name)
  *           <li><p> getBuild(String projectId, String id)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
@@ -177,6 +187,8 @@ import javax.annotation.Generated;
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
+ *           <li><p> cancelBuild(BuildName name)
+ *           <li><p> cancelBuild(String name)
  *           <li><p> cancelBuild(String projectId, String id)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
@@ -210,6 +222,8 @@ import javax.annotation.Generated;
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
+ *           <li><p> retryBuildAsync(BuildName name)
+ *           <li><p> retryBuildAsync(String name)
  *           <li><p> retryBuildAsync(String projectId, String id)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
@@ -222,7 +236,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> ApproveBuild</td>
  *      <td><p> Approves or rejects a pending build.
- * <p>  If approved, the returned LRO will be analogous to the LRO returned from a CreateBuild call.
+ * <p>  If approved, the returned long-running operation (LRO) will be analogous to the LRO returned from a CreateBuild call.
  * <p>  If rejected, the returned LRO will be immediately done.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -242,8 +256,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateBuildTrigger</td>
- *      <td><p> Creates a new `BuildTrigger`.
- * <p>  This API is experimental.</td>
+ *      <td><p> Creates a new `BuildTrigger`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -251,6 +264,9 @@ import javax.annotation.Generated;
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
+ *           <li><p> createBuildTrigger(LocationName parent)
+ *           <li><p> createBuildTrigger(ProjectName parent)
+ *           <li><p> createBuildTrigger(String parent)
  *           <li><p> createBuildTrigger(String projectId, BuildTrigger trigger)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
@@ -261,8 +277,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetBuildTrigger</td>
- *      <td><p> Returns information about a `BuildTrigger`.
- * <p>  This API is experimental.</td>
+ *      <td><p> Returns information about a `BuildTrigger`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -270,6 +285,8 @@ import javax.annotation.Generated;
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
+ *           <li><p> getBuildTrigger(BuildTriggerName name)
+ *           <li><p> getBuildTrigger(String name)
  *           <li><p> getBuildTrigger(String projectId, String triggerId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
@@ -280,8 +297,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListBuildTriggers</td>
- *      <td><p> Lists existing `BuildTrigger`s.
- * <p>  This API is experimental.</td>
+ *      <td><p> Lists existing `BuildTrigger`s.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -300,8 +316,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteBuildTrigger</td>
- *      <td><p> Deletes a `BuildTrigger` by its project ID and trigger ID.
- * <p>  This API is experimental.</td>
+ *      <td><p> Deletes a `BuildTrigger` by its project ID and trigger ID.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -309,6 +324,8 @@ import javax.annotation.Generated;
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
+ *           <li><p> deleteBuildTrigger(BuildTriggerName name)
+ *           <li><p> deleteBuildTrigger(String name)
  *           <li><p> deleteBuildTrigger(String projectId, String triggerId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
@@ -319,8 +336,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateBuildTrigger</td>
- *      <td><p> Updates a `BuildTrigger` by its project ID and trigger ID.
- * <p>  This API is experimental.</td>
+ *      <td><p> Updates a `BuildTrigger` by its project ID and trigger ID.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -468,6 +484,25 @@ import javax.annotation.Generated;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> GetDefaultServiceAccount</td>
+ *      <td><p> Returns the `DefaultServiceAccount` used by the project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getDefaultServiceAccount(GetDefaultServiceAccountRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getDefaultServiceAccount(DefaultServiceAccountName name)
+ *           <li><p> getDefaultServiceAccount(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getDefaultServiceAccountCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -611,6 +646,103 @@ public class CloudBuildClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   Build response = cloudBuildClient.createBuildAsync(parent).get();
+   * }
+   * }</pre>
+   *
+   * @param parent The parent resource where this build will be created. Format:
+   *     `projects/{project}/locations/{location}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Build, BuildOperationMetadata> createBuildAsync(
+      LocationName parent) {
+    CreateBuildRequest request =
+        CreateBuildRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return createBuildAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Starts a build with the specified configuration.
+   *
+   * <p>This method returns a long-running `Operation`, which includes the build ID. Pass the build
+   * ID to `GetBuild` to determine the build status (such as `SUCCESS` or `FAILURE`).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   Build response = cloudBuildClient.createBuildAsync(parent).get();
+   * }
+   * }</pre>
+   *
+   * @param parent The parent resource where this build will be created. Format:
+   *     `projects/{project}/locations/{location}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Build, BuildOperationMetadata> createBuildAsync(ProjectName parent) {
+    CreateBuildRequest request =
+        CreateBuildRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return createBuildAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Starts a build with the specified configuration.
+   *
+   * <p>This method returns a long-running `Operation`, which includes the build ID. Pass the build
+   * ID to `GetBuild` to determine the build status (such as `SUCCESS` or `FAILURE`).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   String parent = ProjectName.of("[PROJECT]").toString();
+   *   Build response = cloudBuildClient.createBuildAsync(parent).get();
+   * }
+   * }</pre>
+   *
+   * @param parent The parent resource where this build will be created. Format:
+   *     `projects/{project}/locations/{location}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Build, BuildOperationMetadata> createBuildAsync(String parent) {
+    CreateBuildRequest request = CreateBuildRequest.newBuilder().setParent(parent).build();
+    return createBuildAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Starts a build with the specified configuration.
+   *
+   * <p>This method returns a long-running `Operation`, which includes the build ID. Pass the build
+   * ID to `GetBuild` to determine the build status (such as `SUCCESS` or `FAILURE`).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   String projectId = "projectId-894832108";
    *   Build build = Build.newBuilder().build();
    *   Build response = cloudBuildClient.createBuildAsync(projectId, build).get();
@@ -646,7 +778,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   CreateBuildRequest request =
    *       CreateBuildRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setBuild(Build.newBuilder().build())
    *           .build();
@@ -680,7 +812,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   CreateBuildRequest request =
    *       CreateBuildRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setBuild(Build.newBuilder().build())
    *           .build();
@@ -714,7 +846,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   CreateBuildRequest request =
    *       CreateBuildRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setBuild(Build.newBuilder().build())
    *           .build();
@@ -726,6 +858,67 @@ public class CloudBuildClient implements BackgroundResource {
    */
   public final UnaryCallable<CreateBuildRequest, Operation> createBuildCallable() {
     return stub.createBuildCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns information about a previously requested build.
+   *
+   * <p>The `Build` that is returned includes its status (such as `SUCCESS`, `FAILURE`, or
+   * `WORKING`), and timing information.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   BuildName name = BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]");
+   *   Build response = cloudBuildClient.getBuild(name);
+   * }
+   * }</pre>
+   *
+   * @param name The name of the `Build` to retrieve. Format:
+   *     `projects/{project}/locations/{location}/builds/{build}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Build getBuild(BuildName name) {
+    GetBuildRequest request =
+        GetBuildRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getBuild(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns information about a previously requested build.
+   *
+   * <p>The `Build` that is returned includes its status (such as `SUCCESS`, `FAILURE`, or
+   * `WORKING`), and timing information.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   String name = BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]").toString();
+   *   Build response = cloudBuildClient.getBuild(name);
+   * }
+   * }</pre>
+   *
+   * @param name The name of the `Build` to retrieve. Format:
+   *     `projects/{project}/locations/{location}/builds/{build}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Build getBuild(String name) {
+    GetBuildRequest request = GetBuildRequest.newBuilder().setName(name).build();
+    return getBuild(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -877,7 +1070,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   ListBuildsRequest request =
    *       ListBuildsRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -914,7 +1107,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   ListBuildsRequest request =
    *       ListBuildsRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -950,7 +1143,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   ListBuildsRequest request =
    *       ListBuildsRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -973,6 +1166,61 @@ public class CloudBuildClient implements BackgroundResource {
    */
   public final UnaryCallable<ListBuildsRequest, ListBuildsResponse> listBuildsCallable() {
     return stub.listBuildsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels a build in progress.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   BuildName name = BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]");
+   *   Build response = cloudBuildClient.cancelBuild(name);
+   * }
+   * }</pre>
+   *
+   * @param name The name of the `Build` to cancel. Format:
+   *     `projects/{project}/locations/{location}/builds/{build}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Build cancelBuild(BuildName name) {
+    CancelBuildRequest request =
+        CancelBuildRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return cancelBuild(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels a build in progress.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   String name = BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]").toString();
+   *   Build response = cloudBuildClient.cancelBuild(name);
+   * }
+   * }</pre>
+   *
+   * @param name The name of the `Build` to cancel. Format:
+   *     `projects/{project}/locations/{location}/builds/{build}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Build cancelBuild(String name) {
+    CancelBuildRequest request = CancelBuildRequest.newBuilder().setName(name).build();
+    return cancelBuild(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1061,6 +1309,121 @@ public class CloudBuildClient implements BackgroundResource {
    */
   public final UnaryCallable<CancelBuildRequest, Build> cancelBuildCallable() {
     return stub.cancelBuildCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new build based on the specified build.
+   *
+   * <p>This method creates a new build using the original build request, which may or may not
+   * result in an identical build.
+   *
+   * <p>For triggered builds:
+   *
+   * <ul>
+   *   <li>Triggered builds resolve to a precise revision; therefore a retry of a triggered build
+   *       will result in a build that uses the same revision.
+   * </ul>
+   *
+   * <p>For non-triggered builds that specify `RepoSource`:
+   *
+   * <ul>
+   *   <li>If the original build built from the tip of a branch, the retried build will build from
+   *       the tip of that branch, which may not be the same revision as the original build.
+   *   <li>If the original build specified a commit sha or revision ID, the retried build will use
+   *       the identical source.
+   * </ul>
+   *
+   * <p>For builds that specify `StorageSource`:
+   *
+   * <ul>
+   *   <li>If the original build pulled source from Cloud Storage without specifying the generation
+   *       of the object, the new build will use the current object, which may be different from the
+   *       original build source.
+   *   <li>If the original build pulled source from Cloud Storage and specified the generation of
+   *       the object, the new build will attempt to use the same object, which may or may not be
+   *       available depending on the bucket's lifecycle management settings.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   BuildName name = BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]");
+   *   Build response = cloudBuildClient.retryBuildAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name The name of the `Build` to retry. Format:
+   *     `projects/{project}/locations/{location}/builds/{build}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Build, BuildOperationMetadata> retryBuildAsync(BuildName name) {
+    RetryBuildRequest request =
+        RetryBuildRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return retryBuildAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new build based on the specified build.
+   *
+   * <p>This method creates a new build using the original build request, which may or may not
+   * result in an identical build.
+   *
+   * <p>For triggered builds:
+   *
+   * <ul>
+   *   <li>Triggered builds resolve to a precise revision; therefore a retry of a triggered build
+   *       will result in a build that uses the same revision.
+   * </ul>
+   *
+   * <p>For non-triggered builds that specify `RepoSource`:
+   *
+   * <ul>
+   *   <li>If the original build built from the tip of a branch, the retried build will build from
+   *       the tip of that branch, which may not be the same revision as the original build.
+   *   <li>If the original build specified a commit sha or revision ID, the retried build will use
+   *       the identical source.
+   * </ul>
+   *
+   * <p>For builds that specify `StorageSource`:
+   *
+   * <ul>
+   *   <li>If the original build pulled source from Cloud Storage without specifying the generation
+   *       of the object, the new build will use the current object, which may be different from the
+   *       original build source.
+   *   <li>If the original build pulled source from Cloud Storage and specified the generation of
+   *       the object, the new build will attempt to use the same object, which may or may not be
+   *       available depending on the bucket's lifecycle management settings.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   String name = BuildName.ofProjectBuildName("[PROJECT]", "[BUILD]").toString();
+   *   Build response = cloudBuildClient.retryBuildAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name The name of the `Build` to retry. Format:
+   *     `projects/{project}/locations/{location}/builds/{build}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Build, BuildOperationMetadata> retryBuildAsync(String name) {
+    RetryBuildRequest request = RetryBuildRequest.newBuilder().setName(name).build();
+    return retryBuildAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1308,7 +1671,8 @@ public class CloudBuildClient implements BackgroundResource {
   /**
    * Approves or rejects a pending build.
    *
-   * <p>If approved, the returned LRO will be analogous to the LRO returned from a CreateBuild call.
+   * <p>If approved, the returned long-running operation (LRO) will be analogous to the LRO returned
+   * from a CreateBuild call.
    *
    * <p>If rejected, the returned LRO will be immediately done.
    *
@@ -1343,7 +1707,8 @@ public class CloudBuildClient implements BackgroundResource {
   /**
    * Approves or rejects a pending build.
    *
-   * <p>If approved, the returned LRO will be analogous to the LRO returned from a CreateBuild call.
+   * <p>If approved, the returned long-running operation (LRO) will be analogous to the LRO returned
+   * from a CreateBuild call.
    *
    * <p>If rejected, the returned LRO will be immediately done.
    *
@@ -1377,7 +1742,8 @@ public class CloudBuildClient implements BackgroundResource {
   /**
    * Approves or rejects a pending build.
    *
-   * <p>If approved, the returned LRO will be analogous to the LRO returned from a CreateBuild call.
+   * <p>If approved, the returned long-running operation (LRO) will be analogous to the LRO returned
+   * from a CreateBuild call.
    *
    * <p>If rejected, the returned LRO will be immediately done.
    *
@@ -1411,7 +1777,8 @@ public class CloudBuildClient implements BackgroundResource {
   /**
    * Approves or rejects a pending build.
    *
-   * <p>If approved, the returned LRO will be analogous to the LRO returned from a CreateBuild call.
+   * <p>If approved, the returned long-running operation (LRO) will be analogous to the LRO returned
+   * from a CreateBuild call.
    *
    * <p>If rejected, the returned LRO will be immediately done.
    *
@@ -1443,7 +1810,93 @@ public class CloudBuildClient implements BackgroundResource {
   /**
    * Creates a new `BuildTrigger`.
    *
-   * <p>This API is experimental.
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   BuildTrigger response = cloudBuildClient.createBuildTrigger(parent);
+   * }
+   * }</pre>
+   *
+   * @param parent The parent resource where this trigger will be created. Format:
+   *     `projects/{project}/locations/{location}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BuildTrigger createBuildTrigger(LocationName parent) {
+    CreateBuildTriggerRequest request =
+        CreateBuildTriggerRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return createBuildTrigger(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `BuildTrigger`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   BuildTrigger response = cloudBuildClient.createBuildTrigger(parent);
+   * }
+   * }</pre>
+   *
+   * @param parent The parent resource where this trigger will be created. Format:
+   *     `projects/{project}/locations/{location}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BuildTrigger createBuildTrigger(ProjectName parent) {
+    CreateBuildTriggerRequest request =
+        CreateBuildTriggerRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return createBuildTrigger(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `BuildTrigger`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   String parent = ProjectName.of("[PROJECT]").toString();
+   *   BuildTrigger response = cloudBuildClient.createBuildTrigger(parent);
+   * }
+   * }</pre>
+   *
+   * @param parent The parent resource where this trigger will be created. Format:
+   *     `projects/{project}/locations/{location}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BuildTrigger createBuildTrigger(String parent) {
+    CreateBuildTriggerRequest request =
+        CreateBuildTriggerRequest.newBuilder().setParent(parent).build();
+    return createBuildTrigger(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new `BuildTrigger`.
    *
    * <p>Sample code:
    *
@@ -1474,8 +1927,6 @@ public class CloudBuildClient implements BackgroundResource {
   /**
    * Creates a new `BuildTrigger`.
    *
-   * <p>This API is experimental.
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1487,7 +1938,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   CreateBuildTriggerRequest request =
    *       CreateBuildTriggerRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setTrigger(BuildTrigger.newBuilder().build())
    *           .build();
@@ -1506,8 +1957,6 @@ public class CloudBuildClient implements BackgroundResource {
   /**
    * Creates a new `BuildTrigger`.
    *
-   * <p>This API is experimental.
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1519,7 +1968,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   CreateBuildTriggerRequest request =
    *       CreateBuildTriggerRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setTrigger(BuildTrigger.newBuilder().build())
    *           .build();
@@ -1538,7 +1987,60 @@ public class CloudBuildClient implements BackgroundResource {
   /**
    * Returns information about a `BuildTrigger`.
    *
-   * <p>This API is experimental.
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   BuildTriggerName name = BuildTriggerName.ofProjectTriggerName("[PROJECT]", "[TRIGGER]");
+   *   BuildTrigger response = cloudBuildClient.getBuildTrigger(name);
+   * }
+   * }</pre>
+   *
+   * @param name The name of the `Trigger` to retrieve. Format:
+   *     `projects/{project}/locations/{location}/triggers/{trigger}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BuildTrigger getBuildTrigger(BuildTriggerName name) {
+    GetBuildTriggerRequest request =
+        GetBuildTriggerRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getBuildTrigger(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns information about a `BuildTrigger`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   String name = BuildTriggerName.ofProjectTriggerName("[PROJECT]", "[TRIGGER]").toString();
+   *   BuildTrigger response = cloudBuildClient.getBuildTrigger(name);
+   * }
+   * }</pre>
+   *
+   * @param name The name of the `Trigger` to retrieve. Format:
+   *     `projects/{project}/locations/{location}/triggers/{trigger}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BuildTrigger getBuildTrigger(String name) {
+    GetBuildTriggerRequest request = GetBuildTriggerRequest.newBuilder().setName(name).build();
+    return getBuildTrigger(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns information about a `BuildTrigger`.
    *
    * <p>Sample code:
    *
@@ -1568,8 +2070,6 @@ public class CloudBuildClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns information about a `BuildTrigger`.
-   *
-   * <p>This API is experimental.
    *
    * <p>Sample code:
    *
@@ -1601,8 +2101,6 @@ public class CloudBuildClient implements BackgroundResource {
   /**
    * Returns information about a `BuildTrigger`.
    *
-   * <p>This API is experimental.
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1633,8 +2131,6 @@ public class CloudBuildClient implements BackgroundResource {
   /**
    * Lists existing `BuildTrigger`s.
    *
-   * <p>This API is experimental.
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1664,8 +2160,6 @@ public class CloudBuildClient implements BackgroundResource {
   /**
    * Lists existing `BuildTrigger`s.
    *
-   * <p>This API is experimental.
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1677,7 +2171,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   ListBuildTriggersRequest request =
    *       ListBuildTriggersRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -1699,8 +2193,6 @@ public class CloudBuildClient implements BackgroundResource {
   /**
    * Lists existing `BuildTrigger`s.
    *
-   * <p>This API is experimental.
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1712,7 +2204,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   ListBuildTriggersRequest request =
    *       ListBuildTriggersRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -1735,8 +2227,6 @@ public class CloudBuildClient implements BackgroundResource {
   /**
    * Lists existing `BuildTrigger`s.
    *
-   * <p>This API is experimental.
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1748,7 +2238,7 @@ public class CloudBuildClient implements BackgroundResource {
    * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
    *   ListBuildTriggersRequest request =
    *       ListBuildTriggersRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setProjectId("projectId-894832108")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -1778,7 +2268,63 @@ public class CloudBuildClient implements BackgroundResource {
   /**
    * Deletes a `BuildTrigger` by its project ID and trigger ID.
    *
-   * <p>This API is experimental.
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   BuildTriggerName name = BuildTriggerName.ofProjectTriggerName("[PROJECT]", "[TRIGGER]");
+   *   cloudBuildClient.deleteBuildTrigger(name);
+   * }
+   * }</pre>
+   *
+   * @param name The name of the `Trigger` to delete. Format:
+   *     `projects/{project}/locations/{location}/triggers/{trigger}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteBuildTrigger(BuildTriggerName name) {
+    DeleteBuildTriggerRequest request =
+        DeleteBuildTriggerRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteBuildTrigger(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a `BuildTrigger` by its project ID and trigger ID.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   String name = BuildTriggerName.ofProjectTriggerName("[PROJECT]", "[TRIGGER]").toString();
+   *   cloudBuildClient.deleteBuildTrigger(name);
+   * }
+   * }</pre>
+   *
+   * @param name The name of the `Trigger` to delete. Format:
+   *     `projects/{project}/locations/{location}/triggers/{trigger}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteBuildTrigger(String name) {
+    DeleteBuildTriggerRequest request =
+        DeleteBuildTriggerRequest.newBuilder().setName(name).build();
+    deleteBuildTrigger(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a `BuildTrigger` by its project ID and trigger ID.
    *
    * <p>Sample code:
    *
@@ -1812,8 +2358,6 @@ public class CloudBuildClient implements BackgroundResource {
   /**
    * Deletes a `BuildTrigger` by its project ID and trigger ID.
    *
-   * <p>This API is experimental.
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1844,8 +2388,6 @@ public class CloudBuildClient implements BackgroundResource {
   /**
    * Deletes a `BuildTrigger` by its project ID and trigger ID.
    *
-   * <p>This API is experimental.
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1874,8 +2416,6 @@ public class CloudBuildClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a `BuildTrigger` by its project ID and trigger ID.
-   *
-   * <p>This API is experimental.
    *
    * <p>Sample code:
    *
@@ -1913,8 +2453,6 @@ public class CloudBuildClient implements BackgroundResource {
   /**
    * Updates a `BuildTrigger` by its project ID and trigger ID.
    *
-   * <p>This API is experimental.
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1945,8 +2483,6 @@ public class CloudBuildClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a `BuildTrigger` by its project ID and trigger ID.
-   *
-   * <p>This API is experimental.
    *
    * <p>Sample code:
    *
@@ -2652,7 +3188,7 @@ public class CloudBuildClient implements BackgroundResource {
    * @param workerPool Required. The `WorkerPool` to update.
    *     <p>The `name` field is used to identify the `WorkerPool` to update. Format:
    *     `projects/{project}/locations/{location}/workerPools/{workerPool}`.
-   * @param updateMask A mask specifying which fields in `worker_pool` to update.
+   * @param updateMask Optional. A mask specifying which fields in `worker_pool` to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<WorkerPool, UpdateWorkerPoolOperationMetadata> updateWorkerPoolAsync(
@@ -2920,6 +3456,122 @@ public class CloudBuildClient implements BackgroundResource {
   public final UnaryCallable<ListWorkerPoolsRequest, ListWorkerPoolsResponse>
       listWorkerPoolsCallable() {
     return stub.listWorkerPoolsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the `DefaultServiceAccount` used by the project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   DefaultServiceAccountName name = DefaultServiceAccountName.of("[PROJECT]", "[LOCATION]");
+   *   DefaultServiceAccount response = cloudBuildClient.getDefaultServiceAccount(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the `DefaultServiceAccount` to retrieve. Format:
+   *     `projects/{project}/locations/{location}/defaultServiceAccount`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DefaultServiceAccount getDefaultServiceAccount(DefaultServiceAccountName name) {
+    GetDefaultServiceAccountRequest request =
+        GetDefaultServiceAccountRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getDefaultServiceAccount(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the `DefaultServiceAccount` used by the project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   String name = DefaultServiceAccountName.of("[PROJECT]", "[LOCATION]").toString();
+   *   DefaultServiceAccount response = cloudBuildClient.getDefaultServiceAccount(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the `DefaultServiceAccount` to retrieve. Format:
+   *     `projects/{project}/locations/{location}/defaultServiceAccount`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DefaultServiceAccount getDefaultServiceAccount(String name) {
+    GetDefaultServiceAccountRequest request =
+        GetDefaultServiceAccountRequest.newBuilder().setName(name).build();
+    return getDefaultServiceAccount(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the `DefaultServiceAccount` used by the project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   GetDefaultServiceAccountRequest request =
+   *       GetDefaultServiceAccountRequest.newBuilder()
+   *           .setName(DefaultServiceAccountName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   DefaultServiceAccount response = cloudBuildClient.getDefaultServiceAccount(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DefaultServiceAccount getDefaultServiceAccount(
+      GetDefaultServiceAccountRequest request) {
+    return getDefaultServiceAccountCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the `DefaultServiceAccount` used by the project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudBuildClient cloudBuildClient = CloudBuildClient.create()) {
+   *   GetDefaultServiceAccountRequest request =
+   *       GetDefaultServiceAccountRequest.newBuilder()
+   *           .setName(DefaultServiceAccountName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   ApiFuture<DefaultServiceAccount> future =
+   *       cloudBuildClient.getDefaultServiceAccountCallable().futureCall(request);
+   *   // Do something.
+   *   DefaultServiceAccount response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetDefaultServiceAccountRequest, DefaultServiceAccount>
+      getDefaultServiceAccountCallable() {
+    return stub.getDefaultServiceAccountCallable();
   }
 
   @Override

@@ -28,6 +28,7 @@ package com.google.cloud.gkemulticloud.v1;
  *
  * Protobuf type {@code google.cloud.gkemulticloud.v1.AwsVolumeTemplate}
  */
+@java.lang.Deprecated
 public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.AwsVolumeTemplate)
@@ -328,7 +329,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
    * Optional. The throughput that the volume supports, in MiB/s. Only valid if
    * volume_type is GP3.
    *
-   * If the volume_type is GP3 and this is not speficied, it defaults to 125.
+   * If the volume_type is GP3 and this is not specified, it defaults to 125.
    * </pre>
    *
    * <code>int32 throughput = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1087,7 +1088,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
      * Optional. The throughput that the volume supports, in MiB/s. Only valid if
      * volume_type is GP3.
      *
-     * If the volume_type is GP3 and this is not speficied, it defaults to 125.
+     * If the volume_type is GP3 and this is not specified, it defaults to 125.
      * </pre>
      *
      * <code>int32 throughput = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1106,7 +1107,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
      * Optional. The throughput that the volume supports, in MiB/s. Only valid if
      * volume_type is GP3.
      *
-     * If the volume_type is GP3 and this is not speficied, it defaults to 125.
+     * If the volume_type is GP3 and this is not specified, it defaults to 125.
      * </pre>
      *
      * <code>int32 throughput = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1129,7 +1130,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
      * Optional. The throughput that the volume supports, in MiB/s. Only valid if
      * volume_type is GP3.
      *
-     * If the volume_type is GP3 and this is not speficied, it defaults to 125.
+     * If the volume_type is GP3 and this is not specified, it defaults to 125.
      * </pre>
      *
      * <code>int32 throughput = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

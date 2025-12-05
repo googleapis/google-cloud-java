@@ -90,7 +90,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
+   * KeyRevocationActionType of the instance. Supported options are "STOP" and
+   * "NONE". The default value is "NONE" if it is not specified.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.InstanceProperties.KeyRevocationActionType}
@@ -275,7 +276,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default. Note that for MachineImage, this is not supported yet.
+   * The private IPv6 google access type for VMs.
+   * If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+   * Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess}
@@ -295,7 +298,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Bidirectional private IPv6 access to/from Google services. If specified, the subnetwork who is attached to the instance's default network interface will be assigned an internal IPv6 prefix if it doesn't have before.
+     * Bidirectional private IPv6 access to/from Google services. If
+     * specified, the subnetwork who is attached to the instance's default network
+     * interface will be assigned an internal IPv6 prefix if it doesn't have
+     * before.
      * </pre>
      *
      * <code>ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 427975994;</code>
@@ -305,7 +311,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Outbound private IPv6 access from VMs in this subnet to Google services. If specified, the subnetwork who is attached to the instance's default network interface will be assigned an internal IPv6 prefix if it doesn't have before.
+     * Outbound private IPv6 access from VMs in this subnet to Google services. If
+     * specified, the subnetwork who is attached to the instance's default network
+     * interface will be assigned an internal IPv6 prefix if it doesn't have
+     * before.
      * </pre>
      *
      * <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 288210263;</code>
@@ -315,7 +324,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Each network interface inherits PrivateIpv6GoogleAccess from its subnetwork.
+     * Each network interface inherits PrivateIpv6GoogleAccess from its
+     * subnetwork.
      * </pre>
      *
      * <code>INHERIT_FROM_SUBNETWORK = 530256959;</code>
@@ -339,7 +349,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Bidirectional private IPv6 access to/from Google services. If specified, the subnetwork who is attached to the instance's default network interface will be assigned an internal IPv6 prefix if it doesn't have before.
+     * Bidirectional private IPv6 access to/from Google services. If
+     * specified, the subnetwork who is attached to the instance's default network
+     * interface will be assigned an internal IPv6 prefix if it doesn't have
+     * before.
      * </pre>
      *
      * <code>ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 427975994;</code>
@@ -350,7 +363,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Outbound private IPv6 access from VMs in this subnet to Google services. If specified, the subnetwork who is attached to the instance's default network interface will be assigned an internal IPv6 prefix if it doesn't have before.
+     * Outbound private IPv6 access from VMs in this subnet to Google services. If
+     * specified, the subnetwork who is attached to the instance's default network
+     * interface will be assigned an internal IPv6 prefix if it doesn't have
+     * before.
      * </pre>
      *
      * <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 288210263;</code>
@@ -361,7 +377,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Each network interface inherits PrivateIpv6GoogleAccess from its subnetwork.
+     * Each network interface inherits PrivateIpv6GoogleAccess from its
+     * subnetwork.
      * </pre>
      *
      * <code>INHERIT_FROM_SUBNETWORK = 530256959;</code>
@@ -464,7 +481,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Controls for advanced machine-related behavior features. Note that for MachineImage, this is not supported yet.
+   * Controls for advanced machine-related behavior features.
+   * Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>
@@ -482,7 +500,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Controls for advanced machine-related behavior features. Note that for MachineImage, this is not supported yet.
+   * Controls for advanced machine-related behavior features.
+   * Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>
@@ -502,7 +521,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Controls for advanced machine-related behavior features. Note that for MachineImage, this is not supported yet.
+   * Controls for advanced machine-related behavior features.
+   * Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>
@@ -524,7 +544,12 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
+   * Enables instances created based on these properties to send packets with
+   * source IP addresses other than their own and receive packets with
+   * destination IP addresses other than their own. If these instances will be
+   * used as an IP gateway or it will be set as the next-hop in a Route
+   * resource, specify true. If unsure, leave this set tofalse. See theEnable IP forwarding
+   * documentation for more information.
    * </pre>
    *
    * <code>optional bool can_ip_forward = 467731324;</code>
@@ -540,7 +565,12 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
+   * Enables instances created based on these properties to send packets with
+   * source IP addresses other than their own and receive packets with
+   * destination IP addresses other than their own. If these instances will be
+   * used as an IP gateway or it will be set as the next-hop in a Route
+   * resource, specify true. If unsure, leave this set tofalse. See theEnable IP forwarding
+   * documentation for more information.
    * </pre>
    *
    * <code>optional bool can_ip_forward = 467731324;</code>
@@ -559,7 +589,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Specifies the Confidential Instance options. Note that for MachineImage, this is not supported yet.
+   * Specifies the Confidential Instance options.
+   * Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>
@@ -577,7 +608,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Specifies the Confidential Instance options. Note that for MachineImage, this is not supported yet.
+   * Specifies the Confidential Instance options.
+   * Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>
@@ -597,7 +629,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Specifies the Confidential Instance options. Note that for MachineImage, this is not supported yet.
+   * Specifies the Confidential Instance options.
+   * Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>
@@ -621,7 +654,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * An optional text description for the instances that are created from these properties.
+   * An optional text description for the instances that are created from these
+   * properties.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -637,7 +671,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * An optional text description for the instances that are created from these properties.
+   * An optional text description for the instances that are created from these
+   * properties.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -661,7 +696,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * An optional text description for the instances that are created from these properties.
+   * An optional text description for the instances that are created from these
+   * properties.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -690,7 +726,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * An array of disks that are associated with the instances that are created from these properties.
+   * An array of disks that are associated with the instances that are created
+   * from these properties.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -704,7 +741,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * An array of disks that are associated with the instances that are created from these properties.
+   * An array of disks that are associated with the instances that are created
+   * from these properties.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -719,7 +757,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * An array of disks that are associated with the instances that are created from these properties.
+   * An array of disks that are associated with the instances that are created
+   * from these properties.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -733,7 +772,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * An array of disks that are associated with the instances that are created from these properties.
+   * An array of disks that are associated with the instances that are created
+   * from these properties.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -747,7 +787,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * An array of disks that are associated with the instances that are created from these properties.
+   * An array of disks that are associated with the instances that are created
+   * from these properties.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -766,7 +807,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A list of guest accelerator cards' type and count to use for instances created from these properties.
+   * A list of guest accelerator cards' type and count to use for instances
+   * created from these properties.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
@@ -781,7 +823,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A list of guest accelerator cards' type and count to use for instances created from these properties.
+   * A list of guest accelerator cards' type and count to use for instances
+   * created from these properties.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
@@ -797,7 +840,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A list of guest accelerator cards' type and count to use for instances created from these properties.
+   * A list of guest accelerator cards' type and count to use for instances
+   * created from these properties.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
@@ -812,7 +856,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A list of guest accelerator cards' type and count to use for instances created from these properties.
+   * A list of guest accelerator cards' type and count to use for instances
+   * created from these properties.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
@@ -827,7 +872,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A list of guest accelerator cards' type and count to use for instances created from these properties.
+   * A list of guest accelerator cards' type and count to use for instances
+   * created from these properties.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
@@ -848,7 +894,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
+   * KeyRevocationActionType of the instance. Supported options are "STOP" and
+   * "NONE". The default value is "NONE" if it is not specified.
    * Check the KeyRevocationActionType enum for the list of possible values.
    * </pre>
    *
@@ -865,7 +912,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
+   * KeyRevocationActionType of the instance. Supported options are "STOP" and
+   * "NONE". The default value is "NONE" if it is not specified.
    * Check the KeyRevocationActionType enum for the list of possible values.
    * </pre>
    *
@@ -890,7 +938,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
+   * KeyRevocationActionType of the instance. Supported options are "STOP" and
+   * "NONE". The default value is "NONE" if it is not specified.
    * Check the KeyRevocationActionType enum for the list of possible values.
    * </pre>
    *
@@ -1027,7 +1076,12 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The machine type to use for instances that are created from these properties. This field only accepts a machine type name, for example `n2-standard-4`. If you use the machine type full or partial URL, for example `projects/my-l7ilb-project/zones/us-central1-a/machineTypes/n2-standard-4`, the request will result in an `INTERNAL_ERROR`.
+   * The machine type to use for instances that are created from these
+   * properties.
+   * This field only accepts a machine type name, for example `n2-standard-4`.
+   * If you use the machine type full or partial URL, for example
+   * `projects/my-l7ilb-project/zones/us-central1-a/machineTypes/n2-standard-4`,
+   * the request will result in an `INTERNAL_ERROR`.
    * </pre>
    *
    * <code>optional string machine_type = 227711026;</code>
@@ -1043,7 +1097,12 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The machine type to use for instances that are created from these properties. This field only accepts a machine type name, for example `n2-standard-4`. If you use the machine type full or partial URL, for example `projects/my-l7ilb-project/zones/us-central1-a/machineTypes/n2-standard-4`, the request will result in an `INTERNAL_ERROR`.
+   * The machine type to use for instances that are created from these
+   * properties.
+   * This field only accepts a machine type name, for example `n2-standard-4`.
+   * If you use the machine type full or partial URL, for example
+   * `projects/my-l7ilb-project/zones/us-central1-a/machineTypes/n2-standard-4`,
+   * the request will result in an `INTERNAL_ERROR`.
    * </pre>
    *
    * <code>optional string machine_type = 227711026;</code>
@@ -1067,7 +1126,12 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The machine type to use for instances that are created from these properties. This field only accepts a machine type name, for example `n2-standard-4`. If you use the machine type full or partial URL, for example `projects/my-l7ilb-project/zones/us-central1-a/machineTypes/n2-standard-4`, the request will result in an `INTERNAL_ERROR`.
+   * The machine type to use for instances that are created from these
+   * properties.
+   * This field only accepts a machine type name, for example `n2-standard-4`.
+   * If you use the machine type full or partial URL, for example
+   * `projects/my-l7ilb-project/zones/us-central1-a/machineTypes/n2-standard-4`,
+   * the request will result in an `INTERNAL_ERROR`.
    * </pre>
    *
    * <code>optional string machine_type = 227711026;</code>
@@ -1094,7 +1158,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The metadata key/value pairs to assign to instances that are created from these properties. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information.
+   * The metadata key/value pairs to assign to instances that are created from
+   * these properties. These pairs can consist of custom metadata or predefined
+   * keys. SeeProject and
+   * instance metadata for more information.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
@@ -1110,7 +1177,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The metadata key/value pairs to assign to instances that are created from these properties. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information.
+   * The metadata key/value pairs to assign to instances that are created from
+   * these properties. These pairs can consist of custom metadata or predefined
+   * keys. SeeProject and
+   * instance metadata for more information.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
@@ -1128,7 +1198,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The metadata key/value pairs to assign to instances that are created from these properties. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information.
+   * The metadata key/value pairs to assign to instances that are created from
+   * these properties. These pairs can consist of custom metadata or predefined
+   * keys. SeeProject and
+   * instance metadata for more information.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
@@ -1149,7 +1222,11 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Minimum cpu/platform to be used by instances. The instance may be scheduled on the specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more information, read Specifying a Minimum CPU Platform.
+   * Minimum cpu/platform to be used by instances. The instance may be
+   * scheduled on the specified or newer cpu/platform. Applicable values are the
+   * friendly names of CPU platforms, such asminCpuPlatform: "Intel Haswell" orminCpuPlatform: "Intel Sandy Bridge". For more
+   * information, read Specifying a
+   * Minimum CPU Platform.
    * </pre>
    *
    * <code>optional string min_cpu_platform = 242912759;</code>
@@ -1165,7 +1242,11 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Minimum cpu/platform to be used by instances. The instance may be scheduled on the specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more information, read Specifying a Minimum CPU Platform.
+   * Minimum cpu/platform to be used by instances. The instance may be
+   * scheduled on the specified or newer cpu/platform. Applicable values are the
+   * friendly names of CPU platforms, such asminCpuPlatform: "Intel Haswell" orminCpuPlatform: "Intel Sandy Bridge". For more
+   * information, read Specifying a
+   * Minimum CPU Platform.
    * </pre>
    *
    * <code>optional string min_cpu_platform = 242912759;</code>
@@ -1189,7 +1270,11 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Minimum cpu/platform to be used by instances. The instance may be scheduled on the specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more information, read Specifying a Minimum CPU Platform.
+   * Minimum cpu/platform to be used by instances. The instance may be
+   * scheduled on the specified or newer cpu/platform. Applicable values are the
+   * friendly names of CPU platforms, such asminCpuPlatform: "Intel Haswell" orminCpuPlatform: "Intel Sandy Bridge". For more
+   * information, read Specifying a
+   * Minimum CPU Platform.
    * </pre>
    *
    * <code>optional string min_cpu_platform = 242912759;</code>
@@ -1355,7 +1440,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default. Note that for MachineImage, this is not supported yet.
+   * The private IPv6 google access type for VMs.
+   * If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+   * Note that for MachineImage, this is not supported yet.
    * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
@@ -1372,7 +1459,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default. Note that for MachineImage, this is not supported yet.
+   * The private IPv6 google access type for VMs.
+   * If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+   * Note that for MachineImage, this is not supported yet.
    * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
@@ -1397,7 +1486,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default. Note that for MachineImage, this is not supported yet.
+   * The private IPv6 google access type for VMs.
+   * If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+   * Note that for MachineImage, this is not supported yet.
    * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
@@ -1425,7 +1516,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Specifies the reservations that instances can consume from. Note that for MachineImage, this is not supported yet.
+   * Specifies the reservations that instances can consume from.
+   * Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
@@ -1442,7 +1534,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Specifies the reservations that instances can consume from. Note that for MachineImage, this is not supported yet.
+   * Specifies the reservations that instances can consume from.
+   * Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
@@ -1461,7 +1554,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Specifies the reservations that instances can consume from. Note that for MachineImage, this is not supported yet.
+   * Specifies the reservations that instances can consume from.
+   * Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
@@ -1508,7 +1602,11 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * Resource manager tags to be bound to the instance. Tag keys and values
+   * have the same definition as resource
+   * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
+   * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
+   * PATCH) when empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -1532,7 +1630,11 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * Resource manager tags to be bound to the instance. Tag keys and values
+   * have the same definition as resource
+   * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
+   * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
+   * PATCH) when empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -1546,7 +1648,11 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * Resource manager tags to be bound to the instance. Tag keys and values
+   * have the same definition as resource
+   * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
+   * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
+   * PATCH) when empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -1568,7 +1674,11 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * Resource manager tags to be bound to the instance. Tag keys and values
+   * have the same definition as resource
+   * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
+   * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
+   * PATCH) when empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -1596,7 +1706,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Resource policies (names, not URLs) applied to instances created from these properties. Note that for MachineImage, this is not supported yet.
+   * Resource policies (names, not URLs) applied to instances created from
+   * these properties.
+   * Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>repeated string resource_policies = 22220385;</code>
@@ -1611,7 +1723,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Resource policies (names, not URLs) applied to instances created from these properties. Note that for MachineImage, this is not supported yet.
+   * Resource policies (names, not URLs) applied to instances created from
+   * these properties.
+   * Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>repeated string resource_policies = 22220385;</code>
@@ -1626,7 +1740,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Resource policies (names, not URLs) applied to instances created from these properties. Note that for MachineImage, this is not supported yet.
+   * Resource policies (names, not URLs) applied to instances created from
+   * these properties.
+   * Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>repeated string resource_policies = 22220385;</code>
@@ -1642,7 +1758,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Resource policies (names, not URLs) applied to instances created from these properties. Note that for MachineImage, this is not supported yet.
+   * Resource policies (names, not URLs) applied to instances created from
+   * these properties.
+   * Note that for MachineImage, this is not supported yet.
    * </pre>
    *
    * <code>repeated string resource_policies = 22220385;</code>
@@ -1661,7 +1779,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Specifies the scheduling options for the instances that are created from these properties.
+   * Specifies the scheduling options for the instances that are created from
+   * these properties.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
@@ -1677,7 +1796,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Specifies the scheduling options for the instances that are created from these properties.
+   * Specifies the scheduling options for the instances that are created from
+   * these properties.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
@@ -1695,7 +1815,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Specifies the scheduling options for the instances that are created from these properties.
+   * Specifies the scheduling options for the instances that are created from
+   * these properties.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
@@ -1716,7 +1837,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
+   * A list of service accounts with specified scopes. Access tokens for these
+   * service accounts are available to the instances that are created from
+   * these properties. Use metadata queries to obtain the access tokens for
+   * these instances.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -1730,7 +1854,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
+   * A list of service accounts with specified scopes. Access tokens for these
+   * service accounts are available to the instances that are created from
+   * these properties. Use metadata queries to obtain the access tokens for
+   * these instances.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -1745,7 +1872,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
+   * A list of service accounts with specified scopes. Access tokens for these
+   * service accounts are available to the instances that are created from
+   * these properties. Use metadata queries to obtain the access tokens for
+   * these instances.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -1759,7 +1889,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
+   * A list of service accounts with specified scopes. Access tokens for these
+   * service accounts are available to the instances that are created from
+   * these properties. Use metadata queries to obtain the access tokens for
+   * these instances.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -1773,7 +1906,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
+   * A list of service accounts with specified scopes. Access tokens for these
+   * service accounts are available to the instances that are created from
+   * these properties. Use metadata queries to obtain the access tokens for
+   * these instances.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -1851,7 +1987,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A list of tags to apply to the instances that are created from these properties. The tags identify valid sources or targets for network firewalls. The setTags method can modify this list of tags. Each tag within the list must comply with RFC1035.
+   * A list of tags to apply to the instances that are created from these
+   * properties. The tags identify valid sources or targets for network
+   * firewalls. The setTags method can modify this list of tags. Each tag within
+   * the list must comply with RFC1035.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
@@ -1867,7 +2006,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A list of tags to apply to the instances that are created from these properties. The tags identify valid sources or targets for network firewalls. The setTags method can modify this list of tags. Each tag within the list must comply with RFC1035.
+   * A list of tags to apply to the instances that are created from these
+   * properties. The tags identify valid sources or targets for network
+   * firewalls. The setTags method can modify this list of tags. Each tag within
+   * the list must comply with RFC1035.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
@@ -1883,7 +2025,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A list of tags to apply to the instances that are created from these properties. The tags identify valid sources or targets for network firewalls. The setTags method can modify this list of tags. Each tag within the list must comply with RFC1035.
+   * A list of tags to apply to the instances that are created from these
+   * properties. The tags identify valid sources or targets for network
+   * firewalls. The setTags method can modify this list of tags. Each tag within
+   * the list must comply with RFC1035.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
@@ -3136,7 +3281,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Controls for advanced machine-related behavior features. Note that for MachineImage, this is not supported yet.
+     * Controls for advanced machine-related behavior features.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -3153,7 +3299,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Controls for advanced machine-related behavior features. Note that for MachineImage, this is not supported yet.
+     * Controls for advanced machine-related behavior features.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -3176,7 +3323,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Controls for advanced machine-related behavior features. Note that for MachineImage, this is not supported yet.
+     * Controls for advanced machine-related behavior features.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -3202,7 +3350,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Controls for advanced machine-related behavior features. Note that for MachineImage, this is not supported yet.
+     * Controls for advanced machine-related behavior features.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -3225,7 +3374,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Controls for advanced machine-related behavior features. Note that for MachineImage, this is not supported yet.
+     * Controls for advanced machine-related behavior features.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -3257,7 +3407,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Controls for advanced machine-related behavior features. Note that for MachineImage, this is not supported yet.
+     * Controls for advanced machine-related behavior features.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -3279,7 +3430,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Controls for advanced machine-related behavior features. Note that for MachineImage, this is not supported yet.
+     * Controls for advanced machine-related behavior features.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -3297,7 +3449,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Controls for advanced machine-related behavior features. Note that for MachineImage, this is not supported yet.
+     * Controls for advanced machine-related behavior features.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -3319,7 +3472,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Controls for advanced machine-related behavior features. Note that for MachineImage, this is not supported yet.
+     * Controls for advanced machine-related behavior features.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -3349,7 +3503,12 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
+     * Enables instances created based on these properties to send packets with
+     * source IP addresses other than their own and receive packets with
+     * destination IP addresses other than their own. If these instances will be
+     * used as an IP gateway or it will be set as the next-hop in a Route
+     * resource, specify true. If unsure, leave this set tofalse. See theEnable IP forwarding
+     * documentation for more information.
      * </pre>
      *
      * <code>optional bool can_ip_forward = 467731324;</code>
@@ -3365,7 +3524,12 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
+     * Enables instances created based on these properties to send packets with
+     * source IP addresses other than their own and receive packets with
+     * destination IP addresses other than their own. If these instances will be
+     * used as an IP gateway or it will be set as the next-hop in a Route
+     * resource, specify true. If unsure, leave this set tofalse. See theEnable IP forwarding
+     * documentation for more information.
      * </pre>
      *
      * <code>optional bool can_ip_forward = 467731324;</code>
@@ -3381,7 +3545,12 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
+     * Enables instances created based on these properties to send packets with
+     * source IP addresses other than their own and receive packets with
+     * destination IP addresses other than their own. If these instances will be
+     * used as an IP gateway or it will be set as the next-hop in a Route
+     * resource, specify true. If unsure, leave this set tofalse. See theEnable IP forwarding
+     * documentation for more information.
      * </pre>
      *
      * <code>optional bool can_ip_forward = 467731324;</code>
@@ -3401,7 +3570,12 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
+     * Enables instances created based on these properties to send packets with
+     * source IP addresses other than their own and receive packets with
+     * destination IP addresses other than their own. If these instances will be
+     * used as an IP gateway or it will be set as the next-hop in a Route
+     * resource, specify true. If unsure, leave this set tofalse. See theEnable IP forwarding
+     * documentation for more information.
      * </pre>
      *
      * <code>optional bool can_ip_forward = 467731324;</code>
@@ -3426,7 +3600,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the Confidential Instance options. Note that for MachineImage, this is not supported yet.
+     * Specifies the Confidential Instance options.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -3443,7 +3618,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the Confidential Instance options. Note that for MachineImage, this is not supported yet.
+     * Specifies the Confidential Instance options.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -3466,7 +3642,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the Confidential Instance options. Note that for MachineImage, this is not supported yet.
+     * Specifies the Confidential Instance options.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -3492,7 +3669,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the Confidential Instance options. Note that for MachineImage, this is not supported yet.
+     * Specifies the Confidential Instance options.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -3515,7 +3693,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the Confidential Instance options. Note that for MachineImage, this is not supported yet.
+     * Specifies the Confidential Instance options.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -3547,7 +3726,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the Confidential Instance options. Note that for MachineImage, this is not supported yet.
+     * Specifies the Confidential Instance options.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -3569,7 +3749,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the Confidential Instance options. Note that for MachineImage, this is not supported yet.
+     * Specifies the Confidential Instance options.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -3587,7 +3768,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the Confidential Instance options. Note that for MachineImage, this is not supported yet.
+     * Specifies the Confidential Instance options.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -3609,7 +3791,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the Confidential Instance options. Note that for MachineImage, this is not supported yet.
+     * Specifies the Confidential Instance options.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>
@@ -3639,7 +3822,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * An optional text description for the instances that are created from these properties.
+     * An optional text description for the instances that are created from these
+     * properties.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -3654,7 +3838,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * An optional text description for the instances that are created from these properties.
+     * An optional text description for the instances that are created from these
+     * properties.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -3677,7 +3862,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * An optional text description for the instances that are created from these properties.
+     * An optional text description for the instances that are created from these
+     * properties.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -3700,7 +3886,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * An optional text description for the instances that are created from these properties.
+     * An optional text description for the instances that are created from these
+     * properties.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -3722,7 +3909,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * An optional text description for the instances that are created from these properties.
+     * An optional text description for the instances that are created from these
+     * properties.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -3740,7 +3928,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * An optional text description for the instances that are created from these properties.
+     * An optional text description for the instances that are created from these
+     * properties.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -3779,7 +3968,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * An array of disks that are associated with the instances that are created from these properties.
+     * An array of disks that are associated with the instances that are created
+     * from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -3796,7 +3986,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * An array of disks that are associated with the instances that are created from these properties.
+     * An array of disks that are associated with the instances that are created
+     * from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -3813,7 +4004,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * An array of disks that are associated with the instances that are created from these properties.
+     * An array of disks that are associated with the instances that are created
+     * from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -3830,7 +4022,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * An array of disks that are associated with the instances that are created from these properties.
+     * An array of disks that are associated with the instances that are created
+     * from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -3853,7 +4046,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * An array of disks that are associated with the instances that are created from these properties.
+     * An array of disks that are associated with the instances that are created
+     * from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -3874,7 +4068,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * An array of disks that are associated with the instances that are created from these properties.
+     * An array of disks that are associated with the instances that are created
+     * from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -3897,7 +4092,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * An array of disks that are associated with the instances that are created from these properties.
+     * An array of disks that are associated with the instances that are created
+     * from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -3920,7 +4116,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * An array of disks that are associated with the instances that are created from these properties.
+     * An array of disks that are associated with the instances that are created
+     * from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -3940,7 +4137,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * An array of disks that are associated with the instances that are created from these properties.
+     * An array of disks that are associated with the instances that are created
+     * from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -3961,7 +4159,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * An array of disks that are associated with the instances that are created from these properties.
+     * An array of disks that are associated with the instances that are created
+     * from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -3982,7 +4181,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * An array of disks that are associated with the instances that are created from these properties.
+     * An array of disks that are associated with the instances that are created
+     * from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -4002,7 +4202,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * An array of disks that are associated with the instances that are created from these properties.
+     * An array of disks that are associated with the instances that are created
+     * from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -4022,7 +4223,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * An array of disks that are associated with the instances that are created from these properties.
+     * An array of disks that are associated with the instances that are created
+     * from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -4035,7 +4237,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * An array of disks that are associated with the instances that are created from these properties.
+     * An array of disks that are associated with the instances that are created
+     * from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -4052,7 +4255,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * An array of disks that are associated with the instances that are created from these properties.
+     * An array of disks that are associated with the instances that are created
+     * from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -4070,7 +4274,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * An array of disks that are associated with the instances that are created from these properties.
+     * An array of disks that are associated with the instances that are created
+     * from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -4084,7 +4289,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * An array of disks that are associated with the instances that are created from these properties.
+     * An array of disks that are associated with the instances that are created
+     * from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -4098,7 +4304,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * An array of disks that are associated with the instances that are created from these properties.
+     * An array of disks that are associated with the instances that are created
+     * from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -4146,7 +4353,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of guest accelerator cards' type and count to use for instances created from these properties.
+     * A list of guest accelerator cards' type and count to use for instances
+     * created from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
@@ -4165,7 +4373,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of guest accelerator cards' type and count to use for instances created from these properties.
+     * A list of guest accelerator cards' type and count to use for instances
+     * created from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
@@ -4183,7 +4392,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of guest accelerator cards' type and count to use for instances created from these properties.
+     * A list of guest accelerator cards' type and count to use for instances
+     * created from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
@@ -4201,7 +4411,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of guest accelerator cards' type and count to use for instances created from these properties.
+     * A list of guest accelerator cards' type and count to use for instances
+     * created from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
@@ -4226,7 +4437,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of guest accelerator cards' type and count to use for instances created from these properties.
+     * A list of guest accelerator cards' type and count to use for instances
+     * created from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
@@ -4248,7 +4460,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of guest accelerator cards' type and count to use for instances created from these properties.
+     * A list of guest accelerator cards' type and count to use for instances
+     * created from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
@@ -4272,7 +4485,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of guest accelerator cards' type and count to use for instances created from these properties.
+     * A list of guest accelerator cards' type and count to use for instances
+     * created from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
@@ -4297,7 +4511,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of guest accelerator cards' type and count to use for instances created from these properties.
+     * A list of guest accelerator cards' type and count to use for instances
+     * created from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
@@ -4319,7 +4534,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of guest accelerator cards' type and count to use for instances created from these properties.
+     * A list of guest accelerator cards' type and count to use for instances
+     * created from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
@@ -4341,7 +4557,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of guest accelerator cards' type and count to use for instances created from these properties.
+     * A list of guest accelerator cards' type and count to use for instances
+     * created from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
@@ -4363,7 +4580,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of guest accelerator cards' type and count to use for instances created from these properties.
+     * A list of guest accelerator cards' type and count to use for instances
+     * created from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
@@ -4384,7 +4602,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of guest accelerator cards' type and count to use for instances created from these properties.
+     * A list of guest accelerator cards' type and count to use for instances
+     * created from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
@@ -4405,7 +4624,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of guest accelerator cards' type and count to use for instances created from these properties.
+     * A list of guest accelerator cards' type and count to use for instances
+     * created from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
@@ -4420,7 +4640,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of guest accelerator cards' type and count to use for instances created from these properties.
+     * A list of guest accelerator cards' type and count to use for instances
+     * created from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
@@ -4439,7 +4660,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of guest accelerator cards' type and count to use for instances created from these properties.
+     * A list of guest accelerator cards' type and count to use for instances
+     * created from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
@@ -4458,7 +4680,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of guest accelerator cards' type and count to use for instances created from these properties.
+     * A list of guest accelerator cards' type and count to use for instances
+     * created from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
@@ -4473,7 +4696,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of guest accelerator cards' type and count to use for instances created from these properties.
+     * A list of guest accelerator cards' type and count to use for instances
+     * created from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
@@ -4489,7 +4713,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of guest accelerator cards' type and count to use for instances created from these properties.
+     * A list of guest accelerator cards' type and count to use for instances
+     * created from these properties.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
@@ -4526,7 +4751,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
+     * KeyRevocationActionType of the instance. Supported options are "STOP" and
+     * "NONE". The default value is "NONE" if it is not specified.
      * Check the KeyRevocationActionType enum for the list of possible values.
      * </pre>
      *
@@ -4542,7 +4768,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
+     * KeyRevocationActionType of the instance. Supported options are "STOP" and
+     * "NONE". The default value is "NONE" if it is not specified.
      * Check the KeyRevocationActionType enum for the list of possible values.
      * </pre>
      *
@@ -4566,7 +4793,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
+     * KeyRevocationActionType of the instance. Supported options are "STOP" and
+     * "NONE". The default value is "NONE" if it is not specified.
      * Check the KeyRevocationActionType enum for the list of possible values.
      * </pre>
      *
@@ -4590,7 +4818,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
+     * KeyRevocationActionType of the instance. Supported options are "STOP" and
+     * "NONE". The default value is "NONE" if it is not specified.
      * Check the KeyRevocationActionType enum for the list of possible values.
      * </pre>
      *
@@ -4613,7 +4842,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
+     * KeyRevocationActionType of the instance. Supported options are "STOP" and
+     * "NONE". The default value is "NONE" if it is not specified.
      * Check the KeyRevocationActionType enum for the list of possible values.
      * </pre>
      *
@@ -4632,7 +4862,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
+     * KeyRevocationActionType of the instance. Supported options are "STOP" and
+     * "NONE". The default value is "NONE" if it is not specified.
      * Check the KeyRevocationActionType enum for the list of possible values.
      * </pre>
      *
@@ -4830,7 +5061,12 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The machine type to use for instances that are created from these properties. This field only accepts a machine type name, for example `n2-standard-4`. If you use the machine type full or partial URL, for example `projects/my-l7ilb-project/zones/us-central1-a/machineTypes/n2-standard-4`, the request will result in an `INTERNAL_ERROR`.
+     * The machine type to use for instances that are created from these
+     * properties.
+     * This field only accepts a machine type name, for example `n2-standard-4`.
+     * If you use the machine type full or partial URL, for example
+     * `projects/my-l7ilb-project/zones/us-central1-a/machineTypes/n2-standard-4`,
+     * the request will result in an `INTERNAL_ERROR`.
      * </pre>
      *
      * <code>optional string machine_type = 227711026;</code>
@@ -4845,7 +5081,12 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The machine type to use for instances that are created from these properties. This field only accepts a machine type name, for example `n2-standard-4`. If you use the machine type full or partial URL, for example `projects/my-l7ilb-project/zones/us-central1-a/machineTypes/n2-standard-4`, the request will result in an `INTERNAL_ERROR`.
+     * The machine type to use for instances that are created from these
+     * properties.
+     * This field only accepts a machine type name, for example `n2-standard-4`.
+     * If you use the machine type full or partial URL, for example
+     * `projects/my-l7ilb-project/zones/us-central1-a/machineTypes/n2-standard-4`,
+     * the request will result in an `INTERNAL_ERROR`.
      * </pre>
      *
      * <code>optional string machine_type = 227711026;</code>
@@ -4868,7 +5109,12 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The machine type to use for instances that are created from these properties. This field only accepts a machine type name, for example `n2-standard-4`. If you use the machine type full or partial URL, for example `projects/my-l7ilb-project/zones/us-central1-a/machineTypes/n2-standard-4`, the request will result in an `INTERNAL_ERROR`.
+     * The machine type to use for instances that are created from these
+     * properties.
+     * This field only accepts a machine type name, for example `n2-standard-4`.
+     * If you use the machine type full or partial URL, for example
+     * `projects/my-l7ilb-project/zones/us-central1-a/machineTypes/n2-standard-4`,
+     * the request will result in an `INTERNAL_ERROR`.
      * </pre>
      *
      * <code>optional string machine_type = 227711026;</code>
@@ -4891,7 +5137,12 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The machine type to use for instances that are created from these properties. This field only accepts a machine type name, for example `n2-standard-4`. If you use the machine type full or partial URL, for example `projects/my-l7ilb-project/zones/us-central1-a/machineTypes/n2-standard-4`, the request will result in an `INTERNAL_ERROR`.
+     * The machine type to use for instances that are created from these
+     * properties.
+     * This field only accepts a machine type name, for example `n2-standard-4`.
+     * If you use the machine type full or partial URL, for example
+     * `projects/my-l7ilb-project/zones/us-central1-a/machineTypes/n2-standard-4`,
+     * the request will result in an `INTERNAL_ERROR`.
      * </pre>
      *
      * <code>optional string machine_type = 227711026;</code>
@@ -4913,7 +5164,12 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The machine type to use for instances that are created from these properties. This field only accepts a machine type name, for example `n2-standard-4`. If you use the machine type full or partial URL, for example `projects/my-l7ilb-project/zones/us-central1-a/machineTypes/n2-standard-4`, the request will result in an `INTERNAL_ERROR`.
+     * The machine type to use for instances that are created from these
+     * properties.
+     * This field only accepts a machine type name, for example `n2-standard-4`.
+     * If you use the machine type full or partial URL, for example
+     * `projects/my-l7ilb-project/zones/us-central1-a/machineTypes/n2-standard-4`,
+     * the request will result in an `INTERNAL_ERROR`.
      * </pre>
      *
      * <code>optional string machine_type = 227711026;</code>
@@ -4931,7 +5187,12 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The machine type to use for instances that are created from these properties. This field only accepts a machine type name, for example `n2-standard-4`. If you use the machine type full or partial URL, for example `projects/my-l7ilb-project/zones/us-central1-a/machineTypes/n2-standard-4`, the request will result in an `INTERNAL_ERROR`.
+     * The machine type to use for instances that are created from these
+     * properties.
+     * This field only accepts a machine type name, for example `n2-standard-4`.
+     * If you use the machine type full or partial URL, for example
+     * `projects/my-l7ilb-project/zones/us-central1-a/machineTypes/n2-standard-4`,
+     * the request will result in an `INTERNAL_ERROR`.
      * </pre>
      *
      * <code>optional string machine_type = 227711026;</code>
@@ -4961,7 +5222,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The metadata key/value pairs to assign to instances that are created from these properties. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information.
+     * The metadata key/value pairs to assign to instances that are created from
+     * these properties. These pairs can consist of custom metadata or predefined
+     * keys. SeeProject and
+     * instance metadata for more information.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
@@ -4976,7 +5240,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The metadata key/value pairs to assign to instances that are created from these properties. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information.
+     * The metadata key/value pairs to assign to instances that are created from
+     * these properties. These pairs can consist of custom metadata or predefined
+     * keys. SeeProject and
+     * instance metadata for more information.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
@@ -4997,7 +5264,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The metadata key/value pairs to assign to instances that are created from these properties. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information.
+     * The metadata key/value pairs to assign to instances that are created from
+     * these properties. These pairs can consist of custom metadata or predefined
+     * keys. SeeProject and
+     * instance metadata for more information.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
@@ -5020,7 +5290,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The metadata key/value pairs to assign to instances that are created from these properties. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information.
+     * The metadata key/value pairs to assign to instances that are created from
+     * these properties. These pairs can consist of custom metadata or predefined
+     * keys. SeeProject and
+     * instance metadata for more information.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
@@ -5040,7 +5313,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The metadata key/value pairs to assign to instances that are created from these properties. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information.
+     * The metadata key/value pairs to assign to instances that are created from
+     * these properties. These pairs can consist of custom metadata or predefined
+     * keys. SeeProject and
+     * instance metadata for more information.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
@@ -5068,7 +5344,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The metadata key/value pairs to assign to instances that are created from these properties. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information.
+     * The metadata key/value pairs to assign to instances that are created from
+     * these properties. These pairs can consist of custom metadata or predefined
+     * keys. SeeProject and
+     * instance metadata for more information.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
@@ -5088,7 +5367,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The metadata key/value pairs to assign to instances that are created from these properties. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information.
+     * The metadata key/value pairs to assign to instances that are created from
+     * these properties. These pairs can consist of custom metadata or predefined
+     * keys. SeeProject and
+     * instance metadata for more information.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
@@ -5103,7 +5385,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The metadata key/value pairs to assign to instances that are created from these properties. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information.
+     * The metadata key/value pairs to assign to instances that are created from
+     * these properties. These pairs can consist of custom metadata or predefined
+     * keys. SeeProject and
+     * instance metadata for more information.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
@@ -5122,7 +5407,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The metadata key/value pairs to assign to instances that are created from these properties. These pairs can consist of custom metadata or predefined keys. See Project and instance metadata for more information.
+     * The metadata key/value pairs to assign to instances that are created from
+     * these properties. These pairs can consist of custom metadata or predefined
+     * keys. SeeProject and
+     * instance metadata for more information.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
@@ -5150,7 +5438,11 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Minimum cpu/platform to be used by instances. The instance may be scheduled on the specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more information, read Specifying a Minimum CPU Platform.
+     * Minimum cpu/platform to be used by instances. The instance may be
+     * scheduled on the specified or newer cpu/platform. Applicable values are the
+     * friendly names of CPU platforms, such asminCpuPlatform: "Intel Haswell" orminCpuPlatform: "Intel Sandy Bridge". For more
+     * information, read Specifying a
+     * Minimum CPU Platform.
      * </pre>
      *
      * <code>optional string min_cpu_platform = 242912759;</code>
@@ -5165,7 +5457,11 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Minimum cpu/platform to be used by instances. The instance may be scheduled on the specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more information, read Specifying a Minimum CPU Platform.
+     * Minimum cpu/platform to be used by instances. The instance may be
+     * scheduled on the specified or newer cpu/platform. Applicable values are the
+     * friendly names of CPU platforms, such asminCpuPlatform: "Intel Haswell" orminCpuPlatform: "Intel Sandy Bridge". For more
+     * information, read Specifying a
+     * Minimum CPU Platform.
      * </pre>
      *
      * <code>optional string min_cpu_platform = 242912759;</code>
@@ -5188,7 +5484,11 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Minimum cpu/platform to be used by instances. The instance may be scheduled on the specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more information, read Specifying a Minimum CPU Platform.
+     * Minimum cpu/platform to be used by instances. The instance may be
+     * scheduled on the specified or newer cpu/platform. Applicable values are the
+     * friendly names of CPU platforms, such asminCpuPlatform: "Intel Haswell" orminCpuPlatform: "Intel Sandy Bridge". For more
+     * information, read Specifying a
+     * Minimum CPU Platform.
      * </pre>
      *
      * <code>optional string min_cpu_platform = 242912759;</code>
@@ -5211,7 +5511,11 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Minimum cpu/platform to be used by instances. The instance may be scheduled on the specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more information, read Specifying a Minimum CPU Platform.
+     * Minimum cpu/platform to be used by instances. The instance may be
+     * scheduled on the specified or newer cpu/platform. Applicable values are the
+     * friendly names of CPU platforms, such asminCpuPlatform: "Intel Haswell" orminCpuPlatform: "Intel Sandy Bridge". For more
+     * information, read Specifying a
+     * Minimum CPU Platform.
      * </pre>
      *
      * <code>optional string min_cpu_platform = 242912759;</code>
@@ -5233,7 +5537,11 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Minimum cpu/platform to be used by instances. The instance may be scheduled on the specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more information, read Specifying a Minimum CPU Platform.
+     * Minimum cpu/platform to be used by instances. The instance may be
+     * scheduled on the specified or newer cpu/platform. Applicable values are the
+     * friendly names of CPU platforms, such asminCpuPlatform: "Intel Haswell" orminCpuPlatform: "Intel Sandy Bridge". For more
+     * information, read Specifying a
+     * Minimum CPU Platform.
      * </pre>
      *
      * <code>optional string min_cpu_platform = 242912759;</code>
@@ -5251,7 +5559,11 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Minimum cpu/platform to be used by instances. The instance may be scheduled on the specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more information, read Specifying a Minimum CPU Platform.
+     * Minimum cpu/platform to be used by instances. The instance may be
+     * scheduled on the specified or newer cpu/platform. Applicable values are the
+     * friendly names of CPU platforms, such asminCpuPlatform: "Intel Haswell" orminCpuPlatform: "Intel Sandy Bridge". For more
+     * information, read Specifying a
+     * Minimum CPU Platform.
      * </pre>
      *
      * <code>optional string min_cpu_platform = 242912759;</code>
@@ -5889,7 +6201,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default. Note that for MachineImage, this is not supported yet.
+     * The private IPv6 google access type for VMs.
+     * If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+     * Note that for MachineImage, this is not supported yet.
      * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
@@ -5905,7 +6219,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default. Note that for MachineImage, this is not supported yet.
+     * The private IPv6 google access type for VMs.
+     * If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+     * Note that for MachineImage, this is not supported yet.
      * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
@@ -5929,7 +6245,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default. Note that for MachineImage, this is not supported yet.
+     * The private IPv6 google access type for VMs.
+     * If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+     * Note that for MachineImage, this is not supported yet.
      * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
@@ -5953,7 +6271,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default. Note that for MachineImage, this is not supported yet.
+     * The private IPv6 google access type for VMs.
+     * If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+     * Note that for MachineImage, this is not supported yet.
      * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
@@ -5976,7 +6296,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default. Note that for MachineImage, this is not supported yet.
+     * The private IPv6 google access type for VMs.
+     * If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+     * Note that for MachineImage, this is not supported yet.
      * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
@@ -5995,7 +6317,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default. Note that for MachineImage, this is not supported yet.
+     * The private IPv6 google access type for VMs.
+     * If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+     * Note that for MachineImage, this is not supported yet.
      * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
@@ -6026,7 +6350,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the reservations that instances can consume from. Note that for MachineImage, this is not supported yet.
+     * Specifies the reservations that instances can consume from.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
@@ -6042,7 +6367,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the reservations that instances can consume from. Note that for MachineImage, this is not supported yet.
+     * Specifies the reservations that instances can consume from.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
@@ -6064,7 +6390,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the reservations that instances can consume from. Note that for MachineImage, this is not supported yet.
+     * Specifies the reservations that instances can consume from.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
@@ -6088,7 +6415,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the reservations that instances can consume from. Note that for MachineImage, this is not supported yet.
+     * Specifies the reservations that instances can consume from.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
@@ -6110,7 +6438,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the reservations that instances can consume from. Note that for MachineImage, this is not supported yet.
+     * Specifies the reservations that instances can consume from.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
@@ -6140,7 +6469,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the reservations that instances can consume from. Note that for MachineImage, this is not supported yet.
+     * Specifies the reservations that instances can consume from.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
@@ -6161,7 +6491,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the reservations that instances can consume from. Note that for MachineImage, this is not supported yet.
+     * Specifies the reservations that instances can consume from.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
@@ -6177,7 +6508,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the reservations that instances can consume from. Note that for MachineImage, this is not supported yet.
+     * Specifies the reservations that instances can consume from.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
@@ -6198,7 +6530,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the reservations that instances can consume from. Note that for MachineImage, this is not supported yet.
+     * Specifies the reservations that instances can consume from.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ReservationAffinity reservation_affinity = 157850683;
@@ -6255,7 +6588,11 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * Resource manager tags to be bound to the instance. Tag keys and values
+     * have the same definition as resource
+     * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
+     * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
+     * PATCH) when empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -6279,7 +6616,11 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * Resource manager tags to be bound to the instance. Tag keys and values
+     * have the same definition as resource
+     * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
+     * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
+     * PATCH) when empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -6293,7 +6634,11 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * Resource manager tags to be bound to the instance. Tag keys and values
+     * have the same definition as resource
+     * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
+     * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
+     * PATCH) when empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -6315,7 +6660,11 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * Resource manager tags to be bound to the instance. Tag keys and values
+     * have the same definition as resource
+     * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
+     * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
+     * PATCH) when empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -6343,7 +6692,11 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * Resource manager tags to be bound to the instance. Tag keys and values
+     * have the same definition as resource
+     * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
+     * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
+     * PATCH) when empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -6367,7 +6720,11 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * Resource manager tags to be bound to the instance. Tag keys and values
+     * have the same definition as resource
+     * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
+     * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
+     * PATCH) when empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -6388,7 +6745,11 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * Resource manager tags to be bound to the instance. Tag keys and values
+     * have the same definition as resource
+     * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
+     * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
+     * PATCH) when empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -6414,7 +6775,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource policies (names, not URLs) applied to instances created from these properties. Note that for MachineImage, this is not supported yet.
+     * Resource policies (names, not URLs) applied to instances created from
+     * these properties.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>
@@ -6430,7 +6793,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource policies (names, not URLs) applied to instances created from these properties. Note that for MachineImage, this is not supported yet.
+     * Resource policies (names, not URLs) applied to instances created from
+     * these properties.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>
@@ -6445,7 +6810,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource policies (names, not URLs) applied to instances created from these properties. Note that for MachineImage, this is not supported yet.
+     * Resource policies (names, not URLs) applied to instances created from
+     * these properties.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>
@@ -6461,7 +6828,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource policies (names, not URLs) applied to instances created from these properties. Note that for MachineImage, this is not supported yet.
+     * Resource policies (names, not URLs) applied to instances created from
+     * these properties.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>
@@ -6477,7 +6846,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource policies (names, not URLs) applied to instances created from these properties. Note that for MachineImage, this is not supported yet.
+     * Resource policies (names, not URLs) applied to instances created from
+     * these properties.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>
@@ -6501,7 +6872,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource policies (names, not URLs) applied to instances created from these properties. Note that for MachineImage, this is not supported yet.
+     * Resource policies (names, not URLs) applied to instances created from
+     * these properties.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>
@@ -6524,7 +6897,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource policies (names, not URLs) applied to instances created from these properties. Note that for MachineImage, this is not supported yet.
+     * Resource policies (names, not URLs) applied to instances created from
+     * these properties.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>
@@ -6544,7 +6919,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource policies (names, not URLs) applied to instances created from these properties. Note that for MachineImage, this is not supported yet.
+     * Resource policies (names, not URLs) applied to instances created from
+     * these properties.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>
@@ -6563,7 +6940,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Resource policies (names, not URLs) applied to instances created from these properties. Note that for MachineImage, this is not supported yet.
+     * Resource policies (names, not URLs) applied to instances created from
+     * these properties.
+     * Note that for MachineImage, this is not supported yet.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>
@@ -6594,7 +6973,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the scheduling options for the instances that are created from these properties.
+     * Specifies the scheduling options for the instances that are created from
+     * these properties.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
@@ -6609,7 +6989,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the scheduling options for the instances that are created from these properties.
+     * Specifies the scheduling options for the instances that are created from
+     * these properties.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
@@ -6630,7 +7011,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the scheduling options for the instances that are created from these properties.
+     * Specifies the scheduling options for the instances that are created from
+     * these properties.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
@@ -6653,7 +7035,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the scheduling options for the instances that are created from these properties.
+     * Specifies the scheduling options for the instances that are created from
+     * these properties.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
@@ -6673,7 +7056,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the scheduling options for the instances that are created from these properties.
+     * Specifies the scheduling options for the instances that are created from
+     * these properties.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
@@ -6701,7 +7085,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the scheduling options for the instances that are created from these properties.
+     * Specifies the scheduling options for the instances that are created from
+     * these properties.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
@@ -6721,7 +7106,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the scheduling options for the instances that are created from these properties.
+     * Specifies the scheduling options for the instances that are created from
+     * these properties.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
@@ -6736,7 +7122,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the scheduling options for the instances that are created from these properties.
+     * Specifies the scheduling options for the instances that are created from
+     * these properties.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
@@ -6755,7 +7142,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specifies the scheduling options for the instances that are created from these properties.
+     * Specifies the scheduling options for the instances that are created from
+     * these properties.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
@@ -6798,7 +7186,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
+     * A list of service accounts with specified scopes. Access tokens for these
+     * service accounts are available to the instances that are created from
+     * these properties. Use metadata queries to obtain the access tokens for
+     * these instances.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -6815,7 +7206,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
+     * A list of service accounts with specified scopes. Access tokens for these
+     * service accounts are available to the instances that are created from
+     * these properties. Use metadata queries to obtain the access tokens for
+     * these instances.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -6832,7 +7226,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
+     * A list of service accounts with specified scopes. Access tokens for these
+     * service accounts are available to the instances that are created from
+     * these properties. Use metadata queries to obtain the access tokens for
+     * these instances.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -6849,7 +7246,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
+     * A list of service accounts with specified scopes. Access tokens for these
+     * service accounts are available to the instances that are created from
+     * these properties. Use metadata queries to obtain the access tokens for
+     * these instances.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -6872,7 +7272,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
+     * A list of service accounts with specified scopes. Access tokens for these
+     * service accounts are available to the instances that are created from
+     * these properties. Use metadata queries to obtain the access tokens for
+     * these instances.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -6893,7 +7296,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
+     * A list of service accounts with specified scopes. Access tokens for these
+     * service accounts are available to the instances that are created from
+     * these properties. Use metadata queries to obtain the access tokens for
+     * these instances.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -6916,7 +7322,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
+     * A list of service accounts with specified scopes. Access tokens for these
+     * service accounts are available to the instances that are created from
+     * these properties. Use metadata queries to obtain the access tokens for
+     * these instances.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -6939,7 +7348,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
+     * A list of service accounts with specified scopes. Access tokens for these
+     * service accounts are available to the instances that are created from
+     * these properties. Use metadata queries to obtain the access tokens for
+     * these instances.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -6960,7 +7372,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
+     * A list of service accounts with specified scopes. Access tokens for these
+     * service accounts are available to the instances that are created from
+     * these properties. Use metadata queries to obtain the access tokens for
+     * these instances.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -6981,7 +7396,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
+     * A list of service accounts with specified scopes. Access tokens for these
+     * service accounts are available to the instances that are created from
+     * these properties. Use metadata queries to obtain the access tokens for
+     * these instances.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -7002,7 +7420,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
+     * A list of service accounts with specified scopes. Access tokens for these
+     * service accounts are available to the instances that are created from
+     * these properties. Use metadata queries to obtain the access tokens for
+     * these instances.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -7022,7 +7443,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
+     * A list of service accounts with specified scopes. Access tokens for these
+     * service accounts are available to the instances that are created from
+     * these properties. Use metadata queries to obtain the access tokens for
+     * these instances.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -7042,7 +7466,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
+     * A list of service accounts with specified scopes. Access tokens for these
+     * service accounts are available to the instances that are created from
+     * these properties. Use metadata queries to obtain the access tokens for
+     * these instances.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -7055,7 +7482,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
+     * A list of service accounts with specified scopes. Access tokens for these
+     * service accounts are available to the instances that are created from
+     * these properties. Use metadata queries to obtain the access tokens for
+     * these instances.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -7073,7 +7503,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
+     * A list of service accounts with specified scopes. Access tokens for these
+     * service accounts are available to the instances that are created from
+     * these properties. Use metadata queries to obtain the access tokens for
+     * these instances.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -7091,7 +7524,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
+     * A list of service accounts with specified scopes. Access tokens for these
+     * service accounts are available to the instances that are created from
+     * these properties. Use metadata queries to obtain the access tokens for
+     * these instances.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -7105,7 +7541,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
+     * A list of service accounts with specified scopes. Access tokens for these
+     * service accounts are available to the instances that are created from
+     * these properties. Use metadata queries to obtain the access tokens for
+     * these instances.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -7119,7 +7558,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
+     * A list of service accounts with specified scopes. Access tokens for these
+     * service accounts are available to the instances that are created from
+     * these properties. Use metadata queries to obtain the access tokens for
+     * these instances.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -7378,7 +7820,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of tags to apply to the instances that are created from these properties. The tags identify valid sources or targets for network firewalls. The setTags method can modify this list of tags. Each tag within the list must comply with RFC1035.
+     * A list of tags to apply to the instances that are created from these
+     * properties. The tags identify valid sources or targets for network
+     * firewalls. The setTags method can modify this list of tags. Each tag within
+     * the list must comply with RFC1035.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
@@ -7393,7 +7838,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of tags to apply to the instances that are created from these properties. The tags identify valid sources or targets for network firewalls. The setTags method can modify this list of tags. Each tag within the list must comply with RFC1035.
+     * A list of tags to apply to the instances that are created from these
+     * properties. The tags identify valid sources or targets for network
+     * firewalls. The setTags method can modify this list of tags. Each tag within
+     * the list must comply with RFC1035.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
@@ -7412,7 +7860,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of tags to apply to the instances that are created from these properties. The tags identify valid sources or targets for network firewalls. The setTags method can modify this list of tags. Each tag within the list must comply with RFC1035.
+     * A list of tags to apply to the instances that are created from these
+     * properties. The tags identify valid sources or targets for network
+     * firewalls. The setTags method can modify this list of tags. Each tag within
+     * the list must comply with RFC1035.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
@@ -7435,7 +7886,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of tags to apply to the instances that are created from these properties. The tags identify valid sources or targets for network firewalls. The setTags method can modify this list of tags. Each tag within the list must comply with RFC1035.
+     * A list of tags to apply to the instances that are created from these
+     * properties. The tags identify valid sources or targets for network
+     * firewalls. The setTags method can modify this list of tags. Each tag within
+     * the list must comply with RFC1035.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
@@ -7455,7 +7909,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of tags to apply to the instances that are created from these properties. The tags identify valid sources or targets for network firewalls. The setTags method can modify this list of tags. Each tag within the list must comply with RFC1035.
+     * A list of tags to apply to the instances that are created from these
+     * properties. The tags identify valid sources or targets for network
+     * firewalls. The setTags method can modify this list of tags. Each tag within
+     * the list must comply with RFC1035.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
@@ -7483,7 +7940,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of tags to apply to the instances that are created from these properties. The tags identify valid sources or targets for network firewalls. The setTags method can modify this list of tags. Each tag within the list must comply with RFC1035.
+     * A list of tags to apply to the instances that are created from these
+     * properties. The tags identify valid sources or targets for network
+     * firewalls. The setTags method can modify this list of tags. Each tag within
+     * the list must comply with RFC1035.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
@@ -7503,7 +7963,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of tags to apply to the instances that are created from these properties. The tags identify valid sources or targets for network firewalls. The setTags method can modify this list of tags. Each tag within the list must comply with RFC1035.
+     * A list of tags to apply to the instances that are created from these
+     * properties. The tags identify valid sources or targets for network
+     * firewalls. The setTags method can modify this list of tags. Each tag within
+     * the list must comply with RFC1035.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
@@ -7518,7 +7981,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of tags to apply to the instances that are created from these properties. The tags identify valid sources or targets for network firewalls. The setTags method can modify this list of tags. Each tag within the list must comply with RFC1035.
+     * A list of tags to apply to the instances that are created from these
+     * properties. The tags identify valid sources or targets for network
+     * firewalls. The setTags method can modify this list of tags. Each tag within
+     * the list must comply with RFC1035.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
@@ -7535,7 +8001,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of tags to apply to the instances that are created from these properties. The tags identify valid sources or targets for network firewalls. The setTags method can modify this list of tags. Each tag within the list must comply with RFC1035.
+     * A list of tags to apply to the instances that are created from these
+     * properties. The tags identify valid sources or targets for network
+     * firewalls. The setTags method can modify this list of tags. Each tag within
+     * the list must comply with RFC1035.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>

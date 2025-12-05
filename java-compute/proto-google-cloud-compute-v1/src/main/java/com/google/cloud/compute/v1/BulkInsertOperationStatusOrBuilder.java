@@ -80,7 +80,8 @@ public interface BulkInsertOperationStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Count of VMs that started creating but encountered an error.
+   * [Output Only] Count of VMs that started creating but encountered an
+   * error.
    * </pre>
    *
    * <code>optional int32 failed_to_create_vm_count = 58384104;</code>
@@ -93,7 +94,8 @@ public interface BulkInsertOperationStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Count of VMs that started creating but encountered an error.
+   * [Output Only] Count of VMs that started creating but encountered an
+   * error.
    * </pre>
    *
    * <code>optional int32 failed_to_create_vm_count = 58384104;</code>
@@ -106,7 +108,8 @@ public interface BulkInsertOperationStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation status of BulkInsert operation - information if the flow is rolling forward or rolling back.
+   * [Output Only] Creation status of BulkInsert operation - information
+   * if the flow is rolling forward or rolling back.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -120,7 +123,8 @@ public interface BulkInsertOperationStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation status of BulkInsert operation - information if the flow is rolling forward or rolling back.
+   * [Output Only] Creation status of BulkInsert operation - information
+   * if the flow is rolling forward or rolling back.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -134,7 +138,8 @@ public interface BulkInsertOperationStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation status of BulkInsert operation - information if the flow is rolling forward or rolling back.
+   * [Output Only] Creation status of BulkInsert operation - information
+   * if the flow is rolling forward or rolling back.
    * Check the Status enum for the list of possible values.
    * </pre>
    *

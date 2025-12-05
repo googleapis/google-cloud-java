@@ -28,7 +28,8 @@ public interface HealthCheckLogConfigOrBuilder
    *
    *
    * <pre>
-   * Indicates whether or not to export logs. This is false by default, which means no health check logging will be done.
+   * Indicates whether or not to export logs. This is false by default, which
+   * means no health check logging will be done.
    * </pre>
    *
    * <code>optional bool enable = 311764355;</code>
@@ -41,7 +42,8 @@ public interface HealthCheckLogConfigOrBuilder
    *
    *
    * <pre>
-   * Indicates whether or not to export logs. This is false by default, which means no health check logging will be done.
+   * Indicates whether or not to export logs. This is false by default, which
+   * means no health check logging will be done.
    * </pre>
    *
    * <code>optional bool enable = 311764355;</code>

@@ -130,9 +130,31 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * This old model will still be supported.
      * </pre>
      *
-     * <code>PREEMPTIBLE = 3;</code>
+     * <code>PREEMPTIBLE = 3 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     PREEMPTIBLE(3),
+    /**
+     *
+     *
+     * <pre>
+     * Bound to the lifecycle of the reservation in which it is provisioned.
+     * </pre>
+     *
+     * <code>RESERVATION_BOUND = 4;</code>
+     */
+    RESERVATION_BOUND(4),
+    /**
+     *
+     *
+     * <pre>
+     * Instance is provisioned with DWS Flex Start and has limited max run
+     * duration.
+     * </pre>
+     *
+     * <code>FLEX_START = 5;</code>
+     */
+    FLEX_START(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -181,9 +203,32 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * This old model will still be supported.
      * </pre>
      *
-     * <code>PREEMPTIBLE = 3;</code>
+     * <code>PREEMPTIBLE = 3 [deprecated = true];</code>
      */
-    public static final int PREEMPTIBLE_VALUE = 3;
+    @java.lang.Deprecated public static final int PREEMPTIBLE_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * Bound to the lifecycle of the reservation in which it is provisioned.
+     * </pre>
+     *
+     * <code>RESERVATION_BOUND = 4;</code>
+     */
+    public static final int RESERVATION_BOUND_VALUE = 4;
+
+    /**
+     *
+     *
+     * <pre>
+     * Instance is provisioned with DWS Flex Start and has limited max run
+     * duration.
+     * </pre>
+     *
+     * <code>FLEX_START = 5;</code>
+     */
+    public static final int FLEX_START_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -217,6 +262,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           return SPOT;
         case 3:
           return PREEMPTIBLE;
+        case 4:
+          return RESERVATION_BOUND;
+        case 5:
+          return FLEX_START;
         default:
           return null;
       }

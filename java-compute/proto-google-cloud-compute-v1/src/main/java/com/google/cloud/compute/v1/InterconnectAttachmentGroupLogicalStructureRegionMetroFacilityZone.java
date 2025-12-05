@@ -23,7 +23,9 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * [Output Only] The zones that Attachments in this group are present in, in the given facilities. This is inherited from their Interconnects.
+ * [Output Only] The zones that Attachments in this group are present
+ * in, in the given facilities.  This is inherited from their
+ * Interconnects.
  * </pre>
  *
  * Protobuf type {@code
@@ -82,7 +84,9 @@ public final class InterconnectAttachmentGroupLogicalStructureRegionMetroFacilit
    *
    *
    * <pre>
-   * [Output Only] URLs of Attachments in the given zone, to the given region, on Interconnects in the given facility and metro. Every Attachment in the AG has such an entry.
+   * [Output Only] URLs of Attachments in the given zone, to the given
+   * region, on Interconnects in the given facility and metro. Every
+   * Attachment in the AG has such an entry.
    * </pre>
    *
    * <code>repeated string attachments = 334744496;</code>
@@ -97,7 +101,9 @@ public final class InterconnectAttachmentGroupLogicalStructureRegionMetroFacilit
    *
    *
    * <pre>
-   * [Output Only] URLs of Attachments in the given zone, to the given region, on Interconnects in the given facility and metro. Every Attachment in the AG has such an entry.
+   * [Output Only] URLs of Attachments in the given zone, to the given
+   * region, on Interconnects in the given facility and metro. Every
+   * Attachment in the AG has such an entry.
    * </pre>
    *
    * <code>repeated string attachments = 334744496;</code>
@@ -112,7 +118,9 @@ public final class InterconnectAttachmentGroupLogicalStructureRegionMetroFacilit
    *
    *
    * <pre>
-   * [Output Only] URLs of Attachments in the given zone, to the given region, on Interconnects in the given facility and metro. Every Attachment in the AG has such an entry.
+   * [Output Only] URLs of Attachments in the given zone, to the given
+   * region, on Interconnects in the given facility and metro. Every
+   * Attachment in the AG has such an entry.
    * </pre>
    *
    * <code>repeated string attachments = 334744496;</code>
@@ -128,7 +136,9 @@ public final class InterconnectAttachmentGroupLogicalStructureRegionMetroFacilit
    *
    *
    * <pre>
-   * [Output Only] URLs of Attachments in the given zone, to the given region, on Interconnects in the given facility and metro. Every Attachment in the AG has such an entry.
+   * [Output Only] URLs of Attachments in the given zone, to the given
+   * region, on Interconnects in the given facility and metro. Every
+   * Attachment in the AG has such an entry.
    * </pre>
    *
    * <code>repeated string attachments = 334744496;</code>
@@ -420,7 +430,9 @@ public final class InterconnectAttachmentGroupLogicalStructureRegionMetroFacilit
    *
    *
    * <pre>
-   * [Output Only] The zones that Attachments in this group are present in, in the given facilities. This is inherited from their Interconnects.
+   * [Output Only] The zones that Attachments in this group are present
+   * in, in the given facilities.  This is inherited from their
+   * Interconnects.
    * </pre>
    *
    * Protobuf type {@code
@@ -668,7 +680,9 @@ public final class InterconnectAttachmentGroupLogicalStructureRegionMetroFacilit
      *
      *
      * <pre>
-     * [Output Only] URLs of Attachments in the given zone, to the given region, on Interconnects in the given facility and metro. Every Attachment in the AG has such an entry.
+     * [Output Only] URLs of Attachments in the given zone, to the given
+     * region, on Interconnects in the given facility and metro. Every
+     * Attachment in the AG has such an entry.
      * </pre>
      *
      * <code>repeated string attachments = 334744496;</code>
@@ -684,7 +698,9 @@ public final class InterconnectAttachmentGroupLogicalStructureRegionMetroFacilit
      *
      *
      * <pre>
-     * [Output Only] URLs of Attachments in the given zone, to the given region, on Interconnects in the given facility and metro. Every Attachment in the AG has such an entry.
+     * [Output Only] URLs of Attachments in the given zone, to the given
+     * region, on Interconnects in the given facility and metro. Every
+     * Attachment in the AG has such an entry.
      * </pre>
      *
      * <code>repeated string attachments = 334744496;</code>
@@ -699,7 +715,9 @@ public final class InterconnectAttachmentGroupLogicalStructureRegionMetroFacilit
      *
      *
      * <pre>
-     * [Output Only] URLs of Attachments in the given zone, to the given region, on Interconnects in the given facility and metro. Every Attachment in the AG has such an entry.
+     * [Output Only] URLs of Attachments in the given zone, to the given
+     * region, on Interconnects in the given facility and metro. Every
+     * Attachment in the AG has such an entry.
      * </pre>
      *
      * <code>repeated string attachments = 334744496;</code>
@@ -715,7 +733,9 @@ public final class InterconnectAttachmentGroupLogicalStructureRegionMetroFacilit
      *
      *
      * <pre>
-     * [Output Only] URLs of Attachments in the given zone, to the given region, on Interconnects in the given facility and metro. Every Attachment in the AG has such an entry.
+     * [Output Only] URLs of Attachments in the given zone, to the given
+     * region, on Interconnects in the given facility and metro. Every
+     * Attachment in the AG has such an entry.
      * </pre>
      *
      * <code>repeated string attachments = 334744496;</code>
@@ -731,7 +751,9 @@ public final class InterconnectAttachmentGroupLogicalStructureRegionMetroFacilit
      *
      *
      * <pre>
-     * [Output Only] URLs of Attachments in the given zone, to the given region, on Interconnects in the given facility and metro. Every Attachment in the AG has such an entry.
+     * [Output Only] URLs of Attachments in the given zone, to the given
+     * region, on Interconnects in the given facility and metro. Every
+     * Attachment in the AG has such an entry.
      * </pre>
      *
      * <code>repeated string attachments = 334744496;</code>
@@ -755,7 +777,9 @@ public final class InterconnectAttachmentGroupLogicalStructureRegionMetroFacilit
      *
      *
      * <pre>
-     * [Output Only] URLs of Attachments in the given zone, to the given region, on Interconnects in the given facility and metro. Every Attachment in the AG has such an entry.
+     * [Output Only] URLs of Attachments in the given zone, to the given
+     * region, on Interconnects in the given facility and metro. Every
+     * Attachment in the AG has such an entry.
      * </pre>
      *
      * <code>repeated string attachments = 334744496;</code>
@@ -778,7 +802,9 @@ public final class InterconnectAttachmentGroupLogicalStructureRegionMetroFacilit
      *
      *
      * <pre>
-     * [Output Only] URLs of Attachments in the given zone, to the given region, on Interconnects in the given facility and metro. Every Attachment in the AG has such an entry.
+     * [Output Only] URLs of Attachments in the given zone, to the given
+     * region, on Interconnects in the given facility and metro. Every
+     * Attachment in the AG has such an entry.
      * </pre>
      *
      * <code>repeated string attachments = 334744496;</code>
@@ -798,7 +824,9 @@ public final class InterconnectAttachmentGroupLogicalStructureRegionMetroFacilit
      *
      *
      * <pre>
-     * [Output Only] URLs of Attachments in the given zone, to the given region, on Interconnects in the given facility and metro. Every Attachment in the AG has such an entry.
+     * [Output Only] URLs of Attachments in the given zone, to the given
+     * region, on Interconnects in the given facility and metro. Every
+     * Attachment in the AG has such an entry.
      * </pre>
      *
      * <code>repeated string attachments = 334744496;</code>
@@ -817,7 +845,9 @@ public final class InterconnectAttachmentGroupLogicalStructureRegionMetroFacilit
      *
      *
      * <pre>
-     * [Output Only] URLs of Attachments in the given zone, to the given region, on Interconnects in the given facility and metro. Every Attachment in the AG has such an entry.
+     * [Output Only] URLs of Attachments in the given zone, to the given
+     * region, on Interconnects in the given facility and metro. Every
+     * Attachment in the AG has such an entry.
      * </pre>
      *
      * <code>repeated string attachments = 334744496;</code>

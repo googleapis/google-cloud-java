@@ -74,7 +74,8 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
+   * Flatten Policy to create a backwacd compatible wire-format.
+   * Deprecated. Use 'policy' to specify bindings.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
@@ -88,7 +89,8 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
+   * Flatten Policy to create a backwacd compatible wire-format.
+   * Deprecated. Use 'policy' to specify bindings.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
@@ -103,7 +105,8 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
+   * Flatten Policy to create a backwacd compatible wire-format.
+   * Deprecated. Use 'policy' to specify bindings.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
@@ -117,7 +120,8 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
+   * Flatten Policy to create a backwacd compatible wire-format.
+   * Deprecated. Use 'policy' to specify bindings.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
@@ -131,7 +135,8 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
+   * Flatten Policy to create a backwacd compatible wire-format.
+   * Deprecated. Use 'policy' to specify bindings.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
@@ -150,7 +155,8 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify the etag.
+   * Flatten Policy to create a backward compatible wire-format.
+   * Deprecated. Use 'policy' to specify the etag.
    * </pre>
    *
    * <code>optional string etag = 3123477;</code>
@@ -166,7 +172,8 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify the etag.
+   * Flatten Policy to create a backward compatible wire-format.
+   * Deprecated. Use 'policy' to specify the etag.
    * </pre>
    *
    * <code>optional string etag = 3123477;</code>
@@ -190,7 +197,8 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify the etag.
+   * Flatten Policy to create a backward compatible wire-format.
+   * Deprecated. Use 'policy' to specify the etag.
    * </pre>
    *
    * <code>optional string etag = 3123477;</code>
@@ -217,7 +225,9 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * REQUIRED: The complete policy to be applied to the 'resource'. The size of the policy is limited to a few 10s of KB. An empty policy is in general a valid policy but certain services (like Projects) might reject them.
+   * REQUIRED: The complete policy to be applied to the 'resource'. The size of
+   * the policy is limited to a few 10s of KB. An empty policy is in general a
+   * valid policy but certain services (like Projects) might reject them.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Policy policy = 91071794;</code>
@@ -233,7 +243,9 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * REQUIRED: The complete policy to be applied to the 'resource'. The size of the policy is limited to a few 10s of KB. An empty policy is in general a valid policy but certain services (like Projects) might reject them.
+   * REQUIRED: The complete policy to be applied to the 'resource'. The size of
+   * the policy is limited to a few 10s of KB. An empty policy is in general a
+   * valid policy but certain services (like Projects) might reject them.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Policy policy = 91071794;</code>
@@ -249,7 +261,9 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * REQUIRED: The complete policy to be applied to the 'resource'. The size of the policy is limited to a few 10s of KB. An empty policy is in general a valid policy but certain services (like Projects) might reject them.
+   * REQUIRED: The complete policy to be applied to the 'resource'. The size of
+   * the policy is limited to a few 10s of KB. An empty policy is in general a
+   * valid policy but certain services (like Projects) might reject them.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Policy policy = 91071794;</code>
@@ -743,7 +757,8 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
+     * Flatten Policy to create a backwacd compatible wire-format.
+     * Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
@@ -760,7 +775,8 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
+     * Flatten Policy to create a backwacd compatible wire-format.
+     * Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
@@ -777,7 +793,8 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
+     * Flatten Policy to create a backwacd compatible wire-format.
+     * Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
@@ -794,7 +811,8 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
+     * Flatten Policy to create a backwacd compatible wire-format.
+     * Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
@@ -817,7 +835,8 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
+     * Flatten Policy to create a backwacd compatible wire-format.
+     * Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
@@ -838,7 +857,8 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
+     * Flatten Policy to create a backwacd compatible wire-format.
+     * Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
@@ -861,7 +881,8 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
+     * Flatten Policy to create a backwacd compatible wire-format.
+     * Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
@@ -884,7 +905,8 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
+     * Flatten Policy to create a backwacd compatible wire-format.
+     * Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
@@ -904,7 +926,8 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
+     * Flatten Policy to create a backwacd compatible wire-format.
+     * Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
@@ -925,7 +948,8 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
+     * Flatten Policy to create a backwacd compatible wire-format.
+     * Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
@@ -946,7 +970,8 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
+     * Flatten Policy to create a backwacd compatible wire-format.
+     * Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
@@ -966,7 +991,8 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
+     * Flatten Policy to create a backwacd compatible wire-format.
+     * Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
@@ -986,7 +1012,8 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
+     * Flatten Policy to create a backwacd compatible wire-format.
+     * Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
@@ -999,7 +1026,8 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
+     * Flatten Policy to create a backwacd compatible wire-format.
+     * Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
@@ -1016,7 +1044,8 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
+     * Flatten Policy to create a backwacd compatible wire-format.
+     * Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
@@ -1034,7 +1063,8 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
+     * Flatten Policy to create a backwacd compatible wire-format.
+     * Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
@@ -1048,7 +1078,8 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
+     * Flatten Policy to create a backwacd compatible wire-format.
+     * Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
@@ -1062,7 +1093,8 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
+     * Flatten Policy to create a backwacd compatible wire-format.
+     * Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
@@ -1094,7 +1126,8 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify the etag.
+     * Flatten Policy to create a backward compatible wire-format.
+     * Deprecated. Use 'policy' to specify the etag.
      * </pre>
      *
      * <code>optional string etag = 3123477;</code>
@@ -1109,7 +1142,8 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify the etag.
+     * Flatten Policy to create a backward compatible wire-format.
+     * Deprecated. Use 'policy' to specify the etag.
      * </pre>
      *
      * <code>optional string etag = 3123477;</code>
@@ -1132,7 +1166,8 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify the etag.
+     * Flatten Policy to create a backward compatible wire-format.
+     * Deprecated. Use 'policy' to specify the etag.
      * </pre>
      *
      * <code>optional string etag = 3123477;</code>
@@ -1155,7 +1190,8 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify the etag.
+     * Flatten Policy to create a backward compatible wire-format.
+     * Deprecated. Use 'policy' to specify the etag.
      * </pre>
      *
      * <code>optional string etag = 3123477;</code>
@@ -1177,7 +1213,8 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify the etag.
+     * Flatten Policy to create a backward compatible wire-format.
+     * Deprecated. Use 'policy' to specify the etag.
      * </pre>
      *
      * <code>optional string etag = 3123477;</code>
@@ -1195,7 +1232,8 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify the etag.
+     * Flatten Policy to create a backward compatible wire-format.
+     * Deprecated. Use 'policy' to specify the etag.
      * </pre>
      *
      * <code>optional string etag = 3123477;</code>
@@ -1225,7 +1263,9 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * REQUIRED: The complete policy to be applied to the 'resource'. The size of the policy is limited to a few 10s of KB. An empty policy is in general a valid policy but certain services (like Projects) might reject them.
+     * REQUIRED: The complete policy to be applied to the 'resource'. The size of
+     * the policy is limited to a few 10s of KB. An empty policy is in general a
+     * valid policy but certain services (like Projects) might reject them.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Policy policy = 91071794;</code>
@@ -1240,7 +1280,9 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * REQUIRED: The complete policy to be applied to the 'resource'. The size of the policy is limited to a few 10s of KB. An empty policy is in general a valid policy but certain services (like Projects) might reject them.
+     * REQUIRED: The complete policy to be applied to the 'resource'. The size of
+     * the policy is limited to a few 10s of KB. An empty policy is in general a
+     * valid policy but certain services (like Projects) might reject them.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Policy policy = 91071794;</code>
@@ -1259,7 +1301,9 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * REQUIRED: The complete policy to be applied to the 'resource'. The size of the policy is limited to a few 10s of KB. An empty policy is in general a valid policy but certain services (like Projects) might reject them.
+     * REQUIRED: The complete policy to be applied to the 'resource'. The size of
+     * the policy is limited to a few 10s of KB. An empty policy is in general a
+     * valid policy but certain services (like Projects) might reject them.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Policy policy = 91071794;</code>
@@ -1282,7 +1326,9 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * REQUIRED: The complete policy to be applied to the 'resource'. The size of the policy is limited to a few 10s of KB. An empty policy is in general a valid policy but certain services (like Projects) might reject them.
+     * REQUIRED: The complete policy to be applied to the 'resource'. The size of
+     * the policy is limited to a few 10s of KB. An empty policy is in general a
+     * valid policy but certain services (like Projects) might reject them.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Policy policy = 91071794;</code>
@@ -1302,7 +1348,9 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * REQUIRED: The complete policy to be applied to the 'resource'. The size of the policy is limited to a few 10s of KB. An empty policy is in general a valid policy but certain services (like Projects) might reject them.
+     * REQUIRED: The complete policy to be applied to the 'resource'. The size of
+     * the policy is limited to a few 10s of KB. An empty policy is in general a
+     * valid policy but certain services (like Projects) might reject them.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Policy policy = 91071794;</code>
@@ -1330,7 +1378,9 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * REQUIRED: The complete policy to be applied to the 'resource'. The size of the policy is limited to a few 10s of KB. An empty policy is in general a valid policy but certain services (like Projects) might reject them.
+     * REQUIRED: The complete policy to be applied to the 'resource'. The size of
+     * the policy is limited to a few 10s of KB. An empty policy is in general a
+     * valid policy but certain services (like Projects) might reject them.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Policy policy = 91071794;</code>
@@ -1350,7 +1400,9 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * REQUIRED: The complete policy to be applied to the 'resource'. The size of the policy is limited to a few 10s of KB. An empty policy is in general a valid policy but certain services (like Projects) might reject them.
+     * REQUIRED: The complete policy to be applied to the 'resource'. The size of
+     * the policy is limited to a few 10s of KB. An empty policy is in general a
+     * valid policy but certain services (like Projects) might reject them.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Policy policy = 91071794;</code>
@@ -1365,7 +1417,9 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * REQUIRED: The complete policy to be applied to the 'resource'. The size of the policy is limited to a few 10s of KB. An empty policy is in general a valid policy but certain services (like Projects) might reject them.
+     * REQUIRED: The complete policy to be applied to the 'resource'. The size of
+     * the policy is limited to a few 10s of KB. An empty policy is in general a
+     * valid policy but certain services (like Projects) might reject them.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Policy policy = 91071794;</code>
@@ -1382,7 +1436,9 @@ public final class RegionSetPolicyRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * REQUIRED: The complete policy to be applied to the 'resource'. The size of the policy is limited to a few 10s of KB. An empty policy is in general a valid policy but certain services (like Projects) might reject them.
+     * REQUIRED: The complete policy to be applied to the 'resource'. The size of
+     * the policy is limited to a few 10s of KB. An empty policy is in general a
+     * valid policy but certain services (like Projects) might reject them.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Policy policy = 91071794;</code>

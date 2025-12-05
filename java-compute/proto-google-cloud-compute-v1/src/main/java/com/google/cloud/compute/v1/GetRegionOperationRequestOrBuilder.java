@@ -28,7 +28,8 @@ public interface GetRegionOperationRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the Operations resource to return, or its unique numeric identifier.
+   * Name of the Operations resource to return, or its unique numeric
+   * identifier.
    * </pre>
    *
    * <code>
@@ -43,7 +44,8 @@ public interface GetRegionOperationRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the Operations resource to return, or its unique numeric identifier.
+   * Name of the Operations resource to return, or its unique numeric
+   * identifier.
    * </pre>
    *
    * <code>

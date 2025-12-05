@@ -28,7 +28,10 @@ public interface BackendServiceTlsSettingsOrBuilder
    *
    *
    * <pre>
-   * Reference to the BackendAuthenticationConfig resource from the networksecurity.googleapis.com namespace. Can be used in authenticating TLS connections to the backend, as specified by the authenticationMode field. Can only be specified if authenticationMode is not NONE.
+   * Reference to the BackendAuthenticationConfig resource from the
+   * networksecurity.googleapis.com namespace. Can be used in authenticating
+   * TLS connections to the backend, as specified by the authenticationMode
+   * field. Can only be specified if authenticationMode is not NONE.
    * </pre>
    *
    * <code>optional string authentication_config = 408053481;</code>
@@ -41,7 +44,10 @@ public interface BackendServiceTlsSettingsOrBuilder
    *
    *
    * <pre>
-   * Reference to the BackendAuthenticationConfig resource from the networksecurity.googleapis.com namespace. Can be used in authenticating TLS connections to the backend, as specified by the authenticationMode field. Can only be specified if authenticationMode is not NONE.
+   * Reference to the BackendAuthenticationConfig resource from the
+   * networksecurity.googleapis.com namespace. Can be used in authenticating
+   * TLS connections to the backend, as specified by the authenticationMode
+   * field. Can only be specified if authenticationMode is not NONE.
    * </pre>
    *
    * <code>optional string authentication_config = 408053481;</code>
@@ -54,7 +60,10 @@ public interface BackendServiceTlsSettingsOrBuilder
    *
    *
    * <pre>
-   * Reference to the BackendAuthenticationConfig resource from the networksecurity.googleapis.com namespace. Can be used in authenticating TLS connections to the backend, as specified by the authenticationMode field. Can only be specified if authenticationMode is not NONE.
+   * Reference to the BackendAuthenticationConfig resource from the
+   * networksecurity.googleapis.com namespace. Can be used in authenticating
+   * TLS connections to the backend, as specified by the authenticationMode
+   * field. Can only be specified if authenticationMode is not NONE.
    * </pre>
    *
    * <code>optional string authentication_config = 408053481;</code>
@@ -67,7 +76,15 @@ public interface BackendServiceTlsSettingsOrBuilder
    *
    *
    * <pre>
-   * Server Name Indication - see RFC3546 section 3.1. If set, the load balancer sends this string as the SNI hostname in the TLS connection to the backend, and requires that this string match a Subject Alternative Name (SAN) in the backend's server certificate. With a Regional Internet NEG backend, if the SNI is specified here, the load balancer uses it regardless of whether the Regional Internet NEG is specified with FQDN or IP address and port. When both sni and subjectAltNames[] are specified, the load balancer matches the backend certificate's SAN only to subjectAltNames[].
+   * Server Name Indication - see RFC3546 section 3.1. If set, the load
+   * balancer sends this string as the SNI hostname in the TLS connection to
+   * the backend, and requires that this string match a Subject Alternative
+   * Name (SAN) in the backend's server certificate. With a Regional Internet
+   * NEG backend, if the SNI is specified here, the load balancer uses it
+   * regardless of whether the Regional Internet NEG is specified with FQDN or
+   * IP address and port. When both sni and subjectAltNames[] are specified,
+   * the load balancer matches the backend certificate's SAN only to
+   * subjectAltNames[].
    * </pre>
    *
    * <code>optional string sni = 114030;</code>
@@ -80,7 +97,15 @@ public interface BackendServiceTlsSettingsOrBuilder
    *
    *
    * <pre>
-   * Server Name Indication - see RFC3546 section 3.1. If set, the load balancer sends this string as the SNI hostname in the TLS connection to the backend, and requires that this string match a Subject Alternative Name (SAN) in the backend's server certificate. With a Regional Internet NEG backend, if the SNI is specified here, the load balancer uses it regardless of whether the Regional Internet NEG is specified with FQDN or IP address and port. When both sni and subjectAltNames[] are specified, the load balancer matches the backend certificate's SAN only to subjectAltNames[].
+   * Server Name Indication - see RFC3546 section 3.1. If set, the load
+   * balancer sends this string as the SNI hostname in the TLS connection to
+   * the backend, and requires that this string match a Subject Alternative
+   * Name (SAN) in the backend's server certificate. With a Regional Internet
+   * NEG backend, if the SNI is specified here, the load balancer uses it
+   * regardless of whether the Regional Internet NEG is specified with FQDN or
+   * IP address and port. When both sni and subjectAltNames[] are specified,
+   * the load balancer matches the backend certificate's SAN only to
+   * subjectAltNames[].
    * </pre>
    *
    * <code>optional string sni = 114030;</code>
@@ -93,7 +118,15 @@ public interface BackendServiceTlsSettingsOrBuilder
    *
    *
    * <pre>
-   * Server Name Indication - see RFC3546 section 3.1. If set, the load balancer sends this string as the SNI hostname in the TLS connection to the backend, and requires that this string match a Subject Alternative Name (SAN) in the backend's server certificate. With a Regional Internet NEG backend, if the SNI is specified here, the load balancer uses it regardless of whether the Regional Internet NEG is specified with FQDN or IP address and port. When both sni and subjectAltNames[] are specified, the load balancer matches the backend certificate's SAN only to subjectAltNames[].
+   * Server Name Indication - see RFC3546 section 3.1. If set, the load
+   * balancer sends this string as the SNI hostname in the TLS connection to
+   * the backend, and requires that this string match a Subject Alternative
+   * Name (SAN) in the backend's server certificate. With a Regional Internet
+   * NEG backend, if the SNI is specified here, the load balancer uses it
+   * regardless of whether the Regional Internet NEG is specified with FQDN or
+   * IP address and port. When both sni and subjectAltNames[] are specified,
+   * the load balancer matches the backend certificate's SAN only to
+   * subjectAltNames[].
    * </pre>
    *
    * <code>optional string sni = 114030;</code>
@@ -106,7 +139,13 @@ public interface BackendServiceTlsSettingsOrBuilder
    *
    *
    * <pre>
-   * A list of Subject Alternative Names (SANs) that the Load Balancer verifies during a TLS handshake with the backend. When the server presents its X.509 certificate to the Load Balancer, the Load Balancer inspects the certificate's SAN field, and requires that at least one SAN match one of the subjectAltNames in the list. This field is limited to 5 entries. When both sni and subjectAltNames[] are specified, the load balancer matches the backend certificate's SAN only to subjectAltNames[].
+   * A list of Subject Alternative Names (SANs) that the Load Balancer
+   * verifies during a TLS handshake with the backend. When the server
+   * presents its X.509 certificate to the Load Balancer, the Load Balancer
+   * inspects the certificate's SAN field, and requires that at least one SAN
+   * match one of the subjectAltNames in the list. This field is limited to 5
+   * entries. When both sni and subjectAltNames[] are specified, the load
+   * balancer matches the backend certificate's SAN only to subjectAltNames[].
    * </pre>
    *
    * <code>
@@ -120,7 +159,13 @@ public interface BackendServiceTlsSettingsOrBuilder
    *
    *
    * <pre>
-   * A list of Subject Alternative Names (SANs) that the Load Balancer verifies during a TLS handshake with the backend. When the server presents its X.509 certificate to the Load Balancer, the Load Balancer inspects the certificate's SAN field, and requires that at least one SAN match one of the subjectAltNames in the list. This field is limited to 5 entries. When both sni and subjectAltNames[] are specified, the load balancer matches the backend certificate's SAN only to subjectAltNames[].
+   * A list of Subject Alternative Names (SANs) that the Load Balancer
+   * verifies during a TLS handshake with the backend. When the server
+   * presents its X.509 certificate to the Load Balancer, the Load Balancer
+   * inspects the certificate's SAN field, and requires that at least one SAN
+   * match one of the subjectAltNames in the list. This field is limited to 5
+   * entries. When both sni and subjectAltNames[] are specified, the load
+   * balancer matches the backend certificate's SAN only to subjectAltNames[].
    * </pre>
    *
    * <code>
@@ -133,7 +178,13 @@ public interface BackendServiceTlsSettingsOrBuilder
    *
    *
    * <pre>
-   * A list of Subject Alternative Names (SANs) that the Load Balancer verifies during a TLS handshake with the backend. When the server presents its X.509 certificate to the Load Balancer, the Load Balancer inspects the certificate's SAN field, and requires that at least one SAN match one of the subjectAltNames in the list. This field is limited to 5 entries. When both sni and subjectAltNames[] are specified, the load balancer matches the backend certificate's SAN only to subjectAltNames[].
+   * A list of Subject Alternative Names (SANs) that the Load Balancer
+   * verifies during a TLS handshake with the backend. When the server
+   * presents its X.509 certificate to the Load Balancer, the Load Balancer
+   * inspects the certificate's SAN field, and requires that at least one SAN
+   * match one of the subjectAltNames in the list. This field is limited to 5
+   * entries. When both sni and subjectAltNames[] are specified, the load
+   * balancer matches the backend certificate's SAN only to subjectAltNames[].
    * </pre>
    *
    * <code>
@@ -146,7 +197,13 @@ public interface BackendServiceTlsSettingsOrBuilder
    *
    *
    * <pre>
-   * A list of Subject Alternative Names (SANs) that the Load Balancer verifies during a TLS handshake with the backend. When the server presents its X.509 certificate to the Load Balancer, the Load Balancer inspects the certificate's SAN field, and requires that at least one SAN match one of the subjectAltNames in the list. This field is limited to 5 entries. When both sni and subjectAltNames[] are specified, the load balancer matches the backend certificate's SAN only to subjectAltNames[].
+   * A list of Subject Alternative Names (SANs) that the Load Balancer
+   * verifies during a TLS handshake with the backend. When the server
+   * presents its X.509 certificate to the Load Balancer, the Load Balancer
+   * inspects the certificate's SAN field, and requires that at least one SAN
+   * match one of the subjectAltNames in the list. This field is limited to 5
+   * entries. When both sni and subjectAltNames[] are specified, the load
+   * balancer matches the backend certificate's SAN only to subjectAltNames[].
    * </pre>
    *
    * <code>
@@ -161,7 +218,13 @@ public interface BackendServiceTlsSettingsOrBuilder
    *
    *
    * <pre>
-   * A list of Subject Alternative Names (SANs) that the Load Balancer verifies during a TLS handshake with the backend. When the server presents its X.509 certificate to the Load Balancer, the Load Balancer inspects the certificate's SAN field, and requires that at least one SAN match one of the subjectAltNames in the list. This field is limited to 5 entries. When both sni and subjectAltNames[] are specified, the load balancer matches the backend certificate's SAN only to subjectAltNames[].
+   * A list of Subject Alternative Names (SANs) that the Load Balancer
+   * verifies during a TLS handshake with the backend. When the server
+   * presents its X.509 certificate to the Load Balancer, the Load Balancer
+   * inspects the certificate's SAN field, and requires that at least one SAN
+   * match one of the subjectAltNames in the list. This field is limited to 5
+   * entries. When both sni and subjectAltNames[] are specified, the load
+   * balancer matches the backend certificate's SAN only to subjectAltNames[].
    * </pre>
    *
    * <code>

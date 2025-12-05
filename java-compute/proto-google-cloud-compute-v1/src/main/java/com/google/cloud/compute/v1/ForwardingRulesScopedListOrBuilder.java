@@ -84,7 +84,8 @@ public interface ForwardingRulesScopedListOrBuilder
    *
    *
    * <pre>
-   * Informational warning which replaces the list of forwarding rules when the list is empty.
+   * Informational warning which replaces the list of forwarding rules when
+   * the list is empty.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
@@ -97,7 +98,8 @@ public interface ForwardingRulesScopedListOrBuilder
    *
    *
    * <pre>
-   * Informational warning which replaces the list of forwarding rules when the list is empty.
+   * Informational warning which replaces the list of forwarding rules when
+   * the list is empty.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
@@ -110,7 +112,8 @@ public interface ForwardingRulesScopedListOrBuilder
    *
    *
    * <pre>
-   * Informational warning which replaces the list of forwarding rules when the list is empty.
+   * Informational warning which replaces the list of forwarding rules when
+   * the list is empty.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>

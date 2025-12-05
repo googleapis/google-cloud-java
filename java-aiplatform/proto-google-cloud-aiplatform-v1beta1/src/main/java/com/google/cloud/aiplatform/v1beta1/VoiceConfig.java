@@ -23,7 +23,7 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * The configuration for the voice to use.
+ * Configuration for a voice.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.VoiceConfig}
@@ -72,6 +72,7 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     PREBUILT_VOICE_CONFIG(1),
+    REPLICATED_VOICE_CONFIG(3),
     VOICECONFIG_NOT_SET(0);
     private final int value;
 
@@ -93,6 +94,8 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 1:
           return PREBUILT_VOICE_CONFIG;
+        case 3:
+          return REPLICATED_VOICE_CONFIG;
         case 0:
           return VOICECONFIG_NOT_SET;
         default:
@@ -115,7 +118,7 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The configuration for the prebuilt voice to use.
+   * The configuration for a prebuilt voice.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.PrebuiltVoiceConfig prebuilt_voice_config = 1;</code>
@@ -131,7 +134,7 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The configuration for the prebuilt voice to use.
+   * The configuration for a prebuilt voice.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.PrebuiltVoiceConfig prebuilt_voice_config = 1;</code>
@@ -150,7 +153,7 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The configuration for the prebuilt voice to use.
+   * The configuration for a prebuilt voice.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.PrebuiltVoiceConfig prebuilt_voice_config = 1;</code>
@@ -162,6 +165,70 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.aiplatform.v1beta1.PrebuiltVoiceConfig) voiceConfig_;
     }
     return com.google.cloud.aiplatform.v1beta1.PrebuiltVoiceConfig.getDefaultInstance();
+  }
+
+  public static final int REPLICATED_VOICE_CONFIG_FIELD_NUMBER = 3;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for a replicated voice. This enables users to
+   * replicate a voice from an audio sample.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig replicated_voice_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the replicatedVoiceConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasReplicatedVoiceConfig() {
+    return voiceConfigCase_ == 3;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for a replicated voice. This enables users to
+   * replicate a voice from an audio sample.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig replicated_voice_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The replicatedVoiceConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig getReplicatedVoiceConfig() {
+    if (voiceConfigCase_ == 3) {
+      return (com.google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig) voiceConfig_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for a replicated voice. This enables users to
+   * replicate a voice from an audio sample.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig replicated_voice_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfigOrBuilder
+      getReplicatedVoiceConfigOrBuilder() {
+    if (voiceConfigCase_ == 3) {
+      return (com.google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig) voiceConfig_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -182,6 +249,10 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           1, (com.google.cloud.aiplatform.v1beta1.PrebuiltVoiceConfig) voiceConfig_);
     }
+    if (voiceConfigCase_ == 3) {
+      output.writeMessage(
+          3, (com.google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig) voiceConfig_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -195,6 +266,11 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               1, (com.google.cloud.aiplatform.v1beta1.PrebuiltVoiceConfig) voiceConfig_);
+    }
+    if (voiceConfigCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig) voiceConfig_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -217,6 +293,9 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
       case 1:
         if (!getPrebuiltVoiceConfig().equals(other.getPrebuiltVoiceConfig())) return false;
         break;
+      case 3:
+        if (!getReplicatedVoiceConfig().equals(other.getReplicatedVoiceConfig())) return false;
+        break;
       case 0:
       default:
     }
@@ -235,6 +314,10 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
       case 1:
         hash = (37 * hash) + PREBUILT_VOICE_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getPrebuiltVoiceConfig().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + REPLICATED_VOICE_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getReplicatedVoiceConfig().hashCode();
         break;
       case 0:
       default:
@@ -344,7 +427,7 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The configuration for the voice to use.
+   * Configuration for a voice.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.VoiceConfig}
@@ -381,6 +464,9 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       if (prebuiltVoiceConfigBuilder_ != null) {
         prebuiltVoiceConfigBuilder_.clear();
+      }
+      if (replicatedVoiceConfigBuilder_ != null) {
+        replicatedVoiceConfigBuilder_.clear();
       }
       voiceConfigCase_ = 0;
       voiceConfig_ = null;
@@ -428,6 +514,9 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
       result.voiceConfig_ = this.voiceConfig_;
       if (voiceConfigCase_ == 1 && prebuiltVoiceConfigBuilder_ != null) {
         result.voiceConfig_ = prebuiltVoiceConfigBuilder_.build();
+      }
+      if (voiceConfigCase_ == 3 && replicatedVoiceConfigBuilder_ != null) {
+        result.voiceConfig_ = replicatedVoiceConfigBuilder_.build();
       }
     }
 
@@ -483,6 +572,11 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
             mergePrebuiltVoiceConfig(other.getPrebuiltVoiceConfig());
             break;
           }
+        case REPLICATED_VOICE_CONFIG:
+          {
+            mergeReplicatedVoiceConfig(other.getReplicatedVoiceConfig());
+            break;
+          }
         case VOICECONFIG_NOT_SET:
           {
             break;
@@ -521,6 +615,13 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
                 voiceConfigCase_ = 1;
                 break;
               } // case 10
+            case 26:
+              {
+                input.readMessage(
+                    getReplicatedVoiceConfigFieldBuilder().getBuilder(), extensionRegistry);
+                voiceConfigCase_ = 3;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -564,7 +665,7 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration for the prebuilt voice to use.
+     * The configuration for a prebuilt voice.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.PrebuiltVoiceConfig prebuilt_voice_config = 1;</code>
@@ -580,7 +681,7 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration for the prebuilt voice to use.
+     * The configuration for a prebuilt voice.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.PrebuiltVoiceConfig prebuilt_voice_config = 1;</code>
@@ -606,7 +707,7 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration for the prebuilt voice to use.
+     * The configuration for a prebuilt voice.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.PrebuiltVoiceConfig prebuilt_voice_config = 1;</code>
@@ -630,7 +731,7 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration for the prebuilt voice to use.
+     * The configuration for a prebuilt voice.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.PrebuiltVoiceConfig prebuilt_voice_config = 1;</code>
@@ -651,7 +752,7 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration for the prebuilt voice to use.
+     * The configuration for a prebuilt voice.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.PrebuiltVoiceConfig prebuilt_voice_config = 1;</code>
@@ -686,7 +787,7 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration for the prebuilt voice to use.
+     * The configuration for a prebuilt voice.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.PrebuiltVoiceConfig prebuilt_voice_config = 1;</code>
@@ -712,7 +813,7 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration for the prebuilt voice to use.
+     * The configuration for a prebuilt voice.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.PrebuiltVoiceConfig prebuilt_voice_config = 1;</code>
@@ -726,7 +827,7 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration for the prebuilt voice to use.
+     * The configuration for a prebuilt voice.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.PrebuiltVoiceConfig prebuilt_voice_config = 1;</code>
@@ -748,7 +849,7 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration for the prebuilt voice to use.
+     * The configuration for a prebuilt voice.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.PrebuiltVoiceConfig prebuilt_voice_config = 1;</code>
@@ -776,6 +877,257 @@ public final class VoiceConfig extends com.google.protobuf.GeneratedMessageV3
       voiceConfigCase_ = 1;
       onChanged();
       return prebuiltVoiceConfigBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig,
+            com.google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfigOrBuilder>
+        replicatedVoiceConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for a replicated voice. This enables users to
+     * replicate a voice from an audio sample.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig replicated_voice_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the replicatedVoiceConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasReplicatedVoiceConfig() {
+      return voiceConfigCase_ == 3;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for a replicated voice. This enables users to
+     * replicate a voice from an audio sample.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig replicated_voice_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The replicatedVoiceConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig getReplicatedVoiceConfig() {
+      if (replicatedVoiceConfigBuilder_ == null) {
+        if (voiceConfigCase_ == 3) {
+          return (com.google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig) voiceConfig_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig.getDefaultInstance();
+      } else {
+        if (voiceConfigCase_ == 3) {
+          return replicatedVoiceConfigBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for a replicated voice. This enables users to
+     * replicate a voice from an audio sample.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig replicated_voice_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setReplicatedVoiceConfig(
+        com.google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig value) {
+      if (replicatedVoiceConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        voiceConfig_ = value;
+        onChanged();
+      } else {
+        replicatedVoiceConfigBuilder_.setMessage(value);
+      }
+      voiceConfigCase_ = 3;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for a replicated voice. This enables users to
+     * replicate a voice from an audio sample.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig replicated_voice_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setReplicatedVoiceConfig(
+        com.google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig.Builder builderForValue) {
+      if (replicatedVoiceConfigBuilder_ == null) {
+        voiceConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        replicatedVoiceConfigBuilder_.setMessage(builderForValue.build());
+      }
+      voiceConfigCase_ = 3;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for a replicated voice. This enables users to
+     * replicate a voice from an audio sample.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig replicated_voice_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeReplicatedVoiceConfig(
+        com.google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig value) {
+      if (replicatedVoiceConfigBuilder_ == null) {
+        if (voiceConfigCase_ == 3
+            && voiceConfig_
+                != com.google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig.getDefaultInstance()) {
+          voiceConfig_ =
+              com.google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig) voiceConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          voiceConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (voiceConfigCase_ == 3) {
+          replicatedVoiceConfigBuilder_.mergeFrom(value);
+        } else {
+          replicatedVoiceConfigBuilder_.setMessage(value);
+        }
+      }
+      voiceConfigCase_ = 3;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for a replicated voice. This enables users to
+     * replicate a voice from an audio sample.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig replicated_voice_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearReplicatedVoiceConfig() {
+      if (replicatedVoiceConfigBuilder_ == null) {
+        if (voiceConfigCase_ == 3) {
+          voiceConfigCase_ = 0;
+          voiceConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (voiceConfigCase_ == 3) {
+          voiceConfigCase_ = 0;
+          voiceConfig_ = null;
+        }
+        replicatedVoiceConfigBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for a replicated voice. This enables users to
+     * replicate a voice from an audio sample.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig replicated_voice_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig.Builder
+        getReplicatedVoiceConfigBuilder() {
+      return getReplicatedVoiceConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for a replicated voice. This enables users to
+     * replicate a voice from an audio sample.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig replicated_voice_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfigOrBuilder
+        getReplicatedVoiceConfigOrBuilder() {
+      if ((voiceConfigCase_ == 3) && (replicatedVoiceConfigBuilder_ != null)) {
+        return replicatedVoiceConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (voiceConfigCase_ == 3) {
+          return (com.google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig) voiceConfig_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for a replicated voice. This enables users to
+     * replicate a voice from an audio sample.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig replicated_voice_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig,
+            com.google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfigOrBuilder>
+        getReplicatedVoiceConfigFieldBuilder() {
+      if (replicatedVoiceConfigBuilder_ == null) {
+        if (!(voiceConfigCase_ == 3)) {
+          voiceConfig_ =
+              com.google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig.getDefaultInstance();
+        }
+        replicatedVoiceConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig,
+                com.google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfigOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.ReplicatedVoiceConfig) voiceConfig_,
+                getParentForChildren(),
+                isClean());
+        voiceConfig_ = null;
+      }
+      voiceConfigCase_ = 3;
+      onChanged();
+      return replicatedVoiceConfigBuilder_;
     }
 
     @java.lang.Override

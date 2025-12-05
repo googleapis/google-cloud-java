@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Container for either a built-in LB policy supported by gRPC or Envoy or a custom one implemented by the end user.
+ * Container for either a built-in LB policy supported by gRPC or Envoy or
+ * a custom one implemented by the end user.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig}
@@ -349,7 +350,8 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfig
    *
    *
    * <pre>
-   * Container for either a built-in LB policy supported by gRPC or Envoy or a custom one implemented by the end user.
+   * Container for either a built-in LB policy supported by gRPC or Envoy or
+   * a custom one implemented by the end user.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig}

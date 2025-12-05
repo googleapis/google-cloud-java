@@ -28,6 +28,7 @@ package com.google.cloud.gkemulticloud.v1;
  *
  * Protobuf type {@code google.cloud.gkemulticloud.v1.ListAwsNodePoolsRequest}
  */
+@java.lang.Deprecated
 public final class ListAwsNodePoolsRequest extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.ListAwsNodePoolsRequest)

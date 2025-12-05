@@ -19,6 +19,7 @@
 // Protobuf Java Version: 3.25.8
 package com.google.cloud.gkemulticloud.v1;
 
+@java.lang.Deprecated
 public interface AwsVolumeTemplateOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.gkemulticloud.v1.AwsVolumeTemplate)
@@ -95,7 +96,7 @@ public interface AwsVolumeTemplateOrBuilder
    * Optional. The throughput that the volume supports, in MiB/s. Only valid if
    * volume_type is GP3.
    *
-   * If the volume_type is GP3 and this is not speficied, it defaults to 125.
+   * If the volume_type is GP3 and this is not specified, it defaults to 125.
    * </pre>
    *
    * <code>int32 throughput = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

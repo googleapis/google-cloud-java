@@ -260,6 +260,66 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
   }
 
   private int bitField0_;
+  public static final int ACCELERATOR_TOPOLOGIES_INFO_FIELD_NUMBER = 84833420;
+  private com.google.cloud.compute.v1.AcceleratorTopologiesInfo acceleratorTopologiesInfo_;
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Slice info for the reservation subBlock.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.AcceleratorTopologiesInfo accelerator_topologies_info = 84833420;
+   * </code>
+   *
+   * @return Whether the acceleratorTopologiesInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasAcceleratorTopologiesInfo() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Slice info for the reservation subBlock.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.AcceleratorTopologiesInfo accelerator_topologies_info = 84833420;
+   * </code>
+   *
+   * @return The acceleratorTopologiesInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.AcceleratorTopologiesInfo getAcceleratorTopologiesInfo() {
+    return acceleratorTopologiesInfo_ == null
+        ? com.google.cloud.compute.v1.AcceleratorTopologiesInfo.getDefaultInstance()
+        : acceleratorTopologiesInfo_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Slice info for the reservation subBlock.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.AcceleratorTopologiesInfo accelerator_topologies_info = 84833420;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.AcceleratorTopologiesInfoOrBuilder
+      getAcceleratorTopologiesInfoOrBuilder() {
+    return acceleratorTopologiesInfo_ == null
+        ? com.google.cloud.compute.v1.AcceleratorTopologiesInfo.getDefaultInstance()
+        : acceleratorTopologiesInfo_;
+  }
+
   public static final int COUNT_FIELD_NUMBER = 94851343;
   private int count_ = 0;
 
@@ -267,7 +327,8 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] The number of hosts that are allocated in this reservation subBlock.
+   * [Output Only] The number of hosts that are allocated in this
+   * reservation subBlock.
    * </pre>
    *
    * <code>optional int32 count = 94851343;</code>
@@ -276,14 +337,15 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasCount() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] The number of hosts that are allocated in this reservation subBlock.
+   * [Output Only] The number of hosts that are allocated in this
+   * reservation subBlock.
    * </pre>
    *
    * <code>optional int32 count = 94851343;</code>
@@ -304,7 +366,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -313,14 +375,14 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasCreationTimestamp() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -344,7 +406,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -381,7 +443,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasHealthInfo() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -428,7 +490,8 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -437,14 +500,15 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasId() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -463,7 +527,8 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] The number of instances that are currently in use on this reservation subBlock.
+   * [Output Only] The number of instances that are currently in use on this
+   * reservation subBlock.
    * </pre>
    *
    * <code>optional int32 in_use_count = 493458877;</code>
@@ -472,14 +537,15 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasInUseCount() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] The number of instances that are currently in use on this reservation subBlock.
+   * [Output Only] The number of instances that are currently in use on this
+   * reservation subBlock.
    * </pre>
    *
    * <code>optional int32 in_use_count = 493458877;</code>
@@ -500,7 +566,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#reservationSubBlock for reservation subBlocks.
+   * [Output Only] Type of the resource. Alwayscompute#reservationSubBlock for reservation subBlocks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -509,14 +575,14 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasKind() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#reservationSubBlock for reservation subBlocks.
+   * [Output Only] Type of the resource. Alwayscompute#reservationSubBlock for reservation subBlocks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -540,7 +606,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#reservationSubBlock for reservation subBlocks.
+   * [Output Only] Type of the resource. Alwayscompute#reservationSubBlock for reservation subBlocks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -569,7 +635,9 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] The name of this reservation subBlock generated by Google Compute Engine. The name must be 1-63 characters long, and comply with RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
+   * [Output Only] The name of this reservation subBlock generated by Google
+   * Compute Engine. The name must be 1-63 characters long, and comply with
+   * RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -578,14 +646,16 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] The name of this reservation subBlock generated by Google Compute Engine. The name must be 1-63 characters long, and comply with RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
+   * [Output Only] The name of this reservation subBlock generated by Google
+   * Compute Engine. The name must be 1-63 characters long, and comply with
+   * RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -609,7 +679,9 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] The name of this reservation subBlock generated by Google Compute Engine. The name must be 1-63 characters long, and comply with RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
+   * [Output Only] The name of this reservation subBlock generated by Google
+   * Compute Engine. The name must be 1-63 characters long, and comply with
+   * RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -647,7 +719,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasPhysicalTopology() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
@@ -707,7 +779,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasReservationSubBlockMaintenance() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -767,7 +839,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
@@ -836,7 +908,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasSelfLinkWithId() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
@@ -906,7 +978,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
 
   /**
@@ -977,7 +1049,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasZone() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
@@ -1042,43 +1114,46 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeUInt64(3355, id_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 44520962, selfLinkWithId_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(84833420, getAcceleratorTopologiesInfo());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt32(94851343, count_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(235287729, getHealthInfo());
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(279778519, getPhysicalTopology());
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(377005551, getReservationSubBlockMaintenance());
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeInt32(493458877, inUseCount_);
     }
     getUnknownFields().writeTo(output);
@@ -1090,48 +1165,53 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3355, id_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(44520962, selfLinkWithId_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(94851343, count_);
-    }
-    if (((bitField0_ & 0x00000800) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
-    }
-    if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(235287729, getHealthInfo());
-    }
-    if (((bitField0_ & 0x00000080) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              279778519, getPhysicalTopology());
+              84833420, getAcceleratorTopologiesInfo());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(94851343, count_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(235287729, getHealthInfo());
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              377005551, getReservationSubBlockMaintenance());
+              279778519, getPhysicalTopology());
     }
     if (((bitField0_ & 0x00000200) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              377005551, getReservationSubBlockMaintenance());
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(493458877, inUseCount_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -1150,6 +1230,11 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
     com.google.cloud.compute.v1.ReservationSubBlock other =
         (com.google.cloud.compute.v1.ReservationSubBlock) obj;
 
+    if (hasAcceleratorTopologiesInfo() != other.hasAcceleratorTopologiesInfo()) return false;
+    if (hasAcceleratorTopologiesInfo()) {
+      if (!getAcceleratorTopologiesInfo().equals(other.getAcceleratorTopologiesInfo()))
+        return false;
+    }
     if (hasCount() != other.hasCount()) return false;
     if (hasCount()) {
       if (getCount() != other.getCount()) return false;
@@ -1215,6 +1300,10 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasAcceleratorTopologiesInfo()) {
+      hash = (37 * hash) + ACCELERATOR_TOPOLOGIES_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getAcceleratorTopologiesInfo().hashCode();
+    }
     if (hasCount()) {
       hash = (37 * hash) + COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getCount();
@@ -1408,6 +1497,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getAcceleratorTopologiesInfoFieldBuilder();
         getHealthInfoFieldBuilder();
         getPhysicalTopologyFieldBuilder();
         getReservationSubBlockMaintenanceFieldBuilder();
@@ -1418,6 +1508,11 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      acceleratorTopologiesInfo_ = null;
+      if (acceleratorTopologiesInfoBuilder_ != null) {
+        acceleratorTopologiesInfoBuilder_.dispose();
+        acceleratorTopologiesInfoBuilder_ = null;
+      }
       count_ = 0;
       creationTimestamp_ = "";
       healthInfo_ = null;
@@ -1481,60 +1576,67 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.count_ = count_;
+        result.acceleratorTopologiesInfo_ =
+            acceleratorTopologiesInfoBuilder_ == null
+                ? acceleratorTopologiesInfo_
+                : acceleratorTopologiesInfoBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.creationTimestamp_ = creationTimestamp_;
+        result.count_ = count_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.healthInfo_ = healthInfoBuilder_ == null ? healthInfo_ : healthInfoBuilder_.build();
+        result.creationTimestamp_ = creationTimestamp_;
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.id_ = id_;
+        result.healthInfo_ = healthInfoBuilder_ == null ? healthInfo_ : healthInfoBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.inUseCount_ = inUseCount_;
+        result.id_ = id_;
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.kind_ = kind_;
+        result.inUseCount_ = inUseCount_;
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.name_ = name_;
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.physicalTopology_ =
-            physicalTopologyBuilder_ == null ? physicalTopology_ : physicalTopologyBuilder_.build();
+        result.name_ = name_;
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.physicalTopology_ =
+            physicalTopologyBuilder_ == null ? physicalTopology_ : physicalTopologyBuilder_.build();
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.reservationSubBlockMaintenance_ =
             reservationSubBlockMaintenanceBuilder_ == null
                 ? reservationSubBlockMaintenance_
                 : reservationSubBlockMaintenanceBuilder_.build();
-        to_bitField0_ |= 0x00000100;
-      }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.selfLinkWithId_ = selfLinkWithId_;
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.status_ = status_;
+        result.selfLinkWithId_ = selfLinkWithId_;
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.zone_ = zone_;
+        result.status_ = status_;
         to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.zone_ = zone_;
+        to_bitField0_ |= 0x00002000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1585,12 +1687,15 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
     public Builder mergeFrom(com.google.cloud.compute.v1.ReservationSubBlock other) {
       if (other == com.google.cloud.compute.v1.ReservationSubBlock.getDefaultInstance())
         return this;
+      if (other.hasAcceleratorTopologiesInfo()) {
+        mergeAcceleratorTopologiesInfo(other.getAcceleratorTopologiesInfo());
+      }
       if (other.hasCount()) {
         setCount(other.getCount());
       }
       if (other.hasCreationTimestamp()) {
         creationTimestamp_ = other.creationTimestamp_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasHealthInfo()) {
@@ -1604,12 +1709,12 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
       }
       if (other.hasKind()) {
         kind_ = other.kind_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasPhysicalTopology()) {
@@ -1620,22 +1725,22 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasSelfLinkWithId()) {
         selfLinkWithId_ = other.selfLinkWithId_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasStatus()) {
         status_ = other.status_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.hasZone()) {
         zone_ = other.zone_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1667,62 +1772,69 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
             case 26840:
               {
                 id_ = input.readUInt64();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26840
             case 26336418:
               {
                 kind_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 26336418
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 26989658
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 29957474
             case 244202930:
               {
                 creationTimestamp_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 244202930
             case 356167698:
               {
                 selfLinkWithId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 356167698
+            case 678667362:
+              {
+                input.readMessage(
+                    getAcceleratorTopologiesInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 678667362
             case 758810744:
               {
                 count_ = input.readInt32();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 758810744
             case 1450082194:
               {
                 status_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 1450082194
             case 1882301834:
               {
                 input.readMessage(getHealthInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 1882301834
             case -2056739142:
               {
                 input.readMessage(
                     getPhysicalTopologyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case -2056739142
             case -1278922886:
@@ -1730,19 +1842,19 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
                 input.readMessage(
                     getReservationSubBlockMaintenanceFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case -1278922886
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case -645248918
             case -347296280:
               {
                 inUseCount_ = input.readInt32();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case -347296280
             default:
@@ -1764,13 +1876,232 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
 
     private int bitField0_;
 
+    private com.google.cloud.compute.v1.AcceleratorTopologiesInfo acceleratorTopologiesInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.AcceleratorTopologiesInfo,
+            com.google.cloud.compute.v1.AcceleratorTopologiesInfo.Builder,
+            com.google.cloud.compute.v1.AcceleratorTopologiesInfoOrBuilder>
+        acceleratorTopologiesInfoBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Slice info for the reservation subBlock.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.AcceleratorTopologiesInfo accelerator_topologies_info = 84833420;
+     * </code>
+     *
+     * @return Whether the acceleratorTopologiesInfo field is set.
+     */
+    public boolean hasAcceleratorTopologiesInfo() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Slice info for the reservation subBlock.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.AcceleratorTopologiesInfo accelerator_topologies_info = 84833420;
+     * </code>
+     *
+     * @return The acceleratorTopologiesInfo.
+     */
+    public com.google.cloud.compute.v1.AcceleratorTopologiesInfo getAcceleratorTopologiesInfo() {
+      if (acceleratorTopologiesInfoBuilder_ == null) {
+        return acceleratorTopologiesInfo_ == null
+            ? com.google.cloud.compute.v1.AcceleratorTopologiesInfo.getDefaultInstance()
+            : acceleratorTopologiesInfo_;
+      } else {
+        return acceleratorTopologiesInfoBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Slice info for the reservation subBlock.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.AcceleratorTopologiesInfo accelerator_topologies_info = 84833420;
+     * </code>
+     */
+    public Builder setAcceleratorTopologiesInfo(
+        com.google.cloud.compute.v1.AcceleratorTopologiesInfo value) {
+      if (acceleratorTopologiesInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        acceleratorTopologiesInfo_ = value;
+      } else {
+        acceleratorTopologiesInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Slice info for the reservation subBlock.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.AcceleratorTopologiesInfo accelerator_topologies_info = 84833420;
+     * </code>
+     */
+    public Builder setAcceleratorTopologiesInfo(
+        com.google.cloud.compute.v1.AcceleratorTopologiesInfo.Builder builderForValue) {
+      if (acceleratorTopologiesInfoBuilder_ == null) {
+        acceleratorTopologiesInfo_ = builderForValue.build();
+      } else {
+        acceleratorTopologiesInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Slice info for the reservation subBlock.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.AcceleratorTopologiesInfo accelerator_topologies_info = 84833420;
+     * </code>
+     */
+    public Builder mergeAcceleratorTopologiesInfo(
+        com.google.cloud.compute.v1.AcceleratorTopologiesInfo value) {
+      if (acceleratorTopologiesInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && acceleratorTopologiesInfo_ != null
+            && acceleratorTopologiesInfo_
+                != com.google.cloud.compute.v1.AcceleratorTopologiesInfo.getDefaultInstance()) {
+          getAcceleratorTopologiesInfoBuilder().mergeFrom(value);
+        } else {
+          acceleratorTopologiesInfo_ = value;
+        }
+      } else {
+        acceleratorTopologiesInfoBuilder_.mergeFrom(value);
+      }
+      if (acceleratorTopologiesInfo_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Slice info for the reservation subBlock.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.AcceleratorTopologiesInfo accelerator_topologies_info = 84833420;
+     * </code>
+     */
+    public Builder clearAcceleratorTopologiesInfo() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      acceleratorTopologiesInfo_ = null;
+      if (acceleratorTopologiesInfoBuilder_ != null) {
+        acceleratorTopologiesInfoBuilder_.dispose();
+        acceleratorTopologiesInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Slice info for the reservation subBlock.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.AcceleratorTopologiesInfo accelerator_topologies_info = 84833420;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.AcceleratorTopologiesInfo.Builder
+        getAcceleratorTopologiesInfoBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return getAcceleratorTopologiesInfoFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Slice info for the reservation subBlock.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.AcceleratorTopologiesInfo accelerator_topologies_info = 84833420;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.AcceleratorTopologiesInfoOrBuilder
+        getAcceleratorTopologiesInfoOrBuilder() {
+      if (acceleratorTopologiesInfoBuilder_ != null) {
+        return acceleratorTopologiesInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return acceleratorTopologiesInfo_ == null
+            ? com.google.cloud.compute.v1.AcceleratorTopologiesInfo.getDefaultInstance()
+            : acceleratorTopologiesInfo_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Slice info for the reservation subBlock.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.AcceleratorTopologiesInfo accelerator_topologies_info = 84833420;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.AcceleratorTopologiesInfo,
+            com.google.cloud.compute.v1.AcceleratorTopologiesInfo.Builder,
+            com.google.cloud.compute.v1.AcceleratorTopologiesInfoOrBuilder>
+        getAcceleratorTopologiesInfoFieldBuilder() {
+      if (acceleratorTopologiesInfoBuilder_ == null) {
+        acceleratorTopologiesInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.AcceleratorTopologiesInfo,
+                com.google.cloud.compute.v1.AcceleratorTopologiesInfo.Builder,
+                com.google.cloud.compute.v1.AcceleratorTopologiesInfoOrBuilder>(
+                getAcceleratorTopologiesInfo(), getParentForChildren(), isClean());
+        acceleratorTopologiesInfo_ = null;
+      }
+      return acceleratorTopologiesInfoBuilder_;
+    }
+
     private int count_;
 
     /**
      *
      *
      * <pre>
-     * [Output Only] The number of hosts that are allocated in this reservation subBlock.
+     * [Output Only] The number of hosts that are allocated in this
+     * reservation subBlock.
      * </pre>
      *
      * <code>optional int32 count = 94851343;</code>
@@ -1779,14 +2110,15 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public boolean hasCount() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] The number of hosts that are allocated in this reservation subBlock.
+     * [Output Only] The number of hosts that are allocated in this
+     * reservation subBlock.
      * </pre>
      *
      * <code>optional int32 count = 94851343;</code>
@@ -1802,7 +2134,8 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The number of hosts that are allocated in this reservation subBlock.
+     * [Output Only] The number of hosts that are allocated in this
+     * reservation subBlock.
      * </pre>
      *
      * <code>optional int32 count = 94851343;</code>
@@ -1813,7 +2146,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
     public Builder setCount(int value) {
 
       count_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1822,7 +2155,8 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The number of hosts that are allocated in this reservation subBlock.
+     * [Output Only] The number of hosts that are allocated in this
+     * reservation subBlock.
      * </pre>
      *
      * <code>optional int32 count = 94851343;</code>
@@ -1830,7 +2164,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearCount() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       count_ = 0;
       onChanged();
       return this;
@@ -1842,7 +2176,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1850,14 +2184,14 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      * @return Whether the creationTimestamp field is set.
      */
     public boolean hasCreationTimestamp() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1880,7 +2214,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1903,7 +2237,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1916,7 +2250,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       creationTimestamp_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1925,7 +2259,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1934,7 +2268,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      */
     public Builder clearCreationTimestamp() {
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1943,7 +2277,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1957,7 +2291,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       creationTimestamp_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1983,7 +2317,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      * @return Whether the healthInfo field is set.
      */
     public boolean hasHealthInfo() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -2029,7 +2363,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
       } else {
         healthInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2052,7 +2386,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
       } else {
         healthInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2071,7 +2405,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
     public Builder mergeHealthInfo(
         com.google.cloud.compute.v1.ReservationSubBlockHealthInfo value) {
       if (healthInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && healthInfo_ != null
             && healthInfo_
                 != com.google.cloud.compute.v1.ReservationSubBlockHealthInfo.getDefaultInstance()) {
@@ -2083,7 +2417,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
         healthInfoBuilder_.mergeFrom(value);
       }
       if (healthInfo_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -2101,7 +2435,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearHealthInfo() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       healthInfo_ = null;
       if (healthInfoBuilder_ != null) {
         healthInfoBuilder_.dispose();
@@ -2124,7 +2458,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.compute.v1.ReservationSubBlockHealthInfo.Builder
         getHealthInfoBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getHealthInfoFieldBuilder().getBuilder();
     }
@@ -2185,7 +2519,8 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2194,14 +2529,15 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public boolean hasId() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2217,7 +2553,8 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2228,7 +2565,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
     public Builder setId(long value) {
 
       id_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2237,7 +2574,8 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2245,7 +2583,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       id_ = 0L;
       onChanged();
       return this;
@@ -2257,7 +2595,8 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The number of instances that are currently in use on this reservation subBlock.
+     * [Output Only] The number of instances that are currently in use on this
+     * reservation subBlock.
      * </pre>
      *
      * <code>optional int32 in_use_count = 493458877;</code>
@@ -2266,14 +2605,15 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public boolean hasInUseCount() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] The number of instances that are currently in use on this reservation subBlock.
+     * [Output Only] The number of instances that are currently in use on this
+     * reservation subBlock.
      * </pre>
      *
      * <code>optional int32 in_use_count = 493458877;</code>
@@ -2289,7 +2629,8 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The number of instances that are currently in use on this reservation subBlock.
+     * [Output Only] The number of instances that are currently in use on this
+     * reservation subBlock.
      * </pre>
      *
      * <code>optional int32 in_use_count = 493458877;</code>
@@ -2300,7 +2641,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
     public Builder setInUseCount(int value) {
 
       inUseCount_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2309,7 +2650,8 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The number of instances that are currently in use on this reservation subBlock.
+     * [Output Only] The number of instances that are currently in use on this
+     * reservation subBlock.
      * </pre>
      *
      * <code>optional int32 in_use_count = 493458877;</code>
@@ -2317,7 +2659,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearInUseCount() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       inUseCount_ = 0;
       onChanged();
       return this;
@@ -2329,7 +2671,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#reservationSubBlock for reservation subBlocks.
+     * [Output Only] Type of the resource. Alwayscompute#reservationSubBlock for reservation subBlocks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2337,14 +2679,14 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#reservationSubBlock for reservation subBlocks.
+     * [Output Only] Type of the resource. Alwayscompute#reservationSubBlock for reservation subBlocks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2367,7 +2709,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#reservationSubBlock for reservation subBlocks.
+     * [Output Only] Type of the resource. Alwayscompute#reservationSubBlock for reservation subBlocks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2390,7 +2732,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#reservationSubBlock for reservation subBlocks.
+     * [Output Only] Type of the resource. Alwayscompute#reservationSubBlock for reservation subBlocks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2403,7 +2745,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       kind_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2412,7 +2754,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#reservationSubBlock for reservation subBlocks.
+     * [Output Only] Type of the resource. Alwayscompute#reservationSubBlock for reservation subBlocks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2421,7 +2763,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      */
     public Builder clearKind() {
       kind_ = getDefaultInstance().getKind();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2430,7 +2772,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#reservationSubBlock for reservation subBlocks.
+     * [Output Only] Type of the resource. Alwayscompute#reservationSubBlock for reservation subBlocks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2444,7 +2786,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       kind_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2455,7 +2797,9 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The name of this reservation subBlock generated by Google Compute Engine. The name must be 1-63 characters long, and comply with RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
+     * [Output Only] The name of this reservation subBlock generated by Google
+     * Compute Engine. The name must be 1-63 characters long, and comply with
+     * RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2463,14 +2807,16 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] The name of this reservation subBlock generated by Google Compute Engine. The name must be 1-63 characters long, and comply with RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
+     * [Output Only] The name of this reservation subBlock generated by Google
+     * Compute Engine. The name must be 1-63 characters long, and comply with
+     * RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2493,7 +2839,9 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The name of this reservation subBlock generated by Google Compute Engine. The name must be 1-63 characters long, and comply with RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
+     * [Output Only] The name of this reservation subBlock generated by Google
+     * Compute Engine. The name must be 1-63 characters long, and comply with
+     * RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2516,7 +2864,9 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The name of this reservation subBlock generated by Google Compute Engine. The name must be 1-63 characters long, and comply with RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
+     * [Output Only] The name of this reservation subBlock generated by Google
+     * Compute Engine. The name must be 1-63 characters long, and comply with
+     * RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2529,7 +2879,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2538,7 +2888,9 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The name of this reservation subBlock generated by Google Compute Engine. The name must be 1-63 characters long, and comply with RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
+     * [Output Only] The name of this reservation subBlock generated by Google
+     * Compute Engine. The name must be 1-63 characters long, and comply with
+     * RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2547,7 +2899,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2556,7 +2908,9 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The name of this reservation subBlock generated by Google Compute Engine. The name must be 1-63 characters long, and comply with RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
+     * [Output Only] The name of this reservation subBlock generated by Google
+     * Compute Engine. The name must be 1-63 characters long, and comply with
+     * RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2570,7 +2924,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2596,7 +2950,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      * @return Whether the physicalTopology field is set.
      */
     public boolean hasPhysicalTopology() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -2643,7 +2997,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
       } else {
         physicalTopologyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2666,7 +3020,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
       } else {
         physicalTopologyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2685,7 +3039,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
     public Builder mergePhysicalTopology(
         com.google.cloud.compute.v1.ReservationSubBlockPhysicalTopology value) {
       if (physicalTopologyBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && physicalTopology_ != null
             && physicalTopology_
                 != com.google.cloud.compute.v1.ReservationSubBlockPhysicalTopology
@@ -2698,7 +3052,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
         physicalTopologyBuilder_.mergeFrom(value);
       }
       if (physicalTopology_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -2716,7 +3070,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearPhysicalTopology() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       physicalTopology_ = null;
       if (physicalTopologyBuilder_ != null) {
         physicalTopologyBuilder_.dispose();
@@ -2739,7 +3093,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.compute.v1.ReservationSubBlockPhysicalTopology.Builder
         getPhysicalTopologyBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getPhysicalTopologyFieldBuilder().getBuilder();
     }
@@ -2815,7 +3169,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      * @return Whether the reservationSubBlockMaintenance field is set.
      */
     public boolean hasReservationSubBlockMaintenance() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -2862,7 +3216,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
       } else {
         reservationSubBlockMaintenanceBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2885,7 +3239,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
       } else {
         reservationSubBlockMaintenanceBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2904,7 +3258,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
     public Builder mergeReservationSubBlockMaintenance(
         com.google.cloud.compute.v1.GroupMaintenanceInfo value) {
       if (reservationSubBlockMaintenanceBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && reservationSubBlockMaintenance_ != null
             && reservationSubBlockMaintenance_
                 != com.google.cloud.compute.v1.GroupMaintenanceInfo.getDefaultInstance()) {
@@ -2916,7 +3270,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
         reservationSubBlockMaintenanceBuilder_.mergeFrom(value);
       }
       if (reservationSubBlockMaintenance_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -2934,7 +3288,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearReservationSubBlockMaintenance() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       reservationSubBlockMaintenance_ = null;
       if (reservationSubBlockMaintenanceBuilder_ != null) {
         reservationSubBlockMaintenanceBuilder_.dispose();
@@ -2957,7 +3311,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.compute.v1.GroupMaintenanceInfo.Builder
         getReservationSubBlockMaintenanceBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getReservationSubBlockMaintenanceFieldBuilder().getBuilder();
     }
@@ -3026,7 +3380,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -3092,7 +3446,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3110,7 +3464,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3133,7 +3487,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3152,7 +3506,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      * @return Whether the selfLinkWithId field is set.
      */
     public boolean hasSelfLinkWithId() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -3218,7 +3572,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       selfLinkWithId_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3236,7 +3590,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      */
     public Builder clearSelfLinkWithId() {
       selfLinkWithId_ = getDefaultInstance().getSelfLinkWithId();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3259,7 +3613,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       selfLinkWithId_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3279,7 +3633,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -3348,7 +3702,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       status_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3367,7 +3721,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      */
     public Builder clearStatus() {
       status_ = getDefaultInstance().getStatus();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -3391,7 +3745,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       status_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3410,7 +3764,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      * @return Whether the zone field is set.
      */
     public boolean hasZone() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -3476,7 +3830,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       zone_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3494,7 +3848,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      */
     public Builder clearZone() {
       zone_ = getDefaultInstance().getZone();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -3517,7 +3871,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       zone_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }

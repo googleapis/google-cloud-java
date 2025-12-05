@@ -446,4 +446,82 @@ public class UserServiceClientTest {
       // Expected exception.
     }
   }
+
+  @Test
+  public void verifySelfTest() throws Exception {
+    User expectedResponse =
+        User.newBuilder()
+            .setName(UserName.of("[ACCOUNT]", "[EMAIL]").toString())
+            .addAllAccessRights(new ArrayList<AccessRight>())
+            .build();
+    mockUserService.addResponse(expectedResponse);
+
+    AccountName account = AccountName.of("[ACCOUNT]");
+
+    User actualResponse = client.verifySelf(account);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockUserService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    VerifySelfRequest actualRequest = ((VerifySelfRequest) actualRequests.get(0));
+
+    Assert.assertEquals(account.toString(), actualRequest.getAccount());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void verifySelfExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockUserService.addException(exception);
+
+    try {
+      AccountName account = AccountName.of("[ACCOUNT]");
+      client.verifySelf(account);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void verifySelfTest2() throws Exception {
+    User expectedResponse =
+        User.newBuilder()
+            .setName(UserName.of("[ACCOUNT]", "[EMAIL]").toString())
+            .addAllAccessRights(new ArrayList<AccessRight>())
+            .build();
+    mockUserService.addResponse(expectedResponse);
+
+    String account = "account-1177318867";
+
+    User actualResponse = client.verifySelf(account);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockUserService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    VerifySelfRequest actualRequest = ((VerifySelfRequest) actualRequests.get(0));
+
+    Assert.assertEquals(account, actualRequest.getAccount());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void verifySelfExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockUserService.addException(exception);
+
+    try {
+      String account = "account-1177318867";
+      client.verifySelf(account);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
 }

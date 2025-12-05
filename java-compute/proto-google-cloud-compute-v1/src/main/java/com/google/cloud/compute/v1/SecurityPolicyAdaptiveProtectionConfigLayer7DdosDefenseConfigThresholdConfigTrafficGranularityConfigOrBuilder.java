@@ -29,7 +29,9 @@ interface SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThreshold
    *
    *
    * <pre>
-   * If enabled, traffic matching each unique value for the specified type constitutes a separate traffic unit. It can only be set to true if `value` is empty.
+   * If enabled, traffic matching each unique value for the specified
+   * type constitutes a separate traffic unit.
+   * It can only be set to true if `value` is empty.
    * </pre>
    *
    * <code>optional bool enable_each_unique_value = 469206341;</code>
@@ -42,7 +44,9 @@ interface SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThreshold
    *
    *
    * <pre>
-   * If enabled, traffic matching each unique value for the specified type constitutes a separate traffic unit. It can only be set to true if `value` is empty.
+   * If enabled, traffic matching each unique value for the specified
+   * type constitutes a separate traffic unit.
+   * It can only be set to true if `value` is empty.
    * </pre>
    *
    * <code>optional bool enable_each_unique_value = 469206341;</code>

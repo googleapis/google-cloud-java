@@ -69,7 +69,8 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
+   * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH.
+   * The default is BOTH.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.PacketMirroringFilter.Direction}
@@ -260,7 +261,11 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is mirrored.
+   * Protocols that apply as filter on mirrored traffic.
+   * If no protocols are specified, all traffic that matches the specified
+   * CIDR ranges is mirrored.
+   * If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is
+   * mirrored.
    * </pre>
    *
    * <code>repeated string I_p_protocols = 98544854;</code>
@@ -275,7 +280,11 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is mirrored.
+   * Protocols that apply as filter on mirrored traffic.
+   * If no protocols are specified, all traffic that matches the specified
+   * CIDR ranges is mirrored.
+   * If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is
+   * mirrored.
    * </pre>
    *
    * <code>repeated string I_p_protocols = 98544854;</code>
@@ -290,7 +299,11 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is mirrored.
+   * Protocols that apply as filter on mirrored traffic.
+   * If no protocols are specified, all traffic that matches the specified
+   * CIDR ranges is mirrored.
+   * If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is
+   * mirrored.
    * </pre>
    *
    * <code>repeated string I_p_protocols = 98544854;</code>
@@ -306,7 +319,11 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is mirrored.
+   * Protocols that apply as filter on mirrored traffic.
+   * If no protocols are specified, all traffic that matches the specified
+   * CIDR ranges is mirrored.
+   * If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is
+   * mirrored.
    * </pre>
    *
    * <code>repeated string I_p_protocols = 98544854;</code>
@@ -328,7 +345,12 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * One or more IPv4 or IPv6 CIDR ranges that apply as filters on the source (ingress) or destination (egress) IP in the IP header. If no ranges are specified, all IPv4 traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is mirrored. To mirror all IPv4 and IPv6 traffic, use "0.0.0.0/0,::/0".
+   * One or more IPv4 or IPv6 CIDR ranges that apply as filters on the source
+   * (ingress) or destination (egress) IP in the IP header. If no ranges are
+   * specified, all IPv4 traffic that matches the specified IPProtocols is
+   * mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4
+   * traffic is mirrored. To mirror all IPv4 and IPv6 traffic, use
+   * "0.0.0.0/0,::/0".
    * </pre>
    *
    * <code>repeated string cidr_ranges = 487901697;</code>
@@ -343,7 +365,12 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * One or more IPv4 or IPv6 CIDR ranges that apply as filters on the source (ingress) or destination (egress) IP in the IP header. If no ranges are specified, all IPv4 traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is mirrored. To mirror all IPv4 and IPv6 traffic, use "0.0.0.0/0,::/0".
+   * One or more IPv4 or IPv6 CIDR ranges that apply as filters on the source
+   * (ingress) or destination (egress) IP in the IP header. If no ranges are
+   * specified, all IPv4 traffic that matches the specified IPProtocols is
+   * mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4
+   * traffic is mirrored. To mirror all IPv4 and IPv6 traffic, use
+   * "0.0.0.0/0,::/0".
    * </pre>
    *
    * <code>repeated string cidr_ranges = 487901697;</code>
@@ -358,7 +385,12 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * One or more IPv4 or IPv6 CIDR ranges that apply as filters on the source (ingress) or destination (egress) IP in the IP header. If no ranges are specified, all IPv4 traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is mirrored. To mirror all IPv4 and IPv6 traffic, use "0.0.0.0/0,::/0".
+   * One or more IPv4 or IPv6 CIDR ranges that apply as filters on the source
+   * (ingress) or destination (egress) IP in the IP header. If no ranges are
+   * specified, all IPv4 traffic that matches the specified IPProtocols is
+   * mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4
+   * traffic is mirrored. To mirror all IPv4 and IPv6 traffic, use
+   * "0.0.0.0/0,::/0".
    * </pre>
    *
    * <code>repeated string cidr_ranges = 487901697;</code>
@@ -374,7 +406,12 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * One or more IPv4 or IPv6 CIDR ranges that apply as filters on the source (ingress) or destination (egress) IP in the IP header. If no ranges are specified, all IPv4 traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is mirrored. To mirror all IPv4 and IPv6 traffic, use "0.0.0.0/0,::/0".
+   * One or more IPv4 or IPv6 CIDR ranges that apply as filters on the source
+   * (ingress) or destination (egress) IP in the IP header. If no ranges are
+   * specified, all IPv4 traffic that matches the specified IPProtocols is
+   * mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4
+   * traffic is mirrored. To mirror all IPv4 and IPv6 traffic, use
+   * "0.0.0.0/0,::/0".
    * </pre>
    *
    * <code>repeated string cidr_ranges = 487901697;</code>
@@ -395,7 +432,8 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
+   * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH.
+   * The default is BOTH.
    * Check the Direction enum for the list of possible values.
    * </pre>
    *
@@ -412,7 +450,8 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
+   * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH.
+   * The default is BOTH.
    * Check the Direction enum for the list of possible values.
    * </pre>
    *
@@ -437,7 +476,8 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
+   * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH.
+   * The default is BOTH.
    * Check the Direction enum for the list of possible values.
    * </pre>
    *
@@ -898,7 +938,11 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is mirrored.
+     * Protocols that apply as filter on mirrored traffic.
+     * If no protocols are specified, all traffic that matches the specified
+     * CIDR ranges is mirrored.
+     * If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is
+     * mirrored.
      * </pre>
      *
      * <code>repeated string I_p_protocols = 98544854;</code>
@@ -914,7 +958,11 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is mirrored.
+     * Protocols that apply as filter on mirrored traffic.
+     * If no protocols are specified, all traffic that matches the specified
+     * CIDR ranges is mirrored.
+     * If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is
+     * mirrored.
      * </pre>
      *
      * <code>repeated string I_p_protocols = 98544854;</code>
@@ -929,7 +977,11 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is mirrored.
+     * Protocols that apply as filter on mirrored traffic.
+     * If no protocols are specified, all traffic that matches the specified
+     * CIDR ranges is mirrored.
+     * If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is
+     * mirrored.
      * </pre>
      *
      * <code>repeated string I_p_protocols = 98544854;</code>
@@ -945,7 +997,11 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is mirrored.
+     * Protocols that apply as filter on mirrored traffic.
+     * If no protocols are specified, all traffic that matches the specified
+     * CIDR ranges is mirrored.
+     * If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is
+     * mirrored.
      * </pre>
      *
      * <code>repeated string I_p_protocols = 98544854;</code>
@@ -961,7 +1017,11 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is mirrored.
+     * Protocols that apply as filter on mirrored traffic.
+     * If no protocols are specified, all traffic that matches the specified
+     * CIDR ranges is mirrored.
+     * If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is
+     * mirrored.
      * </pre>
      *
      * <code>repeated string I_p_protocols = 98544854;</code>
@@ -985,7 +1045,11 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is mirrored.
+     * Protocols that apply as filter on mirrored traffic.
+     * If no protocols are specified, all traffic that matches the specified
+     * CIDR ranges is mirrored.
+     * If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is
+     * mirrored.
      * </pre>
      *
      * <code>repeated string I_p_protocols = 98544854;</code>
@@ -1008,7 +1072,11 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is mirrored.
+     * Protocols that apply as filter on mirrored traffic.
+     * If no protocols are specified, all traffic that matches the specified
+     * CIDR ranges is mirrored.
+     * If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is
+     * mirrored.
      * </pre>
      *
      * <code>repeated string I_p_protocols = 98544854;</code>
@@ -1028,7 +1096,11 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is mirrored.
+     * Protocols that apply as filter on mirrored traffic.
+     * If no protocols are specified, all traffic that matches the specified
+     * CIDR ranges is mirrored.
+     * If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is
+     * mirrored.
      * </pre>
      *
      * <code>repeated string I_p_protocols = 98544854;</code>
@@ -1047,7 +1119,11 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is mirrored.
+     * Protocols that apply as filter on mirrored traffic.
+     * If no protocols are specified, all traffic that matches the specified
+     * CIDR ranges is mirrored.
+     * If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is
+     * mirrored.
      * </pre>
      *
      * <code>repeated string I_p_protocols = 98544854;</code>
@@ -1081,7 +1157,12 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * One or more IPv4 or IPv6 CIDR ranges that apply as filters on the source (ingress) or destination (egress) IP in the IP header. If no ranges are specified, all IPv4 traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is mirrored. To mirror all IPv4 and IPv6 traffic, use "0.0.0.0/0,::/0".
+     * One or more IPv4 or IPv6 CIDR ranges that apply as filters on the source
+     * (ingress) or destination (egress) IP in the IP header. If no ranges are
+     * specified, all IPv4 traffic that matches the specified IPProtocols is
+     * mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4
+     * traffic is mirrored. To mirror all IPv4 and IPv6 traffic, use
+     * "0.0.0.0/0,::/0".
      * </pre>
      *
      * <code>repeated string cidr_ranges = 487901697;</code>
@@ -1097,7 +1178,12 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * One or more IPv4 or IPv6 CIDR ranges that apply as filters on the source (ingress) or destination (egress) IP in the IP header. If no ranges are specified, all IPv4 traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is mirrored. To mirror all IPv4 and IPv6 traffic, use "0.0.0.0/0,::/0".
+     * One or more IPv4 or IPv6 CIDR ranges that apply as filters on the source
+     * (ingress) or destination (egress) IP in the IP header. If no ranges are
+     * specified, all IPv4 traffic that matches the specified IPProtocols is
+     * mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4
+     * traffic is mirrored. To mirror all IPv4 and IPv6 traffic, use
+     * "0.0.0.0/0,::/0".
      * </pre>
      *
      * <code>repeated string cidr_ranges = 487901697;</code>
@@ -1112,7 +1198,12 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * One or more IPv4 or IPv6 CIDR ranges that apply as filters on the source (ingress) or destination (egress) IP in the IP header. If no ranges are specified, all IPv4 traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is mirrored. To mirror all IPv4 and IPv6 traffic, use "0.0.0.0/0,::/0".
+     * One or more IPv4 or IPv6 CIDR ranges that apply as filters on the source
+     * (ingress) or destination (egress) IP in the IP header. If no ranges are
+     * specified, all IPv4 traffic that matches the specified IPProtocols is
+     * mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4
+     * traffic is mirrored. To mirror all IPv4 and IPv6 traffic, use
+     * "0.0.0.0/0,::/0".
      * </pre>
      *
      * <code>repeated string cidr_ranges = 487901697;</code>
@@ -1128,7 +1219,12 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * One or more IPv4 or IPv6 CIDR ranges that apply as filters on the source (ingress) or destination (egress) IP in the IP header. If no ranges are specified, all IPv4 traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is mirrored. To mirror all IPv4 and IPv6 traffic, use "0.0.0.0/0,::/0".
+     * One or more IPv4 or IPv6 CIDR ranges that apply as filters on the source
+     * (ingress) or destination (egress) IP in the IP header. If no ranges are
+     * specified, all IPv4 traffic that matches the specified IPProtocols is
+     * mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4
+     * traffic is mirrored. To mirror all IPv4 and IPv6 traffic, use
+     * "0.0.0.0/0,::/0".
      * </pre>
      *
      * <code>repeated string cidr_ranges = 487901697;</code>
@@ -1144,7 +1240,12 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * One or more IPv4 or IPv6 CIDR ranges that apply as filters on the source (ingress) or destination (egress) IP in the IP header. If no ranges are specified, all IPv4 traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is mirrored. To mirror all IPv4 and IPv6 traffic, use "0.0.0.0/0,::/0".
+     * One or more IPv4 or IPv6 CIDR ranges that apply as filters on the source
+     * (ingress) or destination (egress) IP in the IP header. If no ranges are
+     * specified, all IPv4 traffic that matches the specified IPProtocols is
+     * mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4
+     * traffic is mirrored. To mirror all IPv4 and IPv6 traffic, use
+     * "0.0.0.0/0,::/0".
      * </pre>
      *
      * <code>repeated string cidr_ranges = 487901697;</code>
@@ -1168,7 +1269,12 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * One or more IPv4 or IPv6 CIDR ranges that apply as filters on the source (ingress) or destination (egress) IP in the IP header. If no ranges are specified, all IPv4 traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is mirrored. To mirror all IPv4 and IPv6 traffic, use "0.0.0.0/0,::/0".
+     * One or more IPv4 or IPv6 CIDR ranges that apply as filters on the source
+     * (ingress) or destination (egress) IP in the IP header. If no ranges are
+     * specified, all IPv4 traffic that matches the specified IPProtocols is
+     * mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4
+     * traffic is mirrored. To mirror all IPv4 and IPv6 traffic, use
+     * "0.0.0.0/0,::/0".
      * </pre>
      *
      * <code>repeated string cidr_ranges = 487901697;</code>
@@ -1191,7 +1297,12 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * One or more IPv4 or IPv6 CIDR ranges that apply as filters on the source (ingress) or destination (egress) IP in the IP header. If no ranges are specified, all IPv4 traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is mirrored. To mirror all IPv4 and IPv6 traffic, use "0.0.0.0/0,::/0".
+     * One or more IPv4 or IPv6 CIDR ranges that apply as filters on the source
+     * (ingress) or destination (egress) IP in the IP header. If no ranges are
+     * specified, all IPv4 traffic that matches the specified IPProtocols is
+     * mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4
+     * traffic is mirrored. To mirror all IPv4 and IPv6 traffic, use
+     * "0.0.0.0/0,::/0".
      * </pre>
      *
      * <code>repeated string cidr_ranges = 487901697;</code>
@@ -1211,7 +1322,12 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * One or more IPv4 or IPv6 CIDR ranges that apply as filters on the source (ingress) or destination (egress) IP in the IP header. If no ranges are specified, all IPv4 traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is mirrored. To mirror all IPv4 and IPv6 traffic, use "0.0.0.0/0,::/0".
+     * One or more IPv4 or IPv6 CIDR ranges that apply as filters on the source
+     * (ingress) or destination (egress) IP in the IP header. If no ranges are
+     * specified, all IPv4 traffic that matches the specified IPProtocols is
+     * mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4
+     * traffic is mirrored. To mirror all IPv4 and IPv6 traffic, use
+     * "0.0.0.0/0,::/0".
      * </pre>
      *
      * <code>repeated string cidr_ranges = 487901697;</code>
@@ -1230,7 +1346,12 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * One or more IPv4 or IPv6 CIDR ranges that apply as filters on the source (ingress) or destination (egress) IP in the IP header. If no ranges are specified, all IPv4 traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4 traffic is mirrored. To mirror all IPv4 and IPv6 traffic, use "0.0.0.0/0,::/0".
+     * One or more IPv4 or IPv6 CIDR ranges that apply as filters on the source
+     * (ingress) or destination (egress) IP in the IP header. If no ranges are
+     * specified, all IPv4 traffic that matches the specified IPProtocols is
+     * mirrored. If neither cidrRanges nor IPProtocols is specified, all IPv4
+     * traffic is mirrored. To mirror all IPv4 and IPv6 traffic, use
+     * "0.0.0.0/0,::/0".
      * </pre>
      *
      * <code>repeated string cidr_ranges = 487901697;</code>
@@ -1256,7 +1377,8 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
+     * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH.
+     * The default is BOTH.
      * Check the Direction enum for the list of possible values.
      * </pre>
      *
@@ -1272,7 +1394,8 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
+     * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH.
+     * The default is BOTH.
      * Check the Direction enum for the list of possible values.
      * </pre>
      *
@@ -1296,7 +1419,8 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
+     * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH.
+     * The default is BOTH.
      * Check the Direction enum for the list of possible values.
      * </pre>
      *
@@ -1320,7 +1444,8 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
+     * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH.
+     * The default is BOTH.
      * Check the Direction enum for the list of possible values.
      * </pre>
      *
@@ -1343,7 +1468,8 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
+     * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH.
+     * The default is BOTH.
      * Check the Direction enum for the list of possible values.
      * </pre>
      *
@@ -1362,7 +1488,8 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
+     * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH.
+     * The default is BOTH.
      * Check the Direction enum for the list of possible values.
      * </pre>
      *

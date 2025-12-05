@@ -351,7 +351,8 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Destination IP range for the route, in human-readable CIDR format
+   * [Output only] Destination IP range for the route, in human-readable CIDR
+   * format
    * </pre>
    *
    * <code>
@@ -369,7 +370,8 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Destination IP range for the route, in human-readable CIDR format
+   * [Output only] Destination IP range for the route, in human-readable CIDR
+   * format
    * </pre>
    *
    * <code>
@@ -390,7 +392,8 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Destination IP range for the route, in human-readable CIDR format
+   * [Output only] Destination IP range for the route, in human-readable CIDR
+   * format
    * </pre>
    *
    * <code>
@@ -1599,7 +1602,8 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Destination IP range for the route, in human-readable CIDR format
+     * [Output only] Destination IP range for the route, in human-readable CIDR
+     * format
      * </pre>
      *
      * <code>
@@ -1616,7 +1620,8 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Destination IP range for the route, in human-readable CIDR format
+     * [Output only] Destination IP range for the route, in human-readable CIDR
+     * format
      * </pre>
      *
      * <code>
@@ -1641,7 +1646,8 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Destination IP range for the route, in human-readable CIDR format
+     * [Output only] Destination IP range for the route, in human-readable CIDR
+     * format
      * </pre>
      *
      * <code>
@@ -1667,7 +1673,8 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Destination IP range for the route, in human-readable CIDR format
+     * [Output only] Destination IP range for the route, in human-readable CIDR
+     * format
      * </pre>
      *
      * <code>
@@ -1691,7 +1698,8 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Destination IP range for the route, in human-readable CIDR format
+     * [Output only] Destination IP range for the route, in human-readable CIDR
+     * format
      * </pre>
      *
      * <code>
@@ -1724,7 +1732,8 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Destination IP range for the route, in human-readable CIDR format
+     * [Output only] Destination IP range for the route, in human-readable CIDR
+     * format
      * </pre>
      *
      * <code>
@@ -1746,7 +1755,8 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Destination IP range for the route, in human-readable CIDR format
+     * [Output only] Destination IP range for the route, in human-readable CIDR
+     * format
      * </pre>
      *
      * <code>
@@ -1764,7 +1774,8 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Destination IP range for the route, in human-readable CIDR format
+     * [Output only] Destination IP range for the route, in human-readable CIDR
+     * format
      * </pre>
      *
      * <code>
@@ -1787,7 +1798,8 @@ public final class BgpRoute extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Destination IP range for the route, in human-readable CIDR format
+     * [Output only] Destination IP range for the route, in human-readable CIDR
+     * format
      * </pre>
      *
      * <code>

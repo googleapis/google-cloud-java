@@ -29,6 +29,8 @@ import com.google.cloud.compute.v1.InsertFirewallRequest;
 import com.google.cloud.compute.v1.ListFirewallsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchFirewallRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsFirewallRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateFirewallRequest;
 import javax.annotation.Generated;
 
@@ -75,6 +77,11 @@ public abstract class FirewallsStub implements BackgroundResource {
 
   public UnaryCallable<PatchFirewallRequest, Operation> patchCallable() {
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsFirewallRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   public OperationCallable<UpdateFirewallRequest, Operation, Operation> updateOperationCallable() {

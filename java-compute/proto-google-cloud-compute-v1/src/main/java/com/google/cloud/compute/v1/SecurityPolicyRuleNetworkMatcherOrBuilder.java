@@ -28,7 +28,8 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    *
    *
    * <pre>
-   * Destination IPv4/IPv6 addresses or CIDR prefixes, in standard text format.
+   * Destination IPv4/IPv6 addresses or CIDR prefixes, in standard text
+   * format.
    * </pre>
    *
    * <code>repeated string dest_ip_ranges = 337357713;</code>
@@ -41,7 +42,8 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    *
    *
    * <pre>
-   * Destination IPv4/IPv6 addresses or CIDR prefixes, in standard text format.
+   * Destination IPv4/IPv6 addresses or CIDR prefixes, in standard text
+   * format.
    * </pre>
    *
    * <code>repeated string dest_ip_ranges = 337357713;</code>
@@ -54,7 +56,8 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    *
    *
    * <pre>
-   * Destination IPv4/IPv6 addresses or CIDR prefixes, in standard text format.
+   * Destination IPv4/IPv6 addresses or CIDR prefixes, in standard text
+   * format.
    * </pre>
    *
    * <code>repeated string dest_ip_ranges = 337357713;</code>
@@ -68,7 +71,8 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    *
    *
    * <pre>
-   * Destination IPv4/IPv6 addresses or CIDR prefixes, in standard text format.
+   * Destination IPv4/IPv6 addresses or CIDR prefixes, in standard text
+   * format.
    * </pre>
    *
    * <code>repeated string dest_ip_ranges = 337357713;</code>
@@ -82,7 +86,8 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    *
    *
    * <pre>
-   * Destination port numbers for TCP/UDP/SCTP. Each element can be a 16-bit unsigned decimal number (e.g. "80") or range (e.g. "0-1023").
+   * Destination port numbers for TCP/UDP/SCTP. Each element can be a 16-bit
+   * unsigned decimal number (e.g. "80") or range (e.g. "0-1023").
    * </pre>
    *
    * <code>repeated string dest_ports = 379902005;</code>
@@ -95,7 +100,8 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    *
    *
    * <pre>
-   * Destination port numbers for TCP/UDP/SCTP. Each element can be a 16-bit unsigned decimal number (e.g. "80") or range (e.g. "0-1023").
+   * Destination port numbers for TCP/UDP/SCTP. Each element can be a 16-bit
+   * unsigned decimal number (e.g. "80") or range (e.g. "0-1023").
    * </pre>
    *
    * <code>repeated string dest_ports = 379902005;</code>
@@ -108,7 +114,8 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    *
    *
    * <pre>
-   * Destination port numbers for TCP/UDP/SCTP. Each element can be a 16-bit unsigned decimal number (e.g. "80") or range (e.g. "0-1023").
+   * Destination port numbers for TCP/UDP/SCTP. Each element can be a 16-bit
+   * unsigned decimal number (e.g. "80") or range (e.g. "0-1023").
    * </pre>
    *
    * <code>repeated string dest_ports = 379902005;</code>
@@ -122,7 +129,8 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    *
    *
    * <pre>
-   * Destination port numbers for TCP/UDP/SCTP. Each element can be a 16-bit unsigned decimal number (e.g. "80") or range (e.g. "0-1023").
+   * Destination port numbers for TCP/UDP/SCTP. Each element can be a 16-bit
+   * unsigned decimal number (e.g. "80") or range (e.g. "0-1023").
    * </pre>
    *
    * <code>repeated string dest_ports = 379902005;</code>
@@ -136,7 +144,10 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    *
    *
    * <pre>
-   * IPv4 protocol / IPv6 next header (after extension headers). Each element can be an 8-bit unsigned decimal number (e.g. "6"), range (e.g. "253-254"), or one of the following protocol names: "tcp", "udp", "icmp", "esp", "ah", "ipip", or "sctp".
+   * IPv4 protocol / IPv6 next header (after extension headers). Each
+   * element can be an 8-bit unsigned decimal number (e.g. "6"), range (e.g.
+   * "253-254"), or one of the following protocol names: "tcp", "udp",
+   * "icmp", "esp", "ah", "ipip", or "sctp".
    * </pre>
    *
    * <code>repeated string ip_protocols = 259213251;</code>
@@ -149,7 +160,10 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    *
    *
    * <pre>
-   * IPv4 protocol / IPv6 next header (after extension headers). Each element can be an 8-bit unsigned decimal number (e.g. "6"), range (e.g. "253-254"), or one of the following protocol names: "tcp", "udp", "icmp", "esp", "ah", "ipip", or "sctp".
+   * IPv4 protocol / IPv6 next header (after extension headers). Each
+   * element can be an 8-bit unsigned decimal number (e.g. "6"), range (e.g.
+   * "253-254"), or one of the following protocol names: "tcp", "udp",
+   * "icmp", "esp", "ah", "ipip", or "sctp".
    * </pre>
    *
    * <code>repeated string ip_protocols = 259213251;</code>
@@ -162,7 +176,10 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    *
    *
    * <pre>
-   * IPv4 protocol / IPv6 next header (after extension headers). Each element can be an 8-bit unsigned decimal number (e.g. "6"), range (e.g. "253-254"), or one of the following protocol names: "tcp", "udp", "icmp", "esp", "ah", "ipip", or "sctp".
+   * IPv4 protocol / IPv6 next header (after extension headers). Each
+   * element can be an 8-bit unsigned decimal number (e.g. "6"), range (e.g.
+   * "253-254"), or one of the following protocol names: "tcp", "udp",
+   * "icmp", "esp", "ah", "ipip", or "sctp".
    * </pre>
    *
    * <code>repeated string ip_protocols = 259213251;</code>
@@ -176,7 +193,10 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    *
    *
    * <pre>
-   * IPv4 protocol / IPv6 next header (after extension headers). Each element can be an 8-bit unsigned decimal number (e.g. "6"), range (e.g. "253-254"), or one of the following protocol names: "tcp", "udp", "icmp", "esp", "ah", "ipip", or "sctp".
+   * IPv4 protocol / IPv6 next header (after extension headers). Each
+   * element can be an 8-bit unsigned decimal number (e.g. "6"), range (e.g.
+   * "253-254"), or one of the following protocol names: "tcp", "udp",
+   * "icmp", "esp", "ah", "ipip", or "sctp".
    * </pre>
    *
    * <code>repeated string ip_protocols = 259213251;</code>
@@ -284,7 +304,8 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    *
    *
    * <pre>
-   * Source port numbers for TCP/UDP/SCTP. Each element can be a 16-bit unsigned decimal number (e.g. "80") or range (e.g. "0-1023").
+   * Source port numbers for TCP/UDP/SCTP. Each element can be a 16-bit
+   * unsigned decimal number (e.g. "80") or range (e.g. "0-1023").
    * </pre>
    *
    * <code>repeated string src_ports = 445095415;</code>
@@ -297,7 +318,8 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    *
    *
    * <pre>
-   * Source port numbers for TCP/UDP/SCTP. Each element can be a 16-bit unsigned decimal number (e.g. "80") or range (e.g. "0-1023").
+   * Source port numbers for TCP/UDP/SCTP. Each element can be a 16-bit
+   * unsigned decimal number (e.g. "80") or range (e.g. "0-1023").
    * </pre>
    *
    * <code>repeated string src_ports = 445095415;</code>
@@ -310,7 +332,8 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    *
    *
    * <pre>
-   * Source port numbers for TCP/UDP/SCTP. Each element can be a 16-bit unsigned decimal number (e.g. "80") or range (e.g. "0-1023").
+   * Source port numbers for TCP/UDP/SCTP. Each element can be a 16-bit
+   * unsigned decimal number (e.g. "80") or range (e.g. "0-1023").
    * </pre>
    *
    * <code>repeated string src_ports = 445095415;</code>
@@ -324,7 +347,8 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    *
    *
    * <pre>
-   * Source port numbers for TCP/UDP/SCTP. Each element can be a 16-bit unsigned decimal number (e.g. "80") or range (e.g. "0-1023").
+   * Source port numbers for TCP/UDP/SCTP. Each element can be a 16-bit
+   * unsigned decimal number (e.g. "80") or range (e.g. "0-1023").
    * </pre>
    *
    * <code>repeated string src_ports = 445095415;</code>
@@ -338,7 +362,8 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    *
    *
    * <pre>
-   * Two-letter ISO 3166-1 alpha-2 country code associated with the source IP address.
+   * Two-letter ISO 3166-1 alpha-2 country code associated with the source
+   * IP address.
    * </pre>
    *
    * <code>repeated string src_region_codes = 99086742;</code>
@@ -351,7 +376,8 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    *
    *
    * <pre>
-   * Two-letter ISO 3166-1 alpha-2 country code associated with the source IP address.
+   * Two-letter ISO 3166-1 alpha-2 country code associated with the source
+   * IP address.
    * </pre>
    *
    * <code>repeated string src_region_codes = 99086742;</code>
@@ -364,7 +390,8 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    *
    *
    * <pre>
-   * Two-letter ISO 3166-1 alpha-2 country code associated with the source IP address.
+   * Two-letter ISO 3166-1 alpha-2 country code associated with the source
+   * IP address.
    * </pre>
    *
    * <code>repeated string src_region_codes = 99086742;</code>
@@ -378,7 +405,8 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    *
    *
    * <pre>
-   * Two-letter ISO 3166-1 alpha-2 country code associated with the source IP address.
+   * Two-letter ISO 3166-1 alpha-2 country code associated with the source
+   * IP address.
    * </pre>
    *
    * <code>repeated string src_region_codes = 99086742;</code>
@@ -392,7 +420,8 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    *
    *
    * <pre>
-   * User-defined fields. Each element names a defined field and lists the matching values for that field.
+   * User-defined fields. Each element names a defined field and lists the
+   * matching values for that field.
    * </pre>
    *
    * <code>
@@ -406,7 +435,8 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    *
    *
    * <pre>
-   * User-defined fields. Each element names a defined field and lists the matching values for that field.
+   * User-defined fields. Each element names a defined field and lists the
+   * matching values for that field.
    * </pre>
    *
    * <code>
@@ -420,7 +450,8 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    *
    *
    * <pre>
-   * User-defined fields. Each element names a defined field and lists the matching values for that field.
+   * User-defined fields. Each element names a defined field and lists the
+   * matching values for that field.
    * </pre>
    *
    * <code>
@@ -433,7 +464,8 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    *
    *
    * <pre>
-   * User-defined fields. Each element names a defined field and lists the matching values for that field.
+   * User-defined fields. Each element names a defined field and lists the
+   * matching values for that field.
    * </pre>
    *
    * <code>
@@ -450,7 +482,8 @@ public interface SecurityPolicyRuleNetworkMatcherOrBuilder
    *
    *
    * <pre>
-   * User-defined fields. Each element names a defined field and lists the matching values for that field.
+   * User-defined fields. Each element names a defined field and lists the
+   * matching values for that field.
    * </pre>
    *
    * <code>

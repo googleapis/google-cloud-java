@@ -181,7 +181,8 @@ public final class GetInstanceGroupRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The name of the zone where the instance group is located.
+   * The name of the zone
+   * where the instance group is located.
    * </pre>
    *
    * <code>string zone = 3744684 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -205,7 +206,8 @@ public final class GetInstanceGroupRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The name of the zone where the instance group is located.
+   * The name of the zone
+   * where the instance group is located.
    * </pre>
    *
    * <code>string zone = 3744684 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -844,7 +846,8 @@ public final class GetInstanceGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The name of the zone where the instance group is located.
+     * The name of the zone
+     * where the instance group is located.
      * </pre>
      *
      * <code>string zone = 3744684 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -867,7 +870,8 @@ public final class GetInstanceGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The name of the zone where the instance group is located.
+     * The name of the zone
+     * where the instance group is located.
      * </pre>
      *
      * <code>string zone = 3744684 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -890,7 +894,8 @@ public final class GetInstanceGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The name of the zone where the instance group is located.
+     * The name of the zone
+     * where the instance group is located.
      * </pre>
      *
      * <code>string zone = 3744684 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -912,7 +917,8 @@ public final class GetInstanceGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The name of the zone where the instance group is located.
+     * The name of the zone
+     * where the instance group is located.
      * </pre>
      *
      * <code>string zone = 3744684 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -930,7 +936,8 @@ public final class GetInstanceGroupRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The name of the zone where the instance group is located.
+     * The name of the zone
+     * where the instance group is located.
      * </pre>
      *
      * <code>string zone = 3744684 [(.google.api.field_behavior) = REQUIRED];</code>

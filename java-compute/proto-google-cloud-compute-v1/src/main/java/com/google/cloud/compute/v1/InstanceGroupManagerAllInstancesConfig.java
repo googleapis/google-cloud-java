@@ -71,7 +71,12 @@ public final class InstanceGroupManagerAllInstancesConfig
    *
    *
    * <pre>
-   * Properties to set on all instances in the group. You can add or modify properties using the instanceGroupManagers.patch or regionInstanceGroupManagers.patch. After setting allInstancesConfig on the group, you must update the group's instances to apply the configuration. To apply the configuration, set the group's updatePolicy.type field to use proactive updates or use the applyUpdatesToInstances method.
+   * Properties to set on all instances in the group.
+   *
+   * You can add or modify properties using theinstanceGroupManagers.patch orregionInstanceGroupManagers.patch. After settingallInstancesConfig on the group, you must update the group's
+   * instances to apply the configuration. To apply the configuration, set the
+   * group's updatePolicy.type field to use proactive updates or
+   * use the applyUpdatesToInstances method.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InstancePropertiesPatch properties = 147688755;</code>
@@ -87,7 +92,12 @@ public final class InstanceGroupManagerAllInstancesConfig
    *
    *
    * <pre>
-   * Properties to set on all instances in the group. You can add or modify properties using the instanceGroupManagers.patch or regionInstanceGroupManagers.patch. After setting allInstancesConfig on the group, you must update the group's instances to apply the configuration. To apply the configuration, set the group's updatePolicy.type field to use proactive updates or use the applyUpdatesToInstances method.
+   * Properties to set on all instances in the group.
+   *
+   * You can add or modify properties using theinstanceGroupManagers.patch orregionInstanceGroupManagers.patch. After settingallInstancesConfig on the group, you must update the group's
+   * instances to apply the configuration. To apply the configuration, set the
+   * group's updatePolicy.type field to use proactive updates or
+   * use the applyUpdatesToInstances method.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InstancePropertiesPatch properties = 147688755;</code>
@@ -105,7 +115,12 @@ public final class InstanceGroupManagerAllInstancesConfig
    *
    *
    * <pre>
-   * Properties to set on all instances in the group. You can add or modify properties using the instanceGroupManagers.patch or regionInstanceGroupManagers.patch. After setting allInstancesConfig on the group, you must update the group's instances to apply the configuration. To apply the configuration, set the group's updatePolicy.type field to use proactive updates or use the applyUpdatesToInstances method.
+   * Properties to set on all instances in the group.
+   *
+   * You can add or modify properties using theinstanceGroupManagers.patch orregionInstanceGroupManagers.patch. After settingallInstancesConfig on the group, you must update the group's
+   * instances to apply the configuration. To apply the configuration, set the
+   * group's updatePolicy.type field to use proactive updates or
+   * use the applyUpdatesToInstances method.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InstancePropertiesPatch properties = 147688755;</code>
@@ -498,7 +513,12 @@ public final class InstanceGroupManagerAllInstancesConfig
      *
      *
      * <pre>
-     * Properties to set on all instances in the group. You can add or modify properties using the instanceGroupManagers.patch or regionInstanceGroupManagers.patch. After setting allInstancesConfig on the group, you must update the group's instances to apply the configuration. To apply the configuration, set the group's updatePolicy.type field to use proactive updates or use the applyUpdatesToInstances method.
+     * Properties to set on all instances in the group.
+     *
+     * You can add or modify properties using theinstanceGroupManagers.patch orregionInstanceGroupManagers.patch. After settingallInstancesConfig on the group, you must update the group's
+     * instances to apply the configuration. To apply the configuration, set the
+     * group's updatePolicy.type field to use proactive updates or
+     * use the applyUpdatesToInstances method.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InstancePropertiesPatch properties = 147688755;
@@ -514,7 +534,12 @@ public final class InstanceGroupManagerAllInstancesConfig
      *
      *
      * <pre>
-     * Properties to set on all instances in the group. You can add or modify properties using the instanceGroupManagers.patch or regionInstanceGroupManagers.patch. After setting allInstancesConfig on the group, you must update the group's instances to apply the configuration. To apply the configuration, set the group's updatePolicy.type field to use proactive updates or use the applyUpdatesToInstances method.
+     * Properties to set on all instances in the group.
+     *
+     * You can add or modify properties using theinstanceGroupManagers.patch orregionInstanceGroupManagers.patch. After settingallInstancesConfig on the group, you must update the group's
+     * instances to apply the configuration. To apply the configuration, set the
+     * group's updatePolicy.type field to use proactive updates or
+     * use the applyUpdatesToInstances method.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InstancePropertiesPatch properties = 147688755;
@@ -536,7 +561,12 @@ public final class InstanceGroupManagerAllInstancesConfig
      *
      *
      * <pre>
-     * Properties to set on all instances in the group. You can add or modify properties using the instanceGroupManagers.patch or regionInstanceGroupManagers.patch. After setting allInstancesConfig on the group, you must update the group's instances to apply the configuration. To apply the configuration, set the group's updatePolicy.type field to use proactive updates or use the applyUpdatesToInstances method.
+     * Properties to set on all instances in the group.
+     *
+     * You can add or modify properties using theinstanceGroupManagers.patch orregionInstanceGroupManagers.patch. After settingallInstancesConfig on the group, you must update the group's
+     * instances to apply the configuration. To apply the configuration, set the
+     * group's updatePolicy.type field to use proactive updates or
+     * use the applyUpdatesToInstances method.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InstancePropertiesPatch properties = 147688755;
@@ -560,7 +590,12 @@ public final class InstanceGroupManagerAllInstancesConfig
      *
      *
      * <pre>
-     * Properties to set on all instances in the group. You can add or modify properties using the instanceGroupManagers.patch or regionInstanceGroupManagers.patch. After setting allInstancesConfig on the group, you must update the group's instances to apply the configuration. To apply the configuration, set the group's updatePolicy.type field to use proactive updates or use the applyUpdatesToInstances method.
+     * Properties to set on all instances in the group.
+     *
+     * You can add or modify properties using theinstanceGroupManagers.patch orregionInstanceGroupManagers.patch. After settingallInstancesConfig on the group, you must update the group's
+     * instances to apply the configuration. To apply the configuration, set the
+     * group's updatePolicy.type field to use proactive updates or
+     * use the applyUpdatesToInstances method.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InstancePropertiesPatch properties = 147688755;
@@ -582,7 +617,12 @@ public final class InstanceGroupManagerAllInstancesConfig
      *
      *
      * <pre>
-     * Properties to set on all instances in the group. You can add or modify properties using the instanceGroupManagers.patch or regionInstanceGroupManagers.patch. After setting allInstancesConfig on the group, you must update the group's instances to apply the configuration. To apply the configuration, set the group's updatePolicy.type field to use proactive updates or use the applyUpdatesToInstances method.
+     * Properties to set on all instances in the group.
+     *
+     * You can add or modify properties using theinstanceGroupManagers.patch orregionInstanceGroupManagers.patch. After settingallInstancesConfig on the group, you must update the group's
+     * instances to apply the configuration. To apply the configuration, set the
+     * group's updatePolicy.type field to use proactive updates or
+     * use the applyUpdatesToInstances method.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InstancePropertiesPatch properties = 147688755;
@@ -612,7 +652,12 @@ public final class InstanceGroupManagerAllInstancesConfig
      *
      *
      * <pre>
-     * Properties to set on all instances in the group. You can add or modify properties using the instanceGroupManagers.patch or regionInstanceGroupManagers.patch. After setting allInstancesConfig on the group, you must update the group's instances to apply the configuration. To apply the configuration, set the group's updatePolicy.type field to use proactive updates or use the applyUpdatesToInstances method.
+     * Properties to set on all instances in the group.
+     *
+     * You can add or modify properties using theinstanceGroupManagers.patch orregionInstanceGroupManagers.patch. After settingallInstancesConfig on the group, you must update the group's
+     * instances to apply the configuration. To apply the configuration, set the
+     * group's updatePolicy.type field to use proactive updates or
+     * use the applyUpdatesToInstances method.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InstancePropertiesPatch properties = 147688755;
@@ -633,7 +678,12 @@ public final class InstanceGroupManagerAllInstancesConfig
      *
      *
      * <pre>
-     * Properties to set on all instances in the group. You can add or modify properties using the instanceGroupManagers.patch or regionInstanceGroupManagers.patch. After setting allInstancesConfig on the group, you must update the group's instances to apply the configuration. To apply the configuration, set the group's updatePolicy.type field to use proactive updates or use the applyUpdatesToInstances method.
+     * Properties to set on all instances in the group.
+     *
+     * You can add or modify properties using theinstanceGroupManagers.patch orregionInstanceGroupManagers.patch. After settingallInstancesConfig on the group, you must update the group's
+     * instances to apply the configuration. To apply the configuration, set the
+     * group's updatePolicy.type field to use proactive updates or
+     * use the applyUpdatesToInstances method.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InstancePropertiesPatch properties = 147688755;
@@ -649,7 +699,12 @@ public final class InstanceGroupManagerAllInstancesConfig
      *
      *
      * <pre>
-     * Properties to set on all instances in the group. You can add or modify properties using the instanceGroupManagers.patch or regionInstanceGroupManagers.patch. After setting allInstancesConfig on the group, you must update the group's instances to apply the configuration. To apply the configuration, set the group's updatePolicy.type field to use proactive updates or use the applyUpdatesToInstances method.
+     * Properties to set on all instances in the group.
+     *
+     * You can add or modify properties using theinstanceGroupManagers.patch orregionInstanceGroupManagers.patch. After settingallInstancesConfig on the group, you must update the group's
+     * instances to apply the configuration. To apply the configuration, set the
+     * group's updatePolicy.type field to use proactive updates or
+     * use the applyUpdatesToInstances method.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InstancePropertiesPatch properties = 147688755;
@@ -669,7 +724,12 @@ public final class InstanceGroupManagerAllInstancesConfig
      *
      *
      * <pre>
-     * Properties to set on all instances in the group. You can add or modify properties using the instanceGroupManagers.patch or regionInstanceGroupManagers.patch. After setting allInstancesConfig on the group, you must update the group's instances to apply the configuration. To apply the configuration, set the group's updatePolicy.type field to use proactive updates or use the applyUpdatesToInstances method.
+     * Properties to set on all instances in the group.
+     *
+     * You can add or modify properties using theinstanceGroupManagers.patch orregionInstanceGroupManagers.patch. After settingallInstancesConfig on the group, you must update the group's
+     * instances to apply the configuration. To apply the configuration, set the
+     * group's updatePolicy.type field to use proactive updates or
+     * use the applyUpdatesToInstances method.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InstancePropertiesPatch properties = 147688755;

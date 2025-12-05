@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * [Output Only] Which SLA this group is configured to support, and why this group does or does not meet that SLA's requirements.
+ * [Output Only] Which SLA this group is configured to support, and why this
+ * group does or does not meet that SLA's requirements.
  * </pre>
  *
  * Protobuf type {@code
@@ -546,7 +547,8 @@ public final class InterconnectAttachmentGroupConfiguredAvailabilitySLA
    *
    *
    * <pre>
-   * [Output Only] Which SLA this group is configured to support, and why this group does or does not meet that SLA's requirements.
+   * [Output Only] Which SLA this group is configured to support, and why this
+   * group does or does not meet that SLA's requirements.
    * </pre>
    *
    * Protobuf type {@code

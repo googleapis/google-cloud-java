@@ -39,6 +39,7 @@ import com.google.shopping.merchant.accounts.v1.ListUsersRequest;
 import com.google.shopping.merchant.accounts.v1.ListUsersResponse;
 import com.google.shopping.merchant.accounts.v1.UpdateUserRequest;
 import com.google.shopping.merchant.accounts.v1.User;
+import com.google.shopping.merchant.accounts.v1.VerifySelfRequest;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -231,12 +232,49 @@ public class HttpJsonUserServiceStub extends UserServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<VerifySelfRequest, User> verifySelfMethodDescriptor =
+      ApiMethodDescriptor.<VerifySelfRequest, User>newBuilder()
+          .setFullMethodName("google.shopping.merchant.accounts.v1.UserService/VerifySelf")
+          .setHttpMethod("PATCH")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<VerifySelfRequest>newBuilder()
+                  .setPath(
+                      "/accounts/v1/{account=accounts/*}/users/me:verifySelf",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<VerifySelfRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "account", request.getAccount());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<VerifySelfRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(
+                      request ->
+                          ProtoRestSerializer.create()
+                              .toBody("*", request.toBuilder().clearAccount().build(), true))
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<User>newBuilder()
+                  .setDefaultInstance(User.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
   private final UnaryCallable<GetUserRequest, User> getUserCallable;
   private final UnaryCallable<CreateUserRequest, User> createUserCallable;
   private final UnaryCallable<DeleteUserRequest, Empty> deleteUserCallable;
   private final UnaryCallable<UpdateUserRequest, User> updateUserCallable;
   private final UnaryCallable<ListUsersRequest, ListUsersResponse> listUsersCallable;
   private final UnaryCallable<ListUsersRequest, ListUsersPagedResponse> listUsersPagedCallable;
+  private final UnaryCallable<VerifySelfRequest, User> verifySelfCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -335,6 +373,17 @@ public class HttpJsonUserServiceStub extends UserServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<VerifySelfRequest, User> verifySelfTransportSettings =
+        HttpJsonCallSettings.<VerifySelfRequest, User>newBuilder()
+            .setMethodDescriptor(verifySelfMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("account", String.valueOf(request.getAccount()));
+                  return builder.build();
+                })
+            .build();
 
     this.getUserCallable =
         callableFactory.createUnaryCallable(
@@ -354,6 +403,9 @@ public class HttpJsonUserServiceStub extends UserServiceStub {
     this.listUsersPagedCallable =
         callableFactory.createPagedCallable(
             listUsersTransportSettings, settings.listUsersSettings(), clientContext);
+    this.verifySelfCallable =
+        callableFactory.createUnaryCallable(
+            verifySelfTransportSettings, settings.verifySelfSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -367,6 +419,7 @@ public class HttpJsonUserServiceStub extends UserServiceStub {
     methodDescriptors.add(deleteUserMethodDescriptor);
     methodDescriptors.add(updateUserMethodDescriptor);
     methodDescriptors.add(listUsersMethodDescriptor);
+    methodDescriptors.add(verifySelfMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -398,6 +451,11 @@ public class HttpJsonUserServiceStub extends UserServiceStub {
   @Override
   public UnaryCallable<ListUsersRequest, ListUsersPagedResponse> listUsersPagedCallable() {
     return listUsersPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<VerifySelfRequest, User> verifySelfCallable() {
+    return verifySelfCallable;
   }
 
   @Override

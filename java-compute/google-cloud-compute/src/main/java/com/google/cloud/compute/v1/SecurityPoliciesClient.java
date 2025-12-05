@@ -87,7 +87,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> AggregatedList</td>
- *      <td><p> Retrieves the list of all SecurityPolicy resources, regional and global, available to the specified project. To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.</td>
+ *      <td><p> Retrieves the list of all SecurityPolicy resources, regional and global, available to the specified project.
+ * <p>  To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -520,8 +521,10 @@ public class SecurityPoliciesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of all SecurityPolicy resources, regional and global, available to the
-   * specified project. To prevent failure, Google recommends that you set the
-   * `returnPartialSuccess` parameter to `true`.
+   * specified project.
+   *
+   * <p>To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -552,8 +555,10 @@ public class SecurityPoliciesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of all SecurityPolicy resources, regional and global, available to the
-   * specified project. To prevent failure, Google recommends that you set the
-   * `returnPartialSuccess` parameter to `true`.
+   * specified project.
+   *
+   * <p>To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -593,8 +598,10 @@ public class SecurityPoliciesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of all SecurityPolicy resources, regional and global, available to the
-   * specified project. To prevent failure, Google recommends that you set the
-   * `returnPartialSuccess` parameter to `true`.
+   * specified project.
+   *
+   * <p>To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -633,8 +640,10 @@ public class SecurityPoliciesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of all SecurityPolicy resources, regional and global, available to the
-   * specified project. To prevent failure, Google recommends that you set the
-   * `returnPartialSuccess` parameter to `true`.
+   * specified project.
+   *
+   * <p>To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *

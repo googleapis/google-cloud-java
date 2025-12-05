@@ -28,7 +28,14 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    *
    *
    * <pre>
-   * The instance redistribution policy for regional managed instance groups. Valid values are: - PROACTIVE (default): The group attempts to maintain an even distribution of VM instances across zones in the region. - NONE: For non-autoscaled groups, proactive redistribution is disabled.
+   * The
+   * instance redistribution policy for regional managed instance groups.
+   * Valid values are:
+   *
+   *    - PROACTIVE (default): The group attempts to maintain an
+   *    even distribution of VM instances across zones in the region.
+   *    - NONE: For non-autoscaled groups, proactive
+   *    redistribution is disabled.
    * Check the InstanceRedistributionType enum for the list of possible values.
    * </pre>
    *
@@ -42,7 +49,14 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    *
    *
    * <pre>
-   * The instance redistribution policy for regional managed instance groups. Valid values are: - PROACTIVE (default): The group attempts to maintain an even distribution of VM instances across zones in the region. - NONE: For non-autoscaled groups, proactive redistribution is disabled.
+   * The
+   * instance redistribution policy for regional managed instance groups.
+   * Valid values are:
+   *
+   *    - PROACTIVE (default): The group attempts to maintain an
+   *    even distribution of VM instances across zones in the region.
+   *    - NONE: For non-autoscaled groups, proactive
+   *    redistribution is disabled.
    * Check the InstanceRedistributionType enum for the list of possible values.
    * </pre>
    *
@@ -56,7 +70,14 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    *
    *
    * <pre>
-   * The instance redistribution policy for regional managed instance groups. Valid values are: - PROACTIVE (default): The group attempts to maintain an even distribution of VM instances across zones in the region. - NONE: For non-autoscaled groups, proactive redistribution is disabled.
+   * The
+   * instance redistribution policy for regional managed instance groups.
+   * Valid values are:
+   *
+   *    - PROACTIVE (default): The group attempts to maintain an
+   *    even distribution of VM instances across zones in the region.
+   *    - NONE: For non-autoscaled groups, proactive
+   *    redistribution is disabled.
    * Check the InstanceRedistributionType enum for the list of possible values.
    * </pre>
    *
@@ -70,7 +91,14 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    *
    *
    * <pre>
-   * The maximum number of instances that can be created above the specified targetSize during the update process. This value can be either a fixed number or, if the group has 10 or more instances, a percentage. If you set a percentage, the number of instances is rounded if necessary. The default value for maxSurge is a fixed value equal to the number of zones in which the managed instance group operates. At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxSurge.
+   * The maximum number of instances that can be created above the specifiedtargetSize during the update process. This value can be
+   * either a fixed number or, if the group has 10 or more instances, a
+   * percentage. If you set a percentage, the number of instances is rounded
+   * if necessary.  The default value for maxSurge is a fixed
+   * value equal to the number of zones in which the managed instance group
+   * operates.
+   *
+   * At least one of either maxSurge ormaxUnavailable must be greater than 0. Learn more about maxSurge.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.FixedOrPercent max_surge = 302572691;</code>
@@ -83,7 +111,14 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    *
    *
    * <pre>
-   * The maximum number of instances that can be created above the specified targetSize during the update process. This value can be either a fixed number or, if the group has 10 or more instances, a percentage. If you set a percentage, the number of instances is rounded if necessary. The default value for maxSurge is a fixed value equal to the number of zones in which the managed instance group operates. At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxSurge.
+   * The maximum number of instances that can be created above the specifiedtargetSize during the update process. This value can be
+   * either a fixed number or, if the group has 10 or more instances, a
+   * percentage. If you set a percentage, the number of instances is rounded
+   * if necessary.  The default value for maxSurge is a fixed
+   * value equal to the number of zones in which the managed instance group
+   * operates.
+   *
+   * At least one of either maxSurge ormaxUnavailable must be greater than 0. Learn more about maxSurge.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.FixedOrPercent max_surge = 302572691;</code>
@@ -96,7 +131,14 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    *
    *
    * <pre>
-   * The maximum number of instances that can be created above the specified targetSize during the update process. This value can be either a fixed number or, if the group has 10 or more instances, a percentage. If you set a percentage, the number of instances is rounded if necessary. The default value for maxSurge is a fixed value equal to the number of zones in which the managed instance group operates. At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxSurge.
+   * The maximum number of instances that can be created above the specifiedtargetSize during the update process. This value can be
+   * either a fixed number or, if the group has 10 or more instances, a
+   * percentage. If you set a percentage, the number of instances is rounded
+   * if necessary.  The default value for maxSurge is a fixed
+   * value equal to the number of zones in which the managed instance group
+   * operates.
+   *
+   * At least one of either maxSurge ormaxUnavailable must be greater than 0. Learn more about maxSurge.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.FixedOrPercent max_surge = 302572691;</code>
@@ -107,7 +149,27 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    *
    *
    * <pre>
-   * The maximum number of instances that can be unavailable during the update process. An instance is considered available if all of the following conditions are satisfied: - The instance's status is RUNNING. - If there is a health check on the instance group, the instance's health check status must be HEALTHY at least once. If there is no health check on the group, then the instance only needs to have a status of RUNNING to be considered available. This value can be either a fixed number or, if the group has 10 or more instances, a percentage. If you set a percentage, the number of instances is rounded if necessary. The default value for maxUnavailable is a fixed value equal to the number of zones in which the managed instance group operates. At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxUnavailable.
+   * The maximum number of instances that can be unavailable during the update
+   * process. An instance is considered available if all of the following
+   * conditions are satisfied:
+   *
+   *
+   *
+   *      - The instance's status is
+   *      RUNNING.
+   *    - If there is a health
+   *      check on the instance group, the instance's health check status
+   *      must be HEALTHY at least once. If there is no health check
+   *      on the group, then the instance only needs to have a status of
+   *      RUNNING to be considered available.
+   *
+   *
+   * This value can be either a fixed number or, if the group has 10 or more
+   * instances, a percentage. If you set a percentage, the number of instances
+   * is rounded if necessary. The default value formaxUnavailable is a fixed value equal to the number of zones
+   * in which the managed instance group operates.
+   *
+   * At least one of either maxSurge ormaxUnavailable must be greater than 0. Learn more about maxUnavailable.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.FixedOrPercent max_unavailable = 404940277;</code>
@@ -120,7 +182,27 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    *
    *
    * <pre>
-   * The maximum number of instances that can be unavailable during the update process. An instance is considered available if all of the following conditions are satisfied: - The instance's status is RUNNING. - If there is a health check on the instance group, the instance's health check status must be HEALTHY at least once. If there is no health check on the group, then the instance only needs to have a status of RUNNING to be considered available. This value can be either a fixed number or, if the group has 10 or more instances, a percentage. If you set a percentage, the number of instances is rounded if necessary. The default value for maxUnavailable is a fixed value equal to the number of zones in which the managed instance group operates. At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxUnavailable.
+   * The maximum number of instances that can be unavailable during the update
+   * process. An instance is considered available if all of the following
+   * conditions are satisfied:
+   *
+   *
+   *
+   *      - The instance's status is
+   *      RUNNING.
+   *    - If there is a health
+   *      check on the instance group, the instance's health check status
+   *      must be HEALTHY at least once. If there is no health check
+   *      on the group, then the instance only needs to have a status of
+   *      RUNNING to be considered available.
+   *
+   *
+   * This value can be either a fixed number or, if the group has 10 or more
+   * instances, a percentage. If you set a percentage, the number of instances
+   * is rounded if necessary. The default value formaxUnavailable is a fixed value equal to the number of zones
+   * in which the managed instance group operates.
+   *
+   * At least one of either maxSurge ormaxUnavailable must be greater than 0. Learn more about maxUnavailable.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.FixedOrPercent max_unavailable = 404940277;</code>
@@ -133,7 +215,27 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    *
    *
    * <pre>
-   * The maximum number of instances that can be unavailable during the update process. An instance is considered available if all of the following conditions are satisfied: - The instance's status is RUNNING. - If there is a health check on the instance group, the instance's health check status must be HEALTHY at least once. If there is no health check on the group, then the instance only needs to have a status of RUNNING to be considered available. This value can be either a fixed number or, if the group has 10 or more instances, a percentage. If you set a percentage, the number of instances is rounded if necessary. The default value for maxUnavailable is a fixed value equal to the number of zones in which the managed instance group operates. At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxUnavailable.
+   * The maximum number of instances that can be unavailable during the update
+   * process. An instance is considered available if all of the following
+   * conditions are satisfied:
+   *
+   *
+   *
+   *      - The instance's status is
+   *      RUNNING.
+   *    - If there is a health
+   *      check on the instance group, the instance's health check status
+   *      must be HEALTHY at least once. If there is no health check
+   *      on the group, then the instance only needs to have a status of
+   *      RUNNING to be considered available.
+   *
+   *
+   * This value can be either a fixed number or, if the group has 10 or more
+   * instances, a percentage. If you set a percentage, the number of instances
+   * is rounded if necessary. The default value formaxUnavailable is a fixed value equal to the number of zones
+   * in which the managed instance group operates.
+   *
+   * At least one of either maxSurge ormaxUnavailable must be greater than 0. Learn more about maxUnavailable.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.FixedOrPercent max_unavailable = 404940277;</code>
@@ -144,7 +246,18 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    *
    *
    * <pre>
-   * Minimal action to be taken on an instance. Use this option to minimize disruption as much as possible or to apply a more disruptive action than is necessary. - To limit disruption as much as possible, set the minimal action to REFRESH. If your update requires a more disruptive action, Compute Engine performs the necessary action to execute the update. - To apply a more disruptive action than is strictly necessary, set the minimal action to RESTART or REPLACE. For example, Compute Engine does not need to restart a VM to change its metadata. But if your application reads instance metadata only when a VM is restarted, you can set the minimal action to RESTART in order to pick up metadata changes.
+   * Minimal action to be taken on an instance. Use this option to minimize
+   * disruption as much as possible or to apply a more disruptive action than
+   * is necessary.
+   *
+   *    - To limit disruption as much as possible, set the minimal action toREFRESH. If your update requires a more disruptive action,
+   *    Compute Engine performs the necessary action to execute the update.
+   *    - To apply a more disruptive action than is strictly necessary, set the
+   *    minimal action to RESTART or REPLACE. For
+   *    example, Compute Engine does not need to restart a VM to change its
+   *    metadata. But if your application reads instance metadata only when a VM
+   *    is restarted, you can set the minimal action to RESTART in
+   *    order to pick up metadata changes.
    * Check the MinimalAction enum for the list of possible values.
    * </pre>
    *
@@ -158,7 +271,18 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    *
    *
    * <pre>
-   * Minimal action to be taken on an instance. Use this option to minimize disruption as much as possible or to apply a more disruptive action than is necessary. - To limit disruption as much as possible, set the minimal action to REFRESH. If your update requires a more disruptive action, Compute Engine performs the necessary action to execute the update. - To apply a more disruptive action than is strictly necessary, set the minimal action to RESTART or REPLACE. For example, Compute Engine does not need to restart a VM to change its metadata. But if your application reads instance metadata only when a VM is restarted, you can set the minimal action to RESTART in order to pick up metadata changes.
+   * Minimal action to be taken on an instance. Use this option to minimize
+   * disruption as much as possible or to apply a more disruptive action than
+   * is necessary.
+   *
+   *    - To limit disruption as much as possible, set the minimal action toREFRESH. If your update requires a more disruptive action,
+   *    Compute Engine performs the necessary action to execute the update.
+   *    - To apply a more disruptive action than is strictly necessary, set the
+   *    minimal action to RESTART or REPLACE. For
+   *    example, Compute Engine does not need to restart a VM to change its
+   *    metadata. But if your application reads instance metadata only when a VM
+   *    is restarted, you can set the minimal action to RESTART in
+   *    order to pick up metadata changes.
    * Check the MinimalAction enum for the list of possible values.
    * </pre>
    *
@@ -172,7 +296,18 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    *
    *
    * <pre>
-   * Minimal action to be taken on an instance. Use this option to minimize disruption as much as possible or to apply a more disruptive action than is necessary. - To limit disruption as much as possible, set the minimal action to REFRESH. If your update requires a more disruptive action, Compute Engine performs the necessary action to execute the update. - To apply a more disruptive action than is strictly necessary, set the minimal action to RESTART or REPLACE. For example, Compute Engine does not need to restart a VM to change its metadata. But if your application reads instance metadata only when a VM is restarted, you can set the minimal action to RESTART in order to pick up metadata changes.
+   * Minimal action to be taken on an instance. Use this option to minimize
+   * disruption as much as possible or to apply a more disruptive action than
+   * is necessary.
+   *
+   *    - To limit disruption as much as possible, set the minimal action toREFRESH. If your update requires a more disruptive action,
+   *    Compute Engine performs the necessary action to execute the update.
+   *    - To apply a more disruptive action than is strictly necessary, set the
+   *    minimal action to RESTART or REPLACE. For
+   *    example, Compute Engine does not need to restart a VM to change its
+   *    metadata. But if your application reads instance metadata only when a VM
+   *    is restarted, you can set the minimal action to RESTART in
+   *    order to pick up metadata changes.
    * Check the MinimalAction enum for the list of possible values.
    * </pre>
    *
@@ -186,7 +321,13 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    *
    *
    * <pre>
-   * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to avoid restarting the VM and to limit disruption as much as possible. RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+   * Most disruptive action that is allowed to be taken on an instance.
+   * You can specify either NONE to forbid any actions,REFRESH to avoid restarting the VM and to limit disruption
+   * as much as possible. RESTART to allow actions that can be
+   * applied without instance replacing or REPLACE to allow all
+   * possible actions. If the Updater determines that the minimal update
+   * action needed is more disruptive than most disruptive allowed action you
+   * specify it will not perform the update at all.
    * Check the MostDisruptiveAllowedAction enum for the list of possible values.
    * </pre>
    *
@@ -200,7 +341,13 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    *
    *
    * <pre>
-   * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to avoid restarting the VM and to limit disruption as much as possible. RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+   * Most disruptive action that is allowed to be taken on an instance.
+   * You can specify either NONE to forbid any actions,REFRESH to avoid restarting the VM and to limit disruption
+   * as much as possible. RESTART to allow actions that can be
+   * applied without instance replacing or REPLACE to allow all
+   * possible actions. If the Updater determines that the minimal update
+   * action needed is more disruptive than most disruptive allowed action you
+   * specify it will not perform the update at all.
    * Check the MostDisruptiveAllowedAction enum for the list of possible values.
    * </pre>
    *
@@ -214,7 +361,13 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    *
    *
    * <pre>
-   * Most disruptive action that is allowed to be taken on an instance. You can specify either NONE to forbid any actions, REFRESH to avoid restarting the VM and to limit disruption as much as possible. RESTART to allow actions that can be applied without instance replacing or REPLACE to allow all possible actions. If the Updater determines that the minimal update action needed is more disruptive than most disruptive allowed action you specify it will not perform the update at all.
+   * Most disruptive action that is allowed to be taken on an instance.
+   * You can specify either NONE to forbid any actions,REFRESH to avoid restarting the VM and to limit disruption
+   * as much as possible. RESTART to allow actions that can be
+   * applied without instance replacing or REPLACE to allow all
+   * possible actions. If the Updater determines that the minimal update
+   * action needed is more disruptive than most disruptive allowed action you
+   * specify it will not perform the update at all.
    * Check the MostDisruptiveAllowedAction enum for the list of possible values.
    * </pre>
    *
@@ -228,7 +381,8 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    *
    *
    * <pre>
-   * What action should be used to replace instances. See minimal_action.REPLACE
+   * What action should be used to replace instances.
+   * See minimal_action.REPLACE
    * Check the ReplacementMethod enum for the list of possible values.
    * </pre>
    *
@@ -242,7 +396,8 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    *
    *
    * <pre>
-   * What action should be used to replace instances. See minimal_action.REPLACE
+   * What action should be used to replace instances.
+   * See minimal_action.REPLACE
    * Check the ReplacementMethod enum for the list of possible values.
    * </pre>
    *
@@ -256,7 +411,8 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    *
    *
    * <pre>
-   * What action should be used to replace instances. See minimal_action.REPLACE
+   * What action should be used to replace instances.
+   * See minimal_action.REPLACE
    * Check the ReplacementMethod enum for the list of possible values.
    * </pre>
    *
@@ -270,7 +426,10 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    *
    *
    * <pre>
-   * The type of update process. You can specify either PROACTIVE so that the MIG automatically updates VMs to the latest configurations or OPPORTUNISTIC so that you can select the VMs that you want to update.
+   * The type
+   * of update process. You can specify either PROACTIVE so
+   * that the MIG automatically updates VMs to the latest configurations orOPPORTUNISTIC so that you can select the VMs that you want
+   * to update.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -284,7 +443,10 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    *
    *
    * <pre>
-   * The type of update process. You can specify either PROACTIVE so that the MIG automatically updates VMs to the latest configurations or OPPORTUNISTIC so that you can select the VMs that you want to update.
+   * The type
+   * of update process. You can specify either PROACTIVE so
+   * that the MIG automatically updates VMs to the latest configurations orOPPORTUNISTIC so that you can select the VMs that you want
+   * to update.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -298,7 +460,10 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    *
    *
    * <pre>
-   * The type of update process. You can specify either PROACTIVE so that the MIG automatically updates VMs to the latest configurations or OPPORTUNISTIC so that you can select the VMs that you want to update.
+   * The type
+   * of update process. You can specify either PROACTIVE so
+   * that the MIG automatically updates VMs to the latest configurations orOPPORTUNISTIC so that you can select the VMs that you want
+   * to update.
    * Check the Type enum for the list of possible values.
    * </pre>
    *

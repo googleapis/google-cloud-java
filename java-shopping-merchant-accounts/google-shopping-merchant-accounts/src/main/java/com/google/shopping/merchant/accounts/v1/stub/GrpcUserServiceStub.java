@@ -34,6 +34,7 @@ import com.google.shopping.merchant.accounts.v1.ListUsersRequest;
 import com.google.shopping.merchant.accounts.v1.ListUsersResponse;
 import com.google.shopping.merchant.accounts.v1.UpdateUserRequest;
 import com.google.shopping.merchant.accounts.v1.User;
+import com.google.shopping.merchant.accounts.v1.VerifySelfRequest;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -94,12 +95,22 @@ public class GrpcUserServiceStub extends UserServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<VerifySelfRequest, User> verifySelfMethodDescriptor =
+      MethodDescriptor.<VerifySelfRequest, User>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.shopping.merchant.accounts.v1.UserService/VerifySelf")
+          .setRequestMarshaller(ProtoUtils.marshaller(VerifySelfRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(User.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
   private final UnaryCallable<GetUserRequest, User> getUserCallable;
   private final UnaryCallable<CreateUserRequest, User> createUserCallable;
   private final UnaryCallable<DeleteUserRequest, Empty> deleteUserCallable;
   private final UnaryCallable<UpdateUserRequest, User> updateUserCallable;
   private final UnaryCallable<ListUsersRequest, ListUsersResponse> listUsersCallable;
   private final UnaryCallable<ListUsersRequest, ListUsersPagedResponse> listUsersPagedCallable;
+  private final UnaryCallable<VerifySelfRequest, User> verifySelfCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -193,6 +204,16 @@ public class GrpcUserServiceStub extends UserServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<VerifySelfRequest, User> verifySelfTransportSettings =
+        GrpcCallSettings.<VerifySelfRequest, User>newBuilder()
+            .setMethodDescriptor(verifySelfMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("account", String.valueOf(request.getAccount()));
+                  return builder.build();
+                })
+            .build();
 
     this.getUserCallable =
         callableFactory.createUnaryCallable(
@@ -212,6 +233,9 @@ public class GrpcUserServiceStub extends UserServiceStub {
     this.listUsersPagedCallable =
         callableFactory.createPagedCallable(
             listUsersTransportSettings, settings.listUsersSettings(), clientContext);
+    this.verifySelfCallable =
+        callableFactory.createUnaryCallable(
+            verifySelfTransportSettings, settings.verifySelfSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -249,6 +273,11 @@ public class GrpcUserServiceStub extends UserServiceStub {
   @Override
   public UnaryCallable<ListUsersRequest, ListUsersPagedResponse> listUsersPagedCallable() {
     return listUsersPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<VerifySelfRequest, User> verifySelfCallable() {
+    return verifySelfCallable;
   }
 
   @Override

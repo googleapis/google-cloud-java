@@ -199,7 +199,8 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Specifies whether NAT IP is currently serving at least one endpoint or not.
+   * Specifies whether NAT IP is currently serving at least one endpoint or
+   * not.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.NatIpInfoNatIpInfoMapping.Usage}
@@ -475,7 +476,8 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Specifies whether NAT IP is currently serving at least one endpoint or not.
+   * Specifies whether NAT IP is currently serving at least one endpoint or
+   * not.
    * Check the Usage enum for the list of possible values.
    * </pre>
    *
@@ -492,7 +494,8 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Specifies whether NAT IP is currently serving at least one endpoint or not.
+   * Specifies whether NAT IP is currently serving at least one endpoint or
+   * not.
    * Check the Usage enum for the list of possible values.
    * </pre>
    *
@@ -517,7 +520,8 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Specifies whether NAT IP is currently serving at least one endpoint or not.
+   * Specifies whether NAT IP is currently serving at least one endpoint or
+   * not.
    * Check the Usage enum for the list of possible values.
    * </pre>
    *
@@ -1214,7 +1218,8 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Specifies whether NAT IP is currently serving at least one endpoint or not.
+     * Specifies whether NAT IP is currently serving at least one endpoint or
+     * not.
      * Check the Usage enum for the list of possible values.
      * </pre>
      *
@@ -1230,7 +1235,8 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Specifies whether NAT IP is currently serving at least one endpoint or not.
+     * Specifies whether NAT IP is currently serving at least one endpoint or
+     * not.
      * Check the Usage enum for the list of possible values.
      * </pre>
      *
@@ -1254,7 +1260,8 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Specifies whether NAT IP is currently serving at least one endpoint or not.
+     * Specifies whether NAT IP is currently serving at least one endpoint or
+     * not.
      * Check the Usage enum for the list of possible values.
      * </pre>
      *
@@ -1278,7 +1285,8 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Specifies whether NAT IP is currently serving at least one endpoint or not.
+     * Specifies whether NAT IP is currently serving at least one endpoint or
+     * not.
      * Check the Usage enum for the list of possible values.
      * </pre>
      *
@@ -1301,7 +1309,8 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Specifies whether NAT IP is currently serving at least one endpoint or not.
+     * Specifies whether NAT IP is currently serving at least one endpoint or
+     * not.
      * Check the Usage enum for the list of possible values.
      * </pre>
      *
@@ -1320,7 +1329,8 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Specifies whether NAT IP is currently serving at least one endpoint or not.
+     * Specifies whether NAT IP is currently serving at least one endpoint or
+     * not.
      * Check the Usage enum for the list of possible values.
      * </pre>
      *

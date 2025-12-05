@@ -28,7 +28,9 @@ public interface ProjectsListXpnHostsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional organization ID managed by Cloud Resource Manager, for which to list shared VPC host projects. If not specified, the organization will be inferred from the project.
+   * Optional organization ID managed by Cloud Resource Manager, for which to
+   * list shared VPC host projects. If not specified, the organization will be
+   * inferred from the project.
    * </pre>
    *
    * <code>optional string organization = 105180467;</code>
@@ -41,7 +43,9 @@ public interface ProjectsListXpnHostsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional organization ID managed by Cloud Resource Manager, for which to list shared VPC host projects. If not specified, the organization will be inferred from the project.
+   * Optional organization ID managed by Cloud Resource Manager, for which to
+   * list shared VPC host projects. If not specified, the organization will be
+   * inferred from the project.
    * </pre>
    *
    * <code>optional string organization = 105180467;</code>
@@ -54,7 +58,9 @@ public interface ProjectsListXpnHostsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional organization ID managed by Cloud Resource Manager, for which to list shared VPC host projects. If not specified, the organization will be inferred from the project.
+   * Optional organization ID managed by Cloud Resource Manager, for which to
+   * list shared VPC host projects. If not specified, the organization will be
+   * inferred from the project.
    * </pre>
    *
    * <code>optional string organization = 105180467;</code>

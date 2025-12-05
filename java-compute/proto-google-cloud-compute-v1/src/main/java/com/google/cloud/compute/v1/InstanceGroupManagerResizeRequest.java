@@ -23,7 +23,11 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * InstanceGroupManagerResizeRequest represents a request to create a number of VMs: either immediately or by queuing the request for the specified time. This resize request is nested under InstanceGroupManager and the VMs created by this request are added to the owning InstanceGroupManager.
+ * InstanceGroupManagerResizeRequest represents a request to create
+ * a number of VMs: either immediately or by queuing the request for the
+ * specified time. This resize request is nested under InstanceGroupManager
+ * and the VMs created by this request are added to the owning
+ * InstanceGroupManager.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.InstanceGroupManagerResizeRequest}
@@ -96,7 +100,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The request was created successfully and was accepted for provisioning when the capacity becomes available.
+     * The request was created successfully and was accepted for provisioning
+     * when the capacity becomes available.
      * </pre>
      *
      * <code>ACCEPTED = 246714279;</code>
@@ -126,7 +131,9 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The request failed before or during provisioning. If the request fails during provisioning, any VMs that were created during provisioning are rolled back and removed from the MIG.
+     * The request failed before or during provisioning. If the request fails
+     * during provisioning, any VMs that were created during provisioning are
+     * rolled back and removed from the MIG.
      * </pre>
      *
      * <code>FAILED = 455706685;</code>
@@ -170,7 +177,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The request was created successfully and was accepted for provisioning when the capacity becomes available.
+     * The request was created successfully and was accepted for provisioning
+     * when the capacity becomes available.
      * </pre>
      *
      * <code>ACCEPTED = 246714279;</code>
@@ -203,7 +211,9 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The request failed before or during provisioning. If the request fails during provisioning, any VMs that were created during provisioning are rolled back and removed from the MIG.
+     * The request failed before or during provisioning. If the request fails
+     * during provisioning, any VMs that were created during provisioning are
+     * rolled back and removed from the MIG.
      * </pre>
      *
      * <code>FAILED = 455706685;</code>
@@ -335,7 +345,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] The creation timestamp for this resize request in RFC3339 text format.
+   * [Output Only] The creation timestamp for this resize request inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -351,7 +362,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] The creation timestamp for this resize request in RFC3339 text format.
+   * [Output Only] The creation timestamp for this resize request inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -375,7 +387,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] The creation timestamp for this resize request in RFC3339 text format.
+   * [Output Only] The creation timestamp for this resize request inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -471,7 +484,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] A unique identifier for this resource type. The server generates this identifier.
+   * [Output Only] A unique identifier for this resource type. The server
+   * generates this identifier.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -487,7 +501,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] A unique identifier for this resource type. The server generates this identifier.
+   * [Output Only] A unique identifier for this resource type. The server
+   * generates this identifier.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -508,7 +523,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is always compute#instanceGroupManagerResizeRequest for resize requests.
+   * [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
+   * resize requests.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -524,7 +540,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is always compute#instanceGroupManagerResizeRequest for resize requests.
+   * [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
+   * resize requests.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -548,7 +565,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is always compute#instanceGroupManagerResizeRequest for resize requests.
+   * [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
+   * resize requests.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -577,7 +595,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * The name of this resize request. The name must be 1-63 characters long, and comply with RFC1035.
+   * The name of this resize request. The name must be 1-63 characters
+   * long, and comply withRFC1035.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -593,7 +612,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * The name of this resize request. The name must be 1-63 characters long, and comply with RFC1035.
+   * The name of this resize request. The name must be 1-63 characters
+   * long, and comply withRFC1035.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -617,7 +637,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * The name of this resize request. The name must be 1-63 characters long, and comply with RFC1035.
+   * The name of this resize request. The name must be 1-63 characters
+   * long, and comply withRFC1035.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -644,7 +665,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Requested run duration for instances that will be created by this request. At the end of the run duration instance will be deleted.
+   * Requested run duration for instances that will be created by this request.
+   * At the end of the run duration instance will be deleted.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Duration requested_run_duration = 232146425;</code>
@@ -660,7 +682,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Requested run duration for instances that will be created by this request. At the end of the run duration instance will be deleted.
+   * Requested run duration for instances that will be created by this request.
+   * At the end of the run duration instance will be deleted.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Duration requested_run_duration = 232146425;</code>
@@ -678,7 +701,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Requested run duration for instances that will be created by this request. At the end of the run duration instance will be deleted.
+   * Requested run duration for instances that will be created by this request.
+   * At the end of the run duration instance will be deleted.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Duration requested_run_duration = 232146425;</code>
@@ -697,7 +721,9 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * The number of instances to be created by this resize request. The group's target size will be increased by this number. This field cannot be used together with 'instances'.
+   * The number of instances to be created by this resize request. The group's
+   * target size will be increased by this number. This field cannot be used
+   * together with 'instances'.
    * </pre>
    *
    * <code>optional int32 resize_by = 533735362;</code>
@@ -713,7 +739,9 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * The number of instances to be created by this resize request. The group's target size will be increased by this number. This field cannot be used together with 'instances'.
+   * The number of instances to be created by this resize request. The group's
+   * target size will be increased by this number. This field cannot be used
+   * together with 'instances'.
    * </pre>
    *
    * <code>optional int32 resize_by = 533735362;</code>
@@ -734,7 +762,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] The URL for this resize request. The server defines this URL.
+   * [Output Only] The URL for this resize request. The server defines
+   * this URL.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -750,7 +779,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] The URL for this resize request. The server defines this URL.
+   * [Output Only] The URL for this resize request. The server defines
+   * this URL.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -774,7 +804,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] The URL for this resize request. The server defines this URL.
+   * [Output Only] The URL for this resize request. The server defines
+   * this URL.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1004,7 +1035,9 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] The URL of a zone where the resize request is located. Populated only for zonal resize requests.
+   * [Output Only] The URL of azone
+   * where the resize request is located. Populated only for zonal resize
+   * requests.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -1020,7 +1053,9 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] The URL of a zone where the resize request is located. Populated only for zonal resize requests.
+   * [Output Only] The URL of azone
+   * where the resize request is located. Populated only for zonal resize
+   * requests.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -1044,7 +1079,9 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] The URL of a zone where the resize request is located. Populated only for zonal resize requests.
+   * [Output Only] The URL of azone
+   * where the resize request is located. Populated only for zonal resize
+   * requests.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -1391,7 +1428,11 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * InstanceGroupManagerResizeRequest represents a request to create a number of VMs: either immediately or by queuing the request for the specified time. This resize request is nested under InstanceGroupManager and the VMs created by this request are added to the owning InstanceGroupManager.
+   * InstanceGroupManagerResizeRequest represents a request to create
+   * a number of VMs: either immediately or by queuing the request for the
+   * specified time. This resize request is nested under InstanceGroupManager
+   * and the VMs created by this request are added to the owning
+   * InstanceGroupManager.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.InstanceGroupManagerResizeRequest}
@@ -1772,7 +1813,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The creation timestamp for this resize request in RFC3339 text format.
+     * [Output Only] The creation timestamp for this resize request inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1787,7 +1829,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The creation timestamp for this resize request in RFC3339 text format.
+     * [Output Only] The creation timestamp for this resize request inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1810,7 +1853,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The creation timestamp for this resize request in RFC3339 text format.
+     * [Output Only] The creation timestamp for this resize request inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1833,7 +1877,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The creation timestamp for this resize request in RFC3339 text format.
+     * [Output Only] The creation timestamp for this resize request inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1855,7 +1900,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The creation timestamp for this resize request in RFC3339 text format.
+     * [Output Only] The creation timestamp for this resize request inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1873,7 +1919,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The creation timestamp for this resize request in RFC3339 text format.
+     * [Output Only] The creation timestamp for this resize request inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2024,7 +2071,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] A unique identifier for this resource type. The server generates this identifier.
+     * [Output Only] A unique identifier for this resource type. The server
+     * generates this identifier.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2040,7 +2088,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] A unique identifier for this resource type. The server generates this identifier.
+     * [Output Only] A unique identifier for this resource type. The server
+     * generates this identifier.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2056,7 +2105,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] A unique identifier for this resource type. The server generates this identifier.
+     * [Output Only] A unique identifier for this resource type. The server
+     * generates this identifier.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2076,7 +2126,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] A unique identifier for this resource type. The server generates this identifier.
+     * [Output Only] A unique identifier for this resource type. The server
+     * generates this identifier.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2096,7 +2147,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is always compute#instanceGroupManagerResizeRequest for resize requests.
+     * [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
+     * resize requests.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2111,7 +2163,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is always compute#instanceGroupManagerResizeRequest for resize requests.
+     * [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
+     * resize requests.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2134,7 +2187,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is always compute#instanceGroupManagerResizeRequest for resize requests.
+     * [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
+     * resize requests.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2157,7 +2211,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is always compute#instanceGroupManagerResizeRequest for resize requests.
+     * [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
+     * resize requests.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2179,7 +2234,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is always compute#instanceGroupManagerResizeRequest for resize requests.
+     * [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
+     * resize requests.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2197,7 +2253,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is always compute#instanceGroupManagerResizeRequest for resize requests.
+     * [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
+     * resize requests.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2222,7 +2279,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The name of this resize request. The name must be 1-63 characters long, and comply with RFC1035.
+     * The name of this resize request. The name must be 1-63 characters
+     * long, and comply withRFC1035.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2237,7 +2295,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The name of this resize request. The name must be 1-63 characters long, and comply with RFC1035.
+     * The name of this resize request. The name must be 1-63 characters
+     * long, and comply withRFC1035.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2260,7 +2319,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The name of this resize request. The name must be 1-63 characters long, and comply with RFC1035.
+     * The name of this resize request. The name must be 1-63 characters
+     * long, and comply withRFC1035.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2283,7 +2343,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The name of this resize request. The name must be 1-63 characters long, and comply with RFC1035.
+     * The name of this resize request. The name must be 1-63 characters
+     * long, and comply withRFC1035.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2305,7 +2366,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The name of this resize request. The name must be 1-63 characters long, and comply with RFC1035.
+     * The name of this resize request. The name must be 1-63 characters
+     * long, and comply withRFC1035.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2323,7 +2385,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The name of this resize request. The name must be 1-63 characters long, and comply with RFC1035.
+     * The name of this resize request. The name must be 1-63 characters
+     * long, and comply withRFC1035.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2353,7 +2416,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Requested run duration for instances that will be created by this request. At the end of the run duration instance will be deleted.
+     * Requested run duration for instances that will be created by this request.
+     * At the end of the run duration instance will be deleted.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration requested_run_duration = 232146425;</code>
@@ -2368,7 +2432,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Requested run duration for instances that will be created by this request. At the end of the run duration instance will be deleted.
+     * Requested run duration for instances that will be created by this request.
+     * At the end of the run duration instance will be deleted.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration requested_run_duration = 232146425;</code>
@@ -2389,7 +2454,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Requested run duration for instances that will be created by this request. At the end of the run duration instance will be deleted.
+     * Requested run duration for instances that will be created by this request.
+     * At the end of the run duration instance will be deleted.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration requested_run_duration = 232146425;</code>
@@ -2412,7 +2478,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Requested run duration for instances that will be created by this request. At the end of the run duration instance will be deleted.
+     * Requested run duration for instances that will be created by this request.
+     * At the end of the run duration instance will be deleted.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration requested_run_duration = 232146425;</code>
@@ -2433,7 +2500,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Requested run duration for instances that will be created by this request. At the end of the run duration instance will be deleted.
+     * Requested run duration for instances that will be created by this request.
+     * At the end of the run duration instance will be deleted.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration requested_run_duration = 232146425;</code>
@@ -2461,7 +2529,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Requested run duration for instances that will be created by this request. At the end of the run duration instance will be deleted.
+     * Requested run duration for instances that will be created by this request.
+     * At the end of the run duration instance will be deleted.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration requested_run_duration = 232146425;</code>
@@ -2481,7 +2550,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Requested run duration for instances that will be created by this request. At the end of the run duration instance will be deleted.
+     * Requested run duration for instances that will be created by this request.
+     * At the end of the run duration instance will be deleted.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration requested_run_duration = 232146425;</code>
@@ -2496,7 +2566,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Requested run duration for instances that will be created by this request. At the end of the run duration instance will be deleted.
+     * Requested run duration for instances that will be created by this request.
+     * At the end of the run duration instance will be deleted.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration requested_run_duration = 232146425;</code>
@@ -2515,7 +2586,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Requested run duration for instances that will be created by this request. At the end of the run duration instance will be deleted.
+     * Requested run duration for instances that will be created by this request.
+     * At the end of the run duration instance will be deleted.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration requested_run_duration = 232146425;</code>
@@ -2543,7 +2615,9 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The number of instances to be created by this resize request. The group's target size will be increased by this number. This field cannot be used together with 'instances'.
+     * The number of instances to be created by this resize request. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'instances'.
      * </pre>
      *
      * <code>optional int32 resize_by = 533735362;</code>
@@ -2559,7 +2633,9 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The number of instances to be created by this resize request. The group's target size will be increased by this number. This field cannot be used together with 'instances'.
+     * The number of instances to be created by this resize request. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'instances'.
      * </pre>
      *
      * <code>optional int32 resize_by = 533735362;</code>
@@ -2575,7 +2651,9 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The number of instances to be created by this resize request. The group's target size will be increased by this number. This field cannot be used together with 'instances'.
+     * The number of instances to be created by this resize request. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'instances'.
      * </pre>
      *
      * <code>optional int32 resize_by = 533735362;</code>
@@ -2595,7 +2673,9 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * The number of instances to be created by this resize request. The group's target size will be increased by this number. This field cannot be used together with 'instances'.
+     * The number of instances to be created by this resize request. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'instances'.
      * </pre>
      *
      * <code>optional int32 resize_by = 533735362;</code>
@@ -2615,7 +2695,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The URL for this resize request. The server defines this URL.
+     * [Output Only] The URL for this resize request. The server defines
+     * this URL.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2630,7 +2711,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The URL for this resize request. The server defines this URL.
+     * [Output Only] The URL for this resize request. The server defines
+     * this URL.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2653,7 +2735,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The URL for this resize request. The server defines this URL.
+     * [Output Only] The URL for this resize request. The server defines
+     * this URL.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2676,7 +2759,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The URL for this resize request. The server defines this URL.
+     * [Output Only] The URL for this resize request. The server defines
+     * this URL.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2698,7 +2782,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The URL for this resize request. The server defines this URL.
+     * [Output Only] The URL for this resize request. The server defines
+     * this URL.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2716,7 +2801,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The URL for this resize request. The server defines this URL.
+     * [Output Only] The URL for this resize request. The server defines
+     * this URL.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3221,7 +3307,9 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The URL of a zone where the resize request is located. Populated only for zonal resize requests.
+     * [Output Only] The URL of azone
+     * where the resize request is located. Populated only for zonal resize
+     * requests.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -3236,7 +3324,9 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The URL of a zone where the resize request is located. Populated only for zonal resize requests.
+     * [Output Only] The URL of azone
+     * where the resize request is located. Populated only for zonal resize
+     * requests.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -3259,7 +3349,9 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The URL of a zone where the resize request is located. Populated only for zonal resize requests.
+     * [Output Only] The URL of azone
+     * where the resize request is located. Populated only for zonal resize
+     * requests.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -3282,7 +3374,9 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The URL of a zone where the resize request is located. Populated only for zonal resize requests.
+     * [Output Only] The URL of azone
+     * where the resize request is located. Populated only for zonal resize
+     * requests.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -3304,7 +3398,9 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The URL of a zone where the resize request is located. Populated only for zonal resize requests.
+     * [Output Only] The URL of azone
+     * where the resize request is located. Populated only for zonal resize
+     * requests.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -3322,7 +3418,9 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The URL of a zone where the resize request is located. Populated only for zonal resize requests.
+     * [Output Only] The URL of azone
+     * where the resize request is located. Populated only for zonal resize
+     * requests.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
