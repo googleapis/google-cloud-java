@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-capacityplanner</artifactId>
-  <version>0.4.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-capacityplanner:current} -->
+  <version>0.4.0-rc1</version><!-- {x-version-update:google-cloud-capacityplanner:current} -->
   <packaging>jar</packaging>
   <name>Google Capacity Planner API</name>
   <description>Capacity Planner API Provides programmatic access to Capacity Planner features.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-capacityplanner-parent</artifactId>
-    <version>0.4.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-capacityplanner:current} -->
+    <version>0.4.0-rc1</version><!-- {x-version-update:google-cloud-capacityplanner:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-capacityplanner</site.installationModule>
