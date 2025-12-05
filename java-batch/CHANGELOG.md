@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.81.0 (2025-12-05)
+
+### Features
+
+* added new provisioning models ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+
+
+
 ## 0.78.0 (2025-10-21)
 
 ### Dependencies

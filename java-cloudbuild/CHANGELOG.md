@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.83.0 (2025-12-05)
+
+### Features
+
+* Update GCB with latest proto changes ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+
+
+
 ## 3.80.0 (2025-10-21)
 
 ### Dependencies

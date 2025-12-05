@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.44.0 (2025-12-05)
+
+### Features
+
+* add transfer metadata options proto definition ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+
+### Bug Fixes
+
+* update tickets component number ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+
+
+
 ## 0.41.0 (2025-10-21)
 
 ### Dependencies

@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.91.0 (2025-12-05)
+
+### Features
+
+* Update Compute Engine v1 API to revision 20251031 ([b887034](https://github.com/googleapis/google-cloud-java/commit/b8870346a399a02bdcca72ec064911bd51dbe532))
+
+
+
 ## 1.88.0 (2025-10-21)
 
 ### Dependencies
