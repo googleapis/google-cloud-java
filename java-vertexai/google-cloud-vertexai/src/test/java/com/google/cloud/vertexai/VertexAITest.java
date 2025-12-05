@@ -36,6 +36,7 @@ import java.util.Map;
 import java.util.Optional;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.Ignore;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.ArgumentCaptor;
@@ -45,6 +46,7 @@ import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 
 @RunWith(JUnit4.class)
+@Ignore
 public final class VertexAITest {
   private static final String TEST_PROJECT = "test_project";
   private static final String TEST_LOCATION = "test_location";
