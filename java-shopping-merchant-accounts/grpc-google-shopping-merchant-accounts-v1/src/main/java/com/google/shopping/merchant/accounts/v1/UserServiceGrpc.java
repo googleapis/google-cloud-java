@@ -256,6 +256,51 @@ public final class UserServiceGrpc {
     return getListUsersMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.shopping.merchant.accounts.v1.VerifySelfRequest,
+          com.google.shopping.merchant.accounts.v1.User>
+      getVerifySelfMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "VerifySelf",
+      requestType = com.google.shopping.merchant.accounts.v1.VerifySelfRequest.class,
+      responseType = com.google.shopping.merchant.accounts.v1.User.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.shopping.merchant.accounts.v1.VerifySelfRequest,
+          com.google.shopping.merchant.accounts.v1.User>
+      getVerifySelfMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.shopping.merchant.accounts.v1.VerifySelfRequest,
+            com.google.shopping.merchant.accounts.v1.User>
+        getVerifySelfMethod;
+    if ((getVerifySelfMethod = UserServiceGrpc.getVerifySelfMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getVerifySelfMethod = UserServiceGrpc.getVerifySelfMethod) == null) {
+          UserServiceGrpc.getVerifySelfMethod =
+              getVerifySelfMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.shopping.merchant.accounts.v1.VerifySelfRequest,
+                          com.google.shopping.merchant.accounts.v1.User>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "VerifySelf"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.shopping.merchant.accounts.v1.VerifySelfRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.shopping.merchant.accounts.v1.User.getDefaultInstance()))
+                      .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("VerifySelf"))
+                      .build();
+        }
+      }
+    }
+    return getVerifySelfMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static UserServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<UserServiceStub> factory =
@@ -391,6 +436,21 @@ public final class UserServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListUsersMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the user that is represented by the caller from pending to
+     * verified.
+     * </pre>
+     */
+    default void verifySelf(
+        com.google.shopping.merchant.accounts.v1.VerifySelfRequest request,
+        io.grpc.stub.StreamObserver<com.google.shopping.merchant.accounts.v1.User>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getVerifySelfMethod(), responseObserver);
+    }
   }
 
   /**
@@ -505,6 +565,22 @@ public final class UserServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListUsersMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the user that is represented by the caller from pending to
+     * verified.
+     * </pre>
+     */
+    public void verifySelf(
+        com.google.shopping.merchant.accounts.v1.VerifySelfRequest request,
+        io.grpc.stub.StreamObserver<com.google.shopping.merchant.accounts.v1.User>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getVerifySelfMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -600,6 +676,21 @@ public final class UserServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListUsersMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the user that is represented by the caller from pending to
+     * verified.
+     * </pre>
+     */
+    public com.google.shopping.merchant.accounts.v1.User verifySelf(
+        com.google.shopping.merchant.accounts.v1.VerifySelfRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getVerifySelfMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -689,6 +780,20 @@ public final class UserServiceGrpc {
         com.google.shopping.merchant.accounts.v1.ListUsersRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListUsersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the user that is represented by the caller from pending to
+     * verified.
+     * </pre>
+     */
+    public com.google.shopping.merchant.accounts.v1.User verifySelf(
+        com.google.shopping.merchant.accounts.v1.VerifySelfRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getVerifySelfMethod(), getCallOptions(), request);
     }
   }
 
@@ -784,6 +889,21 @@ public final class UserServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListUsersMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the user that is represented by the caller from pending to
+     * verified.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.shopping.merchant.accounts.v1.User>
+        verifySelf(com.google.shopping.merchant.accounts.v1.VerifySelfRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getVerifySelfMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_USER = 0;
@@ -791,6 +911,7 @@ public final class UserServiceGrpc {
   private static final int METHODID_DELETE_USER = 2;
   private static final int METHODID_UPDATE_USER = 3;
   private static final int METHODID_LIST_USERS = 4;
+  private static final int METHODID_VERIFY_SELF = 5;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -837,6 +958,12 @@ public final class UserServiceGrpc {
               (com.google.shopping.merchant.accounts.v1.ListUsersRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.shopping.merchant.accounts.v1.ListUsersResponse>)
+                  responseObserver);
+          break;
+        case METHODID_VERIFY_SELF:
+          serviceImpl.verifySelf(
+              (com.google.shopping.merchant.accounts.v1.VerifySelfRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.shopping.merchant.accounts.v1.User>)
                   responseObserver);
           break;
         default:
@@ -888,6 +1015,12 @@ public final class UserServiceGrpc {
                     com.google.shopping.merchant.accounts.v1.ListUsersRequest,
                     com.google.shopping.merchant.accounts.v1.ListUsersResponse>(
                     service, METHODID_LIST_USERS)))
+        .addMethod(
+            getVerifySelfMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.shopping.merchant.accounts.v1.VerifySelfRequest,
+                    com.google.shopping.merchant.accounts.v1.User>(service, METHODID_VERIFY_SELF)))
         .build();
   }
 
@@ -944,6 +1077,7 @@ public final class UserServiceGrpc {
                       .addMethod(getDeleteUserMethod())
                       .addMethod(getUpdateUserMethod())
                       .addMethod(getListUsersMethod())
+                      .addMethod(getVerifySelfMethod())
                       .build();
         }
       }

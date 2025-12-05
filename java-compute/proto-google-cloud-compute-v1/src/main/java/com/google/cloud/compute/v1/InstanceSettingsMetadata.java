@@ -107,7 +107,8 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * A metadata key/value items map. The total size of all keys and values must be less than 512KB.
+   * A metadata key/value items map.
+   * The total size of all keys and values must be less than 512KB.
    * </pre>
    *
    * <code>map&lt;string, string&gt; items = 100526016;</code>
@@ -131,7 +132,8 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * A metadata key/value items map. The total size of all keys and values must be less than 512KB.
+   * A metadata key/value items map.
+   * The total size of all keys and values must be less than 512KB.
    * </pre>
    *
    * <code>map&lt;string, string&gt; items = 100526016;</code>
@@ -145,7 +147,8 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * A metadata key/value items map. The total size of all keys and values must be less than 512KB.
+   * A metadata key/value items map.
+   * The total size of all keys and values must be less than 512KB.
    * </pre>
    *
    * <code>map&lt;string, string&gt; items = 100526016;</code>
@@ -166,7 +169,8 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * A metadata key/value items map. The total size of all keys and values must be less than 512KB.
+   * A metadata key/value items map.
+   * The total size of all keys and values must be less than 512KB.
    * </pre>
    *
    * <code>map&lt;string, string&gt; items = 100526016;</code>
@@ -192,7 +196,8 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#metadata for metadata.
+   * [Output Only] Type of the resource. Always compute#metadata
+   * for metadata.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -208,7 +213,8 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#metadata for metadata.
+   * [Output Only] Type of the resource. Always compute#metadata
+   * for metadata.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -232,7 +238,8 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#metadata for metadata.
+   * [Output Only] Type of the resource. Always compute#metadata
+   * for metadata.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -687,7 +694,8 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A metadata key/value items map. The total size of all keys and values must be less than 512KB.
+     * A metadata key/value items map.
+     * The total size of all keys and values must be less than 512KB.
      * </pre>
      *
      * <code>map&lt;string, string&gt; items = 100526016;</code>
@@ -711,7 +719,8 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A metadata key/value items map. The total size of all keys and values must be less than 512KB.
+     * A metadata key/value items map.
+     * The total size of all keys and values must be less than 512KB.
      * </pre>
      *
      * <code>map&lt;string, string&gt; items = 100526016;</code>
@@ -725,7 +734,8 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A metadata key/value items map. The total size of all keys and values must be less than 512KB.
+     * A metadata key/value items map.
+     * The total size of all keys and values must be less than 512KB.
      * </pre>
      *
      * <code>map&lt;string, string&gt; items = 100526016;</code>
@@ -746,7 +756,8 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A metadata key/value items map. The total size of all keys and values must be less than 512KB.
+     * A metadata key/value items map.
+     * The total size of all keys and values must be less than 512KB.
      * </pre>
      *
      * <code>map&lt;string, string&gt; items = 100526016;</code>
@@ -773,7 +784,8 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A metadata key/value items map. The total size of all keys and values must be less than 512KB.
+     * A metadata key/value items map.
+     * The total size of all keys and values must be less than 512KB.
      * </pre>
      *
      * <code>map&lt;string, string&gt; items = 100526016;</code>
@@ -797,7 +809,8 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A metadata key/value items map. The total size of all keys and values must be less than 512KB.
+     * A metadata key/value items map.
+     * The total size of all keys and values must be less than 512KB.
      * </pre>
      *
      * <code>map&lt;string, string&gt; items = 100526016;</code>
@@ -818,7 +831,8 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A metadata key/value items map. The total size of all keys and values must be less than 512KB.
+     * A metadata key/value items map.
+     * The total size of all keys and values must be less than 512KB.
      * </pre>
      *
      * <code>map&lt;string, string&gt; items = 100526016;</code>
@@ -835,7 +849,8 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#metadata for metadata.
+     * [Output Only] Type of the resource. Always compute#metadata
+     * for metadata.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -850,7 +865,8 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#metadata for metadata.
+     * [Output Only] Type of the resource. Always compute#metadata
+     * for metadata.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -873,7 +889,8 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#metadata for metadata.
+     * [Output Only] Type of the resource. Always compute#metadata
+     * for metadata.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -896,7 +913,8 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#metadata for metadata.
+     * [Output Only] Type of the resource. Always compute#metadata
+     * for metadata.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -918,7 +936,8 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#metadata for metadata.
+     * [Output Only] Type of the resource. Always compute#metadata
+     * for metadata.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -936,7 +955,8 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#metadata for metadata.
+     * [Output Only] Type of the resource. Always compute#metadata
+     * for metadata.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>

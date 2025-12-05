@@ -1195,6 +1195,8 @@ public class InstancesClientTest {
   public void getShieldedInstanceIdentityTest() throws Exception {
     ShieldedInstanceIdentity expectedResponse =
         ShieldedInstanceIdentity.newBuilder()
+            .setEccP256EncryptionKey(ShieldedInstanceIdentityEntry.newBuilder().build())
+            .setEccP256SigningKey(ShieldedInstanceIdentityEntry.newBuilder().build())
             .setEncryptionKey(ShieldedInstanceIdentityEntry.newBuilder().build())
             .setKind("kind3292052")
             .setSigningKey(ShieldedInstanceIdentityEntry.newBuilder().build())

@@ -28,7 +28,8 @@ public interface PacketMirroringMirroredResourceInfoInstanceInfoOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unique identifier for the instance; defined by the server.
+   * [Output Only] Unique identifier for the instance; defined by the
+   * server.
    * </pre>
    *
    * <code>optional string canonical_url = 512294820;</code>
@@ -41,7 +42,8 @@ public interface PacketMirroringMirroredResourceInfoInstanceInfoOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unique identifier for the instance; defined by the server.
+   * [Output Only] Unique identifier for the instance; defined by the
+   * server.
    * </pre>
    *
    * <code>optional string canonical_url = 512294820;</code>
@@ -54,7 +56,8 @@ public interface PacketMirroringMirroredResourceInfoInstanceInfoOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unique identifier for the instance; defined by the server.
+   * [Output Only] Unique identifier for the instance; defined by the
+   * server.
    * </pre>
    *
    * <code>optional string canonical_url = 512294820;</code>

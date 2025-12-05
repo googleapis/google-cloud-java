@@ -23,7 +23,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * A path-matching rule for a URL. If matched, will use the specified BackendService to handle the traffic arriving at this URL.
+ * A path-matching rule for a URL. If matched, will use the specifiedBackendService to handle the traffic arriving at this URL.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.PathRule}
@@ -73,7 +73,32 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * customErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. If a policy for an error code is not configured for the PathRule, a policy for the error code configured in pathMatcher.defaultCustomErrorResponsePolicy is applied. If one is not specified in pathMatcher.defaultCustomErrorResponsePolicy, the policy configured in UrlMap.defaultCustomErrorResponsePolicy takes effect. For example, consider a UrlMap with the following configuration: - UrlMap.defaultCustomErrorResponsePolicy are configured with policies for 5xx and 4xx errors - A PathRule for /coming_soon/ is configured for the error code 404. If the request is for www.myotherdomain.com and a 404 is encountered, the policy under UrlMap.defaultCustomErrorResponsePolicy takes effect. If a 404 response is encountered for the request www.example.com/current_events/, the pathMatcher's policy takes effect. If however, the request for www.example.com/coming_soon/ encounters a 404, the policy in PathRule.customErrorResponsePolicy takes effect. If any of the requests in this example encounter a 500 error code, the policy at UrlMap.defaultCustomErrorResponsePolicy takes effect. customErrorResponsePolicy is supported only for global external Application Load Balancers.
+   * customErrorResponsePolicy specifies how the Load
+   * Balancer returns error responses when BackendServiceorBackendBucket responds with an error.
+   *
+   * If a policy for an
+   * error code is not configured for the PathRule, a policy for
+   * the error code configured inpathMatcher.defaultCustomErrorResponsePolicy is applied. If
+   * one is not specified inpathMatcher.defaultCustomErrorResponsePolicy, the policy
+   * configured in UrlMap.defaultCustomErrorResponsePolicy takes
+   * effect.
+   *
+   * For example, consider a UrlMap with the following configuration:
+   *
+   *
+   *      - UrlMap.defaultCustomErrorResponsePolicy are configured
+   *      with policies for 5xx and 4xx errors
+   *      - A PathRule for /coming_soon/ is configured for the error
+   *      code 404.
+   *
+   * If the request is for www.myotherdomain.com and a404 is encountered, the policy underUrlMap.defaultCustomErrorResponsePolicy takes effect. If a404 response is encountered for the requestwww.example.com/current_events/, the pathMatcher's policy
+   * takes effect. If however, the request forwww.example.com/coming_soon/ encounters a 404,
+   * the policy in PathRule.customErrorResponsePolicy takes
+   * effect. If any of the requests in this example encounter a 500
+   * error code, the policy atUrlMap.defaultCustomErrorResponsePolicy takes effect.
+   *
+   * customErrorResponsePolicy is supported only for
+   * global external Application Load Balancers.
    * </pre>
    *
    * <code>
@@ -91,7 +116,32 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * customErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. If a policy for an error code is not configured for the PathRule, a policy for the error code configured in pathMatcher.defaultCustomErrorResponsePolicy is applied. If one is not specified in pathMatcher.defaultCustomErrorResponsePolicy, the policy configured in UrlMap.defaultCustomErrorResponsePolicy takes effect. For example, consider a UrlMap with the following configuration: - UrlMap.defaultCustomErrorResponsePolicy are configured with policies for 5xx and 4xx errors - A PathRule for /coming_soon/ is configured for the error code 404. If the request is for www.myotherdomain.com and a 404 is encountered, the policy under UrlMap.defaultCustomErrorResponsePolicy takes effect. If a 404 response is encountered for the request www.example.com/current_events/, the pathMatcher's policy takes effect. If however, the request for www.example.com/coming_soon/ encounters a 404, the policy in PathRule.customErrorResponsePolicy takes effect. If any of the requests in this example encounter a 500 error code, the policy at UrlMap.defaultCustomErrorResponsePolicy takes effect. customErrorResponsePolicy is supported only for global external Application Load Balancers.
+   * customErrorResponsePolicy specifies how the Load
+   * Balancer returns error responses when BackendServiceorBackendBucket responds with an error.
+   *
+   * If a policy for an
+   * error code is not configured for the PathRule, a policy for
+   * the error code configured inpathMatcher.defaultCustomErrorResponsePolicy is applied. If
+   * one is not specified inpathMatcher.defaultCustomErrorResponsePolicy, the policy
+   * configured in UrlMap.defaultCustomErrorResponsePolicy takes
+   * effect.
+   *
+   * For example, consider a UrlMap with the following configuration:
+   *
+   *
+   *      - UrlMap.defaultCustomErrorResponsePolicy are configured
+   *      with policies for 5xx and 4xx errors
+   *      - A PathRule for /coming_soon/ is configured for the error
+   *      code 404.
+   *
+   * If the request is for www.myotherdomain.com and a404 is encountered, the policy underUrlMap.defaultCustomErrorResponsePolicy takes effect. If a404 response is encountered for the requestwww.example.com/current_events/, the pathMatcher's policy
+   * takes effect. If however, the request forwww.example.com/coming_soon/ encounters a 404,
+   * the policy in PathRule.customErrorResponsePolicy takes
+   * effect. If any of the requests in this example encounter a 500
+   * error code, the policy atUrlMap.defaultCustomErrorResponsePolicy takes effect.
+   *
+   * customErrorResponsePolicy is supported only for
+   * global external Application Load Balancers.
    * </pre>
    *
    * <code>
@@ -111,7 +161,32 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * customErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. If a policy for an error code is not configured for the PathRule, a policy for the error code configured in pathMatcher.defaultCustomErrorResponsePolicy is applied. If one is not specified in pathMatcher.defaultCustomErrorResponsePolicy, the policy configured in UrlMap.defaultCustomErrorResponsePolicy takes effect. For example, consider a UrlMap with the following configuration: - UrlMap.defaultCustomErrorResponsePolicy are configured with policies for 5xx and 4xx errors - A PathRule for /coming_soon/ is configured for the error code 404. If the request is for www.myotherdomain.com and a 404 is encountered, the policy under UrlMap.defaultCustomErrorResponsePolicy takes effect. If a 404 response is encountered for the request www.example.com/current_events/, the pathMatcher's policy takes effect. If however, the request for www.example.com/coming_soon/ encounters a 404, the policy in PathRule.customErrorResponsePolicy takes effect. If any of the requests in this example encounter a 500 error code, the policy at UrlMap.defaultCustomErrorResponsePolicy takes effect. customErrorResponsePolicy is supported only for global external Application Load Balancers.
+   * customErrorResponsePolicy specifies how the Load
+   * Balancer returns error responses when BackendServiceorBackendBucket responds with an error.
+   *
+   * If a policy for an
+   * error code is not configured for the PathRule, a policy for
+   * the error code configured inpathMatcher.defaultCustomErrorResponsePolicy is applied. If
+   * one is not specified inpathMatcher.defaultCustomErrorResponsePolicy, the policy
+   * configured in UrlMap.defaultCustomErrorResponsePolicy takes
+   * effect.
+   *
+   * For example, consider a UrlMap with the following configuration:
+   *
+   *
+   *      - UrlMap.defaultCustomErrorResponsePolicy are configured
+   *      with policies for 5xx and 4xx errors
+   *      - A PathRule for /coming_soon/ is configured for the error
+   *      code 404.
+   *
+   * If the request is for www.myotherdomain.com and a404 is encountered, the policy underUrlMap.defaultCustomErrorResponsePolicy takes effect. If a404 response is encountered for the requestwww.example.com/current_events/, the pathMatcher's policy
+   * takes effect. If however, the request forwww.example.com/coming_soon/ encounters a 404,
+   * the policy in PathRule.customErrorResponsePolicy takes
+   * effect. If any of the requests in this example encounter a 500
+   * error code, the policy atUrlMap.defaultCustomErrorResponsePolicy takes effect.
+   *
+   * customErrorResponsePolicy is supported only for
+   * global external Application Load Balancers.
    * </pre>
    *
    * <code>
@@ -136,7 +211,11 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of path patterns to match. Each must start with / and the only place a * is allowed is at the end following a /. The string fed to the path matcher does not include any text after the first ? or #, and those chars are not allowed here.
+   * The list of path patterns to match. Each must start with /
+   * and the only place a * is allowed is at the end following
+   * a /.  The string fed to the path matcher does not include
+   * any text after the first ? or #, and
+   * those chars are not allowed here.
    * </pre>
    *
    * <code>repeated string paths = 106438894;</code>
@@ -151,7 +230,11 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of path patterns to match. Each must start with / and the only place a * is allowed is at the end following a /. The string fed to the path matcher does not include any text after the first ? or #, and those chars are not allowed here.
+   * The list of path patterns to match. Each must start with /
+   * and the only place a * is allowed is at the end following
+   * a /.  The string fed to the path matcher does not include
+   * any text after the first ? or #, and
+   * those chars are not allowed here.
    * </pre>
    *
    * <code>repeated string paths = 106438894;</code>
@@ -166,7 +249,11 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of path patterns to match. Each must start with / and the only place a * is allowed is at the end following a /. The string fed to the path matcher does not include any text after the first ? or #, and those chars are not allowed here.
+   * The list of path patterns to match. Each must start with /
+   * and the only place a * is allowed is at the end following
+   * a /.  The string fed to the path matcher does not include
+   * any text after the first ? or #, and
+   * those chars are not allowed here.
    * </pre>
    *
    * <code>repeated string paths = 106438894;</code>
@@ -182,7 +269,11 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of path patterns to match. Each must start with / and the only place a * is allowed is at the end following a /. The string fed to the path matcher does not include any text after the first ? or #, and those chars are not allowed here.
+   * The list of path patterns to match. Each must start with /
+   * and the only place a * is allowed is at the end following
+   * a /.  The string fed to the path matcher does not include
+   * any text after the first ? or #, and
+   * those chars are not allowed here.
    * </pre>
    *
    * <code>repeated string paths = 106438894;</code>
@@ -201,7 +292,17 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * In response to a matching path, the load balancer performs advanced routing actions, such as URL rewrites and header transformations, before forwarding the request to the selected backend. Only one of urlRedirect, service or routeAction.weightedBackendService can be set. URL maps for classic Application Load Balancers only support the urlRewrite action within a path rule's routeAction.
+   * In response to a matching path, the load balancer
+   * performs advanced routing actions, such as URL rewrites and header
+   * transformations, before forwarding the request to the selected
+   * backend.
+   *
+   *
+   * Only one of urlRedirect, service orrouteAction.weightedBackendService can be set.
+   *
+   *
+   * URL maps for classic Application Load Balancers only support
+   * the urlRewrite action within a path rule'srouteAction.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
@@ -217,7 +318,17 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * In response to a matching path, the load balancer performs advanced routing actions, such as URL rewrites and header transformations, before forwarding the request to the selected backend. Only one of urlRedirect, service or routeAction.weightedBackendService can be set. URL maps for classic Application Load Balancers only support the urlRewrite action within a path rule's routeAction.
+   * In response to a matching path, the load balancer
+   * performs advanced routing actions, such as URL rewrites and header
+   * transformations, before forwarding the request to the selected
+   * backend.
+   *
+   *
+   * Only one of urlRedirect, service orrouteAction.weightedBackendService can be set.
+   *
+   *
+   * URL maps for classic Application Load Balancers only support
+   * the urlRewrite action within a path rule'srouteAction.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
@@ -235,7 +346,17 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * In response to a matching path, the load balancer performs advanced routing actions, such as URL rewrites and header transformations, before forwarding the request to the selected backend. Only one of urlRedirect, service or routeAction.weightedBackendService can be set. URL maps for classic Application Load Balancers only support the urlRewrite action within a path rule's routeAction.
+   * In response to a matching path, the load balancer
+   * performs advanced routing actions, such as URL rewrites and header
+   * transformations, before forwarding the request to the selected
+   * backend.
+   *
+   *
+   * Only one of urlRedirect, service orrouteAction.weightedBackendService can be set.
+   *
+   *
+   * URL maps for classic Application Load Balancers only support
+   * the urlRewrite action within a path rule'srouteAction.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
@@ -256,7 +377,13 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The full or partial URL of the backend service resource to which traffic is directed if this rule is matched. If routeAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. Only one of urlRedirect, service or routeAction.weightedBackendService can be set.
+   * The full or partial URL of the backend service resource to which traffic
+   * is directed if this rule is matched. If routeAction is
+   * also specified, advanced routing actions, such as URL rewrites,
+   * take effect before sending the request to the backend.
+   *
+   *
+   * Only one of urlRedirect, service orrouteAction.weightedBackendService can be set.
    * </pre>
    *
    * <code>optional string service = 373540533;</code>
@@ -272,7 +399,13 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The full or partial URL of the backend service resource to which traffic is directed if this rule is matched. If routeAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. Only one of urlRedirect, service or routeAction.weightedBackendService can be set.
+   * The full or partial URL of the backend service resource to which traffic
+   * is directed if this rule is matched. If routeAction is
+   * also specified, advanced routing actions, such as URL rewrites,
+   * take effect before sending the request to the backend.
+   *
+   *
+   * Only one of urlRedirect, service orrouteAction.weightedBackendService can be set.
    * </pre>
    *
    * <code>optional string service = 373540533;</code>
@@ -296,7 +429,13 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The full or partial URL of the backend service resource to which traffic is directed if this rule is matched. If routeAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. Only one of urlRedirect, service or routeAction.weightedBackendService can be set.
+   * The full or partial URL of the backend service resource to which traffic
+   * is directed if this rule is matched. If routeAction is
+   * also specified, advanced routing actions, such as URL rewrites,
+   * take effect before sending the request to the backend.
+   *
+   *
+   * Only one of urlRedirect, service orrouteAction.weightedBackendService can be set.
    * </pre>
    *
    * <code>optional string service = 373540533;</code>
@@ -323,7 +462,14 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect. Only one of urlRedirect, service or routeAction.weightedBackendService can be set. Not supported when the URL map is bound to a target gRPC proxy.
+   * When a path pattern is matched, the request is redirected to a URL
+   * specified by urlRedirect.
+   *
+   *
+   * Only one of urlRedirect, service orrouteAction.weightedBackendService can be set.
+   *
+   *
+   * Not supported when the URL map is bound to a target gRPC proxy.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
@@ -339,7 +485,14 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect. Only one of urlRedirect, service or routeAction.weightedBackendService can be set. Not supported when the URL map is bound to a target gRPC proxy.
+   * When a path pattern is matched, the request is redirected to a URL
+   * specified by urlRedirect.
+   *
+   *
+   * Only one of urlRedirect, service orrouteAction.weightedBackendService can be set.
+   *
+   *
+   * Not supported when the URL map is bound to a target gRPC proxy.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
@@ -357,7 +510,14 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect. Only one of urlRedirect, service or routeAction.weightedBackendService can be set. Not supported when the URL map is bound to a target gRPC proxy.
+   * When a path pattern is matched, the request is redirected to a URL
+   * specified by urlRedirect.
+   *
+   *
+   * Only one of urlRedirect, service orrouteAction.weightedBackendService can be set.
+   *
+   *
+   * Not supported when the URL map is bound to a target gRPC proxy.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
@@ -597,7 +757,7 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A path-matching rule for a URL. If matched, will use the specified BackendService to handle the traffic arriving at this URL.
+   * A path-matching rule for a URL. If matched, will use the specifiedBackendService to handle the traffic arriving at this URL.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.PathRule}
@@ -881,7 +1041,32 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * customErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. If a policy for an error code is not configured for the PathRule, a policy for the error code configured in pathMatcher.defaultCustomErrorResponsePolicy is applied. If one is not specified in pathMatcher.defaultCustomErrorResponsePolicy, the policy configured in UrlMap.defaultCustomErrorResponsePolicy takes effect. For example, consider a UrlMap with the following configuration: - UrlMap.defaultCustomErrorResponsePolicy are configured with policies for 5xx and 4xx errors - A PathRule for /coming_soon/ is configured for the error code 404. If the request is for www.myotherdomain.com and a 404 is encountered, the policy under UrlMap.defaultCustomErrorResponsePolicy takes effect. If a 404 response is encountered for the request www.example.com/current_events/, the pathMatcher's policy takes effect. If however, the request for www.example.com/coming_soon/ encounters a 404, the policy in PathRule.customErrorResponsePolicy takes effect. If any of the requests in this example encounter a 500 error code, the policy at UrlMap.defaultCustomErrorResponsePolicy takes effect. customErrorResponsePolicy is supported only for global external Application Load Balancers.
+     * customErrorResponsePolicy specifies how the Load
+     * Balancer returns error responses when BackendServiceorBackendBucket responds with an error.
+     *
+     * If a policy for an
+     * error code is not configured for the PathRule, a policy for
+     * the error code configured inpathMatcher.defaultCustomErrorResponsePolicy is applied. If
+     * one is not specified inpathMatcher.defaultCustomErrorResponsePolicy, the policy
+     * configured in UrlMap.defaultCustomErrorResponsePolicy takes
+     * effect.
+     *
+     * For example, consider a UrlMap with the following configuration:
+     *
+     *
+     *      - UrlMap.defaultCustomErrorResponsePolicy are configured
+     *      with policies for 5xx and 4xx errors
+     *      - A PathRule for /coming_soon/ is configured for the error
+     *      code 404.
+     *
+     * If the request is for www.myotherdomain.com and a404 is encountered, the policy underUrlMap.defaultCustomErrorResponsePolicy takes effect. If a404 response is encountered for the requestwww.example.com/current_events/, the pathMatcher's policy
+     * takes effect. If however, the request forwww.example.com/coming_soon/ encounters a 404,
+     * the policy in PathRule.customErrorResponsePolicy takes
+     * effect. If any of the requests in this example encounter a 500
+     * error code, the policy atUrlMap.defaultCustomErrorResponsePolicy takes effect.
+     *
+     * customErrorResponsePolicy is supported only for
+     * global external Application Load Balancers.
      * </pre>
      *
      * <code>
@@ -898,7 +1083,32 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * customErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. If a policy for an error code is not configured for the PathRule, a policy for the error code configured in pathMatcher.defaultCustomErrorResponsePolicy is applied. If one is not specified in pathMatcher.defaultCustomErrorResponsePolicy, the policy configured in UrlMap.defaultCustomErrorResponsePolicy takes effect. For example, consider a UrlMap with the following configuration: - UrlMap.defaultCustomErrorResponsePolicy are configured with policies for 5xx and 4xx errors - A PathRule for /coming_soon/ is configured for the error code 404. If the request is for www.myotherdomain.com and a 404 is encountered, the policy under UrlMap.defaultCustomErrorResponsePolicy takes effect. If a 404 response is encountered for the request www.example.com/current_events/, the pathMatcher's policy takes effect. If however, the request for www.example.com/coming_soon/ encounters a 404, the policy in PathRule.customErrorResponsePolicy takes effect. If any of the requests in this example encounter a 500 error code, the policy at UrlMap.defaultCustomErrorResponsePolicy takes effect. customErrorResponsePolicy is supported only for global external Application Load Balancers.
+     * customErrorResponsePolicy specifies how the Load
+     * Balancer returns error responses when BackendServiceorBackendBucket responds with an error.
+     *
+     * If a policy for an
+     * error code is not configured for the PathRule, a policy for
+     * the error code configured inpathMatcher.defaultCustomErrorResponsePolicy is applied. If
+     * one is not specified inpathMatcher.defaultCustomErrorResponsePolicy, the policy
+     * configured in UrlMap.defaultCustomErrorResponsePolicy takes
+     * effect.
+     *
+     * For example, consider a UrlMap with the following configuration:
+     *
+     *
+     *      - UrlMap.defaultCustomErrorResponsePolicy are configured
+     *      with policies for 5xx and 4xx errors
+     *      - A PathRule for /coming_soon/ is configured for the error
+     *      code 404.
+     *
+     * If the request is for www.myotherdomain.com and a404 is encountered, the policy underUrlMap.defaultCustomErrorResponsePolicy takes effect. If a404 response is encountered for the requestwww.example.com/current_events/, the pathMatcher's policy
+     * takes effect. If however, the request forwww.example.com/coming_soon/ encounters a 404,
+     * the policy in PathRule.customErrorResponsePolicy takes
+     * effect. If any of the requests in this example encounter a 500
+     * error code, the policy atUrlMap.defaultCustomErrorResponsePolicy takes effect.
+     *
+     * customErrorResponsePolicy is supported only for
+     * global external Application Load Balancers.
      * </pre>
      *
      * <code>
@@ -921,7 +1131,32 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * customErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. If a policy for an error code is not configured for the PathRule, a policy for the error code configured in pathMatcher.defaultCustomErrorResponsePolicy is applied. If one is not specified in pathMatcher.defaultCustomErrorResponsePolicy, the policy configured in UrlMap.defaultCustomErrorResponsePolicy takes effect. For example, consider a UrlMap with the following configuration: - UrlMap.defaultCustomErrorResponsePolicy are configured with policies for 5xx and 4xx errors - A PathRule for /coming_soon/ is configured for the error code 404. If the request is for www.myotherdomain.com and a 404 is encountered, the policy under UrlMap.defaultCustomErrorResponsePolicy takes effect. If a 404 response is encountered for the request www.example.com/current_events/, the pathMatcher's policy takes effect. If however, the request for www.example.com/coming_soon/ encounters a 404, the policy in PathRule.customErrorResponsePolicy takes effect. If any of the requests in this example encounter a 500 error code, the policy at UrlMap.defaultCustomErrorResponsePolicy takes effect. customErrorResponsePolicy is supported only for global external Application Load Balancers.
+     * customErrorResponsePolicy specifies how the Load
+     * Balancer returns error responses when BackendServiceorBackendBucket responds with an error.
+     *
+     * If a policy for an
+     * error code is not configured for the PathRule, a policy for
+     * the error code configured inpathMatcher.defaultCustomErrorResponsePolicy is applied. If
+     * one is not specified inpathMatcher.defaultCustomErrorResponsePolicy, the policy
+     * configured in UrlMap.defaultCustomErrorResponsePolicy takes
+     * effect.
+     *
+     * For example, consider a UrlMap with the following configuration:
+     *
+     *
+     *      - UrlMap.defaultCustomErrorResponsePolicy are configured
+     *      with policies for 5xx and 4xx errors
+     *      - A PathRule for /coming_soon/ is configured for the error
+     *      code 404.
+     *
+     * If the request is for www.myotherdomain.com and a404 is encountered, the policy underUrlMap.defaultCustomErrorResponsePolicy takes effect. If a404 response is encountered for the requestwww.example.com/current_events/, the pathMatcher's policy
+     * takes effect. If however, the request forwww.example.com/coming_soon/ encounters a 404,
+     * the policy in PathRule.customErrorResponsePolicy takes
+     * effect. If any of the requests in this example encounter a 500
+     * error code, the policy atUrlMap.defaultCustomErrorResponsePolicy takes effect.
+     *
+     * customErrorResponsePolicy is supported only for
+     * global external Application Load Balancers.
      * </pre>
      *
      * <code>
@@ -947,7 +1182,32 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * customErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. If a policy for an error code is not configured for the PathRule, a policy for the error code configured in pathMatcher.defaultCustomErrorResponsePolicy is applied. If one is not specified in pathMatcher.defaultCustomErrorResponsePolicy, the policy configured in UrlMap.defaultCustomErrorResponsePolicy takes effect. For example, consider a UrlMap with the following configuration: - UrlMap.defaultCustomErrorResponsePolicy are configured with policies for 5xx and 4xx errors - A PathRule for /coming_soon/ is configured for the error code 404. If the request is for www.myotherdomain.com and a 404 is encountered, the policy under UrlMap.defaultCustomErrorResponsePolicy takes effect. If a 404 response is encountered for the request www.example.com/current_events/, the pathMatcher's policy takes effect. If however, the request for www.example.com/coming_soon/ encounters a 404, the policy in PathRule.customErrorResponsePolicy takes effect. If any of the requests in this example encounter a 500 error code, the policy at UrlMap.defaultCustomErrorResponsePolicy takes effect. customErrorResponsePolicy is supported only for global external Application Load Balancers.
+     * customErrorResponsePolicy specifies how the Load
+     * Balancer returns error responses when BackendServiceorBackendBucket responds with an error.
+     *
+     * If a policy for an
+     * error code is not configured for the PathRule, a policy for
+     * the error code configured inpathMatcher.defaultCustomErrorResponsePolicy is applied. If
+     * one is not specified inpathMatcher.defaultCustomErrorResponsePolicy, the policy
+     * configured in UrlMap.defaultCustomErrorResponsePolicy takes
+     * effect.
+     *
+     * For example, consider a UrlMap with the following configuration:
+     *
+     *
+     *      - UrlMap.defaultCustomErrorResponsePolicy are configured
+     *      with policies for 5xx and 4xx errors
+     *      - A PathRule for /coming_soon/ is configured for the error
+     *      code 404.
+     *
+     * If the request is for www.myotherdomain.com and a404 is encountered, the policy underUrlMap.defaultCustomErrorResponsePolicy takes effect. If a404 response is encountered for the requestwww.example.com/current_events/, the pathMatcher's policy
+     * takes effect. If however, the request forwww.example.com/coming_soon/ encounters a 404,
+     * the policy in PathRule.customErrorResponsePolicy takes
+     * effect. If any of the requests in this example encounter a 500
+     * error code, the policy atUrlMap.defaultCustomErrorResponsePolicy takes effect.
+     *
+     * customErrorResponsePolicy is supported only for
+     * global external Application Load Balancers.
      * </pre>
      *
      * <code>
@@ -970,7 +1230,32 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * customErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. If a policy for an error code is not configured for the PathRule, a policy for the error code configured in pathMatcher.defaultCustomErrorResponsePolicy is applied. If one is not specified in pathMatcher.defaultCustomErrorResponsePolicy, the policy configured in UrlMap.defaultCustomErrorResponsePolicy takes effect. For example, consider a UrlMap with the following configuration: - UrlMap.defaultCustomErrorResponsePolicy are configured with policies for 5xx and 4xx errors - A PathRule for /coming_soon/ is configured for the error code 404. If the request is for www.myotherdomain.com and a 404 is encountered, the policy under UrlMap.defaultCustomErrorResponsePolicy takes effect. If a 404 response is encountered for the request www.example.com/current_events/, the pathMatcher's policy takes effect. If however, the request for www.example.com/coming_soon/ encounters a 404, the policy in PathRule.customErrorResponsePolicy takes effect. If any of the requests in this example encounter a 500 error code, the policy at UrlMap.defaultCustomErrorResponsePolicy takes effect. customErrorResponsePolicy is supported only for global external Application Load Balancers.
+     * customErrorResponsePolicy specifies how the Load
+     * Balancer returns error responses when BackendServiceorBackendBucket responds with an error.
+     *
+     * If a policy for an
+     * error code is not configured for the PathRule, a policy for
+     * the error code configured inpathMatcher.defaultCustomErrorResponsePolicy is applied. If
+     * one is not specified inpathMatcher.defaultCustomErrorResponsePolicy, the policy
+     * configured in UrlMap.defaultCustomErrorResponsePolicy takes
+     * effect.
+     *
+     * For example, consider a UrlMap with the following configuration:
+     *
+     *
+     *      - UrlMap.defaultCustomErrorResponsePolicy are configured
+     *      with policies for 5xx and 4xx errors
+     *      - A PathRule for /coming_soon/ is configured for the error
+     *      code 404.
+     *
+     * If the request is for www.myotherdomain.com and a404 is encountered, the policy underUrlMap.defaultCustomErrorResponsePolicy takes effect. If a404 response is encountered for the requestwww.example.com/current_events/, the pathMatcher's policy
+     * takes effect. If however, the request forwww.example.com/coming_soon/ encounters a 404,
+     * the policy in PathRule.customErrorResponsePolicy takes
+     * effect. If any of the requests in this example encounter a 500
+     * error code, the policy atUrlMap.defaultCustomErrorResponsePolicy takes effect.
+     *
+     * customErrorResponsePolicy is supported only for
+     * global external Application Load Balancers.
      * </pre>
      *
      * <code>
@@ -1002,7 +1287,32 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * customErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. If a policy for an error code is not configured for the PathRule, a policy for the error code configured in pathMatcher.defaultCustomErrorResponsePolicy is applied. If one is not specified in pathMatcher.defaultCustomErrorResponsePolicy, the policy configured in UrlMap.defaultCustomErrorResponsePolicy takes effect. For example, consider a UrlMap with the following configuration: - UrlMap.defaultCustomErrorResponsePolicy are configured with policies for 5xx and 4xx errors - A PathRule for /coming_soon/ is configured for the error code 404. If the request is for www.myotherdomain.com and a 404 is encountered, the policy under UrlMap.defaultCustomErrorResponsePolicy takes effect. If a 404 response is encountered for the request www.example.com/current_events/, the pathMatcher's policy takes effect. If however, the request for www.example.com/coming_soon/ encounters a 404, the policy in PathRule.customErrorResponsePolicy takes effect. If any of the requests in this example encounter a 500 error code, the policy at UrlMap.defaultCustomErrorResponsePolicy takes effect. customErrorResponsePolicy is supported only for global external Application Load Balancers.
+     * customErrorResponsePolicy specifies how the Load
+     * Balancer returns error responses when BackendServiceorBackendBucket responds with an error.
+     *
+     * If a policy for an
+     * error code is not configured for the PathRule, a policy for
+     * the error code configured inpathMatcher.defaultCustomErrorResponsePolicy is applied. If
+     * one is not specified inpathMatcher.defaultCustomErrorResponsePolicy, the policy
+     * configured in UrlMap.defaultCustomErrorResponsePolicy takes
+     * effect.
+     *
+     * For example, consider a UrlMap with the following configuration:
+     *
+     *
+     *      - UrlMap.defaultCustomErrorResponsePolicy are configured
+     *      with policies for 5xx and 4xx errors
+     *      - A PathRule for /coming_soon/ is configured for the error
+     *      code 404.
+     *
+     * If the request is for www.myotherdomain.com and a404 is encountered, the policy underUrlMap.defaultCustomErrorResponsePolicy takes effect. If a404 response is encountered for the requestwww.example.com/current_events/, the pathMatcher's policy
+     * takes effect. If however, the request forwww.example.com/coming_soon/ encounters a 404,
+     * the policy in PathRule.customErrorResponsePolicy takes
+     * effect. If any of the requests in this example encounter a 500
+     * error code, the policy atUrlMap.defaultCustomErrorResponsePolicy takes effect.
+     *
+     * customErrorResponsePolicy is supported only for
+     * global external Application Load Balancers.
      * </pre>
      *
      * <code>
@@ -1024,7 +1334,32 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * customErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. If a policy for an error code is not configured for the PathRule, a policy for the error code configured in pathMatcher.defaultCustomErrorResponsePolicy is applied. If one is not specified in pathMatcher.defaultCustomErrorResponsePolicy, the policy configured in UrlMap.defaultCustomErrorResponsePolicy takes effect. For example, consider a UrlMap with the following configuration: - UrlMap.defaultCustomErrorResponsePolicy are configured with policies for 5xx and 4xx errors - A PathRule for /coming_soon/ is configured for the error code 404. If the request is for www.myotherdomain.com and a 404 is encountered, the policy under UrlMap.defaultCustomErrorResponsePolicy takes effect. If a 404 response is encountered for the request www.example.com/current_events/, the pathMatcher's policy takes effect. If however, the request for www.example.com/coming_soon/ encounters a 404, the policy in PathRule.customErrorResponsePolicy takes effect. If any of the requests in this example encounter a 500 error code, the policy at UrlMap.defaultCustomErrorResponsePolicy takes effect. customErrorResponsePolicy is supported only for global external Application Load Balancers.
+     * customErrorResponsePolicy specifies how the Load
+     * Balancer returns error responses when BackendServiceorBackendBucket responds with an error.
+     *
+     * If a policy for an
+     * error code is not configured for the PathRule, a policy for
+     * the error code configured inpathMatcher.defaultCustomErrorResponsePolicy is applied. If
+     * one is not specified inpathMatcher.defaultCustomErrorResponsePolicy, the policy
+     * configured in UrlMap.defaultCustomErrorResponsePolicy takes
+     * effect.
+     *
+     * For example, consider a UrlMap with the following configuration:
+     *
+     *
+     *      - UrlMap.defaultCustomErrorResponsePolicy are configured
+     *      with policies for 5xx and 4xx errors
+     *      - A PathRule for /coming_soon/ is configured for the error
+     *      code 404.
+     *
+     * If the request is for www.myotherdomain.com and a404 is encountered, the policy underUrlMap.defaultCustomErrorResponsePolicy takes effect. If a404 response is encountered for the requestwww.example.com/current_events/, the pathMatcher's policy
+     * takes effect. If however, the request forwww.example.com/coming_soon/ encounters a 404,
+     * the policy in PathRule.customErrorResponsePolicy takes
+     * effect. If any of the requests in this example encounter a 500
+     * error code, the policy atUrlMap.defaultCustomErrorResponsePolicy takes effect.
+     *
+     * customErrorResponsePolicy is supported only for
+     * global external Application Load Balancers.
      * </pre>
      *
      * <code>
@@ -1042,7 +1377,32 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * customErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. If a policy for an error code is not configured for the PathRule, a policy for the error code configured in pathMatcher.defaultCustomErrorResponsePolicy is applied. If one is not specified in pathMatcher.defaultCustomErrorResponsePolicy, the policy configured in UrlMap.defaultCustomErrorResponsePolicy takes effect. For example, consider a UrlMap with the following configuration: - UrlMap.defaultCustomErrorResponsePolicy are configured with policies for 5xx and 4xx errors - A PathRule for /coming_soon/ is configured for the error code 404. If the request is for www.myotherdomain.com and a 404 is encountered, the policy under UrlMap.defaultCustomErrorResponsePolicy takes effect. If a 404 response is encountered for the request www.example.com/current_events/, the pathMatcher's policy takes effect. If however, the request for www.example.com/coming_soon/ encounters a 404, the policy in PathRule.customErrorResponsePolicy takes effect. If any of the requests in this example encounter a 500 error code, the policy at UrlMap.defaultCustomErrorResponsePolicy takes effect. customErrorResponsePolicy is supported only for global external Application Load Balancers.
+     * customErrorResponsePolicy specifies how the Load
+     * Balancer returns error responses when BackendServiceorBackendBucket responds with an error.
+     *
+     * If a policy for an
+     * error code is not configured for the PathRule, a policy for
+     * the error code configured inpathMatcher.defaultCustomErrorResponsePolicy is applied. If
+     * one is not specified inpathMatcher.defaultCustomErrorResponsePolicy, the policy
+     * configured in UrlMap.defaultCustomErrorResponsePolicy takes
+     * effect.
+     *
+     * For example, consider a UrlMap with the following configuration:
+     *
+     *
+     *      - UrlMap.defaultCustomErrorResponsePolicy are configured
+     *      with policies for 5xx and 4xx errors
+     *      - A PathRule for /coming_soon/ is configured for the error
+     *      code 404.
+     *
+     * If the request is for www.myotherdomain.com and a404 is encountered, the policy underUrlMap.defaultCustomErrorResponsePolicy takes effect. If a404 response is encountered for the requestwww.example.com/current_events/, the pathMatcher's policy
+     * takes effect. If however, the request forwww.example.com/coming_soon/ encounters a 404,
+     * the policy in PathRule.customErrorResponsePolicy takes
+     * effect. If any of the requests in this example encounter a 500
+     * error code, the policy atUrlMap.defaultCustomErrorResponsePolicy takes effect.
+     *
+     * customErrorResponsePolicy is supported only for
+     * global external Application Load Balancers.
      * </pre>
      *
      * <code>
@@ -1064,7 +1424,32 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * customErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. If a policy for an error code is not configured for the PathRule, a policy for the error code configured in pathMatcher.defaultCustomErrorResponsePolicy is applied. If one is not specified in pathMatcher.defaultCustomErrorResponsePolicy, the policy configured in UrlMap.defaultCustomErrorResponsePolicy takes effect. For example, consider a UrlMap with the following configuration: - UrlMap.defaultCustomErrorResponsePolicy are configured with policies for 5xx and 4xx errors - A PathRule for /coming_soon/ is configured for the error code 404. If the request is for www.myotherdomain.com and a 404 is encountered, the policy under UrlMap.defaultCustomErrorResponsePolicy takes effect. If a 404 response is encountered for the request www.example.com/current_events/, the pathMatcher's policy takes effect. If however, the request for www.example.com/coming_soon/ encounters a 404, the policy in PathRule.customErrorResponsePolicy takes effect. If any of the requests in this example encounter a 500 error code, the policy at UrlMap.defaultCustomErrorResponsePolicy takes effect. customErrorResponsePolicy is supported only for global external Application Load Balancers.
+     * customErrorResponsePolicy specifies how the Load
+     * Balancer returns error responses when BackendServiceorBackendBucket responds with an error.
+     *
+     * If a policy for an
+     * error code is not configured for the PathRule, a policy for
+     * the error code configured inpathMatcher.defaultCustomErrorResponsePolicy is applied. If
+     * one is not specified inpathMatcher.defaultCustomErrorResponsePolicy, the policy
+     * configured in UrlMap.defaultCustomErrorResponsePolicy takes
+     * effect.
+     *
+     * For example, consider a UrlMap with the following configuration:
+     *
+     *
+     *      - UrlMap.defaultCustomErrorResponsePolicy are configured
+     *      with policies for 5xx and 4xx errors
+     *      - A PathRule for /coming_soon/ is configured for the error
+     *      code 404.
+     *
+     * If the request is for www.myotherdomain.com and a404 is encountered, the policy underUrlMap.defaultCustomErrorResponsePolicy takes effect. If a404 response is encountered for the requestwww.example.com/current_events/, the pathMatcher's policy
+     * takes effect. If however, the request forwww.example.com/coming_soon/ encounters a 404,
+     * the policy in PathRule.customErrorResponsePolicy takes
+     * effect. If any of the requests in this example encounter a 500
+     * error code, the policy atUrlMap.defaultCustomErrorResponsePolicy takes effect.
+     *
+     * customErrorResponsePolicy is supported only for
+     * global external Application Load Balancers.
      * </pre>
      *
      * <code>
@@ -1102,7 +1487,11 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of path patterns to match. Each must start with / and the only place a * is allowed is at the end following a /. The string fed to the path matcher does not include any text after the first ? or #, and those chars are not allowed here.
+     * The list of path patterns to match. Each must start with /
+     * and the only place a * is allowed is at the end following
+     * a /.  The string fed to the path matcher does not include
+     * any text after the first ? or #, and
+     * those chars are not allowed here.
      * </pre>
      *
      * <code>repeated string paths = 106438894;</code>
@@ -1118,7 +1507,11 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of path patterns to match. Each must start with / and the only place a * is allowed is at the end following a /. The string fed to the path matcher does not include any text after the first ? or #, and those chars are not allowed here.
+     * The list of path patterns to match. Each must start with /
+     * and the only place a * is allowed is at the end following
+     * a /.  The string fed to the path matcher does not include
+     * any text after the first ? or #, and
+     * those chars are not allowed here.
      * </pre>
      *
      * <code>repeated string paths = 106438894;</code>
@@ -1133,7 +1526,11 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of path patterns to match. Each must start with / and the only place a * is allowed is at the end following a /. The string fed to the path matcher does not include any text after the first ? or #, and those chars are not allowed here.
+     * The list of path patterns to match. Each must start with /
+     * and the only place a * is allowed is at the end following
+     * a /.  The string fed to the path matcher does not include
+     * any text after the first ? or #, and
+     * those chars are not allowed here.
      * </pre>
      *
      * <code>repeated string paths = 106438894;</code>
@@ -1149,7 +1546,11 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of path patterns to match. Each must start with / and the only place a * is allowed is at the end following a /. The string fed to the path matcher does not include any text after the first ? or #, and those chars are not allowed here.
+     * The list of path patterns to match. Each must start with /
+     * and the only place a * is allowed is at the end following
+     * a /.  The string fed to the path matcher does not include
+     * any text after the first ? or #, and
+     * those chars are not allowed here.
      * </pre>
      *
      * <code>repeated string paths = 106438894;</code>
@@ -1165,7 +1566,11 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of path patterns to match. Each must start with / and the only place a * is allowed is at the end following a /. The string fed to the path matcher does not include any text after the first ? or #, and those chars are not allowed here.
+     * The list of path patterns to match. Each must start with /
+     * and the only place a * is allowed is at the end following
+     * a /.  The string fed to the path matcher does not include
+     * any text after the first ? or #, and
+     * those chars are not allowed here.
      * </pre>
      *
      * <code>repeated string paths = 106438894;</code>
@@ -1189,7 +1594,11 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of path patterns to match. Each must start with / and the only place a * is allowed is at the end following a /. The string fed to the path matcher does not include any text after the first ? or #, and those chars are not allowed here.
+     * The list of path patterns to match. Each must start with /
+     * and the only place a * is allowed is at the end following
+     * a /.  The string fed to the path matcher does not include
+     * any text after the first ? or #, and
+     * those chars are not allowed here.
      * </pre>
      *
      * <code>repeated string paths = 106438894;</code>
@@ -1212,7 +1621,11 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of path patterns to match. Each must start with / and the only place a * is allowed is at the end following a /. The string fed to the path matcher does not include any text after the first ? or #, and those chars are not allowed here.
+     * The list of path patterns to match. Each must start with /
+     * and the only place a * is allowed is at the end following
+     * a /.  The string fed to the path matcher does not include
+     * any text after the first ? or #, and
+     * those chars are not allowed here.
      * </pre>
      *
      * <code>repeated string paths = 106438894;</code>
@@ -1232,7 +1645,11 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of path patterns to match. Each must start with / and the only place a * is allowed is at the end following a /. The string fed to the path matcher does not include any text after the first ? or #, and those chars are not allowed here.
+     * The list of path patterns to match. Each must start with /
+     * and the only place a * is allowed is at the end following
+     * a /.  The string fed to the path matcher does not include
+     * any text after the first ? or #, and
+     * those chars are not allowed here.
      * </pre>
      *
      * <code>repeated string paths = 106438894;</code>
@@ -1251,7 +1668,11 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of path patterns to match. Each must start with / and the only place a * is allowed is at the end following a /. The string fed to the path matcher does not include any text after the first ? or #, and those chars are not allowed here.
+     * The list of path patterns to match. Each must start with /
+     * and the only place a * is allowed is at the end following
+     * a /.  The string fed to the path matcher does not include
+     * any text after the first ? or #, and
+     * those chars are not allowed here.
      * </pre>
      *
      * <code>repeated string paths = 106438894;</code>
@@ -1282,7 +1703,17 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * In response to a matching path, the load balancer performs advanced routing actions, such as URL rewrites and header transformations, before forwarding the request to the selected backend. Only one of urlRedirect, service or routeAction.weightedBackendService can be set. URL maps for classic Application Load Balancers only support the urlRewrite action within a path rule's routeAction.
+     * In response to a matching path, the load balancer
+     * performs advanced routing actions, such as URL rewrites and header
+     * transformations, before forwarding the request to the selected
+     * backend.
+     *
+     *
+     * Only one of urlRedirect, service orrouteAction.weightedBackendService can be set.
+     *
+     *
+     * URL maps for classic Application Load Balancers only support
+     * the urlRewrite action within a path rule'srouteAction.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
@@ -1297,7 +1728,17 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * In response to a matching path, the load balancer performs advanced routing actions, such as URL rewrites and header transformations, before forwarding the request to the selected backend. Only one of urlRedirect, service or routeAction.weightedBackendService can be set. URL maps for classic Application Load Balancers only support the urlRewrite action within a path rule's routeAction.
+     * In response to a matching path, the load balancer
+     * performs advanced routing actions, such as URL rewrites and header
+     * transformations, before forwarding the request to the selected
+     * backend.
+     *
+     *
+     * Only one of urlRedirect, service orrouteAction.weightedBackendService can be set.
+     *
+     *
+     * URL maps for classic Application Load Balancers only support
+     * the urlRewrite action within a path rule'srouteAction.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
@@ -1318,7 +1759,17 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * In response to a matching path, the load balancer performs advanced routing actions, such as URL rewrites and header transformations, before forwarding the request to the selected backend. Only one of urlRedirect, service or routeAction.weightedBackendService can be set. URL maps for classic Application Load Balancers only support the urlRewrite action within a path rule's routeAction.
+     * In response to a matching path, the load balancer
+     * performs advanced routing actions, such as URL rewrites and header
+     * transformations, before forwarding the request to the selected
+     * backend.
+     *
+     *
+     * Only one of urlRedirect, service orrouteAction.weightedBackendService can be set.
+     *
+     *
+     * URL maps for classic Application Load Balancers only support
+     * the urlRewrite action within a path rule'srouteAction.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
@@ -1341,7 +1792,17 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * In response to a matching path, the load balancer performs advanced routing actions, such as URL rewrites and header transformations, before forwarding the request to the selected backend. Only one of urlRedirect, service or routeAction.weightedBackendService can be set. URL maps for classic Application Load Balancers only support the urlRewrite action within a path rule's routeAction.
+     * In response to a matching path, the load balancer
+     * performs advanced routing actions, such as URL rewrites and header
+     * transformations, before forwarding the request to the selected
+     * backend.
+     *
+     *
+     * Only one of urlRedirect, service orrouteAction.weightedBackendService can be set.
+     *
+     *
+     * URL maps for classic Application Load Balancers only support
+     * the urlRewrite action within a path rule'srouteAction.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
@@ -1362,7 +1823,17 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * In response to a matching path, the load balancer performs advanced routing actions, such as URL rewrites and header transformations, before forwarding the request to the selected backend. Only one of urlRedirect, service or routeAction.weightedBackendService can be set. URL maps for classic Application Load Balancers only support the urlRewrite action within a path rule's routeAction.
+     * In response to a matching path, the load balancer
+     * performs advanced routing actions, such as URL rewrites and header
+     * transformations, before forwarding the request to the selected
+     * backend.
+     *
+     *
+     * Only one of urlRedirect, service orrouteAction.weightedBackendService can be set.
+     *
+     *
+     * URL maps for classic Application Load Balancers only support
+     * the urlRewrite action within a path rule'srouteAction.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
@@ -1390,7 +1861,17 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * In response to a matching path, the load balancer performs advanced routing actions, such as URL rewrites and header transformations, before forwarding the request to the selected backend. Only one of urlRedirect, service or routeAction.weightedBackendService can be set. URL maps for classic Application Load Balancers only support the urlRewrite action within a path rule's routeAction.
+     * In response to a matching path, the load balancer
+     * performs advanced routing actions, such as URL rewrites and header
+     * transformations, before forwarding the request to the selected
+     * backend.
+     *
+     *
+     * Only one of urlRedirect, service orrouteAction.weightedBackendService can be set.
+     *
+     *
+     * URL maps for classic Application Load Balancers only support
+     * the urlRewrite action within a path rule'srouteAction.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
@@ -1410,7 +1891,17 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * In response to a matching path, the load balancer performs advanced routing actions, such as URL rewrites and header transformations, before forwarding the request to the selected backend. Only one of urlRedirect, service or routeAction.weightedBackendService can be set. URL maps for classic Application Load Balancers only support the urlRewrite action within a path rule's routeAction.
+     * In response to a matching path, the load balancer
+     * performs advanced routing actions, such as URL rewrites and header
+     * transformations, before forwarding the request to the selected
+     * backend.
+     *
+     *
+     * Only one of urlRedirect, service orrouteAction.weightedBackendService can be set.
+     *
+     *
+     * URL maps for classic Application Load Balancers only support
+     * the urlRewrite action within a path rule'srouteAction.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
@@ -1425,7 +1916,17 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * In response to a matching path, the load balancer performs advanced routing actions, such as URL rewrites and header transformations, before forwarding the request to the selected backend. Only one of urlRedirect, service or routeAction.weightedBackendService can be set. URL maps for classic Application Load Balancers only support the urlRewrite action within a path rule's routeAction.
+     * In response to a matching path, the load balancer
+     * performs advanced routing actions, such as URL rewrites and header
+     * transformations, before forwarding the request to the selected
+     * backend.
+     *
+     *
+     * Only one of urlRedirect, service orrouteAction.weightedBackendService can be set.
+     *
+     *
+     * URL maps for classic Application Load Balancers only support
+     * the urlRewrite action within a path rule'srouteAction.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
@@ -1444,7 +1945,17 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * In response to a matching path, the load balancer performs advanced routing actions, such as URL rewrites and header transformations, before forwarding the request to the selected backend. Only one of urlRedirect, service or routeAction.weightedBackendService can be set. URL maps for classic Application Load Balancers only support the urlRewrite action within a path rule's routeAction.
+     * In response to a matching path, the load balancer
+     * performs advanced routing actions, such as URL rewrites and header
+     * transformations, before forwarding the request to the selected
+     * backend.
+     *
+     *
+     * Only one of urlRedirect, service orrouteAction.weightedBackendService can be set.
+     *
+     *
+     * URL maps for classic Application Load Balancers only support
+     * the urlRewrite action within a path rule'srouteAction.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
@@ -1472,7 +1983,13 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full or partial URL of the backend service resource to which traffic is directed if this rule is matched. If routeAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. Only one of urlRedirect, service or routeAction.weightedBackendService can be set.
+     * The full or partial URL of the backend service resource to which traffic
+     * is directed if this rule is matched. If routeAction is
+     * also specified, advanced routing actions, such as URL rewrites,
+     * take effect before sending the request to the backend.
+     *
+     *
+     * Only one of urlRedirect, service orrouteAction.weightedBackendService can be set.
      * </pre>
      *
      * <code>optional string service = 373540533;</code>
@@ -1487,7 +2004,13 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full or partial URL of the backend service resource to which traffic is directed if this rule is matched. If routeAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. Only one of urlRedirect, service or routeAction.weightedBackendService can be set.
+     * The full or partial URL of the backend service resource to which traffic
+     * is directed if this rule is matched. If routeAction is
+     * also specified, advanced routing actions, such as URL rewrites,
+     * take effect before sending the request to the backend.
+     *
+     *
+     * Only one of urlRedirect, service orrouteAction.weightedBackendService can be set.
      * </pre>
      *
      * <code>optional string service = 373540533;</code>
@@ -1510,7 +2033,13 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full or partial URL of the backend service resource to which traffic is directed if this rule is matched. If routeAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. Only one of urlRedirect, service or routeAction.weightedBackendService can be set.
+     * The full or partial URL of the backend service resource to which traffic
+     * is directed if this rule is matched. If routeAction is
+     * also specified, advanced routing actions, such as URL rewrites,
+     * take effect before sending the request to the backend.
+     *
+     *
+     * Only one of urlRedirect, service orrouteAction.weightedBackendService can be set.
      * </pre>
      *
      * <code>optional string service = 373540533;</code>
@@ -1533,7 +2062,13 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full or partial URL of the backend service resource to which traffic is directed if this rule is matched. If routeAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. Only one of urlRedirect, service or routeAction.weightedBackendService can be set.
+     * The full or partial URL of the backend service resource to which traffic
+     * is directed if this rule is matched. If routeAction is
+     * also specified, advanced routing actions, such as URL rewrites,
+     * take effect before sending the request to the backend.
+     *
+     *
+     * Only one of urlRedirect, service orrouteAction.weightedBackendService can be set.
      * </pre>
      *
      * <code>optional string service = 373540533;</code>
@@ -1555,7 +2090,13 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full or partial URL of the backend service resource to which traffic is directed if this rule is matched. If routeAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. Only one of urlRedirect, service or routeAction.weightedBackendService can be set.
+     * The full or partial URL of the backend service resource to which traffic
+     * is directed if this rule is matched. If routeAction is
+     * also specified, advanced routing actions, such as URL rewrites,
+     * take effect before sending the request to the backend.
+     *
+     *
+     * Only one of urlRedirect, service orrouteAction.weightedBackendService can be set.
      * </pre>
      *
      * <code>optional string service = 373540533;</code>
@@ -1573,7 +2114,13 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full or partial URL of the backend service resource to which traffic is directed if this rule is matched. If routeAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. Only one of urlRedirect, service or routeAction.weightedBackendService can be set.
+     * The full or partial URL of the backend service resource to which traffic
+     * is directed if this rule is matched. If routeAction is
+     * also specified, advanced routing actions, such as URL rewrites,
+     * take effect before sending the request to the backend.
+     *
+     *
+     * Only one of urlRedirect, service orrouteAction.weightedBackendService can be set.
      * </pre>
      *
      * <code>optional string service = 373540533;</code>
@@ -1603,7 +2150,14 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect. Only one of urlRedirect, service or routeAction.weightedBackendService can be set. Not supported when the URL map is bound to a target gRPC proxy.
+     * When a path pattern is matched, the request is redirected to a URL
+     * specified by urlRedirect.
+     *
+     *
+     * Only one of urlRedirect, service orrouteAction.weightedBackendService can be set.
+     *
+     *
+     * Not supported when the URL map is bound to a target gRPC proxy.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
@@ -1618,7 +2172,14 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect. Only one of urlRedirect, service or routeAction.weightedBackendService can be set. Not supported when the URL map is bound to a target gRPC proxy.
+     * When a path pattern is matched, the request is redirected to a URL
+     * specified by urlRedirect.
+     *
+     *
+     * Only one of urlRedirect, service orrouteAction.weightedBackendService can be set.
+     *
+     *
+     * Not supported when the URL map is bound to a target gRPC proxy.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
@@ -1639,7 +2200,14 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect. Only one of urlRedirect, service or routeAction.weightedBackendService can be set. Not supported when the URL map is bound to a target gRPC proxy.
+     * When a path pattern is matched, the request is redirected to a URL
+     * specified by urlRedirect.
+     *
+     *
+     * Only one of urlRedirect, service orrouteAction.weightedBackendService can be set.
+     *
+     *
+     * Not supported when the URL map is bound to a target gRPC proxy.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
@@ -1662,7 +2230,14 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect. Only one of urlRedirect, service or routeAction.weightedBackendService can be set. Not supported when the URL map is bound to a target gRPC proxy.
+     * When a path pattern is matched, the request is redirected to a URL
+     * specified by urlRedirect.
+     *
+     *
+     * Only one of urlRedirect, service orrouteAction.weightedBackendService can be set.
+     *
+     *
+     * Not supported when the URL map is bound to a target gRPC proxy.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
@@ -1683,7 +2258,14 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect. Only one of urlRedirect, service or routeAction.weightedBackendService can be set. Not supported when the URL map is bound to a target gRPC proxy.
+     * When a path pattern is matched, the request is redirected to a URL
+     * specified by urlRedirect.
+     *
+     *
+     * Only one of urlRedirect, service orrouteAction.weightedBackendService can be set.
+     *
+     *
+     * Not supported when the URL map is bound to a target gRPC proxy.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
@@ -1712,7 +2294,14 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect. Only one of urlRedirect, service or routeAction.weightedBackendService can be set. Not supported when the URL map is bound to a target gRPC proxy.
+     * When a path pattern is matched, the request is redirected to a URL
+     * specified by urlRedirect.
+     *
+     *
+     * Only one of urlRedirect, service orrouteAction.weightedBackendService can be set.
+     *
+     *
+     * Not supported when the URL map is bound to a target gRPC proxy.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
@@ -1732,7 +2321,14 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect. Only one of urlRedirect, service or routeAction.weightedBackendService can be set. Not supported when the URL map is bound to a target gRPC proxy.
+     * When a path pattern is matched, the request is redirected to a URL
+     * specified by urlRedirect.
+     *
+     *
+     * Only one of urlRedirect, service orrouteAction.weightedBackendService can be set.
+     *
+     *
+     * Not supported when the URL map is bound to a target gRPC proxy.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
@@ -1747,7 +2343,14 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect. Only one of urlRedirect, service or routeAction.weightedBackendService can be set. Not supported when the URL map is bound to a target gRPC proxy.
+     * When a path pattern is matched, the request is redirected to a URL
+     * specified by urlRedirect.
+     *
+     *
+     * Only one of urlRedirect, service orrouteAction.weightedBackendService can be set.
+     *
+     *
+     * Not supported when the URL map is bound to a target gRPC proxy.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
@@ -1766,7 +2369,14 @@ public final class PathRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When a path pattern is matched, the request is redirected to a URL specified by urlRedirect. Only one of urlRedirect, service or routeAction.weightedBackendService can be set. Not supported when the URL map is bound to a target gRPC proxy.
+     * When a path pattern is matched, the request is redirected to a URL
+     * specified by urlRedirect.
+     *
+     *
+     * Only one of urlRedirect, service orrouteAction.weightedBackendService can be set.
+     *
+     *
+     * Not supported when the URL map is bound to a target gRPC proxy.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>

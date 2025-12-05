@@ -143,7 +143,8 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Disk is currently unavailable and cannot be accessed, attached or detached.
+     * Disk is currently unavailable and cannot be accessed, attached or
+     * detached.
      * </pre>
      *
      * <code>UNAVAILABLE = 413756464;</code>
@@ -222,7 +223,8 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Disk is currently unavailable and cannot be accessed, attached or detached.
+     * Disk is currently unavailable and cannot be accessed, attached or
+     * detached.
      * </pre>
      *
      * <code>UNAVAILABLE = 413756464;</code>
@@ -398,7 +400,8 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -414,7 +417,8 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -438,7 +442,8 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -676,7 +681,8 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Resource policies applied to disk for automatic snapshot creations.
+   * [Output Only] Resource policies applied to disk for automatic snapshot
+   * creations.
    * </pre>
    *
    * <code>repeated string resource_policies = 22220385;</code>
@@ -691,7 +697,8 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Resource policies applied to disk for automatic snapshot creations.
+   * [Output Only] Resource policies applied to disk for automatic snapshot
+   * creations.
    * </pre>
    *
    * <code>repeated string resource_policies = 22220385;</code>
@@ -706,7 +713,8 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Resource policies applied to disk for automatic snapshot creations.
+   * [Output Only] Resource policies applied to disk for automatic snapshot
+   * creations.
    * </pre>
    *
    * <code>repeated string resource_policies = 22220385;</code>
@@ -722,7 +730,8 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Resource policies applied to disk for automatic snapshot creations.
+   * [Output Only] Resource policies applied to disk for automatic snapshot
+   * creations.
    * </pre>
    *
    * <code>repeated string resource_policies = 22220385;</code>
@@ -1795,7 +1804,8 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1810,7 +1820,8 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1833,7 +1844,8 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1856,7 +1868,8 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1878,7 +1891,8 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1896,7 +1910,8 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2325,7 +2340,8 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Resource policies applied to disk for automatic snapshot creations.
+     * [Output Only] Resource policies applied to disk for automatic snapshot
+     * creations.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>
@@ -2341,7 +2357,8 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Resource policies applied to disk for automatic snapshot creations.
+     * [Output Only] Resource policies applied to disk for automatic snapshot
+     * creations.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>
@@ -2356,7 +2373,8 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Resource policies applied to disk for automatic snapshot creations.
+     * [Output Only] Resource policies applied to disk for automatic snapshot
+     * creations.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>
@@ -2372,7 +2390,8 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Resource policies applied to disk for automatic snapshot creations.
+     * [Output Only] Resource policies applied to disk for automatic snapshot
+     * creations.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>
@@ -2388,7 +2407,8 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Resource policies applied to disk for automatic snapshot creations.
+     * [Output Only] Resource policies applied to disk for automatic snapshot
+     * creations.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>
@@ -2412,7 +2432,8 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Resource policies applied to disk for automatic snapshot creations.
+     * [Output Only] Resource policies applied to disk for automatic snapshot
+     * creations.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>
@@ -2435,7 +2456,8 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Resource policies applied to disk for automatic snapshot creations.
+     * [Output Only] Resource policies applied to disk for automatic snapshot
+     * creations.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>
@@ -2455,7 +2477,8 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Resource policies applied to disk for automatic snapshot creations.
+     * [Output Only] Resource policies applied to disk for automatic snapshot
+     * creations.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>
@@ -2474,7 +2497,8 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Resource policies applied to disk for automatic snapshot creations.
+     * [Output Only] Resource policies applied to disk for automatic snapshot
+     * creations.
      * </pre>
      *
      * <code>repeated string resource_policies = 22220385;</code>

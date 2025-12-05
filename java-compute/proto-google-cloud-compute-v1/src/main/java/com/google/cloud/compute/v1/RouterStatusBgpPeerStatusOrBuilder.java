@@ -101,7 +101,8 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * Enable IPv4 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 4.
+   * Enable IPv4 traffic over BGP Peer.
+   * It is enabled by default if the peerIpAddress is version 4.
    * </pre>
    *
    * <code>optional bool enable_ipv4 = 181467937;</code>
@@ -114,7 +115,8 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * Enable IPv4 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 4.
+   * Enable IPv4 traffic over BGP Peer.
+   * It is enabled by default if the peerIpAddress is version 4.
    * </pre>
    *
    * <code>optional bool enable_ipv4 = 181467937;</code>
@@ -127,7 +129,8 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * Enable IPv6 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 6.
+   * Enable IPv6 traffic over BGP Peer.
+   * It is enabled by default if the peerIpAddress is version 6.
    * </pre>
    *
    * <code>optional bool enable_ipv6 = 181467939;</code>
@@ -140,7 +143,8 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * Enable IPv6 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 6.
+   * Enable IPv6 traffic over BGP Peer.
+   * It is enabled by default if the peerIpAddress is version 6.
    * </pre>
    *
    * <code>optional bool enable_ipv6 = 181467939;</code>
@@ -517,7 +521,10 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * [Output only] URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance is the peer side of the BGP session.
+   * [Output only] URI of the VM instance that is used as third-party router
+   * appliances such as Next Gen Firewalls, Virtual Routers, or Router
+   * Appliances.
+   * The VM instance is the peer side of the BGP session.
    * </pre>
    *
    * <code>optional string router_appliance_instance = 468312989;</code>
@@ -530,7 +537,10 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * [Output only] URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance is the peer side of the BGP session.
+   * [Output only] URI of the VM instance that is used as third-party router
+   * appliances such as Next Gen Firewalls, Virtual Routers, or Router
+   * Appliances.
+   * The VM instance is the peer side of the BGP session.
    * </pre>
    *
    * <code>optional string router_appliance_instance = 468312989;</code>
@@ -543,7 +553,10 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * [Output only] URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance is the peer side of the BGP session.
+   * [Output only] URI of the VM instance that is used as third-party router
+   * appliances such as Next Gen Firewalls, Virtual Routers, or Router
+   * Appliances.
+   * The VM instance is the peer side of the BGP session.
    * </pre>
    *
    * <code>optional string router_appliance_instance = 468312989;</code>
@@ -556,7 +569,8 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * The state of the BGP session. For a list of possible values for this field, see BGP session states.
+   * The state of the BGP session. For a list of possible values for this
+   * field, seeBGP session states.
    * </pre>
    *
    * <code>optional string state = 109757585;</code>
@@ -569,7 +583,8 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * The state of the BGP session. For a list of possible values for this field, see BGP session states.
+   * The state of the BGP session. For a list of possible values for this
+   * field, seeBGP session states.
    * </pre>
    *
    * <code>optional string state = 109757585;</code>
@@ -582,7 +597,8 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * The state of the BGP session. For a list of possible values for this field, see BGP session states.
+   * The state of the BGP session. For a list of possible values for this
+   * field, seeBGP session states.
    * </pre>
    *
    * <code>optional string state = 109757585;</code>
@@ -679,7 +695,9 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * Time this session has been up. Format: 14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
+   * Time this session has been up.
+   * Format:
+   *  14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
    * </pre>
    *
    * <code>optional string uptime = 235379688;</code>
@@ -692,7 +710,9 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * Time this session has been up. Format: 14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
+   * Time this session has been up.
+   * Format:
+   *  14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
    * </pre>
    *
    * <code>optional string uptime = 235379688;</code>
@@ -705,7 +725,9 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * Time this session has been up. Format: 14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
+   * Time this session has been up.
+   * Format:
+   *  14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
    * </pre>
    *
    * <code>optional string uptime = 235379688;</code>
@@ -718,7 +740,9 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * Time this session has been up, in seconds. Format: 145
+   * Time this session has been up, in seconds.
+   * Format:
+   *  145
    * </pre>
    *
    * <code>optional string uptime_seconds = 104736040;</code>
@@ -731,7 +755,9 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * Time this session has been up, in seconds. Format: 145
+   * Time this session has been up, in seconds.
+   * Format:
+   *  145
    * </pre>
    *
    * <code>optional string uptime_seconds = 104736040;</code>
@@ -744,7 +770,9 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * Time this session has been up, in seconds. Format: 145
+   * Time this session has been up, in seconds.
+   * Format:
+   *  145
    * </pre>
    *
    * <code>optional string uptime_seconds = 104736040;</code>

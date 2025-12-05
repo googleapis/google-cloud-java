@@ -28,7 +28,9 @@ public interface SchedulingOnInstanceStopActionOrBuilder
    *
    *
    * <pre>
-   * If true, the contents of any attached Local SSD disks will be discarded else, the Local SSD data will be preserved when the instance is stopped at the end of the run duration/termination time.
+   * If true, the contents of any attached Local SSD disks will be discarded
+   * else, the Local SSD data will be preserved when the instance is stopped
+   * at the end of the run duration/termination time.
    * </pre>
    *
    * <code>optional bool discard_local_ssd = 319517903;</code>
@@ -41,7 +43,9 @@ public interface SchedulingOnInstanceStopActionOrBuilder
    *
    *
    * <pre>
-   * If true, the contents of any attached Local SSD disks will be discarded else, the Local SSD data will be preserved when the instance is stopped at the end of the run duration/termination time.
+   * If true, the contents of any attached Local SSD disks will be discarded
+   * else, the Local SSD data will be preserved when the instance is stopped
+   * at the end of the run duration/termination time.
    * </pre>
    *
    * <code>optional bool discard_local_ssd = 319517903;</code>

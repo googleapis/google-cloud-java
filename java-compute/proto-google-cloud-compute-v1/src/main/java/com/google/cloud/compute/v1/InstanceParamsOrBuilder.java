@@ -28,7 +28,8 @@ public interface InstanceParamsOrBuilder
    *
    *
    * <pre>
-   * Relative deadline for waiting for capacity. Relevant only for Instances.Insert API.
+   * Relative deadline for waiting for capacity. Relevant only for
+   * Instances.Insert API.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Duration request_valid_for_duration = 116247389;</code>
@@ -41,7 +42,8 @@ public interface InstanceParamsOrBuilder
    *
    *
    * <pre>
-   * Relative deadline for waiting for capacity. Relevant only for Instances.Insert API.
+   * Relative deadline for waiting for capacity. Relevant only for
+   * Instances.Insert API.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Duration request_valid_for_duration = 116247389;</code>
@@ -54,7 +56,8 @@ public interface InstanceParamsOrBuilder
    *
    *
    * <pre>
-   * Relative deadline for waiting for capacity. Relevant only for Instances.Insert API.
+   * Relative deadline for waiting for capacity. Relevant only for
+   * Instances.Insert API.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Duration request_valid_for_duration = 116247389;</code>
@@ -65,7 +68,11 @@ public interface InstanceParamsOrBuilder
    *
    *
    * <pre>
-   * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * Resource manager tags to be bound to the instance. Tag keys and values
+   * have the same definition as resource
+   * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
+   * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
+   * PATCH) when empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -76,7 +83,11 @@ public interface InstanceParamsOrBuilder
    *
    *
    * <pre>
-   * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * Resource manager tags to be bound to the instance. Tag keys and values
+   * have the same definition as resource
+   * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
+   * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
+   * PATCH) when empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -91,7 +102,11 @@ public interface InstanceParamsOrBuilder
    *
    *
    * <pre>
-   * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * Resource manager tags to be bound to the instance. Tag keys and values
+   * have the same definition as resource
+   * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
+   * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
+   * PATCH) when empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -102,7 +117,11 @@ public interface InstanceParamsOrBuilder
    *
    *
    * <pre>
-   * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * Resource manager tags to be bound to the instance. Tag keys and values
+   * have the same definition as resource
+   * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
+   * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
+   * PATCH) when empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -117,7 +136,11 @@ public interface InstanceParamsOrBuilder
    *
    *
    * <pre>
-   * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * Resource manager tags to be bound to the instance. Tag keys and values
+   * have the same definition as resource
+   * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
+   * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
+   * PATCH) when empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>

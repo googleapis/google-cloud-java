@@ -652,4 +652,34 @@ public interface EntitlementOrBuilder
    * @return The bytes for billingAccount.
    */
   com.google.protobuf.ByteString getBillingAccountBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Price reference ID for the offer. Only for offers that require
+   * additional price information. Used to guarantee that the pricing is
+   * consistent between quoting the offer and placing the order.
+   * </pre>
+   *
+   * <code>string price_reference_id = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The priceReferenceId.
+   */
+  java.lang.String getPriceReferenceId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Price reference ID for the offer. Only for offers that require
+   * additional price information. Used to guarantee that the pricing is
+   * consistent between quoting the offer and placing the order.
+   * </pre>
+   *
+   * <code>string price_reference_id = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for priceReferenceId.
+   */
+  com.google.protobuf.ByteString getPriceReferenceIdBytes();
 }

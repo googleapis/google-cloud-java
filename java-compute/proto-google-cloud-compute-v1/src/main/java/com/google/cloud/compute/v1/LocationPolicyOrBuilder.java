@@ -28,7 +28,9 @@ public interface LocationPolicyOrBuilder
    *
    *
    * <pre>
-   * Location configurations mapped by location name. Currently only zone names are supported and must be represented as valid internal URLs, such as zones/us-central1-a.
+   * Location configurations mapped by location name.
+   * Currently only zone names are supported and must be represented as valid
+   * internal URLs, such as zones/us-central1-a.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.compute.v1.LocationPolicyLocation&gt; locations = 413423454;
@@ -40,7 +42,9 @@ public interface LocationPolicyOrBuilder
    *
    *
    * <pre>
-   * Location configurations mapped by location name. Currently only zone names are supported and must be represented as valid internal URLs, such as zones/us-central1-a.
+   * Location configurations mapped by location name.
+   * Currently only zone names are supported and must be represented as valid
+   * internal URLs, such as zones/us-central1-a.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.compute.v1.LocationPolicyLocation&gt; locations = 413423454;
@@ -57,7 +61,9 @@ public interface LocationPolicyOrBuilder
    *
    *
    * <pre>
-   * Location configurations mapped by location name. Currently only zone names are supported and must be represented as valid internal URLs, such as zones/us-central1-a.
+   * Location configurations mapped by location name.
+   * Currently only zone names are supported and must be represented as valid
+   * internal URLs, such as zones/us-central1-a.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.compute.v1.LocationPolicyLocation&gt; locations = 413423454;
@@ -70,7 +76,9 @@ public interface LocationPolicyOrBuilder
    *
    *
    * <pre>
-   * Location configurations mapped by location name. Currently only zone names are supported and must be represented as valid internal URLs, such as zones/us-central1-a.
+   * Location configurations mapped by location name.
+   * Currently only zone names are supported and must be represented as valid
+   * internal URLs, such as zones/us-central1-a.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.compute.v1.LocationPolicyLocation&gt; locations = 413423454;
@@ -86,7 +94,9 @@ public interface LocationPolicyOrBuilder
    *
    *
    * <pre>
-   * Location configurations mapped by location name. Currently only zone names are supported and must be represented as valid internal URLs, such as zones/us-central1-a.
+   * Location configurations mapped by location name.
+   * Currently only zone names are supported and must be represented as valid
+   * internal URLs, such as zones/us-central1-a.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.compute.v1.LocationPolicyLocation&gt; locations = 413423454;

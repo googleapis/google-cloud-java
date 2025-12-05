@@ -322,7 +322,8 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A map of project id and project config. This is only valid when share_type's value is SPECIFIC_PROJECTS.
+   * A map of project id and project config. This is only valid when
+   * share_type's value is SPECIFIC_PROJECTS.
    * </pre>
    *
    * <code>
@@ -349,7 +350,8 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A map of project id and project config. This is only valid when share_type's value is SPECIFIC_PROJECTS.
+   * A map of project id and project config. This is only valid when
+   * share_type's value is SPECIFIC_PROJECTS.
    * </pre>
    *
    * <code>
@@ -366,7 +368,8 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A map of project id and project config. This is only valid when share_type's value is SPECIFIC_PROJECTS.
+   * A map of project id and project config. This is only valid when
+   * share_type's value is SPECIFIC_PROJECTS.
    * </pre>
    *
    * <code>
@@ -391,7 +394,8 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A map of project id and project config. This is only valid when share_type's value is SPECIFIC_PROJECTS.
+   * A map of project id and project config. This is only valid when
+   * share_type's value is SPECIFIC_PROJECTS.
    * </pre>
    *
    * <code>
@@ -963,7 +967,8 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A map of project id and project config. This is only valid when share_type's value is SPECIFIC_PROJECTS.
+     * A map of project id and project config. This is only valid when
+     * share_type's value is SPECIFIC_PROJECTS.
      * </pre>
      *
      * <code>
@@ -990,7 +995,8 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A map of project id and project config. This is only valid when share_type's value is SPECIFIC_PROJECTS.
+     * A map of project id and project config. This is only valid when
+     * share_type's value is SPECIFIC_PROJECTS.
      * </pre>
      *
      * <code>
@@ -1007,7 +1013,8 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A map of project id and project config. This is only valid when share_type's value is SPECIFIC_PROJECTS.
+     * A map of project id and project config. This is only valid when
+     * share_type's value is SPECIFIC_PROJECTS.
      * </pre>
      *
      * <code>
@@ -1033,7 +1040,8 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A map of project id and project config. This is only valid when share_type's value is SPECIFIC_PROJECTS.
+     * A map of project id and project config. This is only valid when
+     * share_type's value is SPECIFIC_PROJECTS.
      * </pre>
      *
      * <code>
@@ -1065,7 +1073,8 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A map of project id and project config. This is only valid when share_type's value is SPECIFIC_PROJECTS.
+     * A map of project id and project config. This is only valid when
+     * share_type's value is SPECIFIC_PROJECTS.
      * </pre>
      *
      * <code>
@@ -1092,7 +1101,8 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A map of project id and project config. This is only valid when share_type's value is SPECIFIC_PROJECTS.
+     * A map of project id and project config. This is only valid when
+     * share_type's value is SPECIFIC_PROJECTS.
      * </pre>
      *
      * <code>
@@ -1116,7 +1126,8 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A map of project id and project config. This is only valid when share_type's value is SPECIFIC_PROJECTS.
+     * A map of project id and project config. This is only valid when
+     * share_type's value is SPECIFIC_PROJECTS.
      * </pre>
      *
      * <code>
@@ -1142,7 +1153,8 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A map of project id and project config. This is only valid when share_type's value is SPECIFIC_PROJECTS.
+     * A map of project id and project config. This is only valid when
+     * share_type's value is SPECIFIC_PROJECTS.
      * </pre>
      *
      * <code>

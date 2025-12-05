@@ -28,7 +28,8 @@ public interface SecurityPolicyRuleMatcherConfigOrBuilder
    *
    *
    * <pre>
-   * CIDR IP address range. Maximum number of src_ip_ranges allowed is 10.
+   * CIDR IP address range.
+   * Maximum number of src_ip_ranges allowed is 10.
    * </pre>
    *
    * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -41,7 +42,8 @@ public interface SecurityPolicyRuleMatcherConfigOrBuilder
    *
    *
    * <pre>
-   * CIDR IP address range. Maximum number of src_ip_ranges allowed is 10.
+   * CIDR IP address range.
+   * Maximum number of src_ip_ranges allowed is 10.
    * </pre>
    *
    * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -54,7 +56,8 @@ public interface SecurityPolicyRuleMatcherConfigOrBuilder
    *
    *
    * <pre>
-   * CIDR IP address range. Maximum number of src_ip_ranges allowed is 10.
+   * CIDR IP address range.
+   * Maximum number of src_ip_ranges allowed is 10.
    * </pre>
    *
    * <code>repeated string src_ip_ranges = 432128083;</code>
@@ -68,7 +71,8 @@ public interface SecurityPolicyRuleMatcherConfigOrBuilder
    *
    *
    * <pre>
-   * CIDR IP address range. Maximum number of src_ip_ranges allowed is 10.
+   * CIDR IP address range.
+   * Maximum number of src_ip_ranges allowed is 10.
    * </pre>
    *
    * <code>repeated string src_ip_ranges = 432128083;</code>

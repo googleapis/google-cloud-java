@@ -119,7 +119,8 @@ public interface GetRoutePolicyRouterRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the Router resource to query for the route policy. The name should conform to RFC1035.
+   * Name of the Router resource to query for the route policy. The name should
+   * conform to RFC1035.
    * </pre>
    *
    * <code>string router = 148608841 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -132,7 +133,8 @@ public interface GetRoutePolicyRouterRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the Router resource to query for the route policy. The name should conform to RFC1035.
+   * Name of the Router resource to query for the route policy. The name should
+   * conform to RFC1035.
    * </pre>
    *
    * <code>string router = 148608841 [(.google.api.field_behavior) = REQUIRED];</code>

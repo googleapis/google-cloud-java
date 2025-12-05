@@ -17,6 +17,7 @@
 package com.google.cloud.channel.v1.samples;
 
 // [START cloudchannel_v1_generated_CloudChannelService_UnregisterSubscriber_sync]
+import com.google.cloud.channel.v1.AccountName;
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
 import com.google.cloud.channel.v1.UnregisterSubscriberRequest;
 import com.google.cloud.channel.v1.UnregisterSubscriberResponse;
@@ -36,8 +37,9 @@ public class SyncUnregisterSubscriber {
     try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
       UnregisterSubscriberRequest request =
           UnregisterSubscriberRequest.newBuilder()
-              .setAccount("account-1177318867")
+              .setAccount(AccountName.of("[ACCOUNT]").toString())
               .setServiceAccount("serviceAccount1079137720")
+              .setIntegrator("integrator-1902360937")
               .build();
       UnregisterSubscriberResponse response =
           cloudChannelServiceClient.unregisterSubscriber(request);

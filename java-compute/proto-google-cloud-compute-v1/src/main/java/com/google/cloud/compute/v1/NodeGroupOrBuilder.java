@@ -71,7 +71,8 @@ public interface NodeGroupOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -84,7 +85,8 @@ public interface NodeGroupOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -97,7 +99,8 @@ public interface NodeGroupOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -110,7 +113,8 @@ public interface NodeGroupOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -123,7 +127,8 @@ public interface NodeGroupOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -136,7 +141,8 @@ public interface NodeGroupOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -170,7 +176,8 @@ public interface NodeGroupOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -183,7 +190,8 @@ public interface NodeGroupOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -196,7 +204,7 @@ public interface NodeGroupOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Always compute#nodeGroup for node group.
+   * [Output Only] The type of the resource. Alwayscompute#nodeGroup for node group.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -209,7 +217,7 @@ public interface NodeGroupOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Always compute#nodeGroup for node group.
+   * [Output Only] The type of the resource. Alwayscompute#nodeGroup for node group.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -222,7 +230,7 @@ public interface NodeGroupOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Always compute#nodeGroup for node group.
+   * [Output Only] The type of the resource. Alwayscompute#nodeGroup for node group.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -235,7 +243,11 @@ public interface NodeGroupOrBuilder
    *
    *
    * <pre>
-   * An opaque location hint used to place the Node close to other resources. This field is for use by internal tools that use the public API. The location hint here on the NodeGroup overrides any location_hint present in the NodeTemplate.
+   * An opaque location hint used to place the Node close to other
+   * resources.
+   * This field is for use by internal tools that use the public API.
+   * The location hint here on the NodeGroup overrides any location_hint
+   * present in the NodeTemplate.
    * </pre>
    *
    * <code>optional string location_hint = 350519505;</code>
@@ -248,7 +260,11 @@ public interface NodeGroupOrBuilder
    *
    *
    * <pre>
-   * An opaque location hint used to place the Node close to other resources. This field is for use by internal tools that use the public API. The location hint here on the NodeGroup overrides any location_hint present in the NodeTemplate.
+   * An opaque location hint used to place the Node close to other
+   * resources.
+   * This field is for use by internal tools that use the public API.
+   * The location hint here on the NodeGroup overrides any location_hint
+   * present in the NodeTemplate.
    * </pre>
    *
    * <code>optional string location_hint = 350519505;</code>
@@ -261,7 +277,11 @@ public interface NodeGroupOrBuilder
    *
    *
    * <pre>
-   * An opaque location hint used to place the Node close to other resources. This field is for use by internal tools that use the public API. The location hint here on the NodeGroup overrides any location_hint present in the NodeTemplate.
+   * An opaque location hint used to place the Node close to other
+   * resources.
+   * This field is for use by internal tools that use the public API.
+   * The location hint here on the NodeGroup overrides any location_hint
+   * present in the NodeTemplate.
    * </pre>
    *
    * <code>optional string location_hint = 350519505;</code>
@@ -274,7 +294,8 @@ public interface NodeGroupOrBuilder
    *
    *
    * <pre>
-   * Specifies the frequency of planned maintenance events. The accepted values are: `AS_NEEDED` and `RECURRENT`.
+   * Specifies the frequency of planned maintenance events. The accepted values
+   * are: `AS_NEEDED` and `RECURRENT`.
    * Check the MaintenanceInterval enum for the list of possible values.
    * </pre>
    *
@@ -288,7 +309,8 @@ public interface NodeGroupOrBuilder
    *
    *
    * <pre>
-   * Specifies the frequency of planned maintenance events. The accepted values are: `AS_NEEDED` and `RECURRENT`.
+   * Specifies the frequency of planned maintenance events. The accepted values
+   * are: `AS_NEEDED` and `RECURRENT`.
    * Check the MaintenanceInterval enum for the list of possible values.
    * </pre>
    *
@@ -302,7 +324,8 @@ public interface NodeGroupOrBuilder
    *
    *
    * <pre>
-   * Specifies the frequency of planned maintenance events. The accepted values are: `AS_NEEDED` and `RECURRENT`.
+   * Specifies the frequency of planned maintenance events. The accepted values
+   * are: `AS_NEEDED` and `RECURRENT`.
    * Check the MaintenanceInterval enum for the list of possible values.
    * </pre>
    *
@@ -316,7 +339,10 @@ public interface NodeGroupOrBuilder
    *
    *
    * <pre>
-   * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+   * Specifies how to handle instances when a node in the group undergoes
+   * maintenance. Set to one of: DEFAULT,RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP.
+   * The default value is DEFAULT. For more information, see
+   * Maintenance policies.
    * Check the MaintenancePolicy enum for the list of possible values.
    * </pre>
    *
@@ -330,7 +356,10 @@ public interface NodeGroupOrBuilder
    *
    *
    * <pre>
-   * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+   * Specifies how to handle instances when a node in the group undergoes
+   * maintenance. Set to one of: DEFAULT,RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP.
+   * The default value is DEFAULT. For more information, see
+   * Maintenance policies.
    * Check the MaintenancePolicy enum for the list of possible values.
    * </pre>
    *
@@ -344,7 +373,10 @@ public interface NodeGroupOrBuilder
    *
    *
    * <pre>
-   * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+   * Specifies how to handle instances when a node in the group undergoes
+   * maintenance. Set to one of: DEFAULT,RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP.
+   * The default value is DEFAULT. For more information, see
+   * Maintenance policies.
    * Check the MaintenancePolicy enum for the list of possible values.
    * </pre>
    *
@@ -383,7 +415,14 @@ public interface NodeGroupOrBuilder
    *
    *
    * <pre>
-   * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * The name of the resource, provided by the client when initially creating
+   * the resource. The resource name must be 1-63 characters long, and comply
+   * withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be
+   * a dash, lowercase letter, or digit, except the last character, which cannot
+   * be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -396,7 +435,14 @@ public interface NodeGroupOrBuilder
    *
    *
    * <pre>
-   * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * The name of the resource, provided by the client when initially creating
+   * the resource. The resource name must be 1-63 characters long, and comply
+   * withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be
+   * a dash, lowercase letter, or digit, except the last character, which cannot
+   * be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -409,7 +455,14 @@ public interface NodeGroupOrBuilder
    *
    *
    * <pre>
-   * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * The name of the resource, provided by the client when initially creating
+   * the resource. The resource name must be 1-63 characters long, and comply
+   * withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be
+   * a dash, lowercase letter, or digit, except the last character, which cannot
+   * be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -605,7 +658,8 @@ public interface NodeGroupOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of the zone where the node group resides, such as us-central1-a.
+   * [Output Only] The name of the zone where the node group resides,
+   * such as us-central1-a.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -618,7 +672,8 @@ public interface NodeGroupOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of the zone where the node group resides, such as us-central1-a.
+   * [Output Only] The name of the zone where the node group resides,
+   * such as us-central1-a.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -631,7 +686,8 @@ public interface NodeGroupOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of the zone where the node group resides, such as us-central1-a.
+   * [Output Only] The name of the zone where the node group resides,
+   * such as us-central1-a.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>

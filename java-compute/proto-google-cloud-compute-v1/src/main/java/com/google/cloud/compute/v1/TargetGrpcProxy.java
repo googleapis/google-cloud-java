@@ -23,7 +23,13 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a Target gRPC Proxy resource. A target gRPC proxy is a component of load balancers intended for load balancing gRPC traffic. Only global forwarding rules with load balancing scheme INTERNAL_SELF_MANAGED can reference a target gRPC proxy. The target gRPC Proxy references a URL map that specifies how traffic is routed to gRPC backend services.
+ * Represents a Target gRPC Proxy resource.
+ *
+ * A target gRPC proxy is a component of load balancers intended for
+ * load balancing gRPC traffic. Only global forwarding rules with load balancing
+ * scheme INTERNAL_SELF_MANAGED can reference a target gRPC proxy. The target
+ * gRPC Proxy references a URL map that specifies how traffic is routed to
+ * gRPC backend services.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.TargetGrpcProxy}
@@ -81,7 +87,8 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -97,7 +104,8 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -121,7 +129,8 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -150,7 +159,8 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -166,7 +176,8 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -190,7 +201,8 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -219,7 +231,13 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetGrpcProxy. An up-to-date fingerprint must be provided in order to patch/update the TargetGrpcProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetGrpcProxy.
+   * Fingerprint of this resource. A hash of the contents stored in this object.
+   * This field is used in optimistic locking. This field will be ignored when
+   * inserting a TargetGrpcProxy. An up-to-date fingerprint must
+   * be provided in order to patch/update the TargetGrpcProxy; otherwise, the
+   * request will fail with error 412 conditionNotMet. To see the
+   * latest fingerprint, make a get() request to retrieve the
+   * TargetGrpcProxy.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -235,7 +253,13 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetGrpcProxy. An up-to-date fingerprint must be provided in order to patch/update the TargetGrpcProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetGrpcProxy.
+   * Fingerprint of this resource. A hash of the contents stored in this object.
+   * This field is used in optimistic locking. This field will be ignored when
+   * inserting a TargetGrpcProxy. An up-to-date fingerprint must
+   * be provided in order to patch/update the TargetGrpcProxy; otherwise, the
+   * request will fail with error 412 conditionNotMet. To see the
+   * latest fingerprint, make a get() request to retrieve the
+   * TargetGrpcProxy.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -259,7 +283,13 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetGrpcProxy. An up-to-date fingerprint must be provided in order to patch/update the TargetGrpcProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetGrpcProxy.
+   * Fingerprint of this resource. A hash of the contents stored in this object.
+   * This field is used in optimistic locking. This field will be ignored when
+   * inserting a TargetGrpcProxy. An up-to-date fingerprint must
+   * be provided in order to patch/update the TargetGrpcProxy; otherwise, the
+   * request will fail with error 412 conditionNotMet. To see the
+   * latest fingerprint, make a get() request to retrieve the
+   * TargetGrpcProxy.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -286,7 +316,8 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource type. The server generates this identifier.
+   * [Output Only] The unique identifier for the resource type. The server
+   * generates this identifier.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -302,7 +333,8 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource type. The server generates this identifier.
+   * [Output Only] The unique identifier for the resource type. The server
+   * generates this identifier.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -323,7 +355,7 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#targetGrpcProxy for target grpc proxies.
+   * [Output Only] Type of the resource. Alwayscompute#targetGrpcProxy for target grpc proxies.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -339,7 +371,7 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#targetGrpcProxy for target grpc proxies.
+   * [Output Only] Type of the resource. Alwayscompute#targetGrpcProxy for target grpc proxies.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -363,7 +395,7 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#targetGrpcProxy for target grpc proxies.
+   * [Output Only] Type of the resource. Alwayscompute#targetGrpcProxy for target grpc proxies.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -392,7 +424,13 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -408,7 +446,13 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -432,7 +476,13 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -599,7 +649,9 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * URL to the UrlMap resource that defines the mapping from URL to the BackendService. The protocol field in the BackendService must be set to GRPC.
+   * URL to the UrlMap resource that defines the mapping from URL to the
+   * BackendService. The protocol field in the BackendService must be set to
+   * GRPC.
    * </pre>
    *
    * <code>optional string url_map = 367020684;</code>
@@ -615,7 +667,9 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * URL to the UrlMap resource that defines the mapping from URL to the BackendService. The protocol field in the BackendService must be set to GRPC.
+   * URL to the UrlMap resource that defines the mapping from URL to the
+   * BackendService. The protocol field in the BackendService must be set to
+   * GRPC.
    * </pre>
    *
    * <code>optional string url_map = 367020684;</code>
@@ -639,7 +693,9 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * URL to the UrlMap resource that defines the mapping from URL to the BackendService. The protocol field in the BackendService must be set to GRPC.
+   * URL to the UrlMap resource that defines the mapping from URL to the
+   * BackendService. The protocol field in the BackendService must be set to
+   * GRPC.
    * </pre>
    *
    * <code>optional string url_map = 367020684;</code>
@@ -666,7 +722,16 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * If true, indicates that the BackendServices referenced by the urlMap may be accessed by gRPC applications without using a sidecar proxy. This will enable configuration checks on urlMap and its referenced BackendServices to not allow unsupported features. A gRPC application must use "xds:///" scheme in the target URI of the service it is connecting to. If false, indicates that the BackendServices referenced by the urlMap will be accessed by gRPC applications via a sidecar proxy. In this case, a gRPC application must not use "xds:///" scheme in the target URI of the service it is connecting to
+   * If true, indicates that the BackendServices referenced by the urlMap may be
+   * accessed by gRPC applications without using a sidecar proxy. This will
+   * enable configuration checks on urlMap and its referenced BackendServices to
+   * not allow unsupported features. A gRPC application must use
+   * "xds:///" scheme in the target URI of the service it is
+   * connecting to.
+   * If false, indicates that the BackendServices referenced by the urlMap will
+   * be accessed by gRPC applications via a sidecar proxy. In this case, a gRPC
+   * application must not use "xds:///" scheme in the target URI of
+   * the service it is connecting to
    * </pre>
    *
    * <code>optional bool validate_for_proxyless = 101822888;</code>
@@ -682,7 +747,16 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * If true, indicates that the BackendServices referenced by the urlMap may be accessed by gRPC applications without using a sidecar proxy. This will enable configuration checks on urlMap and its referenced BackendServices to not allow unsupported features. A gRPC application must use "xds:///" scheme in the target URI of the service it is connecting to. If false, indicates that the BackendServices referenced by the urlMap will be accessed by gRPC applications via a sidecar proxy. In this case, a gRPC application must not use "xds:///" scheme in the target URI of the service it is connecting to
+   * If true, indicates that the BackendServices referenced by the urlMap may be
+   * accessed by gRPC applications without using a sidecar proxy. This will
+   * enable configuration checks on urlMap and its referenced BackendServices to
+   * not allow unsupported features. A gRPC application must use
+   * "xds:///" scheme in the target URI of the service it is
+   * connecting to.
+   * If false, indicates that the BackendServices referenced by the urlMap will
+   * be accessed by gRPC applications via a sidecar proxy. In this case, a gRPC
+   * application must not use "xds:///" scheme in the target URI of
+   * the service it is connecting to
    * </pre>
    *
    * <code>optional bool validate_for_proxyless = 101822888;</code>
@@ -991,7 +1065,13 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Represents a Target gRPC Proxy resource. A target gRPC proxy is a component of load balancers intended for load balancing gRPC traffic. Only global forwarding rules with load balancing scheme INTERNAL_SELF_MANAGED can reference a target gRPC proxy. The target gRPC Proxy references a URL map that specifies how traffic is routed to gRPC backend services.
+   * Represents a Target gRPC Proxy resource.
+   *
+   * A target gRPC proxy is a component of load balancers intended for
+   * load balancing gRPC traffic. Only global forwarding rules with load balancing
+   * scheme INTERNAL_SELF_MANAGED can reference a target gRPC proxy. The target
+   * gRPC Proxy references a URL map that specifies how traffic is routed to
+   * gRPC backend services.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.TargetGrpcProxy}
@@ -1318,7 +1398,8 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1333,7 +1414,8 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1356,7 +1438,8 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1379,7 +1462,8 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1401,7 +1485,8 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1419,7 +1504,8 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1444,7 +1530,8 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1459,7 +1546,8 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1482,7 +1570,8 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1505,7 +1594,8 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1527,7 +1617,8 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1545,7 +1636,8 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1570,7 +1662,13 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetGrpcProxy. An up-to-date fingerprint must be provided in order to patch/update the TargetGrpcProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetGrpcProxy.
+     * Fingerprint of this resource. A hash of the contents stored in this object.
+     * This field is used in optimistic locking. This field will be ignored when
+     * inserting a TargetGrpcProxy. An up-to-date fingerprint must
+     * be provided in order to patch/update the TargetGrpcProxy; otherwise, the
+     * request will fail with error 412 conditionNotMet. To see the
+     * latest fingerprint, make a get() request to retrieve the
+     * TargetGrpcProxy.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -1585,7 +1683,13 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetGrpcProxy. An up-to-date fingerprint must be provided in order to patch/update the TargetGrpcProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetGrpcProxy.
+     * Fingerprint of this resource. A hash of the contents stored in this object.
+     * This field is used in optimistic locking. This field will be ignored when
+     * inserting a TargetGrpcProxy. An up-to-date fingerprint must
+     * be provided in order to patch/update the TargetGrpcProxy; otherwise, the
+     * request will fail with error 412 conditionNotMet. To see the
+     * latest fingerprint, make a get() request to retrieve the
+     * TargetGrpcProxy.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -1608,7 +1712,13 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetGrpcProxy. An up-to-date fingerprint must be provided in order to patch/update the TargetGrpcProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetGrpcProxy.
+     * Fingerprint of this resource. A hash of the contents stored in this object.
+     * This field is used in optimistic locking. This field will be ignored when
+     * inserting a TargetGrpcProxy. An up-to-date fingerprint must
+     * be provided in order to patch/update the TargetGrpcProxy; otherwise, the
+     * request will fail with error 412 conditionNotMet. To see the
+     * latest fingerprint, make a get() request to retrieve the
+     * TargetGrpcProxy.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -1631,7 +1741,13 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetGrpcProxy. An up-to-date fingerprint must be provided in order to patch/update the TargetGrpcProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetGrpcProxy.
+     * Fingerprint of this resource. A hash of the contents stored in this object.
+     * This field is used in optimistic locking. This field will be ignored when
+     * inserting a TargetGrpcProxy. An up-to-date fingerprint must
+     * be provided in order to patch/update the TargetGrpcProxy; otherwise, the
+     * request will fail with error 412 conditionNotMet. To see the
+     * latest fingerprint, make a get() request to retrieve the
+     * TargetGrpcProxy.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -1653,7 +1769,13 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetGrpcProxy. An up-to-date fingerprint must be provided in order to patch/update the TargetGrpcProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetGrpcProxy.
+     * Fingerprint of this resource. A hash of the contents stored in this object.
+     * This field is used in optimistic locking. This field will be ignored when
+     * inserting a TargetGrpcProxy. An up-to-date fingerprint must
+     * be provided in order to patch/update the TargetGrpcProxy; otherwise, the
+     * request will fail with error 412 conditionNotMet. To see the
+     * latest fingerprint, make a get() request to retrieve the
+     * TargetGrpcProxy.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -1671,7 +1793,13 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetGrpcProxy. An up-to-date fingerprint must be provided in order to patch/update the TargetGrpcProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetGrpcProxy.
+     * Fingerprint of this resource. A hash of the contents stored in this object.
+     * This field is used in optimistic locking. This field will be ignored when
+     * inserting a TargetGrpcProxy. An up-to-date fingerprint must
+     * be provided in order to patch/update the TargetGrpcProxy; otherwise, the
+     * request will fail with error 412 conditionNotMet. To see the
+     * latest fingerprint, make a get() request to retrieve the
+     * TargetGrpcProxy.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -1696,7 +1824,8 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource type. The server generates this identifier.
+     * [Output Only] The unique identifier for the resource type. The server
+     * generates this identifier.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -1712,7 +1841,8 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource type. The server generates this identifier.
+     * [Output Only] The unique identifier for the resource type. The server
+     * generates this identifier.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -1728,7 +1858,8 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource type. The server generates this identifier.
+     * [Output Only] The unique identifier for the resource type. The server
+     * generates this identifier.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -1748,7 +1879,8 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource type. The server generates this identifier.
+     * [Output Only] The unique identifier for the resource type. The server
+     * generates this identifier.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -1768,7 +1900,7 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#targetGrpcProxy for target grpc proxies.
+     * [Output Only] Type of the resource. Alwayscompute#targetGrpcProxy for target grpc proxies.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1783,7 +1915,7 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#targetGrpcProxy for target grpc proxies.
+     * [Output Only] Type of the resource. Alwayscompute#targetGrpcProxy for target grpc proxies.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1806,7 +1938,7 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#targetGrpcProxy for target grpc proxies.
+     * [Output Only] Type of the resource. Alwayscompute#targetGrpcProxy for target grpc proxies.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1829,7 +1961,7 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#targetGrpcProxy for target grpc proxies.
+     * [Output Only] Type of the resource. Alwayscompute#targetGrpcProxy for target grpc proxies.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1851,7 +1983,7 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#targetGrpcProxy for target grpc proxies.
+     * [Output Only] Type of the resource. Alwayscompute#targetGrpcProxy for target grpc proxies.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1869,7 +2001,7 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#targetGrpcProxy for target grpc proxies.
+     * [Output Only] Type of the resource. Alwayscompute#targetGrpcProxy for target grpc proxies.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1894,7 +2026,13 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -1909,7 +2047,13 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -1932,7 +2076,13 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -1955,7 +2105,13 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -1977,7 +2133,13 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -1995,7 +2157,13 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2272,7 +2440,9 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * URL to the UrlMap resource that defines the mapping from URL to the BackendService. The protocol field in the BackendService must be set to GRPC.
+     * URL to the UrlMap resource that defines the mapping from URL to the
+     * BackendService. The protocol field in the BackendService must be set to
+     * GRPC.
      * </pre>
      *
      * <code>optional string url_map = 367020684;</code>
@@ -2287,7 +2457,9 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * URL to the UrlMap resource that defines the mapping from URL to the BackendService. The protocol field in the BackendService must be set to GRPC.
+     * URL to the UrlMap resource that defines the mapping from URL to the
+     * BackendService. The protocol field in the BackendService must be set to
+     * GRPC.
      * </pre>
      *
      * <code>optional string url_map = 367020684;</code>
@@ -2310,7 +2482,9 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * URL to the UrlMap resource that defines the mapping from URL to the BackendService. The protocol field in the BackendService must be set to GRPC.
+     * URL to the UrlMap resource that defines the mapping from URL to the
+     * BackendService. The protocol field in the BackendService must be set to
+     * GRPC.
      * </pre>
      *
      * <code>optional string url_map = 367020684;</code>
@@ -2333,7 +2507,9 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * URL to the UrlMap resource that defines the mapping from URL to the BackendService. The protocol field in the BackendService must be set to GRPC.
+     * URL to the UrlMap resource that defines the mapping from URL to the
+     * BackendService. The protocol field in the BackendService must be set to
+     * GRPC.
      * </pre>
      *
      * <code>optional string url_map = 367020684;</code>
@@ -2355,7 +2531,9 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * URL to the UrlMap resource that defines the mapping from URL to the BackendService. The protocol field in the BackendService must be set to GRPC.
+     * URL to the UrlMap resource that defines the mapping from URL to the
+     * BackendService. The protocol field in the BackendService must be set to
+     * GRPC.
      * </pre>
      *
      * <code>optional string url_map = 367020684;</code>
@@ -2373,7 +2551,9 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * URL to the UrlMap resource that defines the mapping from URL to the BackendService. The protocol field in the BackendService must be set to GRPC.
+     * URL to the UrlMap resource that defines the mapping from URL to the
+     * BackendService. The protocol field in the BackendService must be set to
+     * GRPC.
      * </pre>
      *
      * <code>optional string url_map = 367020684;</code>
@@ -2398,7 +2578,16 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * If true, indicates that the BackendServices referenced by the urlMap may be accessed by gRPC applications without using a sidecar proxy. This will enable configuration checks on urlMap and its referenced BackendServices to not allow unsupported features. A gRPC application must use "xds:///" scheme in the target URI of the service it is connecting to. If false, indicates that the BackendServices referenced by the urlMap will be accessed by gRPC applications via a sidecar proxy. In this case, a gRPC application must not use "xds:///" scheme in the target URI of the service it is connecting to
+     * If true, indicates that the BackendServices referenced by the urlMap may be
+     * accessed by gRPC applications without using a sidecar proxy. This will
+     * enable configuration checks on urlMap and its referenced BackendServices to
+     * not allow unsupported features. A gRPC application must use
+     * "xds:///" scheme in the target URI of the service it is
+     * connecting to.
+     * If false, indicates that the BackendServices referenced by the urlMap will
+     * be accessed by gRPC applications via a sidecar proxy. In this case, a gRPC
+     * application must not use "xds:///" scheme in the target URI of
+     * the service it is connecting to
      * </pre>
      *
      * <code>optional bool validate_for_proxyless = 101822888;</code>
@@ -2414,7 +2603,16 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * If true, indicates that the BackendServices referenced by the urlMap may be accessed by gRPC applications without using a sidecar proxy. This will enable configuration checks on urlMap and its referenced BackendServices to not allow unsupported features. A gRPC application must use "xds:///" scheme in the target URI of the service it is connecting to. If false, indicates that the BackendServices referenced by the urlMap will be accessed by gRPC applications via a sidecar proxy. In this case, a gRPC application must not use "xds:///" scheme in the target URI of the service it is connecting to
+     * If true, indicates that the BackendServices referenced by the urlMap may be
+     * accessed by gRPC applications without using a sidecar proxy. This will
+     * enable configuration checks on urlMap and its referenced BackendServices to
+     * not allow unsupported features. A gRPC application must use
+     * "xds:///" scheme in the target URI of the service it is
+     * connecting to.
+     * If false, indicates that the BackendServices referenced by the urlMap will
+     * be accessed by gRPC applications via a sidecar proxy. In this case, a gRPC
+     * application must not use "xds:///" scheme in the target URI of
+     * the service it is connecting to
      * </pre>
      *
      * <code>optional bool validate_for_proxyless = 101822888;</code>
@@ -2430,7 +2628,16 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * If true, indicates that the BackendServices referenced by the urlMap may be accessed by gRPC applications without using a sidecar proxy. This will enable configuration checks on urlMap and its referenced BackendServices to not allow unsupported features. A gRPC application must use "xds:///" scheme in the target URI of the service it is connecting to. If false, indicates that the BackendServices referenced by the urlMap will be accessed by gRPC applications via a sidecar proxy. In this case, a gRPC application must not use "xds:///" scheme in the target URI of the service it is connecting to
+     * If true, indicates that the BackendServices referenced by the urlMap may be
+     * accessed by gRPC applications without using a sidecar proxy. This will
+     * enable configuration checks on urlMap and its referenced BackendServices to
+     * not allow unsupported features. A gRPC application must use
+     * "xds:///" scheme in the target URI of the service it is
+     * connecting to.
+     * If false, indicates that the BackendServices referenced by the urlMap will
+     * be accessed by gRPC applications via a sidecar proxy. In this case, a gRPC
+     * application must not use "xds:///" scheme in the target URI of
+     * the service it is connecting to
      * </pre>
      *
      * <code>optional bool validate_for_proxyless = 101822888;</code>
@@ -2450,7 +2657,16 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * If true, indicates that the BackendServices referenced by the urlMap may be accessed by gRPC applications without using a sidecar proxy. This will enable configuration checks on urlMap and its referenced BackendServices to not allow unsupported features. A gRPC application must use "xds:///" scheme in the target URI of the service it is connecting to. If false, indicates that the BackendServices referenced by the urlMap will be accessed by gRPC applications via a sidecar proxy. In this case, a gRPC application must not use "xds:///" scheme in the target URI of the service it is connecting to
+     * If true, indicates that the BackendServices referenced by the urlMap may be
+     * accessed by gRPC applications without using a sidecar proxy. This will
+     * enable configuration checks on urlMap and its referenced BackendServices to
+     * not allow unsupported features. A gRPC application must use
+     * "xds:///" scheme in the target URI of the service it is
+     * connecting to.
+     * If false, indicates that the BackendServices referenced by the urlMap will
+     * be accessed by gRPC applications via a sidecar proxy. In this case, a gRPC
+     * application must not use "xds:///" scheme in the target URI of
+     * the service it is connecting to
      * </pre>
      *
      * <code>optional bool validate_for_proxyless = 101822888;</code>

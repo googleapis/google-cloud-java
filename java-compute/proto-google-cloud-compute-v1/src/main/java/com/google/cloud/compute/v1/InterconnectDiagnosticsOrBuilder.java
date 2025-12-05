@@ -28,7 +28,10 @@ public interface InterconnectDiagnosticsOrBuilder
    *
    *
    * <pre>
-   * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
+   * A list of InterconnectDiagnostics.ARPEntry objects,
+   * describing individual neighbors currently seen by the Google router in
+   * the ARP cache for the Interconnect.
+   * This will be empty when the Interconnect is not bundled.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
@@ -40,7 +43,10 @@ public interface InterconnectDiagnosticsOrBuilder
    *
    *
    * <pre>
-   * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
+   * A list of InterconnectDiagnostics.ARPEntry objects,
+   * describing individual neighbors currently seen by the Google router in
+   * the ARP cache for the Interconnect.
+   * This will be empty when the Interconnect is not bundled.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
@@ -52,7 +58,10 @@ public interface InterconnectDiagnosticsOrBuilder
    *
    *
    * <pre>
-   * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
+   * A list of InterconnectDiagnostics.ARPEntry objects,
+   * describing individual neighbors currently seen by the Google router in
+   * the ARP cache for the Interconnect.
+   * This will be empty when the Interconnect is not bundled.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
@@ -64,7 +73,10 @@ public interface InterconnectDiagnosticsOrBuilder
    *
    *
    * <pre>
-   * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
+   * A list of InterconnectDiagnostics.ARPEntry objects,
+   * describing individual neighbors currently seen by the Google router in
+   * the ARP cache for the Interconnect.
+   * This will be empty when the Interconnect is not bundled.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
@@ -77,7 +89,10 @@ public interface InterconnectDiagnosticsOrBuilder
    *
    *
    * <pre>
-   * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
+   * A list of InterconnectDiagnostics.ARPEntry objects,
+   * describing individual neighbors currently seen by the Google router in
+   * the ARP cache for the Interconnect.
+   * This will be empty when the Interconnect is not bundled.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
@@ -174,7 +189,8 @@ public interface InterconnectDiagnosticsOrBuilder
    *
    *
    * <pre>
-   * A list of InterconnectDiagnostics.LinkStatus objects, describing the status for each link on the Interconnect.
+   * A list of InterconnectDiagnostics.LinkStatus objects,
+   * describing the status for each link on the Interconnect.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus links = 102977465;
@@ -186,7 +202,8 @@ public interface InterconnectDiagnosticsOrBuilder
    *
    *
    * <pre>
-   * A list of InterconnectDiagnostics.LinkStatus objects, describing the status for each link on the Interconnect.
+   * A list of InterconnectDiagnostics.LinkStatus objects,
+   * describing the status for each link on the Interconnect.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus links = 102977465;
@@ -198,7 +215,8 @@ public interface InterconnectDiagnosticsOrBuilder
    *
    *
    * <pre>
-   * A list of InterconnectDiagnostics.LinkStatus objects, describing the status for each link on the Interconnect.
+   * A list of InterconnectDiagnostics.LinkStatus objects,
+   * describing the status for each link on the Interconnect.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus links = 102977465;
@@ -210,7 +228,8 @@ public interface InterconnectDiagnosticsOrBuilder
    *
    *
    * <pre>
-   * A list of InterconnectDiagnostics.LinkStatus objects, describing the status for each link on the Interconnect.
+   * A list of InterconnectDiagnostics.LinkStatus objects,
+   * describing the status for each link on the Interconnect.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus links = 102977465;
@@ -223,7 +242,8 @@ public interface InterconnectDiagnosticsOrBuilder
    *
    *
    * <pre>
-   * A list of InterconnectDiagnostics.LinkStatus objects, describing the status for each link on the Interconnect.
+   * A list of InterconnectDiagnostics.LinkStatus objects,
+   * describing the status for each link on the Interconnect.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus links = 102977465;

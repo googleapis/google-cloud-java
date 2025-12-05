@@ -4686,6 +4686,65 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         : routingConfig_;
   }
 
+  public static final int SPEECH_CONFIG_FIELD_NUMBER = 23;
+  private com.google.cloud.aiplatform.v1.SpeechConfig speechConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The speech generation config.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.SpeechConfig speech_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the speechConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasSpeechConfig() {
+    return ((bitField0_ & 0x00002000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The speech generation config.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.SpeechConfig speech_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The speechConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.SpeechConfig getSpeechConfig() {
+    return speechConfig_ == null
+        ? com.google.cloud.aiplatform.v1.SpeechConfig.getDefaultInstance()
+        : speechConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The speech generation config.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.SpeechConfig speech_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.SpeechConfigOrBuilder getSpeechConfigOrBuilder() {
+    return speechConfig_ == null
+        ? com.google.cloud.aiplatform.v1.SpeechConfig.getDefaultInstance()
+        : speechConfig_;
+  }
+
   public static final int THINKING_CONFIG_FIELD_NUMBER = 25;
   private com.google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig thinkingConfig_;
 
@@ -4706,7 +4765,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasThinkingConfig() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
 
   /**
@@ -4770,7 +4829,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasImageConfig() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
 
   /**
@@ -4868,12 +4927,15 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       output.writeBool(18, responseLogprobs_);
     }
     if (((bitField0_ & 0x00002000) != 0)) {
+      output.writeMessage(23, getSpeechConfig());
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
       output.writeMessage(25, getThinkingConfig());
     }
     if (((bitField0_ & 0x00000800) != 0)) {
       output.writeMessage(28, getResponseJsonSchema());
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       output.writeMessage(30, getImageConfig());
     }
     getUnknownFields().writeTo(output);
@@ -4933,12 +4995,15 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(18, responseLogprobs_);
     }
     if (((bitField0_ & 0x00002000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getSpeechConfig());
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, getThinkingConfig());
     }
     if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, getResponseJsonSchema());
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(30, getImageConfig());
     }
     size += getUnknownFields().getSerializedSize();
@@ -5016,6 +5081,10 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     if (hasRoutingConfig()) {
       if (!getRoutingConfig().equals(other.getRoutingConfig())) return false;
     }
+    if (hasSpeechConfig() != other.hasSpeechConfig()) return false;
+    if (hasSpeechConfig()) {
+      if (!getSpeechConfig().equals(other.getSpeechConfig())) return false;
+    }
     if (hasThinkingConfig() != other.hasThinkingConfig()) return false;
     if (hasThinkingConfig()) {
       if (!getThinkingConfig().equals(other.getThinkingConfig())) return false;
@@ -5092,6 +5161,10 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     if (hasRoutingConfig()) {
       hash = (37 * hash) + ROUTING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getRoutingConfig().hashCode();
+    }
+    if (hasSpeechConfig()) {
+      hash = (37 * hash) + SPEECH_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getSpeechConfig().hashCode();
     }
     if (hasThinkingConfig()) {
       hash = (37 * hash) + THINKING_CONFIG_FIELD_NUMBER;
@@ -5245,6 +5318,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         getResponseSchemaFieldBuilder();
         getResponseJsonSchemaFieldBuilder();
         getRoutingConfigFieldBuilder();
+        getSpeechConfigFieldBuilder();
         getThinkingConfigFieldBuilder();
         getImageConfigFieldBuilder();
       }
@@ -5280,6 +5354,11 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       if (routingConfigBuilder_ != null) {
         routingConfigBuilder_.dispose();
         routingConfigBuilder_ = null;
+      }
+      speechConfig_ = null;
+      if (speechConfigBuilder_ != null) {
+        speechConfigBuilder_.dispose();
+        speechConfigBuilder_ = null;
       }
       thinkingConfig_ = null;
       if (thinkingConfigBuilder_ != null) {
@@ -5393,14 +5472,19 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.thinkingConfig_ =
-            thinkingConfigBuilder_ == null ? thinkingConfig_ : thinkingConfigBuilder_.build();
+        result.speechConfig_ =
+            speechConfigBuilder_ == null ? speechConfig_ : speechConfigBuilder_.build();
         to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.thinkingConfig_ =
+            thinkingConfigBuilder_ == null ? thinkingConfig_ : thinkingConfigBuilder_.build();
+        to_bitField0_ |= 0x00004000;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.imageConfig_ =
             imageConfigBuilder_ == null ? imageConfig_ : imageConfigBuilder_.build();
-        to_bitField0_ |= 0x00004000;
+        to_bitField0_ |= 0x00008000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -5504,6 +5588,9 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasRoutingConfig()) {
         mergeRoutingConfig(other.getRoutingConfig());
+      }
+      if (other.hasSpeechConfig()) {
+        mergeSpeechConfig(other.getSpeechConfig());
       }
       if (other.hasThinkingConfig()) {
         mergeThinkingConfig(other.getThinkingConfig());
@@ -5622,10 +5709,16 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000040;
                 break;
               } // case 144
+            case 186:
+              {
+                input.readMessage(getSpeechConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 186
             case 202:
               {
                 input.readMessage(getThinkingConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 202
             case 226:
@@ -5638,7 +5731,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
             case 242:
               {
                 input.readMessage(getImageConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 242
             default:
@@ -7717,6 +7810,219 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       return routingConfigBuilder_;
     }
 
+    private com.google.cloud.aiplatform.v1.SpeechConfig speechConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.SpeechConfig,
+            com.google.cloud.aiplatform.v1.SpeechConfig.Builder,
+            com.google.cloud.aiplatform.v1.SpeechConfigOrBuilder>
+        speechConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The speech generation config.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.SpeechConfig speech_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the speechConfig field is set.
+     */
+    public boolean hasSpeechConfig() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The speech generation config.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.SpeechConfig speech_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The speechConfig.
+     */
+    public com.google.cloud.aiplatform.v1.SpeechConfig getSpeechConfig() {
+      if (speechConfigBuilder_ == null) {
+        return speechConfig_ == null
+            ? com.google.cloud.aiplatform.v1.SpeechConfig.getDefaultInstance()
+            : speechConfig_;
+      } else {
+        return speechConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The speech generation config.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.SpeechConfig speech_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSpeechConfig(com.google.cloud.aiplatform.v1.SpeechConfig value) {
+      if (speechConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        speechConfig_ = value;
+      } else {
+        speechConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The speech generation config.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.SpeechConfig speech_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSpeechConfig(
+        com.google.cloud.aiplatform.v1.SpeechConfig.Builder builderForValue) {
+      if (speechConfigBuilder_ == null) {
+        speechConfig_ = builderForValue.build();
+      } else {
+        speechConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The speech generation config.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.SpeechConfig speech_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSpeechConfig(com.google.cloud.aiplatform.v1.SpeechConfig value) {
+      if (speechConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00008000) != 0)
+            && speechConfig_ != null
+            && speechConfig_ != com.google.cloud.aiplatform.v1.SpeechConfig.getDefaultInstance()) {
+          getSpeechConfigBuilder().mergeFrom(value);
+        } else {
+          speechConfig_ = value;
+        }
+      } else {
+        speechConfigBuilder_.mergeFrom(value);
+      }
+      if (speechConfig_ != null) {
+        bitField0_ |= 0x00008000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The speech generation config.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.SpeechConfig speech_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSpeechConfig() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      speechConfig_ = null;
+      if (speechConfigBuilder_ != null) {
+        speechConfigBuilder_.dispose();
+        speechConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The speech generation config.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.SpeechConfig speech_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.SpeechConfig.Builder getSpeechConfigBuilder() {
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return getSpeechConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The speech generation config.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.SpeechConfig speech_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.SpeechConfigOrBuilder getSpeechConfigOrBuilder() {
+      if (speechConfigBuilder_ != null) {
+        return speechConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return speechConfig_ == null
+            ? com.google.cloud.aiplatform.v1.SpeechConfig.getDefaultInstance()
+            : speechConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The speech generation config.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1.SpeechConfig speech_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.SpeechConfig,
+            com.google.cloud.aiplatform.v1.SpeechConfig.Builder,
+            com.google.cloud.aiplatform.v1.SpeechConfigOrBuilder>
+        getSpeechConfigFieldBuilder() {
+      if (speechConfigBuilder_ == null) {
+        speechConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.SpeechConfig,
+                com.google.cloud.aiplatform.v1.SpeechConfig.Builder,
+                com.google.cloud.aiplatform.v1.SpeechConfigOrBuilder>(
+                getSpeechConfig(), getParentForChildren(), isClean());
+        speechConfig_ = null;
+      }
+      return speechConfigBuilder_;
+    }
+
     private com.google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig thinkingConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig,
@@ -7740,7 +8046,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the thinkingConfig field is set.
      */
     public boolean hasThinkingConfig() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -7791,7 +8097,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       } else {
         thinkingConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -7816,7 +8122,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       } else {
         thinkingConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -7837,7 +8143,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
     public Builder mergeThinkingConfig(
         com.google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig value) {
       if (thinkingConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && thinkingConfig_ != null
             && thinkingConfig_
                 != com.google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig
@@ -7850,7 +8156,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         thinkingConfigBuilder_.mergeFrom(value);
       }
       if (thinkingConfig_ != null) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -7870,7 +8176,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearThinkingConfig() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       thinkingConfig_ = null;
       if (thinkingConfigBuilder_ != null) {
         thinkingConfigBuilder_.dispose();
@@ -7895,7 +8201,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfig.Builder
         getThinkingConfigBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return getThinkingConfigFieldBuilder().getBuilder();
     }
@@ -7975,7 +8281,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the imageConfig field is set.
      */
     public boolean hasImageConfig() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -8021,7 +8327,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       } else {
         imageConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -8044,7 +8350,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
       } else {
         imageConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -8062,7 +8368,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeImageConfig(com.google.cloud.aiplatform.v1.ImageConfig value) {
       if (imageConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00020000) != 0)
             && imageConfig_ != null
             && imageConfig_ != com.google.cloud.aiplatform.v1.ImageConfig.getDefaultInstance()) {
           getImageConfigBuilder().mergeFrom(value);
@@ -8073,7 +8379,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
         imageConfigBuilder_.mergeFrom(value);
       }
       if (imageConfig_ != null) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       return this;
@@ -8091,7 +8397,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearImageConfig() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       imageConfig_ = null;
       if (imageConfigBuilder_ != null) {
         imageConfigBuilder_.dispose();
@@ -8113,7 +8419,7 @@ public final class GenerationConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.aiplatform.v1.ImageConfig.Builder getImageConfigBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return getImageConfigFieldBuilder().getBuilder();
     }

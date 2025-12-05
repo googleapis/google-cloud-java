@@ -28,7 +28,8 @@ public interface InstanceGroupsScopedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The list of instance groups that are contained in this scope.
+   * [Output Only] The list ofinstance
+   * groups that are contained in this scope.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
@@ -39,7 +40,8 @@ public interface InstanceGroupsScopedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The list of instance groups that are contained in this scope.
+   * [Output Only] The list ofinstance
+   * groups that are contained in this scope.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
@@ -50,7 +52,8 @@ public interface InstanceGroupsScopedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The list of instance groups that are contained in this scope.
+   * [Output Only] The list ofinstance
+   * groups that are contained in this scope.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
@@ -61,7 +64,8 @@ public interface InstanceGroupsScopedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The list of instance groups that are contained in this scope.
+   * [Output Only] The list ofinstance
+   * groups that are contained in this scope.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
@@ -73,7 +77,8 @@ public interface InstanceGroupsScopedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The list of instance groups that are contained in this scope.
+   * [Output Only] The list ofinstance
+   * groups that are contained in this scope.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
@@ -84,7 +89,8 @@ public interface InstanceGroupsScopedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] An informational warning that replaces the list of instance groups when the list is empty.
+   * [Output Only] An informational warning that replaces the list of
+   * instance groups when the list is empty.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
@@ -97,7 +103,8 @@ public interface InstanceGroupsScopedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] An informational warning that replaces the list of instance groups when the list is empty.
+   * [Output Only] An informational warning that replaces the list of
+   * instance groups when the list is empty.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
@@ -110,7 +117,8 @@ public interface InstanceGroupsScopedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] An informational warning that replaces the list of instance groups when the list is empty.
+   * [Output Only] An informational warning that replaces the list of
+   * instance groups when the list is empty.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>

@@ -74,7 +74,8 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Whether the serving infrastructure will authenticate and authorize all incoming requests.
+   * Whether the serving infrastructure will authenticate and authorize all
+   * incoming requests.
    * </pre>
    *
    * <code>optional bool enabled = 1018689;</code>
@@ -90,7 +91,8 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Whether the serving infrastructure will authenticate and authorize all incoming requests.
+   * Whether the serving infrastructure will authenticate and authorize all
+   * incoming requests.
    * </pre>
    *
    * <code>optional bool enabled = 1018689;</code>
@@ -180,7 +182,12 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * OAuth2 client secret to use for the authentication flow. For security reasons, this value cannot be retrieved via the API. Instead, the SHA-256 hash of the value is returned in the oauth2ClientSecretSha256 field. &#64;InputOnly
+   * OAuth2 client secret to use for the authentication flow.
+   * For security reasons, this value cannot be retrieved via the API.
+   * Instead, the SHA-256 hash of the value is returned in the
+   * oauth2ClientSecretSha256 field.
+   *
+   * &#64;InputOnly
    * </pre>
    *
    * <code>optional string oauth2_client_secret = 50999520;</code>
@@ -196,7 +203,12 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * OAuth2 client secret to use for the authentication flow. For security reasons, this value cannot be retrieved via the API. Instead, the SHA-256 hash of the value is returned in the oauth2ClientSecretSha256 field. &#64;InputOnly
+   * OAuth2 client secret to use for the authentication flow.
+   * For security reasons, this value cannot be retrieved via the API.
+   * Instead, the SHA-256 hash of the value is returned in the
+   * oauth2ClientSecretSha256 field.
+   *
+   * &#64;InputOnly
    * </pre>
    *
    * <code>optional string oauth2_client_secret = 50999520;</code>
@@ -220,7 +232,12 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * OAuth2 client secret to use for the authentication flow. For security reasons, this value cannot be retrieved via the API. Instead, the SHA-256 hash of the value is returned in the oauth2ClientSecretSha256 field. &#64;InputOnly
+   * OAuth2 client secret to use for the authentication flow.
+   * For security reasons, this value cannot be retrieved via the API.
+   * Instead, the SHA-256 hash of the value is returned in the
+   * oauth2ClientSecretSha256 field.
+   *
+   * &#64;InputOnly
    * </pre>
    *
    * <code>optional string oauth2_client_secret = 50999520;</code>
@@ -757,7 +774,8 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Whether the serving infrastructure will authenticate and authorize all incoming requests.
+     * Whether the serving infrastructure will authenticate and authorize all
+     * incoming requests.
      * </pre>
      *
      * <code>optional bool enabled = 1018689;</code>
@@ -773,7 +791,8 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Whether the serving infrastructure will authenticate and authorize all incoming requests.
+     * Whether the serving infrastructure will authenticate and authorize all
+     * incoming requests.
      * </pre>
      *
      * <code>optional bool enabled = 1018689;</code>
@@ -789,7 +808,8 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Whether the serving infrastructure will authenticate and authorize all incoming requests.
+     * Whether the serving infrastructure will authenticate and authorize all
+     * incoming requests.
      * </pre>
      *
      * <code>optional bool enabled = 1018689;</code>
@@ -809,7 +829,8 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Whether the serving infrastructure will authenticate and authorize all incoming requests.
+     * Whether the serving infrastructure will authenticate and authorize all
+     * incoming requests.
      * </pre>
      *
      * <code>optional bool enabled = 1018689;</code>
@@ -955,7 +976,12 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * OAuth2 client secret to use for the authentication flow. For security reasons, this value cannot be retrieved via the API. Instead, the SHA-256 hash of the value is returned in the oauth2ClientSecretSha256 field. &#64;InputOnly
+     * OAuth2 client secret to use for the authentication flow.
+     * For security reasons, this value cannot be retrieved via the API.
+     * Instead, the SHA-256 hash of the value is returned in the
+     * oauth2ClientSecretSha256 field.
+     *
+     * &#64;InputOnly
      * </pre>
      *
      * <code>optional string oauth2_client_secret = 50999520;</code>
@@ -970,7 +996,12 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * OAuth2 client secret to use for the authentication flow. For security reasons, this value cannot be retrieved via the API. Instead, the SHA-256 hash of the value is returned in the oauth2ClientSecretSha256 field. &#64;InputOnly
+     * OAuth2 client secret to use for the authentication flow.
+     * For security reasons, this value cannot be retrieved via the API.
+     * Instead, the SHA-256 hash of the value is returned in the
+     * oauth2ClientSecretSha256 field.
+     *
+     * &#64;InputOnly
      * </pre>
      *
      * <code>optional string oauth2_client_secret = 50999520;</code>
@@ -993,7 +1024,12 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * OAuth2 client secret to use for the authentication flow. For security reasons, this value cannot be retrieved via the API. Instead, the SHA-256 hash of the value is returned in the oauth2ClientSecretSha256 field. &#64;InputOnly
+     * OAuth2 client secret to use for the authentication flow.
+     * For security reasons, this value cannot be retrieved via the API.
+     * Instead, the SHA-256 hash of the value is returned in the
+     * oauth2ClientSecretSha256 field.
+     *
+     * &#64;InputOnly
      * </pre>
      *
      * <code>optional string oauth2_client_secret = 50999520;</code>
@@ -1016,7 +1052,12 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * OAuth2 client secret to use for the authentication flow. For security reasons, this value cannot be retrieved via the API. Instead, the SHA-256 hash of the value is returned in the oauth2ClientSecretSha256 field. &#64;InputOnly
+     * OAuth2 client secret to use for the authentication flow.
+     * For security reasons, this value cannot be retrieved via the API.
+     * Instead, the SHA-256 hash of the value is returned in the
+     * oauth2ClientSecretSha256 field.
+     *
+     * &#64;InputOnly
      * </pre>
      *
      * <code>optional string oauth2_client_secret = 50999520;</code>
@@ -1038,7 +1079,12 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * OAuth2 client secret to use for the authentication flow. For security reasons, this value cannot be retrieved via the API. Instead, the SHA-256 hash of the value is returned in the oauth2ClientSecretSha256 field. &#64;InputOnly
+     * OAuth2 client secret to use for the authentication flow.
+     * For security reasons, this value cannot be retrieved via the API.
+     * Instead, the SHA-256 hash of the value is returned in the
+     * oauth2ClientSecretSha256 field.
+     *
+     * &#64;InputOnly
      * </pre>
      *
      * <code>optional string oauth2_client_secret = 50999520;</code>
@@ -1056,7 +1102,12 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * OAuth2 client secret to use for the authentication flow. For security reasons, this value cannot be retrieved via the API. Instead, the SHA-256 hash of the value is returned in the oauth2ClientSecretSha256 field. &#64;InputOnly
+     * OAuth2 client secret to use for the authentication flow.
+     * For security reasons, this value cannot be retrieved via the API.
+     * Instead, the SHA-256 hash of the value is returned in the
+     * oauth2ClientSecretSha256 field.
+     *
+     * &#64;InputOnly
      * </pre>
      *
      * <code>optional string oauth2_client_secret = 50999520;</code>

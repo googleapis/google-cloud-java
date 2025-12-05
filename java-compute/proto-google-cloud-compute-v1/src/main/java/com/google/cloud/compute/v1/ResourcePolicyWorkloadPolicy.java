@@ -287,7 +287,8 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * MIG provisions instances as close to each other as possible for high throughput.
+     * MIG provisions instances as close to each other as possible for high
+     * throughput.
      * </pre>
      *
      * <code>HIGH_THROUGHPUT = 146499815;</code>
@@ -322,7 +323,8 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * MIG provisions instances as close to each other as possible for high throughput.
+     * MIG provisions instances as close to each other as possible for high
+     * throughput.
      * </pre>
      *
      * <code>HIGH_THROUGHPUT = 146499815;</code>
@@ -424,7 +426,8 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Specifies the topology required to create a partition for VMs that have interconnected GPUs.
+   * Specifies the topology required to create a partition for VMs that have
+   * interconnected GPUs.
    * </pre>
    *
    * <code>optional string accelerator_topology = 389323203;</code>
@@ -440,7 +443,8 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Specifies the topology required to create a partition for VMs that have interconnected GPUs.
+   * Specifies the topology required to create a partition for VMs that have
+   * interconnected GPUs.
    * </pre>
    *
    * <code>optional string accelerator_topology = 389323203;</code>
@@ -464,7 +468,8 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Specifies the topology required to create a partition for VMs that have interconnected GPUs.
+   * Specifies the topology required to create a partition for VMs that have
+   * interconnected GPUs.
    * </pre>
    *
    * <code>optional string accelerator_topology = 389323203;</code>
@@ -1048,7 +1053,8 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Specifies the topology required to create a partition for VMs that have interconnected GPUs.
+     * Specifies the topology required to create a partition for VMs that have
+     * interconnected GPUs.
      * </pre>
      *
      * <code>optional string accelerator_topology = 389323203;</code>
@@ -1063,7 +1069,8 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Specifies the topology required to create a partition for VMs that have interconnected GPUs.
+     * Specifies the topology required to create a partition for VMs that have
+     * interconnected GPUs.
      * </pre>
      *
      * <code>optional string accelerator_topology = 389323203;</code>
@@ -1086,7 +1093,8 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Specifies the topology required to create a partition for VMs that have interconnected GPUs.
+     * Specifies the topology required to create a partition for VMs that have
+     * interconnected GPUs.
      * </pre>
      *
      * <code>optional string accelerator_topology = 389323203;</code>
@@ -1109,7 +1117,8 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Specifies the topology required to create a partition for VMs that have interconnected GPUs.
+     * Specifies the topology required to create a partition for VMs that have
+     * interconnected GPUs.
      * </pre>
      *
      * <code>optional string accelerator_topology = 389323203;</code>
@@ -1131,7 +1140,8 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Specifies the topology required to create a partition for VMs that have interconnected GPUs.
+     * Specifies the topology required to create a partition for VMs that have
+     * interconnected GPUs.
      * </pre>
      *
      * <code>optional string accelerator_topology = 389323203;</code>
@@ -1149,7 +1159,8 @@ public final class ResourcePolicyWorkloadPolicy extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Specifies the topology required to create a partition for VMs that have interconnected GPUs.
+     * Specifies the topology required to create a partition for VMs that have
+     * interconnected GPUs.
      * </pre>
      *
      * <code>optional string accelerator_topology = 389323203;</code>

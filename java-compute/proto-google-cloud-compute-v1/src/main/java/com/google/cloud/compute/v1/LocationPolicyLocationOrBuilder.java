@@ -28,7 +28,8 @@ public interface LocationPolicyLocationOrBuilder
    *
    *
    * <pre>
-   * Constraints that the caller requires on the result distribution in this zone.
+   * Constraints that the caller requires on the result distribution
+   * in this zone.
    * </pre>
    *
    * <code>
@@ -43,7 +44,8 @@ public interface LocationPolicyLocationOrBuilder
    *
    *
    * <pre>
-   * Constraints that the caller requires on the result distribution in this zone.
+   * Constraints that the caller requires on the result distribution
+   * in this zone.
    * </pre>
    *
    * <code>
@@ -58,7 +60,8 @@ public interface LocationPolicyLocationOrBuilder
    *
    *
    * <pre>
-   * Constraints that the caller requires on the result distribution in this zone.
+   * Constraints that the caller requires on the result distribution
+   * in this zone.
    * </pre>
    *
    * <code>
@@ -71,7 +74,7 @@ public interface LocationPolicyLocationOrBuilder
    *
    *
    * <pre>
-   * Preference for a given location. Set to either ALLOW or DENY.
+   * Preference for a given location. Set to either ALLOW orDENY.
    * Check the Preference enum for the list of possible values.
    * </pre>
    *
@@ -85,7 +88,7 @@ public interface LocationPolicyLocationOrBuilder
    *
    *
    * <pre>
-   * Preference for a given location. Set to either ALLOW or DENY.
+   * Preference for a given location. Set to either ALLOW orDENY.
    * Check the Preference enum for the list of possible values.
    * </pre>
    *
@@ -99,7 +102,7 @@ public interface LocationPolicyLocationOrBuilder
    *
    *
    * <pre>
-   * Preference for a given location. Set to either ALLOW or DENY.
+   * Preference for a given location. Set to either ALLOW orDENY.
    * Check the Preference enum for the list of possible values.
    * </pre>
    *

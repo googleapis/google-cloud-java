@@ -77,6 +77,10 @@ public final class AccountServicesProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_shopping_merchant_accounts_v1_LocalListingManagement_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_accounts_v1_ComparisonShopping_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_shopping_merchant_accounts_v1_ComparisonShopping_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_shopping_merchant_accounts_v1_Handshake_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_shopping_merchant_accounts_v1_Handshake_fieldAccessorTable;
@@ -94,7 +98,7 @@ public final class AccountServicesProto {
           + "rchant.accounts.v1\032\034google/api/annotatio"
           + "ns.proto\032\027google/api/client.proto\032\037googl"
           + "e/api/field_behavior.proto\032\031google/api/r"
-          + "esource.proto\032\033google/protobuf/empty.proto\"\311\007\n"
+          + "esource.proto\032\033google/protobuf/empty.proto\"\242\010\n"
           + "\016AccountService\022W\n"
           + "\023products_management\030d"
           + " \001(\01328.google.shopping.merchant.accounts.v1.ProductsManagementH\000\022Y\n"
@@ -105,21 +109,23 @@ public final class AccountServicesProto {
           + "\023account_aggregation\030g \001(\01328."
           + "google.shopping.merchant.accounts.v1.AccountAggregationH\000\022`\n"
           + "\030local_listing_management\030h"
-          + " \001(\0132<.google.shopping.merchant.accounts.v1.LocalListingManagementH\000\022\021\n"
+          + " \001(\0132<.google.shopping.merchant.accounts.v1.LocalListingManagementH\000\022W\n"
+          + "\023comparison_shopping\030i \001(\01328.google.shoppi"
+          + "ng.merchant.accounts.v1.ComparisonShoppingH\000\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\032\n"
           + "\010provider\030\002 \001(\tB\003\340A\003H\001\210\001\001\022\"\n"
           + "\025provider_display_name\030\003 \001(\tB\003\340A\003\022G\n"
-          + "\thandshake\030\004"
-          + " \001(\0132/.google.shopping.merchant.accounts.v1.HandshakeB\003\340A\003\022X\n\n"
-          + "mutability\030\005 \001(\0162?.google.shopping.merchant.a"
-          + "ccounts.v1.AccountService.MutabilityB\003\340A\003\022 \n"
+          + "\thandshake\030\004 \001(\0132/.google.shop"
+          + "ping.merchant.accounts.v1.HandshakeB\003\340A\003\022X\n\n"
+          + "mutability\030\005 \001(\0162?.google.shopping.m"
+          + "erchant.accounts.v1.AccountService.MutabilityB\003\340A\003\022 \n"
           + "\023external_account_id\030\006 \001(\tB\003\340A\005\"D\n\n"
           + "Mutability\022\032\n"
           + "\026MUTABILITY_UNSPECIFIED\020\000\022\013\n"
           + "\007MUTABLE\020\001\022\r\n"
           + "\tIMMUTABLE\020\002:v\352As\n"
-          + ")merchantapi.googleapis.com/AccountService\022%accou"
-          + "nts/{account}/services/{service}*\017accountServices2\016accountServiceB\016\n"
+          + ")merchantapi.googleapis.com/AccountServi"
+          + "ce\022%accounts/{account}/services/{service}*\017accountServices2\016accountServiceB\016\n"
           + "\014service_typeB\013\n"
           + "\t_provider\"[\n"
           + "\030GetAccountServiceRequest\022?\n"
@@ -131,8 +137,8 @@ public final class AccountServicesProto {
           + "page_token\030\004 \001(\tB\003\340A\001\022\026\n"
           + "\tpage_size\030\005 \001(\005B\003\340A\001\"\206\001\n"
           + "\033ListAccountServicesResponse\022N\n"
-          + "\020account_services\030\001 \003(\01324.google.shopp"
-          + "ing.merchant.accounts.v1.AccountService\022\027\n"
+          + "\020account_services\030\001 \003(\01324.goo"
+          + "gle.shopping.merchant.accounts.v1.AccountService\022\027\n"
           + "\017next_page_token\030\002 \001(\t\"\305\001\n"
           + "\034ProposeAccountServiceRequest\022:\n"
           + "\006parent\030\001 \001(\tB*\340A\002\372A$\n"
@@ -150,12 +156,13 @@ public final class AccountServicesProto {
           + "\023CampaignsManagement\"\023\n"
           + "\021AccountManagement\"\024\n"
           + "\022AccountAggregation\"\030\n"
-          + "\026LocalListingManagement\"\315\002\n"
+          + "\026LocalListingManagement\"\024\n"
+          + "\022ComparisonShopping\"\315\002\n"
           + "\tHandshake\022Z\n"
-          + "\016approval_state\030\001"
-          + " \001(\0162=.google.shopping.merchant.accounts.v1.Handshake.ApprovalStateB\003\340A\003\022I\n"
-          + "\005actor\030\002"
-          + " \001(\01625.google.shopping.merchant.accounts.v1.Handshake.ActorB\003\340A\003\"[\n\r"
+          + "\016approval_state\030\001 \001(\016"
+          + "2=.google.shopping.merchant.accounts.v1.Handshake.ApprovalStateB\003\340A\003\022I\n"
+          + "\005actor\030\002 "
+          + "\001(\01625.google.shopping.merchant.accounts.v1.Handshake.ActorB\003\340A\003\"[\n\r"
           + "ApprovalState\022\036\n"
           + "\032APPROVAL_STATE_UNSPECIFIED\020\000\022\013\n"
           + "\007PENDING\020\001\022\017\n"
@@ -166,31 +173,31 @@ public final class AccountServicesProto {
           + "\007ACCOUNT\020\001\022\017\n"
           + "\013OTHER_PARTY\020\0022\205\t\n"
           + "\026AccountServicesService\022\303\001\n"
-          + "\021GetAccountService\022>.google.shopping.merchant.accounts.v1.GetA"
-          + "ccountServiceRequest\0324.google.shopping.m"
-          + "erchant.accounts.v1.AccountService\"8\332A\004n"
-          + "ame\202\323\344\223\002+\022)/accounts/v1/{name=accounts/*/services/*}\022\326\001\n"
-          + "\023ListAccountServices\022@.google.shopping.merchant.accounts.v1.List"
-          + "AccountServicesRequest\032A.google.shopping.merchant.accounts.v1.ListAccountService"
-          + "sResponse\":\332A\006parent\202\323\344\223\002+\022)/accounts/v1/{parent=accounts/*}/services\022\361\001\n"
-          + "\025ProposeAccountService\022B.google.shopping.mercha"
-          + "nt.accounts.v1.ProposeAccountServiceRequest\0324.google.shopping.merchant.accounts."
-          + "v1.AccountService\"^\332A\037parent,provider,ac"
-          + "count_service\202\323\344\223\0026\"1/accounts/v1/{parent=accounts/*}/services:propose:\001*\022\326\001\n"
-          + "\025ApproveAccountService\022B.google.shopping.me"
-          + "rchant.accounts.v1.ApproveAccountServiceRequest\0324.google.shopping.merchant.accou"
-          + "nts.v1.AccountService\"C\332A\004name\202\323\344\223\0026\"1/a"
-          + "ccounts/v1/{name=accounts/*/services/*}:approve:\001*\022\265\001\n"
-          + "\024RejectAccountService\022A.google.shopping.merchant.accounts.v1.Rejec"
-          + "tAccountServiceRequest\032\026.google.protobuf"
-          + ".Empty\"B\332A\004name\202\323\344\223\0025\"0/accounts/v1/{nam"
-          + "e=accounts/*/services/*}:reject:\001*\032G\312A\032m"
-          + "erchantapi.googleapis.com\322A\'https://www.googleapis.com/auth/contentB\207\002\n"
-          + "(com.google.shopping.merchant.accounts.v1B\024Accoun"
-          + "tServicesProtoP\001ZJcloud.google.com/go/shopping/merchant/accounts/apiv1/accountsp"
-          + "b;accountspb\252\002$Google.Shopping.Merchant."
-          + "Accounts.V1\312\002$Google\\Shopping\\Merchant\\A"
-          + "ccounts\\V1\352\002(Google::Shopping::Merchant::Accounts::V1b\006proto3"
+          + "\021GetAccountService\022>.google.shopping.merchant.accounts.v1.GetAccountSer"
+          + "viceRequest\0324.google.shopping.merchant.a"
+          + "ccounts.v1.AccountService\"8\332A\004name\202\323\344\223\002+"
+          + "\022)/accounts/v1/{name=accounts/*/services/*}\022\326\001\n"
+          + "\023ListAccountServices\022@.google.shopping.merchant.accounts.v1.ListAccountSe"
+          + "rvicesRequest\032A.google.shopping.merchant.accounts.v1.ListAccountServicesResponse"
+          + "\":\332A\006parent\202\323\344\223\002+\022)/accounts/v1/{parent=accounts/*}/services\022\361\001\n"
+          + "\025ProposeAccountService\022B.google.shopping.merchant.accoun"
+          + "ts.v1.ProposeAccountServiceRequest\0324.google.shopping.merchant.accounts.v1.Accoun"
+          + "tService\"^\332A\037parent,provider,account_ser"
+          + "vice\202\323\344\223\0026\"1/accounts/v1/{parent=accounts/*}/services:propose:\001*\022\326\001\n"
+          + "\025ApproveAccountService\022B.google.shopping.merchant.ac"
+          + "counts.v1.ApproveAccountServiceRequest\0324.google.shopping.merchant.accounts.v1.Ac"
+          + "countService\"C\332A\004name\202\323\344\223\0026\"1/accounts/v"
+          + "1/{name=accounts/*/services/*}:approve:\001*\022\265\001\n"
+          + "\024RejectAccountService\022A.google.shopping.merchant.accounts.v1.RejectAccountS"
+          + "erviceRequest\032\026.google.protobuf.Empty\"B\332"
+          + "A\004name\202\323\344\223\0025\"0/accounts/v1/{name=account"
+          + "s/*/services/*}:reject:\001*\032G\312A\032merchantap"
+          + "i.googleapis.com\322A\'https://www.googleapis.com/auth/contentB\207\002\n"
+          + "(com.google.shopping.merchant.accounts.v1B\024AccountServices"
+          + "ProtoP\001ZJcloud.google.com/go/shopping/merchant/accounts/apiv1/accountspb;account"
+          + "spb\252\002$Google.Shopping.Merchant.Accounts."
+          + "V1\312\002$Google\\Shopping\\Merchant\\Accounts\\V"
+          + "1\352\002(Google::Shopping::Merchant::Accounts::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -213,6 +220,7 @@ public final class AccountServicesProto {
               "AccountManagement",
               "AccountAggregation",
               "LocalListingManagement",
+              "ComparisonShopping",
               "Name",
               "Provider",
               "ProviderDisplayName",
@@ -299,8 +307,14 @@ public final class AccountServicesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_shopping_merchant_accounts_v1_LocalListingManagement_descriptor,
             new java.lang.String[] {});
-    internal_static_google_shopping_merchant_accounts_v1_Handshake_descriptor =
+    internal_static_google_shopping_merchant_accounts_v1_ComparisonShopping_descriptor =
         getDescriptor().getMessageTypes().get(12);
+    internal_static_google_shopping_merchant_accounts_v1_ComparisonShopping_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_shopping_merchant_accounts_v1_ComparisonShopping_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_shopping_merchant_accounts_v1_Handshake_descriptor =
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_shopping_merchant_accounts_v1_Handshake_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_shopping_merchant_accounts_v1_Handshake_descriptor,

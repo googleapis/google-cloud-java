@@ -29,6 +29,7 @@ package com.google.cloud.gkemulticloud.v1;
  *
  * Protobuf type {@code google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection}
  */
+@java.lang.Deprecated
 public final class AwsAutoscalingGroupMetricsCollection
     extends com.google.protobuf.GeneratedMessageV3
     implements

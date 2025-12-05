@@ -51,6 +51,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     allowIpForwarding_ = "";
     allowLoadBalancing_ = "";
     allowMultiNicInSameNetwork_ = "";
+    allowMulticast_ = "";
     allowNcc_ = "";
     allowNetworkMigration_ = "";
     allowPacketMirroring_ = "";
@@ -62,6 +63,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     allowVpcPeering_ = "";
     allowVpn_ = "";
     interfaceTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    multicast_ = "";
     subnetPurposes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     subnetStackTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     subnetworkPurposes_ = com.google.protobuf.LazyStringArrayList.emptyList();
@@ -136,7 +138,13 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * A regional internal IP address range reserved for the VLAN attachment that is used in HA VPN over Cloud Interconnect. This regional internal IP address range must not overlap with any IP address range of subnet/route in the VPC network and its peering networks. After the VLAN attachment is created with the reserved IP address range, when creating a new VPN gateway, its interface IP address is allocated from the associated VLAN attachment’s IP address range.
+     * A regional internal IP address range reserved for the VLAN attachment
+     * that is used in HA VPN over Cloud Interconnect. This regional
+     * internal IP address range must not overlap with any IP address range
+     * of subnet/route in the VPC network and its peering networks. After the
+     * VLAN attachment is created with the reserved IP address range, when
+     * creating a new VPN gateway, its interface IP address is allocated
+     * from the associated VLAN attachment’s IP address range.
      * </pre>
      *
      * <code>IPSEC_INTERCONNECT = 340437251;</code>
@@ -168,7 +176,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * A private network IP address that can be shared by multiple Internal Load Balancer forwarding rules.
+     * A private network IP address that can be shared by multiple Internal
+     * Load Balancer forwarding rules.
      * </pre>
      *
      * <code>SHARED_LOADBALANCER_VIP = 294447572;</code>
@@ -224,7 +233,13 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * A regional internal IP address range reserved for the VLAN attachment that is used in HA VPN over Cloud Interconnect. This regional internal IP address range must not overlap with any IP address range of subnet/route in the VPC network and its peering networks. After the VLAN attachment is created with the reserved IP address range, when creating a new VPN gateway, its interface IP address is allocated from the associated VLAN attachment’s IP address range.
+     * A regional internal IP address range reserved for the VLAN attachment
+     * that is used in HA VPN over Cloud Interconnect. This regional
+     * internal IP address range must not overlap with any IP address range
+     * of subnet/route in the VPC network and its peering networks. After the
+     * VLAN attachment is created with the reserved IP address range, when
+     * creating a new VPN gateway, its interface IP address is allocated
+     * from the associated VLAN attachment’s IP address range.
      * </pre>
      *
      * <code>IPSEC_INTERCONNECT = 340437251;</code>
@@ -260,7 +275,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * A private network IP address that can be shared by multiple Internal Load Balancer forwarding rules.
+     * A private network IP address that can be shared by multiple Internal
+     * Load Balancer forwarding rules.
      * </pre>
      *
      * <code>SHARED_LOADBALANCER_VIP = 294447572;</code>
@@ -381,7 +397,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Specifies whether alias IP ranges (and secondary address ranges) are allowed.
+   * Specifies whether alias IP ranges (and secondary address ranges) are
+   * allowed.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.NetworkProfileNetworkFeatures.AllowAliasIpRanges}
@@ -1171,7 +1188,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Specifies whether VMs are allowed to have external IP access on network interfaces connected to this VPC.
+   * Specifies whether VMs are allowed to have external IP access on network
+   * interfaces connected to this VPC.
    * </pre>
    *
    * Protobuf enum {@code
@@ -1833,6 +1851,135 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
    *
    *
    * <pre>
+   * Specifies whether multicast is allowed.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.NetworkProfileNetworkFeatures.AllowMulticast}
+   */
+  public enum AllowMulticast implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_ALLOW_MULTICAST = 0;</code>
+     */
+    UNDEFINED_ALLOW_MULTICAST(0),
+    /** <code>MULTICAST_ALLOWED = 44693537;</code> */
+    MULTICAST_ALLOWED(44693537),
+    /** <code>MULTICAST_BLOCKED = 397727845;</code> */
+    MULTICAST_BLOCKED(397727845),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_ALLOW_MULTICAST = 0;</code>
+     */
+    public static final int UNDEFINED_ALLOW_MULTICAST_VALUE = 0;
+
+    /** <code>MULTICAST_ALLOWED = 44693537;</code> */
+    public static final int MULTICAST_ALLOWED_VALUE = 44693537;
+
+    /** <code>MULTICAST_BLOCKED = 397727845;</code> */
+    public static final int MULTICAST_BLOCKED_VALUE = 397727845;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static AllowMulticast valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static AllowMulticast forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_ALLOW_MULTICAST;
+        case 44693537:
+          return MULTICAST_ALLOWED;
+        case 397727845:
+          return MULTICAST_BLOCKED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<AllowMulticast> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<AllowMulticast> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<AllowMulticast>() {
+          public AllowMulticast findValueByNumber(int number) {
+            return AllowMulticast.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.NetworkProfileNetworkFeatures.getDescriptor()
+          .getEnumTypes()
+          .get(12);
+    }
+
+    private static final AllowMulticast[] VALUES = values();
+
+    public static AllowMulticast valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private AllowMulticast(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.NetworkProfileNetworkFeatures.AllowMulticast)
+  }
+
+  /**
+   *
+   *
+   * <pre>
    * Specifies whether NCC is allowed.
    * </pre>
    *
@@ -1934,7 +2081,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.compute.v1.NetworkProfileNetworkFeatures.getDescriptor()
           .getEnumTypes()
-          .get(12);
+          .get(13);
     }
 
     private static final AllowNcc[] VALUES = values();
@@ -2066,7 +2213,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.compute.v1.NetworkProfileNetworkFeatures.getDescriptor()
           .getEnumTypes()
-          .get(13);
+          .get(14);
     }
 
     private static final AllowNetworkMigration[] VALUES = values();
@@ -2199,7 +2346,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.compute.v1.NetworkProfileNetworkFeatures.getDescriptor()
           .getEnumTypes()
-          .get(14);
+          .get(15);
     }
 
     private static final AllowPacketMirroring[] VALUES = values();
@@ -2332,7 +2479,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.compute.v1.NetworkProfileNetworkFeatures.getDescriptor()
           .getEnumTypes()
-          .get(15);
+          .get(16);
     }
 
     private static final AllowPrivateGoogleAccess[] VALUES = values();
@@ -2462,7 +2609,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.compute.v1.NetworkProfileNetworkFeatures.getDescriptor()
           .getEnumTypes()
-          .get(16);
+          .get(17);
     }
 
     private static final AllowPsc[] VALUES = values();
@@ -2594,7 +2741,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.compute.v1.NetworkProfileNetworkFeatures.getDescriptor()
           .getEnumTypes()
-          .get(17);
+          .get(18);
     }
 
     private static final AllowSameNetworkUnicast[] VALUES = values();
@@ -2726,7 +2873,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.compute.v1.NetworkProfileNetworkFeatures.getDescriptor()
           .getEnumTypes()
-          .get(18);
+          .get(19);
     }
 
     private static final AllowStaticRoutes[] VALUES = values();
@@ -2858,7 +3005,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.compute.v1.NetworkProfileNetworkFeatures.getDescriptor()
           .getEnumTypes()
-          .get(19);
+          .get(20);
     }
 
     private static final AllowSubInterfaces[] VALUES = values();
@@ -2989,7 +3136,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.compute.v1.NetworkProfileNetworkFeatures.getDescriptor()
           .getEnumTypes()
-          .get(20);
+          .get(21);
     }
 
     private static final AllowVpcPeering[] VALUES = values();
@@ -3119,7 +3266,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.compute.v1.NetworkProfileNetworkFeatures.getDescriptor()
           .getEnumTypes()
-          .get(21);
+          .get(22);
     }
 
     private static final AllowVpn[] VALUES = values();
@@ -3371,7 +3518,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.compute.v1.NetworkProfileNetworkFeatures.getDescriptor()
           .getEnumTypes()
-          .get(22);
+          .get(23);
     }
 
     private static final InterfaceTypes[] VALUES = values();
@@ -3393,6 +3540,135 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.NetworkProfileNetworkFeatures.InterfaceTypes)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which type of multicast is supported.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.NetworkProfileNetworkFeatures.Multicast}
+   */
+  public enum Multicast implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_MULTICAST = 0;</code>
+     */
+    UNDEFINED_MULTICAST(0),
+    /** <code>MULTICAST_SDN = 532209462;</code> */
+    MULTICAST_SDN(532209462),
+    /** <code>MULTICAST_ULL = 532211630;</code> */
+    MULTICAST_ULL(532211630),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_MULTICAST = 0;</code>
+     */
+    public static final int UNDEFINED_MULTICAST_VALUE = 0;
+
+    /** <code>MULTICAST_SDN = 532209462;</code> */
+    public static final int MULTICAST_SDN_VALUE = 532209462;
+
+    /** <code>MULTICAST_ULL = 532211630;</code> */
+    public static final int MULTICAST_ULL_VALUE = 532211630;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Multicast valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Multicast forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_MULTICAST;
+        case 532209462:
+          return MULTICAST_SDN;
+        case 532211630:
+          return MULTICAST_ULL;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Multicast> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Multicast> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Multicast>() {
+          public Multicast findValueByNumber(int number) {
+            return Multicast.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.NetworkProfileNetworkFeatures.getDescriptor()
+          .getEnumTypes()
+          .get(24);
+    }
+
+    private static final Multicast[] VALUES = values();
+
+    public static Multicast valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Multicast(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.NetworkProfileNetworkFeatures.Multicast)
   }
 
   /**
@@ -3499,7 +3775,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.compute.v1.NetworkProfileNetworkFeatures.getDescriptor()
           .getEnumTypes()
-          .get(23);
+          .get(25);
     }
 
     private static final SubnetPurposes[] VALUES = values();
@@ -3635,7 +3911,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.compute.v1.NetworkProfileNetworkFeatures.getDescriptor()
           .getEnumTypes()
-          .get(24);
+          .get(26);
     }
 
     private static final SubnetStackTypes[] VALUES = values();
@@ -3696,7 +3972,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Subnet reserved for Internal HTTP(S) Load Balancing. This is a legacy purpose, please use REGIONAL_MANAGED_PROXY instead.
+     * Subnet reserved for Internal HTTP(S) Load Balancing. This is a legacy
+     * purpose, please use REGIONAL_MANAGED_PROXY instead.
      * </pre>
      *
      * <code>INTERNAL_HTTPS_LOAD_BALANCER = 248748889;</code>
@@ -3706,7 +3983,9 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Subnetwork will be used for Migration from one peered VPC to another. (a transient state of subnetwork while migrating resources from one project to another).
+     * Subnetwork will be used for Migration from one peered VPC to another.
+     * (a transient state of subnetwork
+     * while migrating resources from one project to another).
      * </pre>
      *
      * <code>PEER_MIGRATION = 491902225;</code>
@@ -3781,7 +4060,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Subnet reserved for Internal HTTP(S) Load Balancing. This is a legacy purpose, please use REGIONAL_MANAGED_PROXY instead.
+     * Subnet reserved for Internal HTTP(S) Load Balancing. This is a legacy
+     * purpose, please use REGIONAL_MANAGED_PROXY instead.
      * </pre>
      *
      * <code>INTERNAL_HTTPS_LOAD_BALANCER = 248748889;</code>
@@ -3792,7 +4072,9 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Subnetwork will be used for Migration from one peered VPC to another. (a transient state of subnetwork while migrating resources from one project to another).
+     * Subnetwork will be used for Migration from one peered VPC to another.
+     * (a transient state of subnetwork
+     * while migrating resources from one project to another).
      * </pre>
      *
      * <code>PEER_MIGRATION = 491902225;</code>
@@ -3916,7 +4198,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.compute.v1.NetworkProfileNetworkFeatures.getDescriptor()
           .getEnumTypes()
-          .get(25);
+          .get(27);
     }
 
     private static final SubnetworkPurposes[] VALUES = values();
@@ -3985,7 +4267,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * New VMs in this subnet will only be assigned IPv6 addresses.
+     * New VMs in this subnet will only  be assigned IPv6 addresses.
      * </pre>
      *
      * <code>IPV6_ONLY = 79632100;</code>
@@ -4031,7 +4313,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * New VMs in this subnet will only be assigned IPv6 addresses.
+     * New VMs in this subnet will only  be assigned IPv6 addresses.
      * </pre>
      *
      * <code>IPV6_ONLY = 79632100;</code>
@@ -4103,7 +4385,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.compute.v1.NetworkProfileNetworkFeatures.getDescriptor()
           .getEnumTypes()
-          .get(26);
+          .get(28);
     }
 
     private static final SubnetworkStackTypes[] VALUES = values();
@@ -4233,7 +4515,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.compute.v1.NetworkProfileNetworkFeatures.getDescriptor()
           .getEnumTypes()
-          .get(27);
+          .get(29);
     }
 
     private static final Unicast[] VALUES = values();
@@ -4268,7 +4550,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Specifies what address purposes are supported. If empty, all address purposes are supported.
+   * Specifies what address purposes are supported. If empty, all address
+   * purposes are supported.
    * Check the AddressPurposes enum for the list of possible values.
    * </pre>
    *
@@ -4284,7 +4567,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Specifies what address purposes are supported. If empty, all address purposes are supported.
+   * Specifies what address purposes are supported. If empty, all address
+   * purposes are supported.
    * Check the AddressPurposes enum for the list of possible values.
    * </pre>
    *
@@ -4300,7 +4584,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Specifies what address purposes are supported. If empty, all address purposes are supported.
+   * Specifies what address purposes are supported. If empty, all address
+   * purposes are supported.
    * Check the AddressPurposes enum for the list of possible values.
    * </pre>
    *
@@ -4317,7 +4602,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Specifies what address purposes are supported. If empty, all address purposes are supported.
+   * Specifies what address purposes are supported. If empty, all address
+   * purposes are supported.
    * Check the AddressPurposes enum for the list of possible values.
    * </pre>
    *
@@ -4339,7 +4625,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Specifies whether alias IP ranges (and secondary address ranges) are allowed.
+   * Specifies whether alias IP ranges (and secondary address ranges) are
+   * allowed.
    * Check the AllowAliasIpRanges enum for the list of possible values.
    * </pre>
    *
@@ -4356,7 +4643,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Specifies whether alias IP ranges (and secondary address ranges) are allowed.
+   * Specifies whether alias IP ranges (and secondary address ranges) are
+   * allowed.
    * Check the AllowAliasIpRanges enum for the list of possible values.
    * </pre>
    *
@@ -4381,7 +4669,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Specifies whether alias IP ranges (and secondary address ranges) are allowed.
+   * Specifies whether alias IP ranges (and secondary address ranges) are
+   * allowed.
    * Check the AllowAliasIpRanges enum for the list of possible values.
    * </pre>
    *
@@ -4771,7 +5060,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Specifies whether VMs are allowed to have external IP access on network interfaces connected to this VPC.
+   * Specifies whether VMs are allowed to have external IP access on network
+   * interfaces connected to this VPC.
    * Check the AllowExternalIpAccess enum for the list of possible values.
    * </pre>
    *
@@ -4788,7 +5078,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Specifies whether VMs are allowed to have external IP access on network interfaces connected to this VPC.
+   * Specifies whether VMs are allowed to have external IP access on network
+   * interfaces connected to this VPC.
    * Check the AllowExternalIpAccess enum for the list of possible values.
    * </pre>
    *
@@ -4813,7 +5104,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Specifies whether VMs are allowed to have external IP access on network interfaces connected to this VPC.
+   * Specifies whether VMs are allowed to have external IP access on network
+   * interfaces connected to this VPC.
    * Check the AllowExternalIpAccess enum for the list of possible values.
    * </pre>
    *
@@ -5122,6 +5414,78 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     }
   }
 
+  public static final int ALLOW_MULTICAST_FIELD_NUMBER = 11002498;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object allowMulticast_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether multicast is allowed.
+   * Check the AllowMulticast enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string allow_multicast = 11002498;</code>
+   *
+   * @return Whether the allowMulticast field is set.
+   */
+  @java.lang.Override
+  public boolean hasAllowMulticast() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether multicast is allowed.
+   * Check the AllowMulticast enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string allow_multicast = 11002498;</code>
+   *
+   * @return The allowMulticast.
+   */
+  @java.lang.Override
+  public java.lang.String getAllowMulticast() {
+    java.lang.Object ref = allowMulticast_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      allowMulticast_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether multicast is allowed.
+   * Check the AllowMulticast enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string allow_multicast = 11002498;</code>
+   *
+   * @return The bytes for allowMulticast.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAllowMulticastBytes() {
+    java.lang.Object ref = allowMulticast_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      allowMulticast_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int ALLOW_NCC_FIELD_NUMBER = 372354904;
 
   @SuppressWarnings("serial")
@@ -5141,7 +5505,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public boolean hasAllowNcc() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
 
   /**
@@ -5213,7 +5577,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public boolean hasAllowNetworkMigration() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
@@ -5285,7 +5649,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public boolean hasAllowPacketMirroring() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
 
   /**
@@ -5357,7 +5721,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public boolean hasAllowPrivateGoogleAccess() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
 
   /**
@@ -5429,7 +5793,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public boolean hasAllowPsc() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
 
   /**
@@ -5501,7 +5865,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public boolean hasAllowSameNetworkUnicast() {
-    return ((bitField0_ & 0x00010000) != 0);
+    return ((bitField0_ & 0x00020000) != 0);
   }
 
   /**
@@ -5573,7 +5937,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public boolean hasAllowStaticRoutes() {
-    return ((bitField0_ & 0x00020000) != 0);
+    return ((bitField0_ & 0x00040000) != 0);
   }
 
   /**
@@ -5645,7 +6009,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public boolean hasAllowSubInterfaces() {
-    return ((bitField0_ & 0x00040000) != 0);
+    return ((bitField0_ & 0x00080000) != 0);
   }
 
   /**
@@ -5717,7 +6081,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public boolean hasAllowVpcPeering() {
-    return ((bitField0_ & 0x00080000) != 0);
+    return ((bitField0_ & 0x00100000) != 0);
   }
 
   /**
@@ -5789,7 +6153,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public boolean hasAllowVpn() {
-    return ((bitField0_ & 0x00100000) != 0);
+    return ((bitField0_ & 0x00200000) != 0);
   }
 
   /**
@@ -5852,7 +6216,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * If set, limits the interface types that the network supports. If empty, all interface types are supported.
+   * If set, limits the interface types that the network supports. If
+   * empty, all interface types are supported.
    * Check the InterfaceTypes enum for the list of possible values.
    * </pre>
    *
@@ -5868,7 +6233,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * If set, limits the interface types that the network supports. If empty, all interface types are supported.
+   * If set, limits the interface types that the network supports. If
+   * empty, all interface types are supported.
    * Check the InterfaceTypes enum for the list of possible values.
    * </pre>
    *
@@ -5884,7 +6250,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * If set, limits the interface types that the network supports. If empty, all interface types are supported.
+   * If set, limits the interface types that the network supports. If
+   * empty, all interface types are supported.
    * Check the InterfaceTypes enum for the list of possible values.
    * </pre>
    *
@@ -5901,7 +6268,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * If set, limits the interface types that the network supports. If empty, all interface types are supported.
+   * If set, limits the interface types that the network supports. If
+   * empty, all interface types are supported.
    * Check the InterfaceTypes enum for the list of possible values.
    * </pre>
    *
@@ -5912,6 +6280,78 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
    */
   public com.google.protobuf.ByteString getInterfaceTypesBytes(int index) {
     return interfaceTypes_.getByteString(index);
+  }
+
+  public static final int MULTICAST_FIELD_NUMBER = 404098040;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object multicast_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which type of multicast is supported.
+   * Check the Multicast enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string multicast = 404098040;</code>
+   *
+   * @return Whether the multicast field is set.
+   */
+  @java.lang.Override
+  public boolean hasMulticast() {
+    return ((bitField0_ & 0x00400000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which type of multicast is supported.
+   * Check the Multicast enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string multicast = 404098040;</code>
+   *
+   * @return The multicast.
+   */
+  @java.lang.Override
+  public java.lang.String getMulticast() {
+    java.lang.Object ref = multicast_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      multicast_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which type of multicast is supported.
+   * Check the Multicast enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string multicast = 404098040;</code>
+   *
+   * @return The bytes for multicast.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getMulticastBytes() {
+    java.lang.Object ref = multicast_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      multicast_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int SUBNET_PURPOSES_FIELD_NUMBER = 301338039;
@@ -6221,7 +6661,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public boolean hasUnicast() {
-    return ((bitField0_ & 0x00200000) != 0);
+    return ((bitField0_ & 0x00800000) != 0);
   }
 
   /**
@@ -6288,6 +6728,9 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (((bitField0_ & 0x00000800) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11002498, allowMulticast_);
+    }
     if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 53917486, allowDefaultNicAttachment_);
@@ -6296,7 +6739,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 88251004, allowMultiNicInSameNetwork_);
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 115402228, allowVpcPeering_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
@@ -6312,23 +6755,23 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 157981171, interfaceTypes_.getRaw(i));
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 167531643, allowSameNetworkUnicast_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 185257925, allowStaticRoutes_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 223366198, allowLoadBalancing_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 239588231, allowNetworkMigration_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 247208303, allowSubInterfaces_);
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00800000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 249841711, unicast_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
@@ -6341,18 +6784,21 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 301338039, subnetPurposes_.getRaw(i));
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 372354904, allowNcc_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 372357322, allowPsc_);
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 372363006, allowVpn_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 374702072, allowPrivateGoogleAccess_);
+    }
+    if (((bitField0_ & 0x00400000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 404098040, multicast_);
     }
     for (int i = 0; i < addressPurposes_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
@@ -6371,7 +6817,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 500838047, allowIpForwarding_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 512227074, allowPacketMirroring_);
     }
     for (int i = 0; i < subnetStackTypes_.size(); i++) {
@@ -6391,6 +6837,9 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     if (size != -1) return size;
 
     size = 0;
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11002498, allowMulticast_);
+    }
     if (((bitField0_ & 0x00000020) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
@@ -6401,7 +6850,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               88251004, allowMultiNicInSameNetwork_);
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(115402228, allowVpcPeering_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
@@ -6426,12 +6875,12 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       size += dataSize;
       size += 5 * getInterfaceTypesList().size();
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               167531643, allowSameNetworkUnicast_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(185257925, allowStaticRoutes_);
     }
@@ -6439,16 +6888,16 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(223366198, allowLoadBalancing_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               239588231, allowNetworkMigration_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(247208303, allowSubInterfaces_);
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00800000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(249841711, unicast_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
@@ -6466,19 +6915,22 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       size += dataSize;
       size += 5 * getSubnetPurposesList().size();
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(372354904, allowNcc_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(372357322, allowPsc_);
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(372363006, allowVpn_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               374702072, allowPrivateGoogleAccess_);
+    }
+    if (((bitField0_ & 0x00400000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(404098040, multicast_);
     }
     {
       int dataSize = 0;
@@ -6508,7 +6960,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(500838047, allowIpForwarding_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               512227074, allowPacketMirroring_);
@@ -6592,6 +7044,10 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       if (!getAllowMultiNicInSameNetwork().equals(other.getAllowMultiNicInSameNetwork()))
         return false;
     }
+    if (hasAllowMulticast() != other.hasAllowMulticast()) return false;
+    if (hasAllowMulticast()) {
+      if (!getAllowMulticast().equals(other.getAllowMulticast())) return false;
+    }
     if (hasAllowNcc() != other.hasAllowNcc()) return false;
     if (hasAllowNcc()) {
       if (!getAllowNcc().equals(other.getAllowNcc())) return false;
@@ -6633,6 +7089,10 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       if (!getAllowVpn().equals(other.getAllowVpn())) return false;
     }
     if (!getInterfaceTypesList().equals(other.getInterfaceTypesList())) return false;
+    if (hasMulticast() != other.hasMulticast()) return false;
+    if (hasMulticast()) {
+      if (!getMulticast().equals(other.getMulticast())) return false;
+    }
     if (!getSubnetPurposesList().equals(other.getSubnetPurposesList())) return false;
     if (!getSubnetStackTypesList().equals(other.getSubnetStackTypesList())) return false;
     if (!getSubnetworkPurposesList().equals(other.getSubnetworkPurposesList())) return false;
@@ -6700,6 +7160,10 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       hash = (37 * hash) + ALLOW_MULTI_NIC_IN_SAME_NETWORK_FIELD_NUMBER;
       hash = (53 * hash) + getAllowMultiNicInSameNetwork().hashCode();
     }
+    if (hasAllowMulticast()) {
+      hash = (37 * hash) + ALLOW_MULTICAST_FIELD_NUMBER;
+      hash = (53 * hash) + getAllowMulticast().hashCode();
+    }
     if (hasAllowNcc()) {
       hash = (37 * hash) + ALLOW_NCC_FIELD_NUMBER;
       hash = (53 * hash) + getAllowNcc().hashCode();
@@ -6743,6 +7207,10 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     if (getInterfaceTypesCount() > 0) {
       hash = (37 * hash) + INTERFACE_TYPES_FIELD_NUMBER;
       hash = (53 * hash) + getInterfaceTypesList().hashCode();
+    }
+    if (hasMulticast()) {
+      hash = (37 * hash) + MULTICAST_FIELD_NUMBER;
+      hash = (53 * hash) + getMulticast().hashCode();
     }
     if (getSubnetPurposesCount() > 0) {
       hash = (37 * hash) + SUBNET_PURPOSES_FIELD_NUMBER;
@@ -6916,6 +7384,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       allowIpForwarding_ = "";
       allowLoadBalancing_ = "";
       allowMultiNicInSameNetwork_ = "";
+      allowMulticast_ = "";
       allowNcc_ = "";
       allowNetworkMigration_ = "";
       allowPacketMirroring_ = "";
@@ -6927,6 +7396,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       allowVpcPeering_ = "";
       allowVpn_ = "";
       interfaceTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      multicast_ = "";
       subnetPurposes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       subnetStackTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       subnetworkPurposes_ = com.google.protobuf.LazyStringArrayList.emptyList();
@@ -7018,68 +7488,76 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.allowNcc_ = allowNcc_;
+        result.allowMulticast_ = allowMulticast_;
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.allowNetworkMigration_ = allowNetworkMigration_;
+        result.allowNcc_ = allowNcc_;
         to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.allowPacketMirroring_ = allowPacketMirroring_;
+        result.allowNetworkMigration_ = allowNetworkMigration_;
         to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.allowPrivateGoogleAccess_ = allowPrivateGoogleAccess_;
+        result.allowPacketMirroring_ = allowPacketMirroring_;
         to_bitField0_ |= 0x00004000;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.allowPsc_ = allowPsc_;
+        result.allowPrivateGoogleAccess_ = allowPrivateGoogleAccess_;
         to_bitField0_ |= 0x00008000;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.allowSameNetworkUnicast_ = allowSameNetworkUnicast_;
+        result.allowPsc_ = allowPsc_;
         to_bitField0_ |= 0x00010000;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.allowStaticRoutes_ = allowStaticRoutes_;
+        result.allowSameNetworkUnicast_ = allowSameNetworkUnicast_;
         to_bitField0_ |= 0x00020000;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
-        result.allowSubInterfaces_ = allowSubInterfaces_;
+        result.allowStaticRoutes_ = allowStaticRoutes_;
         to_bitField0_ |= 0x00040000;
       }
       if (((from_bitField0_ & 0x00100000) != 0)) {
-        result.allowVpcPeering_ = allowVpcPeering_;
+        result.allowSubInterfaces_ = allowSubInterfaces_;
         to_bitField0_ |= 0x00080000;
       }
       if (((from_bitField0_ & 0x00200000) != 0)) {
-        result.allowVpn_ = allowVpn_;
+        result.allowVpcPeering_ = allowVpcPeering_;
         to_bitField0_ |= 0x00100000;
       }
       if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.allowVpn_ = allowVpn_;
+        to_bitField0_ |= 0x00200000;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         interfaceTypes_.makeImmutable();
         result.interfaceTypes_ = interfaceTypes_;
       }
-      if (((from_bitField0_ & 0x00800000) != 0)) {
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.multicast_ = multicast_;
+        to_bitField0_ |= 0x00400000;
+      }
+      if (((from_bitField0_ & 0x02000000) != 0)) {
         subnetPurposes_.makeImmutable();
         result.subnetPurposes_ = subnetPurposes_;
       }
-      if (((from_bitField0_ & 0x01000000) != 0)) {
+      if (((from_bitField0_ & 0x04000000) != 0)) {
         subnetStackTypes_.makeImmutable();
         result.subnetStackTypes_ = subnetStackTypes_;
       }
-      if (((from_bitField0_ & 0x02000000) != 0)) {
+      if (((from_bitField0_ & 0x08000000) != 0)) {
         subnetworkPurposes_.makeImmutable();
         result.subnetworkPurposes_ = subnetworkPurposes_;
       }
-      if (((from_bitField0_ & 0x04000000) != 0)) {
+      if (((from_bitField0_ & 0x10000000) != 0)) {
         subnetworkStackTypes_.makeImmutable();
         result.subnetworkStackTypes_ = subnetworkStackTypes_;
       }
-      if (((from_bitField0_ & 0x08000000) != 0)) {
+      if (((from_bitField0_ & 0x20000000) != 0)) {
         result.unicast_ = unicast_;
-        to_bitField0_ |= 0x00200000;
+        to_bitField0_ |= 0x00800000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -7195,70 +7673,80 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         bitField0_ |= 0x00000800;
         onChanged();
       }
+      if (other.hasAllowMulticast()) {
+        allowMulticast_ = other.allowMulticast_;
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
       if (other.hasAllowNcc()) {
         allowNcc_ = other.allowNcc_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.hasAllowNetworkMigration()) {
         allowNetworkMigration_ = other.allowNetworkMigration_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (other.hasAllowPacketMirroring()) {
         allowPacketMirroring_ = other.allowPacketMirroring_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.hasAllowPrivateGoogleAccess()) {
         allowPrivateGoogleAccess_ = other.allowPrivateGoogleAccess_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (other.hasAllowPsc()) {
         allowPsc_ = other.allowPsc_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (other.hasAllowSameNetworkUnicast()) {
         allowSameNetworkUnicast_ = other.allowSameNetworkUnicast_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (other.hasAllowStaticRoutes()) {
         allowStaticRoutes_ = other.allowStaticRoutes_;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       if (other.hasAllowSubInterfaces()) {
         allowSubInterfaces_ = other.allowSubInterfaces_;
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       if (other.hasAllowVpcPeering()) {
         allowVpcPeering_ = other.allowVpcPeering_;
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       if (other.hasAllowVpn()) {
         allowVpn_ = other.allowVpn_;
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       if (!other.interfaceTypes_.isEmpty()) {
         if (interfaceTypes_.isEmpty()) {
           interfaceTypes_ = other.interfaceTypes_;
-          bitField0_ |= 0x00400000;
+          bitField0_ |= 0x00800000;
         } else {
           ensureInterfaceTypesIsMutable();
           interfaceTypes_.addAll(other.interfaceTypes_);
         }
         onChanged();
       }
+      if (other.hasMulticast()) {
+        multicast_ = other.multicast_;
+        bitField0_ |= 0x01000000;
+        onChanged();
+      }
       if (!other.subnetPurposes_.isEmpty()) {
         if (subnetPurposes_.isEmpty()) {
           subnetPurposes_ = other.subnetPurposes_;
-          bitField0_ |= 0x00800000;
+          bitField0_ |= 0x02000000;
         } else {
           ensureSubnetPurposesIsMutable();
           subnetPurposes_.addAll(other.subnetPurposes_);
@@ -7268,7 +7756,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       if (!other.subnetStackTypes_.isEmpty()) {
         if (subnetStackTypes_.isEmpty()) {
           subnetStackTypes_ = other.subnetStackTypes_;
-          bitField0_ |= 0x01000000;
+          bitField0_ |= 0x04000000;
         } else {
           ensureSubnetStackTypesIsMutable();
           subnetStackTypes_.addAll(other.subnetStackTypes_);
@@ -7278,7 +7766,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       if (!other.subnetworkPurposes_.isEmpty()) {
         if (subnetworkPurposes_.isEmpty()) {
           subnetworkPurposes_ = other.subnetworkPurposes_;
-          bitField0_ |= 0x02000000;
+          bitField0_ |= 0x08000000;
         } else {
           ensureSubnetworkPurposesIsMutable();
           subnetworkPurposes_.addAll(other.subnetworkPurposes_);
@@ -7288,7 +7776,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       if (!other.subnetworkStackTypes_.isEmpty()) {
         if (subnetworkStackTypes_.isEmpty()) {
           subnetworkStackTypes_ = other.subnetworkStackTypes_;
-          bitField0_ |= 0x04000000;
+          bitField0_ |= 0x10000000;
         } else {
           ensureSubnetworkStackTypesIsMutable();
           subnetworkStackTypes_.addAll(other.subnetworkStackTypes_);
@@ -7297,7 +7785,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       }
       if (other.hasUnicast()) {
         unicast_ = other.unicast_;
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x20000000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -7326,6 +7814,12 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
             case 0:
               done = true;
               break;
+            case 88019986:
+              {
+                allowMulticast_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 88019986
             case 431339890:
               {
                 allowDefaultNicAttachment_ = input.readStringRequireUtf8();
@@ -7341,7 +7835,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
             case 923217826:
               {
                 allowVpcPeering_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 923217826
             case 1052304882:
@@ -7372,13 +7866,13 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
             case 1340253146:
               {
                 allowSameNetworkUnicast_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 1340253146
             case 1482063402:
               {
                 allowStaticRoutes_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 1482063402
             case 1786929586:
@@ -7390,19 +7884,19 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
             case 1916705850:
               {
                 allowNetworkMigration_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 1916705850
             case 1977666426:
               {
                 allowSubInterfaces_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 1977666426
             case 1998733690:
               {
                 unicast_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x08000000;
+                bitField0_ |= 0x20000000;
                 break;
               } // case 1998733690
             case 2038650122:
@@ -7427,27 +7921,33 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
             case -1316128062:
               {
                 allowNcc_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case -1316128062
             case -1316108718:
               {
                 allowPsc_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case -1316108718
             case -1316063246:
               {
                 allowVpn_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case -1316063246
             case -1297350718:
               {
                 allowPrivateGoogleAccess_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case -1297350718
+            case -1062182974:
+              {
+                multicast_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x01000000;
+                break;
+              } // case -1062182974
             case -830769150:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -7483,7 +7983,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
             case -197150702:
               {
                 allowPacketMirroring_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case -197150702
             case -126897918:
@@ -7533,7 +8033,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Specifies what address purposes are supported. If empty, all address purposes are supported.
+     * Specifies what address purposes are supported. If empty, all address
+     * purposes are supported.
      * Check the AddressPurposes enum for the list of possible values.
      * </pre>
      *
@@ -7550,7 +8051,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Specifies what address purposes are supported. If empty, all address purposes are supported.
+     * Specifies what address purposes are supported. If empty, all address
+     * purposes are supported.
      * Check the AddressPurposes enum for the list of possible values.
      * </pre>
      *
@@ -7566,7 +8068,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Specifies what address purposes are supported. If empty, all address purposes are supported.
+     * Specifies what address purposes are supported. If empty, all address
+     * purposes are supported.
      * Check the AddressPurposes enum for the list of possible values.
      * </pre>
      *
@@ -7583,7 +8086,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Specifies what address purposes are supported. If empty, all address purposes are supported.
+     * Specifies what address purposes are supported. If empty, all address
+     * purposes are supported.
      * Check the AddressPurposes enum for the list of possible values.
      * </pre>
      *
@@ -7600,7 +8104,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Specifies what address purposes are supported. If empty, all address purposes are supported.
+     * Specifies what address purposes are supported. If empty, all address
+     * purposes are supported.
      * Check the AddressPurposes enum for the list of possible values.
      * </pre>
      *
@@ -7625,7 +8130,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Specifies what address purposes are supported. If empty, all address purposes are supported.
+     * Specifies what address purposes are supported. If empty, all address
+     * purposes are supported.
      * Check the AddressPurposes enum for the list of possible values.
      * </pre>
      *
@@ -7649,7 +8155,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Specifies what address purposes are supported. If empty, all address purposes are supported.
+     * Specifies what address purposes are supported. If empty, all address
+     * purposes are supported.
      * Check the AddressPurposes enum for the list of possible values.
      * </pre>
      *
@@ -7670,7 +8177,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Specifies what address purposes are supported. If empty, all address purposes are supported.
+     * Specifies what address purposes are supported. If empty, all address
+     * purposes are supported.
      * Check the AddressPurposes enum for the list of possible values.
      * </pre>
      *
@@ -7690,7 +8198,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Specifies what address purposes are supported. If empty, all address purposes are supported.
+     * Specifies what address purposes are supported. If empty, all address
+     * purposes are supported.
      * Check the AddressPurposes enum for the list of possible values.
      * </pre>
      *
@@ -7717,7 +8226,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Specifies whether alias IP ranges (and secondary address ranges) are allowed.
+     * Specifies whether alias IP ranges (and secondary address ranges) are
+     * allowed.
      * Check the AllowAliasIpRanges enum for the list of possible values.
      * </pre>
      *
@@ -7733,7 +8243,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Specifies whether alias IP ranges (and secondary address ranges) are allowed.
+     * Specifies whether alias IP ranges (and secondary address ranges) are
+     * allowed.
      * Check the AllowAliasIpRanges enum for the list of possible values.
      * </pre>
      *
@@ -7757,7 +8268,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Specifies whether alias IP ranges (and secondary address ranges) are allowed.
+     * Specifies whether alias IP ranges (and secondary address ranges) are
+     * allowed.
      * Check the AllowAliasIpRanges enum for the list of possible values.
      * </pre>
      *
@@ -7781,7 +8293,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Specifies whether alias IP ranges (and secondary address ranges) are allowed.
+     * Specifies whether alias IP ranges (and secondary address ranges) are
+     * allowed.
      * Check the AllowAliasIpRanges enum for the list of possible values.
      * </pre>
      *
@@ -7804,7 +8317,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Specifies whether alias IP ranges (and secondary address ranges) are allowed.
+     * Specifies whether alias IP ranges (and secondary address ranges) are
+     * allowed.
      * Check the AllowAliasIpRanges enum for the list of possible values.
      * </pre>
      *
@@ -7823,7 +8337,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Specifies whether alias IP ranges (and secondary address ranges) are allowed.
+     * Specifies whether alias IP ranges (and secondary address ranges) are
+     * allowed.
      * Check the AllowAliasIpRanges enum for the list of possible values.
      * </pre>
      *
@@ -8509,7 +9024,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Specifies whether VMs are allowed to have external IP access on network interfaces connected to this VPC.
+     * Specifies whether VMs are allowed to have external IP access on network
+     * interfaces connected to this VPC.
      * Check the AllowExternalIpAccess enum for the list of possible values.
      * </pre>
      *
@@ -8525,7 +9041,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Specifies whether VMs are allowed to have external IP access on network interfaces connected to this VPC.
+     * Specifies whether VMs are allowed to have external IP access on network
+     * interfaces connected to this VPC.
      * Check the AllowExternalIpAccess enum for the list of possible values.
      * </pre>
      *
@@ -8549,7 +9066,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Specifies whether VMs are allowed to have external IP access on network interfaces connected to this VPC.
+     * Specifies whether VMs are allowed to have external IP access on network
+     * interfaces connected to this VPC.
      * Check the AllowExternalIpAccess enum for the list of possible values.
      * </pre>
      *
@@ -8573,7 +9091,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Specifies whether VMs are allowed to have external IP access on network interfaces connected to this VPC.
+     * Specifies whether VMs are allowed to have external IP access on network
+     * interfaces connected to this VPC.
      * Check the AllowExternalIpAccess enum for the list of possible values.
      * </pre>
      *
@@ -8596,7 +9115,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Specifies whether VMs are allowed to have external IP access on network interfaces connected to this VPC.
+     * Specifies whether VMs are allowed to have external IP access on network
+     * interfaces connected to this VPC.
      * Check the AllowExternalIpAccess enum for the list of possible values.
      * </pre>
      *
@@ -8615,7 +9135,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Specifies whether VMs are allowed to have external IP access on network interfaces connected to this VPC.
+     * Specifies whether VMs are allowed to have external IP access on network
+     * interfaces connected to this VPC.
      * Check the AllowExternalIpAccess enum for the list of possible values.
      * </pre>
      *
@@ -9163,6 +9684,138 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       return this;
     }
 
+    private java.lang.Object allowMulticast_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies whether multicast is allowed.
+     * Check the AllowMulticast enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string allow_multicast = 11002498;</code>
+     *
+     * @return Whether the allowMulticast field is set.
+     */
+    public boolean hasAllowMulticast() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies whether multicast is allowed.
+     * Check the AllowMulticast enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string allow_multicast = 11002498;</code>
+     *
+     * @return The allowMulticast.
+     */
+    public java.lang.String getAllowMulticast() {
+      java.lang.Object ref = allowMulticast_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        allowMulticast_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies whether multicast is allowed.
+     * Check the AllowMulticast enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string allow_multicast = 11002498;</code>
+     *
+     * @return The bytes for allowMulticast.
+     */
+    public com.google.protobuf.ByteString getAllowMulticastBytes() {
+      java.lang.Object ref = allowMulticast_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        allowMulticast_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies whether multicast is allowed.
+     * Check the AllowMulticast enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string allow_multicast = 11002498;</code>
+     *
+     * @param value The allowMulticast to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllowMulticast(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      allowMulticast_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies whether multicast is allowed.
+     * Check the AllowMulticast enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string allow_multicast = 11002498;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAllowMulticast() {
+      allowMulticast_ = getDefaultInstance().getAllowMulticast();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies whether multicast is allowed.
+     * Check the AllowMulticast enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string allow_multicast = 11002498;</code>
+     *
+     * @param value The bytes for allowMulticast to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllowMulticastBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      allowMulticast_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object allowNcc_ = "";
 
     /**
@@ -9178,7 +9831,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * @return Whether the allowNcc field is set.
      */
     public boolean hasAllowNcc() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -9247,7 +9900,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       allowNcc_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -9266,7 +9919,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      */
     public Builder clearAllowNcc() {
       allowNcc_ = getDefaultInstance().getAllowNcc();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -9290,7 +9943,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       }
       checkByteStringIsUtf8(value);
       allowNcc_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -9310,7 +9963,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * @return Whether the allowNetworkMigration field is set.
      */
     public boolean hasAllowNetworkMigration() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -9379,7 +10032,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       allowNetworkMigration_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -9398,7 +10051,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      */
     public Builder clearAllowNetworkMigration() {
       allowNetworkMigration_ = getDefaultInstance().getAllowNetworkMigration();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -9422,7 +10075,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       }
       checkByteStringIsUtf8(value);
       allowNetworkMigration_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -9442,7 +10095,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * @return Whether the allowPacketMirroring field is set.
      */
     public boolean hasAllowPacketMirroring() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -9511,7 +10164,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       allowPacketMirroring_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -9530,7 +10183,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      */
     public Builder clearAllowPacketMirroring() {
       allowPacketMirroring_ = getDefaultInstance().getAllowPacketMirroring();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -9554,7 +10207,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       }
       checkByteStringIsUtf8(value);
       allowPacketMirroring_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -9574,7 +10227,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * @return Whether the allowPrivateGoogleAccess field is set.
      */
     public boolean hasAllowPrivateGoogleAccess() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -9643,7 +10296,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       allowPrivateGoogleAccess_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -9662,7 +10315,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      */
     public Builder clearAllowPrivateGoogleAccess() {
       allowPrivateGoogleAccess_ = getDefaultInstance().getAllowPrivateGoogleAccess();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -9686,7 +10339,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       }
       checkByteStringIsUtf8(value);
       allowPrivateGoogleAccess_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -9706,7 +10359,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * @return Whether the allowPsc field is set.
      */
     public boolean hasAllowPsc() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -9775,7 +10428,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       allowPsc_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -9794,7 +10447,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      */
     public Builder clearAllowPsc() {
       allowPsc_ = getDefaultInstance().getAllowPsc();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -9818,7 +10471,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       }
       checkByteStringIsUtf8(value);
       allowPsc_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -9838,7 +10491,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * @return Whether the allowSameNetworkUnicast field is set.
      */
     public boolean hasAllowSameNetworkUnicast() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -9907,7 +10560,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       allowSameNetworkUnicast_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -9926,7 +10579,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      */
     public Builder clearAllowSameNetworkUnicast() {
       allowSameNetworkUnicast_ = getDefaultInstance().getAllowSameNetworkUnicast();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -9950,7 +10603,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       }
       checkByteStringIsUtf8(value);
       allowSameNetworkUnicast_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -9970,7 +10623,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * @return Whether the allowStaticRoutes field is set.
      */
     public boolean hasAllowStaticRoutes() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -10039,7 +10692,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       allowStaticRoutes_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -10058,7 +10711,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      */
     public Builder clearAllowStaticRoutes() {
       allowStaticRoutes_ = getDefaultInstance().getAllowStaticRoutes();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -10082,7 +10735,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       }
       checkByteStringIsUtf8(value);
       allowStaticRoutes_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -10102,7 +10755,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * @return Whether the allowSubInterfaces field is set.
      */
     public boolean hasAllowSubInterfaces() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -10171,7 +10824,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       allowSubInterfaces_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -10190,7 +10843,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      */
     public Builder clearAllowSubInterfaces() {
       allowSubInterfaces_ = getDefaultInstance().getAllowSubInterfaces();
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -10214,7 +10867,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       }
       checkByteStringIsUtf8(value);
       allowSubInterfaces_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -10234,7 +10887,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * @return Whether the allowVpcPeering field is set.
      */
     public boolean hasAllowVpcPeering() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
 
     /**
@@ -10303,7 +10956,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       allowVpcPeering_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -10322,7 +10975,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      */
     public Builder clearAllowVpcPeering() {
       allowVpcPeering_ = getDefaultInstance().getAllowVpcPeering();
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       onChanged();
       return this;
     }
@@ -10346,7 +10999,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       }
       checkByteStringIsUtf8(value);
       allowVpcPeering_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -10366,7 +11019,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * @return Whether the allowVpn field is set.
      */
     public boolean hasAllowVpn() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
 
     /**
@@ -10435,7 +11088,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       allowVpn_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -10454,7 +11107,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      */
     public Builder clearAllowVpn() {
       allowVpn_ = getDefaultInstance().getAllowVpn();
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       onChanged();
       return this;
     }
@@ -10478,7 +11131,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       }
       checkByteStringIsUtf8(value);
       allowVpn_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -10490,14 +11143,15 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       if (!interfaceTypes_.isModifiable()) {
         interfaceTypes_ = new com.google.protobuf.LazyStringArrayList(interfaceTypes_);
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
     }
 
     /**
      *
      *
      * <pre>
-     * If set, limits the interface types that the network supports. If empty, all interface types are supported.
+     * If set, limits the interface types that the network supports. If
+     * empty, all interface types are supported.
      * Check the InterfaceTypes enum for the list of possible values.
      * </pre>
      *
@@ -10514,7 +11168,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * If set, limits the interface types that the network supports. If empty, all interface types are supported.
+     * If set, limits the interface types that the network supports. If
+     * empty, all interface types are supported.
      * Check the InterfaceTypes enum for the list of possible values.
      * </pre>
      *
@@ -10530,7 +11185,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * If set, limits the interface types that the network supports. If empty, all interface types are supported.
+     * If set, limits the interface types that the network supports. If
+     * empty, all interface types are supported.
      * Check the InterfaceTypes enum for the list of possible values.
      * </pre>
      *
@@ -10547,7 +11203,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * If set, limits the interface types that the network supports. If empty, all interface types are supported.
+     * If set, limits the interface types that the network supports. If
+     * empty, all interface types are supported.
      * Check the InterfaceTypes enum for the list of possible values.
      * </pre>
      *
@@ -10564,7 +11221,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * If set, limits the interface types that the network supports. If empty, all interface types are supported.
+     * If set, limits the interface types that the network supports. If
+     * empty, all interface types are supported.
      * Check the InterfaceTypes enum for the list of possible values.
      * </pre>
      *
@@ -10580,7 +11238,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       }
       ensureInterfaceTypesIsMutable();
       interfaceTypes_.set(index, value);
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -10589,7 +11247,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * If set, limits the interface types that the network supports. If empty, all interface types are supported.
+     * If set, limits the interface types that the network supports. If
+     * empty, all interface types are supported.
      * Check the InterfaceTypes enum for the list of possible values.
      * </pre>
      *
@@ -10604,7 +11263,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       }
       ensureInterfaceTypesIsMutable();
       interfaceTypes_.add(value);
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -10613,7 +11272,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * If set, limits the interface types that the network supports. If empty, all interface types are supported.
+     * If set, limits the interface types that the network supports. If
+     * empty, all interface types are supported.
      * Check the InterfaceTypes enum for the list of possible values.
      * </pre>
      *
@@ -10625,7 +11285,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public Builder addAllInterfaceTypes(java.lang.Iterable<java.lang.String> values) {
       ensureInterfaceTypesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, interfaceTypes_);
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -10634,7 +11294,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * If set, limits the interface types that the network supports. If empty, all interface types are supported.
+     * If set, limits the interface types that the network supports. If
+     * empty, all interface types are supported.
      * Check the InterfaceTypes enum for the list of possible values.
      * </pre>
      *
@@ -10644,7 +11305,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      */
     public Builder clearInterfaceTypes() {
       interfaceTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       ;
       onChanged();
       return this;
@@ -10654,7 +11315,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * If set, limits the interface types that the network supports. If empty, all interface types are supported.
+     * If set, limits the interface types that the network supports. If
+     * empty, all interface types are supported.
      * Check the InterfaceTypes enum for the list of possible values.
      * </pre>
      *
@@ -10670,7 +11332,139 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       checkByteStringIsUtf8(value);
       ensureInterfaceTypesIsMutable();
       interfaceTypes_.add(value);
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object multicast_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which type of multicast is supported.
+     * Check the Multicast enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string multicast = 404098040;</code>
+     *
+     * @return Whether the multicast field is set.
+     */
+    public boolean hasMulticast() {
+      return ((bitField0_ & 0x01000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which type of multicast is supported.
+     * Check the Multicast enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string multicast = 404098040;</code>
+     *
+     * @return The multicast.
+     */
+    public java.lang.String getMulticast() {
+      java.lang.Object ref = multicast_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        multicast_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which type of multicast is supported.
+     * Check the Multicast enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string multicast = 404098040;</code>
+     *
+     * @return The bytes for multicast.
+     */
+    public com.google.protobuf.ByteString getMulticastBytes() {
+      java.lang.Object ref = multicast_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        multicast_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which type of multicast is supported.
+     * Check the Multicast enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string multicast = 404098040;</code>
+     *
+     * @param value The multicast to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMulticast(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      multicast_ = value;
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which type of multicast is supported.
+     * Check the Multicast enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string multicast = 404098040;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMulticast() {
+      multicast_ = getDefaultInstance().getMulticast();
+      bitField0_ = (bitField0_ & ~0x01000000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies which type of multicast is supported.
+     * Check the Multicast enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string multicast = 404098040;</code>
+     *
+     * @param value The bytes for multicast to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMulticastBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      multicast_ = value;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -10682,7 +11476,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       if (!subnetPurposes_.isModifiable()) {
         subnetPurposes_ = new com.google.protobuf.LazyStringArrayList(subnetPurposes_);
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
     }
 
     /**
@@ -10772,7 +11566,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       }
       ensureSubnetPurposesIsMutable();
       subnetPurposes_.set(index, value);
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -10796,7 +11590,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       }
       ensureSubnetPurposesIsMutable();
       subnetPurposes_.add(value);
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -10817,7 +11611,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public Builder addAllSubnetPurposes(java.lang.Iterable<java.lang.String> values) {
       ensureSubnetPurposesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, subnetPurposes_);
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -10836,7 +11630,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      */
     public Builder clearSubnetPurposes() {
       subnetPurposes_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       ;
       onChanged();
       return this;
@@ -10862,7 +11656,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       checkByteStringIsUtf8(value);
       ensureSubnetPurposesIsMutable();
       subnetPurposes_.add(value);
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -10874,7 +11668,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       if (!subnetStackTypes_.isModifiable()) {
         subnetStackTypes_ = new com.google.protobuf.LazyStringArrayList(subnetStackTypes_);
       }
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x04000000;
     }
 
     /**
@@ -10964,7 +11758,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       }
       ensureSubnetStackTypesIsMutable();
       subnetStackTypes_.set(index, value);
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -10988,7 +11782,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       }
       ensureSubnetStackTypesIsMutable();
       subnetStackTypes_.add(value);
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -11009,7 +11803,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public Builder addAllSubnetStackTypes(java.lang.Iterable<java.lang.String> values) {
       ensureSubnetStackTypesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, subnetStackTypes_);
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -11028,7 +11822,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      */
     public Builder clearSubnetStackTypes() {
       subnetStackTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       ;
       onChanged();
       return this;
@@ -11054,7 +11848,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       checkByteStringIsUtf8(value);
       ensureSubnetStackTypesIsMutable();
       subnetStackTypes_.add(value);
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -11066,7 +11860,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       if (!subnetworkPurposes_.isModifiable()) {
         subnetworkPurposes_ = new com.google.protobuf.LazyStringArrayList(subnetworkPurposes_);
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x08000000;
     }
 
     /**
@@ -11156,7 +11950,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       }
       ensureSubnetworkPurposesIsMutable();
       subnetworkPurposes_.set(index, value);
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -11180,7 +11974,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       }
       ensureSubnetworkPurposesIsMutable();
       subnetworkPurposes_.add(value);
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -11201,7 +11995,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public Builder addAllSubnetworkPurposes(java.lang.Iterable<java.lang.String> values) {
       ensureSubnetworkPurposesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, subnetworkPurposes_);
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -11220,7 +12014,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      */
     public Builder clearSubnetworkPurposes() {
       subnetworkPurposes_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       ;
       onChanged();
       return this;
@@ -11246,7 +12040,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       checkByteStringIsUtf8(value);
       ensureSubnetworkPurposesIsMutable();
       subnetworkPurposes_.add(value);
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -11258,7 +12052,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       if (!subnetworkStackTypes_.isModifiable()) {
         subnetworkStackTypes_ = new com.google.protobuf.LazyStringArrayList(subnetworkStackTypes_);
       }
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x10000000;
     }
 
     /**
@@ -11348,7 +12142,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       }
       ensureSubnetworkStackTypesIsMutable();
       subnetworkStackTypes_.set(index, value);
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -11372,7 +12166,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       }
       ensureSubnetworkStackTypesIsMutable();
       subnetworkStackTypes_.add(value);
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -11393,7 +12187,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public Builder addAllSubnetworkStackTypes(java.lang.Iterable<java.lang.String> values) {
       ensureSubnetworkStackTypesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, subnetworkStackTypes_);
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -11412,7 +12206,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      */
     public Builder clearSubnetworkStackTypes() {
       subnetworkStackTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       ;
       onChanged();
       return this;
@@ -11438,7 +12232,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       checkByteStringIsUtf8(value);
       ensureSubnetworkStackTypesIsMutable();
       subnetworkStackTypes_.add(value);
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -11458,7 +12252,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * @return Whether the unicast field is set.
      */
     public boolean hasUnicast() {
-      return ((bitField0_ & 0x08000000) != 0);
+      return ((bitField0_ & 0x20000000) != 0);
     }
 
     /**
@@ -11527,7 +12321,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       unicast_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -11546,7 +12340,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      */
     public Builder clearUnicast() {
       unicast_ = getDefaultInstance().getUnicast();
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       onChanged();
       return this;
     }
@@ -11570,7 +12364,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       }
       checkByteStringIsUtf8(value);
       unicast_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }

@@ -84,6 +84,561 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.eventarc.v1.Trigger.Builder.class);
   }
 
+  public interface RetryPolicyOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.eventarc.v1.Trigger.RetryPolicy)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maximum number of delivery attempts for any message. The
+     * only valid value is 1.
+     * </pre>
+     *
+     * <code>int32 max_attempts = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The maxAttempts.
+     */
+    int getMaxAttempts();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The retry policy configuration for the Trigger.
+   *
+   * Can only be set with Cloud Run destinations.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.eventarc.v1.Trigger.RetryPolicy}
+   */
+  public static final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.eventarc.v1.Trigger.RetryPolicy)
+      RetryPolicyOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use RetryPolicy.newBuilder() to construct.
+    private RetryPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private RetryPolicy() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new RetryPolicy();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.eventarc.v1.TriggerProto
+          .internal_static_google_cloud_eventarc_v1_Trigger_RetryPolicy_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.eventarc.v1.TriggerProto
+          .internal_static_google_cloud_eventarc_v1_Trigger_RetryPolicy_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.eventarc.v1.Trigger.RetryPolicy.class,
+              com.google.cloud.eventarc.v1.Trigger.RetryPolicy.Builder.class);
+    }
+
+    public static final int MAX_ATTEMPTS_FIELD_NUMBER = 1;
+    private int maxAttempts_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maximum number of delivery attempts for any message. The
+     * only valid value is 1.
+     * </pre>
+     *
+     * <code>int32 max_attempts = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The maxAttempts.
+     */
+    @java.lang.Override
+    public int getMaxAttempts() {
+      return maxAttempts_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (maxAttempts_ != 0) {
+        output.writeInt32(1, maxAttempts_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (maxAttempts_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, maxAttempts_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.eventarc.v1.Trigger.RetryPolicy)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.eventarc.v1.Trigger.RetryPolicy other =
+          (com.google.cloud.eventarc.v1.Trigger.RetryPolicy) obj;
+
+      if (getMaxAttempts() != other.getMaxAttempts()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MAX_ATTEMPTS_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxAttempts();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.eventarc.v1.Trigger.RetryPolicy parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.eventarc.v1.Trigger.RetryPolicy parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.eventarc.v1.Trigger.RetryPolicy parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.eventarc.v1.Trigger.RetryPolicy parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.eventarc.v1.Trigger.RetryPolicy parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.eventarc.v1.Trigger.RetryPolicy parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.eventarc.v1.Trigger.RetryPolicy parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.eventarc.v1.Trigger.RetryPolicy parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.eventarc.v1.Trigger.RetryPolicy parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.eventarc.v1.Trigger.RetryPolicy parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.eventarc.v1.Trigger.RetryPolicy parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.eventarc.v1.Trigger.RetryPolicy parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.cloud.eventarc.v1.Trigger.RetryPolicy prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The retry policy configuration for the Trigger.
+     *
+     * Can only be set with Cloud Run destinations.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.eventarc.v1.Trigger.RetryPolicy}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.eventarc.v1.Trigger.RetryPolicy)
+        com.google.cloud.eventarc.v1.Trigger.RetryPolicyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.eventarc.v1.TriggerProto
+            .internal_static_google_cloud_eventarc_v1_Trigger_RetryPolicy_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.eventarc.v1.TriggerProto
+            .internal_static_google_cloud_eventarc_v1_Trigger_RetryPolicy_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.eventarc.v1.Trigger.RetryPolicy.class,
+                com.google.cloud.eventarc.v1.Trigger.RetryPolicy.Builder.class);
+      }
+
+      // Construct using com.google.cloud.eventarc.v1.Trigger.RetryPolicy.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        maxAttempts_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.eventarc.v1.TriggerProto
+            .internal_static_google_cloud_eventarc_v1_Trigger_RetryPolicy_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.eventarc.v1.Trigger.RetryPolicy getDefaultInstanceForType() {
+        return com.google.cloud.eventarc.v1.Trigger.RetryPolicy.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.eventarc.v1.Trigger.RetryPolicy build() {
+        com.google.cloud.eventarc.v1.Trigger.RetryPolicy result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.eventarc.v1.Trigger.RetryPolicy buildPartial() {
+        com.google.cloud.eventarc.v1.Trigger.RetryPolicy result =
+            new com.google.cloud.eventarc.v1.Trigger.RetryPolicy(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.eventarc.v1.Trigger.RetryPolicy result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.maxAttempts_ = maxAttempts_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.eventarc.v1.Trigger.RetryPolicy) {
+          return mergeFrom((com.google.cloud.eventarc.v1.Trigger.RetryPolicy) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.eventarc.v1.Trigger.RetryPolicy other) {
+        if (other == com.google.cloud.eventarc.v1.Trigger.RetryPolicy.getDefaultInstance())
+          return this;
+        if (other.getMaxAttempts() != 0) {
+          setMaxAttempts(other.getMaxAttempts());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  maxAttempts_ = input.readInt32();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int maxAttempts_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The maximum number of delivery attempts for any message. The
+       * only valid value is 1.
+       * </pre>
+       *
+       * <code>int32 max_attempts = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The maxAttempts.
+       */
+      @java.lang.Override
+      public int getMaxAttempts() {
+        return maxAttempts_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The maximum number of delivery attempts for any message. The
+       * only valid value is 1.
+       * </pre>
+       *
+       * <code>int32 max_attempts = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The maxAttempts to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxAttempts(int value) {
+
+        maxAttempts_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The maximum number of delivery attempts for any message. The
+       * only valid value is 1.
+       * </pre>
+       *
+       * <code>int32 max_attempts = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxAttempts() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        maxAttempts_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.eventarc.v1.Trigger.RetryPolicy)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.eventarc.v1.Trigger.RetryPolicy)
+    private static final com.google.cloud.eventarc.v1.Trigger.RetryPolicy DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.eventarc.v1.Trigger.RetryPolicy();
+    }
+
+    public static com.google.cloud.eventarc.v1.Trigger.RetryPolicy getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RetryPolicy> PARSER =
+        new com.google.protobuf.AbstractParser<RetryPolicy>() {
+          @java.lang.Override
+          public RetryPolicy parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<RetryPolicy> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RetryPolicy> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.eventarc.v1.Trigger.RetryPolicy getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -968,6 +1523,74 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
     return satisfiesPzs_;
   }
 
+  public static final int RETRY_POLICY_FIELD_NUMBER = 20;
+  private com.google.cloud.eventarc.v1.Trigger.RetryPolicy retryPolicy_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The retry policy to use in the Trigger.
+   *
+   * If unset, event delivery will be retried for up to 24 hours by default:
+   * https://cloud.google.com/eventarc/docs/retry-events
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.eventarc.v1.Trigger.RetryPolicy retry_policy = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the retryPolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasRetryPolicy() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The retry policy to use in the Trigger.
+   *
+   * If unset, event delivery will be retried for up to 24 hours by default:
+   * https://cloud.google.com/eventarc/docs/retry-events
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.eventarc.v1.Trigger.RetryPolicy retry_policy = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The retryPolicy.
+   */
+  @java.lang.Override
+  public com.google.cloud.eventarc.v1.Trigger.RetryPolicy getRetryPolicy() {
+    return retryPolicy_ == null
+        ? com.google.cloud.eventarc.v1.Trigger.RetryPolicy.getDefaultInstance()
+        : retryPolicy_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The retry policy to use in the Trigger.
+   *
+   * If unset, event delivery will be retried for up to 24 hours by default:
+   * https://cloud.google.com/eventarc/docs/retry-events
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.eventarc.v1.Trigger.RetryPolicy retry_policy = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.eventarc.v1.Trigger.RetryPolicyOrBuilder getRetryPolicyOrBuilder() {
+    return retryPolicy_ == null
+        ? com.google.cloud.eventarc.v1.Trigger.RetryPolicy.getDefaultInstance()
+        : retryPolicy_;
+  }
+
   public static final int ETAG_FIELD_NUMBER = 99;
 
   @SuppressWarnings("serial")
@@ -1076,6 +1699,9 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
     if (satisfiesPzs_ != false) {
       output.writeBool(19, satisfiesPzs_);
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(20, getRetryPolicy());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 99, etag_);
     }
@@ -1142,6 +1768,9 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
     if (satisfiesPzs_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(19, satisfiesPzs_);
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getRetryPolicy());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(99, etag_);
     }
@@ -1185,6 +1814,10 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetConditions().equals(other.internalGetConditions())) return false;
     if (!getEventDataContentType().equals(other.getEventDataContentType())) return false;
     if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    if (hasRetryPolicy() != other.hasRetryPolicy()) return false;
+    if (hasRetryPolicy()) {
+      if (!getRetryPolicy().equals(other.getRetryPolicy())) return false;
+    }
     if (!getEtag().equals(other.getEtag())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1237,6 +1870,10 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getEventDataContentType().hashCode();
     hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    if (hasRetryPolicy()) {
+      hash = (37 * hash) + RETRY_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getRetryPolicy().hashCode();
+    }
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -1410,6 +2047,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
         getEventFiltersFieldBuilder();
         getDestinationFieldBuilder();
         getTransportFieldBuilder();
+        getRetryPolicyFieldBuilder();
       }
     }
 
@@ -1452,6 +2090,11 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableConditions().clear();
       eventDataContentType_ = "";
       satisfiesPzs_ = false;
+      retryPolicy_ = null;
+      if (retryPolicyBuilder_ != null) {
+        retryPolicyBuilder_.dispose();
+        retryPolicyBuilder_ = null;
+      }
       etag_ = "";
       return this;
     }
@@ -1546,6 +2189,11 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
         result.satisfiesPzs_ = satisfiesPzs_;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.retryPolicy_ =
+            retryPolicyBuilder_ == null ? retryPolicy_ : retryPolicyBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.etag_ = etag_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1667,9 +2315,12 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       if (other.getSatisfiesPzs() != false) {
         setSatisfiesPzs(other.getSatisfiesPzs());
       }
+      if (other.hasRetryPolicy()) {
+        mergeRetryPolicy(other.getRetryPolicy());
+      }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1797,10 +2448,16 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00001000;
                 break;
               } // case 152
+            case 162:
+              {
+                input.readMessage(getRetryPolicyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 162
             case 794:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 794
             default:
@@ -4278,6 +4935,247 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.eventarc.v1.Trigger.RetryPolicy retryPolicy_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.eventarc.v1.Trigger.RetryPolicy,
+            com.google.cloud.eventarc.v1.Trigger.RetryPolicy.Builder,
+            com.google.cloud.eventarc.v1.Trigger.RetryPolicyOrBuilder>
+        retryPolicyBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retry policy to use in the Trigger.
+     *
+     * If unset, event delivery will be retried for up to 24 hours by default:
+     * https://cloud.google.com/eventarc/docs/retry-events
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.Trigger.RetryPolicy retry_policy = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the retryPolicy field is set.
+     */
+    public boolean hasRetryPolicy() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retry policy to use in the Trigger.
+     *
+     * If unset, event delivery will be retried for up to 24 hours by default:
+     * https://cloud.google.com/eventarc/docs/retry-events
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.Trigger.RetryPolicy retry_policy = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The retryPolicy.
+     */
+    public com.google.cloud.eventarc.v1.Trigger.RetryPolicy getRetryPolicy() {
+      if (retryPolicyBuilder_ == null) {
+        return retryPolicy_ == null
+            ? com.google.cloud.eventarc.v1.Trigger.RetryPolicy.getDefaultInstance()
+            : retryPolicy_;
+      } else {
+        return retryPolicyBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retry policy to use in the Trigger.
+     *
+     * If unset, event delivery will be retried for up to 24 hours by default:
+     * https://cloud.google.com/eventarc/docs/retry-events
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.Trigger.RetryPolicy retry_policy = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRetryPolicy(com.google.cloud.eventarc.v1.Trigger.RetryPolicy value) {
+      if (retryPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        retryPolicy_ = value;
+      } else {
+        retryPolicyBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retry policy to use in the Trigger.
+     *
+     * If unset, event delivery will be retried for up to 24 hours by default:
+     * https://cloud.google.com/eventarc/docs/retry-events
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.Trigger.RetryPolicy retry_policy = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRetryPolicy(
+        com.google.cloud.eventarc.v1.Trigger.RetryPolicy.Builder builderForValue) {
+      if (retryPolicyBuilder_ == null) {
+        retryPolicy_ = builderForValue.build();
+      } else {
+        retryPolicyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retry policy to use in the Trigger.
+     *
+     * If unset, event delivery will be retried for up to 24 hours by default:
+     * https://cloud.google.com/eventarc/docs/retry-events
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.Trigger.RetryPolicy retry_policy = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRetryPolicy(com.google.cloud.eventarc.v1.Trigger.RetryPolicy value) {
+      if (retryPolicyBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)
+            && retryPolicy_ != null
+            && retryPolicy_
+                != com.google.cloud.eventarc.v1.Trigger.RetryPolicy.getDefaultInstance()) {
+          getRetryPolicyBuilder().mergeFrom(value);
+        } else {
+          retryPolicy_ = value;
+        }
+      } else {
+        retryPolicyBuilder_.mergeFrom(value);
+      }
+      if (retryPolicy_ != null) {
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retry policy to use in the Trigger.
+     *
+     * If unset, event delivery will be retried for up to 24 hours by default:
+     * https://cloud.google.com/eventarc/docs/retry-events
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.Trigger.RetryPolicy retry_policy = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRetryPolicy() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      retryPolicy_ = null;
+      if (retryPolicyBuilder_ != null) {
+        retryPolicyBuilder_.dispose();
+        retryPolicyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retry policy to use in the Trigger.
+     *
+     * If unset, event delivery will be retried for up to 24 hours by default:
+     * https://cloud.google.com/eventarc/docs/retry-events
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.Trigger.RetryPolicy retry_policy = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.eventarc.v1.Trigger.RetryPolicy.Builder getRetryPolicyBuilder() {
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return getRetryPolicyFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retry policy to use in the Trigger.
+     *
+     * If unset, event delivery will be retried for up to 24 hours by default:
+     * https://cloud.google.com/eventarc/docs/retry-events
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.Trigger.RetryPolicy retry_policy = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.eventarc.v1.Trigger.RetryPolicyOrBuilder getRetryPolicyOrBuilder() {
+      if (retryPolicyBuilder_ != null) {
+        return retryPolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return retryPolicy_ == null
+            ? com.google.cloud.eventarc.v1.Trigger.RetryPolicy.getDefaultInstance()
+            : retryPolicy_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The retry policy to use in the Trigger.
+     *
+     * If unset, event delivery will be retried for up to 24 hours by default:
+     * https://cloud.google.com/eventarc/docs/retry-events
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.eventarc.v1.Trigger.RetryPolicy retry_policy = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.eventarc.v1.Trigger.RetryPolicy,
+            com.google.cloud.eventarc.v1.Trigger.RetryPolicy.Builder,
+            com.google.cloud.eventarc.v1.Trigger.RetryPolicyOrBuilder>
+        getRetryPolicyFieldBuilder() {
+      if (retryPolicyBuilder_ == null) {
+        retryPolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.eventarc.v1.Trigger.RetryPolicy,
+                com.google.cloud.eventarc.v1.Trigger.RetryPolicy.Builder,
+                com.google.cloud.eventarc.v1.Trigger.RetryPolicyOrBuilder>(
+                getRetryPolicy(), getParentForChildren(), isClean());
+        retryPolicy_ = null;
+      }
+      return retryPolicyBuilder_;
+    }
+
     private java.lang.Object etag_ = "";
 
     /**
@@ -4349,7 +5247,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4369,7 +5267,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -4394,7 +5292,7 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }

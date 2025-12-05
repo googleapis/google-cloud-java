@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Configuration for location policy among multiple possible locations (e.g. preferences for zone selection among zones in a single region).
+ * Configuration for location policy among multiple possible locations
+ * (e.g. preferences for zone selection among zones in a single region).
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.LocationPolicy}
@@ -100,7 +101,10 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * GCE picks zones for creating VM instances to fulfill the requested number of VMs within present resource constraints and to maximize utilization of unused zonal reservations. Recommended for batch workloads that do not require high availability.
+     * GCE picks zones for creating VM instances to fulfill the requested
+     * number of VMs within present resource constraints and to maximize
+     * utilization of unused zonal reservations. Recommended for batch workloads
+     * that do not require high availability.
      * </pre>
      *
      * <code>ANY = 64972;</code>
@@ -110,7 +114,10 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * GCE always selects a single zone for all the VMs, optimizing for resource quotas, available reservations and general capacity. Recommended for batch workloads that cannot tollerate distribution over multiple zones. This the default shape in Bulk Insert and Capacity Advisor APIs.
+     * GCE always selects a single zone for all the VMs, optimizing for resource
+     * quotas, available reservations and general capacity. Recommended for
+     * batch workloads that cannot tollerate distribution over multiple zones.
+     * This the default shape in Bulk Insert and Capacity Advisor APIs.
      * </pre>
      *
      * <code>ANY_SINGLE_ZONE = 61100880;</code>
@@ -120,7 +127,10 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * GCE prioritizes acquisition of resources, scheduling VMs in zones where resources are available while distributing VMs as evenly as possible across allowed zones to minimize the impact of zonal failure. Recommended for highly available serving workloads.
+     * GCE prioritizes acquisition of resources, scheduling VMs in zones
+     * where resources are available while distributing VMs as evenly as
+     * possible across allowed zones to minimize the impact of zonal failure.
+     * Recommended for highly available serving workloads.
      * </pre>
      *
      * <code>BALANCED = 468409608;</code>
@@ -144,7 +154,10 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * GCE picks zones for creating VM instances to fulfill the requested number of VMs within present resource constraints and to maximize utilization of unused zonal reservations. Recommended for batch workloads that do not require high availability.
+     * GCE picks zones for creating VM instances to fulfill the requested
+     * number of VMs within present resource constraints and to maximize
+     * utilization of unused zonal reservations. Recommended for batch workloads
+     * that do not require high availability.
      * </pre>
      *
      * <code>ANY = 64972;</code>
@@ -155,7 +168,10 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * GCE always selects a single zone for all the VMs, optimizing for resource quotas, available reservations and general capacity. Recommended for batch workloads that cannot tollerate distribution over multiple zones. This the default shape in Bulk Insert and Capacity Advisor APIs.
+     * GCE always selects a single zone for all the VMs, optimizing for resource
+     * quotas, available reservations and general capacity. Recommended for
+     * batch workloads that cannot tollerate distribution over multiple zones.
+     * This the default shape in Bulk Insert and Capacity Advisor APIs.
      * </pre>
      *
      * <code>ANY_SINGLE_ZONE = 61100880;</code>
@@ -166,7 +182,10 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * GCE prioritizes acquisition of resources, scheduling VMs in zones where resources are available while distributing VMs as evenly as possible across allowed zones to minimize the impact of zonal failure. Recommended for highly available serving workloads.
+     * GCE prioritizes acquisition of resources, scheduling VMs in zones
+     * where resources are available while distributing VMs as evenly as
+     * possible across allowed zones to minimize the impact of zonal failure.
+     * Recommended for highly available serving workloads.
      * </pre>
      *
      * <code>BALANCED = 468409608;</code>
@@ -298,7 +317,9 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Location configurations mapped by location name. Currently only zone names are supported and must be represented as valid internal URLs, such as zones/us-central1-a.
+   * Location configurations mapped by location name.
+   * Currently only zone names are supported and must be represented as valid
+   * internal URLs, such as zones/us-central1-a.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.compute.v1.LocationPolicyLocation&gt; locations = 413423454;
@@ -324,7 +345,9 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Location configurations mapped by location name. Currently only zone names are supported and must be represented as valid internal URLs, such as zones/us-central1-a.
+   * Location configurations mapped by location name.
+   * Currently only zone names are supported and must be represented as valid
+   * internal URLs, such as zones/us-central1-a.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.compute.v1.LocationPolicyLocation&gt; locations = 413423454;
@@ -340,7 +363,9 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Location configurations mapped by location name. Currently only zone names are supported and must be represented as valid internal URLs, such as zones/us-central1-a.
+   * Location configurations mapped by location name.
+   * Currently only zone names are supported and must be represented as valid
+   * internal URLs, such as zones/us-central1-a.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.compute.v1.LocationPolicyLocation&gt; locations = 413423454;
@@ -363,7 +388,9 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Location configurations mapped by location name. Currently only zone names are supported and must be represented as valid internal URLs, such as zones/us-central1-a.
+   * Location configurations mapped by location name.
+   * Currently only zone names are supported and must be represented as valid
+   * internal URLs, such as zones/us-central1-a.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.compute.v1.LocationPolicyLocation&gt; locations = 413423454;
@@ -643,7 +670,8 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Configuration for location policy among multiple possible locations (e.g. preferences for zone selection among zones in a single region).
+   * Configuration for location policy among multiple possible locations
+   * (e.g. preferences for zone selection among zones in a single region).
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.LocationPolicy}
@@ -932,7 +960,9 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Location configurations mapped by location name. Currently only zone names are supported and must be represented as valid internal URLs, such as zones/us-central1-a.
+     * Location configurations mapped by location name.
+     * Currently only zone names are supported and must be represented as valid
+     * internal URLs, such as zones/us-central1-a.
      * </pre>
      *
      * <code>
@@ -959,7 +989,9 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Location configurations mapped by location name. Currently only zone names are supported and must be represented as valid internal URLs, such as zones/us-central1-a.
+     * Location configurations mapped by location name.
+     * Currently only zone names are supported and must be represented as valid
+     * internal URLs, such as zones/us-central1-a.
      * </pre>
      *
      * <code>
@@ -976,7 +1008,9 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Location configurations mapped by location name. Currently only zone names are supported and must be represented as valid internal URLs, such as zones/us-central1-a.
+     * Location configurations mapped by location name.
+     * Currently only zone names are supported and must be represented as valid
+     * internal URLs, such as zones/us-central1-a.
      * </pre>
      *
      * <code>
@@ -1000,7 +1034,9 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Location configurations mapped by location name. Currently only zone names are supported and must be represented as valid internal URLs, such as zones/us-central1-a.
+     * Location configurations mapped by location name.
+     * Currently only zone names are supported and must be represented as valid
+     * internal URLs, such as zones/us-central1-a.
      * </pre>
      *
      * <code>
@@ -1031,7 +1067,9 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Location configurations mapped by location name. Currently only zone names are supported and must be represented as valid internal URLs, such as zones/us-central1-a.
+     * Location configurations mapped by location name.
+     * Currently only zone names are supported and must be represented as valid
+     * internal URLs, such as zones/us-central1-a.
      * </pre>
      *
      * <code>
@@ -1058,7 +1096,9 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Location configurations mapped by location name. Currently only zone names are supported and must be represented as valid internal URLs, such as zones/us-central1-a.
+     * Location configurations mapped by location name.
+     * Currently only zone names are supported and must be represented as valid
+     * internal URLs, such as zones/us-central1-a.
      * </pre>
      *
      * <code>
@@ -1082,7 +1122,9 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Location configurations mapped by location name. Currently only zone names are supported and must be represented as valid internal URLs, such as zones/us-central1-a.
+     * Location configurations mapped by location name.
+     * Currently only zone names are supported and must be represented as valid
+     * internal URLs, such as zones/us-central1-a.
      * </pre>
      *
      * <code>
@@ -1107,7 +1149,9 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Location configurations mapped by location name. Currently only zone names are supported and must be represented as valid internal URLs, such as zones/us-central1-a.
+     * Location configurations mapped by location name.
+     * Currently only zone names are supported and must be represented as valid
+     * internal URLs, such as zones/us-central1-a.
      * </pre>
      *
      * <code>

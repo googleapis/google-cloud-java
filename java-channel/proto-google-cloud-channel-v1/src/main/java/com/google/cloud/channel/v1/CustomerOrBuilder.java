@@ -473,7 +473,7 @@ public interface CustomerOrBuilder
    *
    *
    * <pre>
-   * Optional. Indicate whether a customer is attesting about the correctness of
+   * Optional. Indicate if a customer is attesting about the correctness of
    * provided information. Only required if creating a GCP Entitlement.
    * </pre>
    *
@@ -489,7 +489,7 @@ public interface CustomerOrBuilder
    *
    *
    * <pre>
-   * Optional. Indicate whether a customer is attesting about the correctness of
+   * Optional. Indicate if a customer is attesting about the correctness of
    * provided information. Only required if creating a GCP Entitlement.
    * </pre>
    *

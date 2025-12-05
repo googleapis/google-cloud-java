@@ -67,7 +67,8 @@ public interface AllocationResourceStatusSpecificSKUAllocationOrBuilder
    *
    *
    * <pre>
-   * Per service utilization breakdown. The Key is the Google Cloud managed service name.
+   * Per service utilization breakdown. The Key is the Google Cloud managed
+   * service name.
    * </pre>
    *
    * <code>map&lt;string, int64&gt; utilizations = 402495121;</code>
@@ -78,7 +79,8 @@ public interface AllocationResourceStatusSpecificSKUAllocationOrBuilder
    *
    *
    * <pre>
-   * Per service utilization breakdown. The Key is the Google Cloud managed service name.
+   * Per service utilization breakdown. The Key is the Google Cloud managed
+   * service name.
    * </pre>
    *
    * <code>map&lt;string, int64&gt; utilizations = 402495121;</code>
@@ -93,7 +95,8 @@ public interface AllocationResourceStatusSpecificSKUAllocationOrBuilder
    *
    *
    * <pre>
-   * Per service utilization breakdown. The Key is the Google Cloud managed service name.
+   * Per service utilization breakdown. The Key is the Google Cloud managed
+   * service name.
    * </pre>
    *
    * <code>map&lt;string, int64&gt; utilizations = 402495121;</code>
@@ -104,7 +107,8 @@ public interface AllocationResourceStatusSpecificSKUAllocationOrBuilder
    *
    *
    * <pre>
-   * Per service utilization breakdown. The Key is the Google Cloud managed service name.
+   * Per service utilization breakdown. The Key is the Google Cloud managed
+   * service name.
    * </pre>
    *
    * <code>map&lt;string, int64&gt; utilizations = 402495121;</code>
@@ -115,7 +119,8 @@ public interface AllocationResourceStatusSpecificSKUAllocationOrBuilder
    *
    *
    * <pre>
-   * Per service utilization breakdown. The Key is the Google Cloud managed service name.
+   * Per service utilization breakdown. The Key is the Google Cloud managed
+   * service name.
    * </pre>
    *
    * <code>map&lt;string, int64&gt; utilizations = 402495121;</code>

@@ -28,7 +28,8 @@ public interface SecurityPolicyRuleMatcherExprOptionsOrBuilder
    *
    *
    * <pre>
-   * reCAPTCHA configuration options to be applied for the rule. If the rule does not evaluate reCAPTCHA tokens, this field has no effect.
+   * reCAPTCHA configuration options to be applied for the rule. If the
+   * rule does not evaluate reCAPTCHA tokens, this field has no effect.
    * </pre>
    *
    * <code>
@@ -43,7 +44,8 @@ public interface SecurityPolicyRuleMatcherExprOptionsOrBuilder
    *
    *
    * <pre>
-   * reCAPTCHA configuration options to be applied for the rule. If the rule does not evaluate reCAPTCHA tokens, this field has no effect.
+   * reCAPTCHA configuration options to be applied for the rule. If the
+   * rule does not evaluate reCAPTCHA tokens, this field has no effect.
    * </pre>
    *
    * <code>
@@ -59,7 +61,8 @@ public interface SecurityPolicyRuleMatcherExprOptionsOrBuilder
    *
    *
    * <pre>
-   * reCAPTCHA configuration options to be applied for the rule. If the rule does not evaluate reCAPTCHA tokens, this field has no effect.
+   * reCAPTCHA configuration options to be applied for the rule. If the
+   * rule does not evaluate reCAPTCHA tokens, this field has no effect.
    * </pre>
    *
    * <code>

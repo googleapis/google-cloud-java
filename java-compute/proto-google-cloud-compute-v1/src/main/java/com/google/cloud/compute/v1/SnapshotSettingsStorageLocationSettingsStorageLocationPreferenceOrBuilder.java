@@ -28,7 +28,8 @@ public interface SnapshotSettingsStorageLocationSettingsStorageLocationPreferenc
    *
    *
    * <pre>
-   * Name of the location. It should be one of the Cloud Storage buckets. Only one location can be specified.
+   * Name of the location. It should be one of the Cloud Storage buckets.
+   * Only one location can be specified.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -41,7 +42,8 @@ public interface SnapshotSettingsStorageLocationSettingsStorageLocationPreferenc
    *
    *
    * <pre>
-   * Name of the location. It should be one of the Cloud Storage buckets. Only one location can be specified.
+   * Name of the location. It should be one of the Cloud Storage buckets.
+   * Only one location can be specified.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -54,7 +56,8 @@ public interface SnapshotSettingsStorageLocationSettingsStorageLocationPreferenc
    *
    *
    * <pre>
-   * Name of the location. It should be one of the Cloud Storage buckets. Only one location can be specified.
+   * Name of the location. It should be one of the Cloud Storage buckets.
+   * Only one location can be specified.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>

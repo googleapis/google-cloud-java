@@ -3204,6 +3204,1503 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface RadiusAreaOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.shopping.merchant.accounts.v1.Region.RadiusArea)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. [CLDR territory
+     * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)
+     * or the country the radius area applies to.
+     * </pre>
+     *
+     * <code>string region_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The regionCode.
+     */
+    java.lang.String getRegionCode();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. [CLDR territory
+     * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)
+     * or the country the radius area applies to.
+     * </pre>
+     *
+     * <code>string region_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for regionCode.
+     */
+    com.google.protobuf.ByteString getRegionCodeBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The center of the radius area. It represents a
+     * latitude/longitude pair in decimal degrees format.
+     * </pre>
+     *
+     * <code>.google.type.LatLng lat_lng = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the latLng field is set.
+     */
+    boolean hasLatLng();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The center of the radius area. It represents a
+     * latitude/longitude pair in decimal degrees format.
+     * </pre>
+     *
+     * <code>.google.type.LatLng lat_lng = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The latLng.
+     */
+    com.google.type.LatLng getLatLng();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The center of the radius area. It represents a
+     * latitude/longitude pair in decimal degrees format.
+     * </pre>
+     *
+     * <code>.google.type.LatLng lat_lng = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    com.google.type.LatLngOrBuilder getLatLngOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The radius distance of the area.
+     * </pre>
+     *
+     * <code>double radius = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The radius.
+     */
+    double getRadius();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The unit of the radius.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.accounts.v1.Region.RadiusArea.RadiusUnits radius_units = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for radiusUnits.
+     */
+    int getRadiusUnitsValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The unit of the radius.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.accounts.v1.Region.RadiusArea.RadiusUnits radius_units = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The radiusUnits.
+     */
+    com.google.shopping.merchant.accounts.v1.Region.RadiusArea.RadiusUnits getRadiusUnits();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A radius area that defines the region area.
+   * </pre>
+   *
+   * Protobuf type {@code google.shopping.merchant.accounts.v1.Region.RadiusArea}
+   */
+  public static final class RadiusArea extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1.Region.RadiusArea)
+      RadiusAreaOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use RadiusArea.newBuilder() to construct.
+    private RadiusArea(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private RadiusArea() {
+      regionCode_ = "";
+      radiusUnits_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new RadiusArea();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.shopping.merchant.accounts.v1.RegionsProto
+          .internal_static_google_shopping_merchant_accounts_v1_Region_RadiusArea_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.shopping.merchant.accounts.v1.RegionsProto
+          .internal_static_google_shopping_merchant_accounts_v1_Region_RadiusArea_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.shopping.merchant.accounts.v1.Region.RadiusArea.class,
+              com.google.shopping.merchant.accounts.v1.Region.RadiusArea.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit of measurement of the radius. Default is KILOMETERS.
+     * </pre>
+     *
+     * Protobuf enum {@code google.shopping.merchant.accounts.v1.Region.RadiusArea.RadiusUnits}
+     */
+    public enum RadiusUnits implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unused default value
+       * </pre>
+       *
+       * <code>RADIUS_UNITS_UNSPECIFIED = 0;</code>
+       */
+      RADIUS_UNITS_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * The distance is measured in miles.
+       * </pre>
+       *
+       * <code>MILES = 1;</code>
+       */
+      MILES(1),
+      /**
+       *
+       *
+       * <pre>
+       * The distance is measured in kilometers.
+       * </pre>
+       *
+       * <code>KILOMETERS = 2;</code>
+       */
+      KILOMETERS(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Unused default value
+       * </pre>
+       *
+       * <code>RADIUS_UNITS_UNSPECIFIED = 0;</code>
+       */
+      public static final int RADIUS_UNITS_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * The distance is measured in miles.
+       * </pre>
+       *
+       * <code>MILES = 1;</code>
+       */
+      public static final int MILES_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * The distance is measured in kilometers.
+       * </pre>
+       *
+       * <code>KILOMETERS = 2;</code>
+       */
+      public static final int KILOMETERS_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static RadiusUnits valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static RadiusUnits forNumber(int value) {
+        switch (value) {
+          case 0:
+            return RADIUS_UNITS_UNSPECIFIED;
+          case 1:
+            return MILES;
+          case 2:
+            return KILOMETERS;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<RadiusUnits> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<RadiusUnits> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<RadiusUnits>() {
+            public RadiusUnits findValueByNumber(int number) {
+              return RadiusUnits.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.shopping.merchant.accounts.v1.Region.RadiusArea.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final RadiusUnits[] VALUES = values();
+
+      public static RadiusUnits valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private RadiusUnits(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.shopping.merchant.accounts.v1.Region.RadiusArea.RadiusUnits)
+    }
+
+    private int bitField0_;
+    public static final int REGION_CODE_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object regionCode_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. [CLDR territory
+     * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)
+     * or the country the radius area applies to.
+     * </pre>
+     *
+     * <code>string region_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The regionCode.
+     */
+    @java.lang.Override
+    public java.lang.String getRegionCode() {
+      java.lang.Object ref = regionCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        regionCode_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. [CLDR territory
+     * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)
+     * or the country the radius area applies to.
+     * </pre>
+     *
+     * <code>string region_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for regionCode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getRegionCodeBytes() {
+      java.lang.Object ref = regionCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        regionCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LAT_LNG_FIELD_NUMBER = 2;
+    private com.google.type.LatLng latLng_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The center of the radius area. It represents a
+     * latitude/longitude pair in decimal degrees format.
+     * </pre>
+     *
+     * <code>.google.type.LatLng lat_lng = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the latLng field is set.
+     */
+    @java.lang.Override
+    public boolean hasLatLng() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The center of the radius area. It represents a
+     * latitude/longitude pair in decimal degrees format.
+     * </pre>
+     *
+     * <code>.google.type.LatLng lat_lng = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The latLng.
+     */
+    @java.lang.Override
+    public com.google.type.LatLng getLatLng() {
+      return latLng_ == null ? com.google.type.LatLng.getDefaultInstance() : latLng_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The center of the radius area. It represents a
+     * latitude/longitude pair in decimal degrees format.
+     * </pre>
+     *
+     * <code>.google.type.LatLng lat_lng = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    @java.lang.Override
+    public com.google.type.LatLngOrBuilder getLatLngOrBuilder() {
+      return latLng_ == null ? com.google.type.LatLng.getDefaultInstance() : latLng_;
+    }
+
+    public static final int RADIUS_FIELD_NUMBER = 3;
+    private double radius_ = 0D;
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The radius distance of the area.
+     * </pre>
+     *
+     * <code>double radius = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The radius.
+     */
+    @java.lang.Override
+    public double getRadius() {
+      return radius_;
+    }
+
+    public static final int RADIUS_UNITS_FIELD_NUMBER = 4;
+    private int radiusUnits_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The unit of the radius.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.accounts.v1.Region.RadiusArea.RadiusUnits radius_units = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for radiusUnits.
+     */
+    @java.lang.Override
+    public int getRadiusUnitsValue() {
+      return radiusUnits_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The unit of the radius.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.accounts.v1.Region.RadiusArea.RadiusUnits radius_units = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The radiusUnits.
+     */
+    @java.lang.Override
+    public com.google.shopping.merchant.accounts.v1.Region.RadiusArea.RadiusUnits getRadiusUnits() {
+      com.google.shopping.merchant.accounts.v1.Region.RadiusArea.RadiusUnits result =
+          com.google.shopping.merchant.accounts.v1.Region.RadiusArea.RadiusUnits.forNumber(
+              radiusUnits_);
+      return result == null
+          ? com.google.shopping.merchant.accounts.v1.Region.RadiusArea.RadiusUnits.UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(regionCode_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, regionCode_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(2, getLatLng());
+      }
+      if (java.lang.Double.doubleToRawLongBits(radius_) != 0) {
+        output.writeDouble(3, radius_);
+      }
+      if (radiusUnits_
+          != com.google.shopping.merchant.accounts.v1.Region.RadiusArea.RadiusUnits
+              .RADIUS_UNITS_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(4, radiusUnits_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(regionCode_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, regionCode_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getLatLng());
+      }
+      if (java.lang.Double.doubleToRawLongBits(radius_) != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, radius_);
+      }
+      if (radiusUnits_
+          != com.google.shopping.merchant.accounts.v1.Region.RadiusArea.RadiusUnits
+              .RADIUS_UNITS_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, radiusUnits_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.shopping.merchant.accounts.v1.Region.RadiusArea)) {
+        return super.equals(obj);
+      }
+      com.google.shopping.merchant.accounts.v1.Region.RadiusArea other =
+          (com.google.shopping.merchant.accounts.v1.Region.RadiusArea) obj;
+
+      if (!getRegionCode().equals(other.getRegionCode())) return false;
+      if (hasLatLng() != other.hasLatLng()) return false;
+      if (hasLatLng()) {
+        if (!getLatLng().equals(other.getLatLng())) return false;
+      }
+      if (java.lang.Double.doubleToLongBits(getRadius())
+          != java.lang.Double.doubleToLongBits(other.getRadius())) return false;
+      if (radiusUnits_ != other.radiusUnits_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + REGION_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRegionCode().hashCode();
+      if (hasLatLng()) {
+        hash = (37 * hash) + LAT_LNG_FIELD_NUMBER;
+        hash = (53 * hash) + getLatLng().hashCode();
+      }
+      hash = (37 * hash) + RADIUS_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getRadius()));
+      hash = (37 * hash) + RADIUS_UNITS_FIELD_NUMBER;
+      hash = (53 * hash) + radiusUnits_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.shopping.merchant.accounts.v1.Region.RadiusArea parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.accounts.v1.Region.RadiusArea parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.accounts.v1.Region.RadiusArea parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.accounts.v1.Region.RadiusArea parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.accounts.v1.Region.RadiusArea parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.accounts.v1.Region.RadiusArea parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.accounts.v1.Region.RadiusArea parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.accounts.v1.Region.RadiusArea parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.accounts.v1.Region.RadiusArea parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.accounts.v1.Region.RadiusArea parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.accounts.v1.Region.RadiusArea parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.accounts.v1.Region.RadiusArea parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.shopping.merchant.accounts.v1.Region.RadiusArea prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A radius area that defines the region area.
+     * </pre>
+     *
+     * Protobuf type {@code google.shopping.merchant.accounts.v1.Region.RadiusArea}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.shopping.merchant.accounts.v1.Region.RadiusArea)
+        com.google.shopping.merchant.accounts.v1.Region.RadiusAreaOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.shopping.merchant.accounts.v1.RegionsProto
+            .internal_static_google_shopping_merchant_accounts_v1_Region_RadiusArea_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.shopping.merchant.accounts.v1.RegionsProto
+            .internal_static_google_shopping_merchant_accounts_v1_Region_RadiusArea_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.shopping.merchant.accounts.v1.Region.RadiusArea.class,
+                com.google.shopping.merchant.accounts.v1.Region.RadiusArea.Builder.class);
+      }
+
+      // Construct using com.google.shopping.merchant.accounts.v1.Region.RadiusArea.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getLatLngFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        regionCode_ = "";
+        latLng_ = null;
+        if (latLngBuilder_ != null) {
+          latLngBuilder_.dispose();
+          latLngBuilder_ = null;
+        }
+        radius_ = 0D;
+        radiusUnits_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.shopping.merchant.accounts.v1.RegionsProto
+            .internal_static_google_shopping_merchant_accounts_v1_Region_RadiusArea_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.accounts.v1.Region.RadiusArea
+          getDefaultInstanceForType() {
+        return com.google.shopping.merchant.accounts.v1.Region.RadiusArea.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.accounts.v1.Region.RadiusArea build() {
+        com.google.shopping.merchant.accounts.v1.Region.RadiusArea result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.accounts.v1.Region.RadiusArea buildPartial() {
+        com.google.shopping.merchant.accounts.v1.Region.RadiusArea result =
+            new com.google.shopping.merchant.accounts.v1.Region.RadiusArea(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.shopping.merchant.accounts.v1.Region.RadiusArea result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.regionCode_ = regionCode_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.latLng_ = latLngBuilder_ == null ? latLng_ : latLngBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.radius_ = radius_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.radiusUnits_ = radiusUnits_;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.shopping.merchant.accounts.v1.Region.RadiusArea) {
+          return mergeFrom((com.google.shopping.merchant.accounts.v1.Region.RadiusArea) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.shopping.merchant.accounts.v1.Region.RadiusArea other) {
+        if (other
+            == com.google.shopping.merchant.accounts.v1.Region.RadiusArea.getDefaultInstance())
+          return this;
+        if (!other.getRegionCode().isEmpty()) {
+          regionCode_ = other.regionCode_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.hasLatLng()) {
+          mergeLatLng(other.getLatLng());
+        }
+        if (other.getRadius() != 0D) {
+          setRadius(other.getRadius());
+        }
+        if (other.radiusUnits_ != 0) {
+          setRadiusUnitsValue(other.getRadiusUnitsValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  regionCode_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(getLatLngFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 25:
+                {
+                  radius_ = input.readDouble();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 25
+              case 32:
+                {
+                  radiusUnits_ = input.readEnum();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 32
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object regionCode_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. [CLDR territory
+       * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)
+       * or the country the radius area applies to.
+       * </pre>
+       *
+       * <code>string region_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The regionCode.
+       */
+      public java.lang.String getRegionCode() {
+        java.lang.Object ref = regionCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          regionCode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. [CLDR territory
+       * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)
+       * or the country the radius area applies to.
+       * </pre>
+       *
+       * <code>string region_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for regionCode.
+       */
+      public com.google.protobuf.ByteString getRegionCodeBytes() {
+        java.lang.Object ref = regionCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          regionCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. [CLDR territory
+       * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)
+       * or the country the radius area applies to.
+       * </pre>
+       *
+       * <code>string region_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The regionCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRegionCode(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        regionCode_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. [CLDR territory
+       * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)
+       * or the country the radius area applies to.
+       * </pre>
+       *
+       * <code>string region_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRegionCode() {
+        regionCode_ = getDefaultInstance().getRegionCode();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. [CLDR territory
+       * code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml)
+       * or the country the radius area applies to.
+       * </pre>
+       *
+       * <code>string region_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for regionCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRegionCodeBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        regionCode_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private com.google.type.LatLng latLng_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LatLng,
+              com.google.type.LatLng.Builder,
+              com.google.type.LatLngOrBuilder>
+          latLngBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The center of the radius area. It represents a
+       * latitude/longitude pair in decimal degrees format.
+       * </pre>
+       *
+       * <code>.google.type.LatLng lat_lng = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return Whether the latLng field is set.
+       */
+      public boolean hasLatLng() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The center of the radius area. It represents a
+       * latitude/longitude pair in decimal degrees format.
+       * </pre>
+       *
+       * <code>.google.type.LatLng lat_lng = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The latLng.
+       */
+      public com.google.type.LatLng getLatLng() {
+        if (latLngBuilder_ == null) {
+          return latLng_ == null ? com.google.type.LatLng.getDefaultInstance() : latLng_;
+        } else {
+          return latLngBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The center of the radius area. It represents a
+       * latitude/longitude pair in decimal degrees format.
+       * </pre>
+       *
+       * <code>.google.type.LatLng lat_lng = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public Builder setLatLng(com.google.type.LatLng value) {
+        if (latLngBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          latLng_ = value;
+        } else {
+          latLngBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The center of the radius area. It represents a
+       * latitude/longitude pair in decimal degrees format.
+       * </pre>
+       *
+       * <code>.google.type.LatLng lat_lng = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public Builder setLatLng(com.google.type.LatLng.Builder builderForValue) {
+        if (latLngBuilder_ == null) {
+          latLng_ = builderForValue.build();
+        } else {
+          latLngBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The center of the radius area. It represents a
+       * latitude/longitude pair in decimal degrees format.
+       * </pre>
+       *
+       * <code>.google.type.LatLng lat_lng = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public Builder mergeLatLng(com.google.type.LatLng value) {
+        if (latLngBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && latLng_ != null
+              && latLng_ != com.google.type.LatLng.getDefaultInstance()) {
+            getLatLngBuilder().mergeFrom(value);
+          } else {
+            latLng_ = value;
+          }
+        } else {
+          latLngBuilder_.mergeFrom(value);
+        }
+        if (latLng_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The center of the radius area. It represents a
+       * latitude/longitude pair in decimal degrees format.
+       * </pre>
+       *
+       * <code>.google.type.LatLng lat_lng = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public Builder clearLatLng() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        latLng_ = null;
+        if (latLngBuilder_ != null) {
+          latLngBuilder_.dispose();
+          latLngBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The center of the radius area. It represents a
+       * latitude/longitude pair in decimal degrees format.
+       * </pre>
+       *
+       * <code>.google.type.LatLng lat_lng = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public com.google.type.LatLng.Builder getLatLngBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getLatLngFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The center of the radius area. It represents a
+       * latitude/longitude pair in decimal degrees format.
+       * </pre>
+       *
+       * <code>.google.type.LatLng lat_lng = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public com.google.type.LatLngOrBuilder getLatLngOrBuilder() {
+        if (latLngBuilder_ != null) {
+          return latLngBuilder_.getMessageOrBuilder();
+        } else {
+          return latLng_ == null ? com.google.type.LatLng.getDefaultInstance() : latLng_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The center of the radius area. It represents a
+       * latitude/longitude pair in decimal degrees format.
+       * </pre>
+       *
+       * <code>.google.type.LatLng lat_lng = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LatLng,
+              com.google.type.LatLng.Builder,
+              com.google.type.LatLngOrBuilder>
+          getLatLngFieldBuilder() {
+        if (latLngBuilder_ == null) {
+          latLngBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.LatLng,
+                  com.google.type.LatLng.Builder,
+                  com.google.type.LatLngOrBuilder>(getLatLng(), getParentForChildren(), isClean());
+          latLng_ = null;
+        }
+        return latLngBuilder_;
+      }
+
+      private double radius_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The radius distance of the area.
+       * </pre>
+       *
+       * <code>double radius = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The radius.
+       */
+      @java.lang.Override
+      public double getRadius() {
+        return radius_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The radius distance of the area.
+       * </pre>
+       *
+       * <code>double radius = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The radius to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRadius(double value) {
+
+        radius_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The radius distance of the area.
+       * </pre>
+       *
+       * <code>double radius = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRadius() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        radius_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private int radiusUnits_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The unit of the radius.
+       * </pre>
+       *
+       * <code>
+       * .google.shopping.merchant.accounts.v1.Region.RadiusArea.RadiusUnits radius_units = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for radiusUnits.
+       */
+      @java.lang.Override
+      public int getRadiusUnitsValue() {
+        return radiusUnits_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The unit of the radius.
+       * </pre>
+       *
+       * <code>
+       * .google.shopping.merchant.accounts.v1.Region.RadiusArea.RadiusUnits radius_units = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for radiusUnits to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRadiusUnitsValue(int value) {
+        radiusUnits_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The unit of the radius.
+       * </pre>
+       *
+       * <code>
+       * .google.shopping.merchant.accounts.v1.Region.RadiusArea.RadiusUnits radius_units = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The radiusUnits.
+       */
+      @java.lang.Override
+      public com.google.shopping.merchant.accounts.v1.Region.RadiusArea.RadiusUnits
+          getRadiusUnits() {
+        com.google.shopping.merchant.accounts.v1.Region.RadiusArea.RadiusUnits result =
+            com.google.shopping.merchant.accounts.v1.Region.RadiusArea.RadiusUnits.forNumber(
+                radiusUnits_);
+        return result == null
+            ? com.google.shopping.merchant.accounts.v1.Region.RadiusArea.RadiusUnits.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The unit of the radius.
+       * </pre>
+       *
+       * <code>
+       * .google.shopping.merchant.accounts.v1.Region.RadiusArea.RadiusUnits radius_units = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The radiusUnits to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRadiusUnits(
+          com.google.shopping.merchant.accounts.v1.Region.RadiusArea.RadiusUnits value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000008;
+        radiusUnits_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The unit of the radius.
+       * </pre>
+       *
+       * <code>
+       * .google.shopping.merchant.accounts.v1.Region.RadiusArea.RadiusUnits radius_units = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRadiusUnits() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        radiusUnits_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.shopping.merchant.accounts.v1.Region.RadiusArea)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.shopping.merchant.accounts.v1.Region.RadiusArea)
+    private static final com.google.shopping.merchant.accounts.v1.Region.RadiusArea
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.shopping.merchant.accounts.v1.Region.RadiusArea();
+    }
+
+    public static com.google.shopping.merchant.accounts.v1.Region.RadiusArea getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RadiusArea> PARSER =
+        new com.google.protobuf.AbstractParser<RadiusArea>() {
+          @java.lang.Override
+          public RadiusArea parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<RadiusArea> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RadiusArea> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.shopping.merchant.accounts.v1.Region.RadiusArea getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -3573,6 +5070,66 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         : shippingEligible_;
   }
 
+  public static final int RADIUS_AREA_FIELD_NUMBER = 7;
+  private com.google.shopping.merchant.accounts.v1.Region.RadiusArea radiusArea_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A radius area that defines the region area.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.accounts.v1.Region.RadiusArea radius_area = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the radiusArea field is set.
+   */
+  @java.lang.Override
+  public boolean hasRadiusArea() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A radius area that defines the region area.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.accounts.v1.Region.RadiusArea radius_area = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The radiusArea.
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.accounts.v1.Region.RadiusArea getRadiusArea() {
+    return radiusArea_ == null
+        ? com.google.shopping.merchant.accounts.v1.Region.RadiusArea.getDefaultInstance()
+        : radiusArea_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A radius area that defines the region area.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.accounts.v1.Region.RadiusArea radius_area = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.accounts.v1.Region.RadiusAreaOrBuilder
+      getRadiusAreaOrBuilder() {
+    return radiusArea_ == null
+        ? com.google.shopping.merchant.accounts.v1.Region.RadiusArea.getDefaultInstance()
+        : radiusArea_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3605,6 +5162,9 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(6, getShippingEligible());
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(7, getRadiusArea());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -3633,6 +5193,9 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getShippingEligible());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getRadiusArea());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -3672,6 +5235,10 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     if (hasShippingEligible()) {
       if (!getShippingEligible().equals(other.getShippingEligible())) return false;
     }
+    if (hasRadiusArea() != other.hasRadiusArea()) return false;
+    if (hasRadiusArea()) {
+      if (!getRadiusArea().equals(other.getRadiusArea())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3704,6 +5271,10 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
     if (hasShippingEligible()) {
       hash = (37 * hash) + SHIPPING_ELIGIBLE_FIELD_NUMBER;
       hash = (53 * hash) + getShippingEligible().hashCode();
+    }
+    if (hasRadiusArea()) {
+      hash = (37 * hash) + RADIUS_AREA_FIELD_NUMBER;
+      hash = (53 * hash) + getRadiusArea().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -3855,6 +5426,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         getGeotargetAreaFieldBuilder();
         getRegionalInventoryEligibleFieldBuilder();
         getShippingEligibleFieldBuilder();
+        getRadiusAreaFieldBuilder();
       }
     }
 
@@ -3883,6 +5455,11 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       if (shippingEligibleBuilder_ != null) {
         shippingEligibleBuilder_.dispose();
         shippingEligibleBuilder_ = null;
+      }
+      radiusArea_ = null;
+      if (radiusAreaBuilder_ != null) {
+        radiusAreaBuilder_.dispose();
+        radiusAreaBuilder_ = null;
       }
       return this;
     }
@@ -3949,6 +5526,10 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         result.shippingEligible_ =
             shippingEligibleBuilder_ == null ? shippingEligible_ : shippingEligibleBuilder_.build();
         to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.radiusArea_ = radiusAreaBuilder_ == null ? radiusArea_ : radiusAreaBuilder_.build();
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4021,6 +5602,9 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
       if (other.hasShippingEligible()) {
         mergeShippingEligible(other.getShippingEligible());
       }
+      if (other.hasRadiusArea()) {
+        mergeRadiusArea(other.getRadiusArea());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -4085,6 +5669,12 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(getRadiusAreaFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5225,6 +6815,224 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
         shippingEligible_ = null;
       }
       return shippingEligibleBuilder_;
+    }
+
+    private com.google.shopping.merchant.accounts.v1.Region.RadiusArea radiusArea_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.shopping.merchant.accounts.v1.Region.RadiusArea,
+            com.google.shopping.merchant.accounts.v1.Region.RadiusArea.Builder,
+            com.google.shopping.merchant.accounts.v1.Region.RadiusAreaOrBuilder>
+        radiusAreaBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A radius area that defines the region area.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.accounts.v1.Region.RadiusArea radius_area = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the radiusArea field is set.
+     */
+    public boolean hasRadiusArea() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A radius area that defines the region area.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.accounts.v1.Region.RadiusArea radius_area = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The radiusArea.
+     */
+    public com.google.shopping.merchant.accounts.v1.Region.RadiusArea getRadiusArea() {
+      if (radiusAreaBuilder_ == null) {
+        return radiusArea_ == null
+            ? com.google.shopping.merchant.accounts.v1.Region.RadiusArea.getDefaultInstance()
+            : radiusArea_;
+      } else {
+        return radiusAreaBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A radius area that defines the region area.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.accounts.v1.Region.RadiusArea radius_area = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRadiusArea(com.google.shopping.merchant.accounts.v1.Region.RadiusArea value) {
+      if (radiusAreaBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        radiusArea_ = value;
+      } else {
+        radiusAreaBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A radius area that defines the region area.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.accounts.v1.Region.RadiusArea radius_area = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRadiusArea(
+        com.google.shopping.merchant.accounts.v1.Region.RadiusArea.Builder builderForValue) {
+      if (radiusAreaBuilder_ == null) {
+        radiusArea_ = builderForValue.build();
+      } else {
+        radiusAreaBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A radius area that defines the region area.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.accounts.v1.Region.RadiusArea radius_area = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRadiusArea(
+        com.google.shopping.merchant.accounts.v1.Region.RadiusArea value) {
+      if (radiusAreaBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && radiusArea_ != null
+            && radiusArea_
+                != com.google.shopping.merchant.accounts.v1.Region.RadiusArea
+                    .getDefaultInstance()) {
+          getRadiusAreaBuilder().mergeFrom(value);
+        } else {
+          radiusArea_ = value;
+        }
+      } else {
+        radiusAreaBuilder_.mergeFrom(value);
+      }
+      if (radiusArea_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A radius area that defines the region area.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.accounts.v1.Region.RadiusArea radius_area = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRadiusArea() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      radiusArea_ = null;
+      if (radiusAreaBuilder_ != null) {
+        radiusAreaBuilder_.dispose();
+        radiusAreaBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A radius area that defines the region area.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.accounts.v1.Region.RadiusArea radius_area = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.accounts.v1.Region.RadiusArea.Builder
+        getRadiusAreaBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getRadiusAreaFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A radius area that defines the region area.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.accounts.v1.Region.RadiusArea radius_area = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.accounts.v1.Region.RadiusAreaOrBuilder
+        getRadiusAreaOrBuilder() {
+      if (radiusAreaBuilder_ != null) {
+        return radiusAreaBuilder_.getMessageOrBuilder();
+      } else {
+        return radiusArea_ == null
+            ? com.google.shopping.merchant.accounts.v1.Region.RadiusArea.getDefaultInstance()
+            : radiusArea_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A radius area that defines the region area.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.accounts.v1.Region.RadiusArea radius_area = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.shopping.merchant.accounts.v1.Region.RadiusArea,
+            com.google.shopping.merchant.accounts.v1.Region.RadiusArea.Builder,
+            com.google.shopping.merchant.accounts.v1.Region.RadiusAreaOrBuilder>
+        getRadiusAreaFieldBuilder() {
+      if (radiusAreaBuilder_ == null) {
+        radiusAreaBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.shopping.merchant.accounts.v1.Region.RadiusArea,
+                com.google.shopping.merchant.accounts.v1.Region.RadiusArea.Builder,
+                com.google.shopping.merchant.accounts.v1.Region.RadiusAreaOrBuilder>(
+                getRadiusArea(), getParentForChildren(), isClean());
+        radiusArea_ = null;
+      }
+      return radiusAreaBuilder_;
     }
 
     @java.lang.Override

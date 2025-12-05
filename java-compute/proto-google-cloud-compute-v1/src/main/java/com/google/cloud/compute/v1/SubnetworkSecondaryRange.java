@@ -76,7 +76,12 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The range of IP addresses belonging to this subnetwork secondary range. Provide this property when you create the subnetwork. Ranges must be unique and non-overlapping with all primary and secondary IP ranges within a network. Only IPv4 is supported. The range can be any range listed in the Valid ranges list.
+   * The range of IP addresses belonging to this subnetwork secondary range.
+   * Provide this property when you create the subnetwork. Ranges must be
+   * unique and non-overlapping with all primary and secondary IP ranges
+   * within a network. Only IPv4 is supported. The range can be any range
+   * listed in theValid
+   * ranges list.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -92,7 +97,12 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The range of IP addresses belonging to this subnetwork secondary range. Provide this property when you create the subnetwork. Ranges must be unique and non-overlapping with all primary and secondary IP ranges within a network. Only IPv4 is supported. The range can be any range listed in the Valid ranges list.
+   * The range of IP addresses belonging to this subnetwork secondary range.
+   * Provide this property when you create the subnetwork. Ranges must be
+   * unique and non-overlapping with all primary and secondary IP ranges
+   * within a network. Only IPv4 is supported. The range can be any range
+   * listed in theValid
+   * ranges list.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -116,7 +126,12 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The range of IP addresses belonging to this subnetwork secondary range. Provide this property when you create the subnetwork. Ranges must be unique and non-overlapping with all primary and secondary IP ranges within a network. Only IPv4 is supported. The range can be any range listed in the Valid ranges list.
+   * The range of IP addresses belonging to this subnetwork secondary range.
+   * Provide this property when you create the subnetwork. Ranges must be
+   * unique and non-overlapping with all primary and secondary IP ranges
+   * within a network. Only IPv4 is supported. The range can be any range
+   * listed in theValid
+   * ranges list.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -145,7 +160,10 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
+   * The name associated with this subnetwork secondary range, used when adding
+   * an alias IP range to a VM instance.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * The name must be unique within the subnetwork.
    * </pre>
    *
    * <code>optional string range_name = 332216397;</code>
@@ -161,7 +179,10 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
+   * The name associated with this subnetwork secondary range, used when adding
+   * an alias IP range to a VM instance.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * The name must be unique within the subnetwork.
    * </pre>
    *
    * <code>optional string range_name = 332216397;</code>
@@ -185,7 +206,10 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
+   * The name associated with this subnetwork secondary range, used when adding
+   * an alias IP range to a VM instance.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * The name must be unique within the subnetwork.
    * </pre>
    *
    * <code>optional string range_name = 332216397;</code>
@@ -693,7 +717,12 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The range of IP addresses belonging to this subnetwork secondary range. Provide this property when you create the subnetwork. Ranges must be unique and non-overlapping with all primary and secondary IP ranges within a network. Only IPv4 is supported. The range can be any range listed in the Valid ranges list.
+     * The range of IP addresses belonging to this subnetwork secondary range.
+     * Provide this property when you create the subnetwork. Ranges must be
+     * unique and non-overlapping with all primary and secondary IP ranges
+     * within a network. Only IPv4 is supported. The range can be any range
+     * listed in theValid
+     * ranges list.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -708,7 +737,12 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The range of IP addresses belonging to this subnetwork secondary range. Provide this property when you create the subnetwork. Ranges must be unique and non-overlapping with all primary and secondary IP ranges within a network. Only IPv4 is supported. The range can be any range listed in the Valid ranges list.
+     * The range of IP addresses belonging to this subnetwork secondary range.
+     * Provide this property when you create the subnetwork. Ranges must be
+     * unique and non-overlapping with all primary and secondary IP ranges
+     * within a network. Only IPv4 is supported. The range can be any range
+     * listed in theValid
+     * ranges list.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -731,7 +765,12 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The range of IP addresses belonging to this subnetwork secondary range. Provide this property when you create the subnetwork. Ranges must be unique and non-overlapping with all primary and secondary IP ranges within a network. Only IPv4 is supported. The range can be any range listed in the Valid ranges list.
+     * The range of IP addresses belonging to this subnetwork secondary range.
+     * Provide this property when you create the subnetwork. Ranges must be
+     * unique and non-overlapping with all primary and secondary IP ranges
+     * within a network. Only IPv4 is supported. The range can be any range
+     * listed in theValid
+     * ranges list.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -754,7 +793,12 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The range of IP addresses belonging to this subnetwork secondary range. Provide this property when you create the subnetwork. Ranges must be unique and non-overlapping with all primary and secondary IP ranges within a network. Only IPv4 is supported. The range can be any range listed in the Valid ranges list.
+     * The range of IP addresses belonging to this subnetwork secondary range.
+     * Provide this property when you create the subnetwork. Ranges must be
+     * unique and non-overlapping with all primary and secondary IP ranges
+     * within a network. Only IPv4 is supported. The range can be any range
+     * listed in theValid
+     * ranges list.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -776,7 +820,12 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The range of IP addresses belonging to this subnetwork secondary range. Provide this property when you create the subnetwork. Ranges must be unique and non-overlapping with all primary and secondary IP ranges within a network. Only IPv4 is supported. The range can be any range listed in the Valid ranges list.
+     * The range of IP addresses belonging to this subnetwork secondary range.
+     * Provide this property when you create the subnetwork. Ranges must be
+     * unique and non-overlapping with all primary and secondary IP ranges
+     * within a network. Only IPv4 is supported. The range can be any range
+     * listed in theValid
+     * ranges list.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -794,7 +843,12 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The range of IP addresses belonging to this subnetwork secondary range. Provide this property when you create the subnetwork. Ranges must be unique and non-overlapping with all primary and secondary IP ranges within a network. Only IPv4 is supported. The range can be any range listed in the Valid ranges list.
+     * The range of IP addresses belonging to this subnetwork secondary range.
+     * Provide this property when you create the subnetwork. Ranges must be
+     * unique and non-overlapping with all primary and secondary IP ranges
+     * within a network. Only IPv4 is supported. The range can be any range
+     * listed in theValid
+     * ranges list.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -819,7 +873,10 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
+     * The name associated with this subnetwork secondary range, used when adding
+     * an alias IP range to a VM instance.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * The name must be unique within the subnetwork.
      * </pre>
      *
      * <code>optional string range_name = 332216397;</code>
@@ -834,7 +891,10 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
+     * The name associated with this subnetwork secondary range, used when adding
+     * an alias IP range to a VM instance.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * The name must be unique within the subnetwork.
      * </pre>
      *
      * <code>optional string range_name = 332216397;</code>
@@ -857,7 +917,10 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
+     * The name associated with this subnetwork secondary range, used when adding
+     * an alias IP range to a VM instance.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * The name must be unique within the subnetwork.
      * </pre>
      *
      * <code>optional string range_name = 332216397;</code>
@@ -880,7 +943,10 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
+     * The name associated with this subnetwork secondary range, used when adding
+     * an alias IP range to a VM instance.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * The name must be unique within the subnetwork.
      * </pre>
      *
      * <code>optional string range_name = 332216397;</code>
@@ -902,7 +968,10 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
+     * The name associated with this subnetwork secondary range, used when adding
+     * an alias IP range to a VM instance.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * The name must be unique within the subnetwork.
      * </pre>
      *
      * <code>optional string range_name = 332216397;</code>
@@ -920,7 +989,10 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
+     * The name associated with this subnetwork secondary range, used when adding
+     * an alias IP range to a VM instance.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * The name must be unique within the subnetwork.
      * </pre>
      *
      * <code>optional string range_name = 332216397;</code>

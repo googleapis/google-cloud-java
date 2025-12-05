@@ -93,7 +93,8 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -106,7 +107,8 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -119,7 +121,8 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -132,7 +135,8 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    *
    *
    * <pre>
-   * The IP address range, in CIDR format, represented by this sub public delegated prefix.
+   * The IP address range, in CIDR format, represented by this sub public
+   * delegated prefix.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -145,7 +149,8 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    *
    *
    * <pre>
-   * The IP address range, in CIDR format, represented by this sub public delegated prefix.
+   * The IP address range, in CIDR format, represented by this sub public
+   * delegated prefix.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -158,7 +163,8 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    *
    *
    * <pre>
-   * The IP address range, in CIDR format, represented by this sub public delegated prefix.
+   * The IP address range, in CIDR format, represented by this sub public
+   * delegated prefix.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -171,7 +177,53 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    *
    *
    * <pre>
-   * Whether the sub prefix is delegated to create Address resources in the delegatee project.
+   * [Output Only] The internet access type for IPv6 Public Delegated Sub
+   * Prefixes. Inherited from parent prefix.
+   * Check the Ipv6AccessType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_access_type = 504658653;</code>
+   *
+   * @return Whether the ipv6AccessType field is set.
+   */
+  boolean hasIpv6AccessType();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The internet access type for IPv6 Public Delegated Sub
+   * Prefixes. Inherited from parent prefix.
+   * Check the Ipv6AccessType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_access_type = 504658653;</code>
+   *
+   * @return The ipv6AccessType.
+   */
+  java.lang.String getIpv6AccessType();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The internet access type for IPv6 Public Delegated Sub
+   * Prefixes. Inherited from parent prefix.
+   * Check the Ipv6AccessType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_access_type = 504658653;</code>
+   *
+   * @return The bytes for ipv6AccessType.
+   */
+  com.google.protobuf.ByteString getIpv6AccessTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether the sub prefix is delegated to create Address resources in the
+   * delegatee project.
    * </pre>
    *
    * <code>optional bool is_address = 352617951;</code>
@@ -184,7 +236,8 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    *
    *
    * <pre>
-   * Whether the sub prefix is delegated to create Address resources in the delegatee project.
+   * Whether the sub prefix is delegated to create Address resources in the
+   * delegatee project.
    * </pre>
    *
    * <code>optional bool is_address = 352617951;</code>
@@ -278,7 +331,8 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The region of the sub public delegated prefix if it is regional. If absent, the sub prefix is global.
+   * [Output Only] The region of the sub public delegated prefix if it is
+   * regional. If absent, the sub prefix is global.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -291,7 +345,8 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The region of the sub public delegated prefix if it is regional. If absent, the sub prefix is global.
+   * [Output Only] The region of the sub public delegated prefix if it is
+   * regional. If absent, the sub prefix is global.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -304,7 +359,8 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The region of the sub public delegated prefix if it is regional. If absent, the sub prefix is global.
+   * [Output Only] The region of the sub public delegated prefix if it is
+   * regional. If absent, the sub prefix is global.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>

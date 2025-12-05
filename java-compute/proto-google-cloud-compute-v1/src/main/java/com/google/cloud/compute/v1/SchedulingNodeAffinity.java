@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Node Affinity: the configuration of desired nodes onto which this Instance could be scheduled.
+ * Node Affinity: the configuration of desired nodes onto which this Instance
+ *  could be scheduled.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.SchedulingNodeAffinity}
@@ -70,7 +71,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
+   * Defines the operation of node selection. Valid operators areIN for affinity and NOT_IN for anti-affinity.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.SchedulingNodeAffinity.Operator}
@@ -313,7 +314,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
+   * Defines the operation of node selection. Valid operators areIN for affinity and NOT_IN for anti-affinity.
    * Check the Operator enum for the list of possible values.
    * </pre>
    *
@@ -330,7 +331,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
+   * Defines the operation of node selection. Valid operators areIN for affinity and NOT_IN for anti-affinity.
    * Check the Operator enum for the list of possible values.
    * </pre>
    *
@@ -355,7 +356,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
+   * Defines the operation of node selection. Valid operators areIN for affinity and NOT_IN for anti-affinity.
    * Check the Operator enum for the list of possible values.
    * </pre>
    *
@@ -643,7 +644,8 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Node Affinity: the configuration of desired nodes onto which this Instance could be scheduled.
+   * Node Affinity: the configuration of desired nodes onto which this Instance
+   *  could be scheduled.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.SchedulingNodeAffinity}
@@ -995,7 +997,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
+     * Defines the operation of node selection. Valid operators areIN for affinity and NOT_IN for anti-affinity.
      * Check the Operator enum for the list of possible values.
      * </pre>
      *
@@ -1011,7 +1013,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
+     * Defines the operation of node selection. Valid operators areIN for affinity and NOT_IN for anti-affinity.
      * Check the Operator enum for the list of possible values.
      * </pre>
      *
@@ -1035,7 +1037,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
+     * Defines the operation of node selection. Valid operators areIN for affinity and NOT_IN for anti-affinity.
      * Check the Operator enum for the list of possible values.
      * </pre>
      *
@@ -1059,7 +1061,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
+     * Defines the operation of node selection. Valid operators areIN for affinity and NOT_IN for anti-affinity.
      * Check the Operator enum for the list of possible values.
      * </pre>
      *
@@ -1082,7 +1084,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
+     * Defines the operation of node selection. Valid operators areIN for affinity and NOT_IN for anti-affinity.
      * Check the Operator enum for the list of possible values.
      * </pre>
      *
@@ -1101,7 +1103,7 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
+     * Defines the operation of node selection. Valid operators areIN for affinity and NOT_IN for anti-affinity.
      * Check the Operator enum for the list of possible values.
      * </pre>
      *

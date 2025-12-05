@@ -28,7 +28,8 @@ public interface RegionInstanceGroupManagersSetTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * URL of the InstanceTemplate resource from which all new instances will be created.
+   * URL of the InstanceTemplate resource from which all new instances will be
+   * created.
    * </pre>
    *
    * <code>optional string instance_template = 309248228;</code>
@@ -41,7 +42,8 @@ public interface RegionInstanceGroupManagersSetTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * URL of the InstanceTemplate resource from which all new instances will be created.
+   * URL of the InstanceTemplate resource from which all new instances will be
+   * created.
    * </pre>
    *
    * <code>optional string instance_template = 309248228;</code>
@@ -54,7 +56,8 @@ public interface RegionInstanceGroupManagersSetTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * URL of the InstanceTemplate resource from which all new instances will be created.
+   * URL of the InstanceTemplate resource from which all new instances will be
+   * created.
    * </pre>
    *
    * <code>optional string instance_template = 309248228;</code>

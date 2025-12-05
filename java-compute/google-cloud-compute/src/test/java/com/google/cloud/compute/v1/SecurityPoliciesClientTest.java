@@ -298,6 +298,7 @@ public class SecurityPoliciesClientTest {
             .setLabelFingerprint("labelFingerprint379449680")
             .putAllLabels(new HashMap<String, String>())
             .setName("name3373707")
+            .setParent("parent-995424086")
             .setRecaptchaOptionsConfig(SecurityPolicyRecaptchaOptionsConfig.newBuilder().build())
             .setRegion("region-934795532")
             .addAllRules(new ArrayList<SecurityPolicyRule>())

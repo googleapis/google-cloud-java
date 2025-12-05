@@ -23,7 +23,12 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a License resource. A License represents billing and aggregate usage data for public and marketplace images. *Caution* This resource is intended for use only by third-party partners who are creating Cloud Marketplace images.
+ * Represents a License resource.
+ *
+ * A License represents billing and aggregate usage data forpublic andmarketplace images.
+ *  *Caution* This resource is intended for
+ * use only by third-party partners who are creatingCloud Marketplace
+ * images.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.License}
@@ -84,7 +89,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies licenseCodes of licenses that can replace this license. Note: such replacements are allowed even if removable_from_disk is false.
+   * Specifies licenseCodes of licenses that can replace this license. Note:
+   * such replacements are allowed even if removable_from_disk is false.
    * </pre>
    *
    * <code>repeated string allowed_replacement_licenses = 195677718;</code>
@@ -99,7 +105,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies licenseCodes of licenses that can replace this license. Note: such replacements are allowed even if removable_from_disk is false.
+   * Specifies licenseCodes of licenses that can replace this license. Note:
+   * such replacements are allowed even if removable_from_disk is false.
    * </pre>
    *
    * <code>repeated string allowed_replacement_licenses = 195677718;</code>
@@ -114,7 +121,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies licenseCodes of licenses that can replace this license. Note: such replacements are allowed even if removable_from_disk is false.
+   * Specifies licenseCodes of licenses that can replace this license. Note:
+   * such replacements are allowed even if removable_from_disk is false.
    * </pre>
    *
    * <code>repeated string allowed_replacement_licenses = 195677718;</code>
@@ -130,7 +138,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies licenseCodes of licenses that can replace this license. Note: such replacements are allowed even if removable_from_disk is false.
+   * Specifies licenseCodes of licenses that can replace this license. Note:
+   * such replacements are allowed even if removable_from_disk is false.
    * </pre>
    *
    * <code>repeated string allowed_replacement_licenses = 195677718;</code>
@@ -149,7 +158,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If true, this license can be appended to an existing disk's set of licenses.
+   * If true, this license can be appended to an existing disk's set of
+   * licenses.
    * </pre>
    *
    * <code>optional bool appendable_to_disk = 16959254;</code>
@@ -165,7 +175,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If true, this license can be appended to an existing disk's set of licenses.
+   * If true, this license can be appended to an existing disk's set of
+   * licenses.
    * </pre>
    *
    * <code>optional bool appendable_to_disk = 16959254;</code>
@@ -184,7 +195,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Deprecated. This field no longer reflects whether a license charges a usage fee.
+   * [Output Only] Deprecated. This field no longer reflects whether a license
+   * charges a usage fee.
    * </pre>
    *
    * <code>optional bool charges_use_fee = 372412622;</code>
@@ -200,7 +212,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Deprecated. This field no longer reflects whether a license charges a usage fee.
+   * [Output Only] Deprecated. This field no longer reflects whether a license
+   * charges a usage fee.
    * </pre>
    *
    * <code>optional bool charges_use_fee = 372412622;</code>
@@ -221,7 +234,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -237,7 +251,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -261,7 +276,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -290,7 +306,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional textual description of the resource; provided by the client when the resource is created.
+   * An optional textual description of the resource; provided by the client
+   * when the resource is created.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -306,7 +323,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional textual description of the resource; provided by the client when the resource is created.
+   * An optional textual description of the resource; provided by the client
+   * when the resource is created.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -330,7 +348,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional textual description of the resource; provided by the client when the resource is created.
+   * An optional textual description of the resource; provided by the client
+   * when the resource is created.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -357,7 +376,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -373,7 +393,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -395,7 +416,9 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies licenseCodes of licenses that are incompatible with this license. If a license is incompatible with this license, it cannot be attached to the same disk or image.
+   * Specifies licenseCodes of licenses that are incompatible with this license.
+   * If a license is incompatible with this license, it cannot be attached to
+   * the same disk or image.
    * </pre>
    *
    * <code>repeated string incompatible_licenses = 334239768;</code>
@@ -410,7 +433,9 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies licenseCodes of licenses that are incompatible with this license. If a license is incompatible with this license, it cannot be attached to the same disk or image.
+   * Specifies licenseCodes of licenses that are incompatible with this license.
+   * If a license is incompatible with this license, it cannot be attached to
+   * the same disk or image.
    * </pre>
    *
    * <code>repeated string incompatible_licenses = 334239768;</code>
@@ -425,7 +450,9 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies licenseCodes of licenses that are incompatible with this license. If a license is incompatible with this license, it cannot be attached to the same disk or image.
+   * Specifies licenseCodes of licenses that are incompatible with this license.
+   * If a license is incompatible with this license, it cannot be attached to
+   * the same disk or image.
    * </pre>
    *
    * <code>repeated string incompatible_licenses = 334239768;</code>
@@ -441,7 +468,9 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies licenseCodes of licenses that are incompatible with this license. If a license is incompatible with this license, it cannot be attached to the same disk or image.
+   * Specifies licenseCodes of licenses that are incompatible with this license.
+   * If a license is incompatible with this license, it cannot be attached to
+   * the same disk or image.
    * </pre>
    *
    * <code>repeated string incompatible_licenses = 334239768;</code>
@@ -462,7 +491,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#license for licenses.
+   * [Output Only] Type of resource. Always compute#license for
+   * licenses.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -478,7 +508,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#license for licenses.
+   * [Output Only] Type of resource. Always compute#license for
+   * licenses.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -502,7 +533,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#license for licenses.
+   * [Output Only] Type of resource. Always compute#license for
+   * licenses.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -529,7 +561,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique code used to attach this license to images, snapshots, and disks.
+   * [Output Only] The unique code used to attach this license to images,
+   * snapshots, and disks.
    * </pre>
    *
    * <code>optional uint64 license_code = 1467179;</code>
@@ -545,7 +578,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique code used to attach this license to images, snapshots, and disks.
+   * [Output Only] The unique code used to attach this license to images,
+   * snapshots, and disks.
    * </pre>
    *
    * <code>optional uint64 license_code = 1467179;</code>
@@ -564,7 +598,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If set, this license will be unable to be removed or replaced once attached to a disk until the minimum_retention period has passed.
+   * If set, this license will be unable to be removed or replaced once attached
+   * to a disk until the minimum_retention period has passed.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Duration minimum_retention = 155398189;</code>
@@ -580,7 +615,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If set, this license will be unable to be removed or replaced once attached to a disk until the minimum_retention period has passed.
+   * If set, this license will be unable to be removed or replaced once attached
+   * to a disk until the minimum_retention period has passed.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Duration minimum_retention = 155398189;</code>
@@ -598,7 +634,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If set, this license will be unable to be removed or replaced once attached to a disk until the minimum_retention period has passed.
+   * If set, this license will be unable to be removed or replaced once attached
+   * to a disk until the minimum_retention period has passed.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Duration minimum_retention = 155398189;</code>
@@ -654,7 +691,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource. The name must be 1-63 characters long and comply with RFC1035.
+   * Name of the resource. The name must be 1-63 characters long and
+   * comply withRFC1035.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -670,7 +708,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource. The name must be 1-63 characters long and comply with RFC1035.
+   * Name of the resource. The name must be 1-63 characters long and
+   * comply withRFC1035.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -694,7 +733,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource. The name must be 1-63 characters long and comply with RFC1035.
+   * Name of the resource. The name must be 1-63 characters long and
+   * comply withRFC1035.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -721,7 +761,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If true, indicates this is an OS license. Only one OS license can be attached to a disk or image at a time.
+   * If true, indicates this is an OS license. Only one OS license can be
+   * attached to a disk or image at a time.
    * </pre>
    *
    * <code>optional bool os_license = 487986406;</code>
@@ -737,7 +778,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If true, indicates this is an OS license. Only one OS license can be attached to a disk or image at a time.
+   * If true, indicates this is an OS license. Only one OS license can be
+   * attached to a disk or image at a time.
    * </pre>
    *
    * <code>optional bool os_license = 487986406;</code>
@@ -756,7 +798,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If true, this license can be removed from a disk's set of licenses, with no replacement license needed.
+   * If true, this license can be removed from a disk's set of licenses, with no
+   * replacement license needed.
    * </pre>
    *
    * <code>optional bool removable_from_disk = 25854638;</code>
@@ -772,7 +815,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If true, this license can be removed from a disk's set of licenses, with no replacement license needed.
+   * If true, this license can be removed from a disk's set of licenses, with no
+   * replacement license needed.
    * </pre>
    *
    * <code>optional bool removable_from_disk = 25854638;</code>
@@ -794,7 +838,9 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the set of permissible coattached licenseCodes of licenses that satisfy the coattachment requirement of this license. At least one license from the set must be attached to the same disk or image as this license.
+   * Specifies the set of permissible coattached licenseCodes of licenses that
+   * satisfy the coattachment requirement of this license. At least one license
+   * from the set must be attached to the same disk or image as this license.
    * </pre>
    *
    * <code>repeated string required_coattached_licenses = 129195265;</code>
@@ -809,7 +855,9 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the set of permissible coattached licenseCodes of licenses that satisfy the coattachment requirement of this license. At least one license from the set must be attached to the same disk or image as this license.
+   * Specifies the set of permissible coattached licenseCodes of licenses that
+   * satisfy the coattachment requirement of this license. At least one license
+   * from the set must be attached to the same disk or image as this license.
    * </pre>
    *
    * <code>repeated string required_coattached_licenses = 129195265;</code>
@@ -824,7 +872,9 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the set of permissible coattached licenseCodes of licenses that satisfy the coattachment requirement of this license. At least one license from the set must be attached to the same disk or image as this license.
+   * Specifies the set of permissible coattached licenseCodes of licenses that
+   * satisfy the coattachment requirement of this license. At least one license
+   * from the set must be attached to the same disk or image as this license.
    * </pre>
    *
    * <code>repeated string required_coattached_licenses = 129195265;</code>
@@ -840,7 +890,9 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the set of permissible coattached licenseCodes of licenses that satisfy the coattachment requirement of this license. At least one license from the set must be attached to the same disk or image as this license.
+   * Specifies the set of permissible coattached licenseCodes of licenses that
+   * satisfy the coattachment requirement of this license. At least one license
+   * from the set must be attached to the same disk or image as this license.
    * </pre>
    *
    * <code>repeated string required_coattached_licenses = 129195265;</code>
@@ -1092,7 +1144,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If false, licenses will not be copied from the source resource when creating an image from a disk, disk from snapshot, or snapshot from disk.
+   * If false, licenses will not be copied from the source resource when
+   * creating an image from a disk, disk from snapshot, or snapshot from disk.
    * </pre>
    *
    * <code>optional bool transferable = 4349893;</code>
@@ -1108,7 +1161,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If false, licenses will not be copied from the source resource when creating an image from a disk, disk from snapshot, or snapshot from disk.
+   * If false, licenses will not be copied from the source resource when
+   * creating an image from a disk, disk from snapshot, or snapshot from disk.
    * </pre>
    *
    * <code>optional bool transferable = 4349893;</code>
@@ -1129,7 +1183,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Last update timestamp in RFC3339 text format.
+   * [Output Only] Last update timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string update_timestamp = 120894752;</code>
@@ -1145,7 +1200,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Last update timestamp in RFC3339 text format.
+   * [Output Only] Last update timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string update_timestamp = 120894752;</code>
@@ -1169,7 +1225,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Last update timestamp in RFC3339 text format.
+   * [Output Only] Last update timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string update_timestamp = 120894752;</code>
@@ -1652,7 +1709,12 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a License resource. A License represents billing and aggregate usage data for public and marketplace images. *Caution* This resource is intended for use only by third-party partners who are creating Cloud Marketplace images.
+   * Represents a License resource.
+   *
+   * A License represents billing and aggregate usage data forpublic andmarketplace images.
+   *  *Caution* This resource is intended for
+   * use only by third-party partners who are creatingCloud Marketplace
+   * images.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.License}
@@ -2187,7 +2249,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies licenseCodes of licenses that can replace this license. Note: such replacements are allowed even if removable_from_disk is false.
+     * Specifies licenseCodes of licenses that can replace this license. Note:
+     * such replacements are allowed even if removable_from_disk is false.
      * </pre>
      *
      * <code>repeated string allowed_replacement_licenses = 195677718;</code>
@@ -2203,7 +2266,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies licenseCodes of licenses that can replace this license. Note: such replacements are allowed even if removable_from_disk is false.
+     * Specifies licenseCodes of licenses that can replace this license. Note:
+     * such replacements are allowed even if removable_from_disk is false.
      * </pre>
      *
      * <code>repeated string allowed_replacement_licenses = 195677718;</code>
@@ -2218,7 +2282,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies licenseCodes of licenses that can replace this license. Note: such replacements are allowed even if removable_from_disk is false.
+     * Specifies licenseCodes of licenses that can replace this license. Note:
+     * such replacements are allowed even if removable_from_disk is false.
      * </pre>
      *
      * <code>repeated string allowed_replacement_licenses = 195677718;</code>
@@ -2234,7 +2299,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies licenseCodes of licenses that can replace this license. Note: such replacements are allowed even if removable_from_disk is false.
+     * Specifies licenseCodes of licenses that can replace this license. Note:
+     * such replacements are allowed even if removable_from_disk is false.
      * </pre>
      *
      * <code>repeated string allowed_replacement_licenses = 195677718;</code>
@@ -2250,7 +2316,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies licenseCodes of licenses that can replace this license. Note: such replacements are allowed even if removable_from_disk is false.
+     * Specifies licenseCodes of licenses that can replace this license. Note:
+     * such replacements are allowed even if removable_from_disk is false.
      * </pre>
      *
      * <code>repeated string allowed_replacement_licenses = 195677718;</code>
@@ -2274,7 +2341,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies licenseCodes of licenses that can replace this license. Note: such replacements are allowed even if removable_from_disk is false.
+     * Specifies licenseCodes of licenses that can replace this license. Note:
+     * such replacements are allowed even if removable_from_disk is false.
      * </pre>
      *
      * <code>repeated string allowed_replacement_licenses = 195677718;</code>
@@ -2297,7 +2365,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies licenseCodes of licenses that can replace this license. Note: such replacements are allowed even if removable_from_disk is false.
+     * Specifies licenseCodes of licenses that can replace this license. Note:
+     * such replacements are allowed even if removable_from_disk is false.
      * </pre>
      *
      * <code>repeated string allowed_replacement_licenses = 195677718;</code>
@@ -2317,7 +2386,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies licenseCodes of licenses that can replace this license. Note: such replacements are allowed even if removable_from_disk is false.
+     * Specifies licenseCodes of licenses that can replace this license. Note:
+     * such replacements are allowed even if removable_from_disk is false.
      * </pre>
      *
      * <code>repeated string allowed_replacement_licenses = 195677718;</code>
@@ -2336,7 +2406,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies licenseCodes of licenses that can replace this license. Note: such replacements are allowed even if removable_from_disk is false.
+     * Specifies licenseCodes of licenses that can replace this license. Note:
+     * such replacements are allowed even if removable_from_disk is false.
      * </pre>
      *
      * <code>repeated string allowed_replacement_licenses = 195677718;</code>
@@ -2362,7 +2433,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If true, this license can be appended to an existing disk's set of licenses.
+     * If true, this license can be appended to an existing disk's set of
+     * licenses.
      * </pre>
      *
      * <code>optional bool appendable_to_disk = 16959254;</code>
@@ -2378,7 +2450,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If true, this license can be appended to an existing disk's set of licenses.
+     * If true, this license can be appended to an existing disk's set of
+     * licenses.
      * </pre>
      *
      * <code>optional bool appendable_to_disk = 16959254;</code>
@@ -2394,7 +2467,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If true, this license can be appended to an existing disk's set of licenses.
+     * If true, this license can be appended to an existing disk's set of
+     * licenses.
      * </pre>
      *
      * <code>optional bool appendable_to_disk = 16959254;</code>
@@ -2414,7 +2488,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If true, this license can be appended to an existing disk's set of licenses.
+     * If true, this license can be appended to an existing disk's set of
+     * licenses.
      * </pre>
      *
      * <code>optional bool appendable_to_disk = 16959254;</code>
@@ -2434,7 +2509,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Deprecated. This field no longer reflects whether a license charges a usage fee.
+     * [Output Only] Deprecated. This field no longer reflects whether a license
+     * charges a usage fee.
      * </pre>
      *
      * <code>optional bool charges_use_fee = 372412622;</code>
@@ -2450,7 +2526,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Deprecated. This field no longer reflects whether a license charges a usage fee.
+     * [Output Only] Deprecated. This field no longer reflects whether a license
+     * charges a usage fee.
      * </pre>
      *
      * <code>optional bool charges_use_fee = 372412622;</code>
@@ -2466,7 +2543,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Deprecated. This field no longer reflects whether a license charges a usage fee.
+     * [Output Only] Deprecated. This field no longer reflects whether a license
+     * charges a usage fee.
      * </pre>
      *
      * <code>optional bool charges_use_fee = 372412622;</code>
@@ -2486,7 +2564,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Deprecated. This field no longer reflects whether a license charges a usage fee.
+     * [Output Only] Deprecated. This field no longer reflects whether a license
+     * charges a usage fee.
      * </pre>
      *
      * <code>optional bool charges_use_fee = 372412622;</code>
@@ -2506,7 +2585,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2521,7 +2601,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2544,7 +2625,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2567,7 +2649,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2589,7 +2672,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2607,7 +2691,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2632,7 +2717,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional textual description of the resource; provided by the client when the resource is created.
+     * An optional textual description of the resource; provided by the client
+     * when the resource is created.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2647,7 +2733,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional textual description of the resource; provided by the client when the resource is created.
+     * An optional textual description of the resource; provided by the client
+     * when the resource is created.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2670,7 +2757,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional textual description of the resource; provided by the client when the resource is created.
+     * An optional textual description of the resource; provided by the client
+     * when the resource is created.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2693,7 +2781,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional textual description of the resource; provided by the client when the resource is created.
+     * An optional textual description of the resource; provided by the client
+     * when the resource is created.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2715,7 +2804,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional textual description of the resource; provided by the client when the resource is created.
+     * An optional textual description of the resource; provided by the client
+     * when the resource is created.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2733,7 +2823,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional textual description of the resource; provided by the client when the resource is created.
+     * An optional textual description of the resource; provided by the client
+     * when the resource is created.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2758,7 +2849,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2774,7 +2866,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2790,7 +2883,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2810,7 +2904,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2838,7 +2933,9 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies licenseCodes of licenses that are incompatible with this license. If a license is incompatible with this license, it cannot be attached to the same disk or image.
+     * Specifies licenseCodes of licenses that are incompatible with this license.
+     * If a license is incompatible with this license, it cannot be attached to
+     * the same disk or image.
      * </pre>
      *
      * <code>repeated string incompatible_licenses = 334239768;</code>
@@ -2854,7 +2951,9 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies licenseCodes of licenses that are incompatible with this license. If a license is incompatible with this license, it cannot be attached to the same disk or image.
+     * Specifies licenseCodes of licenses that are incompatible with this license.
+     * If a license is incompatible with this license, it cannot be attached to
+     * the same disk or image.
      * </pre>
      *
      * <code>repeated string incompatible_licenses = 334239768;</code>
@@ -2869,7 +2968,9 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies licenseCodes of licenses that are incompatible with this license. If a license is incompatible with this license, it cannot be attached to the same disk or image.
+     * Specifies licenseCodes of licenses that are incompatible with this license.
+     * If a license is incompatible with this license, it cannot be attached to
+     * the same disk or image.
      * </pre>
      *
      * <code>repeated string incompatible_licenses = 334239768;</code>
@@ -2885,7 +2986,9 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies licenseCodes of licenses that are incompatible with this license. If a license is incompatible with this license, it cannot be attached to the same disk or image.
+     * Specifies licenseCodes of licenses that are incompatible with this license.
+     * If a license is incompatible with this license, it cannot be attached to
+     * the same disk or image.
      * </pre>
      *
      * <code>repeated string incompatible_licenses = 334239768;</code>
@@ -2901,7 +3004,9 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies licenseCodes of licenses that are incompatible with this license. If a license is incompatible with this license, it cannot be attached to the same disk or image.
+     * Specifies licenseCodes of licenses that are incompatible with this license.
+     * If a license is incompatible with this license, it cannot be attached to
+     * the same disk or image.
      * </pre>
      *
      * <code>repeated string incompatible_licenses = 334239768;</code>
@@ -2925,7 +3030,9 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies licenseCodes of licenses that are incompatible with this license. If a license is incompatible with this license, it cannot be attached to the same disk or image.
+     * Specifies licenseCodes of licenses that are incompatible with this license.
+     * If a license is incompatible with this license, it cannot be attached to
+     * the same disk or image.
      * </pre>
      *
      * <code>repeated string incompatible_licenses = 334239768;</code>
@@ -2948,7 +3055,9 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies licenseCodes of licenses that are incompatible with this license. If a license is incompatible with this license, it cannot be attached to the same disk or image.
+     * Specifies licenseCodes of licenses that are incompatible with this license.
+     * If a license is incompatible with this license, it cannot be attached to
+     * the same disk or image.
      * </pre>
      *
      * <code>repeated string incompatible_licenses = 334239768;</code>
@@ -2968,7 +3077,9 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies licenseCodes of licenses that are incompatible with this license. If a license is incompatible with this license, it cannot be attached to the same disk or image.
+     * Specifies licenseCodes of licenses that are incompatible with this license.
+     * If a license is incompatible with this license, it cannot be attached to
+     * the same disk or image.
      * </pre>
      *
      * <code>repeated string incompatible_licenses = 334239768;</code>
@@ -2987,7 +3098,9 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies licenseCodes of licenses that are incompatible with this license. If a license is incompatible with this license, it cannot be attached to the same disk or image.
+     * Specifies licenseCodes of licenses that are incompatible with this license.
+     * If a license is incompatible with this license, it cannot be attached to
+     * the same disk or image.
      * </pre>
      *
      * <code>repeated string incompatible_licenses = 334239768;</code>
@@ -3013,7 +3126,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#license for licenses.
+     * [Output Only] Type of resource. Always compute#license for
+     * licenses.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3028,7 +3142,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#license for licenses.
+     * [Output Only] Type of resource. Always compute#license for
+     * licenses.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3051,7 +3166,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#license for licenses.
+     * [Output Only] Type of resource. Always compute#license for
+     * licenses.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3074,7 +3190,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#license for licenses.
+     * [Output Only] Type of resource. Always compute#license for
+     * licenses.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3096,7 +3213,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#license for licenses.
+     * [Output Only] Type of resource. Always compute#license for
+     * licenses.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3114,7 +3232,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#license for licenses.
+     * [Output Only] Type of resource. Always compute#license for
+     * licenses.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3139,7 +3258,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique code used to attach this license to images, snapshots, and disks.
+     * [Output Only] The unique code used to attach this license to images,
+     * snapshots, and disks.
      * </pre>
      *
      * <code>optional uint64 license_code = 1467179;</code>
@@ -3155,7 +3275,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique code used to attach this license to images, snapshots, and disks.
+     * [Output Only] The unique code used to attach this license to images,
+     * snapshots, and disks.
      * </pre>
      *
      * <code>optional uint64 license_code = 1467179;</code>
@@ -3171,7 +3292,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique code used to attach this license to images, snapshots, and disks.
+     * [Output Only] The unique code used to attach this license to images,
+     * snapshots, and disks.
      * </pre>
      *
      * <code>optional uint64 license_code = 1467179;</code>
@@ -3191,7 +3313,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique code used to attach this license to images, snapshots, and disks.
+     * [Output Only] The unique code used to attach this license to images,
+     * snapshots, and disks.
      * </pre>
      *
      * <code>optional uint64 license_code = 1467179;</code>
@@ -3216,7 +3339,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If set, this license will be unable to be removed or replaced once attached to a disk until the minimum_retention period has passed.
+     * If set, this license will be unable to be removed or replaced once attached
+     * to a disk until the minimum_retention period has passed.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration minimum_retention = 155398189;</code>
@@ -3231,7 +3355,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If set, this license will be unable to be removed or replaced once attached to a disk until the minimum_retention period has passed.
+     * If set, this license will be unable to be removed or replaced once attached
+     * to a disk until the minimum_retention period has passed.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration minimum_retention = 155398189;</code>
@@ -3252,7 +3377,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If set, this license will be unable to be removed or replaced once attached to a disk until the minimum_retention period has passed.
+     * If set, this license will be unable to be removed or replaced once attached
+     * to a disk until the minimum_retention period has passed.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration minimum_retention = 155398189;</code>
@@ -3275,7 +3401,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If set, this license will be unable to be removed or replaced once attached to a disk until the minimum_retention period has passed.
+     * If set, this license will be unable to be removed or replaced once attached
+     * to a disk until the minimum_retention period has passed.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration minimum_retention = 155398189;</code>
@@ -3296,7 +3423,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If set, this license will be unable to be removed or replaced once attached to a disk until the minimum_retention period has passed.
+     * If set, this license will be unable to be removed or replaced once attached
+     * to a disk until the minimum_retention period has passed.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration minimum_retention = 155398189;</code>
@@ -3324,7 +3452,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If set, this license will be unable to be removed or replaced once attached to a disk until the minimum_retention period has passed.
+     * If set, this license will be unable to be removed or replaced once attached
+     * to a disk until the minimum_retention period has passed.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration minimum_retention = 155398189;</code>
@@ -3344,7 +3473,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If set, this license will be unable to be removed or replaced once attached to a disk until the minimum_retention period has passed.
+     * If set, this license will be unable to be removed or replaced once attached
+     * to a disk until the minimum_retention period has passed.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration minimum_retention = 155398189;</code>
@@ -3359,7 +3489,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If set, this license will be unable to be removed or replaced once attached to a disk until the minimum_retention period has passed.
+     * If set, this license will be unable to be removed or replaced once attached
+     * to a disk until the minimum_retention period has passed.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration minimum_retention = 155398189;</code>
@@ -3378,7 +3509,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If set, this license will be unable to be removed or replaced once attached to a disk until the minimum_retention period has passed.
+     * If set, this license will be unable to be removed or replaced once attached
+     * to a disk until the minimum_retention period has passed.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration minimum_retention = 155398189;</code>
@@ -3478,7 +3610,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. The name must be 1-63 characters long and comply with RFC1035.
+     * Name of the resource. The name must be 1-63 characters long and
+     * comply withRFC1035.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3493,7 +3626,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. The name must be 1-63 characters long and comply with RFC1035.
+     * Name of the resource. The name must be 1-63 characters long and
+     * comply withRFC1035.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3516,7 +3650,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. The name must be 1-63 characters long and comply with RFC1035.
+     * Name of the resource. The name must be 1-63 characters long and
+     * comply withRFC1035.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3539,7 +3674,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. The name must be 1-63 characters long and comply with RFC1035.
+     * Name of the resource. The name must be 1-63 characters long and
+     * comply withRFC1035.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3561,7 +3697,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. The name must be 1-63 characters long and comply with RFC1035.
+     * Name of the resource. The name must be 1-63 characters long and
+     * comply withRFC1035.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3579,7 +3716,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. The name must be 1-63 characters long and comply with RFC1035.
+     * Name of the resource. The name must be 1-63 characters long and
+     * comply withRFC1035.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3604,7 +3742,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If true, indicates this is an OS license. Only one OS license can be attached to a disk or image at a time.
+     * If true, indicates this is an OS license. Only one OS license can be
+     * attached to a disk or image at a time.
      * </pre>
      *
      * <code>optional bool os_license = 487986406;</code>
@@ -3620,7 +3759,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If true, indicates this is an OS license. Only one OS license can be attached to a disk or image at a time.
+     * If true, indicates this is an OS license. Only one OS license can be
+     * attached to a disk or image at a time.
      * </pre>
      *
      * <code>optional bool os_license = 487986406;</code>
@@ -3636,7 +3776,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If true, indicates this is an OS license. Only one OS license can be attached to a disk or image at a time.
+     * If true, indicates this is an OS license. Only one OS license can be
+     * attached to a disk or image at a time.
      * </pre>
      *
      * <code>optional bool os_license = 487986406;</code>
@@ -3656,7 +3797,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If true, indicates this is an OS license. Only one OS license can be attached to a disk or image at a time.
+     * If true, indicates this is an OS license. Only one OS license can be
+     * attached to a disk or image at a time.
      * </pre>
      *
      * <code>optional bool os_license = 487986406;</code>
@@ -3676,7 +3818,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If true, this license can be removed from a disk's set of licenses, with no replacement license needed.
+     * If true, this license can be removed from a disk's set of licenses, with no
+     * replacement license needed.
      * </pre>
      *
      * <code>optional bool removable_from_disk = 25854638;</code>
@@ -3692,7 +3835,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If true, this license can be removed from a disk's set of licenses, with no replacement license needed.
+     * If true, this license can be removed from a disk's set of licenses, with no
+     * replacement license needed.
      * </pre>
      *
      * <code>optional bool removable_from_disk = 25854638;</code>
@@ -3708,7 +3852,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If true, this license can be removed from a disk's set of licenses, with no replacement license needed.
+     * If true, this license can be removed from a disk's set of licenses, with no
+     * replacement license needed.
      * </pre>
      *
      * <code>optional bool removable_from_disk = 25854638;</code>
@@ -3728,7 +3873,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If true, this license can be removed from a disk's set of licenses, with no replacement license needed.
+     * If true, this license can be removed from a disk's set of licenses, with no
+     * replacement license needed.
      * </pre>
      *
      * <code>optional bool removable_from_disk = 25854638;</code>
@@ -3757,7 +3903,9 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the set of permissible coattached licenseCodes of licenses that satisfy the coattachment requirement of this license. At least one license from the set must be attached to the same disk or image as this license.
+     * Specifies the set of permissible coattached licenseCodes of licenses that
+     * satisfy the coattachment requirement of this license. At least one license
+     * from the set must be attached to the same disk or image as this license.
      * </pre>
      *
      * <code>repeated string required_coattached_licenses = 129195265;</code>
@@ -3773,7 +3921,9 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the set of permissible coattached licenseCodes of licenses that satisfy the coattachment requirement of this license. At least one license from the set must be attached to the same disk or image as this license.
+     * Specifies the set of permissible coattached licenseCodes of licenses that
+     * satisfy the coattachment requirement of this license. At least one license
+     * from the set must be attached to the same disk or image as this license.
      * </pre>
      *
      * <code>repeated string required_coattached_licenses = 129195265;</code>
@@ -3788,7 +3938,9 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the set of permissible coattached licenseCodes of licenses that satisfy the coattachment requirement of this license. At least one license from the set must be attached to the same disk or image as this license.
+     * Specifies the set of permissible coattached licenseCodes of licenses that
+     * satisfy the coattachment requirement of this license. At least one license
+     * from the set must be attached to the same disk or image as this license.
      * </pre>
      *
      * <code>repeated string required_coattached_licenses = 129195265;</code>
@@ -3804,7 +3956,9 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the set of permissible coattached licenseCodes of licenses that satisfy the coattachment requirement of this license. At least one license from the set must be attached to the same disk or image as this license.
+     * Specifies the set of permissible coattached licenseCodes of licenses that
+     * satisfy the coattachment requirement of this license. At least one license
+     * from the set must be attached to the same disk or image as this license.
      * </pre>
      *
      * <code>repeated string required_coattached_licenses = 129195265;</code>
@@ -3820,7 +3974,9 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the set of permissible coattached licenseCodes of licenses that satisfy the coattachment requirement of this license. At least one license from the set must be attached to the same disk or image as this license.
+     * Specifies the set of permissible coattached licenseCodes of licenses that
+     * satisfy the coattachment requirement of this license. At least one license
+     * from the set must be attached to the same disk or image as this license.
      * </pre>
      *
      * <code>repeated string required_coattached_licenses = 129195265;</code>
@@ -3844,7 +4000,9 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the set of permissible coattached licenseCodes of licenses that satisfy the coattachment requirement of this license. At least one license from the set must be attached to the same disk or image as this license.
+     * Specifies the set of permissible coattached licenseCodes of licenses that
+     * satisfy the coattachment requirement of this license. At least one license
+     * from the set must be attached to the same disk or image as this license.
      * </pre>
      *
      * <code>repeated string required_coattached_licenses = 129195265;</code>
@@ -3867,7 +4025,9 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the set of permissible coattached licenseCodes of licenses that satisfy the coattachment requirement of this license. At least one license from the set must be attached to the same disk or image as this license.
+     * Specifies the set of permissible coattached licenseCodes of licenses that
+     * satisfy the coattachment requirement of this license. At least one license
+     * from the set must be attached to the same disk or image as this license.
      * </pre>
      *
      * <code>repeated string required_coattached_licenses = 129195265;</code>
@@ -3887,7 +4047,9 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the set of permissible coattached licenseCodes of licenses that satisfy the coattachment requirement of this license. At least one license from the set must be attached to the same disk or image as this license.
+     * Specifies the set of permissible coattached licenseCodes of licenses that
+     * satisfy the coattachment requirement of this license. At least one license
+     * from the set must be attached to the same disk or image as this license.
      * </pre>
      *
      * <code>repeated string required_coattached_licenses = 129195265;</code>
@@ -3906,7 +4068,9 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the set of permissible coattached licenseCodes of licenses that satisfy the coattachment requirement of this license. At least one license from the set must be attached to the same disk or image as this license.
+     * Specifies the set of permissible coattached licenseCodes of licenses that
+     * satisfy the coattachment requirement of this license. At least one license
+     * from the set must be attached to the same disk or image as this license.
      * </pre>
      *
      * <code>repeated string required_coattached_licenses = 129195265;</code>
@@ -4474,7 +4638,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If false, licenses will not be copied from the source resource when creating an image from a disk, disk from snapshot, or snapshot from disk.
+     * If false, licenses will not be copied from the source resource when
+     * creating an image from a disk, disk from snapshot, or snapshot from disk.
      * </pre>
      *
      * <code>optional bool transferable = 4349893;</code>
@@ -4490,7 +4655,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If false, licenses will not be copied from the source resource when creating an image from a disk, disk from snapshot, or snapshot from disk.
+     * If false, licenses will not be copied from the source resource when
+     * creating an image from a disk, disk from snapshot, or snapshot from disk.
      * </pre>
      *
      * <code>optional bool transferable = 4349893;</code>
@@ -4506,7 +4672,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If false, licenses will not be copied from the source resource when creating an image from a disk, disk from snapshot, or snapshot from disk.
+     * If false, licenses will not be copied from the source resource when
+     * creating an image from a disk, disk from snapshot, or snapshot from disk.
      * </pre>
      *
      * <code>optional bool transferable = 4349893;</code>
@@ -4526,7 +4693,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If false, licenses will not be copied from the source resource when creating an image from a disk, disk from snapshot, or snapshot from disk.
+     * If false, licenses will not be copied from the source resource when
+     * creating an image from a disk, disk from snapshot, or snapshot from disk.
      * </pre>
      *
      * <code>optional bool transferable = 4349893;</code>
@@ -4546,7 +4714,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last update timestamp in RFC3339 text format.
+     * [Output Only] Last update timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string update_timestamp = 120894752;</code>
@@ -4561,7 +4730,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last update timestamp in RFC3339 text format.
+     * [Output Only] Last update timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string update_timestamp = 120894752;</code>
@@ -4584,7 +4754,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last update timestamp in RFC3339 text format.
+     * [Output Only] Last update timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string update_timestamp = 120894752;</code>
@@ -4607,7 +4778,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last update timestamp in RFC3339 text format.
+     * [Output Only] Last update timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string update_timestamp = 120894752;</code>
@@ -4629,7 +4801,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last update timestamp in RFC3339 text format.
+     * [Output Only] Last update timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string update_timestamp = 120894752;</code>
@@ -4647,7 +4820,8 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last update timestamp in RFC3339 text format.
+     * [Output Only] Last update timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string update_timestamp = 120894752;</code>

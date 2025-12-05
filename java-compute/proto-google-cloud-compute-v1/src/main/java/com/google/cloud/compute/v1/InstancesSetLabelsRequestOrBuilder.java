@@ -28,7 +28,9 @@ public interface InstancesSetLabelsRequestOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of the previous set of labels for this resource, used to prevent conflicts. Provide the latest fingerprint value when making a request to add or change labels.
+   * Fingerprint of the previous set of labels for this resource,
+   * used to prevent conflicts. Provide the latest fingerprint value when making
+   * a request to add or change labels.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -41,7 +43,9 @@ public interface InstancesSetLabelsRequestOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of the previous set of labels for this resource, used to prevent conflicts. Provide the latest fingerprint value when making a request to add or change labels.
+   * Fingerprint of the previous set of labels for this resource,
+   * used to prevent conflicts. Provide the latest fingerprint value when making
+   * a request to add or change labels.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -54,7 +58,9 @@ public interface InstancesSetLabelsRequestOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of the previous set of labels for this resource, used to prevent conflicts. Provide the latest fingerprint value when making a request to add or change labels.
+   * Fingerprint of the previous set of labels for this resource,
+   * used to prevent conflicts. Provide the latest fingerprint value when making
+   * a request to add or change labels.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>

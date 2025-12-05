@@ -565,6 +565,7 @@ public class BackupDRClientTest {
             .setTotalStoredBytes(1181597162)
             .setUid("uid115792")
             .putAllAnnotations(new HashMap<String, String>())
+            .setEncryptionConfig(BackupVault.EncryptionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -631,6 +632,7 @@ public class BackupDRClientTest {
             .setTotalStoredBytes(1181597162)
             .setUid("uid115792")
             .putAllAnnotations(new HashMap<String, String>())
+            .setEncryptionConfig(BackupVault.EncryptionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -875,6 +877,7 @@ public class BackupDRClientTest {
             .setTotalStoredBytes(1181597162)
             .setUid("uid115792")
             .putAllAnnotations(new HashMap<String, String>())
+            .setEncryptionConfig(BackupVault.EncryptionConfig.newBuilder().build())
             .build();
     mockBackupDR.addResponse(expectedResponse);
 
@@ -926,6 +929,7 @@ public class BackupDRClientTest {
             .setTotalStoredBytes(1181597162)
             .setUid("uid115792")
             .putAllAnnotations(new HashMap<String, String>())
+            .setEncryptionConfig(BackupVault.EncryptionConfig.newBuilder().build())
             .build();
     mockBackupDR.addResponse(expectedResponse);
 
@@ -977,6 +981,7 @@ public class BackupDRClientTest {
             .setTotalStoredBytes(1181597162)
             .setUid("uid115792")
             .putAllAnnotations(new HashMap<String, String>())
+            .setEncryptionConfig(BackupVault.EncryptionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1564,6 +1569,7 @@ public class BackupDRClientTest {
             .setResourceSizeBytes(-275424386)
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .addAllKmsKeyVersions(new ArrayList<String>())
             .build();
     mockBackupDR.addResponse(expectedResponse);
 
@@ -1620,6 +1626,7 @@ public class BackupDRClientTest {
             .setResourceSizeBytes(-275424386)
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .addAllKmsKeyVersions(new ArrayList<String>())
             .build();
     mockBackupDR.addResponse(expectedResponse);
 
@@ -1674,6 +1681,7 @@ public class BackupDRClientTest {
             .setResourceSizeBytes(-275424386)
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .addAllKmsKeyVersions(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1739,6 +1747,7 @@ public class BackupDRClientTest {
             .setResourceSizeBytes(-275424386)
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .addAllKmsKeyVersions(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1803,6 +1812,7 @@ public class BackupDRClientTest {
             .setResourceSizeBytes(-275424386)
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .addAllKmsKeyVersions(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

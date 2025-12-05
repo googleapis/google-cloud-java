@@ -70,7 +70,8 @@ public final class RegionInstanceGroupsListInstancesRequest
    *
    *
    * <pre>
-   * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+   * Instances in which state should be returned. Valid options are:
+   * 'ALL', 'RUNNING'. By default, it lists all instances.
    * </pre>
    *
    * Protobuf enum {@code
@@ -238,7 +239,8 @@ public final class RegionInstanceGroupsListInstancesRequest
    *
    *
    * <pre>
-   * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+   * Instances in which state should be returned. Valid options are:
+   * 'ALL', 'RUNNING'. By default, it lists all instances.
    * Check the InstanceState enum for the list of possible values.
    * </pre>
    *
@@ -255,7 +257,8 @@ public final class RegionInstanceGroupsListInstancesRequest
    *
    *
    * <pre>
-   * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+   * Instances in which state should be returned. Valid options are:
+   * 'ALL', 'RUNNING'. By default, it lists all instances.
    * Check the InstanceState enum for the list of possible values.
    * </pre>
    *
@@ -280,7 +283,8 @@ public final class RegionInstanceGroupsListInstancesRequest
    *
    *
    * <pre>
-   * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+   * Instances in which state should be returned. Valid options are:
+   * 'ALL', 'RUNNING'. By default, it lists all instances.
    * Check the InstanceState enum for the list of possible values.
    * </pre>
    *
@@ -310,7 +314,10 @@ public final class RegionInstanceGroupsListInstancesRequest
    *
    *
    * <pre>
-   * Name of port user is interested in. It is optional. If it is set, only information about this ports will be returned. If it is not set, all the named ports will be returned. Always lists all instances.
+   * Name of port user is interested in. It is optional. If it is set, only
+   * information about this ports will be returned. If it is not set, all the
+   * named ports will be returned.
+   * Always lists all instances.
    * </pre>
    *
    * <code>optional string port_name = 41534345;</code>
@@ -326,7 +333,10 @@ public final class RegionInstanceGroupsListInstancesRequest
    *
    *
    * <pre>
-   * Name of port user is interested in. It is optional. If it is set, only information about this ports will be returned. If it is not set, all the named ports will be returned. Always lists all instances.
+   * Name of port user is interested in. It is optional. If it is set, only
+   * information about this ports will be returned. If it is not set, all the
+   * named ports will be returned.
+   * Always lists all instances.
    * </pre>
    *
    * <code>optional string port_name = 41534345;</code>
@@ -350,7 +360,10 @@ public final class RegionInstanceGroupsListInstancesRequest
    *
    *
    * <pre>
-   * Name of port user is interested in. It is optional. If it is set, only information about this ports will be returned. If it is not set, all the named ports will be returned. Always lists all instances.
+   * Name of port user is interested in. It is optional. If it is set, only
+   * information about this ports will be returned. If it is not set, all the
+   * named ports will be returned.
+   * Always lists all instances.
    * </pre>
    *
    * <code>optional string port_name = 41534345;</code>
@@ -765,7 +778,8 @@ public final class RegionInstanceGroupsListInstancesRequest
      *
      *
      * <pre>
-     * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+     * Instances in which state should be returned. Valid options are:
+     * 'ALL', 'RUNNING'. By default, it lists all instances.
      * Check the InstanceState enum for the list of possible values.
      * </pre>
      *
@@ -781,7 +795,8 @@ public final class RegionInstanceGroupsListInstancesRequest
      *
      *
      * <pre>
-     * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+     * Instances in which state should be returned. Valid options are:
+     * 'ALL', 'RUNNING'. By default, it lists all instances.
      * Check the InstanceState enum for the list of possible values.
      * </pre>
      *
@@ -805,7 +820,8 @@ public final class RegionInstanceGroupsListInstancesRequest
      *
      *
      * <pre>
-     * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+     * Instances in which state should be returned. Valid options are:
+     * 'ALL', 'RUNNING'. By default, it lists all instances.
      * Check the InstanceState enum for the list of possible values.
      * </pre>
      *
@@ -829,7 +845,8 @@ public final class RegionInstanceGroupsListInstancesRequest
      *
      *
      * <pre>
-     * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+     * Instances in which state should be returned. Valid options are:
+     * 'ALL', 'RUNNING'. By default, it lists all instances.
      * Check the InstanceState enum for the list of possible values.
      * </pre>
      *
@@ -852,7 +869,8 @@ public final class RegionInstanceGroupsListInstancesRequest
      *
      *
      * <pre>
-     * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+     * Instances in which state should be returned. Valid options are:
+     * 'ALL', 'RUNNING'. By default, it lists all instances.
      * Check the InstanceState enum for the list of possible values.
      * </pre>
      *
@@ -871,7 +889,8 @@ public final class RegionInstanceGroupsListInstancesRequest
      *
      *
      * <pre>
-     * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+     * Instances in which state should be returned. Valid options are:
+     * 'ALL', 'RUNNING'. By default, it lists all instances.
      * Check the InstanceState enum for the list of possible values.
      * </pre>
      *
@@ -897,7 +916,10 @@ public final class RegionInstanceGroupsListInstancesRequest
      *
      *
      * <pre>
-     * Name of port user is interested in. It is optional. If it is set, only information about this ports will be returned. If it is not set, all the named ports will be returned. Always lists all instances.
+     * Name of port user is interested in. It is optional. If it is set, only
+     * information about this ports will be returned. If it is not set, all the
+     * named ports will be returned.
+     * Always lists all instances.
      * </pre>
      *
      * <code>optional string port_name = 41534345;</code>
@@ -912,7 +934,10 @@ public final class RegionInstanceGroupsListInstancesRequest
      *
      *
      * <pre>
-     * Name of port user is interested in. It is optional. If it is set, only information about this ports will be returned. If it is not set, all the named ports will be returned. Always lists all instances.
+     * Name of port user is interested in. It is optional. If it is set, only
+     * information about this ports will be returned. If it is not set, all the
+     * named ports will be returned.
+     * Always lists all instances.
      * </pre>
      *
      * <code>optional string port_name = 41534345;</code>
@@ -935,7 +960,10 @@ public final class RegionInstanceGroupsListInstancesRequest
      *
      *
      * <pre>
-     * Name of port user is interested in. It is optional. If it is set, only information about this ports will be returned. If it is not set, all the named ports will be returned. Always lists all instances.
+     * Name of port user is interested in. It is optional. If it is set, only
+     * information about this ports will be returned. If it is not set, all the
+     * named ports will be returned.
+     * Always lists all instances.
      * </pre>
      *
      * <code>optional string port_name = 41534345;</code>
@@ -958,7 +986,10 @@ public final class RegionInstanceGroupsListInstancesRequest
      *
      *
      * <pre>
-     * Name of port user is interested in. It is optional. If it is set, only information about this ports will be returned. If it is not set, all the named ports will be returned. Always lists all instances.
+     * Name of port user is interested in. It is optional. If it is set, only
+     * information about this ports will be returned. If it is not set, all the
+     * named ports will be returned.
+     * Always lists all instances.
      * </pre>
      *
      * <code>optional string port_name = 41534345;</code>
@@ -980,7 +1011,10 @@ public final class RegionInstanceGroupsListInstancesRequest
      *
      *
      * <pre>
-     * Name of port user is interested in. It is optional. If it is set, only information about this ports will be returned. If it is not set, all the named ports will be returned. Always lists all instances.
+     * Name of port user is interested in. It is optional. If it is set, only
+     * information about this ports will be returned. If it is not set, all the
+     * named ports will be returned.
+     * Always lists all instances.
      * </pre>
      *
      * <code>optional string port_name = 41534345;</code>
@@ -998,7 +1032,10 @@ public final class RegionInstanceGroupsListInstancesRequest
      *
      *
      * <pre>
-     * Name of port user is interested in. It is optional. If it is set, only information about this ports will be returned. If it is not set, all the named ports will be returned. Always lists all instances.
+     * Name of port user is interested in. It is optional. If it is set, only
+     * information about this ports will be returned. If it is not set, all the
+     * named ports will be returned.
+     * Always lists all instances.
      * </pre>
      *
      * <code>optional string port_name = 41534345;</code>

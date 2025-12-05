@@ -20,6 +20,7 @@
 package com.google.cloud.gkemulticloud.v1;
 
 /** Protobuf type {@code google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenRequest} */
+@java.lang.Deprecated
 public final class GenerateAzureClusterAgentTokenRequest
     extends com.google.protobuf.GeneratedMessageV3
     implements

@@ -28,7 +28,10 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization. If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
+   * The configuration parameters for the autoscaling algorithm. You can define
+   * one or more signals for an autoscaler: cpuUtilization,customMetricUtilizations, andloadBalancingUtilization.
+   *
+   * If none of these are specified, the default will be to autoscale based oncpuUtilization to 0.6 or 60%.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;
@@ -42,7 +45,10 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization. If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
+   * The configuration parameters for the autoscaling algorithm. You can define
+   * one or more signals for an autoscaler: cpuUtilization,customMetricUtilizations, andloadBalancingUtilization.
+   *
+   * If none of these are specified, the default will be to autoscale based oncpuUtilization to 0.6 or 60%.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;
@@ -56,7 +62,10 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization. If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
+   * The configuration parameters for the autoscaling algorithm. You can define
+   * one or more signals for an autoscaler: cpuUtilization,customMetricUtilizations, andloadBalancingUtilization.
+   *
+   * If none of these are specified, the default will be to autoscale based oncpuUtilization to 0.6 or 60%.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;
@@ -68,7 +77,8 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -81,7 +91,8 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -94,7 +105,8 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -107,7 +119,8 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -120,7 +133,8 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -133,7 +147,8 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -146,7 +161,8 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -159,7 +175,8 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -172,7 +189,8 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#autoscaler for autoscalers.
+   * [Output Only] Type of the resource. Always compute#autoscaler
+   * for autoscalers.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -185,7 +203,8 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#autoscaler for autoscalers.
+   * [Output Only] Type of the resource. Always compute#autoscaler
+   * for autoscalers.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -198,7 +217,8 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#autoscaler for autoscalers.
+   * [Output Only] Type of the resource. Always compute#autoscaler
+   * for autoscalers.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -211,7 +231,13 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -224,7 +250,13 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -237,7 +269,13 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -250,7 +288,11 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates the recommended MIG size even when the autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to an existing managed instance group or autoscaler did not generate its prediction.
+   * [Output Only] Target recommended MIG size (number of instances) computed by
+   * autoscaler. Autoscaler calculates the recommended MIG size even when the
+   * autoscaling policy mode is different from ON. This field is empty when
+   * autoscaler is not connected to an existing managed instance group or
+   * autoscaler did not generate its prediction.
    * </pre>
    *
    * <code>optional int32 recommended_size = 257915749;</code>
@@ -263,7 +305,11 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates the recommended MIG size even when the autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to an existing managed instance group or autoscaler did not generate its prediction.
+   * [Output Only] Target recommended MIG size (number of instances) computed by
+   * autoscaler. Autoscaler calculates the recommended MIG size even when the
+   * autoscaling policy mode is different from ON. This field is empty when
+   * autoscaler is not connected to an existing managed instance group or
+   * autoscaler did not generate its prediction.
    * </pre>
    *
    * <code>optional int32 recommended_size = 257915749;</code>
@@ -276,7 +322,9 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the instance group resides (for autoscalers living in regional scope).
+   * [Output Only] URL of theregion
+   * where the instance group resides (for autoscalers living in regional
+   * scope).
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -289,7 +337,9 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the instance group resides (for autoscalers living in regional scope).
+   * [Output Only] URL of theregion
+   * where the instance group resides (for autoscalers living in regional
+   * scope).
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -302,7 +352,9 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the instance group resides (for autoscalers living in regional scope).
+   * [Output Only] URL of theregion
+   * where the instance group resides (for autoscalers living in regional
+   * scope).
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -430,7 +482,22 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
+   * [Output Only] The status of the autoscaler configuration. Current set of
+   * possible values:
+   *
+   *    - PENDING:
+   *      Autoscaler backend hasn't read new/updated configuration.
+   *    - DELETING:
+   *      Configuration is being deleted.
+   *    - ACTIVE:
+   *      Configuration is acknowledged to be effective. Some warnings might
+   *      be present in the statusDetails field.
+   *    - ERROR:
+   *      Configuration has errors. Actionable for users. Details are present in
+   *      the statusDetails field.
+   *
+   *
+   * New values might be added in the future.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -444,7 +511,22 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
+   * [Output Only] The status of the autoscaler configuration. Current set of
+   * possible values:
+   *
+   *    - PENDING:
+   *      Autoscaler backend hasn't read new/updated configuration.
+   *    - DELETING:
+   *      Configuration is being deleted.
+   *    - ACTIVE:
+   *      Configuration is acknowledged to be effective. Some warnings might
+   *      be present in the statusDetails field.
+   *    - ERROR:
+   *      Configuration has errors. Actionable for users. Details are present in
+   *      the statusDetails field.
+   *
+   *
+   * New values might be added in the future.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -458,7 +540,22 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
+   * [Output Only] The status of the autoscaler configuration. Current set of
+   * possible values:
+   *
+   *    - PENDING:
+   *      Autoscaler backend hasn't read new/updated configuration.
+   *    - DELETING:
+   *      Configuration is being deleted.
+   *    - ACTIVE:
+   *      Configuration is acknowledged to be effective. Some warnings might
+   *      be present in the statusDetails field.
+   *    - ERROR:
+   *      Configuration has errors. Actionable for users. Details are present in
+   *      the statusDetails field.
+   *
+   *
+   * New values might be added in the future.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -472,7 +569,10 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
+   * [Output Only] Human-readable details about the current state of the
+   * autoscaler. Read the documentation forCommonly
+   * returned status messages for examples of status messages you might
+   * encounter.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
@@ -484,7 +584,10 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
+   * [Output Only] Human-readable details about the current state of the
+   * autoscaler. Read the documentation forCommonly
+   * returned status messages for examples of status messages you might
+   * encounter.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
@@ -496,7 +599,10 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
+   * [Output Only] Human-readable details about the current state of the
+   * autoscaler. Read the documentation forCommonly
+   * returned status messages for examples of status messages you might
+   * encounter.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
@@ -508,7 +614,10 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
+   * [Output Only] Human-readable details about the current state of the
+   * autoscaler. Read the documentation forCommonly
+   * returned status messages for examples of status messages you might
+   * encounter.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
@@ -521,7 +630,10 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
+   * [Output Only] Human-readable details about the current state of the
+   * autoscaler. Read the documentation forCommonly
+   * returned status messages for examples of status messages you might
+   * encounter.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
@@ -533,7 +645,8 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler.
+   * URL of the managed instance group that this autoscaler will scale. This
+   * field is required when creating an autoscaler.
    * </pre>
    *
    * <code>optional string target = 192835985;</code>
@@ -546,7 +659,8 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler.
+   * URL of the managed instance group that this autoscaler will scale. This
+   * field is required when creating an autoscaler.
    * </pre>
    *
    * <code>optional string target = 192835985;</code>
@@ -559,7 +673,8 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler.
+   * URL of the managed instance group that this autoscaler will scale. This
+   * field is required when creating an autoscaler.
    * </pre>
    *
    * <code>optional string target = 192835985;</code>
@@ -572,7 +687,8 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the instance group resides (for autoscalers living in zonal scope).
+   * [Output Only] URL of thezone
+   * where the instance group resides (for autoscalers living in zonal scope).
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -585,7 +701,8 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the instance group resides (for autoscalers living in zonal scope).
+   * [Output Only] URL of thezone
+   * where the instance group resides (for autoscalers living in zonal scope).
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -598,7 +715,8 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the instance group resides (for autoscalers living in zonal scope).
+   * [Output Only] URL of thezone
+   * where the instance group resides (for autoscalers living in zonal scope).
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>

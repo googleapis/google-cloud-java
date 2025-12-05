@@ -79,7 +79,7 @@ public final class EntitlementsProto {
           + "i/field_behavior.proto\032\031google/api/resou"
           + "rce.proto\032$google/cloud/channel/v1/common.proto\032$google/cloud/channel/v1/offers."
           + "proto\032&google/cloud/channel/v1/products."
-          + "proto\032\037google/protobuf/timestamp.proto\"\373\010\n"
+          + "proto\032\037google/protobuf/timestamp.proto\"\234\t\n"
           + "\013Entitlement\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\0224\n"
           + "\013create_time\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
@@ -101,7 +101,8 @@ public final class EntitlementsProto {
           + "\020association_info\030\027"
           + " \001(\0132(.google.cloud.channel.v1.AssociationInfo\0226\n\n"
           + "parameters\030\032 \003(\0132\".google.cloud.channel.v1.Parameter\022\034\n"
-          + "\017billing_account\030\034 \001(\tB\003\340A\001\"R\n"
+          + "\017billing_account\030\034 \001(\tB\003\340A\001\022\037\n"
+          + "\022price_reference_id\030\035 \001(\tB\003\340A\001\"R\n"
           + "\021ProvisioningState\022\"\n"
           + "\036PROVISIONING_STATE_UNSPECIFIED\020\000\022\n\n"
           + "\006ACTIVE\020\001\022\r\n"
@@ -113,8 +114,8 @@ public final class EntitlementsProto {
           + "\030RENEWAL_WITH_TYPE_CANCEL\020\003\022\032\n"
           + "\026PENDING_TOS_ACCEPTANCE\020\004\022\t\n"
           + "\005OTHER\020d:p\352Am\n"
-          + "\'cloudchannel.googleapis.com/Entitlement"
-          + "\022Baccounts/{account}/customers/{customer}/entitlements/{entitlement}\"_\n"
+          + "\'cloudchannel.googleapis.com/Entitlement\022Baccou"
+          + "nts/{account}/customers/{customer}/entitlements/{entitlement}\"_\n"
           + "\tParameter\022\014\n"
           + "\004name\030\001 \001(\t\022-\n"
           + "\005value\030\002 \001(\0132\036.google.cloud.channel.v1.Value\022\025\n"
@@ -136,8 +137,7 @@ public final class EntitlementsProto {
           + "\021resize_unit_count\030\002 \001(\010\022:\n"
           + "\014payment_plan\030\005 \001(\0162$.google.cloud.channel.v1.PaymentPlan\0226\n\r"
           + "payment_cycle\030\006 \001(\0132\037.google.cloud.channel.v1.Period\"L\n\r"
-          + "TrialSettings\022\r"
-          + "\n"
+          + "TrialSettings\022\r\n"
           + "\005trial\030\001 \001(\010\022,\n"
           + "\010end_time\030\002 \001(\0132\032.google.protobuf.Timestamp\"\277\001\n"
           + "\017TransferableSku\022J\n"
@@ -149,16 +149,16 @@ public final class EntitlementsProto {
           + "\023TransferEligibility\022\023\n"
           + "\013is_eligible\030\001 \001(\010\022\023\n"
           + "\013description\030\002 \001(\t\022Q\n"
-          + "\024ineligibility_reason\030\003 \001(\01623.google.c"
-          + "loud.channel.v1.TransferEligibility.Reason\"\221\001\n"
+          + "\024ineligibility_reason\030\003"
+          + " \001(\01623.google.cloud.channel.v1.TransferEligibility.Reason\"\221\001\n"
           + "\006Reason\022\026\n"
           + "\022REASON_UNSPECIFIED\020\000\022\032\n"
           + "\026PENDING_TOS_ACCEPTANCE\020\001\022\024\n"
           + "\020SKU_NOT_ELIGIBLE\020\002\022\021\n\r"
           + "SKU_SUSPENDED\020\003\022*\n"
           + "&CHANNEL_PARTNER_NOT_AUTHORIZED_FOR_SKU\020\004Bi\n"
-          + "\033com.google.cloud.channel.v1B\021EntitlementsProto"
-          + "P\001Z5cloud.google.com/go/channel/apiv1/channelpb;channelpbb\006proto3"
+          + "\033com.google.cloud.channel.v1B\021EntitlementsProtoP\001Z5clo"
+          + "ud.google.com/go/channel/apiv1/channelpb;channelpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -190,6 +190,7 @@ public final class EntitlementsProto {
               "AssociationInfo",
               "Parameters",
               "BillingAccount",
+              "PriceReferenceId",
             });
     internal_static_google_cloud_channel_v1_Parameter_descriptor =
         getDescriptor().getMessageTypes().get(1);

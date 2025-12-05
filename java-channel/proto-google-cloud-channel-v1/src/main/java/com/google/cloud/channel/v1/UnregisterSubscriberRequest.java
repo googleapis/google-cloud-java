@@ -42,6 +42,7 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
   private UnregisterSubscriberRequest() {
     account_ = "";
     serviceAccount_ = "";
+    integrator_ = "";
   }
 
   @java.lang.Override
@@ -65,6 +66,7 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
             com.google.cloud.channel.v1.UnregisterSubscriberRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ACCOUNT_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -74,10 +76,13 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. Resource name of the account.
+   * Optional. Resource name of the account. Required if integrator is not
+   * provided. Otherwise, leave this field empty/unset.
    * </pre>
    *
-   * <code>string account = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string account = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The account.
    */
@@ -98,10 +103,13 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. Resource name of the account.
+   * Optional. Resource name of the account. Required if integrator is not
+   * provided. Otherwise, leave this field empty/unset.
    * </pre>
    *
-   * <code>string account = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string account = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for account.
    */
@@ -173,6 +181,78 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
     }
   }
 
+  public static final int INTEGRATOR_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object integrator_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource name of the integrator. Required if account is not
+   * provided. Otherwise, leave this field empty/unset.
+   * </pre>
+   *
+   * <code>optional string integrator = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the integrator field is set.
+   */
+  @java.lang.Override
+  public boolean hasIntegrator() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource name of the integrator. Required if account is not
+   * provided. Otherwise, leave this field empty/unset.
+   * </pre>
+   *
+   * <code>optional string integrator = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The integrator.
+   */
+  @java.lang.Override
+  public java.lang.String getIntegrator() {
+    java.lang.Object ref = integrator_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      integrator_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource name of the integrator. Required if account is not
+   * provided. Otherwise, leave this field empty/unset.
+   * </pre>
+   *
+   * <code>optional string integrator = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for integrator.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getIntegratorBytes() {
+    java.lang.Object ref = integrator_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      integrator_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -193,6 +273,9 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, serviceAccount_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, integrator_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -207,6 +290,9 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, serviceAccount_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, integrator_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -226,6 +312,10 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
 
     if (!getAccount().equals(other.getAccount())) return false;
     if (!getServiceAccount().equals(other.getServiceAccount())) return false;
+    if (hasIntegrator() != other.hasIntegrator()) return false;
+    if (hasIntegrator()) {
+      if (!getIntegrator().equals(other.getIntegrator())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -241,6 +331,10 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
     hash = (53 * hash) + getAccount().hashCode();
     hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
     hash = (53 * hash) + getServiceAccount().hashCode();
+    if (hasIntegrator()) {
+      hash = (37 * hash) + INTEGRATOR_FIELD_NUMBER;
+      hash = (53 * hash) + getIntegrator().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -384,6 +478,7 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
       bitField0_ = 0;
       account_ = "";
       serviceAccount_ = "";
+      integrator_ = "";
       return this;
     }
 
@@ -426,6 +521,12 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.serviceAccount_ = serviceAccount_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.integrator_ = integrator_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -484,6 +585,11 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.hasIntegrator()) {
+        integrator_ = other.integrator_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -522,6 +628,12 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                integrator_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -547,10 +659,13 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Resource name of the account.
+     * Optional. Resource name of the account. Required if integrator is not
+     * provided. Otherwise, leave this field empty/unset.
      * </pre>
      *
-     * <code>string account = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string account = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The account.
      */
@@ -570,10 +685,13 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Resource name of the account.
+     * Optional. Resource name of the account. Required if integrator is not
+     * provided. Otherwise, leave this field empty/unset.
      * </pre>
      *
-     * <code>string account = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string account = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for account.
      */
@@ -593,10 +711,13 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Resource name of the account.
+     * Optional. Resource name of the account. Required if integrator is not
+     * provided. Otherwise, leave this field empty/unset.
      * </pre>
      *
-     * <code>string account = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string account = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The account to set.
      * @return This builder for chaining.
@@ -615,10 +736,13 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Resource name of the account.
+     * Optional. Resource name of the account. Required if integrator is not
+     * provided. Otherwise, leave this field empty/unset.
      * </pre>
      *
-     * <code>string account = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string account = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -633,10 +757,13 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Resource name of the account.
+     * Optional. Resource name of the account. Required if integrator is not
+     * provided. Otherwise, leave this field empty/unset.
      * </pre>
      *
-     * <code>string account = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string account = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for account to set.
      * @return This builder for chaining.
@@ -764,6 +891,138 @@ public final class UnregisterSubscriberRequest extends com.google.protobuf.Gener
       checkByteStringIsUtf8(value);
       serviceAccount_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object integrator_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource name of the integrator. Required if account is not
+     * provided. Otherwise, leave this field empty/unset.
+     * </pre>
+     *
+     * <code>optional string integrator = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the integrator field is set.
+     */
+    public boolean hasIntegrator() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource name of the integrator. Required if account is not
+     * provided. Otherwise, leave this field empty/unset.
+     * </pre>
+     *
+     * <code>optional string integrator = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The integrator.
+     */
+    public java.lang.String getIntegrator() {
+      java.lang.Object ref = integrator_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        integrator_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource name of the integrator. Required if account is not
+     * provided. Otherwise, leave this field empty/unset.
+     * </pre>
+     *
+     * <code>optional string integrator = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for integrator.
+     */
+    public com.google.protobuf.ByteString getIntegratorBytes() {
+      java.lang.Object ref = integrator_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        integrator_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource name of the integrator. Required if account is not
+     * provided. Otherwise, leave this field empty/unset.
+     * </pre>
+     *
+     * <code>optional string integrator = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The integrator to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIntegrator(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      integrator_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource name of the integrator. Required if account is not
+     * provided. Otherwise, leave this field empty/unset.
+     * </pre>
+     *
+     * <code>optional string integrator = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIntegrator() {
+      integrator_ = getDefaultInstance().getIntegrator();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource name of the integrator. Required if account is not
+     * provided. Otherwise, leave this field empty/unset.
+     * </pre>
+     *
+     * <code>optional string integrator = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for integrator to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIntegratorBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      integrator_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

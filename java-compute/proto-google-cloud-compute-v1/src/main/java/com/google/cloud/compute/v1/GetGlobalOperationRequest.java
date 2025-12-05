@@ -74,7 +74,8 @@ public final class GetGlobalOperationRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Name of the Operations resource to return, or its unique numeric identifier.
+   * Name of the Operations resource to return, or its unique numeric
+   * identifier.
    * </pre>
    *
    * <code>
@@ -100,7 +101,8 @@ public final class GetGlobalOperationRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Name of the Operations resource to return, or its unique numeric identifier.
+   * Name of the Operations resource to return, or its unique numeric
+   * identifier.
    * </pre>
    *
    * <code>
@@ -549,7 +551,8 @@ public final class GetGlobalOperationRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Name of the Operations resource to return, or its unique numeric identifier.
+     * Name of the Operations resource to return, or its unique numeric
+     * identifier.
      * </pre>
      *
      * <code>
@@ -574,7 +577,8 @@ public final class GetGlobalOperationRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Name of the Operations resource to return, or its unique numeric identifier.
+     * Name of the Operations resource to return, or its unique numeric
+     * identifier.
      * </pre>
      *
      * <code>
@@ -599,7 +603,8 @@ public final class GetGlobalOperationRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Name of the Operations resource to return, or its unique numeric identifier.
+     * Name of the Operations resource to return, or its unique numeric
+     * identifier.
      * </pre>
      *
      * <code>
@@ -623,7 +628,8 @@ public final class GetGlobalOperationRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Name of the Operations resource to return, or its unique numeric identifier.
+     * Name of the Operations resource to return, or its unique numeric
+     * identifier.
      * </pre>
      *
      * <code>
@@ -643,7 +649,8 @@ public final class GetGlobalOperationRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Name of the Operations resource to return, or its unique numeric identifier.
+     * Name of the Operations resource to return, or its unique numeric
+     * identifier.
      * </pre>
      *
      * <code>

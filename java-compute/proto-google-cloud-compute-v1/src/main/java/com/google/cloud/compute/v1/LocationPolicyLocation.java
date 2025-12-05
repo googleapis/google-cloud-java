@@ -67,7 +67,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Preference for a given location. Set to either ALLOW or DENY.
+   * Preference for a given location. Set to either ALLOW orDENY.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.LocationPolicyLocation.Preference}
@@ -255,7 +255,8 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Constraints that the caller requires on the result distribution in this zone.
+   * Constraints that the caller requires on the result distribution
+   * in this zone.
    * </pre>
    *
    * <code>
@@ -273,7 +274,8 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Constraints that the caller requires on the result distribution in this zone.
+   * Constraints that the caller requires on the result distribution
+   * in this zone.
    * </pre>
    *
    * <code>
@@ -293,7 +295,8 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Constraints that the caller requires on the result distribution in this zone.
+   * Constraints that the caller requires on the result distribution
+   * in this zone.
    * </pre>
    *
    * <code>
@@ -317,7 +320,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Preference for a given location. Set to either ALLOW or DENY.
+   * Preference for a given location. Set to either ALLOW orDENY.
    * Check the Preference enum for the list of possible values.
    * </pre>
    *
@@ -334,7 +337,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Preference for a given location. Set to either ALLOW or DENY.
+   * Preference for a given location. Set to either ALLOW orDENY.
    * Check the Preference enum for the list of possible values.
    * </pre>
    *
@@ -359,7 +362,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Preference for a given location. Set to either ALLOW or DENY.
+   * Preference for a given location. Set to either ALLOW orDENY.
    * Check the Preference enum for the list of possible values.
    * </pre>
    *
@@ -783,7 +786,8 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Constraints that the caller requires on the result distribution in this zone.
+     * Constraints that the caller requires on the result distribution
+     * in this zone.
      * </pre>
      *
      * <code>
@@ -800,7 +804,8 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Constraints that the caller requires on the result distribution in this zone.
+     * Constraints that the caller requires on the result distribution
+     * in this zone.
      * </pre>
      *
      * <code>
@@ -823,7 +828,8 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Constraints that the caller requires on the result distribution in this zone.
+     * Constraints that the caller requires on the result distribution
+     * in this zone.
      * </pre>
      *
      * <code>
@@ -849,7 +855,8 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Constraints that the caller requires on the result distribution in this zone.
+     * Constraints that the caller requires on the result distribution
+     * in this zone.
      * </pre>
      *
      * <code>
@@ -872,7 +879,8 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Constraints that the caller requires on the result distribution in this zone.
+     * Constraints that the caller requires on the result distribution
+     * in this zone.
      * </pre>
      *
      * <code>
@@ -905,7 +913,8 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Constraints that the caller requires on the result distribution in this zone.
+     * Constraints that the caller requires on the result distribution
+     * in this zone.
      * </pre>
      *
      * <code>
@@ -927,7 +936,8 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Constraints that the caller requires on the result distribution in this zone.
+     * Constraints that the caller requires on the result distribution
+     * in this zone.
      * </pre>
      *
      * <code>
@@ -945,7 +955,8 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Constraints that the caller requires on the result distribution in this zone.
+     * Constraints that the caller requires on the result distribution
+     * in this zone.
      * </pre>
      *
      * <code>
@@ -967,7 +978,8 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Constraints that the caller requires on the result distribution in this zone.
+     * Constraints that the caller requires on the result distribution
+     * in this zone.
      * </pre>
      *
      * <code>
@@ -997,7 +1009,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Preference for a given location. Set to either ALLOW or DENY.
+     * Preference for a given location. Set to either ALLOW orDENY.
      * Check the Preference enum for the list of possible values.
      * </pre>
      *
@@ -1013,7 +1025,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Preference for a given location. Set to either ALLOW or DENY.
+     * Preference for a given location. Set to either ALLOW orDENY.
      * Check the Preference enum for the list of possible values.
      * </pre>
      *
@@ -1037,7 +1049,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Preference for a given location. Set to either ALLOW or DENY.
+     * Preference for a given location. Set to either ALLOW orDENY.
      * Check the Preference enum for the list of possible values.
      * </pre>
      *
@@ -1061,7 +1073,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Preference for a given location. Set to either ALLOW or DENY.
+     * Preference for a given location. Set to either ALLOW orDENY.
      * Check the Preference enum for the list of possible values.
      * </pre>
      *
@@ -1084,7 +1096,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Preference for a given location. Set to either ALLOW or DENY.
+     * Preference for a given location. Set to either ALLOW orDENY.
      * Check the Preference enum for the list of possible values.
      * </pre>
      *
@@ -1103,7 +1115,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Preference for a given location. Set to either ALLOW or DENY.
+     * Preference for a given location. Set to either ALLOW orDENY.
      * Check the Preference enum for the list of possible values.
      * </pre>
      *

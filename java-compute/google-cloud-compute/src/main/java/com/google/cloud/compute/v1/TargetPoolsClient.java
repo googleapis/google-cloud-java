@@ -106,7 +106,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> AggregatedList</td>
- *      <td><p> Retrieves an aggregated list of target pools. To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.</td>
+ *      <td><p> Retrieves an aggregated list of target pools.
+ * <p>  To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -275,7 +276,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> SetSecurityPolicy</td>
- *      <td><p> Sets the Google Cloud Armor security policy for the specified target pool. For more information, see Google Cloud Armor Overview</td>
+ *      <td><p> Sets the Google Cloud Armor security policy for the specified target pool. For more information, seeGoogle Cloud Armor Overview</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -695,8 +696,10 @@ public class TargetPoolsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of target pools. To prevent failure, Google recommends that you
-   * set the `returnPartialSuccess` parameter to `true`.
+   * Retrieves an aggregated list of target pools.
+   *
+   * <p>To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -726,8 +729,10 @@ public class TargetPoolsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of target pools. To prevent failure, Google recommends that you
-   * set the `returnPartialSuccess` parameter to `true`.
+   * Retrieves an aggregated list of target pools.
+   *
+   * <p>To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -766,8 +771,10 @@ public class TargetPoolsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of target pools. To prevent failure, Google recommends that you
-   * set the `returnPartialSuccess` parameter to `true`.
+   * Retrieves an aggregated list of target pools.
+   *
+   * <p>To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -805,8 +812,10 @@ public class TargetPoolsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of target pools. To prevent failure, Google recommends that you
-   * set the `returnPartialSuccess` parameter to `true`.
+   * Retrieves an aggregated list of target pools.
+   *
+   * <p>To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -1900,7 +1909,7 @@ public class TargetPoolsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the Google Cloud Armor security policy for the specified target pool. For more
-   * information, see Google Cloud Armor Overview
+   * information, seeGoogle Cloud Armor Overview
    *
    * <p>Sample code:
    *
@@ -1948,7 +1957,7 @@ public class TargetPoolsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the Google Cloud Armor security policy for the specified target pool. For more
-   * information, see Google Cloud Armor Overview
+   * information, seeGoogle Cloud Armor Overview
    *
    * <p>Sample code:
    *
@@ -1982,7 +1991,7 @@ public class TargetPoolsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the Google Cloud Armor security policy for the specified target pool. For more
-   * information, see Google Cloud Armor Overview
+   * information, seeGoogle Cloud Armor Overview
    *
    * <p>Sample code:
    *
@@ -2016,7 +2025,7 @@ public class TargetPoolsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the Google Cloud Armor security policy for the specified target pool. For more
-   * information, see Google Cloud Armor Overview
+   * information, seeGoogle Cloud Armor Overview
    *
    * <p>Sample code:
    *

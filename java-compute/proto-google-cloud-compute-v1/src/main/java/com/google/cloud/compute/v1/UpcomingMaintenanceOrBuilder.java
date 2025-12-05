@@ -54,7 +54,8 @@ public interface UpcomingMaintenanceOrBuilder
    *
    *
    * <pre>
-   * The latest time for the planned maintenance window to start. This timestamp value is in RFC3339 text format.
+   * The latest time for the planned maintenance window to start.
+   * This timestamp value is in RFC3339 text format.
    * </pre>
    *
    * <code>optional string latest_window_start_time = 128032129;</code>
@@ -67,7 +68,8 @@ public interface UpcomingMaintenanceOrBuilder
    *
    *
    * <pre>
-   * The latest time for the planned maintenance window to start. This timestamp value is in RFC3339 text format.
+   * The latest time for the planned maintenance window to start.
+   * This timestamp value is in RFC3339 text format.
    * </pre>
    *
    * <code>optional string latest_window_start_time = 128032129;</code>
@@ -80,7 +82,8 @@ public interface UpcomingMaintenanceOrBuilder
    *
    *
    * <pre>
-   * The latest time for the planned maintenance window to start. This timestamp value is in RFC3339 text format.
+   * The latest time for the planned maintenance window to start.
+   * This timestamp value is in RFC3339 text format.
    * </pre>
    *
    * <code>optional string latest_window_start_time = 128032129;</code>
@@ -261,7 +264,8 @@ public interface UpcomingMaintenanceOrBuilder
    *
    *
    * <pre>
-   * The time by which the maintenance disruption will be completed. This timestamp value is in RFC3339 text format.
+   * The time by which the maintenance disruption will be completed.
+   * This timestamp value is in RFC3339 text format.
    * </pre>
    *
    * <code>optional string window_end_time = 271816480;</code>
@@ -274,7 +278,8 @@ public interface UpcomingMaintenanceOrBuilder
    *
    *
    * <pre>
-   * The time by which the maintenance disruption will be completed. This timestamp value is in RFC3339 text format.
+   * The time by which the maintenance disruption will be completed.
+   * This timestamp value is in RFC3339 text format.
    * </pre>
    *
    * <code>optional string window_end_time = 271816480;</code>
@@ -287,7 +292,8 @@ public interface UpcomingMaintenanceOrBuilder
    *
    *
    * <pre>
-   * The time by which the maintenance disruption will be completed. This timestamp value is in RFC3339 text format.
+   * The time by which the maintenance disruption will be completed.
+   * This timestamp value is in RFC3339 text format.
    * </pre>
    *
    * <code>optional string window_end_time = 271816480;</code>
@@ -300,7 +306,8 @@ public interface UpcomingMaintenanceOrBuilder
    *
    *
    * <pre>
-   * The current start time of the maintenance window. This timestamp value is in RFC3339 text format.
+   * The current start time of the maintenance window.
+   * This timestamp value is in RFC3339 text format.
    * </pre>
    *
    * <code>optional string window_start_time = 473061433;</code>
@@ -313,7 +320,8 @@ public interface UpcomingMaintenanceOrBuilder
    *
    *
    * <pre>
-   * The current start time of the maintenance window. This timestamp value is in RFC3339 text format.
+   * The current start time of the maintenance window.
+   * This timestamp value is in RFC3339 text format.
    * </pre>
    *
    * <code>optional string window_start_time = 473061433;</code>
@@ -326,7 +334,8 @@ public interface UpcomingMaintenanceOrBuilder
    *
    *
    * <pre>
-   * The current start time of the maintenance window. This timestamp value is in RFC3339 text format.
+   * The current start time of the maintenance window.
+   * This timestamp value is in RFC3339 text format.
    * </pre>
    *
    * <code>optional string window_start_time = 473061433;</code>

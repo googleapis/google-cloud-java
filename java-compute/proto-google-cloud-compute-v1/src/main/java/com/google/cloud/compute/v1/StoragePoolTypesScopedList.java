@@ -148,7 +148,8 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output Only] Informational warning which replaces the list of storage pool types when the list is empty.
+   * [Output Only] Informational warning which replaces the list of storage pool
+   * types when the list is empty.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
@@ -164,7 +165,8 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output Only] Informational warning which replaces the list of storage pool types when the list is empty.
+   * [Output Only] Informational warning which replaces the list of storage pool
+   * types when the list is empty.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
@@ -180,7 +182,8 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output Only] Informational warning which replaces the list of storage pool types when the list is empty.
+   * [Output Only] Informational warning which replaces the list of storage pool
+   * types when the list is empty.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
@@ -1032,7 +1035,8 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Informational warning which replaces the list of storage pool types when the list is empty.
+     * [Output Only] Informational warning which replaces the list of storage pool
+     * types when the list is empty.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
@@ -1047,7 +1051,8 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Informational warning which replaces the list of storage pool types when the list is empty.
+     * [Output Only] Informational warning which replaces the list of storage pool
+     * types when the list is empty.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
@@ -1068,7 +1073,8 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Informational warning which replaces the list of storage pool types when the list is empty.
+     * [Output Only] Informational warning which replaces the list of storage pool
+     * types when the list is empty.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
@@ -1091,7 +1097,8 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Informational warning which replaces the list of storage pool types when the list is empty.
+     * [Output Only] Informational warning which replaces the list of storage pool
+     * types when the list is empty.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
@@ -1111,7 +1118,8 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Informational warning which replaces the list of storage pool types when the list is empty.
+     * [Output Only] Informational warning which replaces the list of storage pool
+     * types when the list is empty.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
@@ -1139,7 +1147,8 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Informational warning which replaces the list of storage pool types when the list is empty.
+     * [Output Only] Informational warning which replaces the list of storage pool
+     * types when the list is empty.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
@@ -1159,7 +1168,8 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Informational warning which replaces the list of storage pool types when the list is empty.
+     * [Output Only] Informational warning which replaces the list of storage pool
+     * types when the list is empty.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
@@ -1174,7 +1184,8 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Informational warning which replaces the list of storage pool types when the list is empty.
+     * [Output Only] Informational warning which replaces the list of storage pool
+     * types when the list is empty.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
@@ -1193,7 +1204,8 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Informational warning which replaces the list of storage pool types when the list is empty.
+     * [Output Only] Informational warning which replaces the list of storage pool
+     * types when the list is empty.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>

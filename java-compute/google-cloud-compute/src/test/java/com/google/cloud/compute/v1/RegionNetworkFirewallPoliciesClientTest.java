@@ -400,6 +400,7 @@ public class RegionNetworkFirewallPoliciesClientTest {
             .setName("name3373707")
             .addAllPacketMirroringRules(new ArrayList<FirewallPolicyRule>())
             .setParent("parent-995424086")
+            .setPolicyType("policyType1593556876")
             .setRegion("region-934795532")
             .setRuleTupleCount(388342037)
             .addAllRules(new ArrayList<FirewallPolicyRule>())

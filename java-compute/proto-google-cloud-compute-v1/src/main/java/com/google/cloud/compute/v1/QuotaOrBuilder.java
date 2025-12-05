@@ -96,7 +96,8 @@ public interface QuotaOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Owning resource. This is the resource on which this quota is applied.
+   * [Output Only] Owning resource. This is the resource on which this quota
+   * is applied.
    * </pre>
    *
    * <code>optional string owner = 106164915;</code>
@@ -109,7 +110,8 @@ public interface QuotaOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Owning resource. This is the resource on which this quota is applied.
+   * [Output Only] Owning resource. This is the resource on which this quota
+   * is applied.
    * </pre>
    *
    * <code>optional string owner = 106164915;</code>
@@ -122,7 +124,8 @@ public interface QuotaOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Owning resource. This is the resource on which this quota is applied.
+   * [Output Only] Owning resource. This is the resource on which this quota
+   * is applied.
    * </pre>
    *
    * <code>optional string owner = 106164915;</code>

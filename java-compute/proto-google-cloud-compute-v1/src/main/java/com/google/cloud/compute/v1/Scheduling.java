@@ -258,7 +258,12 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM host maintenance policy.
+   * Defines the maintenance behavior for this instance. For standard instances,
+   * the default behavior is MIGRATE. Forpreemptible instances,
+   * the default and only possible behavior is TERMINATE. For more
+   * information, see
+   *  Set
+   *  VM host maintenance policy.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Scheduling.OnHostMaintenance}
@@ -278,7 +283,8 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * *[Default]* Allows Compute Engine to automatically migrate instances out of the way of maintenance events.
+     * *[Default]* Allows Compute Engine to automatically migrate instances
+     * out of the way of maintenance events.
      * </pre>
      *
      * <code>MIGRATE = 165699979;</code>
@@ -288,7 +294,11 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tells Compute Engine to terminate and (optionally) restart the instance away from the maintenance activity. If you would like your instance to be restarted, set the automaticRestart flag to true. Your instance may be restarted more than once, and it may be restarted outside the window of maintenance events.
+     * Tells Compute Engine to terminate and (optionally) restart the instance
+     * away from the maintenance activity. If you would like your instance to be
+     * restarted, set the automaticRestart flag to true. Your
+     * instance may be restarted more than once, and it may be restarted outside
+     * the window of maintenance events.
      * </pre>
      *
      * <code>TERMINATE = 527617601;</code>
@@ -312,7 +322,8 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * *[Default]* Allows Compute Engine to automatically migrate instances out of the way of maintenance events.
+     * *[Default]* Allows Compute Engine to automatically migrate instances
+     * out of the way of maintenance events.
      * </pre>
      *
      * <code>MIGRATE = 165699979;</code>
@@ -323,7 +334,11 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tells Compute Engine to terminate and (optionally) restart the instance away from the maintenance activity. If you would like your instance to be restarted, set the automaticRestart flag to true. Your instance may be restarted more than once, and it may be restarted outside the window of maintenance events.
+     * Tells Compute Engine to terminate and (optionally) restart the instance
+     * away from the maintenance activity. If you would like your instance to be
+     * restarted, set the automaticRestart flag to true. Your
+     * instance may be restarted more than once, and it may be restarted outside
+     * the window of maintenance events.
      * </pre>
      *
      * <code>TERMINATE = 527617601;</code>
@@ -440,7 +455,8 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instance is provisioned using the Flex Start provisioning model and has a limited runtime.
+     * Instance is provisioned using the Flex Start provisioning model and
+     * has a limited runtime.
      * </pre>
      *
      * <code>FLEX_START = 101746812;</code>
@@ -494,7 +510,8 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instance is provisioned using the Flex Start provisioning model and has a limited runtime.
+     * Instance is provisioned using the Flex Start provisioning model and
+     * has a limited runtime.
      * </pre>
      *
      * <code>FLEX_START = 101746812;</code>
@@ -632,7 +649,13 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted. By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
+   * Specifies whether the instance should be automatically restarted if it is
+   * terminated by Compute Engine (not terminated by a user). You can only set
+   * the automatic restart option for standard instances.Preemptible instances
+   * cannot be automatically restarted.
+   *
+   * By default, this is set to true so an instance is
+   * automatically restarted if it is terminated by Compute Engine.
    * </pre>
    *
    * <code>optional bool automatic_restart = 350821371;</code>
@@ -648,7 +671,13 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted. By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
+   * Specifies whether the instance should be automatically restarted if it is
+   * terminated by Compute Engine (not terminated by a user). You can only set
+   * the automatic restart option for standard instances.Preemptible instances
+   * cannot be automatically restarted.
+   *
+   * By default, this is set to true so an instance is
+   * automatically restarted if it is terminated by Compute Engine.
    * </pre>
    *
    * <code>optional bool automatic_restart = 350821371;</code>
@@ -667,7 +696,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the availability domain to place the instance in. The value must be a number between 1 and the number of availability domains specified in the spread placement policy attached to the instance.
+   * Specifies the availability domain to place the instance in. The value
+   * must be a number between 1 and the number of availability domains
+   * specified in the spread placement policy attached to the instance.
    * </pre>
    *
    * <code>optional int32 availability_domain = 252514344;</code>
@@ -683,7 +714,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the availability domain to place the instance in. The value must be a number between 1 and the number of availability domains specified in the spread placement policy attached to the instance.
+   * Specifies the availability domain to place the instance in. The value
+   * must be a number between 1 and the number of availability domains
+   * specified in the spread placement policy attached to the instance.
    * </pre>
    *
    * <code>optional int32 availability_domain = 252514344;</code>
@@ -702,7 +735,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specify the time in seconds for host error detection, the value must be within the range of [90, 330] with the increment of 30, if unset, the default behavior of host error recovery will be used.
+   * Specify the time in seconds for host error detection, the value must be
+   * within the range of [90, 330] with the increment of 30, if unset, the
+   * default behavior of host error recovery will be used.
    * </pre>
    *
    * <code>optional int32 host_error_timeout_seconds = 408317459;</code>
@@ -718,7 +753,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specify the time in seconds for host error detection, the value must be within the range of [90, 330] with the increment of 30, if unset, the default behavior of host error recovery will be used.
+   * Specify the time in seconds for host error detection, the value must be
+   * within the range of [90, 330] with the increment of 30, if unset, the
+   * default behavior of host error recovery will be used.
    * </pre>
    *
    * <code>optional int32 host_error_timeout_seconds = 408317459;</code>
@@ -809,7 +846,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the maximum amount of time a Local Ssd Vm should wait while recovery of the Local Ssd state is attempted. Its value should be in between 0 and 168 hours with hour granularity and the default value being 1 hour.
+   * Specifies the maximum amount of time a Local Ssd Vm should wait while
+   * recovery of the Local Ssd state is attempted. Its value should be in
+   * between 0 and 168 hours with hour granularity and the default value being 1
+   * hour.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Duration local_ssd_recovery_timeout = 268015590;</code>
@@ -825,7 +865,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the maximum amount of time a Local Ssd Vm should wait while recovery of the Local Ssd state is attempted. Its value should be in between 0 and 168 hours with hour granularity and the default value being 1 hour.
+   * Specifies the maximum amount of time a Local Ssd Vm should wait while
+   * recovery of the Local Ssd state is attempted. Its value should be in
+   * between 0 and 168 hours with hour granularity and the default value being 1
+   * hour.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Duration local_ssd_recovery_timeout = 268015590;</code>
@@ -843,7 +886,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the maximum amount of time a Local Ssd Vm should wait while recovery of the Local Ssd state is attempted. Its value should be in between 0 and 168 hours with hour granularity and the default value being 1 hour.
+   * Specifies the maximum amount of time a Local Ssd Vm should wait while
+   * recovery of the Local Ssd state is attempted. Its value should be in
+   * between 0 and 168 hours with hour granularity and the default value being 1
+   * hour.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Duration local_ssd_recovery_timeout = 268015590;</code>
@@ -864,7 +910,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
+   * An opaque location hint used to place the instance close to other
+   * resources.
+   * This field is for use by internal tools that use the public API.
    * </pre>
    *
    * <code>optional string location_hint = 350519505;</code>
@@ -880,7 +928,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
+   * An opaque location hint used to place the instance close to other
+   * resources.
+   * This field is for use by internal tools that use the public API.
    * </pre>
    *
    * <code>optional string location_hint = 350519505;</code>
@@ -904,7 +954,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
+   * An opaque location hint used to place the instance close to other
+   * resources.
+   * This field is for use by internal tools that use the public API.
    * </pre>
    *
    * <code>optional string location_hint = 350519505;</code>
@@ -931,7 +983,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the max run duration for the given instance. If specified, the instance termination action will be performed at the end of the run duration.
+   * Specifies the max run duration for the given instance. If specified,
+   * the instance termination action will be performed at the end of the run
+   * duration.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Duration max_run_duration = 430839747;</code>
@@ -947,7 +1001,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the max run duration for the given instance. If specified, the instance termination action will be performed at the end of the run duration.
+   * Specifies the max run duration for the given instance. If specified,
+   * the instance termination action will be performed at the end of the run
+   * duration.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Duration max_run_duration = 430839747;</code>
@@ -965,7 +1021,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the max run duration for the given instance. If specified, the instance termination action will be performed at the end of the run duration.
+   * Specifies the max run duration for the given instance. If specified,
+   * the instance termination action will be performed at the end of the run
+   * duration.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Duration max_run_duration = 430839747;</code>
@@ -984,7 +1042,8 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
+   * The minimum number of virtual CPUs this instance will consume when running
+   * on a sole-tenant node.
    * </pre>
    *
    * <code>optional int32 min_node_cpus = 317231675;</code>
@@ -1000,7 +1059,8 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
+   * The minimum number of virtual CPUs this instance will consume when running
+   * on a sole-tenant node.
    * </pre>
    *
    * <code>optional int32 min_node_cpus = 317231675;</code>
@@ -1021,7 +1081,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
+   * A set of node affinity and anti-affinity configurations. Refer toConfiguring node
+   * affinity for more information.
+   * Overrides reservationAffinity.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
@@ -1037,7 +1099,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
+   * A set of node affinity and anti-affinity configurations. Refer toConfiguring node
+   * affinity for more information.
+   * Overrides reservationAffinity.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
@@ -1053,7 +1117,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
+   * A set of node affinity and anti-affinity configurations. Refer toConfiguring node
+   * affinity for more information.
+   * Overrides reservationAffinity.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
@@ -1068,7 +1134,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
+   * A set of node affinity and anti-affinity configurations. Refer toConfiguring node
+   * affinity for more information.
+   * Overrides reservationAffinity.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
@@ -1083,7 +1151,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
+   * A set of node affinity and anti-affinity configurations. Refer toConfiguring node
+   * affinity for more information.
+   * Overrides reservationAffinity.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
@@ -1104,7 +1174,12 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM host maintenance policy.
+   * Defines the maintenance behavior for this instance. For standard instances,
+   * the default behavior is MIGRATE. Forpreemptible instances,
+   * the default and only possible behavior is TERMINATE. For more
+   * information, see
+   *  Set
+   *  VM host maintenance policy.
    * Check the OnHostMaintenance enum for the list of possible values.
    * </pre>
    *
@@ -1121,7 +1196,12 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM host maintenance policy.
+   * Defines the maintenance behavior for this instance. For standard instances,
+   * the default behavior is MIGRATE. Forpreemptible instances,
+   * the default and only possible behavior is TERMINATE. For more
+   * information, see
+   *  Set
+   *  VM host maintenance policy.
    * Check the OnHostMaintenance enum for the list of possible values.
    * </pre>
    *
@@ -1146,7 +1226,12 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM host maintenance policy.
+   * Defines the maintenance behavior for this instance. For standard instances,
+   * the default behavior is MIGRATE. Forpreemptible instances,
+   * the default and only possible behavior is TERMINATE. For more
+   * information, see
+   *  Set
+   *  VM host maintenance policy.
    * Check the OnHostMaintenance enum for the list of possible values.
    * </pre>
    *
@@ -1216,7 +1301,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines whether the instance is preemptible. This can only be set during instance creation or while the instance is stopped and therefore, in a `TERMINATED` state. See Instance Life Cycle for more information on the possible instance states.
+   * Defines whether the instance is preemptible. This can only be set during
+   * instance creation or while the instance isstopped and
+   * therefore, in a `TERMINATED` state. SeeInstance Life
+   * Cycle for more information on the possible instance states.
    * </pre>
    *
    * <code>optional bool preemptible = 324203169;</code>
@@ -1232,7 +1320,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines whether the instance is preemptible. This can only be set during instance creation or while the instance is stopped and therefore, in a `TERMINATED` state. See Instance Life Cycle for more information on the possible instance states.
+   * Defines whether the instance is preemptible. This can only be set during
+   * instance creation or while the instance isstopped and
+   * therefore, in a `TERMINATED` state. SeeInstance Life
+   * Cycle for more information on the possible instance states.
    * </pre>
    *
    * <code>optional bool preemptible = 324203169;</code>
@@ -1323,7 +1414,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Default is false and there will be 120 seconds between GCE ACPI G2 Soft Off and ACPI G3 Mechanical Off for Standard VMs and 30 seconds for Spot VMs.
+   * Default is false and there will be 120 seconds between GCE ACPI G2 Soft
+   * Off and ACPI G3 Mechanical
+   * Off for Standard VMs and 30 seconds for Spot VMs.
    * </pre>
    *
    * <code>optional bool skip_guest_os_shutdown = 201662378;</code>
@@ -1339,7 +1432,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Default is false and there will be 120 seconds between GCE ACPI G2 Soft Off and ACPI G3 Mechanical Off for Standard VMs and 30 seconds for Spot VMs.
+   * Default is false and there will be 120 seconds between GCE ACPI G2 Soft
+   * Off and ACPI G3 Mechanical
+   * Off for Standard VMs and 30 seconds for Spot VMs.
    * </pre>
    *
    * <code>optional bool skip_guest_os_shutdown = 201662378;</code>
@@ -1360,7 +1455,8 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the timestamp, when the instance will be terminated, in RFC3339 text format. If specified, the instance termination action will be performed at the termination time.
+   * Specifies the timestamp, when the instance will be terminated, inRFC3339 text format. If specified, the instance
+   * termination action will be performed at the termination time.
    * </pre>
    *
    * <code>optional string termination_time = 428082984;</code>
@@ -1376,7 +1472,8 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the timestamp, when the instance will be terminated, in RFC3339 text format. If specified, the instance termination action will be performed at the termination time.
+   * Specifies the timestamp, when the instance will be terminated, inRFC3339 text format. If specified, the instance
+   * termination action will be performed at the termination time.
    * </pre>
    *
    * <code>optional string termination_time = 428082984;</code>
@@ -1400,7 +1497,8 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the timestamp, when the instance will be terminated, in RFC3339 text format. If specified, the instance termination action will be performed at the termination time.
+   * Specifies the timestamp, when the instance will be terminated, inRFC3339 text format. If specified, the instance
+   * termination action will be performed at the termination time.
    * </pre>
    *
    * <code>optional string termination_time = 428082984;</code>
@@ -2268,7 +2366,13 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted. By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
+     * Specifies whether the instance should be automatically restarted if it is
+     * terminated by Compute Engine (not terminated by a user). You can only set
+     * the automatic restart option for standard instances.Preemptible instances
+     * cannot be automatically restarted.
+     *
+     * By default, this is set to true so an instance is
+     * automatically restarted if it is terminated by Compute Engine.
      * </pre>
      *
      * <code>optional bool automatic_restart = 350821371;</code>
@@ -2284,7 +2388,13 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted. By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
+     * Specifies whether the instance should be automatically restarted if it is
+     * terminated by Compute Engine (not terminated by a user). You can only set
+     * the automatic restart option for standard instances.Preemptible instances
+     * cannot be automatically restarted.
+     *
+     * By default, this is set to true so an instance is
+     * automatically restarted if it is terminated by Compute Engine.
      * </pre>
      *
      * <code>optional bool automatic_restart = 350821371;</code>
@@ -2300,7 +2410,13 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted. By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
+     * Specifies whether the instance should be automatically restarted if it is
+     * terminated by Compute Engine (not terminated by a user). You can only set
+     * the automatic restart option for standard instances.Preemptible instances
+     * cannot be automatically restarted.
+     *
+     * By default, this is set to true so an instance is
+     * automatically restarted if it is terminated by Compute Engine.
      * </pre>
      *
      * <code>optional bool automatic_restart = 350821371;</code>
@@ -2320,7 +2436,13 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted. By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
+     * Specifies whether the instance should be automatically restarted if it is
+     * terminated by Compute Engine (not terminated by a user). You can only set
+     * the automatic restart option for standard instances.Preemptible instances
+     * cannot be automatically restarted.
+     *
+     * By default, this is set to true so an instance is
+     * automatically restarted if it is terminated by Compute Engine.
      * </pre>
      *
      * <code>optional bool automatic_restart = 350821371;</code>
@@ -2340,7 +2462,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the availability domain to place the instance in. The value must be a number between 1 and the number of availability domains specified in the spread placement policy attached to the instance.
+     * Specifies the availability domain to place the instance in. The value
+     * must be a number between 1 and the number of availability domains
+     * specified in the spread placement policy attached to the instance.
      * </pre>
      *
      * <code>optional int32 availability_domain = 252514344;</code>
@@ -2356,7 +2480,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the availability domain to place the instance in. The value must be a number between 1 and the number of availability domains specified in the spread placement policy attached to the instance.
+     * Specifies the availability domain to place the instance in. The value
+     * must be a number between 1 and the number of availability domains
+     * specified in the spread placement policy attached to the instance.
      * </pre>
      *
      * <code>optional int32 availability_domain = 252514344;</code>
@@ -2372,7 +2498,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the availability domain to place the instance in. The value must be a number between 1 and the number of availability domains specified in the spread placement policy attached to the instance.
+     * Specifies the availability domain to place the instance in. The value
+     * must be a number between 1 and the number of availability domains
+     * specified in the spread placement policy attached to the instance.
      * </pre>
      *
      * <code>optional int32 availability_domain = 252514344;</code>
@@ -2392,7 +2520,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the availability domain to place the instance in. The value must be a number between 1 and the number of availability domains specified in the spread placement policy attached to the instance.
+     * Specifies the availability domain to place the instance in. The value
+     * must be a number between 1 and the number of availability domains
+     * specified in the spread placement policy attached to the instance.
      * </pre>
      *
      * <code>optional int32 availability_domain = 252514344;</code>
@@ -2412,7 +2542,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the time in seconds for host error detection, the value must be within the range of [90, 330] with the increment of 30, if unset, the default behavior of host error recovery will be used.
+     * Specify the time in seconds for host error detection, the value must be
+     * within the range of [90, 330] with the increment of 30, if unset, the
+     * default behavior of host error recovery will be used.
      * </pre>
      *
      * <code>optional int32 host_error_timeout_seconds = 408317459;</code>
@@ -2428,7 +2560,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the time in seconds for host error detection, the value must be within the range of [90, 330] with the increment of 30, if unset, the default behavior of host error recovery will be used.
+     * Specify the time in seconds for host error detection, the value must be
+     * within the range of [90, 330] with the increment of 30, if unset, the
+     * default behavior of host error recovery will be used.
      * </pre>
      *
      * <code>optional int32 host_error_timeout_seconds = 408317459;</code>
@@ -2444,7 +2578,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the time in seconds for host error detection, the value must be within the range of [90, 330] with the increment of 30, if unset, the default behavior of host error recovery will be used.
+     * Specify the time in seconds for host error detection, the value must be
+     * within the range of [90, 330] with the increment of 30, if unset, the
+     * default behavior of host error recovery will be used.
      * </pre>
      *
      * <code>optional int32 host_error_timeout_seconds = 408317459;</code>
@@ -2464,7 +2600,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specify the time in seconds for host error detection, the value must be within the range of [90, 330] with the increment of 30, if unset, the default behavior of host error recovery will be used.
+     * Specify the time in seconds for host error detection, the value must be
+     * within the range of [90, 330] with the increment of 30, if unset, the
+     * default behavior of host error recovery will be used.
      * </pre>
      *
      * <code>optional int32 host_error_timeout_seconds = 408317459;</code>
@@ -2621,7 +2759,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the maximum amount of time a Local Ssd Vm should wait while recovery of the Local Ssd state is attempted. Its value should be in between 0 and 168 hours with hour granularity and the default value being 1 hour.
+     * Specifies the maximum amount of time a Local Ssd Vm should wait while
+     * recovery of the Local Ssd state is attempted. Its value should be in
+     * between 0 and 168 hours with hour granularity and the default value being 1
+     * hour.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration local_ssd_recovery_timeout = 268015590;
@@ -2637,7 +2778,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the maximum amount of time a Local Ssd Vm should wait while recovery of the Local Ssd state is attempted. Its value should be in between 0 and 168 hours with hour granularity and the default value being 1 hour.
+     * Specifies the maximum amount of time a Local Ssd Vm should wait while
+     * recovery of the Local Ssd state is attempted. Its value should be in
+     * between 0 and 168 hours with hour granularity and the default value being 1
+     * hour.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration local_ssd_recovery_timeout = 268015590;
@@ -2659,7 +2803,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the maximum amount of time a Local Ssd Vm should wait while recovery of the Local Ssd state is attempted. Its value should be in between 0 and 168 hours with hour granularity and the default value being 1 hour.
+     * Specifies the maximum amount of time a Local Ssd Vm should wait while
+     * recovery of the Local Ssd state is attempted. Its value should be in
+     * between 0 and 168 hours with hour granularity and the default value being 1
+     * hour.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration local_ssd_recovery_timeout = 268015590;
@@ -2683,7 +2830,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the maximum amount of time a Local Ssd Vm should wait while recovery of the Local Ssd state is attempted. Its value should be in between 0 and 168 hours with hour granularity and the default value being 1 hour.
+     * Specifies the maximum amount of time a Local Ssd Vm should wait while
+     * recovery of the Local Ssd state is attempted. Its value should be in
+     * between 0 and 168 hours with hour granularity and the default value being 1
+     * hour.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration local_ssd_recovery_timeout = 268015590;
@@ -2705,7 +2855,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the maximum amount of time a Local Ssd Vm should wait while recovery of the Local Ssd state is attempted. Its value should be in between 0 and 168 hours with hour granularity and the default value being 1 hour.
+     * Specifies the maximum amount of time a Local Ssd Vm should wait while
+     * recovery of the Local Ssd state is attempted. Its value should be in
+     * between 0 and 168 hours with hour granularity and the default value being 1
+     * hour.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration local_ssd_recovery_timeout = 268015590;
@@ -2735,7 +2888,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the maximum amount of time a Local Ssd Vm should wait while recovery of the Local Ssd state is attempted. Its value should be in between 0 and 168 hours with hour granularity and the default value being 1 hour.
+     * Specifies the maximum amount of time a Local Ssd Vm should wait while
+     * recovery of the Local Ssd state is attempted. Its value should be in
+     * between 0 and 168 hours with hour granularity and the default value being 1
+     * hour.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration local_ssd_recovery_timeout = 268015590;
@@ -2756,7 +2912,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the maximum amount of time a Local Ssd Vm should wait while recovery of the Local Ssd state is attempted. Its value should be in between 0 and 168 hours with hour granularity and the default value being 1 hour.
+     * Specifies the maximum amount of time a Local Ssd Vm should wait while
+     * recovery of the Local Ssd state is attempted. Its value should be in
+     * between 0 and 168 hours with hour granularity and the default value being 1
+     * hour.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration local_ssd_recovery_timeout = 268015590;
@@ -2772,7 +2931,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the maximum amount of time a Local Ssd Vm should wait while recovery of the Local Ssd state is attempted. Its value should be in between 0 and 168 hours with hour granularity and the default value being 1 hour.
+     * Specifies the maximum amount of time a Local Ssd Vm should wait while
+     * recovery of the Local Ssd state is attempted. Its value should be in
+     * between 0 and 168 hours with hour granularity and the default value being 1
+     * hour.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration local_ssd_recovery_timeout = 268015590;
@@ -2792,7 +2954,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the maximum amount of time a Local Ssd Vm should wait while recovery of the Local Ssd state is attempted. Its value should be in between 0 and 168 hours with hour granularity and the default value being 1 hour.
+     * Specifies the maximum amount of time a Local Ssd Vm should wait while
+     * recovery of the Local Ssd state is attempted. Its value should be in
+     * between 0 and 168 hours with hour granularity and the default value being 1
+     * hour.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration local_ssd_recovery_timeout = 268015590;
@@ -2821,7 +2986,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
+     * An opaque location hint used to place the instance close to other
+     * resources.
+     * This field is for use by internal tools that use the public API.
      * </pre>
      *
      * <code>optional string location_hint = 350519505;</code>
@@ -2836,7 +3003,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
+     * An opaque location hint used to place the instance close to other
+     * resources.
+     * This field is for use by internal tools that use the public API.
      * </pre>
      *
      * <code>optional string location_hint = 350519505;</code>
@@ -2859,7 +3028,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
+     * An opaque location hint used to place the instance close to other
+     * resources.
+     * This field is for use by internal tools that use the public API.
      * </pre>
      *
      * <code>optional string location_hint = 350519505;</code>
@@ -2882,7 +3053,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
+     * An opaque location hint used to place the instance close to other
+     * resources.
+     * This field is for use by internal tools that use the public API.
      * </pre>
      *
      * <code>optional string location_hint = 350519505;</code>
@@ -2904,7 +3077,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
+     * An opaque location hint used to place the instance close to other
+     * resources.
+     * This field is for use by internal tools that use the public API.
      * </pre>
      *
      * <code>optional string location_hint = 350519505;</code>
@@ -2922,7 +3097,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
+     * An opaque location hint used to place the instance close to other
+     * resources.
+     * This field is for use by internal tools that use the public API.
      * </pre>
      *
      * <code>optional string location_hint = 350519505;</code>
@@ -2952,7 +3129,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the max run duration for the given instance. If specified, the instance termination action will be performed at the end of the run duration.
+     * Specifies the max run duration for the given instance. If specified,
+     * the instance termination action will be performed at the end of the run
+     * duration.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration max_run_duration = 430839747;</code>
@@ -2967,7 +3146,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the max run duration for the given instance. If specified, the instance termination action will be performed at the end of the run duration.
+     * Specifies the max run duration for the given instance. If specified,
+     * the instance termination action will be performed at the end of the run
+     * duration.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration max_run_duration = 430839747;</code>
@@ -2988,7 +3169,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the max run duration for the given instance. If specified, the instance termination action will be performed at the end of the run duration.
+     * Specifies the max run duration for the given instance. If specified,
+     * the instance termination action will be performed at the end of the run
+     * duration.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration max_run_duration = 430839747;</code>
@@ -3011,7 +3194,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the max run duration for the given instance. If specified, the instance termination action will be performed at the end of the run duration.
+     * Specifies the max run duration for the given instance. If specified,
+     * the instance termination action will be performed at the end of the run
+     * duration.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration max_run_duration = 430839747;</code>
@@ -3031,7 +3216,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the max run duration for the given instance. If specified, the instance termination action will be performed at the end of the run duration.
+     * Specifies the max run duration for the given instance. If specified,
+     * the instance termination action will be performed at the end of the run
+     * duration.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration max_run_duration = 430839747;</code>
@@ -3059,7 +3246,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the max run duration for the given instance. If specified, the instance termination action will be performed at the end of the run duration.
+     * Specifies the max run duration for the given instance. If specified,
+     * the instance termination action will be performed at the end of the run
+     * duration.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration max_run_duration = 430839747;</code>
@@ -3079,7 +3268,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the max run duration for the given instance. If specified, the instance termination action will be performed at the end of the run duration.
+     * Specifies the max run duration for the given instance. If specified,
+     * the instance termination action will be performed at the end of the run
+     * duration.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration max_run_duration = 430839747;</code>
@@ -3094,7 +3285,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the max run duration for the given instance. If specified, the instance termination action will be performed at the end of the run duration.
+     * Specifies the max run duration for the given instance. If specified,
+     * the instance termination action will be performed at the end of the run
+     * duration.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration max_run_duration = 430839747;</code>
@@ -3113,7 +3306,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the max run duration for the given instance. If specified, the instance termination action will be performed at the end of the run duration.
+     * Specifies the max run duration for the given instance. If specified,
+     * the instance termination action will be performed at the end of the run
+     * duration.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Duration max_run_duration = 430839747;</code>
@@ -3141,7 +3336,8 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
+     * The minimum number of virtual CPUs this instance will consume when running
+     * on a sole-tenant node.
      * </pre>
      *
      * <code>optional int32 min_node_cpus = 317231675;</code>
@@ -3157,7 +3353,8 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
+     * The minimum number of virtual CPUs this instance will consume when running
+     * on a sole-tenant node.
      * </pre>
      *
      * <code>optional int32 min_node_cpus = 317231675;</code>
@@ -3173,7 +3370,8 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
+     * The minimum number of virtual CPUs this instance will consume when running
+     * on a sole-tenant node.
      * </pre>
      *
      * <code>optional int32 min_node_cpus = 317231675;</code>
@@ -3193,7 +3391,8 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
+     * The minimum number of virtual CPUs this instance will consume when running
+     * on a sole-tenant node.
      * </pre>
      *
      * <code>optional int32 min_node_cpus = 317231675;</code>
@@ -3229,7 +3428,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
+     * A set of node affinity and anti-affinity configurations. Refer toConfiguring node
+     * affinity for more information.
+     * Overrides reservationAffinity.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
@@ -3248,7 +3449,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
+     * A set of node affinity and anti-affinity configurations. Refer toConfiguring node
+     * affinity for more information.
+     * Overrides reservationAffinity.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
@@ -3266,7 +3469,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
+     * A set of node affinity and anti-affinity configurations. Refer toConfiguring node
+     * affinity for more information.
+     * Overrides reservationAffinity.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
@@ -3284,7 +3489,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
+     * A set of node affinity and anti-affinity configurations. Refer toConfiguring node
+     * affinity for more information.
+     * Overrides reservationAffinity.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
@@ -3309,7 +3516,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
+     * A set of node affinity and anti-affinity configurations. Refer toConfiguring node
+     * affinity for more information.
+     * Overrides reservationAffinity.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
@@ -3331,7 +3540,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
+     * A set of node affinity and anti-affinity configurations. Refer toConfiguring node
+     * affinity for more information.
+     * Overrides reservationAffinity.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
@@ -3355,7 +3566,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
+     * A set of node affinity and anti-affinity configurations. Refer toConfiguring node
+     * affinity for more information.
+     * Overrides reservationAffinity.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
@@ -3380,7 +3593,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
+     * A set of node affinity and anti-affinity configurations. Refer toConfiguring node
+     * affinity for more information.
+     * Overrides reservationAffinity.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
@@ -3402,7 +3617,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
+     * A set of node affinity and anti-affinity configurations. Refer toConfiguring node
+     * affinity for more information.
+     * Overrides reservationAffinity.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
@@ -3424,7 +3641,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
+     * A set of node affinity and anti-affinity configurations. Refer toConfiguring node
+     * affinity for more information.
+     * Overrides reservationAffinity.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
@@ -3446,7 +3665,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
+     * A set of node affinity and anti-affinity configurations. Refer toConfiguring node
+     * affinity for more information.
+     * Overrides reservationAffinity.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
@@ -3467,7 +3688,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
+     * A set of node affinity and anti-affinity configurations. Refer toConfiguring node
+     * affinity for more information.
+     * Overrides reservationAffinity.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
@@ -3488,7 +3711,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
+     * A set of node affinity and anti-affinity configurations. Refer toConfiguring node
+     * affinity for more information.
+     * Overrides reservationAffinity.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
@@ -3503,7 +3728,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
+     * A set of node affinity and anti-affinity configurations. Refer toConfiguring node
+     * affinity for more information.
+     * Overrides reservationAffinity.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
@@ -3522,7 +3749,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
+     * A set of node affinity and anti-affinity configurations. Refer toConfiguring node
+     * affinity for more information.
+     * Overrides reservationAffinity.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
@@ -3541,7 +3770,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
+     * A set of node affinity and anti-affinity configurations. Refer toConfiguring node
+     * affinity for more information.
+     * Overrides reservationAffinity.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
@@ -3556,7 +3787,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
+     * A set of node affinity and anti-affinity configurations. Refer toConfiguring node
+     * affinity for more information.
+     * Overrides reservationAffinity.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
@@ -3573,7 +3806,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
+     * A set of node affinity and anti-affinity configurations. Refer toConfiguring node
+     * affinity for more information.
+     * Overrides reservationAffinity.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
@@ -3610,7 +3845,12 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM host maintenance policy.
+     * Defines the maintenance behavior for this instance. For standard instances,
+     * the default behavior is MIGRATE. Forpreemptible instances,
+     * the default and only possible behavior is TERMINATE. For more
+     * information, see
+     *  Set
+     *  VM host maintenance policy.
      * Check the OnHostMaintenance enum for the list of possible values.
      * </pre>
      *
@@ -3626,7 +3866,12 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM host maintenance policy.
+     * Defines the maintenance behavior for this instance. For standard instances,
+     * the default behavior is MIGRATE. Forpreemptible instances,
+     * the default and only possible behavior is TERMINATE. For more
+     * information, see
+     *  Set
+     *  VM host maintenance policy.
      * Check the OnHostMaintenance enum for the list of possible values.
      * </pre>
      *
@@ -3650,7 +3895,12 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM host maintenance policy.
+     * Defines the maintenance behavior for this instance. For standard instances,
+     * the default behavior is MIGRATE. Forpreemptible instances,
+     * the default and only possible behavior is TERMINATE. For more
+     * information, see
+     *  Set
+     *  VM host maintenance policy.
      * Check the OnHostMaintenance enum for the list of possible values.
      * </pre>
      *
@@ -3674,7 +3924,12 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM host maintenance policy.
+     * Defines the maintenance behavior for this instance. For standard instances,
+     * the default behavior is MIGRATE. Forpreemptible instances,
+     * the default and only possible behavior is TERMINATE. For more
+     * information, see
+     *  Set
+     *  VM host maintenance policy.
      * Check the OnHostMaintenance enum for the list of possible values.
      * </pre>
      *
@@ -3697,7 +3952,12 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM host maintenance policy.
+     * Defines the maintenance behavior for this instance. For standard instances,
+     * the default behavior is MIGRATE. Forpreemptible instances,
+     * the default and only possible behavior is TERMINATE. For more
+     * information, see
+     *  Set
+     *  VM host maintenance policy.
      * Check the OnHostMaintenance enum for the list of possible values.
      * </pre>
      *
@@ -3716,7 +3976,12 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM host maintenance policy.
+     * Defines the maintenance behavior for this instance. For standard instances,
+     * the default behavior is MIGRATE. Forpreemptible instances,
+     * the default and only possible behavior is TERMINATE. For more
+     * information, see
+     *  Set
+     *  VM host maintenance policy.
      * Check the OnHostMaintenance enum for the list of possible values.
      * </pre>
      *
@@ -3907,7 +4172,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines whether the instance is preemptible. This can only be set during instance creation or while the instance is stopped and therefore, in a `TERMINATED` state. See Instance Life Cycle for more information on the possible instance states.
+     * Defines whether the instance is preemptible. This can only be set during
+     * instance creation or while the instance isstopped and
+     * therefore, in a `TERMINATED` state. SeeInstance Life
+     * Cycle for more information on the possible instance states.
      * </pre>
      *
      * <code>optional bool preemptible = 324203169;</code>
@@ -3923,7 +4191,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines whether the instance is preemptible. This can only be set during instance creation or while the instance is stopped and therefore, in a `TERMINATED` state. See Instance Life Cycle for more information on the possible instance states.
+     * Defines whether the instance is preemptible. This can only be set during
+     * instance creation or while the instance isstopped and
+     * therefore, in a `TERMINATED` state. SeeInstance Life
+     * Cycle for more information on the possible instance states.
      * </pre>
      *
      * <code>optional bool preemptible = 324203169;</code>
@@ -3939,7 +4210,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines whether the instance is preemptible. This can only be set during instance creation or while the instance is stopped and therefore, in a `TERMINATED` state. See Instance Life Cycle for more information on the possible instance states.
+     * Defines whether the instance is preemptible. This can only be set during
+     * instance creation or while the instance isstopped and
+     * therefore, in a `TERMINATED` state. SeeInstance Life
+     * Cycle for more information on the possible instance states.
      * </pre>
      *
      * <code>optional bool preemptible = 324203169;</code>
@@ -3959,7 +4233,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines whether the instance is preemptible. This can only be set during instance creation or while the instance is stopped and therefore, in a `TERMINATED` state. See Instance Life Cycle for more information on the possible instance states.
+     * Defines whether the instance is preemptible. This can only be set during
+     * instance creation or while the instance isstopped and
+     * therefore, in a `TERMINATED` state. SeeInstance Life
+     * Cycle for more information on the possible instance states.
      * </pre>
      *
      * <code>optional bool preemptible = 324203169;</code>
@@ -4111,7 +4388,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Default is false and there will be 120 seconds between GCE ACPI G2 Soft Off and ACPI G3 Mechanical Off for Standard VMs and 30 seconds for Spot VMs.
+     * Default is false and there will be 120 seconds between GCE ACPI G2 Soft
+     * Off and ACPI G3 Mechanical
+     * Off for Standard VMs and 30 seconds for Spot VMs.
      * </pre>
      *
      * <code>optional bool skip_guest_os_shutdown = 201662378;</code>
@@ -4127,7 +4406,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Default is false and there will be 120 seconds between GCE ACPI G2 Soft Off and ACPI G3 Mechanical Off for Standard VMs and 30 seconds for Spot VMs.
+     * Default is false and there will be 120 seconds between GCE ACPI G2 Soft
+     * Off and ACPI G3 Mechanical
+     * Off for Standard VMs and 30 seconds for Spot VMs.
      * </pre>
      *
      * <code>optional bool skip_guest_os_shutdown = 201662378;</code>
@@ -4143,7 +4424,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Default is false and there will be 120 seconds between GCE ACPI G2 Soft Off and ACPI G3 Mechanical Off for Standard VMs and 30 seconds for Spot VMs.
+     * Default is false and there will be 120 seconds between GCE ACPI G2 Soft
+     * Off and ACPI G3 Mechanical
+     * Off for Standard VMs and 30 seconds for Spot VMs.
      * </pre>
      *
      * <code>optional bool skip_guest_os_shutdown = 201662378;</code>
@@ -4163,7 +4446,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Default is false and there will be 120 seconds between GCE ACPI G2 Soft Off and ACPI G3 Mechanical Off for Standard VMs and 30 seconds for Spot VMs.
+     * Default is false and there will be 120 seconds between GCE ACPI G2 Soft
+     * Off and ACPI G3 Mechanical
+     * Off for Standard VMs and 30 seconds for Spot VMs.
      * </pre>
      *
      * <code>optional bool skip_guest_os_shutdown = 201662378;</code>
@@ -4183,7 +4468,8 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the timestamp, when the instance will be terminated, in RFC3339 text format. If specified, the instance termination action will be performed at the termination time.
+     * Specifies the timestamp, when the instance will be terminated, inRFC3339 text format. If specified, the instance
+     * termination action will be performed at the termination time.
      * </pre>
      *
      * <code>optional string termination_time = 428082984;</code>
@@ -4198,7 +4484,8 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the timestamp, when the instance will be terminated, in RFC3339 text format. If specified, the instance termination action will be performed at the termination time.
+     * Specifies the timestamp, when the instance will be terminated, inRFC3339 text format. If specified, the instance
+     * termination action will be performed at the termination time.
      * </pre>
      *
      * <code>optional string termination_time = 428082984;</code>
@@ -4221,7 +4508,8 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the timestamp, when the instance will be terminated, in RFC3339 text format. If specified, the instance termination action will be performed at the termination time.
+     * Specifies the timestamp, when the instance will be terminated, inRFC3339 text format. If specified, the instance
+     * termination action will be performed at the termination time.
      * </pre>
      *
      * <code>optional string termination_time = 428082984;</code>
@@ -4244,7 +4532,8 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the timestamp, when the instance will be terminated, in RFC3339 text format. If specified, the instance termination action will be performed at the termination time.
+     * Specifies the timestamp, when the instance will be terminated, inRFC3339 text format. If specified, the instance
+     * termination action will be performed at the termination time.
      * </pre>
      *
      * <code>optional string termination_time = 428082984;</code>
@@ -4266,7 +4555,8 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the timestamp, when the instance will be terminated, in RFC3339 text format. If specified, the instance termination action will be performed at the termination time.
+     * Specifies the timestamp, when the instance will be terminated, inRFC3339 text format. If specified, the instance
+     * termination action will be performed at the termination time.
      * </pre>
      *
      * <code>optional string termination_time = 428082984;</code>
@@ -4284,7 +4574,8 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the timestamp, when the instance will be terminated, in RFC3339 text format. If specified, the instance termination action will be performed at the termination time.
+     * Specifies the timestamp, when the instance will be terminated, inRFC3339 text format. If specified, the instance
+     * termination action will be performed at the termination time.
      * </pre>
      *
      * <code>optional string termination_time = 428082984;</code>
