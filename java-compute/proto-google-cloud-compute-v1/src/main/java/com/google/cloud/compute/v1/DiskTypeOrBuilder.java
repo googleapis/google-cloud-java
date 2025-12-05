@@ -28,7 +28,8 @@ public interface DiskTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -41,7 +42,8 @@ public interface DiskTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -54,7 +56,8 @@ public interface DiskTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -169,7 +172,8 @@ public interface DiskTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -182,7 +186,8 @@ public interface DiskTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -195,7 +200,8 @@ public interface DiskTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#diskType for disk types.
+   * [Output Only] Type of the resource. Always compute#diskType
+   * for disk types.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -208,7 +214,8 @@ public interface DiskTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#diskType for disk types.
+   * [Output Only] Type of the resource. Always compute#diskType
+   * for disk types.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -221,7 +228,8 @@ public interface DiskTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#diskType for disk types.
+   * [Output Only] Type of the resource. Always compute#diskType
+   * for disk types.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -273,7 +281,10 @@ public interface DiskTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the disk type resides. Only applicable for regional resources. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * [Output Only] URL of the region where the disk type resides. Only
+   * applicable for regional resources.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -286,7 +297,10 @@ public interface DiskTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the disk type resides. Only applicable for regional resources. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * [Output Only] URL of the region where the disk type resides. Only
+   * applicable for regional resources.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -299,7 +313,10 @@ public interface DiskTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the disk type resides. Only applicable for regional resources. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * [Output Only] URL of the region where the disk type resides. Only
+   * applicable for regional resources.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -351,7 +368,8 @@ public interface DiskTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] An optional textual description of the valid disk size, such as "10GB-10TB".
+   * [Output Only] An optional textual description of the valid disk size,
+   * such as "10GB-10TB".
    * </pre>
    *
    * <code>optional string valid_disk_size = 493962464;</code>
@@ -364,7 +382,8 @@ public interface DiskTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] An optional textual description of the valid disk size, such as "10GB-10TB".
+   * [Output Only] An optional textual description of the valid disk size,
+   * such as "10GB-10TB".
    * </pre>
    *
    * <code>optional string valid_disk_size = 493962464;</code>
@@ -377,7 +396,8 @@ public interface DiskTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] An optional textual description of the valid disk size, such as "10GB-10TB".
+   * [Output Only] An optional textual description of the valid disk size,
+   * such as "10GB-10TB".
    * </pre>
    *
    * <code>optional string valid_disk_size = 493962464;</code>
@@ -390,7 +410,9 @@ public interface DiskTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the disk type resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * [Output Only] URL of the zone where the disk type resides.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -403,7 +425,9 @@ public interface DiskTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the disk type resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * [Output Only] URL of the zone where the disk type resides.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -416,7 +440,9 @@ public interface DiskTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the disk type resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * [Output Only] URL of the zone where the disk type resides.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>

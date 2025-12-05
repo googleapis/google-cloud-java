@@ -54,7 +54,8 @@ public interface StatusOrBuilder
    *
    *
    * <pre>
-   * A list of messages that carry the error details. There is a common set of message types for APIs to use.
+   * A list of messages that carry the error details.  There is a common set of
+   * message types for APIs to use.
    * </pre>
    *
    * <code>repeated .google.protobuf.Any details = 483979842;</code>
@@ -65,7 +66,8 @@ public interface StatusOrBuilder
    *
    *
    * <pre>
-   * A list of messages that carry the error details. There is a common set of message types for APIs to use.
+   * A list of messages that carry the error details.  There is a common set of
+   * message types for APIs to use.
    * </pre>
    *
    * <code>repeated .google.protobuf.Any details = 483979842;</code>
@@ -76,7 +78,8 @@ public interface StatusOrBuilder
    *
    *
    * <pre>
-   * A list of messages that carry the error details. There is a common set of message types for APIs to use.
+   * A list of messages that carry the error details.  There is a common set of
+   * message types for APIs to use.
    * </pre>
    *
    * <code>repeated .google.protobuf.Any details = 483979842;</code>
@@ -87,7 +90,8 @@ public interface StatusOrBuilder
    *
    *
    * <pre>
-   * A list of messages that carry the error details. There is a common set of message types for APIs to use.
+   * A list of messages that carry the error details.  There is a common set of
+   * message types for APIs to use.
    * </pre>
    *
    * <code>repeated .google.protobuf.Any details = 483979842;</code>
@@ -98,7 +102,8 @@ public interface StatusOrBuilder
    *
    *
    * <pre>
-   * A list of messages that carry the error details. There is a common set of message types for APIs to use.
+   * A list of messages that carry the error details.  There is a common set of
+   * message types for APIs to use.
    * </pre>
    *
    * <code>repeated .google.protobuf.Any details = 483979842;</code>
@@ -109,7 +114,9 @@ public interface StatusOrBuilder
    *
    *
    * <pre>
-   * A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client.
+   * A developer-facing error message, which should be in English. Any
+   * user-facing error message should be localized and sent in the
+   * google.rpc.Status.details field, or localized by the client.
    * </pre>
    *
    * <code>optional string message = 418054151;</code>
@@ -122,7 +129,9 @@ public interface StatusOrBuilder
    *
    *
    * <pre>
-   * A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client.
+   * A developer-facing error message, which should be in English. Any
+   * user-facing error message should be localized and sent in the
+   * google.rpc.Status.details field, or localized by the client.
    * </pre>
    *
    * <code>optional string message = 418054151;</code>
@@ -135,7 +144,9 @@ public interface StatusOrBuilder
    *
    *
    * <pre>
-   * A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client.
+   * A developer-facing error message, which should be in English. Any
+   * user-facing error message should be localized and sent in the
+   * google.rpc.Status.details field, or localized by the client.
    * </pre>
    *
    * <code>optional string message = 418054151;</code>

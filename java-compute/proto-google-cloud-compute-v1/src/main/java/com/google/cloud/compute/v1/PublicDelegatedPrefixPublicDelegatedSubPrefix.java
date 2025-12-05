@@ -45,6 +45,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     delegateeProject_ = "";
     description_ = "";
     ipCidrRange_ = "";
+    ipv6AccessType_ = "";
     mode_ = "";
     name_ = "";
     region_ = "";
@@ -77,6 +78,178 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    *
    *
    * <pre>
+   * [Output Only] The internet access type for IPv6 Public Delegated Sub
+   * Prefixes. Inherited from parent prefix.
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix.Ipv6AccessType}
+   */
+  public enum Ipv6AccessType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_IPV6_ACCESS_TYPE = 0;</code>
+     */
+    UNDEFINED_IPV6_ACCESS_TYPE(0),
+    /**
+     *
+     *
+     * <pre>
+     * The parent public advertised prefix will be announced to the internet.
+     * All children public delegated prefixes will have IPv6 access type as
+     * EXTERNAL.
+     * </pre>
+     *
+     * <code>EXTERNAL = 35607499;</code>
+     */
+    EXTERNAL(35607499),
+    /**
+     *
+     *
+     * <pre>
+     * The parent public advertised prefix will not be announced to the
+     * internet. Prefix will be used privately within Cloud. All children
+     * public delegated prefixes will have IPv6 access type as INTERNAL.
+     * </pre>
+     *
+     * <code>INTERNAL = 279295677;</code>
+     */
+    INTERNAL(279295677),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_IPV6_ACCESS_TYPE = 0;</code>
+     */
+    public static final int UNDEFINED_IPV6_ACCESS_TYPE_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The parent public advertised prefix will be announced to the internet.
+     * All children public delegated prefixes will have IPv6 access type as
+     * EXTERNAL.
+     * </pre>
+     *
+     * <code>EXTERNAL = 35607499;</code>
+     */
+    public static final int EXTERNAL_VALUE = 35607499;
+
+    /**
+     *
+     *
+     * <pre>
+     * The parent public advertised prefix will not be announced to the
+     * internet. Prefix will be used privately within Cloud. All children
+     * public delegated prefixes will have IPv6 access type as INTERNAL.
+     * </pre>
+     *
+     * <code>INTERNAL = 279295677;</code>
+     */
+    public static final int INTERNAL_VALUE = 279295677;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Ipv6AccessType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Ipv6AccessType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_IPV6_ACCESS_TYPE;
+        case 35607499:
+          return EXTERNAL;
+        case 279295677:
+          return INTERNAL;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Ipv6AccessType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Ipv6AccessType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Ipv6AccessType>() {
+          public Ipv6AccessType findValueByNumber(int number) {
+            return Ipv6AccessType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix
+          .getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final Ipv6AccessType[] VALUES = values();
+
+    public static Ipv6AccessType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Ipv6AccessType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix.Ipv6AccessType)
+  }
+
+  /**
+   *
+   *
+   * <pre>
    * The PublicDelegatedSubPrefix mode for IPv6 only.
    * </pre>
    *
@@ -98,7 +271,8 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      *
      *
      * <pre>
-     * The public delegated prefix is used for further sub-delegation only. Such prefixes cannot set allocatablePrefixLength.
+     * The public delegated prefix is used for further sub-delegation only. Such
+     * prefixes cannot set allocatablePrefixLength.
      * </pre>
      *
      * <code>DELEGATION = 264149288;</code>
@@ -108,7 +282,9 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      *
      *
      * <pre>
-     * The public delegated prefix is used for creating forwarding rules only. Such prefixes cannot set publicDelegatedSubPrefixes.
+     * The public delegated prefix is used for creating forwarding rules only.
+     * Such prefixes cannot set publicDelegatedSubPrefixes. Parent public
+     * delegated prefix must have IPv6 access type as EXTERNAL.
      * </pre>
      *
      * <code>EXTERNAL_IPV6_FORWARDING_RULE_CREATION = 398684356;</code>
@@ -118,12 +294,27 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      *
      *
      * <pre>
-     * The public delegated prefix is used for creating dual-mode subnetworks only. Such prefixes cannot set publicDelegatedSubPrefixes.
+     * The public delegated prefix is used for creating dual-mode subnetworks
+     * only. Such prefixes cannot set publicDelegatedSubPrefixes. Parent public
+     * delegated prefix must have IPv6 access type as EXTERNAL.
      * </pre>
      *
      * <code>EXTERNAL_IPV6_SUBNETWORK_CREATION = 61198284;</code>
      */
     EXTERNAL_IPV6_SUBNETWORK_CREATION(61198284),
+    /**
+     *
+     *
+     * <pre>
+     * The public delegated prefix is used for creating dual stack or IPv6-only
+     * subnetwork with internal access only. Such prefixes cannot set
+     * publicDelegatedSubPrefixes and allocatablePrefixLength. Parent public
+     * delegated prefix must have IPv6 access type as INTERNAL.
+     * </pre>
+     *
+     * <code>INTERNAL_IPV6_SUBNETWORK_CREATION = 153239834;</code>
+     */
+    INTERNAL_IPV6_SUBNETWORK_CREATION(153239834),
     UNRECOGNIZED(-1),
     ;
 
@@ -142,7 +333,8 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      *
      *
      * <pre>
-     * The public delegated prefix is used for further sub-delegation only. Such prefixes cannot set allocatablePrefixLength.
+     * The public delegated prefix is used for further sub-delegation only. Such
+     * prefixes cannot set allocatablePrefixLength.
      * </pre>
      *
      * <code>DELEGATION = 264149288;</code>
@@ -153,7 +345,9 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      *
      *
      * <pre>
-     * The public delegated prefix is used for creating forwarding rules only. Such prefixes cannot set publicDelegatedSubPrefixes.
+     * The public delegated prefix is used for creating forwarding rules only.
+     * Such prefixes cannot set publicDelegatedSubPrefixes. Parent public
+     * delegated prefix must have IPv6 access type as EXTERNAL.
      * </pre>
      *
      * <code>EXTERNAL_IPV6_FORWARDING_RULE_CREATION = 398684356;</code>
@@ -164,12 +358,28 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      *
      *
      * <pre>
-     * The public delegated prefix is used for creating dual-mode subnetworks only. Such prefixes cannot set publicDelegatedSubPrefixes.
+     * The public delegated prefix is used for creating dual-mode subnetworks
+     * only. Such prefixes cannot set publicDelegatedSubPrefixes. Parent public
+     * delegated prefix must have IPv6 access type as EXTERNAL.
      * </pre>
      *
      * <code>EXTERNAL_IPV6_SUBNETWORK_CREATION = 61198284;</code>
      */
     public static final int EXTERNAL_IPV6_SUBNETWORK_CREATION_VALUE = 61198284;
+
+    /**
+     *
+     *
+     * <pre>
+     * The public delegated prefix is used for creating dual stack or IPv6-only
+     * subnetwork with internal access only. Such prefixes cannot set
+     * publicDelegatedSubPrefixes and allocatablePrefixLength. Parent public
+     * delegated prefix must have IPv6 access type as INTERNAL.
+     * </pre>
+     *
+     * <code>INTERNAL_IPV6_SUBNETWORK_CREATION = 153239834;</code>
+     */
+    public static final int INTERNAL_IPV6_SUBNETWORK_CREATION_VALUE = 153239834;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -203,6 +413,8 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
           return EXTERNAL_IPV6_FORWARDING_RULE_CREATION;
         case 61198284:
           return EXTERNAL_IPV6_SUBNETWORK_CREATION;
+        case 153239834:
+          return INTERNAL_IPV6_SUBNETWORK_CREATION;
         default:
           return null;
       }
@@ -235,7 +447,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       return com.google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix
           .getDescriptor()
           .getEnumTypes()
-          .get(0);
+          .get(1);
     }
 
     private static final Mode[] VALUES = values();
@@ -366,7 +578,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       return com.google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix
           .getDescriptor()
           .getEnumTypes()
-          .get(1);
+          .get(2);
     }
 
     private static final Status[] VALUES = values();
@@ -504,7 +716,8 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -520,7 +733,8 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -544,7 +758,8 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -573,7 +788,8 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    *
    *
    * <pre>
-   * The IP address range, in CIDR format, represented by this sub public delegated prefix.
+   * The IP address range, in CIDR format, represented by this sub public
+   * delegated prefix.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -589,7 +805,8 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    *
    *
    * <pre>
-   * The IP address range, in CIDR format, represented by this sub public delegated prefix.
+   * The IP address range, in CIDR format, represented by this sub public
+   * delegated prefix.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -613,7 +830,8 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    *
    *
    * <pre>
-   * The IP address range, in CIDR format, represented by this sub public delegated prefix.
+   * The IP address range, in CIDR format, represented by this sub public
+   * delegated prefix.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -633,6 +851,81 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     }
   }
 
+  public static final int IPV6_ACCESS_TYPE_FIELD_NUMBER = 504658653;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipv6AccessType_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The internet access type for IPv6 Public Delegated Sub
+   * Prefixes. Inherited from parent prefix.
+   * Check the Ipv6AccessType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_access_type = 504658653;</code>
+   *
+   * @return Whether the ipv6AccessType field is set.
+   */
+  @java.lang.Override
+  public boolean hasIpv6AccessType() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The internet access type for IPv6 Public Delegated Sub
+   * Prefixes. Inherited from parent prefix.
+   * Check the Ipv6AccessType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_access_type = 504658653;</code>
+   *
+   * @return The ipv6AccessType.
+   */
+  @java.lang.Override
+  public java.lang.String getIpv6AccessType() {
+    java.lang.Object ref = ipv6AccessType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ipv6AccessType_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The internet access type for IPv6 Public Delegated Sub
+   * Prefixes. Inherited from parent prefix.
+   * Check the Ipv6AccessType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_access_type = 504658653;</code>
+   *
+   * @return The bytes for ipv6AccessType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getIpv6AccessTypeBytes() {
+    java.lang.Object ref = ipv6AccessType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      ipv6AccessType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int IS_ADDRESS_FIELD_NUMBER = 352617951;
   private boolean isAddress_ = false;
 
@@ -640,7 +933,8 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    *
    *
    * <pre>
-   * Whether the sub prefix is delegated to create Address resources in the delegatee project.
+   * Whether the sub prefix is delegated to create Address resources in the
+   * delegatee project.
    * </pre>
    *
    * <code>optional bool is_address = 352617951;</code>
@@ -649,14 +943,15 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    */
   @java.lang.Override
   public boolean hasIsAddress() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * Whether the sub prefix is delegated to create Address resources in the delegatee project.
+   * Whether the sub prefix is delegated to create Address resources in the
+   * delegatee project.
    * </pre>
    *
    * <code>optional bool is_address = 352617951;</code>
@@ -687,7 +982,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    */
   @java.lang.Override
   public boolean hasMode() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -758,7 +1053,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -818,7 +1113,8 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    *
    *
    * <pre>
-   * [Output Only] The region of the sub public delegated prefix if it is regional. If absent, the sub prefix is global.
+   * [Output Only] The region of the sub public delegated prefix if it is
+   * regional. If absent, the sub prefix is global.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -827,14 +1123,15 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    */
   @java.lang.Override
   public boolean hasRegion() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] The region of the sub public delegated prefix if it is regional. If absent, the sub prefix is global.
+   * [Output Only] The region of the sub public delegated prefix if it is
+   * regional. If absent, the sub prefix is global.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -858,7 +1155,8 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    *
    *
    * <pre>
-   * [Output Only] The region of the sub public delegated prefix if it is regional. If absent, the sub prefix is global.
+   * [Output Only] The region of the sub public delegated prefix if it is
+   * regional. If absent, the sub prefix is global.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -897,7 +1195,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -964,10 +1262,10 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3357091, mode_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -976,13 +1274,13 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 98117322, ipCidrRange_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeBool(352617951, isAddress_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -990,6 +1288,9 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 504658653, ipv6AccessType_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1000,10 +1301,10 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3357091, mode_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -1014,13 +1315,13 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(98117322, ipCidrRange_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(352617951, isAddress_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -1029,6 +1330,9 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(504658653, ipv6AccessType_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1062,6 +1366,10 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     if (hasIpCidrRange() != other.hasIpCidrRange()) return false;
     if (hasIpCidrRange()) {
       if (!getIpCidrRange().equals(other.getIpCidrRange())) return false;
+    }
+    if (hasIpv6AccessType() != other.hasIpv6AccessType()) return false;
+    if (hasIpv6AccessType()) {
+      if (!getIpv6AccessType().equals(other.getIpv6AccessType())) return false;
     }
     if (hasIsAddress() != other.hasIsAddress()) return false;
     if (hasIsAddress()) {
@@ -1109,6 +1417,10 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     if (hasIpCidrRange()) {
       hash = (37 * hash) + IP_CIDR_RANGE_FIELD_NUMBER;
       hash = (53 * hash) + getIpCidrRange().hashCode();
+    }
+    if (hasIpv6AccessType()) {
+      hash = (37 * hash) + IPV6_ACCESS_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getIpv6AccessType().hashCode();
     }
     if (hasIsAddress()) {
       hash = (37 * hash) + IS_ADDRESS_FIELD_NUMBER;
@@ -1278,6 +1590,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       delegateeProject_ = "";
       description_ = "";
       ipCidrRange_ = "";
+      ipv6AccessType_ = "";
       isAddress_ = false;
       mode_ = "";
       name_ = "";
@@ -1342,24 +1655,28 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.isAddress_ = isAddress_;
+        result.ipv6AccessType_ = ipv6AccessType_;
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.mode_ = mode_;
+        result.isAddress_ = isAddress_;
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.name_ = name_;
+        result.mode_ = mode_;
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.region_ = region_;
+        result.name_ = name_;
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.status_ = status_;
+        result.region_ = region_;
         to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.status_ = status_;
+        to_bitField0_ |= 0x00000200;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1432,27 +1749,32 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (other.hasIpv6AccessType()) {
+        ipv6AccessType_ = other.ipv6AccessType_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       if (other.hasIsAddress()) {
         setIsAddress(other.getIsAddress());
       }
       if (other.hasMode()) {
         mode_ = other.mode_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasRegion()) {
         region_ = other.region_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasStatus()) {
         status_ = other.status_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1484,13 +1806,13 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
             case 26856730:
               {
                 mode_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 26856730
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 26989658
             case 307419568:
@@ -1508,19 +1830,19 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 1111570338
             case 1450082194:
               {
                 status_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 1450082194
             case -1474023688:
               {
                 isAddress_ = input.readBool();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case -1474023688
             case -976082222:
@@ -1535,6 +1857,12 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
                 bitField0_ |= 0x00000004;
                 break;
               } // case -911466526
+            case -257698070:
+              {
+                ipv6AccessType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case -257698070
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1758,7 +2086,8 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1773,7 +2102,8 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1796,7 +2126,8 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1819,7 +2150,8 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1841,7 +2173,8 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1859,7 +2192,8 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1884,7 +2218,8 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      *
      *
      * <pre>
-     * The IP address range, in CIDR format, represented by this sub public delegated prefix.
+     * The IP address range, in CIDR format, represented by this sub public
+     * delegated prefix.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -1899,7 +2234,8 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      *
      *
      * <pre>
-     * The IP address range, in CIDR format, represented by this sub public delegated prefix.
+     * The IP address range, in CIDR format, represented by this sub public
+     * delegated prefix.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -1922,7 +2258,8 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      *
      *
      * <pre>
-     * The IP address range, in CIDR format, represented by this sub public delegated prefix.
+     * The IP address range, in CIDR format, represented by this sub public
+     * delegated prefix.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -1945,7 +2282,8 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      *
      *
      * <pre>
-     * The IP address range, in CIDR format, represented by this sub public delegated prefix.
+     * The IP address range, in CIDR format, represented by this sub public
+     * delegated prefix.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -1967,7 +2305,8 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      *
      *
      * <pre>
-     * The IP address range, in CIDR format, represented by this sub public delegated prefix.
+     * The IP address range, in CIDR format, represented by this sub public
+     * delegated prefix.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -1985,7 +2324,8 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      *
      *
      * <pre>
-     * The IP address range, in CIDR format, represented by this sub public delegated prefix.
+     * The IP address range, in CIDR format, represented by this sub public
+     * delegated prefix.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -2004,13 +2344,152 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       return this;
     }
 
+    private java.lang.Object ipv6AccessType_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The internet access type for IPv6 Public Delegated Sub
+     * Prefixes. Inherited from parent prefix.
+     * Check the Ipv6AccessType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ipv6_access_type = 504658653;</code>
+     *
+     * @return Whether the ipv6AccessType field is set.
+     */
+    public boolean hasIpv6AccessType() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The internet access type for IPv6 Public Delegated Sub
+     * Prefixes. Inherited from parent prefix.
+     * Check the Ipv6AccessType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ipv6_access_type = 504658653;</code>
+     *
+     * @return The ipv6AccessType.
+     */
+    public java.lang.String getIpv6AccessType() {
+      java.lang.Object ref = ipv6AccessType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ipv6AccessType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The internet access type for IPv6 Public Delegated Sub
+     * Prefixes. Inherited from parent prefix.
+     * Check the Ipv6AccessType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ipv6_access_type = 504658653;</code>
+     *
+     * @return The bytes for ipv6AccessType.
+     */
+    public com.google.protobuf.ByteString getIpv6AccessTypeBytes() {
+      java.lang.Object ref = ipv6AccessType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        ipv6AccessType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The internet access type for IPv6 Public Delegated Sub
+     * Prefixes. Inherited from parent prefix.
+     * Check the Ipv6AccessType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ipv6_access_type = 504658653;</code>
+     *
+     * @param value The ipv6AccessType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpv6AccessType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ipv6AccessType_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The internet access type for IPv6 Public Delegated Sub
+     * Prefixes. Inherited from parent prefix.
+     * Check the Ipv6AccessType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ipv6_access_type = 504658653;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIpv6AccessType() {
+      ipv6AccessType_ = getDefaultInstance().getIpv6AccessType();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The internet access type for IPv6 Public Delegated Sub
+     * Prefixes. Inherited from parent prefix.
+     * Check the Ipv6AccessType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ipv6_access_type = 504658653;</code>
+     *
+     * @param value The bytes for ipv6AccessType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpv6AccessTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ipv6AccessType_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
     private boolean isAddress_;
 
     /**
      *
      *
      * <pre>
-     * Whether the sub prefix is delegated to create Address resources in the delegatee project.
+     * Whether the sub prefix is delegated to create Address resources in the
+     * delegatee project.
      * </pre>
      *
      * <code>optional bool is_address = 352617951;</code>
@@ -2019,14 +2498,15 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      */
     @java.lang.Override
     public boolean hasIsAddress() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Whether the sub prefix is delegated to create Address resources in the delegatee project.
+     * Whether the sub prefix is delegated to create Address resources in the
+     * delegatee project.
      * </pre>
      *
      * <code>optional bool is_address = 352617951;</code>
@@ -2042,7 +2522,8 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      *
      *
      * <pre>
-     * Whether the sub prefix is delegated to create Address resources in the delegatee project.
+     * Whether the sub prefix is delegated to create Address resources in the
+     * delegatee project.
      * </pre>
      *
      * <code>optional bool is_address = 352617951;</code>
@@ -2053,7 +2534,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
     public Builder setIsAddress(boolean value) {
 
       isAddress_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2062,7 +2543,8 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      *
      *
      * <pre>
-     * Whether the sub prefix is delegated to create Address resources in the delegatee project.
+     * Whether the sub prefix is delegated to create Address resources in the
+     * delegatee project.
      * </pre>
      *
      * <code>optional bool is_address = 352617951;</code>
@@ -2070,7 +2552,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * @return This builder for chaining.
      */
     public Builder clearIsAddress() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       isAddress_ = false;
       onChanged();
       return this;
@@ -2091,7 +2573,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * @return Whether the mode field is set.
      */
     public boolean hasMode() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -2160,7 +2642,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
         throw new NullPointerException();
       }
       mode_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2179,7 +2661,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      */
     public Builder clearMode() {
       mode_ = getDefaultInstance().getMode();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2203,7 +2685,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       }
       checkByteStringIsUtf8(value);
       mode_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2222,7 +2704,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -2288,7 +2770,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2306,7 +2788,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2329,7 +2811,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2340,7 +2822,8 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      *
      *
      * <pre>
-     * [Output Only] The region of the sub public delegated prefix if it is regional. If absent, the sub prefix is global.
+     * [Output Only] The region of the sub public delegated prefix if it is
+     * regional. If absent, the sub prefix is global.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -2348,14 +2831,15 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] The region of the sub public delegated prefix if it is regional. If absent, the sub prefix is global.
+     * [Output Only] The region of the sub public delegated prefix if it is
+     * regional. If absent, the sub prefix is global.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -2378,7 +2862,8 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      *
      *
      * <pre>
-     * [Output Only] The region of the sub public delegated prefix if it is regional. If absent, the sub prefix is global.
+     * [Output Only] The region of the sub public delegated prefix if it is
+     * regional. If absent, the sub prefix is global.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -2401,7 +2886,8 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      *
      *
      * <pre>
-     * [Output Only] The region of the sub public delegated prefix if it is regional. If absent, the sub prefix is global.
+     * [Output Only] The region of the sub public delegated prefix if it is
+     * regional. If absent, the sub prefix is global.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -2414,7 +2900,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
         throw new NullPointerException();
       }
       region_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2423,7 +2909,8 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      *
      *
      * <pre>
-     * [Output Only] The region of the sub public delegated prefix if it is regional. If absent, the sub prefix is global.
+     * [Output Only] The region of the sub public delegated prefix if it is
+     * regional. If absent, the sub prefix is global.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -2432,7 +2919,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      */
     public Builder clearRegion() {
       region_ = getDefaultInstance().getRegion();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2441,7 +2928,8 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      *
      *
      * <pre>
-     * [Output Only] The region of the sub public delegated prefix if it is regional. If absent, the sub prefix is global.
+     * [Output Only] The region of the sub public delegated prefix if it is
+     * regional. If absent, the sub prefix is global.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -2455,7 +2943,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       }
       checkByteStringIsUtf8(value);
       region_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2475,7 +2963,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -2544,7 +3032,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
         throw new NullPointerException();
       }
       status_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2563,7 +3051,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
      */
     public Builder clearStatus() {
       status_ = getDefaultInstance().getStatus();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -2587,7 +3075,7 @@ public final class PublicDelegatedPrefixPublicDelegatedSubPrefix
       }
       checkByteStringIsUtf8(value);
       status_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }

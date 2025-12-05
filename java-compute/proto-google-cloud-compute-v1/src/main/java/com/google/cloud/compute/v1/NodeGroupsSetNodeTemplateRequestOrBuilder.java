@@ -28,7 +28,8 @@ public interface NodeGroupsSetNodeTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * Full or partial URL of the node template resource to be updated for this node group.
+   * Full or partial URL of the node template resource to be updated for this
+   * node group.
    * </pre>
    *
    * <code>optional string node_template = 323154455;</code>
@@ -41,7 +42,8 @@ public interface NodeGroupsSetNodeTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * Full or partial URL of the node template resource to be updated for this node group.
+   * Full or partial URL of the node template resource to be updated for this
+   * node group.
    * </pre>
    *
    * <code>optional string node_template = 323154455;</code>
@@ -54,7 +56,8 @@ public interface NodeGroupsSetNodeTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * Full or partial URL of the node template resource to be updated for this node group.
+   * Full or partial URL of the node template resource to be updated for this
+   * node group.
    * </pre>
    *
    * <code>optional string node_template = 323154455;</code>

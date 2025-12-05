@@ -77,7 +77,8 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#reference for references.
+   * [Output Only] Type of the resource. Always compute#reference
+   * for references.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -93,7 +94,8 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#reference for references.
+   * [Output Only] Type of the resource. Always compute#reference
+   * for references.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -117,7 +119,8 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#reference for references.
+   * [Output Only] Type of the resource. Always compute#reference
+   * for references.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -146,7 +149,11 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A description of the reference type with no implied semantics. Possible values include: 1. MEMBER_OF
+   * A description of the reference type with no implied semantics. Possible
+   * values include:
+   *
+   *
+   *     1. MEMBER_OF
    * </pre>
    *
    * <code>optional string reference_type = 247521198;</code>
@@ -162,7 +169,11 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A description of the reference type with no implied semantics. Possible values include: 1. MEMBER_OF
+   * A description of the reference type with no implied semantics. Possible
+   * values include:
+   *
+   *
+   *     1. MEMBER_OF
    * </pre>
    *
    * <code>optional string reference_type = 247521198;</code>
@@ -186,7 +197,11 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A description of the reference type with no implied semantics. Possible values include: 1. MEMBER_OF
+   * A description of the reference type with no implied semantics. Possible
+   * values include:
+   *
+   *
+   *     1. MEMBER_OF
    * </pre>
    *
    * <code>optional string reference_type = 247521198;</code>
@@ -788,7 +803,8 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#reference for references.
+     * [Output Only] Type of the resource. Always compute#reference
+     * for references.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -803,7 +819,8 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#reference for references.
+     * [Output Only] Type of the resource. Always compute#reference
+     * for references.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -826,7 +843,8 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#reference for references.
+     * [Output Only] Type of the resource. Always compute#reference
+     * for references.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -849,7 +867,8 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#reference for references.
+     * [Output Only] Type of the resource. Always compute#reference
+     * for references.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -871,7 +890,8 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#reference for references.
+     * [Output Only] Type of the resource. Always compute#reference
+     * for references.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -889,7 +909,8 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#reference for references.
+     * [Output Only] Type of the resource. Always compute#reference
+     * for references.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -914,7 +935,11 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A description of the reference type with no implied semantics. Possible values include: 1. MEMBER_OF
+     * A description of the reference type with no implied semantics. Possible
+     * values include:
+     *
+     *
+     *     1. MEMBER_OF
      * </pre>
      *
      * <code>optional string reference_type = 247521198;</code>
@@ -929,7 +954,11 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A description of the reference type with no implied semantics. Possible values include: 1. MEMBER_OF
+     * A description of the reference type with no implied semantics. Possible
+     * values include:
+     *
+     *
+     *     1. MEMBER_OF
      * </pre>
      *
      * <code>optional string reference_type = 247521198;</code>
@@ -952,7 +981,11 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A description of the reference type with no implied semantics. Possible values include: 1. MEMBER_OF
+     * A description of the reference type with no implied semantics. Possible
+     * values include:
+     *
+     *
+     *     1. MEMBER_OF
      * </pre>
      *
      * <code>optional string reference_type = 247521198;</code>
@@ -975,7 +1008,11 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A description of the reference type with no implied semantics. Possible values include: 1. MEMBER_OF
+     * A description of the reference type with no implied semantics. Possible
+     * values include:
+     *
+     *
+     *     1. MEMBER_OF
      * </pre>
      *
      * <code>optional string reference_type = 247521198;</code>
@@ -997,7 +1034,11 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A description of the reference type with no implied semantics. Possible values include: 1. MEMBER_OF
+     * A description of the reference type with no implied semantics. Possible
+     * values include:
+     *
+     *
+     *     1. MEMBER_OF
      * </pre>
      *
      * <code>optional string reference_type = 247521198;</code>
@@ -1015,7 +1056,11 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A description of the reference type with no implied semantics. Possible values include: 1. MEMBER_OF
+     * A description of the reference type with no implied semantics. Possible
+     * values include:
+     *
+     *
+     *     1. MEMBER_OF
      * </pre>
      *
      * <code>optional string reference_type = 247521198;</code>

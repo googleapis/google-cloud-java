@@ -23,7 +23,10 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a Cloud Router resource. For more information about Cloud Router, read the Cloud Router overview.
+ * Represents a Cloud Router resource.
+ *
+ * For more information about Cloud Router, read theCloud
+ * Router overview.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Router}
@@ -133,7 +136,9 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
+   * BGP information that must be configured into the routing stack to
+   * establish BGP peering. This information must specify the peer ASN and
+   * either the interface name, IP address, or peer IP address. Please refer toRFC4273.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
@@ -147,7 +152,9 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
+   * BGP information that must be configured into the routing stack to
+   * establish BGP peering. This information must specify the peer ASN and
+   * either the interface name, IP address, or peer IP address. Please refer toRFC4273.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
@@ -162,7 +169,9 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
+   * BGP information that must be configured into the routing stack to
+   * establish BGP peering. This information must specify the peer ASN and
+   * either the interface name, IP address, or peer IP address. Please refer toRFC4273.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
@@ -176,7 +185,9 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
+   * BGP information that must be configured into the routing stack to
+   * establish BGP peering. This information must specify the peer ASN and
+   * either the interface name, IP address, or peer IP address. Please refer toRFC4273.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
@@ -190,7 +201,9 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
+   * BGP information that must be configured into the routing stack to
+   * establish BGP peering. This information must specify the peer ASN and
+   * either the interface name, IP address, or peer IP address. Please refer toRFC4273.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
@@ -209,7 +222,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -225,7 +239,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -249,7 +264,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -278,7 +294,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -294,7 +311,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -318,7 +336,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -345,7 +364,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Indicates if a router is dedicated for use with encrypted VLAN attachments (interconnectAttachments).
+   * Indicates if a router is dedicated for use with encrypted VLAN
+   * attachments (interconnectAttachments).
    * </pre>
    *
    * <code>optional bool encrypted_interconnect_router = 297996575;</code>
@@ -361,7 +381,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Indicates if a router is dedicated for use with encrypted VLAN attachments (interconnectAttachments).
+   * Indicates if a router is dedicated for use with encrypted VLAN
+   * attachments (interconnectAttachments).
    * </pre>
    *
    * <code>optional bool encrypted_interconnect_router = 297996575;</code>
@@ -380,7 +401,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -396,7 +418,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -417,7 +440,17 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
+   * Router interfaces.
+   * To create a BGP peer that uses a router interface,
+   * the interface must have one of the following fields specified:
+   *
+   *    - linkedVpnTunnel
+   *    - linkedInterconnectAttachment
+   *    - subnetwork
+   *
+   *
+   * You can create a router interface without any of these fields specified.
+   * However, you cannot create a BGP peer that uses that interface.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -431,7 +464,17 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
+   * Router interfaces.
+   * To create a BGP peer that uses a router interface,
+   * the interface must have one of the following fields specified:
+   *
+   *    - linkedVpnTunnel
+   *    - linkedInterconnectAttachment
+   *    - subnetwork
+   *
+   *
+   * You can create a router interface without any of these fields specified.
+   * However, you cannot create a BGP peer that uses that interface.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -446,7 +489,17 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
+   * Router interfaces.
+   * To create a BGP peer that uses a router interface,
+   * the interface must have one of the following fields specified:
+   *
+   *    - linkedVpnTunnel
+   *    - linkedInterconnectAttachment
+   *    - subnetwork
+   *
+   *
+   * You can create a router interface without any of these fields specified.
+   * However, you cannot create a BGP peer that uses that interface.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -460,7 +513,17 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
+   * Router interfaces.
+   * To create a BGP peer that uses a router interface,
+   * the interface must have one of the following fields specified:
+   *
+   *    - linkedVpnTunnel
+   *    - linkedInterconnectAttachment
+   *    - subnetwork
+   *
+   *
+   * You can create a router interface without any of these fields specified.
+   * However, you cannot create a BGP peer that uses that interface.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -474,7 +537,17 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
+   * Router interfaces.
+   * To create a BGP peer that uses a router interface,
+   * the interface must have one of the following fields specified:
+   *
+   *    - linkedVpnTunnel
+   *    - linkedInterconnectAttachment
+   *    - subnetwork
+   *
+   *
+   * You can create a router interface without any of these fields specified.
+   * However, you cannot create a BGP peer that uses that interface.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -493,7 +566,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#router for routers.
+   * [Output Only] Type of resource. Always compute#router for
+   * routers.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -509,7 +583,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#router for routers.
+   * [Output Only] Type of resource. Always compute#router for
+   * routers.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -533,7 +608,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#router for routers.
+   * [Output Only] Type of resource. Always compute#router for
+   * routers.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -652,7 +728,13 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -668,7 +750,13 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -692,7 +780,13 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -864,7 +958,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.RouterParams params = 78313862;</code>
@@ -880,7 +975,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.RouterParams params = 78313862;</code>
@@ -898,7 +994,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.RouterParams params = 78313862;</code>
@@ -919,7 +1016,9 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URI of the region where the router resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * [Output Only] URI of the region where the router resides.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -935,7 +1034,9 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URI of the region where the router resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * [Output Only] URI of the region where the router resides.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -959,7 +1060,9 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URI of the region where the router resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * [Output Only] URI of the region where the router resides.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -1406,7 +1509,10 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a Cloud Router resource. For more information about Cloud Router, read the Cloud Router overview.
+   * Represents a Cloud Router resource.
+   *
+   * For more information about Cloud Router, read theCloud
+   * Router overview.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Router}
@@ -2199,7 +2305,9 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
+     * BGP information that must be configured into the routing stack to
+     * establish BGP peering. This information must specify the peer ASN and
+     * either the interface name, IP address, or peer IP address. Please refer toRFC4273.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
@@ -2216,7 +2324,9 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
+     * BGP information that must be configured into the routing stack to
+     * establish BGP peering. This information must specify the peer ASN and
+     * either the interface name, IP address, or peer IP address. Please refer toRFC4273.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
@@ -2233,7 +2343,9 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
+     * BGP information that must be configured into the routing stack to
+     * establish BGP peering. This information must specify the peer ASN and
+     * either the interface name, IP address, or peer IP address. Please refer toRFC4273.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
@@ -2250,7 +2362,9 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
+     * BGP information that must be configured into the routing stack to
+     * establish BGP peering. This information must specify the peer ASN and
+     * either the interface name, IP address, or peer IP address. Please refer toRFC4273.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
@@ -2273,7 +2387,9 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
+     * BGP information that must be configured into the routing stack to
+     * establish BGP peering. This information must specify the peer ASN and
+     * either the interface name, IP address, or peer IP address. Please refer toRFC4273.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
@@ -2294,7 +2410,9 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
+     * BGP information that must be configured into the routing stack to
+     * establish BGP peering. This information must specify the peer ASN and
+     * either the interface name, IP address, or peer IP address. Please refer toRFC4273.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
@@ -2317,7 +2435,9 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
+     * BGP information that must be configured into the routing stack to
+     * establish BGP peering. This information must specify the peer ASN and
+     * either the interface name, IP address, or peer IP address. Please refer toRFC4273.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
@@ -2340,7 +2460,9 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
+     * BGP information that must be configured into the routing stack to
+     * establish BGP peering. This information must specify the peer ASN and
+     * either the interface name, IP address, or peer IP address. Please refer toRFC4273.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
@@ -2360,7 +2482,9 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
+     * BGP information that must be configured into the routing stack to
+     * establish BGP peering. This information must specify the peer ASN and
+     * either the interface name, IP address, or peer IP address. Please refer toRFC4273.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
@@ -2381,7 +2505,9 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
+     * BGP information that must be configured into the routing stack to
+     * establish BGP peering. This information must specify the peer ASN and
+     * either the interface name, IP address, or peer IP address. Please refer toRFC4273.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
@@ -2402,7 +2528,9 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
+     * BGP information that must be configured into the routing stack to
+     * establish BGP peering. This information must specify the peer ASN and
+     * either the interface name, IP address, or peer IP address. Please refer toRFC4273.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
@@ -2422,7 +2550,9 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
+     * BGP information that must be configured into the routing stack to
+     * establish BGP peering. This information must specify the peer ASN and
+     * either the interface name, IP address, or peer IP address. Please refer toRFC4273.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
@@ -2442,7 +2572,9 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
+     * BGP information that must be configured into the routing stack to
+     * establish BGP peering. This information must specify the peer ASN and
+     * either the interface name, IP address, or peer IP address. Please refer toRFC4273.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
@@ -2455,7 +2587,9 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
+     * BGP information that must be configured into the routing stack to
+     * establish BGP peering. This information must specify the peer ASN and
+     * either the interface name, IP address, or peer IP address. Please refer toRFC4273.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
@@ -2472,7 +2606,9 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
+     * BGP information that must be configured into the routing stack to
+     * establish BGP peering. This information must specify the peer ASN and
+     * either the interface name, IP address, or peer IP address. Please refer toRFC4273.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
@@ -2490,7 +2626,9 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
+     * BGP information that must be configured into the routing stack to
+     * establish BGP peering. This information must specify the peer ASN and
+     * either the interface name, IP address, or peer IP address. Please refer toRFC4273.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
@@ -2504,7 +2642,9 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
+     * BGP information that must be configured into the routing stack to
+     * establish BGP peering. This information must specify the peer ASN and
+     * either the interface name, IP address, or peer IP address. Please refer toRFC4273.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
@@ -2518,7 +2658,9 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
+     * BGP information that must be configured into the routing stack to
+     * establish BGP peering. This information must specify the peer ASN and
+     * either the interface name, IP address, or peer IP address. Please refer toRFC4273.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
@@ -2551,7 +2693,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2566,7 +2709,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2589,7 +2733,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2612,7 +2757,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2634,7 +2780,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2652,7 +2799,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2677,7 +2825,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2692,7 +2841,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2715,7 +2865,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2738,7 +2889,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2760,7 +2912,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2778,7 +2931,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2803,7 +2957,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates if a router is dedicated for use with encrypted VLAN attachments (interconnectAttachments).
+     * Indicates if a router is dedicated for use with encrypted VLAN
+     * attachments (interconnectAttachments).
      * </pre>
      *
      * <code>optional bool encrypted_interconnect_router = 297996575;</code>
@@ -2819,7 +2974,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates if a router is dedicated for use with encrypted VLAN attachments (interconnectAttachments).
+     * Indicates if a router is dedicated for use with encrypted VLAN
+     * attachments (interconnectAttachments).
      * </pre>
      *
      * <code>optional bool encrypted_interconnect_router = 297996575;</code>
@@ -2835,7 +2991,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates if a router is dedicated for use with encrypted VLAN attachments (interconnectAttachments).
+     * Indicates if a router is dedicated for use with encrypted VLAN
+     * attachments (interconnectAttachments).
      * </pre>
      *
      * <code>optional bool encrypted_interconnect_router = 297996575;</code>
@@ -2855,7 +3012,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates if a router is dedicated for use with encrypted VLAN attachments (interconnectAttachments).
+     * Indicates if a router is dedicated for use with encrypted VLAN
+     * attachments (interconnectAttachments).
      * </pre>
      *
      * <code>optional bool encrypted_interconnect_router = 297996575;</code>
@@ -2875,7 +3033,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2891,7 +3050,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2907,7 +3067,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2927,7 +3088,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2962,7 +3124,17 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
+     * Router interfaces.
+     * To create a BGP peer that uses a router interface,
+     * the interface must have one of the following fields specified:
+     *
+     *    - linkedVpnTunnel
+     *    - linkedInterconnectAttachment
+     *    - subnetwork
+     *
+     *
+     * You can create a router interface without any of these fields specified.
+     * However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -2979,7 +3151,17 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
+     * Router interfaces.
+     * To create a BGP peer that uses a router interface,
+     * the interface must have one of the following fields specified:
+     *
+     *    - linkedVpnTunnel
+     *    - linkedInterconnectAttachment
+     *    - subnetwork
+     *
+     *
+     * You can create a router interface without any of these fields specified.
+     * However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -2996,7 +3178,17 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
+     * Router interfaces.
+     * To create a BGP peer that uses a router interface,
+     * the interface must have one of the following fields specified:
+     *
+     *    - linkedVpnTunnel
+     *    - linkedInterconnectAttachment
+     *    - subnetwork
+     *
+     *
+     * You can create a router interface without any of these fields specified.
+     * However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -3013,7 +3205,17 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
+     * Router interfaces.
+     * To create a BGP peer that uses a router interface,
+     * the interface must have one of the following fields specified:
+     *
+     *    - linkedVpnTunnel
+     *    - linkedInterconnectAttachment
+     *    - subnetwork
+     *
+     *
+     * You can create a router interface without any of these fields specified.
+     * However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -3036,7 +3238,17 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
+     * Router interfaces.
+     * To create a BGP peer that uses a router interface,
+     * the interface must have one of the following fields specified:
+     *
+     *    - linkedVpnTunnel
+     *    - linkedInterconnectAttachment
+     *    - subnetwork
+     *
+     *
+     * You can create a router interface without any of these fields specified.
+     * However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -3057,7 +3269,17 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
+     * Router interfaces.
+     * To create a BGP peer that uses a router interface,
+     * the interface must have one of the following fields specified:
+     *
+     *    - linkedVpnTunnel
+     *    - linkedInterconnectAttachment
+     *    - subnetwork
+     *
+     *
+     * You can create a router interface without any of these fields specified.
+     * However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -3080,7 +3302,17 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
+     * Router interfaces.
+     * To create a BGP peer that uses a router interface,
+     * the interface must have one of the following fields specified:
+     *
+     *    - linkedVpnTunnel
+     *    - linkedInterconnectAttachment
+     *    - subnetwork
+     *
+     *
+     * You can create a router interface without any of these fields specified.
+     * However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -3103,7 +3335,17 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
+     * Router interfaces.
+     * To create a BGP peer that uses a router interface,
+     * the interface must have one of the following fields specified:
+     *
+     *    - linkedVpnTunnel
+     *    - linkedInterconnectAttachment
+     *    - subnetwork
+     *
+     *
+     * You can create a router interface without any of these fields specified.
+     * However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -3124,7 +3366,17 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
+     * Router interfaces.
+     * To create a BGP peer that uses a router interface,
+     * the interface must have one of the following fields specified:
+     *
+     *    - linkedVpnTunnel
+     *    - linkedInterconnectAttachment
+     *    - subnetwork
+     *
+     *
+     * You can create a router interface without any of these fields specified.
+     * However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -3145,7 +3397,17 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
+     * Router interfaces.
+     * To create a BGP peer that uses a router interface,
+     * the interface must have one of the following fields specified:
+     *
+     *    - linkedVpnTunnel
+     *    - linkedInterconnectAttachment
+     *    - subnetwork
+     *
+     *
+     * You can create a router interface without any of these fields specified.
+     * However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -3166,7 +3428,17 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
+     * Router interfaces.
+     * To create a BGP peer that uses a router interface,
+     * the interface must have one of the following fields specified:
+     *
+     *    - linkedVpnTunnel
+     *    - linkedInterconnectAttachment
+     *    - subnetwork
+     *
+     *
+     * You can create a router interface without any of these fields specified.
+     * However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -3186,7 +3458,17 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
+     * Router interfaces.
+     * To create a BGP peer that uses a router interface,
+     * the interface must have one of the following fields specified:
+     *
+     *    - linkedVpnTunnel
+     *    - linkedInterconnectAttachment
+     *    - subnetwork
+     *
+     *
+     * You can create a router interface without any of these fields specified.
+     * However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -3206,7 +3488,17 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
+     * Router interfaces.
+     * To create a BGP peer that uses a router interface,
+     * the interface must have one of the following fields specified:
+     *
+     *    - linkedVpnTunnel
+     *    - linkedInterconnectAttachment
+     *    - subnetwork
+     *
+     *
+     * You can create a router interface without any of these fields specified.
+     * However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -3219,7 +3511,17 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
+     * Router interfaces.
+     * To create a BGP peer that uses a router interface,
+     * the interface must have one of the following fields specified:
+     *
+     *    - linkedVpnTunnel
+     *    - linkedInterconnectAttachment
+     *    - subnetwork
+     *
+     *
+     * You can create a router interface without any of these fields specified.
+     * However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -3236,7 +3538,17 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
+     * Router interfaces.
+     * To create a BGP peer that uses a router interface,
+     * the interface must have one of the following fields specified:
+     *
+     *    - linkedVpnTunnel
+     *    - linkedInterconnectAttachment
+     *    - subnetwork
+     *
+     *
+     * You can create a router interface without any of these fields specified.
+     * However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -3254,7 +3566,17 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
+     * Router interfaces.
+     * To create a BGP peer that uses a router interface,
+     * the interface must have one of the following fields specified:
+     *
+     *    - linkedVpnTunnel
+     *    - linkedInterconnectAttachment
+     *    - subnetwork
+     *
+     *
+     * You can create a router interface without any of these fields specified.
+     * However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -3268,7 +3590,17 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
+     * Router interfaces.
+     * To create a BGP peer that uses a router interface,
+     * the interface must have one of the following fields specified:
+     *
+     *    - linkedVpnTunnel
+     *    - linkedInterconnectAttachment
+     *    - subnetwork
+     *
+     *
+     * You can create a router interface without any of these fields specified.
+     * However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -3282,7 +3614,17 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
+     * Router interfaces.
+     * To create a BGP peer that uses a router interface,
+     * the interface must have one of the following fields specified:
+     *
+     *    - linkedVpnTunnel
+     *    - linkedInterconnectAttachment
+     *    - subnetwork
+     *
+     *
+     * You can create a router interface without any of these fields specified.
+     * However, you cannot create a BGP peer that uses that interface.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.RouterInterface interfaces = 12073562;</code>
@@ -3315,7 +3657,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#router for routers.
+     * [Output Only] Type of resource. Always compute#router for
+     * routers.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3330,7 +3673,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#router for routers.
+     * [Output Only] Type of resource. Always compute#router for
+     * routers.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3353,7 +3697,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#router for routers.
+     * [Output Only] Type of resource. Always compute#router for
+     * routers.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3376,7 +3721,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#router for routers.
+     * [Output Only] Type of resource. Always compute#router for
+     * routers.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3398,7 +3744,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#router for routers.
+     * [Output Only] Type of resource. Always compute#router for
+     * routers.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3416,7 +3763,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#router for routers.
+     * [Output Only] Type of resource. Always compute#router for
+     * routers.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3860,7 +4208,13 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3875,7 +4229,13 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3898,7 +4258,13 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3921,7 +4287,13 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3943,7 +4315,13 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3961,7 +4339,13 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -4482,7 +4866,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.RouterParams params = 78313862;</code>
@@ -4497,7 +4882,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.RouterParams params = 78313862;</code>
@@ -4518,7 +4904,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.RouterParams params = 78313862;</code>
@@ -4541,7 +4928,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.RouterParams params = 78313862;</code>
@@ -4561,7 +4949,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.RouterParams params = 78313862;</code>
@@ -4589,7 +4978,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.RouterParams params = 78313862;</code>
@@ -4609,7 +4999,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.RouterParams params = 78313862;</code>
@@ -4624,7 +5015,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.RouterParams params = 78313862;</code>
@@ -4643,7 +5035,8 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.RouterParams params = 78313862;</code>
@@ -4671,7 +5064,9 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URI of the region where the router resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * [Output Only] URI of the region where the router resides.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -4686,7 +5081,9 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URI of the region where the router resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * [Output Only] URI of the region where the router resides.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -4709,7 +5106,9 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URI of the region where the router resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * [Output Only] URI of the region where the router resides.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -4732,7 +5131,9 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URI of the region where the router resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * [Output Only] URI of the region where the router resides.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -4754,7 +5155,9 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URI of the region where the router resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * [Output Only] URI of the region where the router resides.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -4772,7 +5175,9 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URI of the region where the router resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * [Output Only] URI of the region where the router resides.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>

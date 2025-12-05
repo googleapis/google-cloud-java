@@ -84,7 +84,8 @@ public interface MachineTypesScopedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] An informational warning that appears when the machine types list is empty.
+   * [Output Only] An informational warning that appears when the machine types
+   * list is empty.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
@@ -97,7 +98,8 @@ public interface MachineTypesScopedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] An informational warning that appears when the machine types list is empty.
+   * [Output Only] An informational warning that appears when the machine types
+   * list is empty.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
@@ -110,7 +112,8 @@ public interface MachineTypesScopedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] An informational warning that appears when the machine types list is empty.
+   * [Output Only] An informational warning that appears when the machine types
+   * list is empty.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>

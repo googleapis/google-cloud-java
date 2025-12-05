@@ -28,7 +28,8 @@ public interface SecurityPolicyRuleRedirectOptionsOrBuilder
    *
    *
    * <pre>
-   * Target for the redirect action. This is required if the type is EXTERNAL_302 and cannot be specified for GOOGLE_RECAPTCHA.
+   * Target for the redirect action. This is required if the type is
+   * EXTERNAL_302 and cannot be specified for GOOGLE_RECAPTCHA.
    * </pre>
    *
    * <code>optional string target = 192835985;</code>
@@ -41,7 +42,8 @@ public interface SecurityPolicyRuleRedirectOptionsOrBuilder
    *
    *
    * <pre>
-   * Target for the redirect action. This is required if the type is EXTERNAL_302 and cannot be specified for GOOGLE_RECAPTCHA.
+   * Target for the redirect action. This is required if the type is
+   * EXTERNAL_302 and cannot be specified for GOOGLE_RECAPTCHA.
    * </pre>
    *
    * <code>optional string target = 192835985;</code>
@@ -54,7 +56,8 @@ public interface SecurityPolicyRuleRedirectOptionsOrBuilder
    *
    *
    * <pre>
-   * Target for the redirect action. This is required if the type is EXTERNAL_302 and cannot be specified for GOOGLE_RECAPTCHA.
+   * Target for the redirect action. This is required if the type is
+   * EXTERNAL_302 and cannot be specified for GOOGLE_RECAPTCHA.
    * </pre>
    *
    * <code>optional string target = 192835985;</code>
@@ -67,7 +70,12 @@ public interface SecurityPolicyRuleRedirectOptionsOrBuilder
    *
    *
    * <pre>
-   * Type of the redirect action. Possible values are: - GOOGLE_RECAPTCHA: redirect to reCAPTCHA for manual challenge assessment. - EXTERNAL_302: redirect to a different URL via a 302 response.
+   * Type of the redirect action. Possible values are:
+   *
+   *    - GOOGLE_RECAPTCHA: redirect to reCAPTCHA for manual
+   *    challenge assessment.
+   *    - EXTERNAL_302: redirect to a different URL via a 302
+   *    response.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -81,7 +89,12 @@ public interface SecurityPolicyRuleRedirectOptionsOrBuilder
    *
    *
    * <pre>
-   * Type of the redirect action. Possible values are: - GOOGLE_RECAPTCHA: redirect to reCAPTCHA for manual challenge assessment. - EXTERNAL_302: redirect to a different URL via a 302 response.
+   * Type of the redirect action. Possible values are:
+   *
+   *    - GOOGLE_RECAPTCHA: redirect to reCAPTCHA for manual
+   *    challenge assessment.
+   *    - EXTERNAL_302: redirect to a different URL via a 302
+   *    response.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -95,7 +108,12 @@ public interface SecurityPolicyRuleRedirectOptionsOrBuilder
    *
    *
    * <pre>
-   * Type of the redirect action. Possible values are: - GOOGLE_RECAPTCHA: redirect to reCAPTCHA for manual challenge assessment. - EXTERNAL_302: redirect to a different URL via a 302 response.
+   * Type of the redirect action. Possible values are:
+   *
+   *    - GOOGLE_RECAPTCHA: redirect to reCAPTCHA for manual
+   *    challenge assessment.
+   *    - EXTERNAL_302: redirect to a different URL via a 302
+   *    response.
    * Check the Type enum for the list of possible values.
    * </pre>
    *

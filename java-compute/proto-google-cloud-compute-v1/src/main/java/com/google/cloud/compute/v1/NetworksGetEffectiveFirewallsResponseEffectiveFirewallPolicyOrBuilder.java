@@ -28,7 +28,8 @@ public interface NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicyOrB
    *
    *
    * <pre>
-   * [Output Only] Deprecated, please use short name instead. The display name of the firewall policy.
+   * [Output Only] Deprecated, please use short name instead. The display name
+   * of the firewall policy.
    * </pre>
    *
    * <code>optional string display_name = 4473832;</code>
@@ -41,7 +42,8 @@ public interface NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicyOrB
    *
    *
    * <pre>
-   * [Output Only] Deprecated, please use short name instead. The display name of the firewall policy.
+   * [Output Only] Deprecated, please use short name instead. The display name
+   * of the firewall policy.
    * </pre>
    *
    * <code>optional string display_name = 4473832;</code>
@@ -54,7 +56,8 @@ public interface NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicyOrB
    *
    *
    * <pre>
-   * [Output Only] Deprecated, please use short name instead. The display name of the firewall policy.
+   * [Output Only] Deprecated, please use short name instead. The display name
+   * of the firewall policy.
    * </pre>
    *
    * <code>optional string display_name = 4473832;</code>
@@ -168,7 +171,8 @@ public interface NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicyOrB
    *
    *
    * <pre>
-   * [Output only] Priority of firewall policy association. Not applicable for type=HIERARCHY.
+   * [Output only] Priority of firewall policy association. Not applicable for
+   * type=HIERARCHY.
    * </pre>
    *
    * <code>optional int32 priority = 445151652;</code>
@@ -181,7 +185,8 @@ public interface NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicyOrB
    *
    *
    * <pre>
-   * [Output only] Priority of firewall policy association. Not applicable for type=HIERARCHY.
+   * [Output only] Priority of firewall policy association. Not applicable for
+   * type=HIERARCHY.
    * </pre>
    *
    * <code>optional int32 priority = 445151652;</code>

@@ -104,7 +104,8 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * Compress text responses using Brotli or gzip compression, based on the client's Accept-Encoding header.
+   * Compress text responses using Brotli or gzip compression, based on
+   * the client's Accept-Encoding header.
    * Check the CompressionMode enum for the list of possible values.
    * </pre>
    *
@@ -118,7 +119,8 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * Compress text responses using Brotli or gzip compression, based on the client's Accept-Encoding header.
+   * Compress text responses using Brotli or gzip compression, based on
+   * the client's Accept-Encoding header.
    * Check the CompressionMode enum for the list of possible values.
    * </pre>
    *
@@ -132,7 +134,8 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * Compress text responses using Brotli or gzip compression, based on the client's Accept-Encoding header.
+   * Compress text responses using Brotli or gzip compression, based on
+   * the client's Accept-Encoding header.
    * Check the CompressionMode enum for the list of possible values.
    * </pre>
    *
@@ -146,7 +149,8 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -159,7 +163,8 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -172,7 +177,8 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -239,7 +245,8 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * An optional textual description of the resource; provided by the client when the resource is created.
+   * An optional textual description of the resource; provided by the client
+   * when the resource is created.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -252,7 +259,8 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * An optional textual description of the resource; provided by the client when the resource is created.
+   * An optional textual description of the resource; provided by the client
+   * when the resource is created.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -265,7 +273,8 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * An optional textual description of the resource; provided by the client when the resource is created.
+   * An optional textual description of the resource; provided by the client
+   * when the resource is created.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -278,7 +287,8 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The resource URL for the edge security policy associated with this backend bucket.
+   * [Output Only] The resource URL for the edge security policy associated with
+   * this backend bucket.
    * </pre>
    *
    * <code>optional string edge_security_policy = 41036943;</code>
@@ -291,7 +301,8 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The resource URL for the edge security policy associated with this backend bucket.
+   * [Output Only] The resource URL for the edge security policy associated with
+   * this backend bucket.
    * </pre>
    *
    * <code>optional string edge_security_policy = 41036943;</code>
@@ -304,7 +315,8 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The resource URL for the edge security policy associated with this backend bucket.
+   * [Output Only] The resource URL for the edge security policy associated with
+   * this backend bucket.
    * </pre>
    *
    * <code>optional string edge_security_policy = 41036943;</code>
@@ -408,7 +420,12 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * The value can only be INTERNAL_MANAGED for cross-region internal layer 7 load balancer. If loadBalancingScheme is not specified, the backend bucket can be used by classic global external load balancers, or global application external load balancers, or both.
+   * The value can only be INTERNAL_MANAGED for cross-region internal layer 7
+   * load balancer.
+   *
+   * If loadBalancingScheme is not specified, the backend bucket can be used by
+   * classic global external load balancers, or global application external load
+   * balancers, or both.
    * Check the LoadBalancingScheme enum for the list of possible values.
    * </pre>
    *
@@ -422,7 +439,12 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * The value can only be INTERNAL_MANAGED for cross-region internal layer 7 load balancer. If loadBalancingScheme is not specified, the backend bucket can be used by classic global external load balancers, or global application external load balancers, or both.
+   * The value can only be INTERNAL_MANAGED for cross-region internal layer 7
+   * load balancer.
+   *
+   * If loadBalancingScheme is not specified, the backend bucket can be used by
+   * classic global external load balancers, or global application external load
+   * balancers, or both.
    * Check the LoadBalancingScheme enum for the list of possible values.
    * </pre>
    *
@@ -436,7 +458,12 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * The value can only be INTERNAL_MANAGED for cross-region internal layer 7 load balancer. If loadBalancingScheme is not specified, the backend bucket can be used by classic global external load balancers, or global application external load balancers, or both.
+   * The value can only be INTERNAL_MANAGED for cross-region internal layer 7
+   * load balancer.
+   *
+   * If loadBalancingScheme is not specified, the backend bucket can be used by
+   * classic global external load balancers, or global application external load
+   * balancers, or both.
    * Check the LoadBalancingScheme enum for the list of possible values.
    * </pre>
    *
@@ -450,7 +477,13 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -463,7 +496,13 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -476,7 +515,13 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -489,7 +534,8 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.BackendBucketParams params = 78313862;</code>
@@ -502,7 +548,8 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.BackendBucketParams params = 78313862;</code>
@@ -515,7 +562,8 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.BackendBucketParams params = 78313862;</code>

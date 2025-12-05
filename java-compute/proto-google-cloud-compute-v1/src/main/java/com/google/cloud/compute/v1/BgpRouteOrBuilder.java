@@ -138,7 +138,8 @@ public interface BgpRouteOrBuilder
    *
    *
    * <pre>
-   * [Output only] Destination IP range for the route, in human-readable CIDR format
+   * [Output only] Destination IP range for the route, in human-readable CIDR
+   * format
    * </pre>
    *
    * <code>
@@ -153,7 +154,8 @@ public interface BgpRouteOrBuilder
    *
    *
    * <pre>
-   * [Output only] Destination IP range for the route, in human-readable CIDR format
+   * [Output only] Destination IP range for the route, in human-readable CIDR
+   * format
    * </pre>
    *
    * <code>
@@ -168,7 +170,8 @@ public interface BgpRouteOrBuilder
    *
    *
    * <pre>
-   * [Output only] Destination IP range for the route, in human-readable CIDR format
+   * [Output only] Destination IP range for the route, in human-readable CIDR
+   * format
    * </pre>
    *
    * <code>

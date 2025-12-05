@@ -72,7 +72,8 @@ public interface InstanceGroupManagerStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the Autoscaler that targets this instance group manager.
+   * [Output Only] The URL of theAutoscaler
+   * that targets this instance group manager.
    * </pre>
    *
    * <code>optional string autoscaler = 517258967;</code>
@@ -85,7 +86,8 @@ public interface InstanceGroupManagerStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the Autoscaler that targets this instance group manager.
+   * [Output Only] The URL of theAutoscaler
+   * that targets this instance group manager.
    * </pre>
    *
    * <code>optional string autoscaler = 517258967;</code>
@@ -98,7 +100,8 @@ public interface InstanceGroupManagerStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the Autoscaler that targets this instance group manager.
+   * [Output Only] The URL of theAutoscaler
+   * that targets this instance group manager.
    * </pre>
    *
    * <code>optional string autoscaler = 517258967;</code>
@@ -111,7 +114,12 @@ public interface InstanceGroupManagerStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A bit indicating whether the managed instance group is in a stable state. A stable state means that: none of the instances in the managed instance group is currently undergoing any type of change (for example, creation, restart, or deletion); no future changes are scheduled for instances in the managed instance group; and the managed instance group itself is not being modified.
+   * [Output Only] A bit indicating whether the managed instance group is in a
+   * stable state. A stable state means that: none of the instances in the
+   * managed instance group is currently undergoing any type of change (for
+   * example, creation, restart, or deletion); no future changes are scheduled
+   * for instances in the managed instance group; and the managed instance
+   * group itself is not being modified.
    * </pre>
    *
    * <code>optional bool is_stable = 108410864;</code>
@@ -124,7 +132,12 @@ public interface InstanceGroupManagerStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A bit indicating whether the managed instance group is in a stable state. A stable state means that: none of the instances in the managed instance group is currently undergoing any type of change (for example, creation, restart, or deletion); no future changes are scheduled for instances in the managed instance group; and the managed instance group itself is not being modified.
+   * [Output Only] A bit indicating whether the managed instance group is in a
+   * stable state. A stable state means that: none of the instances in the
+   * managed instance group is currently undergoing any type of change (for
+   * example, creation, restart, or deletion); no future changes are scheduled
+   * for instances in the managed instance group; and the managed instance
+   * group itself is not being modified.
    * </pre>
    *
    * <code>optional bool is_stable = 108410864;</code>
@@ -180,7 +193,9 @@ public interface InstanceGroupManagerStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A status of consistency of Instances' versions with their target version specified by version field on Instance Group Manager.
+   * [Output Only] A status of consistency of Instances' versions with their
+   * target version specified by version field on Instance Group
+   * Manager.
    * </pre>
    *
    * <code>
@@ -195,7 +210,9 @@ public interface InstanceGroupManagerStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A status of consistency of Instances' versions with their target version specified by version field on Instance Group Manager.
+   * [Output Only] A status of consistency of Instances' versions with their
+   * target version specified by version field on Instance Group
+   * Manager.
    * </pre>
    *
    * <code>
@@ -210,7 +227,9 @@ public interface InstanceGroupManagerStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A status of consistency of Instances' versions with their target version specified by version field on Instance Group Manager.
+   * [Output Only] A status of consistency of Instances' versions with their
+   * target version specified by version field on Instance Group
+   * Manager.
    * </pre>
    *
    * <code>

@@ -28,7 +28,9 @@ public interface DistributionPolicyZoneConfigurationOrBuilder
    *
    *
    * <pre>
-   * The URL of the zone. The zone must exist in the region where the managed instance group is located.
+   * The URL of thezone.
+   * The zone must exist in the region where the managed instance group is
+   * located.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -41,7 +43,9 @@ public interface DistributionPolicyZoneConfigurationOrBuilder
    *
    *
    * <pre>
-   * The URL of the zone. The zone must exist in the region where the managed instance group is located.
+   * The URL of thezone.
+   * The zone must exist in the region where the managed instance group is
+   * located.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -54,7 +58,9 @@ public interface DistributionPolicyZoneConfigurationOrBuilder
    *
    *
    * <pre>
-   * The URL of the zone. The zone must exist in the region where the managed instance group is located.
+   * The URL of thezone.
+   * The zone must exist in the region where the managed instance group is
+   * located.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>

@@ -124,7 +124,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Delete</td>
- *      <td><p> Deletes the specified regional persistent disk. Deleting a regional disk removes all the replicas of its data permanently and is irreversible. However, deleting a disk does not delete any snapshots previously made from the disk. You must separately delete snapshots.</td>
+ *      <td><p> Deletes the specified regional persistent disk. Deleting a regional disk removes all the replicas of its data permanently and is irreversible. However, deleting a disk does not delete anysnapshots previously made from the disk. You must separatelydelete snapshots.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -909,7 +909,7 @@ public class RegionDisksClient implements BackgroundResource {
   /**
    * Deletes the specified regional persistent disk. Deleting a regional disk removes all the
    * replicas of its data permanently and is irreversible. However, deleting a disk does not delete
-   * any snapshots previously made from the disk. You must separately delete snapshots.
+   * anysnapshots previously made from the disk. You must separatelydelete snapshots.
    *
    * <p>Sample code:
    *
@@ -947,7 +947,7 @@ public class RegionDisksClient implements BackgroundResource {
   /**
    * Deletes the specified regional persistent disk. Deleting a regional disk removes all the
    * replicas of its data permanently and is irreversible. However, deleting a disk does not delete
-   * any snapshots previously made from the disk. You must separately delete snapshots.
+   * anysnapshots previously made from the disk. You must separatelydelete snapshots.
    *
    * <p>Sample code:
    *
@@ -980,7 +980,7 @@ public class RegionDisksClient implements BackgroundResource {
   /**
    * Deletes the specified regional persistent disk. Deleting a regional disk removes all the
    * replicas of its data permanently and is irreversible. However, deleting a disk does not delete
-   * any snapshots previously made from the disk. You must separately delete snapshots.
+   * anysnapshots previously made from the disk. You must separatelydelete snapshots.
    *
    * <p>Sample code:
    *
@@ -1014,7 +1014,7 @@ public class RegionDisksClient implements BackgroundResource {
   /**
    * Deletes the specified regional persistent disk. Deleting a regional disk removes all the
    * replicas of its data permanently and is irreversible. However, deleting a disk does not delete
-   * any snapshots previously made from the disk. You must separately delete snapshots.
+   * anysnapshots previously made from the disk. You must separatelydelete snapshots.
    *
    * <p>Sample code:
    *

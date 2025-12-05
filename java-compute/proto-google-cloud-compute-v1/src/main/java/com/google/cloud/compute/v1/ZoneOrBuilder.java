@@ -82,7 +82,8 @@ public interface ZoneOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -95,7 +96,8 @@ public interface ZoneOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -108,7 +110,8 @@ public interface ZoneOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -197,7 +200,8 @@ public interface ZoneOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -210,7 +214,8 @@ public interface ZoneOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -223,7 +228,8 @@ public interface ZoneOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#zone for zones.
+   * [Output Only] Type of the resource. Always compute#zone for
+   * zones.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -236,7 +242,8 @@ public interface ZoneOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#zone for zones.
+   * [Output Only] Type of the resource. Always compute#zone for
+   * zones.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -249,7 +256,8 @@ public interface ZoneOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#zone for zones.
+   * [Output Only] Type of the resource. Always compute#zone for
+   * zones.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -379,7 +387,7 @@ public interface ZoneOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Status of the zone, either UP or DOWN.
+   * [Output Only] Status of the zone, either UP orDOWN.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -393,7 +401,7 @@ public interface ZoneOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Status of the zone, either UP or DOWN.
+   * [Output Only] Status of the zone, either UP orDOWN.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -407,7 +415,7 @@ public interface ZoneOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Status of the zone, either UP or DOWN.
+   * [Output Only] Status of the zone, either UP orDOWN.
    * Check the Status enum for the list of possible values.
    * </pre>
    *

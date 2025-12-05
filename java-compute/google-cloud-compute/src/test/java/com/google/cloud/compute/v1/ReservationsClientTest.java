@@ -225,6 +225,7 @@ public class ReservationsClientTest {
             .setKind("kind3292052")
             .addAllLinkedCommitments(new ArrayList<String>())
             .setName("name3373707")
+            .setProtectionTier("protectionTier344968283")
             .setReservationSharingPolicy(AllocationReservationSharingPolicy.newBuilder().build())
             .putAllResourcePolicies(new HashMap<String, String>())
             .setResourceStatus(AllocationResourceStatus.newBuilder().build())

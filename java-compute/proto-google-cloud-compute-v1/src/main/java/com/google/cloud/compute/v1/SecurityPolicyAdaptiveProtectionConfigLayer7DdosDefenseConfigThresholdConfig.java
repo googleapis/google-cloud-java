@@ -242,7 +242,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
    *
    *
    * <pre>
-   * The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the security policy.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * The name must be unique within the security policy.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -258,7 +259,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
    *
    *
    * <pre>
-   * The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the security policy.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * The name must be unique within the security policy.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -282,7 +284,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
    *
    *
    * <pre>
-   * The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the security policy.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * The name must be unique within the security policy.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -314,7 +317,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
    *
    *
    * <pre>
-   * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+   * Configuration options for enabling Adaptive Protection to operate
+   * on specified granular traffic units.
    * </pre>
    *
    * <code>
@@ -333,7 +337,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
    *
    *
    * <pre>
-   * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+   * Configuration options for enabling Adaptive Protection to operate
+   * on specified granular traffic units.
    * </pre>
    *
    * <code>
@@ -353,7 +358,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
    *
    *
    * <pre>
-   * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+   * Configuration options for enabling Adaptive Protection to operate
+   * on specified granular traffic units.
    * </pre>
    *
    * <code>
@@ -369,7 +375,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
    *
    *
    * <pre>
-   * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+   * Configuration options for enabling Adaptive Protection to operate
+   * on specified granular traffic units.
    * </pre>
    *
    * <code>
@@ -387,7 +394,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
    *
    *
    * <pre>
-   * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+   * Configuration options for enabling Adaptive Protection to operate
+   * on specified granular traffic units.
    * </pre>
    *
    * <code>
@@ -1459,7 +1467,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      *
      *
      * <pre>
-     * The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the security policy.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * The name must be unique within the security policy.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -1474,7 +1483,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      *
      *
      * <pre>
-     * The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the security policy.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * The name must be unique within the security policy.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -1497,7 +1507,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      *
      *
      * <pre>
-     * The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the security policy.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * The name must be unique within the security policy.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -1520,7 +1531,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      *
      *
      * <pre>
-     * The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the security policy.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * The name must be unique within the security policy.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -1542,7 +1554,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      *
      *
      * <pre>
-     * The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the security policy.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * The name must be unique within the security policy.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -1560,7 +1573,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      *
      *
      * <pre>
-     * The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the security policy.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * The name must be unique within the security policy.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -1609,7 +1623,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      *
      *
      * <pre>
-     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * Configuration options for enabling Adaptive Protection to operate
+     * on specified granular traffic units.
      * </pre>
      *
      * <code>
@@ -1631,7 +1646,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      *
      *
      * <pre>
-     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * Configuration options for enabling Adaptive Protection to operate
+     * on specified granular traffic units.
      * </pre>
      *
      * <code>
@@ -1650,7 +1666,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      *
      *
      * <pre>
-     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * Configuration options for enabling Adaptive Protection to operate
+     * on specified granular traffic units.
      * </pre>
      *
      * <code>
@@ -1671,7 +1688,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      *
      *
      * <pre>
-     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * Configuration options for enabling Adaptive Protection to operate
+     * on specified granular traffic units.
      * </pre>
      *
      * <code>
@@ -1700,7 +1718,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      *
      *
      * <pre>
-     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * Configuration options for enabling Adaptive Protection to operate
+     * on specified granular traffic units.
      * </pre>
      *
      * <code>
@@ -1727,7 +1746,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      *
      *
      * <pre>
-     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * Configuration options for enabling Adaptive Protection to operate
+     * on specified granular traffic units.
      * </pre>
      *
      * <code>
@@ -1755,7 +1775,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      *
      *
      * <pre>
-     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * Configuration options for enabling Adaptive Protection to operate
+     * on specified granular traffic units.
      * </pre>
      *
      * <code>
@@ -1784,7 +1805,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      *
      *
      * <pre>
-     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * Configuration options for enabling Adaptive Protection to operate
+     * on specified granular traffic units.
      * </pre>
      *
      * <code>
@@ -1810,7 +1832,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      *
      *
      * <pre>
-     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * Configuration options for enabling Adaptive Protection to operate
+     * on specified granular traffic units.
      * </pre>
      *
      * <code>
@@ -1837,7 +1860,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      *
      *
      * <pre>
-     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * Configuration options for enabling Adaptive Protection to operate
+     * on specified granular traffic units.
      * </pre>
      *
      * <code>
@@ -1864,7 +1888,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      *
      *
      * <pre>
-     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * Configuration options for enabling Adaptive Protection to operate
+     * on specified granular traffic units.
      * </pre>
      *
      * <code>
@@ -1886,7 +1911,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      *
      *
      * <pre>
-     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * Configuration options for enabling Adaptive Protection to operate
+     * on specified granular traffic units.
      * </pre>
      *
      * <code>
@@ -1908,7 +1934,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      *
      *
      * <pre>
-     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * Configuration options for enabling Adaptive Protection to operate
+     * on specified granular traffic units.
      * </pre>
      *
      * <code>
@@ -1926,7 +1953,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      *
      *
      * <pre>
-     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * Configuration options for enabling Adaptive Protection to operate
+     * on specified granular traffic units.
      * </pre>
      *
      * <code>
@@ -1947,7 +1975,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      *
      *
      * <pre>
-     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * Configuration options for enabling Adaptive Protection to operate
+     * on specified granular traffic units.
      * </pre>
      *
      * <code>
@@ -1970,7 +1999,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      *
      *
      * <pre>
-     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * Configuration options for enabling Adaptive Protection to operate
+     * on specified granular traffic units.
      * </pre>
      *
      * <code>
@@ -1992,7 +2022,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      *
      *
      * <pre>
-     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * Configuration options for enabling Adaptive Protection to operate
+     * on specified granular traffic units.
      * </pre>
      *
      * <code>
@@ -2015,7 +2046,8 @@ public final class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig
      *
      *
      * <pre>
-     * Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
+     * Configuration options for enabling Adaptive Protection to operate
+     * on specified granular traffic units.
      * </pre>
      *
      * <code>

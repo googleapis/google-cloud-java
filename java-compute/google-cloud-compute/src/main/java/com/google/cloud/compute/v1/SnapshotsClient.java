@@ -66,7 +66,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Delete</td>
- *      <td><p> Deletes the specified Snapshot resource. Keep in mind that deleting a single snapshot might not necessarily delete all the data on that snapshot. If any data on the snapshot that is marked for deletion is needed for subsequent snapshots, the data will be moved to the next corresponding snapshot. For more information, see Deleting snapshots.</td>
+ *      <td><p> Deletes the specified Snapshot resource. Keep in mind that deleting a single snapshot might not necessarily delete all the data on that snapshot. If any data on the snapshot that is marked for deletion is needed for subsequent snapshots, the data will be moved to the next corresponding snapshot.
+ * <p>  For more information, seeDeleting snapshots.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -177,7 +178,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> SetLabels</td>
- *      <td><p> Sets the labels on a snapshot. To learn more about labels, read the Labeling Resources documentation.</td>
+ *      <td><p> Sets the labels on a snapshot. To learn more about labels, read theLabeling Resources documentation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -306,7 +307,9 @@ public class SnapshotsClient implements BackgroundResource {
    * Deletes the specified Snapshot resource. Keep in mind that deleting a single snapshot might not
    * necessarily delete all the data on that snapshot. If any data on the snapshot that is marked
    * for deletion is needed for subsequent snapshots, the data will be moved to the next
-   * corresponding snapshot. For more information, see Deleting snapshots.
+   * corresponding snapshot.
+   *
+   * <p>For more information, seeDeleting snapshots.
    *
    * <p>Sample code:
    *
@@ -338,7 +341,9 @@ public class SnapshotsClient implements BackgroundResource {
    * Deletes the specified Snapshot resource. Keep in mind that deleting a single snapshot might not
    * necessarily delete all the data on that snapshot. If any data on the snapshot that is marked
    * for deletion is needed for subsequent snapshots, the data will be moved to the next
-   * corresponding snapshot. For more information, see Deleting snapshots.
+   * corresponding snapshot.
+   *
+   * <p>For more information, seeDeleting snapshots.
    *
    * <p>Sample code:
    *
@@ -371,7 +376,9 @@ public class SnapshotsClient implements BackgroundResource {
    * Deletes the specified Snapshot resource. Keep in mind that deleting a single snapshot might not
    * necessarily delete all the data on that snapshot. If any data on the snapshot that is marked
    * for deletion is needed for subsequent snapshots, the data will be moved to the next
-   * corresponding snapshot. For more information, see Deleting snapshots.
+   * corresponding snapshot.
+   *
+   * <p>For more information, seeDeleting snapshots.
    *
    * <p>Sample code:
    *
@@ -405,7 +412,9 @@ public class SnapshotsClient implements BackgroundResource {
    * Deletes the specified Snapshot resource. Keep in mind that deleting a single snapshot might not
    * necessarily delete all the data on that snapshot. If any data on the snapshot that is marked
    * for deletion is needed for subsequent snapshots, the data will be moved to the next
-   * corresponding snapshot. For more information, see Deleting snapshots.
+   * corresponding snapshot.
+   *
+   * <p>For more information, seeDeleting snapshots.
    *
    * <p>Sample code:
    *
@@ -981,7 +990,7 @@ public class SnapshotsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the labels on a snapshot. To learn more about labels, read the Labeling Resources
+   * Sets the labels on a snapshot. To learn more about labels, read theLabeling Resources
    * documentation.
    *
    * <p>Sample code:
@@ -1020,7 +1029,7 @@ public class SnapshotsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the labels on a snapshot. To learn more about labels, read the Labeling Resources
+   * Sets the labels on a snapshot. To learn more about labels, read theLabeling Resources
    * documentation.
    *
    * <p>Sample code:
@@ -1052,7 +1061,7 @@ public class SnapshotsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the labels on a snapshot. To learn more about labels, read the Labeling Resources
+   * Sets the labels on a snapshot. To learn more about labels, read theLabeling Resources
    * documentation.
    *
    * <p>Sample code:
@@ -1084,7 +1093,7 @@ public class SnapshotsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the labels on a snapshot. To learn more about labels, read the Labeling Resources
+   * Sets the labels on a snapshot. To learn more about labels, read theLabeling Resources
    * documentation.
    *
    * <p>Sample code:

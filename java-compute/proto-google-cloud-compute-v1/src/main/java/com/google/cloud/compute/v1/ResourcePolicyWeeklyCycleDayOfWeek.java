@@ -70,7 +70,9 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
    *
    *
    * <pre>
-   * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+   * Defines a schedule that runs on specific days of the week. Specify
+   * one or more days. The following options are available:
+   * MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day}
@@ -247,7 +249,9 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
    *
    *
    * <pre>
-   * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+   * Defines a schedule that runs on specific days of the week. Specify
+   * one or more days. The following options are available:
+   * MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
    * Check the Day enum for the list of possible values.
    * </pre>
    *
@@ -264,7 +268,9 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
    *
    *
    * <pre>
-   * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+   * Defines a schedule that runs on specific days of the week. Specify
+   * one or more days. The following options are available:
+   * MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
    * Check the Day enum for the list of possible values.
    * </pre>
    *
@@ -289,7 +295,9 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
    *
    *
    * <pre>
-   * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+   * Defines a schedule that runs on specific days of the week. Specify
+   * one or more days. The following options are available:
+   * MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
    * Check the Day enum for the list of possible values.
    * </pre>
    *
@@ -319,7 +327,8 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
    *
    *
    * <pre>
-   * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
+   * [Output only] Duration of the time window, automatically chosen to be
+   * smallest possible in the given scenario.
    * </pre>
    *
    * <code>optional string duration = 155471252;</code>
@@ -335,7 +344,8 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
    *
    *
    * <pre>
-   * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
+   * [Output only] Duration of the time window, automatically chosen to be
+   * smallest possible in the given scenario.
    * </pre>
    *
    * <code>optional string duration = 155471252;</code>
@@ -359,7 +369,8 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
    *
    *
    * <pre>
-   * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
+   * [Output only] Duration of the time window, automatically chosen to be
+   * smallest possible in the given scenario.
    * </pre>
    *
    * <code>optional string duration = 155471252;</code>
@@ -388,7 +399,8 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
    *
    *
    * <pre>
-   * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
+   * Time within the window to start the operations.
+   * It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
    * </pre>
    *
    * <code>optional string start_time = 37467274;</code>
@@ -404,7 +416,8 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
    *
    *
    * <pre>
-   * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
+   * Time within the window to start the operations.
+   * It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
    * </pre>
    *
    * <code>optional string start_time = 37467274;</code>
@@ -428,7 +441,8 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
    *
    *
    * <pre>
-   * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
+   * Time within the window to start the operations.
+   * It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
    * </pre>
    *
    * <code>optional string start_time = 37467274;</code>
@@ -868,7 +882,9 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      *
      *
      * <pre>
-     * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+     * Defines a schedule that runs on specific days of the week. Specify
+     * one or more days. The following options are available:
+     * MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
      * Check the Day enum for the list of possible values.
      * </pre>
      *
@@ -884,7 +900,9 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      *
      *
      * <pre>
-     * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+     * Defines a schedule that runs on specific days of the week. Specify
+     * one or more days. The following options are available:
+     * MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
      * Check the Day enum for the list of possible values.
      * </pre>
      *
@@ -908,7 +926,9 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      *
      *
      * <pre>
-     * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+     * Defines a schedule that runs on specific days of the week. Specify
+     * one or more days. The following options are available:
+     * MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
      * Check the Day enum for the list of possible values.
      * </pre>
      *
@@ -932,7 +952,9 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      *
      *
      * <pre>
-     * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+     * Defines a schedule that runs on specific days of the week. Specify
+     * one or more days. The following options are available:
+     * MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
      * Check the Day enum for the list of possible values.
      * </pre>
      *
@@ -955,7 +977,9 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      *
      *
      * <pre>
-     * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+     * Defines a schedule that runs on specific days of the week. Specify
+     * one or more days. The following options are available:
+     * MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
      * Check the Day enum for the list of possible values.
      * </pre>
      *
@@ -974,7 +998,9 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      *
      *
      * <pre>
-     * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+     * Defines a schedule that runs on specific days of the week. Specify
+     * one or more days. The following options are available:
+     * MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
      * Check the Day enum for the list of possible values.
      * </pre>
      *
@@ -1000,7 +1026,8 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      *
      *
      * <pre>
-     * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
+     * [Output only] Duration of the time window, automatically chosen to be
+     * smallest possible in the given scenario.
      * </pre>
      *
      * <code>optional string duration = 155471252;</code>
@@ -1015,7 +1042,8 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      *
      *
      * <pre>
-     * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
+     * [Output only] Duration of the time window, automatically chosen to be
+     * smallest possible in the given scenario.
      * </pre>
      *
      * <code>optional string duration = 155471252;</code>
@@ -1038,7 +1066,8 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      *
      *
      * <pre>
-     * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
+     * [Output only] Duration of the time window, automatically chosen to be
+     * smallest possible in the given scenario.
      * </pre>
      *
      * <code>optional string duration = 155471252;</code>
@@ -1061,7 +1090,8 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      *
      *
      * <pre>
-     * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
+     * [Output only] Duration of the time window, automatically chosen to be
+     * smallest possible in the given scenario.
      * </pre>
      *
      * <code>optional string duration = 155471252;</code>
@@ -1083,7 +1113,8 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      *
      *
      * <pre>
-     * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
+     * [Output only] Duration of the time window, automatically chosen to be
+     * smallest possible in the given scenario.
      * </pre>
      *
      * <code>optional string duration = 155471252;</code>
@@ -1101,7 +1132,8 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      *
      *
      * <pre>
-     * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
+     * [Output only] Duration of the time window, automatically chosen to be
+     * smallest possible in the given scenario.
      * </pre>
      *
      * <code>optional string duration = 155471252;</code>
@@ -1126,7 +1158,8 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      *
      *
      * <pre>
-     * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
+     * Time within the window to start the operations.
+     * It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
      * </pre>
      *
      * <code>optional string start_time = 37467274;</code>
@@ -1141,7 +1174,8 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      *
      *
      * <pre>
-     * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
+     * Time within the window to start the operations.
+     * It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
      * </pre>
      *
      * <code>optional string start_time = 37467274;</code>
@@ -1164,7 +1198,8 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      *
      *
      * <pre>
-     * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
+     * Time within the window to start the operations.
+     * It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
      * </pre>
      *
      * <code>optional string start_time = 37467274;</code>
@@ -1187,7 +1222,8 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      *
      *
      * <pre>
-     * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
+     * Time within the window to start the operations.
+     * It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
      * </pre>
      *
      * <code>optional string start_time = 37467274;</code>
@@ -1209,7 +1245,8 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      *
      *
      * <pre>
-     * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
+     * Time within the window to start the operations.
+     * It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
      * </pre>
      *
      * <code>optional string start_time = 37467274;</code>
@@ -1227,7 +1264,8 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      *
      *
      * <pre>
-     * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
+     * Time within the window to start the operations.
+     * It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
      * </pre>
      *
      * <code>optional string start_time = 37467274;</code>

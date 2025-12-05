@@ -28,7 +28,8 @@ public interface TestPermissionsRequestOrBuilder
    *
    *
    * <pre>
-   * The set of permissions to check for the 'resource'. Permissions with wildcards (such as '*' or 'storage.*') are not allowed.
+   * The set of permissions to check for the 'resource'. Permissions with
+   * wildcards (such as '*' or 'storage.*') are not allowed.
    * </pre>
    *
    * <code>repeated string permissions = 59962500;</code>
@@ -41,7 +42,8 @@ public interface TestPermissionsRequestOrBuilder
    *
    *
    * <pre>
-   * The set of permissions to check for the 'resource'. Permissions with wildcards (such as '*' or 'storage.*') are not allowed.
+   * The set of permissions to check for the 'resource'. Permissions with
+   * wildcards (such as '*' or 'storage.*') are not allowed.
    * </pre>
    *
    * <code>repeated string permissions = 59962500;</code>
@@ -54,7 +56,8 @@ public interface TestPermissionsRequestOrBuilder
    *
    *
    * <pre>
-   * The set of permissions to check for the 'resource'. Permissions with wildcards (such as '*' or 'storage.*') are not allowed.
+   * The set of permissions to check for the 'resource'. Permissions with
+   * wildcards (such as '*' or 'storage.*') are not allowed.
    * </pre>
    *
    * <code>repeated string permissions = 59962500;</code>
@@ -68,7 +71,8 @@ public interface TestPermissionsRequestOrBuilder
    *
    *
    * <pre>
-   * The set of permissions to check for the 'resource'. Permissions with wildcards (such as '*' or 'storage.*') are not allowed.
+   * The set of permissions to check for the 'resource'. Permissions with
+   * wildcards (such as '*' or 'storage.*') are not allowed.
    * </pre>
    *
    * <code>repeated string permissions = 59962500;</code>

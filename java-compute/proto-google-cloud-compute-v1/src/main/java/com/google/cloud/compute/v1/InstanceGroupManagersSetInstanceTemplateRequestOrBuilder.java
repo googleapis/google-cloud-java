@@ -28,7 +28,10 @@ public interface InstanceGroupManagersSetInstanceTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
+   * The URL of the instance template that is specified for this managed
+   * instance group. The group uses this template to create all new instances
+   * in the managed instance group. The templates for existing instances in the
+   * group do not change unless you run recreateInstances, runapplyUpdatesToInstances, or set the group'supdatePolicy.type to PROACTIVE.
    * </pre>
    *
    * <code>optional string instance_template = 309248228;</code>
@@ -41,7 +44,10 @@ public interface InstanceGroupManagersSetInstanceTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
+   * The URL of the instance template that is specified for this managed
+   * instance group. The group uses this template to create all new instances
+   * in the managed instance group. The templates for existing instances in the
+   * group do not change unless you run recreateInstances, runapplyUpdatesToInstances, or set the group'supdatePolicy.type to PROACTIVE.
    * </pre>
    *
    * <code>optional string instance_template = 309248228;</code>
@@ -54,7 +60,10 @@ public interface InstanceGroupManagersSetInstanceTemplateRequestOrBuilder
    *
    *
    * <pre>
-   * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
+   * The URL of the instance template that is specified for this managed
+   * instance group. The group uses this template to create all new instances
+   * in the managed instance group. The templates for existing instances in the
+   * group do not change unless you run recreateInstances, runapplyUpdatesToInstances, or set the group'supdatePolicy.type to PROACTIVE.
    * </pre>
    *
    * <code>optional string instance_template = 309248228;</code>

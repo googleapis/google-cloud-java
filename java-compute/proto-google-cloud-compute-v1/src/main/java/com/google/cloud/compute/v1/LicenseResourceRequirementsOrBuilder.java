@@ -28,7 +28,8 @@ public interface LicenseResourceRequirementsOrBuilder
    *
    *
    * <pre>
-   * [Input Only] Deprecated. This field no longer reflects the minimum number of guest cpus required to use the Instance.
+   * [Input Only] Deprecated. This field no longer reflects the minimum number
+   * of guest cpus required to use the Instance.
    * </pre>
    *
    * <code>optional int32 min_guest_cpu_count = 477964836;</code>
@@ -41,7 +42,8 @@ public interface LicenseResourceRequirementsOrBuilder
    *
    *
    * <pre>
-   * [Input Only] Deprecated. This field no longer reflects the minimum number of guest cpus required to use the Instance.
+   * [Input Only] Deprecated. This field no longer reflects the minimum number
+   * of guest cpus required to use the Instance.
    * </pre>
    *
    * <code>optional int32 min_guest_cpu_count = 477964836;</code>
@@ -54,7 +56,8 @@ public interface LicenseResourceRequirementsOrBuilder
    *
    *
    * <pre>
-   * [Input Only] Deprecated. This field no longer reflects the minimum memory required to use the Instance.
+   * [Input Only] Deprecated. This field no longer reflects the minimum memory
+   * required to use the Instance.
    * </pre>
    *
    * <code>optional int32 min_memory_mb = 504785894;</code>
@@ -67,7 +70,8 @@ public interface LicenseResourceRequirementsOrBuilder
    *
    *
    * <pre>
-   * [Input Only] Deprecated. This field no longer reflects the minimum memory required to use the Instance.
+   * [Input Only] Deprecated. This field no longer reflects the minimum memory
+   * required to use the Instance.
    * </pre>
    *
    * <code>optional int32 min_memory_mb = 504785894;</code>

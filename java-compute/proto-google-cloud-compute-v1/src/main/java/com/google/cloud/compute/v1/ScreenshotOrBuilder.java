@@ -67,7 +67,8 @@ public interface ScreenshotOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#screenshot for the screenshots.
+   * [Output Only] Type of the resource. Always compute#screenshot
+   * for the screenshots.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -80,7 +81,8 @@ public interface ScreenshotOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#screenshot for the screenshots.
+   * [Output Only] Type of the resource. Always compute#screenshot
+   * for the screenshots.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -93,7 +95,8 @@ public interface ScreenshotOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#screenshot for the screenshots.
+   * [Output Only] Type of the resource. Always compute#screenshot
+   * for the screenshots.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>

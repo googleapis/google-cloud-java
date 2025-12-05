@@ -28,7 +28,8 @@ public interface InstanceGroupManagersScopedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The list of managed instance groups that are contained in the specified project and zone.
+   * [Output Only] The list of managed instance groups that are contained in
+   * the specified project and zone.
    * </pre>
    *
    * <code>
@@ -41,7 +42,8 @@ public interface InstanceGroupManagersScopedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The list of managed instance groups that are contained in the specified project and zone.
+   * [Output Only] The list of managed instance groups that are contained in
+   * the specified project and zone.
    * </pre>
    *
    * <code>
@@ -54,7 +56,8 @@ public interface InstanceGroupManagersScopedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The list of managed instance groups that are contained in the specified project and zone.
+   * [Output Only] The list of managed instance groups that are contained in
+   * the specified project and zone.
    * </pre>
    *
    * <code>
@@ -67,7 +70,8 @@ public interface InstanceGroupManagersScopedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The list of managed instance groups that are contained in the specified project and zone.
+   * [Output Only] The list of managed instance groups that are contained in
+   * the specified project and zone.
    * </pre>
    *
    * <code>
@@ -81,7 +85,8 @@ public interface InstanceGroupManagersScopedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The list of managed instance groups that are contained in the specified project and zone.
+   * [Output Only] The list of managed instance groups that are contained in
+   * the specified project and zone.
    * </pre>
    *
    * <code>
@@ -95,7 +100,8 @@ public interface InstanceGroupManagersScopedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The warning that replaces the list of managed instance groups when the list is empty.
+   * [Output Only] The warning that replaces the list of managed instance
+   * groups when the list is empty.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
@@ -108,7 +114,8 @@ public interface InstanceGroupManagersScopedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The warning that replaces the list of managed instance groups when the list is empty.
+   * [Output Only] The warning that replaces the list of managed instance
+   * groups when the list is empty.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>
@@ -121,7 +128,8 @@ public interface InstanceGroupManagersScopedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The warning that replaces the list of managed instance groups when the list is empty.
+   * [Output Only] The warning that replaces the list of managed instance
+   * groups when the list is empty.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Warning warning = 50704284;</code>

@@ -23,7 +23,9 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * [Output Only] How reliable this topology is configured to be, and why this group does or does not meet the requirements for the intended capability.
+ * [Output Only] How reliable this topology is configured to be, and why
+ * this group does or does not meet the requirements for the intended
+ * capability.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.InterconnectGroupConfiguredTopologyCapability}
@@ -540,7 +542,9 @@ public final class InterconnectGroupConfiguredTopologyCapability
    *
    *
    * <pre>
-   * [Output Only] How reliable this topology is configured to be, and why this group does or does not meet the requirements for the intended capability.
+   * [Output Only] How reliable this topology is configured to be, and why
+   * this group does or does not meet the requirements for the intended
+   * capability.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.InterconnectGroupConfiguredTopologyCapability}

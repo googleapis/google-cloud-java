@@ -89,7 +89,8 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The instance is halted and we are performing tear down tasks like network deprogramming, releasing quota, IP, tearing down disks etc.
+     * The instance is halted and we are performing tear down tasks like network
+     * deprogramming, releasing quota, IP, tearing down disks etc.
      * </pre>
      *
      * <code>DEPROVISIONING = 428935662;</code>
@@ -99,7 +100,8 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * For Flex Start provisioning instance is waiting for available capacity from Dynamic Workload Scheduler (DWS).
+     * For Flex Start provisioning instance is waiting for available capacity
+     * from Dynamic Workload Scheduler (DWS).
      * </pre>
      *
      * <code>PENDING = 35394935;</code>
@@ -139,7 +141,8 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * All required resources have been allocated and the instance is being started.
+     * All required resources have been allocated and the instance
+     * is being started.
      * </pre>
      *
      * <code>STAGING = 431072283;</code>
@@ -189,7 +192,8 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The instance has stopped (either by explicit action or underlying failure).
+     * The instance has stopped (either by explicit action or underlying
+     * failure).
      * </pre>
      *
      * <code>TERMINATED = 250018339;</code>
@@ -213,7 +217,8 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The instance is halted and we are performing tear down tasks like network deprogramming, releasing quota, IP, tearing down disks etc.
+     * The instance is halted and we are performing tear down tasks like network
+     * deprogramming, releasing quota, IP, tearing down disks etc.
      * </pre>
      *
      * <code>DEPROVISIONING = 428935662;</code>
@@ -224,7 +229,8 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * For Flex Start provisioning instance is waiting for available capacity from Dynamic Workload Scheduler (DWS).
+     * For Flex Start provisioning instance is waiting for available capacity
+     * from Dynamic Workload Scheduler (DWS).
      * </pre>
      *
      * <code>PENDING = 35394935;</code>
@@ -268,7 +274,8 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * All required resources have been allocated and the instance is being started.
+     * All required resources have been allocated and the instance
+     * is being started.
      * </pre>
      *
      * <code>STAGING = 431072283;</code>
@@ -323,7 +330,8 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The instance has stopped (either by explicit action or underlying failure).
+     * The instance has stopped (either by explicit action or underlying
+     * failure).
      * </pre>
      *
      * <code>TERMINATED = 250018339;</code>

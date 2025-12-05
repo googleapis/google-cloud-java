@@ -45,6 +45,7 @@ public class SyncAggregatedList {
               .setProject("project-309310695")
               .setReturnPartialSuccess(true)
               .setServiceProjectNumber(-1293855239)
+              .setViews("views112204398")
               .build();
       for (Map.Entry<String, SubnetworksScopedList> element :
           subnetworksClient.aggregatedList(request).iterateAll()) {

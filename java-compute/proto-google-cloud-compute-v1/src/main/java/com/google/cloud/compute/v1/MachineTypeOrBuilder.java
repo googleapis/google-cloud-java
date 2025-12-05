@@ -28,7 +28,8 @@ public interface MachineTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of accelerator configurations assigned to this machine type.
+   * [Output Only] A list of accelerator configurations assigned to this
+   * machine type.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Accelerators accelerators = 269577064;</code>
@@ -39,7 +40,8 @@ public interface MachineTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of accelerator configurations assigned to this machine type.
+   * [Output Only] A list of accelerator configurations assigned to this
+   * machine type.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Accelerators accelerators = 269577064;</code>
@@ -50,7 +52,8 @@ public interface MachineTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of accelerator configurations assigned to this machine type.
+   * [Output Only] A list of accelerator configurations assigned to this
+   * machine type.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Accelerators accelerators = 269577064;</code>
@@ -61,7 +64,8 @@ public interface MachineTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of accelerator configurations assigned to this machine type.
+   * [Output Only] A list of accelerator configurations assigned to this
+   * machine type.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Accelerators accelerators = 269577064;</code>
@@ -73,7 +77,8 @@ public interface MachineTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of accelerator configurations assigned to this machine type.
+   * [Output Only] A list of accelerator configurations assigned to this
+   * machine type.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Accelerators accelerators = 269577064;</code>
@@ -126,7 +131,8 @@ public interface MachineTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -139,7 +145,8 @@ public interface MachineTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -152,7 +159,8 @@ public interface MachineTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -165,7 +173,8 @@ public interface MachineTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The deprecation status associated with this machine type. Only applicable if the machine type is unavailable.
+   * [Output Only] The deprecation status associated with this machine type.
+   * Only applicable if the machine type is unavailable.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
@@ -178,7 +187,8 @@ public interface MachineTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The deprecation status associated with this machine type. Only applicable if the machine type is unavailable.
+   * [Output Only] The deprecation status associated with this machine type.
+   * Only applicable if the machine type is unavailable.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
@@ -191,7 +201,8 @@ public interface MachineTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The deprecation status associated with this machine type. Only applicable if the machine type is unavailable.
+   * [Output Only] The deprecation status associated with this machine type.
+   * Only applicable if the machine type is unavailable.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
@@ -241,7 +252,8 @@ public interface MachineTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The number of virtual CPUs that are available to the instance.
+   * [Output Only] The number of virtual CPUs that are available to the
+   * instance.
    * </pre>
    *
    * <code>optional int32 guest_cpus = 393356754;</code>
@@ -254,7 +266,8 @@ public interface MachineTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The number of virtual CPUs that are available to the instance.
+   * [Output Only] The number of virtual CPUs that are available to the
+   * instance.
    * </pre>
    *
    * <code>optional int32 guest_cpus = 393356754;</code>
@@ -267,7 +280,8 @@ public interface MachineTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -280,7 +294,8 @@ public interface MachineTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -293,7 +308,8 @@ public interface MachineTypeOrBuilder
    *
    *
    * <pre>
-   * [Deprecated] This property is deprecated and will never be populated with any relevant values.
+   * [Deprecated] This property is deprecated and will never be populated with
+   * any relevant values.
    * </pre>
    *
    * <code>optional int32 image_space_gb = 75331864;</code>
@@ -306,7 +322,8 @@ public interface MachineTypeOrBuilder
    *
    *
    * <pre>
-   * [Deprecated] This property is deprecated and will never be populated with any relevant values.
+   * [Deprecated] This property is deprecated and will never be populated with
+   * any relevant values.
    * </pre>
    *
    * <code>optional int32 image_space_gb = 75331864;</code>
@@ -319,7 +336,8 @@ public interface MachineTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Whether this machine type has a shared CPU. See Shared-core machine types for more information.
+   * [Output Only] Whether this machine type has a shared CPU. SeeShared-core machine
+   * types for more information.
    * </pre>
    *
    * <code>optional bool is_shared_cpu = 521399555;</code>
@@ -332,7 +350,8 @@ public interface MachineTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Whether this machine type has a shared CPU. See Shared-core machine types for more information.
+   * [Output Only] Whether this machine type has a shared CPU. SeeShared-core machine
+   * types for more information.
    * </pre>
    *
    * <code>optional bool is_shared_cpu = 521399555;</code>
@@ -345,7 +364,7 @@ public interface MachineTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Always compute#machineType for machine types.
+   * [Output Only] The type of the resource. Alwayscompute#machineType for machine types.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -358,7 +377,7 @@ public interface MachineTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Always compute#machineType for machine types.
+   * [Output Only] The type of the resource. Alwayscompute#machineType for machine types.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -371,7 +390,7 @@ public interface MachineTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Always compute#machineType for machine types.
+   * [Output Only] The type of the resource. Alwayscompute#machineType for machine types.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -436,7 +455,8 @@ public interface MachineTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The amount of physical memory available to the instance, defined in MB.
+   * [Output Only] The amount of physical memory available to the instance,
+   * defined in MB.
    * </pre>
    *
    * <code>optional int32 memory_mb = 116001171;</code>
@@ -449,7 +469,8 @@ public interface MachineTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The amount of physical memory available to the instance, defined in MB.
+   * [Output Only] The amount of physical memory available to the instance,
+   * defined in MB.
    * </pre>
    *
    * <code>optional int32 memory_mb = 116001171;</code>
@@ -540,7 +561,8 @@ public interface MachineTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of the zone where the machine type resides, such as us-central1-a.
+   * [Output Only] The name of the zone where the machine type resides,
+   * such as us-central1-a.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -553,7 +575,8 @@ public interface MachineTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of the zone where the machine type resides, such as us-central1-a.
+   * [Output Only] The name of the zone where the machine type resides,
+   * such as us-central1-a.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -566,7 +589,8 @@ public interface MachineTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of the zone where the machine type resides, such as us-central1-a.
+   * [Output Only] The name of the zone where the machine type resides,
+   * such as us-central1-a.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>

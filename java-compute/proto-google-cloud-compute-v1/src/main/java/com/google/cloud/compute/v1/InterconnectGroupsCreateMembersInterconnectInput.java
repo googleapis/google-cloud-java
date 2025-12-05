@@ -79,7 +79,15 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+   * Type of interconnect, which can take one of the following values:
+   *
+   *    - PARTNER: A partner-managed interconnection shared between
+   *    customers though a partner.
+   *    - DEDICATED: A dedicated physical
+   *    interconnection with the customer.
+   *
+   *  Note that a value IT_PRIVATE
+   * has been deprecated in favor of DEDICATED.
    * </pre>
    *
    * Protobuf enum {@code
@@ -267,7 +275,15 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+   * Type of link requested, which can take one of the following values:
+   *
+   *    - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics
+   *    - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics.
+   *    - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4
+   *    optics.
+   *
+   *  Note that this field indicates the speed of each of the
+   * links in the bundle, not the speed of the entire bundle.
    * </pre>
    *
    * Protobuf enum {@code
@@ -298,7 +314,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * 10G Ethernet, LR Optics. [(rate_bps) = 10000000000];
+     * 10G Ethernet, LR Optics.
+     * [(rate_bps) =  10000000000];
      * </pre>
      *
      * <code>LINK_TYPE_ETHERNET_10G_LR = 236739749;</code>
@@ -343,7 +360,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * 10G Ethernet, LR Optics. [(rate_bps) = 10000000000];
+     * 10G Ethernet, LR Optics.
+     * [(rate_bps) =  10000000000];
      * </pre>
      *
      * <code>LINK_TYPE_ETHERNET_10G_LR = 236739749;</code>
@@ -473,6 +491,26 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
+     * Cross-Site Networking
+     * </pre>
+     *
+     * <code>IF_CROSS_SITE_NETWORK = 469111095;</code>
+     */
+    IF_CROSS_SITE_NETWORK(469111095),
+    /**
+     *
+     *
+     * <pre>
+     * L2 Interconnect Attachment Forwarding
+     * </pre>
+     *
+     * <code>IF_L2_FORWARDING = 125563860;</code>
+     */
+    IF_L2_FORWARDING(125563860),
+    /**
+     *
+     *
+     * <pre>
      * Media Access Control security (MACsec)
      * </pre>
      *
@@ -492,6 +530,28 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      * <code>UNDEFINED_REQUESTED_FEATURES = 0;</code>
      */
     public static final int UNDEFINED_REQUESTED_FEATURES_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Cross-Site Networking
+     * </pre>
+     *
+     * <code>IF_CROSS_SITE_NETWORK = 469111095;</code>
+     */
+    public static final int IF_CROSS_SITE_NETWORK_VALUE = 469111095;
+
+    /**
+     *
+     *
+     * <pre>
+     * L2 Interconnect Attachment Forwarding
+     * </pre>
+     *
+     * <code>IF_L2_FORWARDING = 125563860;</code>
+     */
+    public static final int IF_L2_FORWARDING_VALUE = 125563860;
 
     /**
      *
@@ -530,6 +590,10 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
       switch (value) {
         case 0:
           return UNDEFINED_REQUESTED_FEATURES;
+        case 469111095:
+          return IF_CROSS_SITE_NETWORK;
+        case 125563860:
+          return IF_L2_FORWARDING;
         case 396279300:
           return IF_MACSEC;
         default:
@@ -599,7 +663,11 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * Administrative status of the interconnect. When this is set to true, the Interconnect is functional and can carry traffic. When set to false, no packets can be carried over the interconnect and no BGP routes are exchanged over it. By default, the status is set to true.
+   * Administrative status of the interconnect. When this is set to true, the
+   * Interconnect is functional and can carry traffic.
+   * When set to false, no packets can be carried over the interconnect and
+   * no BGP routes are exchanged over it. By default, the status is set to
+   * true.
    * </pre>
    *
    * <code>optional bool admin_enabled = 445675089;</code>
@@ -615,7 +683,11 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * Administrative status of the interconnect. When this is set to true, the Interconnect is functional and can carry traffic. When set to false, no packets can be carried over the interconnect and no BGP routes are exchanged over it. By default, the status is set to true.
+   * Administrative status of the interconnect. When this is set to true, the
+   * Interconnect is functional and can carry traffic.
+   * When set to false, no packets can be carried over the interconnect and
+   * no BGP routes are exchanged over it. By default, the status is set to
+   * true.
    * </pre>
    *
    * <code>optional bool admin_enabled = 445675089;</code>
@@ -636,7 +708,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * Customer name, to put in the Letter of Authorization as the party authorized to request a crossconnect.
+   * Customer name, to put in the Letter of Authorization as the party
+   * authorized to request a crossconnect.
    * </pre>
    *
    * <code>optional string customer_name = 3665484;</code>
@@ -652,7 +725,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * Customer name, to put in the Letter of Authorization as the party authorized to request a crossconnect.
+   * Customer name, to put in the Letter of Authorization as the party
+   * authorized to request a crossconnect.
    * </pre>
    *
    * <code>optional string customer_name = 3665484;</code>
@@ -676,7 +750,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * Customer name, to put in the Letter of Authorization as the party authorized to request a crossconnect.
+   * Customer name, to put in the Letter of Authorization as the party
+   * authorized to request a crossconnect.
    * </pre>
    *
    * <code>optional string customer_name = 3665484;</code>
@@ -705,7 +780,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -721,7 +797,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -745,7 +822,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -774,7 +852,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * A zone-free location to use for all Interconnects created in this call, like "iad-1234".
+   * A zone-free location to use for all Interconnects created in this call,
+   * like "iad-1234".
    * </pre>
    *
    * <code>optional string facility = 501116579;</code>
@@ -790,7 +869,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * A zone-free location to use for all Interconnects created in this call, like "iad-1234".
+   * A zone-free location to use for all Interconnects created in this call,
+   * like "iad-1234".
    * </pre>
    *
    * <code>optional string facility = 501116579;</code>
@@ -814,7 +894,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * A zone-free location to use for all Interconnects created in this call, like "iad-1234".
+   * A zone-free location to use for all Interconnects created in this call,
+   * like "iad-1234".
    * </pre>
    *
    * <code>optional string facility = 501116579;</code>
@@ -843,7 +924,15 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+   * Type of interconnect, which can take one of the following values:
+   *
+   *    - PARTNER: A partner-managed interconnection shared between
+   *    customers though a partner.
+   *    - DEDICATED: A dedicated physical
+   *    interconnection with the customer.
+   *
+   *  Note that a value IT_PRIVATE
+   * has been deprecated in favor of DEDICATED.
    * Check the InterconnectType enum for the list of possible values.
    * </pre>
    *
@@ -860,7 +949,15 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+   * Type of interconnect, which can take one of the following values:
+   *
+   *    - PARTNER: A partner-managed interconnection shared between
+   *    customers though a partner.
+   *    - DEDICATED: A dedicated physical
+   *    interconnection with the customer.
+   *
+   *  Note that a value IT_PRIVATE
+   * has been deprecated in favor of DEDICATED.
    * Check the InterconnectType enum for the list of possible values.
    * </pre>
    *
@@ -885,7 +982,15 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+   * Type of interconnect, which can take one of the following values:
+   *
+   *    - PARTNER: A partner-managed interconnection shared between
+   *    customers though a partner.
+   *    - DEDICATED: A dedicated physical
+   *    interconnection with the customer.
+   *
+   *  Note that a value IT_PRIVATE
+   * has been deprecated in favor of DEDICATED.
    * Check the InterconnectType enum for the list of possible values.
    * </pre>
    *
@@ -915,7 +1020,15 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+   * Type of link requested, which can take one of the following values:
+   *
+   *    - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics
+   *    - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics.
+   *    - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4
+   *    optics.
+   *
+   *  Note that this field indicates the speed of each of the
+   * links in the bundle, not the speed of the entire bundle.
    * Check the LinkType enum for the list of possible values.
    * </pre>
    *
@@ -932,7 +1045,15 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+   * Type of link requested, which can take one of the following values:
+   *
+   *    - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics
+   *    - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics.
+   *    - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4
+   *    optics.
+   *
+   *  Note that this field indicates the speed of each of the
+   * links in the bundle, not the speed of the entire bundle.
    * Check the LinkType enum for the list of possible values.
    * </pre>
    *
@@ -957,7 +1078,15 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+   * Type of link requested, which can take one of the following values:
+   *
+   *    - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics
+   *    - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics.
+   *    - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4
+   *    optics.
+   *
+   *  Note that this field indicates the speed of each of the
+   * links in the bundle, not the speed of the entire bundle.
    * Check the LinkType enum for the list of possible values.
    * </pre>
    *
@@ -987,7 +1116,14 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * Name of the Interconnects to be created. This must be specified on the template and/or on each individual interconnect. The name, if not empty, must be 1-63 characters long, and comply with RFC1035. Specifically, any nonempty name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the Interconnects to be created. This must be specified on the
+   * template and/or on each individual interconnect. The name, if not empty,
+   * must be 1-63 characters long, and comply with RFC1035.
+   * Specifically, any nonempty name must be 1-63 characters long and match
+   * the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1003,7 +1139,14 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * Name of the Interconnects to be created. This must be specified on the template and/or on each individual interconnect. The name, if not empty, must be 1-63 characters long, and comply with RFC1035. Specifically, any nonempty name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the Interconnects to be created. This must be specified on the
+   * template and/or on each individual interconnect. The name, if not empty,
+   * must be 1-63 characters long, and comply with RFC1035.
+   * Specifically, any nonempty name must be 1-63 characters long and match
+   * the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1027,7 +1170,14 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * Name of the Interconnects to be created. This must be specified on the template and/or on each individual interconnect. The name, if not empty, must be 1-63 characters long, and comply with RFC1035. Specifically, any nonempty name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the Interconnects to be created. This must be specified on the
+   * template and/or on each individual interconnect. The name, if not empty,
+   * must be 1-63 characters long, and comply with RFC1035.
+   * Specifically, any nonempty name must be 1-63 characters long and match
+   * the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1056,7 +1206,12 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * Email address to contact the customer NOC for operations and maintenance notifications regarding this Interconnect. If specified, this will be used for notifications in addition to all other forms described, such as Cloud Monitoring logs alerting and Cloud Notifications. This field is required for users who sign up for Cloud Interconnect using workforce identity federation.
+   * Email address to contact the customer NOC for operations and maintenance
+   * notifications regarding this Interconnect. If specified, this will be
+   * used for notifications in addition to all other forms described, such as
+   * Cloud Monitoring logs alerting and Cloud Notifications. This field is
+   * required for users who sign up for Cloud Interconnect using
+   * workforce identity federation.
    * </pre>
    *
    * <code>optional string noc_contact_email = 14072832;</code>
@@ -1072,7 +1227,12 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * Email address to contact the customer NOC for operations and maintenance notifications regarding this Interconnect. If specified, this will be used for notifications in addition to all other forms described, such as Cloud Monitoring logs alerting and Cloud Notifications. This field is required for users who sign up for Cloud Interconnect using workforce identity federation.
+   * Email address to contact the customer NOC for operations and maintenance
+   * notifications regarding this Interconnect. If specified, this will be
+   * used for notifications in addition to all other forms described, such as
+   * Cloud Monitoring logs alerting and Cloud Notifications. This field is
+   * required for users who sign up for Cloud Interconnect using
+   * workforce identity federation.
    * </pre>
    *
    * <code>optional string noc_contact_email = 14072832;</code>
@@ -1096,7 +1256,12 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * Email address to contact the customer NOC for operations and maintenance notifications regarding this Interconnect. If specified, this will be used for notifications in addition to all other forms described, such as Cloud Monitoring logs alerting and Cloud Notifications. This field is required for users who sign up for Cloud Interconnect using workforce identity federation.
+   * Email address to contact the customer NOC for operations and maintenance
+   * notifications regarding this Interconnect. If specified, this will be
+   * used for notifications in addition to all other forms described, such as
+   * Cloud Monitoring logs alerting and Cloud Notifications. This field is
+   * required for users who sign up for Cloud Interconnect using
+   * workforce identity federation.
    * </pre>
    *
    * <code>optional string noc_contact_email = 14072832;</code>
@@ -1125,7 +1290,9 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * Indicates that this is a Cross-Cloud Interconnect. This field specifies the location outside of Google's network that the interconnect is connected to.
+   * Indicates that this is a Cross-Cloud Interconnect. This field specifies
+   * the location outside of Google's network that the interconnect is
+   * connected to.
    * </pre>
    *
    * <code>optional string remote_location = 324388750;</code>
@@ -1141,7 +1308,9 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * Indicates that this is a Cross-Cloud Interconnect. This field specifies the location outside of Google's network that the interconnect is connected to.
+   * Indicates that this is a Cross-Cloud Interconnect. This field specifies
+   * the location outside of Google's network that the interconnect is
+   * connected to.
    * </pre>
    *
    * <code>optional string remote_location = 324388750;</code>
@@ -1165,7 +1334,9 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * Indicates that this is a Cross-Cloud Interconnect. This field specifies the location outside of Google's network that the interconnect is connected to.
+   * Indicates that this is a Cross-Cloud Interconnect. This field specifies
+   * the location outside of Google's network that the interconnect is
+   * connected to.
    * </pre>
    *
    * <code>optional string remote_location = 324388750;</code>
@@ -1195,7 +1366,15 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * Optional. List of features requested for this Interconnect connection, which can take one of the following values: - IF_MACSEC If specified then the connection is created on MACsec capable hardware ports. If not specified, the default value is false, which allocates non-MACsec capable ports first if available. This parameter can be provided only with Interconnect INSERT. It isn't valid for Interconnect PATCH.
+   * Optional. List of features requested for this Interconnect connection,
+   * which can take one of the following values:
+   *
+   *    - IF_MACSEC: If specified, then the connection is created on MACsec
+   *    capable hardware ports. If not specified, non-MACsec capable ports will
+   *    also be considered.
+   *    - IF_CROSS_SITE_NETWORK: If specified, then the connection is created
+   *    exclusively for Cross-Site Networking. The connection can not be used for
+   *    Cross-Site Networking unless this feature is specified.
    * Check the RequestedFeatures enum for the list of possible values.
    * </pre>
    *
@@ -1211,7 +1390,15 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * Optional. List of features requested for this Interconnect connection, which can take one of the following values: - IF_MACSEC If specified then the connection is created on MACsec capable hardware ports. If not specified, the default value is false, which allocates non-MACsec capable ports first if available. This parameter can be provided only with Interconnect INSERT. It isn't valid for Interconnect PATCH.
+   * Optional. List of features requested for this Interconnect connection,
+   * which can take one of the following values:
+   *
+   *    - IF_MACSEC: If specified, then the connection is created on MACsec
+   *    capable hardware ports. If not specified, non-MACsec capable ports will
+   *    also be considered.
+   *    - IF_CROSS_SITE_NETWORK: If specified, then the connection is created
+   *    exclusively for Cross-Site Networking. The connection can not be used for
+   *    Cross-Site Networking unless this feature is specified.
    * Check the RequestedFeatures enum for the list of possible values.
    * </pre>
    *
@@ -1227,7 +1414,15 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * Optional. List of features requested for this Interconnect connection, which can take one of the following values: - IF_MACSEC If specified then the connection is created on MACsec capable hardware ports. If not specified, the default value is false, which allocates non-MACsec capable ports first if available. This parameter can be provided only with Interconnect INSERT. It isn't valid for Interconnect PATCH.
+   * Optional. List of features requested for this Interconnect connection,
+   * which can take one of the following values:
+   *
+   *    - IF_MACSEC: If specified, then the connection is created on MACsec
+   *    capable hardware ports. If not specified, non-MACsec capable ports will
+   *    also be considered.
+   *    - IF_CROSS_SITE_NETWORK: If specified, then the connection is created
+   *    exclusively for Cross-Site Networking. The connection can not be used for
+   *    Cross-Site Networking unless this feature is specified.
    * Check the RequestedFeatures enum for the list of possible values.
    * </pre>
    *
@@ -1244,7 +1439,15 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * Optional. List of features requested for this Interconnect connection, which can take one of the following values: - IF_MACSEC If specified then the connection is created on MACsec capable hardware ports. If not specified, the default value is false, which allocates non-MACsec capable ports first if available. This parameter can be provided only with Interconnect INSERT. It isn't valid for Interconnect PATCH.
+   * Optional. List of features requested for this Interconnect connection,
+   * which can take one of the following values:
+   *
+   *    - IF_MACSEC: If specified, then the connection is created on MACsec
+   *    capable hardware ports. If not specified, non-MACsec capable ports will
+   *    also be considered.
+   *    - IF_CROSS_SITE_NETWORK: If specified, then the connection is created
+   *    exclusively for Cross-Site Networking. The connection can not be used for
+   *    Cross-Site Networking unless this feature is specified.
    * Check the RequestedFeatures enum for the list of possible values.
    * </pre>
    *
@@ -1264,7 +1467,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * Target number of physical links in the link bundle, as requested by the customer.
+   * Target number of physical links in the link bundle, as requested by the
+   * customer.
    * </pre>
    *
    * <code>optional int32 requested_link_count = 45051387;</code>
@@ -1280,7 +1484,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
    *
    *
    * <pre>
-   * Target number of physical links in the link bundle, as requested by the customer.
+   * Target number of physical links in the link bundle, as requested by the
+   * customer.
    * </pre>
    *
    * <code>optional int32 requested_link_count = 45051387;</code>
@@ -1974,7 +2179,11 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Administrative status of the interconnect. When this is set to true, the Interconnect is functional and can carry traffic. When set to false, no packets can be carried over the interconnect and no BGP routes are exchanged over it. By default, the status is set to true.
+     * Administrative status of the interconnect. When this is set to true, the
+     * Interconnect is functional and can carry traffic.
+     * When set to false, no packets can be carried over the interconnect and
+     * no BGP routes are exchanged over it. By default, the status is set to
+     * true.
      * </pre>
      *
      * <code>optional bool admin_enabled = 445675089;</code>
@@ -1990,7 +2199,11 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Administrative status of the interconnect. When this is set to true, the Interconnect is functional and can carry traffic. When set to false, no packets can be carried over the interconnect and no BGP routes are exchanged over it. By default, the status is set to true.
+     * Administrative status of the interconnect. When this is set to true, the
+     * Interconnect is functional and can carry traffic.
+     * When set to false, no packets can be carried over the interconnect and
+     * no BGP routes are exchanged over it. By default, the status is set to
+     * true.
      * </pre>
      *
      * <code>optional bool admin_enabled = 445675089;</code>
@@ -2006,7 +2219,11 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Administrative status of the interconnect. When this is set to true, the Interconnect is functional and can carry traffic. When set to false, no packets can be carried over the interconnect and no BGP routes are exchanged over it. By default, the status is set to true.
+     * Administrative status of the interconnect. When this is set to true, the
+     * Interconnect is functional and can carry traffic.
+     * When set to false, no packets can be carried over the interconnect and
+     * no BGP routes are exchanged over it. By default, the status is set to
+     * true.
      * </pre>
      *
      * <code>optional bool admin_enabled = 445675089;</code>
@@ -2026,7 +2243,11 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Administrative status of the interconnect. When this is set to true, the Interconnect is functional and can carry traffic. When set to false, no packets can be carried over the interconnect and no BGP routes are exchanged over it. By default, the status is set to true.
+     * Administrative status of the interconnect. When this is set to true, the
+     * Interconnect is functional and can carry traffic.
+     * When set to false, no packets can be carried over the interconnect and
+     * no BGP routes are exchanged over it. By default, the status is set to
+     * true.
      * </pre>
      *
      * <code>optional bool admin_enabled = 445675089;</code>
@@ -2046,7 +2267,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Customer name, to put in the Letter of Authorization as the party authorized to request a crossconnect.
+     * Customer name, to put in the Letter of Authorization as the party
+     * authorized to request a crossconnect.
      * </pre>
      *
      * <code>optional string customer_name = 3665484;</code>
@@ -2061,7 +2283,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Customer name, to put in the Letter of Authorization as the party authorized to request a crossconnect.
+     * Customer name, to put in the Letter of Authorization as the party
+     * authorized to request a crossconnect.
      * </pre>
      *
      * <code>optional string customer_name = 3665484;</code>
@@ -2084,7 +2307,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Customer name, to put in the Letter of Authorization as the party authorized to request a crossconnect.
+     * Customer name, to put in the Letter of Authorization as the party
+     * authorized to request a crossconnect.
      * </pre>
      *
      * <code>optional string customer_name = 3665484;</code>
@@ -2107,7 +2331,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Customer name, to put in the Letter of Authorization as the party authorized to request a crossconnect.
+     * Customer name, to put in the Letter of Authorization as the party
+     * authorized to request a crossconnect.
      * </pre>
      *
      * <code>optional string customer_name = 3665484;</code>
@@ -2129,7 +2354,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Customer name, to put in the Letter of Authorization as the party authorized to request a crossconnect.
+     * Customer name, to put in the Letter of Authorization as the party
+     * authorized to request a crossconnect.
      * </pre>
      *
      * <code>optional string customer_name = 3665484;</code>
@@ -2147,7 +2373,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Customer name, to put in the Letter of Authorization as the party authorized to request a crossconnect.
+     * Customer name, to put in the Letter of Authorization as the party
+     * authorized to request a crossconnect.
      * </pre>
      *
      * <code>optional string customer_name = 3665484;</code>
@@ -2172,7 +2399,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2187,7 +2415,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2210,7 +2439,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2233,7 +2463,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2255,7 +2486,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2273,7 +2505,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2298,7 +2531,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * A zone-free location to use for all Interconnects created in this call, like "iad-1234".
+     * A zone-free location to use for all Interconnects created in this call,
+     * like "iad-1234".
      * </pre>
      *
      * <code>optional string facility = 501116579;</code>
@@ -2313,7 +2547,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * A zone-free location to use for all Interconnects created in this call, like "iad-1234".
+     * A zone-free location to use for all Interconnects created in this call,
+     * like "iad-1234".
      * </pre>
      *
      * <code>optional string facility = 501116579;</code>
@@ -2336,7 +2571,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * A zone-free location to use for all Interconnects created in this call, like "iad-1234".
+     * A zone-free location to use for all Interconnects created in this call,
+     * like "iad-1234".
      * </pre>
      *
      * <code>optional string facility = 501116579;</code>
@@ -2359,7 +2595,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * A zone-free location to use for all Interconnects created in this call, like "iad-1234".
+     * A zone-free location to use for all Interconnects created in this call,
+     * like "iad-1234".
      * </pre>
      *
      * <code>optional string facility = 501116579;</code>
@@ -2381,7 +2618,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * A zone-free location to use for all Interconnects created in this call, like "iad-1234".
+     * A zone-free location to use for all Interconnects created in this call,
+     * like "iad-1234".
      * </pre>
      *
      * <code>optional string facility = 501116579;</code>
@@ -2399,7 +2637,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * A zone-free location to use for all Interconnects created in this call, like "iad-1234".
+     * A zone-free location to use for all Interconnects created in this call,
+     * like "iad-1234".
      * </pre>
      *
      * <code>optional string facility = 501116579;</code>
@@ -2424,7 +2663,15 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+     * Type of interconnect, which can take one of the following values:
+     *
+     *    - PARTNER: A partner-managed interconnection shared between
+     *    customers though a partner.
+     *    - DEDICATED: A dedicated physical
+     *    interconnection with the customer.
+     *
+     *  Note that a value IT_PRIVATE
+     * has been deprecated in favor of DEDICATED.
      * Check the InterconnectType enum for the list of possible values.
      * </pre>
      *
@@ -2440,7 +2687,15 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+     * Type of interconnect, which can take one of the following values:
+     *
+     *    - PARTNER: A partner-managed interconnection shared between
+     *    customers though a partner.
+     *    - DEDICATED: A dedicated physical
+     *    interconnection with the customer.
+     *
+     *  Note that a value IT_PRIVATE
+     * has been deprecated in favor of DEDICATED.
      * Check the InterconnectType enum for the list of possible values.
      * </pre>
      *
@@ -2464,7 +2719,15 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+     * Type of interconnect, which can take one of the following values:
+     *
+     *    - PARTNER: A partner-managed interconnection shared between
+     *    customers though a partner.
+     *    - DEDICATED: A dedicated physical
+     *    interconnection with the customer.
+     *
+     *  Note that a value IT_PRIVATE
+     * has been deprecated in favor of DEDICATED.
      * Check the InterconnectType enum for the list of possible values.
      * </pre>
      *
@@ -2488,7 +2751,15 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+     * Type of interconnect, which can take one of the following values:
+     *
+     *    - PARTNER: A partner-managed interconnection shared between
+     *    customers though a partner.
+     *    - DEDICATED: A dedicated physical
+     *    interconnection with the customer.
+     *
+     *  Note that a value IT_PRIVATE
+     * has been deprecated in favor of DEDICATED.
      * Check the InterconnectType enum for the list of possible values.
      * </pre>
      *
@@ -2511,7 +2782,15 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+     * Type of interconnect, which can take one of the following values:
+     *
+     *    - PARTNER: A partner-managed interconnection shared between
+     *    customers though a partner.
+     *    - DEDICATED: A dedicated physical
+     *    interconnection with the customer.
+     *
+     *  Note that a value IT_PRIVATE
+     * has been deprecated in favor of DEDICATED.
      * Check the InterconnectType enum for the list of possible values.
      * </pre>
      *
@@ -2530,7 +2809,15 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+     * Type of interconnect, which can take one of the following values:
+     *
+     *    - PARTNER: A partner-managed interconnection shared between
+     *    customers though a partner.
+     *    - DEDICATED: A dedicated physical
+     *    interconnection with the customer.
+     *
+     *  Note that a value IT_PRIVATE
+     * has been deprecated in favor of DEDICATED.
      * Check the InterconnectType enum for the list of possible values.
      * </pre>
      *
@@ -2556,7 +2843,15 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+     * Type of link requested, which can take one of the following values:
+     *
+     *    - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics
+     *    - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics.
+     *    - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4
+     *    optics.
+     *
+     *  Note that this field indicates the speed of each of the
+     * links in the bundle, not the speed of the entire bundle.
      * Check the LinkType enum for the list of possible values.
      * </pre>
      *
@@ -2572,7 +2867,15 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+     * Type of link requested, which can take one of the following values:
+     *
+     *    - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics
+     *    - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics.
+     *    - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4
+     *    optics.
+     *
+     *  Note that this field indicates the speed of each of the
+     * links in the bundle, not the speed of the entire bundle.
      * Check the LinkType enum for the list of possible values.
      * </pre>
      *
@@ -2596,7 +2899,15 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+     * Type of link requested, which can take one of the following values:
+     *
+     *    - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics
+     *    - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics.
+     *    - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4
+     *    optics.
+     *
+     *  Note that this field indicates the speed of each of the
+     * links in the bundle, not the speed of the entire bundle.
      * Check the LinkType enum for the list of possible values.
      * </pre>
      *
@@ -2620,7 +2931,15 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+     * Type of link requested, which can take one of the following values:
+     *
+     *    - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics
+     *    - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics.
+     *    - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4
+     *    optics.
+     *
+     *  Note that this field indicates the speed of each of the
+     * links in the bundle, not the speed of the entire bundle.
      * Check the LinkType enum for the list of possible values.
      * </pre>
      *
@@ -2643,7 +2962,15 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+     * Type of link requested, which can take one of the following values:
+     *
+     *    - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics
+     *    - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics.
+     *    - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4
+     *    optics.
+     *
+     *  Note that this field indicates the speed of each of the
+     * links in the bundle, not the speed of the entire bundle.
      * Check the LinkType enum for the list of possible values.
      * </pre>
      *
@@ -2662,7 +2989,15 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+     * Type of link requested, which can take one of the following values:
+     *
+     *    - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics
+     *    - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics.
+     *    - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4
+     *    optics.
+     *
+     *  Note that this field indicates the speed of each of the
+     * links in the bundle, not the speed of the entire bundle.
      * Check the LinkType enum for the list of possible values.
      * </pre>
      *
@@ -2688,7 +3023,14 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Name of the Interconnects to be created. This must be specified on the template and/or on each individual interconnect. The name, if not empty, must be 1-63 characters long, and comply with RFC1035. Specifically, any nonempty name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the Interconnects to be created. This must be specified on the
+     * template and/or on each individual interconnect. The name, if not empty,
+     * must be 1-63 characters long, and comply with RFC1035.
+     * Specifically, any nonempty name must be 1-63 characters long and match
+     * the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2703,7 +3045,14 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Name of the Interconnects to be created. This must be specified on the template and/or on each individual interconnect. The name, if not empty, must be 1-63 characters long, and comply with RFC1035. Specifically, any nonempty name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the Interconnects to be created. This must be specified on the
+     * template and/or on each individual interconnect. The name, if not empty,
+     * must be 1-63 characters long, and comply with RFC1035.
+     * Specifically, any nonempty name must be 1-63 characters long and match
+     * the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2726,7 +3075,14 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Name of the Interconnects to be created. This must be specified on the template and/or on each individual interconnect. The name, if not empty, must be 1-63 characters long, and comply with RFC1035. Specifically, any nonempty name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the Interconnects to be created. This must be specified on the
+     * template and/or on each individual interconnect. The name, if not empty,
+     * must be 1-63 characters long, and comply with RFC1035.
+     * Specifically, any nonempty name must be 1-63 characters long and match
+     * the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2749,7 +3105,14 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Name of the Interconnects to be created. This must be specified on the template and/or on each individual interconnect. The name, if not empty, must be 1-63 characters long, and comply with RFC1035. Specifically, any nonempty name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the Interconnects to be created. This must be specified on the
+     * template and/or on each individual interconnect. The name, if not empty,
+     * must be 1-63 characters long, and comply with RFC1035.
+     * Specifically, any nonempty name must be 1-63 characters long and match
+     * the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2771,7 +3134,14 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Name of the Interconnects to be created. This must be specified on the template and/or on each individual interconnect. The name, if not empty, must be 1-63 characters long, and comply with RFC1035. Specifically, any nonempty name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the Interconnects to be created. This must be specified on the
+     * template and/or on each individual interconnect. The name, if not empty,
+     * must be 1-63 characters long, and comply with RFC1035.
+     * Specifically, any nonempty name must be 1-63 characters long and match
+     * the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2789,7 +3159,14 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Name of the Interconnects to be created. This must be specified on the template and/or on each individual interconnect. The name, if not empty, must be 1-63 characters long, and comply with RFC1035. Specifically, any nonempty name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the Interconnects to be created. This must be specified on the
+     * template and/or on each individual interconnect. The name, if not empty,
+     * must be 1-63 characters long, and comply with RFC1035.
+     * Specifically, any nonempty name must be 1-63 characters long and match
+     * the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2814,7 +3191,12 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Email address to contact the customer NOC for operations and maintenance notifications regarding this Interconnect. If specified, this will be used for notifications in addition to all other forms described, such as Cloud Monitoring logs alerting and Cloud Notifications. This field is required for users who sign up for Cloud Interconnect using workforce identity federation.
+     * Email address to contact the customer NOC for operations and maintenance
+     * notifications regarding this Interconnect. If specified, this will be
+     * used for notifications in addition to all other forms described, such as
+     * Cloud Monitoring logs alerting and Cloud Notifications. This field is
+     * required for users who sign up for Cloud Interconnect using
+     * workforce identity federation.
      * </pre>
      *
      * <code>optional string noc_contact_email = 14072832;</code>
@@ -2829,7 +3211,12 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Email address to contact the customer NOC for operations and maintenance notifications regarding this Interconnect. If specified, this will be used for notifications in addition to all other forms described, such as Cloud Monitoring logs alerting and Cloud Notifications. This field is required for users who sign up for Cloud Interconnect using workforce identity federation.
+     * Email address to contact the customer NOC for operations and maintenance
+     * notifications regarding this Interconnect. If specified, this will be
+     * used for notifications in addition to all other forms described, such as
+     * Cloud Monitoring logs alerting and Cloud Notifications. This field is
+     * required for users who sign up for Cloud Interconnect using
+     * workforce identity federation.
      * </pre>
      *
      * <code>optional string noc_contact_email = 14072832;</code>
@@ -2852,7 +3239,12 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Email address to contact the customer NOC for operations and maintenance notifications regarding this Interconnect. If specified, this will be used for notifications in addition to all other forms described, such as Cloud Monitoring logs alerting and Cloud Notifications. This field is required for users who sign up for Cloud Interconnect using workforce identity federation.
+     * Email address to contact the customer NOC for operations and maintenance
+     * notifications regarding this Interconnect. If specified, this will be
+     * used for notifications in addition to all other forms described, such as
+     * Cloud Monitoring logs alerting and Cloud Notifications. This field is
+     * required for users who sign up for Cloud Interconnect using
+     * workforce identity federation.
      * </pre>
      *
      * <code>optional string noc_contact_email = 14072832;</code>
@@ -2875,7 +3267,12 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Email address to contact the customer NOC for operations and maintenance notifications regarding this Interconnect. If specified, this will be used for notifications in addition to all other forms described, such as Cloud Monitoring logs alerting and Cloud Notifications. This field is required for users who sign up for Cloud Interconnect using workforce identity federation.
+     * Email address to contact the customer NOC for operations and maintenance
+     * notifications regarding this Interconnect. If specified, this will be
+     * used for notifications in addition to all other forms described, such as
+     * Cloud Monitoring logs alerting and Cloud Notifications. This field is
+     * required for users who sign up for Cloud Interconnect using
+     * workforce identity federation.
      * </pre>
      *
      * <code>optional string noc_contact_email = 14072832;</code>
@@ -2897,7 +3294,12 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Email address to contact the customer NOC for operations and maintenance notifications regarding this Interconnect. If specified, this will be used for notifications in addition to all other forms described, such as Cloud Monitoring logs alerting and Cloud Notifications. This field is required for users who sign up for Cloud Interconnect using workforce identity federation.
+     * Email address to contact the customer NOC for operations and maintenance
+     * notifications regarding this Interconnect. If specified, this will be
+     * used for notifications in addition to all other forms described, such as
+     * Cloud Monitoring logs alerting and Cloud Notifications. This field is
+     * required for users who sign up for Cloud Interconnect using
+     * workforce identity federation.
      * </pre>
      *
      * <code>optional string noc_contact_email = 14072832;</code>
@@ -2915,7 +3317,12 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Email address to contact the customer NOC for operations and maintenance notifications regarding this Interconnect. If specified, this will be used for notifications in addition to all other forms described, such as Cloud Monitoring logs alerting and Cloud Notifications. This field is required for users who sign up for Cloud Interconnect using workforce identity federation.
+     * Email address to contact the customer NOC for operations and maintenance
+     * notifications regarding this Interconnect. If specified, this will be
+     * used for notifications in addition to all other forms described, such as
+     * Cloud Monitoring logs alerting and Cloud Notifications. This field is
+     * required for users who sign up for Cloud Interconnect using
+     * workforce identity federation.
      * </pre>
      *
      * <code>optional string noc_contact_email = 14072832;</code>
@@ -2940,7 +3347,9 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Indicates that this is a Cross-Cloud Interconnect. This field specifies the location outside of Google's network that the interconnect is connected to.
+     * Indicates that this is a Cross-Cloud Interconnect. This field specifies
+     * the location outside of Google's network that the interconnect is
+     * connected to.
      * </pre>
      *
      * <code>optional string remote_location = 324388750;</code>
@@ -2955,7 +3364,9 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Indicates that this is a Cross-Cloud Interconnect. This field specifies the location outside of Google's network that the interconnect is connected to.
+     * Indicates that this is a Cross-Cloud Interconnect. This field specifies
+     * the location outside of Google's network that the interconnect is
+     * connected to.
      * </pre>
      *
      * <code>optional string remote_location = 324388750;</code>
@@ -2978,7 +3389,9 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Indicates that this is a Cross-Cloud Interconnect. This field specifies the location outside of Google's network that the interconnect is connected to.
+     * Indicates that this is a Cross-Cloud Interconnect. This field specifies
+     * the location outside of Google's network that the interconnect is
+     * connected to.
      * </pre>
      *
      * <code>optional string remote_location = 324388750;</code>
@@ -3001,7 +3414,9 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Indicates that this is a Cross-Cloud Interconnect. This field specifies the location outside of Google's network that the interconnect is connected to.
+     * Indicates that this is a Cross-Cloud Interconnect. This field specifies
+     * the location outside of Google's network that the interconnect is
+     * connected to.
      * </pre>
      *
      * <code>optional string remote_location = 324388750;</code>
@@ -3023,7 +3438,9 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Indicates that this is a Cross-Cloud Interconnect. This field specifies the location outside of Google's network that the interconnect is connected to.
+     * Indicates that this is a Cross-Cloud Interconnect. This field specifies
+     * the location outside of Google's network that the interconnect is
+     * connected to.
      * </pre>
      *
      * <code>optional string remote_location = 324388750;</code>
@@ -3041,7 +3458,9 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Indicates that this is a Cross-Cloud Interconnect. This field specifies the location outside of Google's network that the interconnect is connected to.
+     * Indicates that this is a Cross-Cloud Interconnect. This field specifies
+     * the location outside of Google's network that the interconnect is
+     * connected to.
      * </pre>
      *
      * <code>optional string remote_location = 324388750;</code>
@@ -3074,7 +3493,15 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Optional. List of features requested for this Interconnect connection, which can take one of the following values: - IF_MACSEC If specified then the connection is created on MACsec capable hardware ports. If not specified, the default value is false, which allocates non-MACsec capable ports first if available. This parameter can be provided only with Interconnect INSERT. It isn't valid for Interconnect PATCH.
+     * Optional. List of features requested for this Interconnect connection,
+     * which can take one of the following values:
+     *
+     *    - IF_MACSEC: If specified, then the connection is created on MACsec
+     *    capable hardware ports. If not specified, non-MACsec capable ports will
+     *    also be considered.
+     *    - IF_CROSS_SITE_NETWORK: If specified, then the connection is created
+     *    exclusively for Cross-Site Networking. The connection can not be used for
+     *    Cross-Site Networking unless this feature is specified.
      * Check the RequestedFeatures enum for the list of possible values.
      * </pre>
      *
@@ -3091,7 +3518,15 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Optional. List of features requested for this Interconnect connection, which can take one of the following values: - IF_MACSEC If specified then the connection is created on MACsec capable hardware ports. If not specified, the default value is false, which allocates non-MACsec capable ports first if available. This parameter can be provided only with Interconnect INSERT. It isn't valid for Interconnect PATCH.
+     * Optional. List of features requested for this Interconnect connection,
+     * which can take one of the following values:
+     *
+     *    - IF_MACSEC: If specified, then the connection is created on MACsec
+     *    capable hardware ports. If not specified, non-MACsec capable ports will
+     *    also be considered.
+     *    - IF_CROSS_SITE_NETWORK: If specified, then the connection is created
+     *    exclusively for Cross-Site Networking. The connection can not be used for
+     *    Cross-Site Networking unless this feature is specified.
      * Check the RequestedFeatures enum for the list of possible values.
      * </pre>
      *
@@ -3107,7 +3542,15 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Optional. List of features requested for this Interconnect connection, which can take one of the following values: - IF_MACSEC If specified then the connection is created on MACsec capable hardware ports. If not specified, the default value is false, which allocates non-MACsec capable ports first if available. This parameter can be provided only with Interconnect INSERT. It isn't valid for Interconnect PATCH.
+     * Optional. List of features requested for this Interconnect connection,
+     * which can take one of the following values:
+     *
+     *    - IF_MACSEC: If specified, then the connection is created on MACsec
+     *    capable hardware ports. If not specified, non-MACsec capable ports will
+     *    also be considered.
+     *    - IF_CROSS_SITE_NETWORK: If specified, then the connection is created
+     *    exclusively for Cross-Site Networking. The connection can not be used for
+     *    Cross-Site Networking unless this feature is specified.
      * Check the RequestedFeatures enum for the list of possible values.
      * </pre>
      *
@@ -3124,7 +3567,15 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Optional. List of features requested for this Interconnect connection, which can take one of the following values: - IF_MACSEC If specified then the connection is created on MACsec capable hardware ports. If not specified, the default value is false, which allocates non-MACsec capable ports first if available. This parameter can be provided only with Interconnect INSERT. It isn't valid for Interconnect PATCH.
+     * Optional. List of features requested for this Interconnect connection,
+     * which can take one of the following values:
+     *
+     *    - IF_MACSEC: If specified, then the connection is created on MACsec
+     *    capable hardware ports. If not specified, non-MACsec capable ports will
+     *    also be considered.
+     *    - IF_CROSS_SITE_NETWORK: If specified, then the connection is created
+     *    exclusively for Cross-Site Networking. The connection can not be used for
+     *    Cross-Site Networking unless this feature is specified.
      * Check the RequestedFeatures enum for the list of possible values.
      * </pre>
      *
@@ -3141,7 +3592,15 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Optional. List of features requested for this Interconnect connection, which can take one of the following values: - IF_MACSEC If specified then the connection is created on MACsec capable hardware ports. If not specified, the default value is false, which allocates non-MACsec capable ports first if available. This parameter can be provided only with Interconnect INSERT. It isn't valid for Interconnect PATCH.
+     * Optional. List of features requested for this Interconnect connection,
+     * which can take one of the following values:
+     *
+     *    - IF_MACSEC: If specified, then the connection is created on MACsec
+     *    capable hardware ports. If not specified, non-MACsec capable ports will
+     *    also be considered.
+     *    - IF_CROSS_SITE_NETWORK: If specified, then the connection is created
+     *    exclusively for Cross-Site Networking. The connection can not be used for
+     *    Cross-Site Networking unless this feature is specified.
      * Check the RequestedFeatures enum for the list of possible values.
      * </pre>
      *
@@ -3166,7 +3625,15 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Optional. List of features requested for this Interconnect connection, which can take one of the following values: - IF_MACSEC If specified then the connection is created on MACsec capable hardware ports. If not specified, the default value is false, which allocates non-MACsec capable ports first if available. This parameter can be provided only with Interconnect INSERT. It isn't valid for Interconnect PATCH.
+     * Optional. List of features requested for this Interconnect connection,
+     * which can take one of the following values:
+     *
+     *    - IF_MACSEC: If specified, then the connection is created on MACsec
+     *    capable hardware ports. If not specified, non-MACsec capable ports will
+     *    also be considered.
+     *    - IF_CROSS_SITE_NETWORK: If specified, then the connection is created
+     *    exclusively for Cross-Site Networking. The connection can not be used for
+     *    Cross-Site Networking unless this feature is specified.
      * Check the RequestedFeatures enum for the list of possible values.
      * </pre>
      *
@@ -3190,7 +3657,15 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Optional. List of features requested for this Interconnect connection, which can take one of the following values: - IF_MACSEC If specified then the connection is created on MACsec capable hardware ports. If not specified, the default value is false, which allocates non-MACsec capable ports first if available. This parameter can be provided only with Interconnect INSERT. It isn't valid for Interconnect PATCH.
+     * Optional. List of features requested for this Interconnect connection,
+     * which can take one of the following values:
+     *
+     *    - IF_MACSEC: If specified, then the connection is created on MACsec
+     *    capable hardware ports. If not specified, non-MACsec capable ports will
+     *    also be considered.
+     *    - IF_CROSS_SITE_NETWORK: If specified, then the connection is created
+     *    exclusively for Cross-Site Networking. The connection can not be used for
+     *    Cross-Site Networking unless this feature is specified.
      * Check the RequestedFeatures enum for the list of possible values.
      * </pre>
      *
@@ -3211,7 +3686,15 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Optional. List of features requested for this Interconnect connection, which can take one of the following values: - IF_MACSEC If specified then the connection is created on MACsec capable hardware ports. If not specified, the default value is false, which allocates non-MACsec capable ports first if available. This parameter can be provided only with Interconnect INSERT. It isn't valid for Interconnect PATCH.
+     * Optional. List of features requested for this Interconnect connection,
+     * which can take one of the following values:
+     *
+     *    - IF_MACSEC: If specified, then the connection is created on MACsec
+     *    capable hardware ports. If not specified, non-MACsec capable ports will
+     *    also be considered.
+     *    - IF_CROSS_SITE_NETWORK: If specified, then the connection is created
+     *    exclusively for Cross-Site Networking. The connection can not be used for
+     *    Cross-Site Networking unless this feature is specified.
      * Check the RequestedFeatures enum for the list of possible values.
      * </pre>
      *
@@ -3231,7 +3714,15 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Optional. List of features requested for this Interconnect connection, which can take one of the following values: - IF_MACSEC If specified then the connection is created on MACsec capable hardware ports. If not specified, the default value is false, which allocates non-MACsec capable ports first if available. This parameter can be provided only with Interconnect INSERT. It isn't valid for Interconnect PATCH.
+     * Optional. List of features requested for this Interconnect connection,
+     * which can take one of the following values:
+     *
+     *    - IF_MACSEC: If specified, then the connection is created on MACsec
+     *    capable hardware ports. If not specified, non-MACsec capable ports will
+     *    also be considered.
+     *    - IF_CROSS_SITE_NETWORK: If specified, then the connection is created
+     *    exclusively for Cross-Site Networking. The connection can not be used for
+     *    Cross-Site Networking unless this feature is specified.
      * Check the RequestedFeatures enum for the list of possible values.
      * </pre>
      *
@@ -3258,7 +3749,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Target number of physical links in the link bundle, as requested by the customer.
+     * Target number of physical links in the link bundle, as requested by the
+     * customer.
      * </pre>
      *
      * <code>optional int32 requested_link_count = 45051387;</code>
@@ -3274,7 +3766,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Target number of physical links in the link bundle, as requested by the customer.
+     * Target number of physical links in the link bundle, as requested by the
+     * customer.
      * </pre>
      *
      * <code>optional int32 requested_link_count = 45051387;</code>
@@ -3290,7 +3783,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Target number of physical links in the link bundle, as requested by the customer.
+     * Target number of physical links in the link bundle, as requested by the
+     * customer.
      * </pre>
      *
      * <code>optional int32 requested_link_count = 45051387;</code>
@@ -3310,7 +3804,8 @@ public final class InterconnectGroupsCreateMembersInterconnectInput
      *
      *
      * <pre>
-     * Target number of physical links in the link bundle, as requested by the customer.
+     * Target number of physical links in the link bundle, as requested by the
+     * customer.
      * </pre>
      *
      * <code>optional int32 requested_link_count = 45051387;</code>

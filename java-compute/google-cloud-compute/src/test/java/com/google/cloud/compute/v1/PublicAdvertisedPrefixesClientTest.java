@@ -233,6 +233,7 @@ public class PublicAdvertisedPrefixesClientTest {
             .setFingerprint("fingerprint-1375934236")
             .setId(3355)
             .setIpCidrRange("ipCidrRange-866375486")
+            .setIpv6AccessType("ipv6AccessType606780421")
             .setKind("kind3292052")
             .setName("name3373707")
             .setPdpScope("pdpScope-531506504")

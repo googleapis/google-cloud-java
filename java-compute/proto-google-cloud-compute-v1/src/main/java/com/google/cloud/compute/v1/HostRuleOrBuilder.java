@@ -28,7 +28,8 @@ public interface HostRuleOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -41,7 +42,8 @@ public interface HostRuleOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -54,7 +56,8 @@ public interface HostRuleOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -67,7 +70,15 @@ public interface HostRuleOrBuilder
    *
    *
    * <pre>
-   * The list of host patterns to match. They must be valid hostnames with optional port numbers in the format host:port. * matches any string of ([a-z0-9-.]*). In that case, * must be the first character, and if followed by anything, the immediate following character must be either - or .. * based matching is not supported when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
+   * The list of host patterns to match. They must be valid hostnames with
+   * optional port numbers in the format host:port.* matches any string of ([a-z0-9-.]*). In
+   * that case, * must be the first character, and if followed by
+   * anything, the immediate following character must be either -
+   * or ..
+   *
+   * * based matching is not supported when the URL map is bound
+   * to a target gRPC proxy that has the validateForProxyless field
+   * set to true.
    * </pre>
    *
    * <code>repeated string hosts = 99467211;</code>
@@ -80,7 +91,15 @@ public interface HostRuleOrBuilder
    *
    *
    * <pre>
-   * The list of host patterns to match. They must be valid hostnames with optional port numbers in the format host:port. * matches any string of ([a-z0-9-.]*). In that case, * must be the first character, and if followed by anything, the immediate following character must be either - or .. * based matching is not supported when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
+   * The list of host patterns to match. They must be valid hostnames with
+   * optional port numbers in the format host:port.* matches any string of ([a-z0-9-.]*). In
+   * that case, * must be the first character, and if followed by
+   * anything, the immediate following character must be either -
+   * or ..
+   *
+   * * based matching is not supported when the URL map is bound
+   * to a target gRPC proxy that has the validateForProxyless field
+   * set to true.
    * </pre>
    *
    * <code>repeated string hosts = 99467211;</code>
@@ -93,7 +112,15 @@ public interface HostRuleOrBuilder
    *
    *
    * <pre>
-   * The list of host patterns to match. They must be valid hostnames with optional port numbers in the format host:port. * matches any string of ([a-z0-9-.]*). In that case, * must be the first character, and if followed by anything, the immediate following character must be either - or .. * based matching is not supported when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
+   * The list of host patterns to match. They must be valid hostnames with
+   * optional port numbers in the format host:port.* matches any string of ([a-z0-9-.]*). In
+   * that case, * must be the first character, and if followed by
+   * anything, the immediate following character must be either -
+   * or ..
+   *
+   * * based matching is not supported when the URL map is bound
+   * to a target gRPC proxy that has the validateForProxyless field
+   * set to true.
    * </pre>
    *
    * <code>repeated string hosts = 99467211;</code>
@@ -107,7 +134,15 @@ public interface HostRuleOrBuilder
    *
    *
    * <pre>
-   * The list of host patterns to match. They must be valid hostnames with optional port numbers in the format host:port. * matches any string of ([a-z0-9-.]*). In that case, * must be the first character, and if followed by anything, the immediate following character must be either - or .. * based matching is not supported when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
+   * The list of host patterns to match. They must be valid hostnames with
+   * optional port numbers in the format host:port.* matches any string of ([a-z0-9-.]*). In
+   * that case, * must be the first character, and if followed by
+   * anything, the immediate following character must be either -
+   * or ..
+   *
+   * * based matching is not supported when the URL map is bound
+   * to a target gRPC proxy that has the validateForProxyless field
+   * set to true.
    * </pre>
    *
    * <code>repeated string hosts = 99467211;</code>
@@ -121,7 +156,8 @@ public interface HostRuleOrBuilder
    *
    *
    * <pre>
-   * The name of the PathMatcher to use to match the path portion of the URL if the hostRule matches the URL's host portion.
+   * The name of the PathMatcher to use to match the path portion
+   * of the URL if the hostRule matches the URL's host portion.
    * </pre>
    *
    * <code>optional string path_matcher = 337813272;</code>
@@ -134,7 +170,8 @@ public interface HostRuleOrBuilder
    *
    *
    * <pre>
-   * The name of the PathMatcher to use to match the path portion of the URL if the hostRule matches the URL's host portion.
+   * The name of the PathMatcher to use to match the path portion
+   * of the URL if the hostRule matches the URL's host portion.
    * </pre>
    *
    * <code>optional string path_matcher = 337813272;</code>
@@ -147,7 +184,8 @@ public interface HostRuleOrBuilder
    *
    *
    * <pre>
-   * The name of the PathMatcher to use to match the path portion of the URL if the hostRule matches the URL's host portion.
+   * The name of the PathMatcher to use to match the path portion
+   * of the URL if the hostRule matches the URL's host portion.
    * </pre>
    *
    * <code>optional string path_matcher = 337813272;</code>

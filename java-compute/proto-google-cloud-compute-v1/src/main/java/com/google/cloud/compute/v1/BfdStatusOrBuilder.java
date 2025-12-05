@@ -28,7 +28,11 @@ public interface BfdStatusOrBuilder
    *
    *
    * <pre>
-   * The BFD session initialization mode for this BGP peer. If set to ACTIVE, the Cloud Router will initiate the BFD session for this BGP peer. If set to PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP peer.
+   * The BFD session initialization mode for this BGP peer.
+   * If set to ACTIVE, the Cloud Router will initiate the BFD session for
+   * this BGP peer. If set to PASSIVE, the Cloud Router will wait for the
+   * peer router to initiate the BFD session for this BGP peer. If set to
+   * DISABLED, BFD is disabled for this BGP peer.
    * Check the BfdSessionInitializationMode enum for the list of possible values.
    * </pre>
    *
@@ -42,7 +46,11 @@ public interface BfdStatusOrBuilder
    *
    *
    * <pre>
-   * The BFD session initialization mode for this BGP peer. If set to ACTIVE, the Cloud Router will initiate the BFD session for this BGP peer. If set to PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP peer.
+   * The BFD session initialization mode for this BGP peer.
+   * If set to ACTIVE, the Cloud Router will initiate the BFD session for
+   * this BGP peer. If set to PASSIVE, the Cloud Router will wait for the
+   * peer router to initiate the BFD session for this BGP peer. If set to
+   * DISABLED, BFD is disabled for this BGP peer.
    * Check the BfdSessionInitializationMode enum for the list of possible values.
    * </pre>
    *
@@ -56,7 +64,11 @@ public interface BfdStatusOrBuilder
    *
    *
    * <pre>
-   * The BFD session initialization mode for this BGP peer. If set to ACTIVE, the Cloud Router will initiate the BFD session for this BGP peer. If set to PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP peer.
+   * The BFD session initialization mode for this BGP peer.
+   * If set to ACTIVE, the Cloud Router will initiate the BFD session for
+   * this BGP peer. If set to PASSIVE, the Cloud Router will wait for the
+   * peer router to initiate the BFD session for this BGP peer. If set to
+   * DISABLED, BFD is disabled for this BGP peer.
    * Check the BfdSessionInitializationMode enum for the list of possible values.
    * </pre>
    *
@@ -201,7 +213,10 @@ public interface BfdStatusOrBuilder
    *
    *
    * <pre>
-   * The diagnostic code specifies the local system's reason for the last change in session state. This allows remote systems to determine the reason that the previous session failed, for example. These diagnostic codes are specified in section 4.1 of RFC5880
+   * The diagnostic code specifies the local system's reason for the last change
+   * in session state. This allows remote systems to determine the reason that
+   * the previous session failed, for example. These diagnostic codes are
+   * specified in section 4.1 ofRFC5880
    * Check the LocalDiagnostic enum for the list of possible values.
    * </pre>
    *
@@ -215,7 +230,10 @@ public interface BfdStatusOrBuilder
    *
    *
    * <pre>
-   * The diagnostic code specifies the local system's reason for the last change in session state. This allows remote systems to determine the reason that the previous session failed, for example. These diagnostic codes are specified in section 4.1 of RFC5880
+   * The diagnostic code specifies the local system's reason for the last change
+   * in session state. This allows remote systems to determine the reason that
+   * the previous session failed, for example. These diagnostic codes are
+   * specified in section 4.1 ofRFC5880
    * Check the LocalDiagnostic enum for the list of possible values.
    * </pre>
    *
@@ -229,7 +247,10 @@ public interface BfdStatusOrBuilder
    *
    *
    * <pre>
-   * The diagnostic code specifies the local system's reason for the last change in session state. This allows remote systems to determine the reason that the previous session failed, for example. These diagnostic codes are specified in section 4.1 of RFC5880
+   * The diagnostic code specifies the local system's reason for the last change
+   * in session state. This allows remote systems to determine the reason that
+   * the previous session failed, for example. These diagnostic codes are
+   * specified in section 4.1 ofRFC5880
    * Check the LocalDiagnostic enum for the list of possible values.
    * </pre>
    *
@@ -243,7 +264,8 @@ public interface BfdStatusOrBuilder
    *
    *
    * <pre>
-   * The current BFD session state as seen by the transmitting system. These states are specified in section 4.1 of RFC5880
+   * The current BFD session state as seen by the transmitting system. These
+   * states are specified in section 4.1 ofRFC5880
    * Check the LocalState enum for the list of possible values.
    * </pre>
    *
@@ -257,7 +279,8 @@ public interface BfdStatusOrBuilder
    *
    *
    * <pre>
-   * The current BFD session state as seen by the transmitting system. These states are specified in section 4.1 of RFC5880
+   * The current BFD session state as seen by the transmitting system. These
+   * states are specified in section 4.1 ofRFC5880
    * Check the LocalState enum for the list of possible values.
    * </pre>
    *
@@ -271,7 +294,8 @@ public interface BfdStatusOrBuilder
    *
    *
    * <pre>
-   * The current BFD session state as seen by the transmitting system. These states are specified in section 4.1 of RFC5880
+   * The current BFD session state as seen by the transmitting system. These
+   * states are specified in section 4.1 ofRFC5880
    * Check the LocalState enum for the list of possible values.
    * </pre>
    *
