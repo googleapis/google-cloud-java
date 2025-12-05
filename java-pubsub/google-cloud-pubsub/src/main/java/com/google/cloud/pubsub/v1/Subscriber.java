@@ -144,7 +144,7 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
   private final boolean maxDurationPerAckExtensionDefaultUsed;
   private final java.time.Duration minDurationPerAckExtension;
   private final boolean minDurationPerAckExtensionDefaultUsed;
-  private final long protocolVersion;
+  private final long protocolVersion = 1L;
 
   // The ExecutorProvider used to generate executors for processing messages.
   private final ExecutorProvider executorProvider;
@@ -183,7 +183,6 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
     maxDurationPerAckExtensionDefaultUsed = builder.maxDurationPerAckExtensionDefaultUsed;
     minDurationPerAckExtension = builder.minDurationPerAckExtension;
     minDurationPerAckExtensionDefaultUsed = builder.minDurationPerAckExtensionDefaultUsed;
-    protocolVersion = builder.protocolVersion;
 
     clock = builder.clock.isPresent() ? builder.clock.get() : CurrentMillisClock.getDefaultClock();
 
@@ -551,8 +550,6 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
     private boolean enableOpenTelemetryTracing = false;
     private OpenTelemetry openTelemetry = null;
 
-    private long protocolVersion = 0L;
-
     private SubscriberShutdownSettings subscriberShutdownSettings =
         SubscriberShutdownSettings.newBuilder().build();
 
@@ -773,12 +770,6 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
     /** Gives the ability to set a custom clock. */
     Builder setClock(ApiClock clock) {
       this.clock = Optional.of(clock);
-      return this;
-    }
-
-    /** Gives the ability to override the protocol version */
-    public Builder setProtocolVersion(long protocolVersion) {
-      this.protocolVersion = protocolVersion;
       return this;
     }
 
