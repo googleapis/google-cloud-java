@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * HttpRouteRuleMatch criteria for field values that must stay within the specified integer range.
+ * HttpRouteRuleMatch criteria for field values that must stay
+ * within the specified integer range.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Int64RangeMatch}
@@ -316,7 +317,8 @@ public final class Int64RangeMatch extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * HttpRouteRuleMatch criteria for field values that must stay within the specified integer range.
+   * HttpRouteRuleMatch criteria for field values that must stay
+   * within the specified integer range.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Int64RangeMatch}

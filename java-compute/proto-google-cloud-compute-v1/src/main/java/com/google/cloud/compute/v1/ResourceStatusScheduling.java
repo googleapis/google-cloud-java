@@ -69,7 +69,9 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Specifies the availability domain to place the instance in. The value must be a number between 1 and the number of availability domains specified in the spread placement policy attached to the instance.
+   * Specifies the availability domain to place the instance in. The value
+   * must be a number between 1 and the number of availability domains
+   * specified in the spread placement policy attached to the instance.
    * </pre>
    *
    * <code>optional int32 availability_domain = 252514344;</code>
@@ -85,7 +87,9 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Specifies the availability domain to place the instance in. The value must be a number between 1 and the number of availability domains specified in the spread placement policy attached to the instance.
+   * Specifies the availability domain to place the instance in. The value
+   * must be a number between 1 and the number of availability domains
+   * specified in the spread placement policy attached to the instance.
    * </pre>
    *
    * <code>optional int32 availability_domain = 252514344;</code>
@@ -452,7 +456,9 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Specifies the availability domain to place the instance in. The value must be a number between 1 and the number of availability domains specified in the spread placement policy attached to the instance.
+     * Specifies the availability domain to place the instance in. The value
+     * must be a number between 1 and the number of availability domains
+     * specified in the spread placement policy attached to the instance.
      * </pre>
      *
      * <code>optional int32 availability_domain = 252514344;</code>
@@ -468,7 +474,9 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Specifies the availability domain to place the instance in. The value must be a number between 1 and the number of availability domains specified in the spread placement policy attached to the instance.
+     * Specifies the availability domain to place the instance in. The value
+     * must be a number between 1 and the number of availability domains
+     * specified in the spread placement policy attached to the instance.
      * </pre>
      *
      * <code>optional int32 availability_domain = 252514344;</code>
@@ -484,7 +492,9 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Specifies the availability domain to place the instance in. The value must be a number between 1 and the number of availability domains specified in the spread placement policy attached to the instance.
+     * Specifies the availability domain to place the instance in. The value
+     * must be a number between 1 and the number of availability domains
+     * specified in the spread placement policy attached to the instance.
      * </pre>
      *
      * <code>optional int32 availability_domain = 252514344;</code>
@@ -504,7 +514,9 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Specifies the availability domain to place the instance in. The value must be a number between 1 and the number of availability domains specified in the spread placement policy attached to the instance.
+     * Specifies the availability domain to place the instance in. The value
+     * must be a number between 1 and the number of availability domains
+     * specified in the spread placement policy attached to the instance.
      * </pre>
      *
      * <code>optional int32 availability_domain = 252514344;</code>

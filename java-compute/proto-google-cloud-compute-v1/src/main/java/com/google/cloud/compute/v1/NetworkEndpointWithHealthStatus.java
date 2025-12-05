@@ -74,7 +74,10 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
    *
    *
    * <pre>
-   * [Output only] The health status of network endpoint. Optional. Displayed only if the network endpoint has centralized health checking configured.
+   * [Output only] The health status of network endpoint.
+   *
+   * Optional. Displayed only if the network endpoint has centralized health
+   * checking configured.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HealthStatusForNetworkEndpoint healths = 258689431;
@@ -90,7 +93,10 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
    *
    *
    * <pre>
-   * [Output only] The health status of network endpoint. Optional. Displayed only if the network endpoint has centralized health checking configured.
+   * [Output only] The health status of network endpoint.
+   *
+   * Optional. Displayed only if the network endpoint has centralized health
+   * checking configured.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HealthStatusForNetworkEndpoint healths = 258689431;
@@ -107,7 +113,10 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
    *
    *
    * <pre>
-   * [Output only] The health status of network endpoint. Optional. Displayed only if the network endpoint has centralized health checking configured.
+   * [Output only] The health status of network endpoint.
+   *
+   * Optional. Displayed only if the network endpoint has centralized health
+   * checking configured.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HealthStatusForNetworkEndpoint healths = 258689431;
@@ -122,7 +131,10 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
    *
    *
    * <pre>
-   * [Output only] The health status of network endpoint. Optional. Displayed only if the network endpoint has centralized health checking configured.
+   * [Output only] The health status of network endpoint.
+   *
+   * Optional. Displayed only if the network endpoint has centralized health
+   * checking configured.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HealthStatusForNetworkEndpoint healths = 258689431;
@@ -137,7 +149,10 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
    *
    *
    * <pre>
-   * [Output only] The health status of network endpoint. Optional. Displayed only if the network endpoint has centralized health checking configured.
+   * [Output only] The health status of network endpoint.
+   *
+   * Optional. Displayed only if the network endpoint has centralized health
+   * checking configured.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HealthStatusForNetworkEndpoint healths = 258689431;
@@ -662,7 +677,10 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output only] The health status of network endpoint. Optional. Displayed only if the network endpoint has centralized health checking configured.
+     * [Output only] The health status of network endpoint.
+     *
+     * Optional. Displayed only if the network endpoint has centralized health
+     * checking configured.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatusForNetworkEndpoint healths = 258689431;
@@ -681,7 +699,10 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output only] The health status of network endpoint. Optional. Displayed only if the network endpoint has centralized health checking configured.
+     * [Output only] The health status of network endpoint.
+     *
+     * Optional. Displayed only if the network endpoint has centralized health
+     * checking configured.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatusForNetworkEndpoint healths = 258689431;
@@ -699,7 +720,10 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output only] The health status of network endpoint. Optional. Displayed only if the network endpoint has centralized health checking configured.
+     * [Output only] The health status of network endpoint.
+     *
+     * Optional. Displayed only if the network endpoint has centralized health
+     * checking configured.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatusForNetworkEndpoint healths = 258689431;
@@ -717,7 +741,10 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output only] The health status of network endpoint. Optional. Displayed only if the network endpoint has centralized health checking configured.
+     * [Output only] The health status of network endpoint.
+     *
+     * Optional. Displayed only if the network endpoint has centralized health
+     * checking configured.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatusForNetworkEndpoint healths = 258689431;
@@ -742,7 +769,10 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output only] The health status of network endpoint. Optional. Displayed only if the network endpoint has centralized health checking configured.
+     * [Output only] The health status of network endpoint.
+     *
+     * Optional. Displayed only if the network endpoint has centralized health
+     * checking configured.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatusForNetworkEndpoint healths = 258689431;
@@ -765,7 +795,10 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output only] The health status of network endpoint. Optional. Displayed only if the network endpoint has centralized health checking configured.
+     * [Output only] The health status of network endpoint.
+     *
+     * Optional. Displayed only if the network endpoint has centralized health
+     * checking configured.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatusForNetworkEndpoint healths = 258689431;
@@ -789,7 +822,10 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output only] The health status of network endpoint. Optional. Displayed only if the network endpoint has centralized health checking configured.
+     * [Output only] The health status of network endpoint.
+     *
+     * Optional. Displayed only if the network endpoint has centralized health
+     * checking configured.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatusForNetworkEndpoint healths = 258689431;
@@ -814,7 +850,10 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output only] The health status of network endpoint. Optional. Displayed only if the network endpoint has centralized health checking configured.
+     * [Output only] The health status of network endpoint.
+     *
+     * Optional. Displayed only if the network endpoint has centralized health
+     * checking configured.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatusForNetworkEndpoint healths = 258689431;
@@ -836,7 +875,10 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output only] The health status of network endpoint. Optional. Displayed only if the network endpoint has centralized health checking configured.
+     * [Output only] The health status of network endpoint.
+     *
+     * Optional. Displayed only if the network endpoint has centralized health
+     * checking configured.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatusForNetworkEndpoint healths = 258689431;
@@ -859,7 +901,10 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output only] The health status of network endpoint. Optional. Displayed only if the network endpoint has centralized health checking configured.
+     * [Output only] The health status of network endpoint.
+     *
+     * Optional. Displayed only if the network endpoint has centralized health
+     * checking configured.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatusForNetworkEndpoint healths = 258689431;
@@ -882,7 +927,10 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output only] The health status of network endpoint. Optional. Displayed only if the network endpoint has centralized health checking configured.
+     * [Output only] The health status of network endpoint.
+     *
+     * Optional. Displayed only if the network endpoint has centralized health
+     * checking configured.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatusForNetworkEndpoint healths = 258689431;
@@ -903,7 +951,10 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output only] The health status of network endpoint. Optional. Displayed only if the network endpoint has centralized health checking configured.
+     * [Output only] The health status of network endpoint.
+     *
+     * Optional. Displayed only if the network endpoint has centralized health
+     * checking configured.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatusForNetworkEndpoint healths = 258689431;
@@ -924,7 +975,10 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output only] The health status of network endpoint. Optional. Displayed only if the network endpoint has centralized health checking configured.
+     * [Output only] The health status of network endpoint.
+     *
+     * Optional. Displayed only if the network endpoint has centralized health
+     * checking configured.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatusForNetworkEndpoint healths = 258689431;
@@ -939,7 +993,10 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output only] The health status of network endpoint. Optional. Displayed only if the network endpoint has centralized health checking configured.
+     * [Output only] The health status of network endpoint.
+     *
+     * Optional. Displayed only if the network endpoint has centralized health
+     * checking configured.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatusForNetworkEndpoint healths = 258689431;
@@ -958,7 +1015,10 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output only] The health status of network endpoint. Optional. Displayed only if the network endpoint has centralized health checking configured.
+     * [Output only] The health status of network endpoint.
+     *
+     * Optional. Displayed only if the network endpoint has centralized health
+     * checking configured.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatusForNetworkEndpoint healths = 258689431;
@@ -978,7 +1038,10 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output only] The health status of network endpoint. Optional. Displayed only if the network endpoint has centralized health checking configured.
+     * [Output only] The health status of network endpoint.
+     *
+     * Optional. Displayed only if the network endpoint has centralized health
+     * checking configured.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatusForNetworkEndpoint healths = 258689431;
@@ -994,7 +1057,10 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output only] The health status of network endpoint. Optional. Displayed only if the network endpoint has centralized health checking configured.
+     * [Output only] The health status of network endpoint.
+     *
+     * Optional. Displayed only if the network endpoint has centralized health
+     * checking configured.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatusForNetworkEndpoint healths = 258689431;
@@ -1012,7 +1078,10 @@ public final class NetworkEndpointWithHealthStatus extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output only] The health status of network endpoint. Optional. Displayed only if the network endpoint has centralized health checking configured.
+     * [Output only] The health status of network endpoint.
+     *
+     * Optional. Displayed only if the network endpoint has centralized health
+     * checking configured.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatusForNetworkEndpoint healths = 258689431;

@@ -28,7 +28,8 @@ public interface ResourcePolicyHourlyCycleOrBuilder
    *
    *
    * <pre>
-   * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
+   * [Output only] Duration of the time window, automatically chosen to be
+   * smallest possible in the given scenario.
    * </pre>
    *
    * <code>optional string duration = 155471252;</code>
@@ -41,7 +42,8 @@ public interface ResourcePolicyHourlyCycleOrBuilder
    *
    *
    * <pre>
-   * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
+   * [Output only] Duration of the time window, automatically chosen to be
+   * smallest possible in the given scenario.
    * </pre>
    *
    * <code>optional string duration = 155471252;</code>
@@ -54,7 +56,8 @@ public interface ResourcePolicyHourlyCycleOrBuilder
    *
    *
    * <pre>
-   * [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
+   * [Output only] Duration of the time window, automatically chosen to be
+   * smallest possible in the given scenario.
    * </pre>
    *
    * <code>optional string duration = 155471252;</code>
@@ -67,7 +70,8 @@ public interface ResourcePolicyHourlyCycleOrBuilder
    *
    *
    * <pre>
-   * Defines a schedule with units measured in hours. The value determines how many hours pass between the start of each cycle.
+   * Defines a schedule with units measured in hours. The value determines
+   * how many hours pass between the start of each cycle.
    * </pre>
    *
    * <code>optional int32 hours_in_cycle = 526763132;</code>
@@ -80,7 +84,8 @@ public interface ResourcePolicyHourlyCycleOrBuilder
    *
    *
    * <pre>
-   * Defines a schedule with units measured in hours. The value determines how many hours pass between the start of each cycle.
+   * Defines a schedule with units measured in hours. The value determines
+   * how many hours pass between the start of each cycle.
    * </pre>
    *
    * <code>optional int32 hours_in_cycle = 526763132;</code>
@@ -93,7 +98,8 @@ public interface ResourcePolicyHourlyCycleOrBuilder
    *
    *
    * <pre>
-   * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
+   * Time within the window to start the operations.
+   * It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
    * </pre>
    *
    * <code>optional string start_time = 37467274;</code>
@@ -106,7 +112,8 @@ public interface ResourcePolicyHourlyCycleOrBuilder
    *
    *
    * <pre>
-   * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
+   * Time within the window to start the operations.
+   * It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
    * </pre>
    *
    * <code>optional string start_time = 37467274;</code>
@@ -119,7 +126,8 @@ public interface ResourcePolicyHourlyCycleOrBuilder
    *
    *
    * <pre>
-   * Time within the window to start the operations. It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
+   * Time within the window to start the operations.
+   * It must be in format "HH:MM", where HH : [00-23] and MM : [00-00] GMT.
    * </pre>
    *
    * <code>optional string start_time = 37467274;</code>

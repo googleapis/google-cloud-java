@@ -71,7 +71,8 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
    *
    *
    * <pre>
-   * [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
+   * [Output Only] Action that managed instance group was executing on
+   * the instance when the error occurred. Possible values:
    * </pre>
    *
    * Protobuf enum {@code
@@ -92,7 +93,9 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
-     * The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group.
+     * The managed instance group is abandoning this instance. The instance
+     * will be removed from the instance group and from any target pools that
+     * are associated with this group.
      * </pre>
      *
      * <code>ABANDONING = 388244813;</code>
@@ -102,7 +105,9 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
-     * The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful.
+     * The managed instance group is creating this instance. If the group
+     * fails to create this instance, it will try again until it is
+     * successful.
      * </pre>
      *
      * <code>CREATING = 455564985;</code>
@@ -112,7 +117,10 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
-     * The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased.
+     * The managed instance group is attempting to create this instance
+     * only once. If the group fails to create this instance, it does
+     * not try again and the group's targetSize value is
+     * decreased.
      * </pre>
      *
      * <code>CREATING_WITHOUT_RETRIES = 428843785;</code>
@@ -132,7 +140,8 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
-     * The managed instance group has not scheduled any actions for this instance.
+     * The managed instance group has not scheduled any actions for this
+     * instance.
      * </pre>
      *
      * <code>NONE = 2402104;</code>
@@ -152,7 +161,9 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
-     * The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance.
+     * The managed instance group is applying configuration changes to the
+     * instance without stopping it. For example, the group can update the
+     * target pool list for an instance without stopping that instance.
      * </pre>
      *
      * <code>REFRESHING = 163266343;</code>
@@ -212,7 +223,14 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
-     * The managed instance group is verifying this already created instance. Verification happens every time the instance is (re)created or restarted and consists of: 1. Waiting until health check specified as part of this managed instance group's autohealing policy reports HEALTHY. Note: Applies only if autohealing policy has a health check specified 2. Waiting for addition verification steps performed as post-instance creation (subject to future extensions).
+     * The managed instance group is verifying this already created instance.
+     * Verification happens every time the instance is (re)created or restarted
+     * and consists of:
+     *  1. Waiting until health check specified as part of this managed instance
+     *     group's autohealing policy reports HEALTHY.
+     *     Note: Applies only if autohealing policy has a health check specified
+     *  2. Waiting for addition verification steps performed as post-instance
+     *     creation (subject to future extensions).
      * </pre>
      *
      * <code>VERIFYING = 16982185;</code>
@@ -236,7 +254,9 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
-     * The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group.
+     * The managed instance group is abandoning this instance. The instance
+     * will be removed from the instance group and from any target pools that
+     * are associated with this group.
      * </pre>
      *
      * <code>ABANDONING = 388244813;</code>
@@ -247,7 +267,9 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
-     * The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful.
+     * The managed instance group is creating this instance. If the group
+     * fails to create this instance, it will try again until it is
+     * successful.
      * </pre>
      *
      * <code>CREATING = 455564985;</code>
@@ -258,7 +280,10 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
-     * The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased.
+     * The managed instance group is attempting to create this instance
+     * only once. If the group fails to create this instance, it does
+     * not try again and the group's targetSize value is
+     * decreased.
      * </pre>
      *
      * <code>CREATING_WITHOUT_RETRIES = 428843785;</code>
@@ -280,7 +305,8 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
-     * The managed instance group has not scheduled any actions for this instance.
+     * The managed instance group has not scheduled any actions for this
+     * instance.
      * </pre>
      *
      * <code>NONE = 2402104;</code>
@@ -302,7 +328,9 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
-     * The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance.
+     * The managed instance group is applying configuration changes to the
+     * instance without stopping it. For example, the group can update the
+     * target pool list for an instance without stopping that instance.
      * </pre>
      *
      * <code>REFRESHING = 163266343;</code>
@@ -368,7 +396,14 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
-     * The managed instance group is verifying this already created instance. Verification happens every time the instance is (re)created or restarted and consists of: 1. Waiting until health check specified as part of this managed instance group's autohealing policy reports HEALTHY. Note: Applies only if autohealing policy has a health check specified 2. Waiting for addition verification steps performed as post-instance creation (subject to future extensions).
+     * The managed instance group is verifying this already created instance.
+     * Verification happens every time the instance is (re)created or restarted
+     * and consists of:
+     *  1. Waiting until health check specified as part of this managed instance
+     *     group's autohealing policy reports HEALTHY.
+     *     Note: Applies only if autohealing policy has a health check specified
+     *  2. Waiting for addition verification steps performed as post-instance
+     *     creation (subject to future extensions).
      * </pre>
      *
      * <code>VERIFYING = 16982185;</code>
@@ -493,7 +528,8 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
    *
    *
    * <pre>
-   * [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
+   * [Output Only] Action that managed instance group was executing on
+   * the instance when the error occurred. Possible values:
    * Check the Action enum for the list of possible values.
    * </pre>
    *
@@ -510,7 +546,8 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
    *
    *
    * <pre>
-   * [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
+   * [Output Only] Action that managed instance group was executing on
+   * the instance when the error occurred. Possible values:
    * Check the Action enum for the list of possible values.
    * </pre>
    *
@@ -535,7 +572,8 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
    *
    *
    * <pre>
-   * [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
+   * [Output Only] Action that managed instance group was executing on
+   * the instance when the error occurred. Possible values:
    * Check the Action enum for the list of possible values.
    * </pre>
    *
@@ -565,7 +603,8 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
    *
    *
    * <pre>
-   * [Output Only] The URL of the instance. The URL can be set even if the instance has not yet been created.
+   * [Output Only] The URL of the instance.
+   * The URL can be set even if the instance has not yet been created.
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>
@@ -581,7 +620,8 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
    *
    *
    * <pre>
-   * [Output Only] The URL of the instance. The URL can be set even if the instance has not yet been created.
+   * [Output Only] The URL of the instance.
+   * The URL can be set even if the instance has not yet been created.
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>
@@ -605,7 +645,8 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
    *
    *
    * <pre>
-   * [Output Only] The URL of the instance. The URL can be set even if the instance has not yet been created.
+   * [Output Only] The URL of the instance.
+   * The URL can be set even if the instance has not yet been created.
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>
@@ -632,7 +673,10 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
    *
    *
    * <pre>
-   * [Output Only] Version this instance was created from, or was being created from, but the creation failed. Corresponds to one of the versions that were set on the Instance Group Manager resource at the time this instance was being created.
+   * [Output Only] Version this instance was created from, or was being
+   * created from, but the creation failed. Corresponds to one of the versions
+   * that were set on the Instance Group Manager resource at the time this
+   * instance was being created.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
@@ -648,7 +692,10 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
    *
    *
    * <pre>
-   * [Output Only] Version this instance was created from, or was being created from, but the creation failed. Corresponds to one of the versions that were set on the Instance Group Manager resource at the time this instance was being created.
+   * [Output Only] Version this instance was created from, or was being
+   * created from, but the creation failed. Corresponds to one of the versions
+   * that were set on the Instance Group Manager resource at the time this
+   * instance was being created.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
@@ -666,7 +713,10 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
    *
    *
    * <pre>
-   * [Output Only] Version this instance was created from, or was being created from, but the creation failed. Corresponds to one of the versions that were set on the Instance Group Manager resource at the time this instance was being created.
+   * [Output Only] Version this instance was created from, or was being
+   * created from, but the creation failed. Corresponds to one of the versions
+   * that were set on the Instance Group Manager resource at the time this
+   * instance was being created.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
@@ -1124,7 +1174,8 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
-     * [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
+     * [Output Only] Action that managed instance group was executing on
+     * the instance when the error occurred. Possible values:
      * Check the Action enum for the list of possible values.
      * </pre>
      *
@@ -1140,7 +1191,8 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
-     * [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
+     * [Output Only] Action that managed instance group was executing on
+     * the instance when the error occurred. Possible values:
      * Check the Action enum for the list of possible values.
      * </pre>
      *
@@ -1164,7 +1216,8 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
-     * [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
+     * [Output Only] Action that managed instance group was executing on
+     * the instance when the error occurred. Possible values:
      * Check the Action enum for the list of possible values.
      * </pre>
      *
@@ -1188,7 +1241,8 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
-     * [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
+     * [Output Only] Action that managed instance group was executing on
+     * the instance when the error occurred. Possible values:
      * Check the Action enum for the list of possible values.
      * </pre>
      *
@@ -1211,7 +1265,8 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
-     * [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
+     * [Output Only] Action that managed instance group was executing on
+     * the instance when the error occurred. Possible values:
      * Check the Action enum for the list of possible values.
      * </pre>
      *
@@ -1230,7 +1285,8 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
-     * [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
+     * [Output Only] Action that managed instance group was executing on
+     * the instance when the error occurred. Possible values:
      * Check the Action enum for the list of possible values.
      * </pre>
      *
@@ -1256,7 +1312,8 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
-     * [Output Only] The URL of the instance. The URL can be set even if the instance has not yet been created.
+     * [Output Only] The URL of the instance.
+     * The URL can be set even if the instance has not yet been created.
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>
@@ -1271,7 +1328,8 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
-     * [Output Only] The URL of the instance. The URL can be set even if the instance has not yet been created.
+     * [Output Only] The URL of the instance.
+     * The URL can be set even if the instance has not yet been created.
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>
@@ -1294,7 +1352,8 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
-     * [Output Only] The URL of the instance. The URL can be set even if the instance has not yet been created.
+     * [Output Only] The URL of the instance.
+     * The URL can be set even if the instance has not yet been created.
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>
@@ -1317,7 +1376,8 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
-     * [Output Only] The URL of the instance. The URL can be set even if the instance has not yet been created.
+     * [Output Only] The URL of the instance.
+     * The URL can be set even if the instance has not yet been created.
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>
@@ -1339,7 +1399,8 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
-     * [Output Only] The URL of the instance. The URL can be set even if the instance has not yet been created.
+     * [Output Only] The URL of the instance.
+     * The URL can be set even if the instance has not yet been created.
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>
@@ -1357,7 +1418,8 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
-     * [Output Only] The URL of the instance. The URL can be set even if the instance has not yet been created.
+     * [Output Only] The URL of the instance.
+     * The URL can be set even if the instance has not yet been created.
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>
@@ -1387,7 +1449,10 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
-     * [Output Only] Version this instance was created from, or was being created from, but the creation failed. Corresponds to one of the versions that were set on the Instance Group Manager resource at the time this instance was being created.
+     * [Output Only] Version this instance was created from, or was being
+     * created from, but the creation failed. Corresponds to one of the versions
+     * that were set on the Instance Group Manager resource at the time this
+     * instance was being created.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
@@ -1402,7 +1467,10 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
-     * [Output Only] Version this instance was created from, or was being created from, but the creation failed. Corresponds to one of the versions that were set on the Instance Group Manager resource at the time this instance was being created.
+     * [Output Only] Version this instance was created from, or was being
+     * created from, but the creation failed. Corresponds to one of the versions
+     * that were set on the Instance Group Manager resource at the time this
+     * instance was being created.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
@@ -1423,7 +1491,10 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
-     * [Output Only] Version this instance was created from, or was being created from, but the creation failed. Corresponds to one of the versions that were set on the Instance Group Manager resource at the time this instance was being created.
+     * [Output Only] Version this instance was created from, or was being
+     * created from, but the creation failed. Corresponds to one of the versions
+     * that were set on the Instance Group Manager resource at the time this
+     * instance was being created.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
@@ -1446,7 +1517,10 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
-     * [Output Only] Version this instance was created from, or was being created from, but the creation failed. Corresponds to one of the versions that were set on the Instance Group Manager resource at the time this instance was being created.
+     * [Output Only] Version this instance was created from, or was being
+     * created from, but the creation failed. Corresponds to one of the versions
+     * that were set on the Instance Group Manager resource at the time this
+     * instance was being created.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
@@ -1467,7 +1541,10 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
-     * [Output Only] Version this instance was created from, or was being created from, but the creation failed. Corresponds to one of the versions that were set on the Instance Group Manager resource at the time this instance was being created.
+     * [Output Only] Version this instance was created from, or was being
+     * created from, but the creation failed. Corresponds to one of the versions
+     * that were set on the Instance Group Manager resource at the time this
+     * instance was being created.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
@@ -1496,7 +1573,10 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
-     * [Output Only] Version this instance was created from, or was being created from, but the creation failed. Corresponds to one of the versions that were set on the Instance Group Manager resource at the time this instance was being created.
+     * [Output Only] Version this instance was created from, or was being
+     * created from, but the creation failed. Corresponds to one of the versions
+     * that were set on the Instance Group Manager resource at the time this
+     * instance was being created.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
@@ -1516,7 +1596,10 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
-     * [Output Only] Version this instance was created from, or was being created from, but the creation failed. Corresponds to one of the versions that were set on the Instance Group Manager resource at the time this instance was being created.
+     * [Output Only] Version this instance was created from, or was being
+     * created from, but the creation failed. Corresponds to one of the versions
+     * that were set on the Instance Group Manager resource at the time this
+     * instance was being created.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
@@ -1531,7 +1614,10 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
-     * [Output Only] Version this instance was created from, or was being created from, but the creation failed. Corresponds to one of the versions that were set on the Instance Group Manager resource at the time this instance was being created.
+     * [Output Only] Version this instance was created from, or was being
+     * created from, but the creation failed. Corresponds to one of the versions
+     * that were set on the Instance Group Manager resource at the time this
+     * instance was being created.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
@@ -1550,7 +1636,10 @@ public final class InstanceManagedByIgmErrorInstanceActionDetails
      *
      *
      * <pre>
-     * [Output Only] Version this instance was created from, or was being created from, but the creation failed. Corresponds to one of the versions that were set on the Instance Group Manager resource at the time this instance was being created.
+     * [Output Only] Version this instance was created from, or was being
+     * created from, but the creation failed. Corresponds to one of the versions
+     * that were set on the Instance Group Manager resource at the time this
+     * instance was being created.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>

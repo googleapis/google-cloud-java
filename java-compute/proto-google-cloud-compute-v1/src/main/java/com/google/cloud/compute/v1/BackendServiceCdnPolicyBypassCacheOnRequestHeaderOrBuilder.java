@@ -28,7 +28,8 @@ public interface BackendServiceCdnPolicyBypassCacheOnRequestHeaderOrBuilder
    *
    *
    * <pre>
-   * The header field name to match on when bypassing cache. Values are case-insensitive.
+   * The header field name to match on when bypassing cache.
+   * Values are case-insensitive.
    * </pre>
    *
    * <code>optional string header_name = 110223613;</code>
@@ -41,7 +42,8 @@ public interface BackendServiceCdnPolicyBypassCacheOnRequestHeaderOrBuilder
    *
    *
    * <pre>
-   * The header field name to match on when bypassing cache. Values are case-insensitive.
+   * The header field name to match on when bypassing cache.
+   * Values are case-insensitive.
    * </pre>
    *
    * <code>optional string header_name = 110223613;</code>
@@ -54,7 +56,8 @@ public interface BackendServiceCdnPolicyBypassCacheOnRequestHeaderOrBuilder
    *
    *
    * <pre>
-   * The header field name to match on when bypassing cache. Values are case-insensitive.
+   * The header field name to match on when bypassing cache.
+   * Values are case-insensitive.
    * </pre>
    *
    * <code>optional string header_name = 110223613;</code>

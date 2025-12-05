@@ -74,7 +74,8 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * An optional destination address description if intended to be different from the source.
+   * An optional destination address description if intended to be different
+   * from the source.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -90,7 +91,8 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * An optional destination address description if intended to be different from the source.
+   * An optional destination address description if intended to be different
+   * from the source.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -114,7 +116,8 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * An optional destination address description if intended to be different from the source.
+   * An optional destination address description if intended to be different
+   * from the source.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -143,7 +146,14 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The URL of the destination address to move to. This can be a full or partial URL. For example, the following are all valid URLs to a address: - https://www.googleapis.com/compute/v1/projects/project/regions/region /addresses/address - projects/project/regions/region/addresses/address Note that destination project must be different from the source project. So /regions/region/addresses/address is not valid partial url.
+   * The URL of the destination address to move to. This can be a full or
+   * partial URL. For example, the following are all valid URLs to a address:
+   *
+   *    - https://www.googleapis.com/compute/v1/projects/project/regions/region/addresses/address
+   *    - projects/project/regions/region/addresses/address
+   *
+   *
+   * Note that destination project must be different from the source project. So/regions/region/addresses/address is not valid partial url.
    * </pre>
    *
    * <code>optional string destination_address = 371693763;</code>
@@ -159,7 +169,14 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The URL of the destination address to move to. This can be a full or partial URL. For example, the following are all valid URLs to a address: - https://www.googleapis.com/compute/v1/projects/project/regions/region /addresses/address - projects/project/regions/region/addresses/address Note that destination project must be different from the source project. So /regions/region/addresses/address is not valid partial url.
+   * The URL of the destination address to move to. This can be a full or
+   * partial URL. For example, the following are all valid URLs to a address:
+   *
+   *    - https://www.googleapis.com/compute/v1/projects/project/regions/region/addresses/address
+   *    - projects/project/regions/region/addresses/address
+   *
+   *
+   * Note that destination project must be different from the source project. So/regions/region/addresses/address is not valid partial url.
    * </pre>
    *
    * <code>optional string destination_address = 371693763;</code>
@@ -183,7 +200,14 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The URL of the destination address to move to. This can be a full or partial URL. For example, the following are all valid URLs to a address: - https://www.googleapis.com/compute/v1/projects/project/regions/region /addresses/address - projects/project/regions/region/addresses/address Note that destination project must be different from the source project. So /regions/region/addresses/address is not valid partial url.
+   * The URL of the destination address to move to. This can be a full or
+   * partial URL. For example, the following are all valid URLs to a address:
+   *
+   *    - https://www.googleapis.com/compute/v1/projects/project/regions/region/addresses/address
+   *    - projects/project/regions/region/addresses/address
+   *
+   *
+   * Note that destination project must be different from the source project. So/regions/region/addresses/address is not valid partial url.
    * </pre>
    *
    * <code>optional string destination_address = 371693763;</code>
@@ -591,7 +615,8 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * An optional destination address description if intended to be different from the source.
+     * An optional destination address description if intended to be different
+     * from the source.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -606,7 +631,8 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * An optional destination address description if intended to be different from the source.
+     * An optional destination address description if intended to be different
+     * from the source.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -629,7 +655,8 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * An optional destination address description if intended to be different from the source.
+     * An optional destination address description if intended to be different
+     * from the source.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -652,7 +679,8 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * An optional destination address description if intended to be different from the source.
+     * An optional destination address description if intended to be different
+     * from the source.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -674,7 +702,8 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * An optional destination address description if intended to be different from the source.
+     * An optional destination address description if intended to be different
+     * from the source.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -692,7 +721,8 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * An optional destination address description if intended to be different from the source.
+     * An optional destination address description if intended to be different
+     * from the source.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -717,7 +747,14 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The URL of the destination address to move to. This can be a full or partial URL. For example, the following are all valid URLs to a address: - https://www.googleapis.com/compute/v1/projects/project/regions/region /addresses/address - projects/project/regions/region/addresses/address Note that destination project must be different from the source project. So /regions/region/addresses/address is not valid partial url.
+     * The URL of the destination address to move to. This can be a full or
+     * partial URL. For example, the following are all valid URLs to a address:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project/regions/region/addresses/address
+     *    - projects/project/regions/region/addresses/address
+     *
+     *
+     * Note that destination project must be different from the source project. So/regions/region/addresses/address is not valid partial url.
      * </pre>
      *
      * <code>optional string destination_address = 371693763;</code>
@@ -732,7 +769,14 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The URL of the destination address to move to. This can be a full or partial URL. For example, the following are all valid URLs to a address: - https://www.googleapis.com/compute/v1/projects/project/regions/region /addresses/address - projects/project/regions/region/addresses/address Note that destination project must be different from the source project. So /regions/region/addresses/address is not valid partial url.
+     * The URL of the destination address to move to. This can be a full or
+     * partial URL. For example, the following are all valid URLs to a address:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project/regions/region/addresses/address
+     *    - projects/project/regions/region/addresses/address
+     *
+     *
+     * Note that destination project must be different from the source project. So/regions/region/addresses/address is not valid partial url.
      * </pre>
      *
      * <code>optional string destination_address = 371693763;</code>
@@ -755,7 +799,14 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The URL of the destination address to move to. This can be a full or partial URL. For example, the following are all valid URLs to a address: - https://www.googleapis.com/compute/v1/projects/project/regions/region /addresses/address - projects/project/regions/region/addresses/address Note that destination project must be different from the source project. So /regions/region/addresses/address is not valid partial url.
+     * The URL of the destination address to move to. This can be a full or
+     * partial URL. For example, the following are all valid URLs to a address:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project/regions/region/addresses/address
+     *    - projects/project/regions/region/addresses/address
+     *
+     *
+     * Note that destination project must be different from the source project. So/regions/region/addresses/address is not valid partial url.
      * </pre>
      *
      * <code>optional string destination_address = 371693763;</code>
@@ -778,7 +829,14 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The URL of the destination address to move to. This can be a full or partial URL. For example, the following are all valid URLs to a address: - https://www.googleapis.com/compute/v1/projects/project/regions/region /addresses/address - projects/project/regions/region/addresses/address Note that destination project must be different from the source project. So /regions/region/addresses/address is not valid partial url.
+     * The URL of the destination address to move to. This can be a full or
+     * partial URL. For example, the following are all valid URLs to a address:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project/regions/region/addresses/address
+     *    - projects/project/regions/region/addresses/address
+     *
+     *
+     * Note that destination project must be different from the source project. So/regions/region/addresses/address is not valid partial url.
      * </pre>
      *
      * <code>optional string destination_address = 371693763;</code>
@@ -800,7 +858,14 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The URL of the destination address to move to. This can be a full or partial URL. For example, the following are all valid URLs to a address: - https://www.googleapis.com/compute/v1/projects/project/regions/region /addresses/address - projects/project/regions/region/addresses/address Note that destination project must be different from the source project. So /regions/region/addresses/address is not valid partial url.
+     * The URL of the destination address to move to. This can be a full or
+     * partial URL. For example, the following are all valid URLs to a address:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project/regions/region/addresses/address
+     *    - projects/project/regions/region/addresses/address
+     *
+     *
+     * Note that destination project must be different from the source project. So/regions/region/addresses/address is not valid partial url.
      * </pre>
      *
      * <code>optional string destination_address = 371693763;</code>
@@ -818,7 +883,14 @@ public final class RegionAddressesMoveRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The URL of the destination address to move to. This can be a full or partial URL. For example, the following are all valid URLs to a address: - https://www.googleapis.com/compute/v1/projects/project/regions/region /addresses/address - projects/project/regions/region/addresses/address Note that destination project must be different from the source project. So /regions/region/addresses/address is not valid partial url.
+     * The URL of the destination address to move to. This can be a full or
+     * partial URL. For example, the following are all valid URLs to a address:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project/regions/region/addresses/address
+     *    - projects/project/regions/region/addresses/address
+     *
+     *
+     * Note that destination project must be different from the source project. So/regions/region/addresses/address is not valid partial url.
      * </pre>
      *
      * <code>optional string destination_address = 371693763;</code>

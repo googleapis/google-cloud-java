@@ -143,7 +143,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Patch</td>
- *      <td><p> Updates the specified forwarding rule with the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules. Currently, you can only patch the network_tier field.</td>
+ *      <td><p> Updates the specified forwarding rule with the data included in the request. This method supportsPATCH semantics and uses theJSON merge patch format and processing rules. Currently, you can only patch the network_tier field.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -798,7 +798,7 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified forwarding rule with the data included in the request. This method
-   * supports PATCH semantics and uses the JSON merge patch format and processing rules. Currently,
+   * supportsPATCH semantics and uses theJSON merge patch format and processing rules. Currently,
    * you can only patch the network_tier field.
    *
    * <p>Sample code:
@@ -840,7 +840,7 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified forwarding rule with the data included in the request. This method
-   * supports PATCH semantics and uses the JSON merge patch format and processing rules. Currently,
+   * supportsPATCH semantics and uses theJSON merge patch format and processing rules. Currently,
    * you can only patch the network_tier field.
    *
    * <p>Sample code:
@@ -875,7 +875,7 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified forwarding rule with the data included in the request. This method
-   * supports PATCH semantics and uses the JSON merge patch format and processing rules. Currently,
+   * supportsPATCH semantics and uses theJSON merge patch format and processing rules. Currently,
    * you can only patch the network_tier field.
    *
    * <p>Sample code:
@@ -910,7 +910,7 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified forwarding rule with the data included in the request. This method
-   * supports PATCH semantics and uses the JSON merge patch format and processing rules. Currently,
+   * supportsPATCH semantics and uses theJSON merge patch format and processing rules. Currently,
    * you can only patch the network_tier field.
    *
    * <p>Sample code:

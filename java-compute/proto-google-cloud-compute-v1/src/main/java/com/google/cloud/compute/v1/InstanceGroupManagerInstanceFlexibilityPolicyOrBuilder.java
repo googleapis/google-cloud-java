@@ -28,7 +28,8 @@ public interface InstanceGroupManagerInstanceFlexibilityPolicyOrBuilder
    *
    *
    * <pre>
-   * Named instance selections configuring properties that the group will use when creating new VMs.
+   * Named instance selections configuring properties that the group will use
+   * when creating new VMs.
    * </pre>
    *
    * <code>
@@ -41,7 +42,8 @@ public interface InstanceGroupManagerInstanceFlexibilityPolicyOrBuilder
    *
    *
    * <pre>
-   * Named instance selections configuring properties that the group will use when creating new VMs.
+   * Named instance selections configuring properties that the group will use
+   * when creating new VMs.
    * </pre>
    *
    * <code>
@@ -62,7 +64,8 @@ public interface InstanceGroupManagerInstanceFlexibilityPolicyOrBuilder
    *
    *
    * <pre>
-   * Named instance selections configuring properties that the group will use when creating new VMs.
+   * Named instance selections configuring properties that the group will use
+   * when creating new VMs.
    * </pre>
    *
    * <code>
@@ -79,7 +82,8 @@ public interface InstanceGroupManagerInstanceFlexibilityPolicyOrBuilder
    *
    *
    * <pre>
-   * Named instance selections configuring properties that the group will use when creating new VMs.
+   * Named instance selections configuring properties that the group will use
+   * when creating new VMs.
    * </pre>
    *
    * <code>
@@ -98,7 +102,8 @@ public interface InstanceGroupManagerInstanceFlexibilityPolicyOrBuilder
    *
    *
    * <pre>
-   * Named instance selections configuring properties that the group will use when creating new VMs.
+   * Named instance selections configuring properties that the group will use
+   * when creating new VMs.
    * </pre>
    *
    * <code>

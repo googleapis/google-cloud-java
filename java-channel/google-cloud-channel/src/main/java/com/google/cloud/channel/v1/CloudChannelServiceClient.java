@@ -1218,7 +1218,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> RegisterSubscriber</td>
- *      <td><p> Registers a service account with subscriber privileges on the Cloud Pub/Sub topic for this Channel Services account. After you create a subscriber, you get the events through [SubscriberEvent][google.cloud.channel.v1.SubscriberEvent]
+ *      <td><p> Registers a service account with subscriber privileges on the Pub/Sub topic for this Channel Services account or integrator. After you create a subscriber, you get the events through [SubscriberEvent][google.cloud.channel.v1.SubscriberEvent]
  * <p>  Possible error codes:
  * <ul>
  * <li>  PERMISSION_DENIED: The reseller account making the request and the provided reseller account are different, or the impersonated user is not a super admin.
@@ -1240,7 +1240,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UnregisterSubscriber</td>
- *      <td><p> Unregisters a service account with subscriber privileges on the Cloud Pub/Sub topic created for this Channel Services account. If there are no service accounts left with subscriber privileges, this deletes the topic. You can call ListSubscribers to check for these accounts.
+ *      <td><p> Unregisters a service account with subscriber privileges on the Pub/Sub topic created for this Channel Services account or integrator. If there are no service accounts left with subscriber privileges, this deletes the topic. You can call ListSubscribers to check for these accounts.
  * <p>  Possible error codes:
  * <ul>
  * <li>  PERMISSION_DENIED: The reseller account making the request and the provided reseller account are different, or the impersonated user is not a super admin.
@@ -1263,7 +1263,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListSubscribers</td>
- *      <td><p> Lists service accounts with subscriber privileges on the Cloud Pub/Sub topic created for this Channel Services account.
+ *      <td><p> Lists service accounts with subscriber privileges on the Pub/Sub topic created for this Channel Services account or integrator.
  * <p>  Possible error codes:
  * <ul>
  * <li>  PERMISSION_DENIED: The reseller account making the request and the provided reseller account are different, or the impersonated user is not a super admin.
@@ -3521,6 +3521,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *           .setPurchaseOrderId("purchaseOrderId2029917384")
    *           .setRequestId("requestId693933066")
    *           .setBillingAccount("billingAccount708726578")
+   *           .setPriceReferenceId("priceReferenceId-5103427")
    *           .build();
    *   Entitlement response = cloudChannelServiceClient.changeOfferAsync(request).get();
    * }
@@ -3576,6 +3577,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *           .setPurchaseOrderId("purchaseOrderId2029917384")
    *           .setRequestId("requestId693933066")
    *           .setBillingAccount("billingAccount708726578")
+   *           .setPriceReferenceId("priceReferenceId-5103427")
    *           .build();
    *   OperationFuture<Entitlement, OperationMetadata> future =
    *       cloudChannelServiceClient.changeOfferOperationCallable().futureCall(request);
@@ -3631,6 +3633,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *           .setPurchaseOrderId("purchaseOrderId2029917384")
    *           .setRequestId("requestId693933066")
    *           .setBillingAccount("billingAccount708726578")
+   *           .setPriceReferenceId("priceReferenceId-5103427")
    *           .build();
    *   ApiFuture<Operation> future =
    *       cloudChannelServiceClient.changeOfferCallable().futureCall(request);
@@ -8716,8 +8719,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Registers a service account with subscriber privileges on the Cloud Pub/Sub topic for this
-   * Channel Services account. After you create a subscriber, you get the events through
+   * Registers a service account with subscriber privileges on the Pub/Sub topic for this Channel
+   * Services account or integrator. After you create a subscriber, you get the events through
    * [SubscriberEvent][google.cloud.channel.v1.SubscriberEvent]
    *
    * <p>Possible error codes:
@@ -8745,8 +8748,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   RegisterSubscriberRequest request =
    *       RegisterSubscriberRequest.newBuilder()
-   *           .setAccount("account-1177318867")
+   *           .setAccount(AccountName.of("[ACCOUNT]").toString())
    *           .setServiceAccount("serviceAccount1079137720")
+   *           .setIntegrator("integrator-1902360937")
    *           .build();
    *   RegisterSubscriberResponse response = cloudChannelServiceClient.registerSubscriber(request);
    * }
@@ -8761,8 +8765,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Registers a service account with subscriber privileges on the Cloud Pub/Sub topic for this
-   * Channel Services account. After you create a subscriber, you get the events through
+   * Registers a service account with subscriber privileges on the Pub/Sub topic for this Channel
+   * Services account or integrator. After you create a subscriber, you get the events through
    * [SubscriberEvent][google.cloud.channel.v1.SubscriberEvent]
    *
    * <p>Possible error codes:
@@ -8790,8 +8794,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   RegisterSubscriberRequest request =
    *       RegisterSubscriberRequest.newBuilder()
-   *           .setAccount("account-1177318867")
+   *           .setAccount(AccountName.of("[ACCOUNT]").toString())
    *           .setServiceAccount("serviceAccount1079137720")
+   *           .setIntegrator("integrator-1902360937")
    *           .build();
    *   ApiFuture<RegisterSubscriberResponse> future =
    *       cloudChannelServiceClient.registerSubscriberCallable().futureCall(request);
@@ -8807,8 +8812,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Unregisters a service account with subscriber privileges on the Cloud Pub/Sub topic created for
-   * this Channel Services account. If there are no service accounts left with subscriber
+   * Unregisters a service account with subscriber privileges on the Pub/Sub topic created for this
+   * Channel Services account or integrator. If there are no service accounts left with subscriber
    * privileges, this deletes the topic. You can call ListSubscribers to check for these accounts.
    *
    * <p>Possible error codes:
@@ -8838,8 +8843,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   UnregisterSubscriberRequest request =
    *       UnregisterSubscriberRequest.newBuilder()
-   *           .setAccount("account-1177318867")
+   *           .setAccount(AccountName.of("[ACCOUNT]").toString())
    *           .setServiceAccount("serviceAccount1079137720")
+   *           .setIntegrator("integrator-1902360937")
    *           .build();
    *   UnregisterSubscriberResponse response =
    *       cloudChannelServiceClient.unregisterSubscriber(request);
@@ -8856,8 +8862,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Unregisters a service account with subscriber privileges on the Cloud Pub/Sub topic created for
-   * this Channel Services account. If there are no service accounts left with subscriber
+   * Unregisters a service account with subscriber privileges on the Pub/Sub topic created for this
+   * Channel Services account or integrator. If there are no service accounts left with subscriber
    * privileges, this deletes the topic. You can call ListSubscribers to check for these accounts.
    *
    * <p>Possible error codes:
@@ -8887,8 +8893,9 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   UnregisterSubscriberRequest request =
    *       UnregisterSubscriberRequest.newBuilder()
-   *           .setAccount("account-1177318867")
+   *           .setAccount(AccountName.of("[ACCOUNT]").toString())
    *           .setServiceAccount("serviceAccount1079137720")
+   *           .setIntegrator("integrator-1902360937")
    *           .build();
    *   ApiFuture<UnregisterSubscriberResponse> future =
    *       cloudChannelServiceClient.unregisterSubscriberCallable().futureCall(request);
@@ -8904,8 +8911,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists service accounts with subscriber privileges on the Cloud Pub/Sub topic created for this
-   * Channel Services account.
+   * Lists service accounts with subscriber privileges on the Pub/Sub topic created for this Channel
+   * Services account or integrator.
    *
    * <p>Possible error codes:
    *
@@ -8933,9 +8940,10 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListSubscribersRequest request =
    *       ListSubscribersRequest.newBuilder()
-   *           .setAccount("account-1177318867")
+   *           .setAccount(AccountName.of("[ACCOUNT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setIntegrator("integrator-1902360937")
    *           .build();
    *   for (String element : cloudChannelServiceClient.listSubscribers(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -8952,8 +8960,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists service accounts with subscriber privileges on the Cloud Pub/Sub topic created for this
-   * Channel Services account.
+   * Lists service accounts with subscriber privileges on the Pub/Sub topic created for this Channel
+   * Services account or integrator.
    *
    * <p>Possible error codes:
    *
@@ -8981,9 +8989,10 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListSubscribersRequest request =
    *       ListSubscribersRequest.newBuilder()
-   *           .setAccount("account-1177318867")
+   *           .setAccount(AccountName.of("[ACCOUNT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setIntegrator("integrator-1902360937")
    *           .build();
    *   ApiFuture<String> future =
    *       cloudChannelServiceClient.listSubscribersPagedCallable().futureCall(request);
@@ -9001,8 +9010,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists service accounts with subscriber privileges on the Cloud Pub/Sub topic created for this
-   * Channel Services account.
+   * Lists service accounts with subscriber privileges on the Pub/Sub topic created for this Channel
+   * Services account or integrator.
    *
    * <p>Possible error codes:
    *
@@ -9030,9 +9039,10 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   ListSubscribersRequest request =
    *       ListSubscribersRequest.newBuilder()
-   *           .setAccount("account-1177318867")
+   *           .setAccount(AccountName.of("[ACCOUNT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setIntegrator("integrator-1902360937")
    *           .build();
    *   while (true) {
    *     ListSubscribersResponse response =

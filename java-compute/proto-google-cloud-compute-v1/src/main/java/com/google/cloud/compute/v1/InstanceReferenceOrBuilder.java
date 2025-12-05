@@ -28,7 +28,8 @@ public interface InstanceReferenceOrBuilder
    *
    *
    * <pre>
-   * The URL for a specific instance. &#64;required compute.instancegroups.addInstances/removeInstances
+   * The URL for a specific instance.
+   * &#64;required compute.instancegroups.addInstances/removeInstances
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>
@@ -41,7 +42,8 @@ public interface InstanceReferenceOrBuilder
    *
    *
    * <pre>
-   * The URL for a specific instance. &#64;required compute.instancegroups.addInstances/removeInstances
+   * The URL for a specific instance.
+   * &#64;required compute.instancegroups.addInstances/removeInstances
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>
@@ -54,7 +56,8 @@ public interface InstanceReferenceOrBuilder
    *
    *
    * <pre>
-   * The URL for a specific instance. &#64;required compute.instancegroups.addInstances/removeInstances
+   * The URL for a specific instance.
+   * &#64;required compute.instancegroups.addInstances/removeInstances
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>

@@ -28,7 +28,12 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * In response to a preflight request, setting this to true indicates that the actual request can include user credentials. This field translates to the Access-Control-Allow-Credentials header. Default is false.
+   * In response to a preflight request, setting this to true
+   * indicates that
+   * the actual request can include user credentials. This field translates to
+   * the Access-Control-Allow-Credentials header.
+   *
+   * Default is false.
    * </pre>
    *
    * <code>optional bool allow_credentials = 481263366;</code>
@@ -41,7 +46,12 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * In response to a preflight request, setting this to true indicates that the actual request can include user credentials. This field translates to the Access-Control-Allow-Credentials header. Default is false.
+   * In response to a preflight request, setting this to true
+   * indicates that
+   * the actual request can include user credentials. This field translates to
+   * the Access-Control-Allow-Credentials header.
+   *
+   * Default is false.
    * </pre>
    *
    * <code>optional bool allow_credentials = 481263366;</code>
@@ -54,7 +64,8 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the content for the Access-Control-Allow-Headers header.
+   * Specifies the content for the Access-Control-Allow-Headers
+   * header.
    * </pre>
    *
    * <code>repeated string allow_headers = 45179024;</code>
@@ -67,7 +78,8 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the content for the Access-Control-Allow-Headers header.
+   * Specifies the content for the Access-Control-Allow-Headers
+   * header.
    * </pre>
    *
    * <code>repeated string allow_headers = 45179024;</code>
@@ -80,7 +92,8 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the content for the Access-Control-Allow-Headers header.
+   * Specifies the content for the Access-Control-Allow-Headers
+   * header.
    * </pre>
    *
    * <code>repeated string allow_headers = 45179024;</code>
@@ -94,7 +107,8 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the content for the Access-Control-Allow-Headers header.
+   * Specifies the content for the Access-Control-Allow-Headers
+   * header.
    * </pre>
    *
    * <code>repeated string allow_headers = 45179024;</code>
@@ -108,7 +122,8 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the content for the Access-Control-Allow-Methods header.
+   * Specifies the content for the Access-Control-Allow-Methods
+   * header.
    * </pre>
    *
    * <code>repeated string allow_methods = 205405372;</code>
@@ -121,7 +136,8 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the content for the Access-Control-Allow-Methods header.
+   * Specifies the content for the Access-Control-Allow-Methods
+   * header.
    * </pre>
    *
    * <code>repeated string allow_methods = 205405372;</code>
@@ -134,7 +150,8 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the content for the Access-Control-Allow-Methods header.
+   * Specifies the content for the Access-Control-Allow-Methods
+   * header.
    * </pre>
    *
    * <code>repeated string allow_methods = 205405372;</code>
@@ -148,7 +165,8 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the content for the Access-Control-Allow-Methods header.
+   * Specifies the content for the Access-Control-Allow-Methods
+   * header.
    * </pre>
    *
    * <code>repeated string allow_methods = 205405372;</code>
@@ -162,7 +180,13 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies a regular expression that matches allowed origins. For more information, see regular expression syntax . An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes. Regular expressions can only be used when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
+   * Specifies a regular expression that matches allowed origins. For
+   * more information, see regular expression syntax.
+   *
+   * An origin is allowed if it matches either an item inallowOrigins or an item inallowOriginRegexes.
+   *
+   * Regular expressions can only be used when the loadBalancingScheme is
+   * set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
    * <code>repeated string allow_origin_regexes = 215385810;</code>
@@ -175,7 +199,13 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies a regular expression that matches allowed origins. For more information, see regular expression syntax . An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes. Regular expressions can only be used when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
+   * Specifies a regular expression that matches allowed origins. For
+   * more information, see regular expression syntax.
+   *
+   * An origin is allowed if it matches either an item inallowOrigins or an item inallowOriginRegexes.
+   *
+   * Regular expressions can only be used when the loadBalancingScheme is
+   * set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
    * <code>repeated string allow_origin_regexes = 215385810;</code>
@@ -188,7 +218,13 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies a regular expression that matches allowed origins. For more information, see regular expression syntax . An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes. Regular expressions can only be used when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
+   * Specifies a regular expression that matches allowed origins. For
+   * more information, see regular expression syntax.
+   *
+   * An origin is allowed if it matches either an item inallowOrigins or an item inallowOriginRegexes.
+   *
+   * Regular expressions can only be used when the loadBalancingScheme is
+   * set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
    * <code>repeated string allow_origin_regexes = 215385810;</code>
@@ -202,7 +238,13 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies a regular expression that matches allowed origins. For more information, see regular expression syntax . An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes. Regular expressions can only be used when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
+   * Specifies a regular expression that matches allowed origins. For
+   * more information, see regular expression syntax.
+   *
+   * An origin is allowed if it matches either an item inallowOrigins or an item inallowOriginRegexes.
+   *
+   * Regular expressions can only be used when the loadBalancingScheme is
+   * set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
    * <code>repeated string allow_origin_regexes = 215385810;</code>
@@ -216,7 +258,9 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the list of origins that is allowed to do CORS requests. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+   * Specifies the list of origins that is allowed to do CORS requests.
+   *
+   * An origin is allowed if it matches either an item inallowOrigins or an item inallowOriginRegexes.
    * </pre>
    *
    * <code>repeated string allow_origins = 194914071;</code>
@@ -229,7 +273,9 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the list of origins that is allowed to do CORS requests. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+   * Specifies the list of origins that is allowed to do CORS requests.
+   *
+   * An origin is allowed if it matches either an item inallowOrigins or an item inallowOriginRegexes.
    * </pre>
    *
    * <code>repeated string allow_origins = 194914071;</code>
@@ -242,7 +288,9 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the list of origins that is allowed to do CORS requests. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+   * Specifies the list of origins that is allowed to do CORS requests.
+   *
+   * An origin is allowed if it matches either an item inallowOrigins or an item inallowOriginRegexes.
    * </pre>
    *
    * <code>repeated string allow_origins = 194914071;</code>
@@ -256,7 +304,9 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the list of origins that is allowed to do CORS requests. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
+   * Specifies the list of origins that is allowed to do CORS requests.
+   *
+   * An origin is allowed if it matches either an item inallowOrigins or an item inallowOriginRegexes.
    * </pre>
    *
    * <code>repeated string allow_origins = 194914071;</code>
@@ -270,7 +320,9 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * If true, disables the CORS policy. The default value is false, which indicates that the CORS policy is in effect.
+   * If true, disables the CORS policy.
+   * The default value is false, which indicates that the CORS
+   * policy is in effect.
    * </pre>
    *
    * <code>optional bool disabled = 270940796;</code>
@@ -283,7 +335,9 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * If true, disables the CORS policy. The default value is false, which indicates that the CORS policy is in effect.
+   * If true, disables the CORS policy.
+   * The default value is false, which indicates that the CORS
+   * policy is in effect.
    * </pre>
    *
    * <code>optional bool disabled = 270940796;</code>
@@ -296,7 +350,8 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the content for the Access-Control-Expose-Headers header.
+   * Specifies the content for the Access-Control-Expose-Headers
+   * header.
    * </pre>
    *
    * <code>repeated string expose_headers = 247604747;</code>
@@ -309,7 +364,8 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the content for the Access-Control-Expose-Headers header.
+   * Specifies the content for the Access-Control-Expose-Headers
+   * header.
    * </pre>
    *
    * <code>repeated string expose_headers = 247604747;</code>
@@ -322,7 +378,8 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the content for the Access-Control-Expose-Headers header.
+   * Specifies the content for the Access-Control-Expose-Headers
+   * header.
    * </pre>
    *
    * <code>repeated string expose_headers = 247604747;</code>
@@ -336,7 +393,8 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the content for the Access-Control-Expose-Headers header.
+   * Specifies the content for the Access-Control-Expose-Headers
+   * header.
    * </pre>
    *
    * <code>repeated string expose_headers = 247604747;</code>
@@ -350,7 +408,9 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies how long results of a preflight request can be cached in seconds. This field translates to the Access-Control-Max-Age header.
+   * Specifies how long results of a preflight request can be cached in
+   * seconds. This field translates to the Access-Control-Max-Age
+   * header.
    * </pre>
    *
    * <code>optional int32 max_age = 307559332;</code>
@@ -363,7 +423,9 @@ public interface CorsPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies how long results of a preflight request can be cached in seconds. This field translates to the Access-Control-Max-Age header.
+   * Specifies how long results of a preflight request can be cached in
+   * seconds. This field translates to the Access-Control-Max-Age
+   * header.
    * </pre>
    *
    * <code>optional int32 max_age = 307559332;</code>

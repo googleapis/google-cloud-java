@@ -80,7 +80,8 @@ public final class InterconnectApplicationAwareInterconnectBandwidthPercentagePo
    *
    *
    * <pre>
-   * Specify bandwidth percentages for various traffic classes for queuing type Bandwidth Percent.
+   * Specify bandwidth percentages for various traffic classes for queuing
+   * type Bandwidth Percent.
    * </pre>
    *
    * <code>
@@ -98,7 +99,8 @@ public final class InterconnectApplicationAwareInterconnectBandwidthPercentagePo
    *
    *
    * <pre>
-   * Specify bandwidth percentages for various traffic classes for queuing type Bandwidth Percent.
+   * Specify bandwidth percentages for various traffic classes for queuing
+   * type Bandwidth Percent.
    * </pre>
    *
    * <code>
@@ -118,7 +120,8 @@ public final class InterconnectApplicationAwareInterconnectBandwidthPercentagePo
    *
    *
    * <pre>
-   * Specify bandwidth percentages for various traffic classes for queuing type Bandwidth Percent.
+   * Specify bandwidth percentages for various traffic classes for queuing
+   * type Bandwidth Percent.
    * </pre>
    *
    * <code>
@@ -134,7 +137,8 @@ public final class InterconnectApplicationAwareInterconnectBandwidthPercentagePo
    *
    *
    * <pre>
-   * Specify bandwidth percentages for various traffic classes for queuing type Bandwidth Percent.
+   * Specify bandwidth percentages for various traffic classes for queuing
+   * type Bandwidth Percent.
    * </pre>
    *
    * <code>
@@ -151,7 +155,8 @@ public final class InterconnectApplicationAwareInterconnectBandwidthPercentagePo
    *
    *
    * <pre>
-   * Specify bandwidth percentages for various traffic classes for queuing type Bandwidth Percent.
+   * Specify bandwidth percentages for various traffic classes for queuing
+   * type Bandwidth Percent.
    * </pre>
    *
    * <code>
@@ -646,7 +651,8 @@ public final class InterconnectApplicationAwareInterconnectBandwidthPercentagePo
      *
      *
      * <pre>
-     * Specify bandwidth percentages for various traffic classes for queuing type Bandwidth Percent.
+     * Specify bandwidth percentages for various traffic classes for queuing
+     * type Bandwidth Percent.
      * </pre>
      *
      * <code>
@@ -667,7 +673,8 @@ public final class InterconnectApplicationAwareInterconnectBandwidthPercentagePo
      *
      *
      * <pre>
-     * Specify bandwidth percentages for various traffic classes for queuing type Bandwidth Percent.
+     * Specify bandwidth percentages for various traffic classes for queuing
+     * type Bandwidth Percent.
      * </pre>
      *
      * <code>
@@ -686,7 +693,8 @@ public final class InterconnectApplicationAwareInterconnectBandwidthPercentagePo
      *
      *
      * <pre>
-     * Specify bandwidth percentages for various traffic classes for queuing type Bandwidth Percent.
+     * Specify bandwidth percentages for various traffic classes for queuing
+     * type Bandwidth Percent.
      * </pre>
      *
      * <code>
@@ -706,7 +714,8 @@ public final class InterconnectApplicationAwareInterconnectBandwidthPercentagePo
      *
      *
      * <pre>
-     * Specify bandwidth percentages for various traffic classes for queuing type Bandwidth Percent.
+     * Specify bandwidth percentages for various traffic classes for queuing
+     * type Bandwidth Percent.
      * </pre>
      *
      * <code>
@@ -734,7 +743,8 @@ public final class InterconnectApplicationAwareInterconnectBandwidthPercentagePo
      *
      *
      * <pre>
-     * Specify bandwidth percentages for various traffic classes for queuing type Bandwidth Percent.
+     * Specify bandwidth percentages for various traffic classes for queuing
+     * type Bandwidth Percent.
      * </pre>
      *
      * <code>
@@ -760,7 +770,8 @@ public final class InterconnectApplicationAwareInterconnectBandwidthPercentagePo
      *
      *
      * <pre>
-     * Specify bandwidth percentages for various traffic classes for queuing type Bandwidth Percent.
+     * Specify bandwidth percentages for various traffic classes for queuing
+     * type Bandwidth Percent.
      * </pre>
      *
      * <code>
@@ -787,7 +798,8 @@ public final class InterconnectApplicationAwareInterconnectBandwidthPercentagePo
      *
      *
      * <pre>
-     * Specify bandwidth percentages for various traffic classes for queuing type Bandwidth Percent.
+     * Specify bandwidth percentages for various traffic classes for queuing
+     * type Bandwidth Percent.
      * </pre>
      *
      * <code>
@@ -815,7 +827,8 @@ public final class InterconnectApplicationAwareInterconnectBandwidthPercentagePo
      *
      *
      * <pre>
-     * Specify bandwidth percentages for various traffic classes for queuing type Bandwidth Percent.
+     * Specify bandwidth percentages for various traffic classes for queuing
+     * type Bandwidth Percent.
      * </pre>
      *
      * <code>
@@ -840,7 +853,8 @@ public final class InterconnectApplicationAwareInterconnectBandwidthPercentagePo
      *
      *
      * <pre>
-     * Specify bandwidth percentages for various traffic classes for queuing type Bandwidth Percent.
+     * Specify bandwidth percentages for various traffic classes for queuing
+     * type Bandwidth Percent.
      * </pre>
      *
      * <code>
@@ -866,7 +880,8 @@ public final class InterconnectApplicationAwareInterconnectBandwidthPercentagePo
      *
      *
      * <pre>
-     * Specify bandwidth percentages for various traffic classes for queuing type Bandwidth Percent.
+     * Specify bandwidth percentages for various traffic classes for queuing
+     * type Bandwidth Percent.
      * </pre>
      *
      * <code>
@@ -893,7 +908,8 @@ public final class InterconnectApplicationAwareInterconnectBandwidthPercentagePo
      *
      *
      * <pre>
-     * Specify bandwidth percentages for various traffic classes for queuing type Bandwidth Percent.
+     * Specify bandwidth percentages for various traffic classes for queuing
+     * type Bandwidth Percent.
      * </pre>
      *
      * <code>
@@ -915,7 +931,8 @@ public final class InterconnectApplicationAwareInterconnectBandwidthPercentagePo
      *
      *
      * <pre>
-     * Specify bandwidth percentages for various traffic classes for queuing type Bandwidth Percent.
+     * Specify bandwidth percentages for various traffic classes for queuing
+     * type Bandwidth Percent.
      * </pre>
      *
      * <code>
@@ -937,7 +954,8 @@ public final class InterconnectApplicationAwareInterconnectBandwidthPercentagePo
      *
      *
      * <pre>
-     * Specify bandwidth percentages for various traffic classes for queuing type Bandwidth Percent.
+     * Specify bandwidth percentages for various traffic classes for queuing
+     * type Bandwidth Percent.
      * </pre>
      *
      * <code>
@@ -954,7 +972,8 @@ public final class InterconnectApplicationAwareInterconnectBandwidthPercentagePo
      *
      *
      * <pre>
-     * Specify bandwidth percentages for various traffic classes for queuing type Bandwidth Percent.
+     * Specify bandwidth percentages for various traffic classes for queuing
+     * type Bandwidth Percent.
      * </pre>
      *
      * <code>
@@ -975,7 +994,8 @@ public final class InterconnectApplicationAwareInterconnectBandwidthPercentagePo
      *
      *
      * <pre>
-     * Specify bandwidth percentages for various traffic classes for queuing type Bandwidth Percent.
+     * Specify bandwidth percentages for various traffic classes for queuing
+     * type Bandwidth Percent.
      * </pre>
      *
      * <code>
@@ -998,7 +1018,8 @@ public final class InterconnectApplicationAwareInterconnectBandwidthPercentagePo
      *
      *
      * <pre>
-     * Specify bandwidth percentages for various traffic classes for queuing type Bandwidth Percent.
+     * Specify bandwidth percentages for various traffic classes for queuing
+     * type Bandwidth Percent.
      * </pre>
      *
      * <code>
@@ -1019,7 +1040,8 @@ public final class InterconnectApplicationAwareInterconnectBandwidthPercentagePo
      *
      *
      * <pre>
-     * Specify bandwidth percentages for various traffic classes for queuing type Bandwidth Percent.
+     * Specify bandwidth percentages for various traffic classes for queuing
+     * type Bandwidth Percent.
      * </pre>
      *
      * <code>
@@ -1041,7 +1063,8 @@ public final class InterconnectApplicationAwareInterconnectBandwidthPercentagePo
      *
      *
      * <pre>
-     * Specify bandwidth percentages for various traffic classes for queuing type Bandwidth Percent.
+     * Specify bandwidth percentages for various traffic classes for queuing
+     * type Bandwidth Percent.
      * </pre>
      *
      * <code>

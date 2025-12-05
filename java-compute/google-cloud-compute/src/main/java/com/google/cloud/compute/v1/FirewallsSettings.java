@@ -154,6 +154,12 @@ public class FirewallsSettings extends ClientSettings<FirewallsSettings> {
     return ((FirewallsStubSettings) getStubSettings()).patchOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsFirewallRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((FirewallsStubSettings) getStubSettings()).testIamPermissionsSettings();
+  }
+
   /** Returns the object with the settings used for calls to update. */
   public UnaryCallSettings<UpdateFirewallRequest, Operation> updateSettings() {
     return ((FirewallsStubSettings) getStubSettings()).updateSettings();
@@ -303,6 +309,12 @@ public class FirewallsSettings extends ClientSettings<FirewallsSettings> {
     public OperationCallSettings.Builder<PatchFirewallRequest, Operation, Operation>
         patchOperationSettings() {
       return getStubSettingsBuilder().patchOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsFirewallRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     /** Returns the builder for the settings used for calls to update. */

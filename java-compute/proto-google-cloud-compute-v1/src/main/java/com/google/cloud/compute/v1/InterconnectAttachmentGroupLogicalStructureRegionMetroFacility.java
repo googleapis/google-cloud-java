@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * [Output Only] The facilities used for this group's Attachments' Interconnects.
+ * [Output Only] The facilities used for this group's Attachments'
+ * Interconnects.
  * </pre>
  *
  * Protobuf type {@code
@@ -415,7 +416,8 @@ public final class InterconnectAttachmentGroupLogicalStructureRegionMetroFacilit
    *
    *
    * <pre>
-   * [Output Only] The facilities used for this group's Attachments' Interconnects.
+   * [Output Only] The facilities used for this group's Attachments'
+   * Interconnects.
    * </pre>
    *
    * Protobuf type {@code

@@ -217,7 +217,13 @@ public final class PreviewFeatureRolloutOperationRolloutInput
    *
    *
    * <pre>
-   * The name of the rollout plan Ex. organizations//locations/global/rolloutPlans/ Ex. folders//locations/global/rolloutPlans/ Ex. projects//locations/global/rolloutPlans/.
+   * The name of the rollout plan
+   * Ex.
+   * organizations//locations/global/rolloutPlans/
+   * Ex.
+   * folders//locations/global/rolloutPlans/
+   * Ex.
+   * projects//locations/global/rolloutPlans/.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -233,7 +239,13 @@ public final class PreviewFeatureRolloutOperationRolloutInput
    *
    *
    * <pre>
-   * The name of the rollout plan Ex. organizations//locations/global/rolloutPlans/ Ex. folders//locations/global/rolloutPlans/ Ex. projects//locations/global/rolloutPlans/.
+   * The name of the rollout plan
+   * Ex.
+   * organizations//locations/global/rolloutPlans/
+   * Ex.
+   * folders//locations/global/rolloutPlans/
+   * Ex.
+   * projects//locations/global/rolloutPlans/.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -257,7 +269,13 @@ public final class PreviewFeatureRolloutOperationRolloutInput
    *
    *
    * <pre>
-   * The name of the rollout plan Ex. organizations//locations/global/rolloutPlans/ Ex. folders//locations/global/rolloutPlans/ Ex. projects//locations/global/rolloutPlans/.
+   * The name of the rollout plan
+   * Ex.
+   * organizations//locations/global/rolloutPlans/
+   * Ex.
+   * folders//locations/global/rolloutPlans/
+   * Ex.
+   * projects//locations/global/rolloutPlans/.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -748,7 +766,13 @@ public final class PreviewFeatureRolloutOperationRolloutInput
      *
      *
      * <pre>
-     * The name of the rollout plan Ex. organizations//locations/global/rolloutPlans/ Ex. folders//locations/global/rolloutPlans/ Ex. projects//locations/global/rolloutPlans/.
+     * The name of the rollout plan
+     * Ex.
+     * organizations//locations/global/rolloutPlans/
+     * Ex.
+     * folders//locations/global/rolloutPlans/
+     * Ex.
+     * projects//locations/global/rolloutPlans/.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -763,7 +787,13 @@ public final class PreviewFeatureRolloutOperationRolloutInput
      *
      *
      * <pre>
-     * The name of the rollout plan Ex. organizations//locations/global/rolloutPlans/ Ex. folders//locations/global/rolloutPlans/ Ex. projects//locations/global/rolloutPlans/.
+     * The name of the rollout plan
+     * Ex.
+     * organizations//locations/global/rolloutPlans/
+     * Ex.
+     * folders//locations/global/rolloutPlans/
+     * Ex.
+     * projects//locations/global/rolloutPlans/.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -786,7 +816,13 @@ public final class PreviewFeatureRolloutOperationRolloutInput
      *
      *
      * <pre>
-     * The name of the rollout plan Ex. organizations//locations/global/rolloutPlans/ Ex. folders//locations/global/rolloutPlans/ Ex. projects//locations/global/rolloutPlans/.
+     * The name of the rollout plan
+     * Ex.
+     * organizations//locations/global/rolloutPlans/
+     * Ex.
+     * folders//locations/global/rolloutPlans/
+     * Ex.
+     * projects//locations/global/rolloutPlans/.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -809,7 +845,13 @@ public final class PreviewFeatureRolloutOperationRolloutInput
      *
      *
      * <pre>
-     * The name of the rollout plan Ex. organizations//locations/global/rolloutPlans/ Ex. folders//locations/global/rolloutPlans/ Ex. projects//locations/global/rolloutPlans/.
+     * The name of the rollout plan
+     * Ex.
+     * organizations//locations/global/rolloutPlans/
+     * Ex.
+     * folders//locations/global/rolloutPlans/
+     * Ex.
+     * projects//locations/global/rolloutPlans/.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -831,7 +873,13 @@ public final class PreviewFeatureRolloutOperationRolloutInput
      *
      *
      * <pre>
-     * The name of the rollout plan Ex. organizations//locations/global/rolloutPlans/ Ex. folders//locations/global/rolloutPlans/ Ex. projects//locations/global/rolloutPlans/.
+     * The name of the rollout plan
+     * Ex.
+     * organizations//locations/global/rolloutPlans/
+     * Ex.
+     * folders//locations/global/rolloutPlans/
+     * Ex.
+     * projects//locations/global/rolloutPlans/.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -849,7 +897,13 @@ public final class PreviewFeatureRolloutOperationRolloutInput
      *
      *
      * <pre>
-     * The name of the rollout plan Ex. organizations//locations/global/rolloutPlans/ Ex. folders//locations/global/rolloutPlans/ Ex. projects//locations/global/rolloutPlans/.
+     * The name of the rollout plan
+     * Ex.
+     * organizations//locations/global/rolloutPlans/
+     * Ex.
+     * folders//locations/global/rolloutPlans/
+     * Ex.
+     * projects//locations/global/rolloutPlans/.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>

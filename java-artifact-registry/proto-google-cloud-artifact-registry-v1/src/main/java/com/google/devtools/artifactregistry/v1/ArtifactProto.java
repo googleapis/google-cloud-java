@@ -33,6 +33,10 @@ public final class ArtifactProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_devtools_artifactregistry_v1_DockerImage_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_artifactregistry_v1_ImageManifest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_artifactregistry_v1_ImageManifest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_devtools_artifactregistry_v1_ListDockerImagesRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_devtools_artifactregistry_v1_ListDockerImagesRequest_fieldAccessorTable;
@@ -104,7 +108,7 @@ public final class ArtifactProto {
       "\n"
           + "2google/devtools/artifactregistry/v1/artifact.proto\022#google.devtools.artifactre"
           + "gistry.v1\032\037google/api/field_behavior.pro"
-          + "to\032\031google/api/resource.proto\032\037google/protobuf/timestamp.proto\"\230\003\n"
+          + "to\032\031google/api/resource.proto\032\037google/protobuf/timestamp.proto\"\201\004\n"
           + "\013DockerImage\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\002\022\020\n"
           + "\003uri\030\002 \001(\tB\003\340A\002\022\014\n"
@@ -114,22 +118,32 @@ public final class ArtifactProto {
           + "media_type\030\006 \001(\t\022.\n\n"
           + "build_time\030\007 \001(\0132\032.google.protobuf.Timestamp\0224\n"
           + "\013update_time\030\010"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003:\220\001\352A\214\001\n"
-          + "+artifactregistry.googleapis.com/DockerImage\022]projects/{project}/l"
-          + "ocations/{location}/repositories/{repository}/dockerImages/{docker_image}\"g\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\025\n\r"
+          + "artifact_type\030\t \001(\t\022P\n"
+          + "\017image_manifests\030\013"
+          + " \003(\01322.google.devtools.artifactregistry.v1.ImageManifestB\003\340A\001:\220\001\352A\214\001\n"
+          + "+artifactregistry.googleapis.com/DockerImage\022]projects/{project}/locations/{locat"
+          + "ion}/repositories/{repository}/dockerImages/{docker_image}\"\262\001\n\r"
+          + "ImageManifest\022\031\n"
+          + "\014architecture\030\001 \001(\tB\003\340A\001\022\017\n"
+          + "\002os\030\002 \001(\tB\003\340A\001\022\023\n"
+          + "\006digest\030\003 \001(\tB\003\340A\001\022\027\n\n"
+          + "media_type\030\004 \001(\tB\003\340A\001\022\027\n\n"
+          + "os_version\030\005 \001(\tB\003\340A\001\022\030\n"
+          + "\013os_features\030\006 \003(\tB\003\340A\001\022\024\n"
+          + "\007variant\030\007 \001(\tB\003\340A\001\"g\n"
           + "\027ListDockerImagesRequest\022\023\n"
           + "\006parent\030\001 \001(\tB\003\340A\002\022\021\n"
           + "\tpage_size\030\002 \001(\005\022\022\n\n"
           + "page_token\030\003 \001(\t\022\020\n"
           + "\010order_by\030\004 \001(\t\"|\n"
           + "\030ListDockerImagesResponse\022G\n\r"
-          + "docker_images\030\001 \003(\01320.google.d"
-          + "evtools.artifactregistry.v1.DockerImage\022\027\n"
+          + "docker_images\030\001 \003(\01320.go"
+          + "ogle.devtools.artifactregistry.v1.DockerImage\022\027\n"
           + "\017next_page_token\030\002 \001(\t\"Z\n"
           + "\025GetDockerImageRequest\022A\n"
           + "\004name\030\001 \001(\tB3\340A\002\372A-\n"
-          + "+artifactregistry.googleapis.com/DockerImage\"\365\002\n"
-          + "\r"
+          + "+artifactregistry.googleapis.com/DockerImage\"\365\002\n\r"
           + "MavenArtifact\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\002\022\024\n"
           + "\007pom_uri\030\002 \001(\tB\003\340A\002\022\020\n"
@@ -139,12 +153,12 @@ public final class ArtifactProto {
           + "\013create_time\030\006 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\007"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003:\226\001\352A\222\001\n"
-          + "-artifactregistry.googleapis.com/MavenArtifact\022aproje"
-          + "cts/{project}/locations/{location}/repos"
-          + "itories/{repository}/mavenArtifacts/{maven_artifact}\"\211\001\n"
+          + "-artifactregistry.googleapis.com/MavenArtifact\022"
+          + "aprojects/{project}/locations/{location}"
+          + "/repositories/{repository}/mavenArtifacts/{maven_artifact}\"\211\001\n"
           + "\031ListMavenArtifactsRequest\022E\n"
-          + "\006parent\030\001 \001("
-          + "\tB5\340A\002\372A/\022-artifactregistry.googleapis.com/MavenArtifact\022\021\n"
+          + "\006parent\030\001 \001(\tB5\340A\002\372A/\022-artifa"
+          + "ctregistry.googleapis.com/MavenArtifact\022\021\n"
           + "\tpage_size\030\002 \001(\005\022\022\n\n"
           + "page_token\030\003 \001(\t\"\202\001\n"
           + "\032ListMavenArtifactsResponse\022K\n"
@@ -162,17 +176,17 @@ public final class ArtifactProto {
           + "\013create_time\030\006 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\007"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003:\215\001\352A\211\001\n"
-          + "*artifactregistry.googleapis.com/NpmPackage\022[projects/{p"
-          + "roject}/locations/{location}/repositorie"
-          + "s/{repository}/npmPackages/{npm_package}\"\203\001\n"
+          + "*artifactregistry.googleapis.com/NpmPackage\022[proje"
+          + "cts/{project}/locations/{location}/repos"
+          + "itories/{repository}/npmPackages/{npm_package}\"\203\001\n"
           + "\026ListNpmPackagesRequest\022B\n"
           + "\006parent\030\001 \001("
           + "\tB2\340A\002\372A,\022*artifactregistry.googleapis.com/NpmPackage\022\021\n"
           + "\tpage_size\030\002 \001(\005\022\022\n\n"
           + "page_token\030\003 \001(\t\"y\n"
           + "\027ListNpmPackagesResponse\022E\n"
-          + "\014npm_packages\030\001"
-          + " \003(\0132/.google.devtools.artifactregistry.v1.NpmPackage\022\027\n"
+          + "\014npm_packages\030\001 \003(\0132/.google.d"
+          + "evtools.artifactregistry.v1.NpmPackage\022\027\n"
           + "\017next_page_token\030\002 \001(\t\"X\n"
           + "\024GetNpmPackageRequest\022@\n"
           + "\004name\030\001 \001(\tB2\340A\002\372A,\n"
@@ -183,13 +197,13 @@ public final class ArtifactProto {
           + "\014package_name\030\003 \001(\t\022\017\n"
           + "\007version\030\004 \001(\t\0224\n"
           + "\013create_time\030\006 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
-          + "\013update_time\030\007"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003:\226\001\352A\222\001\n"
-          + "-artifactregistry.googleapis.com/PythonPackage\022aprojects/{project}/locations/{locat"
-          + "ion}/repositories/{repository}/pythonPackages/{python_package}\"\211\001\n"
+          + "\013update_time\030\007 \001"
+          + "(\0132\032.google.protobuf.TimestampB\003\340A\003:\226\001\352A\222\001\n"
+          + "-artifactregistry.googleapis.com/PythonPackage\022aprojects/{project}/locations/"
+          + "{location}/repositories/{repository}/pythonPackages/{python_package}\"\211\001\n"
           + "\031ListPythonPackagesRequest\022E\n"
-          + "\006parent\030\001 \001(\tB5\340A\002\372A/\022-ar"
-          + "tifactregistry.googleapis.com/PythonPackage\022\021\n"
+          + "\006parent\030\001 \001(\tB5\340A\002\372"
+          + "A/\022-artifactregistry.googleapis.com/PythonPackage\022\021\n"
           + "\tpage_size\030\002 \001(\005\022\022\n\n"
           + "page_token\030\003 \001(\t\"\202\001\n"
           + "\032ListPythonPackagesResponse\022K\n"
@@ -200,10 +214,10 @@ public final class ArtifactProto {
           + "\004name\030\001 \001(\tB5\340A\002\372A/\n"
           + "-artifactregistry.googleapis.com/PythonPackageB\370\001\n"
           + "\'com.google.devtools.artifactregistry.v1B\r"
-          + "ArtifactProtoP\001ZPcloud.google.com/go/artifa"
-          + "ctregistry/apiv1/artifactregistrypb;artifactregistrypb\252\002"
-          + " Google.Cloud.ArtifactRegistry.V1\312\002 Google\\Cloud\\ArtifactRegistr"
-          + "y\\V1\352\002#Google::Cloud::ArtifactRegistry::V1b\006proto3"
+          + "ArtifactProtoP\001ZPcloud.google.com/go/"
+          + "artifactregistry/apiv1/artifactregistrypb;artifactregistrypb\252\002"
+          + " Google.Cloud.ArtifactRegistry.V1\312\002 Google\\Cloud\\ArtifactR"
+          + "egistry\\V1\352\002#Google::Cloud::ArtifactRegistry::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -227,9 +241,19 @@ public final class ArtifactProto {
               "MediaType",
               "BuildTime",
               "UpdateTime",
+              "ArtifactType",
+              "ImageManifests",
+            });
+    internal_static_google_devtools_artifactregistry_v1_ImageManifest_descriptor =
+        getDescriptor().getMessageTypes().get(1);
+    internal_static_google_devtools_artifactregistry_v1_ImageManifest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_artifactregistry_v1_ImageManifest_descriptor,
+            new java.lang.String[] {
+              "Architecture", "Os", "Digest", "MediaType", "OsVersion", "OsFeatures", "Variant",
             });
     internal_static_google_devtools_artifactregistry_v1_ListDockerImagesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(1);
+        getDescriptor().getMessageTypes().get(2);
     internal_static_google_devtools_artifactregistry_v1_ListDockerImagesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_artifactregistry_v1_ListDockerImagesRequest_descriptor,
@@ -237,7 +261,7 @@ public final class ArtifactProto {
               "Parent", "PageSize", "PageToken", "OrderBy",
             });
     internal_static_google_devtools_artifactregistry_v1_ListDockerImagesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(2);
+        getDescriptor().getMessageTypes().get(3);
     internal_static_google_devtools_artifactregistry_v1_ListDockerImagesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_artifactregistry_v1_ListDockerImagesResponse_descriptor,
@@ -245,7 +269,7 @@ public final class ArtifactProto {
               "DockerImages", "NextPageToken",
             });
     internal_static_google_devtools_artifactregistry_v1_GetDockerImageRequest_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_devtools_artifactregistry_v1_GetDockerImageRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_artifactregistry_v1_GetDockerImageRequest_descriptor,
@@ -253,7 +277,7 @@ public final class ArtifactProto {
               "Name",
             });
     internal_static_google_devtools_artifactregistry_v1_MavenArtifact_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_devtools_artifactregistry_v1_MavenArtifact_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_artifactregistry_v1_MavenArtifact_descriptor,
@@ -261,7 +285,7 @@ public final class ArtifactProto {
               "Name", "PomUri", "GroupId", "ArtifactId", "Version", "CreateTime", "UpdateTime",
             });
     internal_static_google_devtools_artifactregistry_v1_ListMavenArtifactsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_devtools_artifactregistry_v1_ListMavenArtifactsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_artifactregistry_v1_ListMavenArtifactsRequest_descriptor,
@@ -269,7 +293,7 @@ public final class ArtifactProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_devtools_artifactregistry_v1_ListMavenArtifactsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_devtools_artifactregistry_v1_ListMavenArtifactsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_artifactregistry_v1_ListMavenArtifactsResponse_descriptor,
@@ -277,7 +301,7 @@ public final class ArtifactProto {
               "MavenArtifacts", "NextPageToken",
             });
     internal_static_google_devtools_artifactregistry_v1_GetMavenArtifactRequest_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_devtools_artifactregistry_v1_GetMavenArtifactRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_artifactregistry_v1_GetMavenArtifactRequest_descriptor,
@@ -285,7 +309,7 @@ public final class ArtifactProto {
               "Name",
             });
     internal_static_google_devtools_artifactregistry_v1_NpmPackage_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_devtools_artifactregistry_v1_NpmPackage_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_artifactregistry_v1_NpmPackage_descriptor,
@@ -293,7 +317,7 @@ public final class ArtifactProto {
               "Name", "PackageName", "Version", "Tags", "CreateTime", "UpdateTime",
             });
     internal_static_google_devtools_artifactregistry_v1_ListNpmPackagesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_devtools_artifactregistry_v1_ListNpmPackagesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_artifactregistry_v1_ListNpmPackagesRequest_descriptor,
@@ -301,7 +325,7 @@ public final class ArtifactProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_devtools_artifactregistry_v1_ListNpmPackagesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_devtools_artifactregistry_v1_ListNpmPackagesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_artifactregistry_v1_ListNpmPackagesResponse_descriptor,
@@ -309,7 +333,7 @@ public final class ArtifactProto {
               "NpmPackages", "NextPageToken",
             });
     internal_static_google_devtools_artifactregistry_v1_GetNpmPackageRequest_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_devtools_artifactregistry_v1_GetNpmPackageRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_artifactregistry_v1_GetNpmPackageRequest_descriptor,
@@ -317,7 +341,7 @@ public final class ArtifactProto {
               "Name",
             });
     internal_static_google_devtools_artifactregistry_v1_PythonPackage_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_devtools_artifactregistry_v1_PythonPackage_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_artifactregistry_v1_PythonPackage_descriptor,
@@ -325,7 +349,7 @@ public final class ArtifactProto {
               "Name", "Uri", "PackageName", "Version", "CreateTime", "UpdateTime",
             });
     internal_static_google_devtools_artifactregistry_v1_ListPythonPackagesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_devtools_artifactregistry_v1_ListPythonPackagesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_artifactregistry_v1_ListPythonPackagesRequest_descriptor,
@@ -333,7 +357,7 @@ public final class ArtifactProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_devtools_artifactregistry_v1_ListPythonPackagesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_devtools_artifactregistry_v1_ListPythonPackagesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_artifactregistry_v1_ListPythonPackagesResponse_descriptor,
@@ -341,7 +365,7 @@ public final class ArtifactProto {
               "PythonPackages", "NextPageToken",
             });
     internal_static_google_devtools_artifactregistry_v1_GetPythonPackageRequest_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_devtools_artifactregistry_v1_GetPythonPackageRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_artifactregistry_v1_GetPythonPackageRequest_descriptor,

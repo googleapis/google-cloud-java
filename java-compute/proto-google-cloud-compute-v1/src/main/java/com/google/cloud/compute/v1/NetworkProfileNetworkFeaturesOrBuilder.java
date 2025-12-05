@@ -28,7 +28,8 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    *
    *
    * <pre>
-   * Specifies what address purposes are supported. If empty, all address purposes are supported.
+   * Specifies what address purposes are supported. If empty, all address
+   * purposes are supported.
    * Check the AddressPurposes enum for the list of possible values.
    * </pre>
    *
@@ -42,7 +43,8 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    *
    *
    * <pre>
-   * Specifies what address purposes are supported. If empty, all address purposes are supported.
+   * Specifies what address purposes are supported. If empty, all address
+   * purposes are supported.
    * Check the AddressPurposes enum for the list of possible values.
    * </pre>
    *
@@ -56,7 +58,8 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    *
    *
    * <pre>
-   * Specifies what address purposes are supported. If empty, all address purposes are supported.
+   * Specifies what address purposes are supported. If empty, all address
+   * purposes are supported.
    * Check the AddressPurposes enum for the list of possible values.
    * </pre>
    *
@@ -71,7 +74,8 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    *
    *
    * <pre>
-   * Specifies what address purposes are supported. If empty, all address purposes are supported.
+   * Specifies what address purposes are supported. If empty, all address
+   * purposes are supported.
    * Check the AddressPurposes enum for the list of possible values.
    * </pre>
    *
@@ -86,7 +90,8 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    *
    *
    * <pre>
-   * Specifies whether alias IP ranges (and secondary address ranges) are allowed.
+   * Specifies whether alias IP ranges (and secondary address ranges) are
+   * allowed.
    * Check the AllowAliasIpRanges enum for the list of possible values.
    * </pre>
    *
@@ -100,7 +105,8 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    *
    *
    * <pre>
-   * Specifies whether alias IP ranges (and secondary address ranges) are allowed.
+   * Specifies whether alias IP ranges (and secondary address ranges) are
+   * allowed.
    * Check the AllowAliasIpRanges enum for the list of possible values.
    * </pre>
    *
@@ -114,7 +120,8 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    *
    *
    * <pre>
-   * Specifies whether alias IP ranges (and secondary address ranges) are allowed.
+   * Specifies whether alias IP ranges (and secondary address ranges) are
+   * allowed.
    * Check the AllowAliasIpRanges enum for the list of possible values.
    * </pre>
    *
@@ -338,7 +345,8 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    *
    *
    * <pre>
-   * Specifies whether VMs are allowed to have external IP access on network interfaces connected to this VPC.
+   * Specifies whether VMs are allowed to have external IP access on network
+   * interfaces connected to this VPC.
    * Check the AllowExternalIpAccess enum for the list of possible values.
    * </pre>
    *
@@ -352,7 +360,8 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    *
    *
    * <pre>
-   * Specifies whether VMs are allowed to have external IP access on network interfaces connected to this VPC.
+   * Specifies whether VMs are allowed to have external IP access on network
+   * interfaces connected to this VPC.
    * Check the AllowExternalIpAccess enum for the list of possible values.
    * </pre>
    *
@@ -366,7 +375,8 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    *
    *
    * <pre>
-   * Specifies whether VMs are allowed to have external IP access on network interfaces connected to this VPC.
+   * Specifies whether VMs are allowed to have external IP access on network
+   * interfaces connected to this VPC.
    * Check the AllowExternalIpAccess enum for the list of possible values.
    * </pre>
    *
@@ -543,6 +553,48 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The bytes for allowMultiNicInSameNetwork.
    */
   com.google.protobuf.ByteString getAllowMultiNicInSameNetworkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether multicast is allowed.
+   * Check the AllowMulticast enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string allow_multicast = 11002498;</code>
+   *
+   * @return Whether the allowMulticast field is set.
+   */
+  boolean hasAllowMulticast();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether multicast is allowed.
+   * Check the AllowMulticast enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string allow_multicast = 11002498;</code>
+   *
+   * @return The allowMulticast.
+   */
+  java.lang.String getAllowMulticast();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies whether multicast is allowed.
+   * Check the AllowMulticast enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string allow_multicast = 11002498;</code>
+   *
+   * @return The bytes for allowMulticast.
+   */
+  com.google.protobuf.ByteString getAllowMulticastBytes();
 
   /**
    *
@@ -968,7 +1020,8 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    *
    *
    * <pre>
-   * If set, limits the interface types that the network supports. If empty, all interface types are supported.
+   * If set, limits the interface types that the network supports. If
+   * empty, all interface types are supported.
    * Check the InterfaceTypes enum for the list of possible values.
    * </pre>
    *
@@ -982,7 +1035,8 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    *
    *
    * <pre>
-   * If set, limits the interface types that the network supports. If empty, all interface types are supported.
+   * If set, limits the interface types that the network supports. If
+   * empty, all interface types are supported.
    * Check the InterfaceTypes enum for the list of possible values.
    * </pre>
    *
@@ -996,7 +1050,8 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    *
    *
    * <pre>
-   * If set, limits the interface types that the network supports. If empty, all interface types are supported.
+   * If set, limits the interface types that the network supports. If
+   * empty, all interface types are supported.
    * Check the InterfaceTypes enum for the list of possible values.
    * </pre>
    *
@@ -1011,7 +1066,8 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    *
    *
    * <pre>
-   * If set, limits the interface types that the network supports. If empty, all interface types are supported.
+   * If set, limits the interface types that the network supports. If
+   * empty, all interface types are supported.
    * Check the InterfaceTypes enum for the list of possible values.
    * </pre>
    *
@@ -1021,6 +1077,48 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The bytes of the interfaceTypes at the given index.
    */
   com.google.protobuf.ByteString getInterfaceTypesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which type of multicast is supported.
+   * Check the Multicast enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string multicast = 404098040;</code>
+   *
+   * @return Whether the multicast field is set.
+   */
+  boolean hasMulticast();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which type of multicast is supported.
+   * Check the Multicast enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string multicast = 404098040;</code>
+   *
+   * @return The multicast.
+   */
+  java.lang.String getMulticast();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies which type of multicast is supported.
+   * Check the Multicast enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string multicast = 404098040;</code>
+   *
+   * @return The bytes for multicast.
+   */
+  com.google.protobuf.ByteString getMulticastBytes();
 
   /**
    *

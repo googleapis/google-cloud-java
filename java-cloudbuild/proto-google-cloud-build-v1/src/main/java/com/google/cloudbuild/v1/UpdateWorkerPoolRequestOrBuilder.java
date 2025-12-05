@@ -80,10 +80,11 @@ public interface UpdateWorkerPoolRequestOrBuilder
    *
    *
    * <pre>
-   * A mask specifying which fields in `worker_pool` to update.
+   * Optional. A mask specifying which fields in `worker_pool` to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -93,10 +94,11 @@ public interface UpdateWorkerPoolRequestOrBuilder
    *
    *
    * <pre>
-   * A mask specifying which fields in `worker_pool` to update.
+   * Optional. A mask specifying which fields in `worker_pool` to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -106,10 +108,11 @@ public interface UpdateWorkerPoolRequestOrBuilder
    *
    *
    * <pre>
-   * A mask specifying which fields in `worker_pool` to update.
+   * Optional. A mask specifying which fields in `worker_pool` to update.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 

@@ -67,7 +67,7 @@ public interface SchedulingNodeAffinityOrBuilder
    *
    *
    * <pre>
-   * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
+   * Defines the operation of node selection. Valid operators areIN for affinity and NOT_IN for anti-affinity.
    * Check the Operator enum for the list of possible values.
    * </pre>
    *
@@ -81,7 +81,7 @@ public interface SchedulingNodeAffinityOrBuilder
    *
    *
    * <pre>
-   * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
+   * Defines the operation of node selection. Valid operators areIN for affinity and NOT_IN for anti-affinity.
    * Check the Operator enum for the list of possible values.
    * </pre>
    *
@@ -95,7 +95,7 @@ public interface SchedulingNodeAffinityOrBuilder
    *
    *
    * <pre>
-   * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
+   * Defines the operation of node selection. Valid operators areIN for affinity and NOT_IN for anti-affinity.
    * Check the Operator enum for the list of possible values.
    * </pre>
    *

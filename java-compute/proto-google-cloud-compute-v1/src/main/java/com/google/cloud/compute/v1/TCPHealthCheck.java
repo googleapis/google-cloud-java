@@ -71,7 +71,28 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Not supported by target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for passthrough load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
+   * Specifies how a port is selected for health checking. Can be one of the
+   * following values:
+   * USE_FIXED_PORT: Specifies a port number explicitly using theport field  in the health check. Supported by backend services
+   * for passthrough load balancers and backend services for proxy load
+   * balancers. Not supported by target pools. The health check supports all
+   * backends supported by the backend service provided the backend can be
+   * health checked. For example, GCE_VM_IP network endpoint
+   * groups, GCE_VM_IP_PORT network endpoint groups, and instance
+   * group backends.
+   * USE_NAMED_PORT: Not supported.
+   * USE_SERVING_PORT: Provides an indirect method of specifying
+   * the health check port by referring to the backend service. Only supported
+   * by backend services for proxy load balancers. Not supported by target
+   * pools.  Not supported by backend services for passthrough load balancers.
+   * Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group
+   * backends.
+   *
+   * For GCE_VM_IP_PORT network endpoint group backends, the health
+   * check uses the port number specified for each endpoint in the network
+   * endpoint group.  For instance group backends, the health check uses the
+   * port number determined by looking up the backend service's named port in
+   * the instance group's list of named ports.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.TCPHealthCheck.PortSpecification}
@@ -91,7 +112,8 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The port number in the health check's port is used for health checking. Applies to network endpoint group and instance group backends.
+     * The port number in the health check's port is used for health
+     * checking. Applies to network endpoint group and instance group backends.
      * </pre>
      *
      * <code>USE_FIXED_PORT = 190235748;</code>
@@ -111,7 +133,10 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For network endpoint group backends, the health check uses the port number specified on each endpoint in the network endpoint group. For instance group backends, the health check uses the port number specified for the backend service's named port defined in the instance group's named ports.
+     * For network endpoint group backends, the health check uses the port number
+     * specified on each endpoint in the network endpoint group. For instance
+     * group backends, the health check uses the port number specified for the
+     * backend service's named port defined in the instance group's named ports.
      * </pre>
      *
      * <code>USE_SERVING_PORT = 362637516;</code>
@@ -135,7 +160,8 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The port number in the health check's port is used for health checking. Applies to network endpoint group and instance group backends.
+     * The port number in the health check's port is used for health
+     * checking. Applies to network endpoint group and instance group backends.
      * </pre>
      *
      * <code>USE_FIXED_PORT = 190235748;</code>
@@ -157,7 +183,10 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For network endpoint group backends, the health check uses the port number specified on each endpoint in the network endpoint group. For instance group backends, the health check uses the port number specified for the backend service's named port defined in the instance group's named ports.
+     * For network endpoint group backends, the health check uses the port number
+     * specified on each endpoint in the network endpoint group. For instance
+     * group backends, the health check uses the port number specified for the
+     * backend service's named port defined in the instance group's named ports.
      * </pre>
      *
      * <code>USE_SERVING_PORT = 362637516;</code>
@@ -256,7 +285,9 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+   * Specifies the type of proxy header to append before sending data to the
+   * backend, either NONE or PROXY_V1. The default
+   * is NONE.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.TCPHealthCheck.ProxyHeader}
@@ -387,7 +418,8 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The TCP port number to which the health check prober sends packets. The default value is 80. Valid values are 1 through 65535.
+   * The TCP port number to which the health check prober sends packets. The
+   * default value is 80. Valid values are 1 through65535.
    * </pre>
    *
    * <code>optional int32 port = 3446913;</code>
@@ -403,7 +435,8 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The TCP port number to which the health check prober sends packets. The default value is 80. Valid values are 1 through 65535.
+   * The TCP port number to which the health check prober sends packets. The
+   * default value is 80. Valid values are 1 through65535.
    * </pre>
    *
    * <code>optional int32 port = 3446913;</code>
@@ -493,7 +526,28 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Not supported by target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for passthrough load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
+   * Specifies how a port is selected for health checking. Can be one of the
+   * following values:
+   * USE_FIXED_PORT: Specifies a port number explicitly using theport field  in the health check. Supported by backend services
+   * for passthrough load balancers and backend services for proxy load
+   * balancers. Not supported by target pools. The health check supports all
+   * backends supported by the backend service provided the backend can be
+   * health checked. For example, GCE_VM_IP network endpoint
+   * groups, GCE_VM_IP_PORT network endpoint groups, and instance
+   * group backends.
+   * USE_NAMED_PORT: Not supported.
+   * USE_SERVING_PORT: Provides an indirect method of specifying
+   * the health check port by referring to the backend service. Only supported
+   * by backend services for proxy load balancers. Not supported by target
+   * pools.  Not supported by backend services for passthrough load balancers.
+   * Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group
+   * backends.
+   *
+   * For GCE_VM_IP_PORT network endpoint group backends, the health
+   * check uses the port number specified for each endpoint in the network
+   * endpoint group.  For instance group backends, the health check uses the
+   * port number determined by looking up the backend service's named port in
+   * the instance group's list of named ports.
    * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
@@ -510,7 +564,28 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Not supported by target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for passthrough load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
+   * Specifies how a port is selected for health checking. Can be one of the
+   * following values:
+   * USE_FIXED_PORT: Specifies a port number explicitly using theport field  in the health check. Supported by backend services
+   * for passthrough load balancers and backend services for proxy load
+   * balancers. Not supported by target pools. The health check supports all
+   * backends supported by the backend service provided the backend can be
+   * health checked. For example, GCE_VM_IP network endpoint
+   * groups, GCE_VM_IP_PORT network endpoint groups, and instance
+   * group backends.
+   * USE_NAMED_PORT: Not supported.
+   * USE_SERVING_PORT: Provides an indirect method of specifying
+   * the health check port by referring to the backend service. Only supported
+   * by backend services for proxy load balancers. Not supported by target
+   * pools.  Not supported by backend services for passthrough load balancers.
+   * Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group
+   * backends.
+   *
+   * For GCE_VM_IP_PORT network endpoint group backends, the health
+   * check uses the port number specified for each endpoint in the network
+   * endpoint group.  For instance group backends, the health check uses the
+   * port number determined by looking up the backend service's named port in
+   * the instance group's list of named ports.
    * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
@@ -535,7 +610,28 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Not supported by target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for passthrough load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
+   * Specifies how a port is selected for health checking. Can be one of the
+   * following values:
+   * USE_FIXED_PORT: Specifies a port number explicitly using theport field  in the health check. Supported by backend services
+   * for passthrough load balancers and backend services for proxy load
+   * balancers. Not supported by target pools. The health check supports all
+   * backends supported by the backend service provided the backend can be
+   * health checked. For example, GCE_VM_IP network endpoint
+   * groups, GCE_VM_IP_PORT network endpoint groups, and instance
+   * group backends.
+   * USE_NAMED_PORT: Not supported.
+   * USE_SERVING_PORT: Provides an indirect method of specifying
+   * the health check port by referring to the backend service. Only supported
+   * by backend services for proxy load balancers. Not supported by target
+   * pools.  Not supported by backend services for passthrough load balancers.
+   * Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group
+   * backends.
+   *
+   * For GCE_VM_IP_PORT network endpoint group backends, the health
+   * check uses the port number specified for each endpoint in the network
+   * endpoint group.  For instance group backends, the health check uses the
+   * port number determined by looking up the backend service's named port in
+   * the instance group's list of named ports.
    * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
@@ -565,7 +661,9 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+   * Specifies the type of proxy header to append before sending data to the
+   * backend, either NONE or PROXY_V1. The default
+   * is NONE.
    * Check the ProxyHeader enum for the list of possible values.
    * </pre>
    *
@@ -582,7 +680,9 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+   * Specifies the type of proxy header to append before sending data to the
+   * backend, either NONE or PROXY_V1. The default
+   * is NONE.
    * Check the ProxyHeader enum for the list of possible values.
    * </pre>
    *
@@ -607,7 +707,9 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+   * Specifies the type of proxy header to append before sending data to the
+   * backend, either NONE or PROXY_V1. The default
+   * is NONE.
    * Check the ProxyHeader enum for the list of possible values.
    * </pre>
    *
@@ -637,7 +739,8 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Instructs the health check prober to send this exact ASCII string, up to 1024 bytes in length, after establishing the TCP connection.
+   * Instructs the health check prober to send this exact ASCII string, up to
+   * 1024 bytes in length, after establishing the TCP connection.
    * </pre>
    *
    * <code>optional string request = 21951119;</code>
@@ -653,7 +756,8 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Instructs the health check prober to send this exact ASCII string, up to 1024 bytes in length, after establishing the TCP connection.
+   * Instructs the health check prober to send this exact ASCII string, up to
+   * 1024 bytes in length, after establishing the TCP connection.
    * </pre>
    *
    * <code>optional string request = 21951119;</code>
@@ -677,7 +781,8 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Instructs the health check prober to send this exact ASCII string, up to 1024 bytes in length, after establishing the TCP connection.
+   * Instructs the health check prober to send this exact ASCII string, up to
+   * 1024 bytes in length, after establishing the TCP connection.
    * </pre>
    *
    * <code>optional string request = 21951119;</code>
@@ -706,7 +811,11 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Creates a content-based TCP health check. In addition to establishing a TCP connection, you can configure the health check to pass only when the backend sends this exact response ASCII string, up to 1024 bytes in length. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-ssl-tcp
+   * Creates a content-based TCP health check. In addition to establishing a
+   * TCP connection, you can configure the health check to pass only when the
+   * backend sends this exact response ASCII string, up to 1024 bytes in length.
+   * For details, see:
+   * https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-ssl-tcp
    * </pre>
    *
    * <code>optional string response = 196547649;</code>
@@ -722,7 +831,11 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Creates a content-based TCP health check. In addition to establishing a TCP connection, you can configure the health check to pass only when the backend sends this exact response ASCII string, up to 1024 bytes in length. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-ssl-tcp
+   * Creates a content-based TCP health check. In addition to establishing a
+   * TCP connection, you can configure the health check to pass only when the
+   * backend sends this exact response ASCII string, up to 1024 bytes in length.
+   * For details, see:
+   * https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-ssl-tcp
    * </pre>
    *
    * <code>optional string response = 196547649;</code>
@@ -746,7 +859,11 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Creates a content-based TCP health check. In addition to establishing a TCP connection, you can configure the health check to pass only when the backend sends this exact response ASCII string, up to 1024 bytes in length. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-ssl-tcp
+   * Creates a content-based TCP health check. In addition to establishing a
+   * TCP connection, you can configure the health check to pass only when the
+   * backend sends this exact response ASCII string, up to 1024 bytes in length.
+   * For details, see:
+   * https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-ssl-tcp
    * </pre>
    *
    * <code>optional string response = 196547649;</code>
@@ -1270,7 +1387,8 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The TCP port number to which the health check prober sends packets. The default value is 80. Valid values are 1 through 65535.
+     * The TCP port number to which the health check prober sends packets. The
+     * default value is 80. Valid values are 1 through65535.
      * </pre>
      *
      * <code>optional int32 port = 3446913;</code>
@@ -1286,7 +1404,8 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The TCP port number to which the health check prober sends packets. The default value is 80. Valid values are 1 through 65535.
+     * The TCP port number to which the health check prober sends packets. The
+     * default value is 80. Valid values are 1 through65535.
      * </pre>
      *
      * <code>optional int32 port = 3446913;</code>
@@ -1302,7 +1421,8 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The TCP port number to which the health check prober sends packets. The default value is 80. Valid values are 1 through 65535.
+     * The TCP port number to which the health check prober sends packets. The
+     * default value is 80. Valid values are 1 through65535.
      * </pre>
      *
      * <code>optional int32 port = 3446913;</code>
@@ -1322,7 +1442,8 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The TCP port number to which the health check prober sends packets. The default value is 80. Valid values are 1 through 65535.
+     * The TCP port number to which the health check prober sends packets. The
+     * default value is 80. Valid values are 1 through65535.
      * </pre>
      *
      * <code>optional int32 port = 3446913;</code>
@@ -1468,7 +1589,28 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Not supported by target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for passthrough load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
+     * Specifies how a port is selected for health checking. Can be one of the
+     * following values:
+     * USE_FIXED_PORT: Specifies a port number explicitly using theport field  in the health check. Supported by backend services
+     * for passthrough load balancers and backend services for proxy load
+     * balancers. Not supported by target pools. The health check supports all
+     * backends supported by the backend service provided the backend can be
+     * health checked. For example, GCE_VM_IP network endpoint
+     * groups, GCE_VM_IP_PORT network endpoint groups, and instance
+     * group backends.
+     * USE_NAMED_PORT: Not supported.
+     * USE_SERVING_PORT: Provides an indirect method of specifying
+     * the health check port by referring to the backend service. Only supported
+     * by backend services for proxy load balancers. Not supported by target
+     * pools.  Not supported by backend services for passthrough load balancers.
+     * Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group
+     * backends.
+     *
+     * For GCE_VM_IP_PORT network endpoint group backends, the health
+     * check uses the port number specified for each endpoint in the network
+     * endpoint group.  For instance group backends, the health check uses the
+     * port number determined by looking up the backend service's named port in
+     * the instance group's list of named ports.
      * Check the PortSpecification enum for the list of possible values.
      * </pre>
      *
@@ -1484,7 +1626,28 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Not supported by target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for passthrough load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
+     * Specifies how a port is selected for health checking. Can be one of the
+     * following values:
+     * USE_FIXED_PORT: Specifies a port number explicitly using theport field  in the health check. Supported by backend services
+     * for passthrough load balancers and backend services for proxy load
+     * balancers. Not supported by target pools. The health check supports all
+     * backends supported by the backend service provided the backend can be
+     * health checked. For example, GCE_VM_IP network endpoint
+     * groups, GCE_VM_IP_PORT network endpoint groups, and instance
+     * group backends.
+     * USE_NAMED_PORT: Not supported.
+     * USE_SERVING_PORT: Provides an indirect method of specifying
+     * the health check port by referring to the backend service. Only supported
+     * by backend services for proxy load balancers. Not supported by target
+     * pools.  Not supported by backend services for passthrough load balancers.
+     * Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group
+     * backends.
+     *
+     * For GCE_VM_IP_PORT network endpoint group backends, the health
+     * check uses the port number specified for each endpoint in the network
+     * endpoint group.  For instance group backends, the health check uses the
+     * port number determined by looking up the backend service's named port in
+     * the instance group's list of named ports.
      * Check the PortSpecification enum for the list of possible values.
      * </pre>
      *
@@ -1508,7 +1671,28 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Not supported by target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for passthrough load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
+     * Specifies how a port is selected for health checking. Can be one of the
+     * following values:
+     * USE_FIXED_PORT: Specifies a port number explicitly using theport field  in the health check. Supported by backend services
+     * for passthrough load balancers and backend services for proxy load
+     * balancers. Not supported by target pools. The health check supports all
+     * backends supported by the backend service provided the backend can be
+     * health checked. For example, GCE_VM_IP network endpoint
+     * groups, GCE_VM_IP_PORT network endpoint groups, and instance
+     * group backends.
+     * USE_NAMED_PORT: Not supported.
+     * USE_SERVING_PORT: Provides an indirect method of specifying
+     * the health check port by referring to the backend service. Only supported
+     * by backend services for proxy load balancers. Not supported by target
+     * pools.  Not supported by backend services for passthrough load balancers.
+     * Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group
+     * backends.
+     *
+     * For GCE_VM_IP_PORT network endpoint group backends, the health
+     * check uses the port number specified for each endpoint in the network
+     * endpoint group.  For instance group backends, the health check uses the
+     * port number determined by looking up the backend service's named port in
+     * the instance group's list of named ports.
      * Check the PortSpecification enum for the list of possible values.
      * </pre>
      *
@@ -1532,7 +1716,28 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Not supported by target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for passthrough load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
+     * Specifies how a port is selected for health checking. Can be one of the
+     * following values:
+     * USE_FIXED_PORT: Specifies a port number explicitly using theport field  in the health check. Supported by backend services
+     * for passthrough load balancers and backend services for proxy load
+     * balancers. Not supported by target pools. The health check supports all
+     * backends supported by the backend service provided the backend can be
+     * health checked. For example, GCE_VM_IP network endpoint
+     * groups, GCE_VM_IP_PORT network endpoint groups, and instance
+     * group backends.
+     * USE_NAMED_PORT: Not supported.
+     * USE_SERVING_PORT: Provides an indirect method of specifying
+     * the health check port by referring to the backend service. Only supported
+     * by backend services for proxy load balancers. Not supported by target
+     * pools.  Not supported by backend services for passthrough load balancers.
+     * Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group
+     * backends.
+     *
+     * For GCE_VM_IP_PORT network endpoint group backends, the health
+     * check uses the port number specified for each endpoint in the network
+     * endpoint group.  For instance group backends, the health check uses the
+     * port number determined by looking up the backend service's named port in
+     * the instance group's list of named ports.
      * Check the PortSpecification enum for the list of possible values.
      * </pre>
      *
@@ -1555,7 +1760,28 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Not supported by target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for passthrough load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
+     * Specifies how a port is selected for health checking. Can be one of the
+     * following values:
+     * USE_FIXED_PORT: Specifies a port number explicitly using theport field  in the health check. Supported by backend services
+     * for passthrough load balancers and backend services for proxy load
+     * balancers. Not supported by target pools. The health check supports all
+     * backends supported by the backend service provided the backend can be
+     * health checked. For example, GCE_VM_IP network endpoint
+     * groups, GCE_VM_IP_PORT network endpoint groups, and instance
+     * group backends.
+     * USE_NAMED_PORT: Not supported.
+     * USE_SERVING_PORT: Provides an indirect method of specifying
+     * the health check port by referring to the backend service. Only supported
+     * by backend services for proxy load balancers. Not supported by target
+     * pools.  Not supported by backend services for passthrough load balancers.
+     * Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group
+     * backends.
+     *
+     * For GCE_VM_IP_PORT network endpoint group backends, the health
+     * check uses the port number specified for each endpoint in the network
+     * endpoint group.  For instance group backends, the health check uses the
+     * port number determined by looking up the backend service's named port in
+     * the instance group's list of named ports.
      * Check the PortSpecification enum for the list of possible values.
      * </pre>
      *
@@ -1574,7 +1800,28 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Not supported by target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for passthrough load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
+     * Specifies how a port is selected for health checking. Can be one of the
+     * following values:
+     * USE_FIXED_PORT: Specifies a port number explicitly using theport field  in the health check. Supported by backend services
+     * for passthrough load balancers and backend services for proxy load
+     * balancers. Not supported by target pools. The health check supports all
+     * backends supported by the backend service provided the backend can be
+     * health checked. For example, GCE_VM_IP network endpoint
+     * groups, GCE_VM_IP_PORT network endpoint groups, and instance
+     * group backends.
+     * USE_NAMED_PORT: Not supported.
+     * USE_SERVING_PORT: Provides an indirect method of specifying
+     * the health check port by referring to the backend service. Only supported
+     * by backend services for proxy load balancers. Not supported by target
+     * pools.  Not supported by backend services for passthrough load balancers.
+     * Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group
+     * backends.
+     *
+     * For GCE_VM_IP_PORT network endpoint group backends, the health
+     * check uses the port number specified for each endpoint in the network
+     * endpoint group.  For instance group backends, the health check uses the
+     * port number determined by looking up the backend service's named port in
+     * the instance group's list of named ports.
      * Check the PortSpecification enum for the list of possible values.
      * </pre>
      *
@@ -1600,7 +1847,9 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     * Specifies the type of proxy header to append before sending data to the
+     * backend, either NONE or PROXY_V1. The default
+     * is NONE.
      * Check the ProxyHeader enum for the list of possible values.
      * </pre>
      *
@@ -1616,7 +1865,9 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     * Specifies the type of proxy header to append before sending data to the
+     * backend, either NONE or PROXY_V1. The default
+     * is NONE.
      * Check the ProxyHeader enum for the list of possible values.
      * </pre>
      *
@@ -1640,7 +1891,9 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     * Specifies the type of proxy header to append before sending data to the
+     * backend, either NONE or PROXY_V1. The default
+     * is NONE.
      * Check the ProxyHeader enum for the list of possible values.
      * </pre>
      *
@@ -1664,7 +1917,9 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     * Specifies the type of proxy header to append before sending data to the
+     * backend, either NONE or PROXY_V1. The default
+     * is NONE.
      * Check the ProxyHeader enum for the list of possible values.
      * </pre>
      *
@@ -1687,7 +1942,9 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     * Specifies the type of proxy header to append before sending data to the
+     * backend, either NONE or PROXY_V1. The default
+     * is NONE.
      * Check the ProxyHeader enum for the list of possible values.
      * </pre>
      *
@@ -1706,7 +1963,9 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     * Specifies the type of proxy header to append before sending data to the
+     * backend, either NONE or PROXY_V1. The default
+     * is NONE.
      * Check the ProxyHeader enum for the list of possible values.
      * </pre>
      *
@@ -1732,7 +1991,8 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instructs the health check prober to send this exact ASCII string, up to 1024 bytes in length, after establishing the TCP connection.
+     * Instructs the health check prober to send this exact ASCII string, up to
+     * 1024 bytes in length, after establishing the TCP connection.
      * </pre>
      *
      * <code>optional string request = 21951119;</code>
@@ -1747,7 +2007,8 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instructs the health check prober to send this exact ASCII string, up to 1024 bytes in length, after establishing the TCP connection.
+     * Instructs the health check prober to send this exact ASCII string, up to
+     * 1024 bytes in length, after establishing the TCP connection.
      * </pre>
      *
      * <code>optional string request = 21951119;</code>
@@ -1770,7 +2031,8 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instructs the health check prober to send this exact ASCII string, up to 1024 bytes in length, after establishing the TCP connection.
+     * Instructs the health check prober to send this exact ASCII string, up to
+     * 1024 bytes in length, after establishing the TCP connection.
      * </pre>
      *
      * <code>optional string request = 21951119;</code>
@@ -1793,7 +2055,8 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instructs the health check prober to send this exact ASCII string, up to 1024 bytes in length, after establishing the TCP connection.
+     * Instructs the health check prober to send this exact ASCII string, up to
+     * 1024 bytes in length, after establishing the TCP connection.
      * </pre>
      *
      * <code>optional string request = 21951119;</code>
@@ -1815,7 +2078,8 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instructs the health check prober to send this exact ASCII string, up to 1024 bytes in length, after establishing the TCP connection.
+     * Instructs the health check prober to send this exact ASCII string, up to
+     * 1024 bytes in length, after establishing the TCP connection.
      * </pre>
      *
      * <code>optional string request = 21951119;</code>
@@ -1833,7 +2097,8 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instructs the health check prober to send this exact ASCII string, up to 1024 bytes in length, after establishing the TCP connection.
+     * Instructs the health check prober to send this exact ASCII string, up to
+     * 1024 bytes in length, after establishing the TCP connection.
      * </pre>
      *
      * <code>optional string request = 21951119;</code>
@@ -1858,7 +2123,11 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Creates a content-based TCP health check. In addition to establishing a TCP connection, you can configure the health check to pass only when the backend sends this exact response ASCII string, up to 1024 bytes in length. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-ssl-tcp
+     * Creates a content-based TCP health check. In addition to establishing a
+     * TCP connection, you can configure the health check to pass only when the
+     * backend sends this exact response ASCII string, up to 1024 bytes in length.
+     * For details, see:
+     * https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-ssl-tcp
      * </pre>
      *
      * <code>optional string response = 196547649;</code>
@@ -1873,7 +2142,11 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Creates a content-based TCP health check. In addition to establishing a TCP connection, you can configure the health check to pass only when the backend sends this exact response ASCII string, up to 1024 bytes in length. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-ssl-tcp
+     * Creates a content-based TCP health check. In addition to establishing a
+     * TCP connection, you can configure the health check to pass only when the
+     * backend sends this exact response ASCII string, up to 1024 bytes in length.
+     * For details, see:
+     * https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-ssl-tcp
      * </pre>
      *
      * <code>optional string response = 196547649;</code>
@@ -1896,7 +2169,11 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Creates a content-based TCP health check. In addition to establishing a TCP connection, you can configure the health check to pass only when the backend sends this exact response ASCII string, up to 1024 bytes in length. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-ssl-tcp
+     * Creates a content-based TCP health check. In addition to establishing a
+     * TCP connection, you can configure the health check to pass only when the
+     * backend sends this exact response ASCII string, up to 1024 bytes in length.
+     * For details, see:
+     * https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-ssl-tcp
      * </pre>
      *
      * <code>optional string response = 196547649;</code>
@@ -1919,7 +2196,11 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Creates a content-based TCP health check. In addition to establishing a TCP connection, you can configure the health check to pass only when the backend sends this exact response ASCII string, up to 1024 bytes in length. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-ssl-tcp
+     * Creates a content-based TCP health check. In addition to establishing a
+     * TCP connection, you can configure the health check to pass only when the
+     * backend sends this exact response ASCII string, up to 1024 bytes in length.
+     * For details, see:
+     * https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-ssl-tcp
      * </pre>
      *
      * <code>optional string response = 196547649;</code>
@@ -1941,7 +2222,11 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Creates a content-based TCP health check. In addition to establishing a TCP connection, you can configure the health check to pass only when the backend sends this exact response ASCII string, up to 1024 bytes in length. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-ssl-tcp
+     * Creates a content-based TCP health check. In addition to establishing a
+     * TCP connection, you can configure the health check to pass only when the
+     * backend sends this exact response ASCII string, up to 1024 bytes in length.
+     * For details, see:
+     * https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-ssl-tcp
      * </pre>
      *
      * <code>optional string response = 196547649;</code>
@@ -1959,7 +2244,11 @@ public final class TCPHealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Creates a content-based TCP health check. In addition to establishing a TCP connection, you can configure the health check to pass only when the backend sends this exact response ASCII string, up to 1024 bytes in length. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-ssl-tcp
+     * Creates a content-based TCP health check. In addition to establishing a
+     * TCP connection, you can configure the health check to pass only when the
+     * backend sends this exact response ASCII string, up to 1024 bytes in length.
+     * For details, see:
+     * https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-ssl-tcp
      * </pre>
      *
      * <code>optional string response = 196547649;</code>

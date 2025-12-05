@@ -28,7 +28,8 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -41,7 +42,8 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -54,7 +56,8 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -106,7 +109,8 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -119,7 +123,8 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -132,7 +137,8 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#licenseCode for licenses.
+   * [Output Only] Type of resource. Always compute#licenseCode for
+   * licenses.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -145,7 +151,8 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#licenseCode for licenses.
+   * [Output Only] Type of resource. Always compute#licenseCode for
+   * licenses.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -158,7 +165,8 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#licenseCode for licenses.
+   * [Output Only] Type of resource. Always compute#licenseCode for
+   * licenses.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -171,7 +179,8 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL and description aliases of Licenses with the same License Code.
+   * [Output Only] URL and description aliases of Licenses with the same
+   * License Code.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.LicenseCodeLicenseAlias license_alias = 43550930;
@@ -183,7 +192,8 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL and description aliases of Licenses with the same License Code.
+   * [Output Only] URL and description aliases of Licenses with the same
+   * License Code.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.LicenseCodeLicenseAlias license_alias = 43550930;
@@ -195,7 +205,8 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL and description aliases of Licenses with the same License Code.
+   * [Output Only] URL and description aliases of Licenses with the same
+   * License Code.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.LicenseCodeLicenseAlias license_alias = 43550930;
@@ -207,7 +218,8 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL and description aliases of Licenses with the same License Code.
+   * [Output Only] URL and description aliases of Licenses with the same
+   * License Code.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.LicenseCodeLicenseAlias license_alias = 43550930;
@@ -220,7 +232,8 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL and description aliases of Licenses with the same License Code.
+   * [Output Only] URL and description aliases of Licenses with the same
+   * License Code.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.LicenseCodeLicenseAlias license_alias = 43550930;
@@ -232,7 +245,8 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Name of the resource. The name is 1-20 characters long and must be a valid 64 bit integer.
+   * [Output Only] Name of the resource. The name is 1-20 characters long and
+   * must be a valid 64 bit integer.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -245,7 +259,8 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Name of the resource. The name is 1-20 characters long and must be a valid 64 bit integer.
+   * [Output Only] Name of the resource. The name is 1-20 characters long and
+   * must be a valid 64 bit integer.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -258,7 +273,8 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Name of the resource. The name is 1-20 characters long and must be a valid 64 bit integer.
+   * [Output Only] Name of the resource. The name is 1-20 characters long and
+   * must be a valid 64 bit integer.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -352,7 +368,8 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] If true, the license will remain attached when creating images or snapshots from disks. Otherwise, the license is not transferred.
+   * [Output Only] If true, the license will remain attached when creating
+   * images or snapshots from disks. Otherwise, the license is not transferred.
    * </pre>
    *
    * <code>optional bool transferable = 4349893;</code>
@@ -365,7 +382,8 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] If true, the license will remain attached when creating images or snapshots from disks. Otherwise, the license is not transferred.
+   * [Output Only] If true, the license will remain attached when creating
+   * images or snapshots from disks. Otherwise, the license is not transferred.
    * </pre>
    *
    * <code>optional bool transferable = 4349893;</code>

@@ -67,7 +67,9 @@ public interface RouterNatSubnetworkToNatOrBuilder
    *
    *
    * <pre>
-   * A list of the secondary ranges of the Subnetwork that are allowed to use NAT. This can be populated only if "LIST_OF_SECONDARY_IP_RANGES" is one of the values in source_ip_ranges_to_nat.
+   * A list of the secondary ranges of the Subnetwork that are allowed to
+   * use NAT. This can be populated only if "LIST_OF_SECONDARY_IP_RANGES"
+   * is one of the values in source_ip_ranges_to_nat.
    * </pre>
    *
    * <code>repeated string secondary_ip_range_names = 264315097;</code>
@@ -80,7 +82,9 @@ public interface RouterNatSubnetworkToNatOrBuilder
    *
    *
    * <pre>
-   * A list of the secondary ranges of the Subnetwork that are allowed to use NAT. This can be populated only if "LIST_OF_SECONDARY_IP_RANGES" is one of the values in source_ip_ranges_to_nat.
+   * A list of the secondary ranges of the Subnetwork that are allowed to
+   * use NAT. This can be populated only if "LIST_OF_SECONDARY_IP_RANGES"
+   * is one of the values in source_ip_ranges_to_nat.
    * </pre>
    *
    * <code>repeated string secondary_ip_range_names = 264315097;</code>
@@ -93,7 +97,9 @@ public interface RouterNatSubnetworkToNatOrBuilder
    *
    *
    * <pre>
-   * A list of the secondary ranges of the Subnetwork that are allowed to use NAT. This can be populated only if "LIST_OF_SECONDARY_IP_RANGES" is one of the values in source_ip_ranges_to_nat.
+   * A list of the secondary ranges of the Subnetwork that are allowed to
+   * use NAT. This can be populated only if "LIST_OF_SECONDARY_IP_RANGES"
+   * is one of the values in source_ip_ranges_to_nat.
    * </pre>
    *
    * <code>repeated string secondary_ip_range_names = 264315097;</code>
@@ -107,7 +113,9 @@ public interface RouterNatSubnetworkToNatOrBuilder
    *
    *
    * <pre>
-   * A list of the secondary ranges of the Subnetwork that are allowed to use NAT. This can be populated only if "LIST_OF_SECONDARY_IP_RANGES" is one of the values in source_ip_ranges_to_nat.
+   * A list of the secondary ranges of the Subnetwork that are allowed to
+   * use NAT. This can be populated only if "LIST_OF_SECONDARY_IP_RANGES"
+   * is one of the values in source_ip_ranges_to_nat.
    * </pre>
    *
    * <code>repeated string secondary_ip_range_names = 264315097;</code>
@@ -121,7 +129,12 @@ public interface RouterNatSubnetworkToNatOrBuilder
    *
    *
    * <pre>
-   * Specify the options for NAT ranges in the Subnetwork. All options of a single value are valid except NAT_IP_RANGE_OPTION_UNSPECIFIED. The only valid option with multiple values is: ["PRIMARY_IP_RANGE", "LIST_OF_SECONDARY_IP_RANGES"] Default: [ALL_IP_RANGES]
+   * Specify the options for NAT ranges in the Subnetwork. All
+   * options of a single value are valid except
+   * NAT_IP_RANGE_OPTION_UNSPECIFIED.
+   * The only valid option with multiple values is: ["PRIMARY_IP_RANGE",
+   * "LIST_OF_SECONDARY_IP_RANGES"]
+   * Default: [ALL_IP_RANGES]
    * Check the SourceIpRangesToNat enum for the list of possible values.
    * </pre>
    *
@@ -135,7 +148,12 @@ public interface RouterNatSubnetworkToNatOrBuilder
    *
    *
    * <pre>
-   * Specify the options for NAT ranges in the Subnetwork. All options of a single value are valid except NAT_IP_RANGE_OPTION_UNSPECIFIED. The only valid option with multiple values is: ["PRIMARY_IP_RANGE", "LIST_OF_SECONDARY_IP_RANGES"] Default: [ALL_IP_RANGES]
+   * Specify the options for NAT ranges in the Subnetwork. All
+   * options of a single value are valid except
+   * NAT_IP_RANGE_OPTION_UNSPECIFIED.
+   * The only valid option with multiple values is: ["PRIMARY_IP_RANGE",
+   * "LIST_OF_SECONDARY_IP_RANGES"]
+   * Default: [ALL_IP_RANGES]
    * Check the SourceIpRangesToNat enum for the list of possible values.
    * </pre>
    *
@@ -149,7 +167,12 @@ public interface RouterNatSubnetworkToNatOrBuilder
    *
    *
    * <pre>
-   * Specify the options for NAT ranges in the Subnetwork. All options of a single value are valid except NAT_IP_RANGE_OPTION_UNSPECIFIED. The only valid option with multiple values is: ["PRIMARY_IP_RANGE", "LIST_OF_SECONDARY_IP_RANGES"] Default: [ALL_IP_RANGES]
+   * Specify the options for NAT ranges in the Subnetwork. All
+   * options of a single value are valid except
+   * NAT_IP_RANGE_OPTION_UNSPECIFIED.
+   * The only valid option with multiple values is: ["PRIMARY_IP_RANGE",
+   * "LIST_OF_SECONDARY_IP_RANGES"]
+   * Default: [ALL_IP_RANGES]
    * Check the SourceIpRangesToNat enum for the list of possible values.
    * </pre>
    *
@@ -164,7 +187,12 @@ public interface RouterNatSubnetworkToNatOrBuilder
    *
    *
    * <pre>
-   * Specify the options for NAT ranges in the Subnetwork. All options of a single value are valid except NAT_IP_RANGE_OPTION_UNSPECIFIED. The only valid option with multiple values is: ["PRIMARY_IP_RANGE", "LIST_OF_SECONDARY_IP_RANGES"] Default: [ALL_IP_RANGES]
+   * Specify the options for NAT ranges in the Subnetwork. All
+   * options of a single value are valid except
+   * NAT_IP_RANGE_OPTION_UNSPECIFIED.
+   * The only valid option with multiple values is: ["PRIMARY_IP_RANGE",
+   * "LIST_OF_SECONDARY_IP_RANGES"]
+   * Default: [ALL_IP_RANGES]
    * Check the SourceIpRangesToNat enum for the list of possible values.
    * </pre>
    *

@@ -66,6 +66,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.parallelstore.v1.ExportDataRequest.Builder.class);
   }
 
+  private int bitField0_;
   private int sourceCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -341,8 +342,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    * ignore the request if it has already been completed. The server will
    * guarantee that for at least 60 minutes since the first request.
    *
-   * For example, consider a situation where you make an initial request and t
-   * he request times out. If you make the request again with the same request
+   * For example, consider a situation where you make an initial request and
+   * the request times out. If you make the request again with the same request
    * ID, the server can check if original operation with the same request ID
    * was received, and if so, will ignore the second request. This prevents
    * clients from accidentally creating duplicate commitments.
@@ -379,8 +380,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    * ignore the request if it has already been completed. The server will
    * guarantee that for at least 60 minutes since the first request.
    *
-   * For example, consider a situation where you make an initial request and t
-   * he request times out. If you make the request again with the same request
+   * For example, consider a situation where you make an initial request and
+   * the request times out. If you make the request again with the same request
    * ID, the server can check if original operation with the same request ID
    * was received, and if so, will ignore the second request. This prevents
    * clients from accidentally creating duplicate commitments.
@@ -483,6 +484,66 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int METADATA_OPTIONS_FIELD_NUMBER = 6;
+  private com.google.cloud.parallelstore.v1.TransferMetadataOptions metadataOptions_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The metadata options for the export data.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1.TransferMetadataOptions metadata_options = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the metadataOptions field is set.
+   */
+  @java.lang.Override
+  public boolean hasMetadataOptions() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The metadata options for the export data.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1.TransferMetadataOptions metadata_options = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The metadataOptions.
+   */
+  @java.lang.Override
+  public com.google.cloud.parallelstore.v1.TransferMetadataOptions getMetadataOptions() {
+    return metadataOptions_ == null
+        ? com.google.cloud.parallelstore.v1.TransferMetadataOptions.getDefaultInstance()
+        : metadataOptions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The metadata options for the export data.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.parallelstore.v1.TransferMetadataOptions metadata_options = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.parallelstore.v1.TransferMetadataOptionsOrBuilder
+      getMetadataOptionsOrBuilder() {
+    return metadataOptions_ == null
+        ? com.google.cloud.parallelstore.v1.TransferMetadataOptions.getDefaultInstance()
+        : metadataOptions_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -512,6 +573,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, serviceAccount_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(6, getMetadataOptions());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -540,6 +604,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, serviceAccount_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getMetadataOptions());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -559,6 +626,10 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
     if (!getName().equals(other.getName())) return false;
     if (!getRequestId().equals(other.getRequestId())) return false;
     if (!getServiceAccount().equals(other.getServiceAccount())) return false;
+    if (hasMetadataOptions() != other.hasMetadataOptions()) return false;
+    if (hasMetadataOptions()) {
+      if (!getMetadataOptions().equals(other.getMetadataOptions())) return false;
+    }
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 2:
@@ -592,6 +663,10 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + getRequestId().hashCode();
     hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
     hash = (53 * hash) + getServiceAccount().hashCode();
+    if (hasMetadataOptions()) {
+      hash = (37 * hash) + METADATA_OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getMetadataOptions().hashCode();
+    }
     switch (sourceCase_) {
       case 2:
         hash = (37 * hash) + SOURCE_PARALLELSTORE_FIELD_NUMBER;
@@ -738,10 +813,19 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
     }
 
     // Construct using com.google.cloud.parallelstore.v1.ExportDataRequest.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getMetadataOptionsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -757,6 +841,11 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
       name_ = "";
       requestId_ = "";
       serviceAccount_ = "";
+      metadataOptions_ = null;
+      if (metadataOptionsBuilder_ != null) {
+        metadataOptionsBuilder_.dispose();
+        metadataOptionsBuilder_ = null;
+      }
       sourceCase_ = 0;
       source_ = null;
       destinationCase_ = 0;
@@ -807,6 +896,13 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.serviceAccount_ = serviceAccount_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.metadataOptions_ =
+            metadataOptionsBuilder_ == null ? metadataOptions_ : metadataOptionsBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartialOneofs(com.google.cloud.parallelstore.v1.ExportDataRequest result) {
@@ -882,6 +978,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
         serviceAccount_ = other.serviceAccount_;
         bitField0_ |= 0x00000010;
         onChanged();
+      }
+      if (other.hasMetadataOptions()) {
+        mergeMetadataOptions(other.getMetadataOptions());
       }
       switch (other.getSourceCase()) {
         case SOURCE_PARALLELSTORE:
@@ -963,6 +1062,12 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 50:
+              {
+                input.readMessage(getMetadataOptionsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1589,8 +1694,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * ignore the request if it has already been completed. The server will
      * guarantee that for at least 60 minutes since the first request.
      *
-     * For example, consider a situation where you make an initial request and t
-     * he request times out. If you make the request again with the same request
+     * For example, consider a situation where you make an initial request and
+     * the request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
      * was received, and if so, will ignore the second request. This prevents
      * clients from accidentally creating duplicate commitments.
@@ -1626,8 +1731,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * ignore the request if it has already been completed. The server will
      * guarantee that for at least 60 minutes since the first request.
      *
-     * For example, consider a situation where you make an initial request and t
-     * he request times out. If you make the request again with the same request
+     * For example, consider a situation where you make an initial request and
+     * the request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
      * was received, and if so, will ignore the second request. This prevents
      * clients from accidentally creating duplicate commitments.
@@ -1663,8 +1768,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * ignore the request if it has already been completed. The server will
      * guarantee that for at least 60 minutes since the first request.
      *
-     * For example, consider a situation where you make an initial request and t
-     * he request times out. If you make the request again with the same request
+     * For example, consider a situation where you make an initial request and
+     * the request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
      * was received, and if so, will ignore the second request. This prevents
      * clients from accidentally creating duplicate commitments.
@@ -1699,8 +1804,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * ignore the request if it has already been completed. The server will
      * guarantee that for at least 60 minutes since the first request.
      *
-     * For example, consider a situation where you make an initial request and t
-     * he request times out. If you make the request again with the same request
+     * For example, consider a situation where you make an initial request and
+     * the request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
      * was received, and if so, will ignore the second request. This prevents
      * clients from accidentally creating duplicate commitments.
@@ -1731,8 +1836,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * ignore the request if it has already been completed. The server will
      * guarantee that for at least 60 minutes since the first request.
      *
-     * For example, consider a situation where you make an initial request and t
-     * he request times out. If you make the request again with the same request
+     * For example, consider a situation where you make an initial request and
+     * the request times out. If you make the request again with the same request
      * ID, the server can check if original operation with the same request ID
      * was received, and if so, will ignore the second request. This prevents
      * clients from accidentally creating duplicate commitments.
@@ -1923,6 +2028,224 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000010;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.parallelstore.v1.TransferMetadataOptions metadataOptions_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.parallelstore.v1.TransferMetadataOptions,
+            com.google.cloud.parallelstore.v1.TransferMetadataOptions.Builder,
+            com.google.cloud.parallelstore.v1.TransferMetadataOptionsOrBuilder>
+        metadataOptionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The metadata options for the export data.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1.TransferMetadataOptions metadata_options = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the metadataOptions field is set.
+     */
+    public boolean hasMetadataOptions() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The metadata options for the export data.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1.TransferMetadataOptions metadata_options = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The metadataOptions.
+     */
+    public com.google.cloud.parallelstore.v1.TransferMetadataOptions getMetadataOptions() {
+      if (metadataOptionsBuilder_ == null) {
+        return metadataOptions_ == null
+            ? com.google.cloud.parallelstore.v1.TransferMetadataOptions.getDefaultInstance()
+            : metadataOptions_;
+      } else {
+        return metadataOptionsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The metadata options for the export data.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1.TransferMetadataOptions metadata_options = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMetadataOptions(
+        com.google.cloud.parallelstore.v1.TransferMetadataOptions value) {
+      if (metadataOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metadataOptions_ = value;
+      } else {
+        metadataOptionsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The metadata options for the export data.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1.TransferMetadataOptions metadata_options = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMetadataOptions(
+        com.google.cloud.parallelstore.v1.TransferMetadataOptions.Builder builderForValue) {
+      if (metadataOptionsBuilder_ == null) {
+        metadataOptions_ = builderForValue.build();
+      } else {
+        metadataOptionsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The metadata options for the export data.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1.TransferMetadataOptions metadata_options = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeMetadataOptions(
+        com.google.cloud.parallelstore.v1.TransferMetadataOptions value) {
+      if (metadataOptionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && metadataOptions_ != null
+            && metadataOptions_
+                != com.google.cloud.parallelstore.v1.TransferMetadataOptions.getDefaultInstance()) {
+          getMetadataOptionsBuilder().mergeFrom(value);
+        } else {
+          metadataOptions_ = value;
+        }
+      } else {
+        metadataOptionsBuilder_.mergeFrom(value);
+      }
+      if (metadataOptions_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The metadata options for the export data.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1.TransferMetadataOptions metadata_options = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearMetadataOptions() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      metadataOptions_ = null;
+      if (metadataOptionsBuilder_ != null) {
+        metadataOptionsBuilder_.dispose();
+        metadataOptionsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The metadata options for the export data.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1.TransferMetadataOptions metadata_options = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.parallelstore.v1.TransferMetadataOptions.Builder
+        getMetadataOptionsBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getMetadataOptionsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The metadata options for the export data.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1.TransferMetadataOptions metadata_options = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.parallelstore.v1.TransferMetadataOptionsOrBuilder
+        getMetadataOptionsOrBuilder() {
+      if (metadataOptionsBuilder_ != null) {
+        return metadataOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        return metadataOptions_ == null
+            ? com.google.cloud.parallelstore.v1.TransferMetadataOptions.getDefaultInstance()
+            : metadataOptions_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The metadata options for the export data.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.parallelstore.v1.TransferMetadataOptions metadata_options = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.parallelstore.v1.TransferMetadataOptions,
+            com.google.cloud.parallelstore.v1.TransferMetadataOptions.Builder,
+            com.google.cloud.parallelstore.v1.TransferMetadataOptionsOrBuilder>
+        getMetadataOptionsFieldBuilder() {
+      if (metadataOptionsBuilder_ == null) {
+        metadataOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.parallelstore.v1.TransferMetadataOptions,
+                com.google.cloud.parallelstore.v1.TransferMetadataOptions.Builder,
+                com.google.cloud.parallelstore.v1.TransferMetadataOptionsOrBuilder>(
+                getMetadataOptions(), getParentForChildren(), isClean());
+        metadataOptions_ = null;
+      }
+      return metadataOptionsBuilder_;
     }
 
     @java.lang.Override

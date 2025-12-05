@@ -28,6 +28,7 @@ package com.google.cloud.gkemulticloud.v1;
  *
  * Protobuf type {@code google.cloud.gkemulticloud.v1.AzureAuthorization}
  */
+@java.lang.Deprecated
 public final class AzureAuthorization extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.AzureAuthorization)

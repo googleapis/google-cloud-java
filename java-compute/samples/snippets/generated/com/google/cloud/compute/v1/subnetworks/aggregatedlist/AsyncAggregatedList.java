@@ -46,6 +46,7 @@ public class AsyncAggregatedList {
               .setProject("project-309310695")
               .setReturnPartialSuccess(true)
               .setServiceProjectNumber(-1293855239)
+              .setViews("views112204398")
               .build();
       ApiFuture<Map.Entry<String, SubnetworksScopedList>> future =
           subnetworksClient.aggregatedListPagedCallable().futureCall(request);

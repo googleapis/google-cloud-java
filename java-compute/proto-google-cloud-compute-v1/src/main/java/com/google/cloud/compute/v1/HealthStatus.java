@@ -354,7 +354,10 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The response to a Health Check probe had the HTTP response header field X-Load-Balancing-Endpoint-Weight, but its content was invalid (i.e., not a non-negative single-precision floating-point number in decimal string representation).
+     * The response to a Health Check probe had the HTTP response header field
+     * X-Load-Balancing-Endpoint-Weight, but its content was invalid (i.e., not
+     * a non-negative single-precision floating-point number in decimal string
+     * representation).
      * </pre>
      *
      * <code>INVALID_WEIGHT = 383698400;</code>
@@ -364,7 +367,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The response to a Health Check probe did not have the HTTP response header field X-Load-Balancing-Endpoint-Weight.
+     * The response to a Health Check probe did not have the HTTP response
+     * header field X-Load-Balancing-Endpoint-Weight.
      * </pre>
      *
      * <code>MISSING_WEIGHT = 384027537;</code>
@@ -374,7 +378,12 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This is the value when the accompanied health status is either TIMEOUT (i.e.,the Health Check probe was not able to get a response in time) or UNKNOWN. For the latter, it should be typically because there has not been sufficient time to parse and report the weight for a new backend (which is with 0.0.0.0 ip address). However, it can be also due to an outage case for which the health status is explicitly reset to UNKNOWN.
+     * This is the value when the accompanied health status is either TIMEOUT
+     * (i.e.,the Health Check probe was not able to get a response in time) or
+     * UNKNOWN. For the latter, it should be typically because there has not
+     * been sufficient time to parse and report the weight for a new backend
+     * (which is with 0.0.0.0 ip address). However, it can be also due to an
+     * outage case for which the health status is explicitly reset to UNKNOWN.
      * </pre>
      *
      * <code>UNAVAILABLE_WEIGHT = 439464295;</code>
@@ -384,7 +393,10 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This is the default value when WeightReportMode is DISABLE, and is also the initial value when WeightReportMode has just updated to ENABLE or DRY_RUN and there has not been sufficient time to parse and report the backend weight.
+     * This is the default value when WeightReportMode is DISABLE,
+     * and is also the initial value when WeightReportMode has just updated to
+     * ENABLE or DRY_RUN and there has not been
+     * sufficient time to parse and report the backend weight.
      * </pre>
      *
      * <code>WEIGHT_NONE = 502428831;</code>
@@ -408,7 +420,10 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The response to a Health Check probe had the HTTP response header field X-Load-Balancing-Endpoint-Weight, but its content was invalid (i.e., not a non-negative single-precision floating-point number in decimal string representation).
+     * The response to a Health Check probe had the HTTP response header field
+     * X-Load-Balancing-Endpoint-Weight, but its content was invalid (i.e., not
+     * a non-negative single-precision floating-point number in decimal string
+     * representation).
      * </pre>
      *
      * <code>INVALID_WEIGHT = 383698400;</code>
@@ -419,7 +434,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The response to a Health Check probe did not have the HTTP response header field X-Load-Balancing-Endpoint-Weight.
+     * The response to a Health Check probe did not have the HTTP response
+     * header field X-Load-Balancing-Endpoint-Weight.
      * </pre>
      *
      * <code>MISSING_WEIGHT = 384027537;</code>
@@ -430,7 +446,12 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This is the value when the accompanied health status is either TIMEOUT (i.e.,the Health Check probe was not able to get a response in time) or UNKNOWN. For the latter, it should be typically because there has not been sufficient time to parse and report the weight for a new backend (which is with 0.0.0.0 ip address). However, it can be also due to an outage case for which the health status is explicitly reset to UNKNOWN.
+     * This is the value when the accompanied health status is either TIMEOUT
+     * (i.e.,the Health Check probe was not able to get a response in time) or
+     * UNKNOWN. For the latter, it should be typically because there has not
+     * been sufficient time to parse and report the weight for a new backend
+     * (which is with 0.0.0.0 ip address). However, it can be also due to an
+     * outage case for which the health status is explicitly reset to UNKNOWN.
      * </pre>
      *
      * <code>UNAVAILABLE_WEIGHT = 439464295;</code>
@@ -441,7 +462,10 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This is the default value when WeightReportMode is DISABLE, and is also the initial value when WeightReportMode has just updated to ENABLE or DRY_RUN and there has not been sufficient time to parse and report the backend weight.
+     * This is the default value when WeightReportMode is DISABLE,
+     * and is also the initial value when WeightReportMode has just updated to
+     * ENABLE or DRY_RUN and there has not been
+     * sufficient time to parse and report the backend weight.
      * </pre>
      *
      * <code>WEIGHT_NONE = 502428831;</code>
@@ -653,7 +677,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the forwarding rule associated with the health status of the instance.
+   * URL of the forwarding rule associated with the health status of the
+   * instance.
    * </pre>
    *
    * <code>optional string forwarding_rule = 269964030;</code>
@@ -669,7 +694,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the forwarding rule associated with the health status of the instance.
+   * URL of the forwarding rule associated with the health status of the
+   * instance.
    * </pre>
    *
    * <code>optional string forwarding_rule = 269964030;</code>
@@ -693,7 +719,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the forwarding rule associated with the health status of the instance.
+   * URL of the forwarding rule associated with the health status of the
+   * instance.
    * </pre>
    *
    * <code>optional string forwarding_rule = 269964030;</code>
@@ -932,7 +959,9 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * For target pool based Network Load Balancing, it indicates the forwarding rule's IP address assigned to this instance. For other types of load balancing, the field indicates VM internal ip.
+   * For target pool based Network Load Balancing, it indicates the forwarding
+   * rule's IP address assigned to this instance. For other types of load
+   * balancing, the field indicates VM internal ip.
    * </pre>
    *
    * <code>optional string ip_address = 406272220;</code>
@@ -948,7 +977,9 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * For target pool based Network Load Balancing, it indicates the forwarding rule's IP address assigned to this instance. For other types of load balancing, the field indicates VM internal ip.
+   * For target pool based Network Load Balancing, it indicates the forwarding
+   * rule's IP address assigned to this instance. For other types of load
+   * balancing, the field indicates VM internal ip.
    * </pre>
    *
    * <code>optional string ip_address = 406272220;</code>
@@ -972,7 +1003,9 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * For target pool based Network Load Balancing, it indicates the forwarding rule's IP address assigned to this instance. For other types of load balancing, the field indicates VM internal ip.
+   * For target pool based Network Load Balancing, it indicates the forwarding
+   * rule's IP address assigned to this instance. For other types of load
+   * balancing, the field indicates VM internal ip.
    * </pre>
    *
    * <code>optional string ip_address = 406272220;</code>
@@ -1122,7 +1155,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The named port of the instance group, not necessarily the port that is health-checked.
+   * The named port of the instance group, not necessarily the port that is
+   * health-checked.
    * </pre>
    *
    * <code>optional int32 port = 3446913;</code>
@@ -1138,7 +1172,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The named port of the instance group, not necessarily the port that is health-checked.
+   * The named port of the instance group, not necessarily the port that is
+   * health-checked.
    * </pre>
    *
    * <code>optional int32 port = 3446913;</code>
@@ -2129,7 +2164,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the forwarding rule associated with the health status of the instance.
+     * URL of the forwarding rule associated with the health status of the
+     * instance.
      * </pre>
      *
      * <code>optional string forwarding_rule = 269964030;</code>
@@ -2144,7 +2180,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the forwarding rule associated with the health status of the instance.
+     * URL of the forwarding rule associated with the health status of the
+     * instance.
      * </pre>
      *
      * <code>optional string forwarding_rule = 269964030;</code>
@@ -2167,7 +2204,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the forwarding rule associated with the health status of the instance.
+     * URL of the forwarding rule associated with the health status of the
+     * instance.
      * </pre>
      *
      * <code>optional string forwarding_rule = 269964030;</code>
@@ -2190,7 +2228,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the forwarding rule associated with the health status of the instance.
+     * URL of the forwarding rule associated with the health status of the
+     * instance.
      * </pre>
      *
      * <code>optional string forwarding_rule = 269964030;</code>
@@ -2212,7 +2251,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the forwarding rule associated with the health status of the instance.
+     * URL of the forwarding rule associated with the health status of the
+     * instance.
      * </pre>
      *
      * <code>optional string forwarding_rule = 269964030;</code>
@@ -2230,7 +2270,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the forwarding rule associated with the health status of the instance.
+     * URL of the forwarding rule associated with the health status of the
+     * instance.
      * </pre>
      *
      * <code>optional string forwarding_rule = 269964030;</code>
@@ -2639,7 +2680,9 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For target pool based Network Load Balancing, it indicates the forwarding rule's IP address assigned to this instance. For other types of load balancing, the field indicates VM internal ip.
+     * For target pool based Network Load Balancing, it indicates the forwarding
+     * rule's IP address assigned to this instance. For other types of load
+     * balancing, the field indicates VM internal ip.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -2654,7 +2697,9 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For target pool based Network Load Balancing, it indicates the forwarding rule's IP address assigned to this instance. For other types of load balancing, the field indicates VM internal ip.
+     * For target pool based Network Load Balancing, it indicates the forwarding
+     * rule's IP address assigned to this instance. For other types of load
+     * balancing, the field indicates VM internal ip.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -2677,7 +2722,9 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For target pool based Network Load Balancing, it indicates the forwarding rule's IP address assigned to this instance. For other types of load balancing, the field indicates VM internal ip.
+     * For target pool based Network Load Balancing, it indicates the forwarding
+     * rule's IP address assigned to this instance. For other types of load
+     * balancing, the field indicates VM internal ip.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -2700,7 +2747,9 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For target pool based Network Load Balancing, it indicates the forwarding rule's IP address assigned to this instance. For other types of load balancing, the field indicates VM internal ip.
+     * For target pool based Network Load Balancing, it indicates the forwarding
+     * rule's IP address assigned to this instance. For other types of load
+     * balancing, the field indicates VM internal ip.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -2722,7 +2771,9 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For target pool based Network Load Balancing, it indicates the forwarding rule's IP address assigned to this instance. For other types of load balancing, the field indicates VM internal ip.
+     * For target pool based Network Load Balancing, it indicates the forwarding
+     * rule's IP address assigned to this instance. For other types of load
+     * balancing, the field indicates VM internal ip.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -2740,7 +2791,9 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For target pool based Network Load Balancing, it indicates the forwarding rule's IP address assigned to this instance. For other types of load balancing, the field indicates VM internal ip.
+     * For target pool based Network Load Balancing, it indicates the forwarding
+     * rule's IP address assigned to this instance. For other types of load
+     * balancing, the field indicates VM internal ip.
      * </pre>
      *
      * <code>optional string ip_address = 406272220;</code>
@@ -2987,7 +3040,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The named port of the instance group, not necessarily the port that is health-checked.
+     * The named port of the instance group, not necessarily the port that is
+     * health-checked.
      * </pre>
      *
      * <code>optional int32 port = 3446913;</code>
@@ -3003,7 +3057,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The named port of the instance group, not necessarily the port that is health-checked.
+     * The named port of the instance group, not necessarily the port that is
+     * health-checked.
      * </pre>
      *
      * <code>optional int32 port = 3446913;</code>
@@ -3019,7 +3074,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The named port of the instance group, not necessarily the port that is health-checked.
+     * The named port of the instance group, not necessarily the port that is
+     * health-checked.
      * </pre>
      *
      * <code>optional int32 port = 3446913;</code>
@@ -3039,7 +3095,8 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The named port of the instance group, not necessarily the port that is health-checked.
+     * The named port of the instance group, not necessarily the port that is
+     * health-checked.
      * </pre>
      *
      * <code>optional int32 port = 3446913;</code>

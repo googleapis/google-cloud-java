@@ -120,6 +120,7 @@ public class EventarcClientHttpJsonTest {
             .putAllConditions(new HashMap<String, StateCondition>())
             .setEventDataContentType("eventDataContentType1497299791")
             .setSatisfiesPzs(true)
+            .setRetryPolicy(Trigger.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
@@ -177,6 +178,7 @@ public class EventarcClientHttpJsonTest {
             .putAllConditions(new HashMap<String, StateCondition>())
             .setEventDataContentType("eventDataContentType1497299791")
             .setSatisfiesPzs(true)
+            .setRetryPolicy(Trigger.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
@@ -334,6 +336,7 @@ public class EventarcClientHttpJsonTest {
             .putAllConditions(new HashMap<String, StateCondition>())
             .setEventDataContentType("eventDataContentType1497299791")
             .setSatisfiesPzs(true)
+            .setRetryPolicy(Trigger.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -400,6 +403,7 @@ public class EventarcClientHttpJsonTest {
             .putAllConditions(new HashMap<String, StateCondition>())
             .setEventDataContentType("eventDataContentType1497299791")
             .setSatisfiesPzs(true)
+            .setRetryPolicy(Trigger.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -466,6 +470,7 @@ public class EventarcClientHttpJsonTest {
             .putAllConditions(new HashMap<String, StateCondition>())
             .setEventDataContentType("eventDataContentType1497299791")
             .setSatisfiesPzs(true)
+            .setRetryPolicy(Trigger.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -491,6 +496,7 @@ public class EventarcClientHttpJsonTest {
             .putAllConditions(new HashMap<String, StateCondition>())
             .setEventDataContentType("eventDataContentType1497299791")
             .setSatisfiesPzs(true)
+            .setRetryPolicy(Trigger.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
@@ -537,6 +543,7 @@ public class EventarcClientHttpJsonTest {
               .putAllConditions(new HashMap<String, StateCondition>())
               .setEventDataContentType("eventDataContentType1497299791")
               .setSatisfiesPzs(true)
+              .setRetryPolicy(Trigger.RetryPolicy.newBuilder().build())
               .setEtag("etag3123477")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
@@ -564,6 +571,7 @@ public class EventarcClientHttpJsonTest {
             .putAllConditions(new HashMap<String, StateCondition>())
             .setEventDataContentType("eventDataContentType1497299791")
             .setSatisfiesPzs(true)
+            .setRetryPolicy(Trigger.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -628,6 +636,7 @@ public class EventarcClientHttpJsonTest {
             .putAllConditions(new HashMap<String, StateCondition>())
             .setEventDataContentType("eventDataContentType1497299791")
             .setSatisfiesPzs(true)
+            .setRetryPolicy(Trigger.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =

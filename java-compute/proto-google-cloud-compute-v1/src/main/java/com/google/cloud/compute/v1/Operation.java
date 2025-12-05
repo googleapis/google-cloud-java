@@ -23,7 +23,34 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents an Operation resource. Google Compute Engine has three Operation resources: * [Global](/compute/docs/reference/rest/v1/globalOperations) * [Regional](/compute/docs/reference/rest/v1/regionOperations) * [Zonal](/compute/docs/reference/rest/v1/zoneOperations) You can use an operation resource to manage asynchronous API requests. For more information, read Handling API responses. Operations can be global, regional or zonal. - For global operations, use the `globalOperations` resource. - For regional operations, use the `regionOperations` resource. - For zonal operations, use the `zoneOperations` resource. For more information, read Global, Regional, and Zonal Resources. Note that completed Operation resources have a limited retention period.
+ * Represents an Operation resource.
+ *
+ * Google Compute Engine has three Operation resources:
+ *
+ * * [Global](/compute/docs/reference/rest/v1/globalOperations)
+ * * [Regional](/compute/docs/reference/rest/v1/regionOperations)
+ * * [Zonal](/compute/docs/reference/rest/v1/zoneOperations)
+ *
+ * You can use an operation resource to manage asynchronous API requests.
+ * For more information, readHandling
+ * API responses.
+ *
+ * Operations can be global, regional or zonal.
+ *
+ *    - For global operations, use the `globalOperations`
+ *    resource.
+ *    - For regional operations, use the
+ *    `regionOperations` resource.
+ *    - For zonal operations, use
+ *    the `zoneOperations` resource.
+ *
+ *
+ *
+ * For more information, read
+ * Global, Regional, and Zonal Resources.
+ *
+ * Note that completed Operation resources have a limited
+ * retention period.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Operation}
@@ -86,7 +113,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the operation, which can be one of the following: `PENDING`, `RUNNING`, or `DONE`.
+   * [Output Only] The status of the operation, which can be one of the
+   * following:
+   * `PENDING`, `RUNNING`, or `DONE`.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Operation.Status}
@@ -226,7 +255,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The value of `requestId` if you provided it in the request. Not present otherwise.
+   * [Output Only] The value of `requestId` if you provided it in the request.
+   * Not present otherwise.
    * </pre>
    *
    * <code>optional string client_operation_id = 297240295;</code>
@@ -242,7 +272,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The value of `requestId` if you provided it in the request. Not present otherwise.
+   * [Output Only] The value of `requestId` if you provided it in the request.
+   * Not present otherwise.
    * </pre>
    *
    * <code>optional string client_operation_id = 297240295;</code>
@@ -266,7 +297,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The value of `requestId` if you provided it in the request. Not present otherwise.
+   * [Output Only] The value of `requestId` if you provided it in the request.
+   * Not present otherwise.
    * </pre>
    *
    * <code>optional string client_operation_id = 297240295;</code>
@@ -364,7 +396,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A textual description of the operation, which is set when the operation is created.
+   * [Output Only] A textual description of the operation, which is
+   * set when the operation is created.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -380,7 +413,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A textual description of the operation, which is set when the operation is created.
+   * [Output Only] A textual description of the operation, which is
+   * set when the operation is created.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -404,7 +438,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A textual description of the operation, which is set when the operation is created.
+   * [Output Only] A textual description of the operation, which is
+   * set when the operation is created.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -433,7 +468,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The time that this operation was completed. This value is in RFC3339 text format.
+   * [Output Only] The time that this operation was completed. This value is inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string end_time = 114938801;</code>
@@ -449,7 +485,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The time that this operation was completed. This value is in RFC3339 text format.
+   * [Output Only] The time that this operation was completed. This value is inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string end_time = 114938801;</code>
@@ -473,7 +510,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The time that this operation was completed. This value is in RFC3339 text format.
+   * [Output Only] The time that this operation was completed. This value is inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string end_time = 114938801;</code>
@@ -500,7 +538,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] If errors are generated during processing of the operation, this field will be populated.
+   * [Output Only] If errors are generated during processing of the operation,
+   * this field will be populated.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
@@ -516,7 +555,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] If errors are generated during processing of the operation, this field will be populated.
+   * [Output Only] If errors are generated during processing of the operation,
+   * this field will be populated.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
@@ -532,7 +572,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] If errors are generated during processing of the operation, this field will be populated.
+   * [Output Only] If errors are generated during processing of the operation,
+   * this field will be populated.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
@@ -551,7 +592,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.
+   * [Output Only] If the operation fails, this field contains the HTTP error
+   * message that was returned, such as `NOT FOUND`.
    * </pre>
    *
    * <code>
@@ -569,7 +611,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.
+   * [Output Only] If the operation fails, this field contains the HTTP error
+   * message that was returned, such as `NOT FOUND`.
    * </pre>
    *
    * <code>
@@ -595,7 +638,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.
+   * [Output Only] If the operation fails, this field contains the HTTP error
+   * message that was returned, such as `NOT FOUND`.
    * </pre>
    *
    * <code>
@@ -624,7 +668,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a `404` means the resource was not found.
+   * [Output Only] If the operation fails, this field contains the HTTP error
+   * status code that was returned. For example, a `404` means the
+   * resource was not found.
    * </pre>
    *
    * <code>
@@ -642,7 +688,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a `404` means the resource was not found.
+   * [Output Only] If the operation fails, this field contains the HTTP error
+   * status code that was returned. For example, a `404` means the
+   * resource was not found.
    * </pre>
    *
    * <code>
@@ -663,7 +711,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the operation. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the operation. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -679,7 +728,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the operation. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the operation. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -700,7 +750,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
+   * [Output Only] The time that this operation was requested.
+   * This value is inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string insert_time = 433722515;</code>
@@ -716,7 +768,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
+   * [Output Only] The time that this operation was requested.
+   * This value is inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string insert_time = 433722515;</code>
@@ -740,7 +794,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
+   * [Output Only] The time that this operation was requested.
+   * This value is inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string insert_time = 433722515;</code>
@@ -813,7 +869,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always `compute#operation` for Operation resources.
+   * [Output Only] Type of the resource. Always `compute#operation` for
+   * Operation resources.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -829,7 +886,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always `compute#operation` for Operation resources.
+   * [Output Only] Type of the resource. Always `compute#operation` for
+   * Operation resources.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -853,7 +911,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always `compute#operation` for Operation resources.
+   * [Output Only] Type of the resource. Always `compute#operation` for
+   * Operation resources.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -951,7 +1010,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An ID that represents a group of operations, such as when a group of operations results from a `bulkInsert` API request.
+   * [Output Only] An ID that represents a group of operations, such as when a
+   * group of operations results from a `bulkInsert` API request.
    * </pre>
    *
    * <code>optional string operation_group_id = 40171187;</code>
@@ -967,7 +1027,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An ID that represents a group of operations, such as when a group of operations results from a `bulkInsert` API request.
+   * [Output Only] An ID that represents a group of operations, such as when a
+   * group of operations results from a `bulkInsert` API request.
    * </pre>
    *
    * <code>optional string operation_group_id = 40171187;</code>
@@ -991,7 +1052,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An ID that represents a group of operations, such as when a group of operations results from a `bulkInsert` API request.
+   * [Output Only] An ID that represents a group of operations, such as when a
+   * group of operations results from a `bulkInsert` API request.
    * </pre>
    *
    * <code>optional string operation_group_id = 40171187;</code>
@@ -1020,7 +1082,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The type of operation, such as `insert`, `update`, or `delete`, and so on.
+   * [Output Only] The type of operation, such as `insert`,
+   * `update`, or `delete`, and so on.
    * </pre>
    *
    * <code>optional string operation_type = 177650450;</code>
@@ -1036,7 +1099,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The type of operation, such as `insert`, `update`, or `delete`, and so on.
+   * [Output Only] The type of operation, such as `insert`,
+   * `update`, or `delete`, and so on.
    * </pre>
    *
    * <code>optional string operation_type = 177650450;</code>
@@ -1060,7 +1124,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The type of operation, such as `insert`, `update`, or `delete`, and so on.
+   * [Output Only] The type of operation, such as `insert`,
+   * `update`, or `delete`, and so on.
    * </pre>
    *
    * <code>optional string operation_type = 177650450;</code>
@@ -1087,7 +1152,11 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An optional progress indicator that ranges from 0 to 100. There is no requirement that this be linear or support any granularity of operations. This should not be used to guess when the operation will be complete. This number should monotonically increase as the operation progresses.
+   * [Output Only] An optional progress indicator that ranges from 0 to 100.
+   * There is no requirement that this be linear or support any granularity of
+   * operations. This should not be used to guess when the operation will be
+   * complete. This number should monotonically increase as the operation
+   * progresses.
    * </pre>
    *
    * <code>optional int32 progress = 72663597;</code>
@@ -1103,7 +1172,11 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An optional progress indicator that ranges from 0 to 100. There is no requirement that this be linear or support any granularity of operations. This should not be used to guess when the operation will be complete. This number should monotonically increase as the operation progresses.
+   * [Output Only] An optional progress indicator that ranges from 0 to 100.
+   * There is no requirement that this be linear or support any granularity of
+   * operations. This should not be used to guess when the operation will be
+   * complete. This number should monotonically increase as the operation
+   * progresses.
    * </pre>
    *
    * <code>optional int32 progress = 72663597;</code>
@@ -1124,7 +1197,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL of the region where the operation resides. Only applicable when performing regional operations.
+   * [Output Only] The URL of the region where the operation resides. Only
+   * applicable when performing regional operations.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -1140,7 +1214,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL of the region where the operation resides. Only applicable when performing regional operations.
+   * [Output Only] The URL of the region where the operation resides. Only
+   * applicable when performing regional operations.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -1164,7 +1239,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL of the region where the operation resides. Only applicable when performing regional operations.
+   * [Output Only] The URL of the region where the operation resides. Only
+   * applicable when performing regional operations.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -1261,7 +1337,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] If the operation is for projects.setCommonInstanceMetadata, this field will contain information on all underlying zonal actions and their state.
+   * [Output Only] If the operation is for projects.setCommonInstanceMetadata,
+   * this field will contain information on all underlying zonal actions and
+   * their state.
    * </pre>
    *
    * <code>
@@ -1279,7 +1357,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] If the operation is for projects.setCommonInstanceMetadata, this field will contain information on all underlying zonal actions and their state.
+   * [Output Only] If the operation is for projects.setCommonInstanceMetadata,
+   * this field will contain information on all underlying zonal actions and
+   * their state.
    * </pre>
    *
    * <code>
@@ -1301,7 +1381,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] If the operation is for projects.setCommonInstanceMetadata, this field will contain information on all underlying zonal actions and their state.
+   * [Output Only] If the operation is for projects.setCommonInstanceMetadata,
+   * this field will contain information on all underlying zonal actions and
+   * their state.
    * </pre>
    *
    * <code>
@@ -1326,7 +1408,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The time that this operation was started by the server. This value is in RFC3339 text format.
+   * [Output Only] The time that this operation was started by the server.
+   * This value is inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string start_time = 37467274;</code>
@@ -1342,7 +1426,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The time that this operation was started by the server. This value is in RFC3339 text format.
+   * [Output Only] The time that this operation was started by the server.
+   * This value is inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string start_time = 37467274;</code>
@@ -1366,7 +1452,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The time that this operation was started by the server. This value is in RFC3339 text format.
+   * [Output Only] The time that this operation was started by the server.
+   * This value is inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string start_time = 37467274;</code>
@@ -1393,7 +1481,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the operation, which can be one of the following: `PENDING`, `RUNNING`, or `DONE`.
+   * [Output Only] The status of the operation, which can be one of the
+   * following:
+   * `PENDING`, `RUNNING`, or `DONE`.
    * </pre>
    *
    * <code>
@@ -1411,7 +1501,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the operation, which can be one of the following: `PENDING`, `RUNNING`, or `DONE`.
+   * [Output Only] The status of the operation, which can be one of the
+   * following:
+   * `PENDING`, `RUNNING`, or `DONE`.
    * </pre>
    *
    * <code>
@@ -1429,7 +1521,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the operation, which can be one of the following: `PENDING`, `RUNNING`, or `DONE`.
+   * [Output Only] The status of the operation, which can be one of the
+   * following:
+   * `PENDING`, `RUNNING`, or `DONE`.
    * </pre>
    *
    * <code>
@@ -1454,7 +1548,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An optional textual description of the current status of the operation.
+   * [Output Only] An optional textual description of the current status of the
+   * operation.
    * </pre>
    *
    * <code>optional string status_message = 297428154;</code>
@@ -1470,7 +1565,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An optional textual description of the current status of the operation.
+   * [Output Only] An optional textual description of the current status of the
+   * operation.
    * </pre>
    *
    * <code>optional string status_message = 297428154;</code>
@@ -1494,7 +1590,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An optional textual description of the current status of the operation.
+   * [Output Only] An optional textual description of the current status of the
+   * operation.
    * </pre>
    *
    * <code>optional string status_message = 297428154;</code>
@@ -1521,7 +1618,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique target ID, which identifies a specific incarnation of the target resource.
+   * [Output Only] The unique target ID, which identifies a specific incarnation
+   * of the target resource.
    * </pre>
    *
    * <code>optional uint64 target_id = 258165385;</code>
@@ -1537,7 +1635,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique target ID, which identifies a specific incarnation of the target resource.
+   * [Output Only] The unique target ID, which identifies a specific incarnation
+   * of the target resource.
    * </pre>
    *
    * <code>optional uint64 target_id = 258165385;</code>
@@ -1558,7 +1657,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the disk that the snapshot was created from.
+   * [Output Only] The URL of the resource that the operation modifies. For
+   * operations related to creating a snapshot, this points to the disk
+   * that the snapshot was created from.
    * </pre>
    *
    * <code>optional string target_link = 62671336;</code>
@@ -1574,7 +1675,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the disk that the snapshot was created from.
+   * [Output Only] The URL of the resource that the operation modifies. For
+   * operations related to creating a snapshot, this points to the disk
+   * that the snapshot was created from.
    * </pre>
    *
    * <code>optional string target_link = 62671336;</code>
@@ -1598,7 +1701,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the disk that the snapshot was created from.
+   * [Output Only] The URL of the resource that the operation modifies. For
+   * operations related to creating a snapshot, this points to the disk
+   * that the snapshot was created from.
    * </pre>
    *
    * <code>optional string target_link = 62671336;</code>
@@ -1627,7 +1732,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] User who requested the operation, for example: `user&#64;example.com` or `alice_smith_identifier (global/workforcePools/example-com-us-employees)`.
+   * [Output Only] User who requested the operation, for example:
+   * `user&#64;example.com` or
+   * `alice_smith_identifier (global/workforcePools/example-com-us-employees)`.
    * </pre>
    *
    * <code>optional string user = 3599307;</code>
@@ -1643,7 +1750,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] User who requested the operation, for example: `user&#64;example.com` or `alice_smith_identifier (global/workforcePools/example-com-us-employees)`.
+   * [Output Only] User who requested the operation, for example:
+   * `user&#64;example.com` or
+   * `alice_smith_identifier (global/workforcePools/example-com-us-employees)`.
    * </pre>
    *
    * <code>optional string user = 3599307;</code>
@@ -1667,7 +1776,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] User who requested the operation, for example: `user&#64;example.com` or `alice_smith_identifier (global/workforcePools/example-com-us-employees)`.
+   * [Output Only] User who requested the operation, for example:
+   * `user&#64;example.com` or
+   * `alice_smith_identifier (global/workforcePools/example-com-us-employees)`.
    * </pre>
    *
    * <code>optional string user = 3599307;</code>
@@ -1696,7 +1807,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
+   * [Output Only] If warning messages are generated during processing of the
+   * operation, this field will be populated.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -1710,7 +1822,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
+   * [Output Only] If warning messages are generated during processing of the
+   * operation, this field will be populated.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -1725,7 +1838,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
+   * [Output Only] If warning messages are generated during processing of the
+   * operation, this field will be populated.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -1739,7 +1853,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
+   * [Output Only] If warning messages are generated during processing of the
+   * operation, this field will be populated.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -1753,7 +1868,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
+   * [Output Only] If warning messages are generated during processing of the
+   * operation, this field will be populated.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -1772,7 +1888,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL of the zone where the operation resides. Only applicable when performing per-zone operations.
+   * [Output Only] The URL of the zone where the operation resides. Only
+   * applicable when performing per-zone operations.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -1788,7 +1905,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL of the zone where the operation resides. Only applicable when performing per-zone operations.
+   * [Output Only] The URL of the zone where the operation resides. Only
+   * applicable when performing per-zone operations.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -1812,7 +1930,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL of the zone where the operation resides. Only applicable when performing per-zone operations.
+   * [Output Only] The URL of the zone where the operation resides. Only
+   * applicable when performing per-zone operations.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -2358,7 +2477,34 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents an Operation resource. Google Compute Engine has three Operation resources: * [Global](/compute/docs/reference/rest/v1/globalOperations) * [Regional](/compute/docs/reference/rest/v1/regionOperations) * [Zonal](/compute/docs/reference/rest/v1/zoneOperations) You can use an operation resource to manage asynchronous API requests. For more information, read Handling API responses. Operations can be global, regional or zonal. - For global operations, use the `globalOperations` resource. - For regional operations, use the `regionOperations` resource. - For zonal operations, use the `zoneOperations` resource. For more information, read Global, Regional, and Zonal Resources. Note that completed Operation resources have a limited retention period.
+   * Represents an Operation resource.
+   *
+   * Google Compute Engine has three Operation resources:
+   *
+   * * [Global](/compute/docs/reference/rest/v1/globalOperations)
+   * * [Regional](/compute/docs/reference/rest/v1/regionOperations)
+   * * [Zonal](/compute/docs/reference/rest/v1/zoneOperations)
+   *
+   * You can use an operation resource to manage asynchronous API requests.
+   * For more information, readHandling
+   * API responses.
+   *
+   * Operations can be global, regional or zonal.
+   *
+   *    - For global operations, use the `globalOperations`
+   *    resource.
+   *    - For regional operations, use the
+   *    `regionOperations` resource.
+   *    - For zonal operations, use
+   *    the `zoneOperations` resource.
+   *
+   *
+   *
+   * For more information, read
+   * Global, Regional, and Zonal Resources.
+   *
+   * Note that completed Operation resources have a limited
+   * retention period.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Operation}
@@ -3008,7 +3154,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The value of `requestId` if you provided it in the request. Not present otherwise.
+     * [Output Only] The value of `requestId` if you provided it in the request.
+     * Not present otherwise.
      * </pre>
      *
      * <code>optional string client_operation_id = 297240295;</code>
@@ -3023,7 +3170,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The value of `requestId` if you provided it in the request. Not present otherwise.
+     * [Output Only] The value of `requestId` if you provided it in the request.
+     * Not present otherwise.
      * </pre>
      *
      * <code>optional string client_operation_id = 297240295;</code>
@@ -3046,7 +3194,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The value of `requestId` if you provided it in the request. Not present otherwise.
+     * [Output Only] The value of `requestId` if you provided it in the request.
+     * Not present otherwise.
      * </pre>
      *
      * <code>optional string client_operation_id = 297240295;</code>
@@ -3069,7 +3218,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The value of `requestId` if you provided it in the request. Not present otherwise.
+     * [Output Only] The value of `requestId` if you provided it in the request.
+     * Not present otherwise.
      * </pre>
      *
      * <code>optional string client_operation_id = 297240295;</code>
@@ -3091,7 +3241,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The value of `requestId` if you provided it in the request. Not present otherwise.
+     * [Output Only] The value of `requestId` if you provided it in the request.
+     * Not present otherwise.
      * </pre>
      *
      * <code>optional string client_operation_id = 297240295;</code>
@@ -3109,7 +3260,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The value of `requestId` if you provided it in the request. Not present otherwise.
+     * [Output Only] The value of `requestId` if you provided it in the request.
+     * Not present otherwise.
      * </pre>
      *
      * <code>optional string client_operation_id = 297240295;</code>
@@ -3260,7 +3412,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A textual description of the operation, which is set when the operation is created.
+     * [Output Only] A textual description of the operation, which is
+     * set when the operation is created.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -3275,7 +3428,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A textual description of the operation, which is set when the operation is created.
+     * [Output Only] A textual description of the operation, which is
+     * set when the operation is created.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -3298,7 +3452,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A textual description of the operation, which is set when the operation is created.
+     * [Output Only] A textual description of the operation, which is
+     * set when the operation is created.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -3321,7 +3476,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A textual description of the operation, which is set when the operation is created.
+     * [Output Only] A textual description of the operation, which is
+     * set when the operation is created.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -3343,7 +3499,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A textual description of the operation, which is set when the operation is created.
+     * [Output Only] A textual description of the operation, which is
+     * set when the operation is created.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -3361,7 +3518,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A textual description of the operation, which is set when the operation is created.
+     * [Output Only] A textual description of the operation, which is
+     * set when the operation is created.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -3386,7 +3544,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The time that this operation was completed. This value is in RFC3339 text format.
+     * [Output Only] The time that this operation was completed. This value is inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string end_time = 114938801;</code>
@@ -3401,7 +3560,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The time that this operation was completed. This value is in RFC3339 text format.
+     * [Output Only] The time that this operation was completed. This value is inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string end_time = 114938801;</code>
@@ -3424,7 +3584,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The time that this operation was completed. This value is in RFC3339 text format.
+     * [Output Only] The time that this operation was completed. This value is inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string end_time = 114938801;</code>
@@ -3447,7 +3608,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The time that this operation was completed. This value is in RFC3339 text format.
+     * [Output Only] The time that this operation was completed. This value is inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string end_time = 114938801;</code>
@@ -3469,7 +3631,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The time that this operation was completed. This value is in RFC3339 text format.
+     * [Output Only] The time that this operation was completed. This value is inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string end_time = 114938801;</code>
@@ -3487,7 +3650,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The time that this operation was completed. This value is in RFC3339 text format.
+     * [Output Only] The time that this operation was completed. This value is inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string end_time = 114938801;</code>
@@ -3517,7 +3681,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If errors are generated during processing of the operation, this field will be populated.
+     * [Output Only] If errors are generated during processing of the operation,
+     * this field will be populated.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
@@ -3532,7 +3697,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If errors are generated during processing of the operation, this field will be populated.
+     * [Output Only] If errors are generated during processing of the operation,
+     * this field will be populated.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
@@ -3551,7 +3717,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If errors are generated during processing of the operation, this field will be populated.
+     * [Output Only] If errors are generated during processing of the operation,
+     * this field will be populated.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
@@ -3574,7 +3741,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If errors are generated during processing of the operation, this field will be populated.
+     * [Output Only] If errors are generated during processing of the operation,
+     * this field will be populated.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
@@ -3594,7 +3762,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If errors are generated during processing of the operation, this field will be populated.
+     * [Output Only] If errors are generated during processing of the operation,
+     * this field will be populated.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
@@ -3622,7 +3791,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If errors are generated during processing of the operation, this field will be populated.
+     * [Output Only] If errors are generated during processing of the operation,
+     * this field will be populated.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
@@ -3642,7 +3812,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If errors are generated during processing of the operation, this field will be populated.
+     * [Output Only] If errors are generated during processing of the operation,
+     * this field will be populated.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
@@ -3657,7 +3828,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If errors are generated during processing of the operation, this field will be populated.
+     * [Output Only] If errors are generated during processing of the operation,
+     * this field will be populated.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
@@ -3674,7 +3846,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If errors are generated during processing of the operation, this field will be populated.
+     * [Output Only] If errors are generated during processing of the operation,
+     * this field will be populated.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
@@ -3702,7 +3875,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.
+     * [Output Only] If the operation fails, this field contains the HTTP error
+     * message that was returned, such as `NOT FOUND`.
      * </pre>
      *
      * <code>
@@ -3719,7 +3893,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.
+     * [Output Only] If the operation fails, this field contains the HTTP error
+     * message that was returned, such as `NOT FOUND`.
      * </pre>
      *
      * <code>
@@ -3744,7 +3919,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.
+     * [Output Only] If the operation fails, this field contains the HTTP error
+     * message that was returned, such as `NOT FOUND`.
      * </pre>
      *
      * <code>
@@ -3769,7 +3945,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.
+     * [Output Only] If the operation fails, this field contains the HTTP error
+     * message that was returned, such as `NOT FOUND`.
      * </pre>
      *
      * <code>
@@ -3793,7 +3970,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.
+     * [Output Only] If the operation fails, this field contains the HTTP error
+     * message that was returned, such as `NOT FOUND`.
      * </pre>
      *
      * <code>
@@ -3813,7 +3991,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.
+     * [Output Only] If the operation fails, this field contains the HTTP error
+     * message that was returned, such as `NOT FOUND`.
      * </pre>
      *
      * <code>
@@ -3840,7 +4019,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a `404` means the resource was not found.
+     * [Output Only] If the operation fails, this field contains the HTTP error
+     * status code that was returned. For example, a `404` means the
+     * resource was not found.
      * </pre>
      *
      * <code>
@@ -3858,7 +4039,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a `404` means the resource was not found.
+     * [Output Only] If the operation fails, this field contains the HTTP error
+     * status code that was returned. For example, a `404` means the
+     * resource was not found.
      * </pre>
      *
      * <code>
@@ -3876,7 +4059,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a `404` means the resource was not found.
+     * [Output Only] If the operation fails, this field contains the HTTP error
+     * status code that was returned. For example, a `404` means the
+     * resource was not found.
      * </pre>
      *
      * <code>
@@ -3898,7 +4083,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a `404` means the resource was not found.
+     * [Output Only] If the operation fails, this field contains the HTTP error
+     * status code that was returned. For example, a `404` means the
+     * resource was not found.
      * </pre>
      *
      * <code>
@@ -3920,7 +4107,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the operation. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the operation. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -3936,7 +4124,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the operation. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the operation. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -3952,7 +4141,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the operation. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the operation. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -3972,7 +4162,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the operation. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the operation. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -3992,7 +4183,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
+     * [Output Only] The time that this operation was requested.
+     * This value is inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string insert_time = 433722515;</code>
@@ -4007,7 +4200,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
+     * [Output Only] The time that this operation was requested.
+     * This value is inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string insert_time = 433722515;</code>
@@ -4030,7 +4225,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
+     * [Output Only] The time that this operation was requested.
+     * This value is inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string insert_time = 433722515;</code>
@@ -4053,7 +4250,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
+     * [Output Only] The time that this operation was requested.
+     * This value is inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string insert_time = 433722515;</code>
@@ -4075,7 +4274,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
+     * [Output Only] The time that this operation was requested.
+     * This value is inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string insert_time = 433722515;</code>
@@ -4093,7 +4294,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
+     * [Output Only] The time that this operation was requested.
+     * This value is inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string insert_time = 433722515;</code>
@@ -4285,7 +4488,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always `compute#operation` for Operation resources.
+     * [Output Only] Type of the resource. Always `compute#operation` for
+     * Operation resources.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4300,7 +4504,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always `compute#operation` for Operation resources.
+     * [Output Only] Type of the resource. Always `compute#operation` for
+     * Operation resources.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4323,7 +4528,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always `compute#operation` for Operation resources.
+     * [Output Only] Type of the resource. Always `compute#operation` for
+     * Operation resources.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4346,7 +4552,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always `compute#operation` for Operation resources.
+     * [Output Only] Type of the resource. Always `compute#operation` for
+     * Operation resources.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4368,7 +4575,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always `compute#operation` for Operation resources.
+     * [Output Only] Type of the resource. Always `compute#operation` for
+     * Operation resources.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4386,7 +4594,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always `compute#operation` for Operation resources.
+     * [Output Only] Type of the resource. Always `compute#operation` for
+     * Operation resources.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4537,7 +4746,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An ID that represents a group of operations, such as when a group of operations results from a `bulkInsert` API request.
+     * [Output Only] An ID that represents a group of operations, such as when a
+     * group of operations results from a `bulkInsert` API request.
      * </pre>
      *
      * <code>optional string operation_group_id = 40171187;</code>
@@ -4552,7 +4762,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An ID that represents a group of operations, such as when a group of operations results from a `bulkInsert` API request.
+     * [Output Only] An ID that represents a group of operations, such as when a
+     * group of operations results from a `bulkInsert` API request.
      * </pre>
      *
      * <code>optional string operation_group_id = 40171187;</code>
@@ -4575,7 +4786,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An ID that represents a group of operations, such as when a group of operations results from a `bulkInsert` API request.
+     * [Output Only] An ID that represents a group of operations, such as when a
+     * group of operations results from a `bulkInsert` API request.
      * </pre>
      *
      * <code>optional string operation_group_id = 40171187;</code>
@@ -4598,7 +4810,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An ID that represents a group of operations, such as when a group of operations results from a `bulkInsert` API request.
+     * [Output Only] An ID that represents a group of operations, such as when a
+     * group of operations results from a `bulkInsert` API request.
      * </pre>
      *
      * <code>optional string operation_group_id = 40171187;</code>
@@ -4620,7 +4833,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An ID that represents a group of operations, such as when a group of operations results from a `bulkInsert` API request.
+     * [Output Only] An ID that represents a group of operations, such as when a
+     * group of operations results from a `bulkInsert` API request.
      * </pre>
      *
      * <code>optional string operation_group_id = 40171187;</code>
@@ -4638,7 +4852,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An ID that represents a group of operations, such as when a group of operations results from a `bulkInsert` API request.
+     * [Output Only] An ID that represents a group of operations, such as when a
+     * group of operations results from a `bulkInsert` API request.
      * </pre>
      *
      * <code>optional string operation_group_id = 40171187;</code>
@@ -4663,7 +4878,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of operation, such as `insert`, `update`, or `delete`, and so on.
+     * [Output Only] The type of operation, such as `insert`,
+     * `update`, or `delete`, and so on.
      * </pre>
      *
      * <code>optional string operation_type = 177650450;</code>
@@ -4678,7 +4894,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of operation, such as `insert`, `update`, or `delete`, and so on.
+     * [Output Only] The type of operation, such as `insert`,
+     * `update`, or `delete`, and so on.
      * </pre>
      *
      * <code>optional string operation_type = 177650450;</code>
@@ -4701,7 +4918,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of operation, such as `insert`, `update`, or `delete`, and so on.
+     * [Output Only] The type of operation, such as `insert`,
+     * `update`, or `delete`, and so on.
      * </pre>
      *
      * <code>optional string operation_type = 177650450;</code>
@@ -4724,7 +4942,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of operation, such as `insert`, `update`, or `delete`, and so on.
+     * [Output Only] The type of operation, such as `insert`,
+     * `update`, or `delete`, and so on.
      * </pre>
      *
      * <code>optional string operation_type = 177650450;</code>
@@ -4746,7 +4965,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of operation, such as `insert`, `update`, or `delete`, and so on.
+     * [Output Only] The type of operation, such as `insert`,
+     * `update`, or `delete`, and so on.
      * </pre>
      *
      * <code>optional string operation_type = 177650450;</code>
@@ -4764,7 +4984,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of operation, such as `insert`, `update`, or `delete`, and so on.
+     * [Output Only] The type of operation, such as `insert`,
+     * `update`, or `delete`, and so on.
      * </pre>
      *
      * <code>optional string operation_type = 177650450;</code>
@@ -4789,7 +5010,11 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional progress indicator that ranges from 0 to 100. There is no requirement that this be linear or support any granularity of operations. This should not be used to guess when the operation will be complete. This number should monotonically increase as the operation progresses.
+     * [Output Only] An optional progress indicator that ranges from 0 to 100.
+     * There is no requirement that this be linear or support any granularity of
+     * operations. This should not be used to guess when the operation will be
+     * complete. This number should monotonically increase as the operation
+     * progresses.
      * </pre>
      *
      * <code>optional int32 progress = 72663597;</code>
@@ -4805,7 +5030,11 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional progress indicator that ranges from 0 to 100. There is no requirement that this be linear or support any granularity of operations. This should not be used to guess when the operation will be complete. This number should monotonically increase as the operation progresses.
+     * [Output Only] An optional progress indicator that ranges from 0 to 100.
+     * There is no requirement that this be linear or support any granularity of
+     * operations. This should not be used to guess when the operation will be
+     * complete. This number should monotonically increase as the operation
+     * progresses.
      * </pre>
      *
      * <code>optional int32 progress = 72663597;</code>
@@ -4821,7 +5050,11 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional progress indicator that ranges from 0 to 100. There is no requirement that this be linear or support any granularity of operations. This should not be used to guess when the operation will be complete. This number should monotonically increase as the operation progresses.
+     * [Output Only] An optional progress indicator that ranges from 0 to 100.
+     * There is no requirement that this be linear or support any granularity of
+     * operations. This should not be used to guess when the operation will be
+     * complete. This number should monotonically increase as the operation
+     * progresses.
      * </pre>
      *
      * <code>optional int32 progress = 72663597;</code>
@@ -4841,7 +5074,11 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional progress indicator that ranges from 0 to 100. There is no requirement that this be linear or support any granularity of operations. This should not be used to guess when the operation will be complete. This number should monotonically increase as the operation progresses.
+     * [Output Only] An optional progress indicator that ranges from 0 to 100.
+     * There is no requirement that this be linear or support any granularity of
+     * operations. This should not be used to guess when the operation will be
+     * complete. This number should monotonically increase as the operation
+     * progresses.
      * </pre>
      *
      * <code>optional int32 progress = 72663597;</code>
@@ -4861,7 +5098,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the region where the operation resides. Only applicable when performing regional operations.
+     * [Output Only] The URL of the region where the operation resides. Only
+     * applicable when performing regional operations.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -4876,7 +5114,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the region where the operation resides. Only applicable when performing regional operations.
+     * [Output Only] The URL of the region where the operation resides. Only
+     * applicable when performing regional operations.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -4899,7 +5138,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the region where the operation resides. Only applicable when performing regional operations.
+     * [Output Only] The URL of the region where the operation resides. Only
+     * applicable when performing regional operations.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -4922,7 +5162,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the region where the operation resides. Only applicable when performing regional operations.
+     * [Output Only] The URL of the region where the operation resides. Only
+     * applicable when performing regional operations.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -4944,7 +5185,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the region where the operation resides. Only applicable when performing regional operations.
+     * [Output Only] The URL of the region where the operation resides. Only
+     * applicable when performing regional operations.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -4962,7 +5204,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the region where the operation resides. Only applicable when performing regional operations.
+     * [Output Only] The URL of the region where the operation resides. Only
+     * applicable when performing regional operations.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -5119,7 +5362,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If the operation is for projects.setCommonInstanceMetadata, this field will contain information on all underlying zonal actions and their state.
+     * [Output Only] If the operation is for projects.setCommonInstanceMetadata,
+     * this field will contain information on all underlying zonal actions and
+     * their state.
      * </pre>
      *
      * <code>
@@ -5136,7 +5381,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If the operation is for projects.setCommonInstanceMetadata, this field will contain information on all underlying zonal actions and their state.
+     * [Output Only] If the operation is for projects.setCommonInstanceMetadata,
+     * this field will contain information on all underlying zonal actions and
+     * their state.
      * </pre>
      *
      * <code>
@@ -5161,7 +5408,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If the operation is for projects.setCommonInstanceMetadata, this field will contain information on all underlying zonal actions and their state.
+     * [Output Only] If the operation is for projects.setCommonInstanceMetadata,
+     * this field will contain information on all underlying zonal actions and
+     * their state.
      * </pre>
      *
      * <code>
@@ -5187,7 +5436,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If the operation is for projects.setCommonInstanceMetadata, this field will contain information on all underlying zonal actions and their state.
+     * [Output Only] If the operation is for projects.setCommonInstanceMetadata,
+     * this field will contain information on all underlying zonal actions and
+     * their state.
      * </pre>
      *
      * <code>
@@ -5211,7 +5462,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If the operation is for projects.setCommonInstanceMetadata, this field will contain information on all underlying zonal actions and their state.
+     * [Output Only] If the operation is for projects.setCommonInstanceMetadata,
+     * this field will contain information on all underlying zonal actions and
+     * their state.
      * </pre>
      *
      * <code>
@@ -5244,7 +5497,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If the operation is for projects.setCommonInstanceMetadata, this field will contain information on all underlying zonal actions and their state.
+     * [Output Only] If the operation is for projects.setCommonInstanceMetadata,
+     * this field will contain information on all underlying zonal actions and
+     * their state.
      * </pre>
      *
      * <code>
@@ -5266,7 +5521,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If the operation is for projects.setCommonInstanceMetadata, this field will contain information on all underlying zonal actions and their state.
+     * [Output Only] If the operation is for projects.setCommonInstanceMetadata,
+     * this field will contain information on all underlying zonal actions and
+     * their state.
      * </pre>
      *
      * <code>
@@ -5284,7 +5541,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If the operation is for projects.setCommonInstanceMetadata, this field will contain information on all underlying zonal actions and their state.
+     * [Output Only] If the operation is for projects.setCommonInstanceMetadata,
+     * this field will contain information on all underlying zonal actions and
+     * their state.
      * </pre>
      *
      * <code>
@@ -5307,7 +5566,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If the operation is for projects.setCommonInstanceMetadata, this field will contain information on all underlying zonal actions and their state.
+     * [Output Only] If the operation is for projects.setCommonInstanceMetadata,
+     * this field will contain information on all underlying zonal actions and
+     * their state.
      * </pre>
      *
      * <code>
@@ -5337,7 +5598,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The time that this operation was started by the server. This value is in RFC3339 text format.
+     * [Output Only] The time that this operation was started by the server.
+     * This value is inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string start_time = 37467274;</code>
@@ -5352,7 +5615,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The time that this operation was started by the server. This value is in RFC3339 text format.
+     * [Output Only] The time that this operation was started by the server.
+     * This value is inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string start_time = 37467274;</code>
@@ -5375,7 +5640,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The time that this operation was started by the server. This value is in RFC3339 text format.
+     * [Output Only] The time that this operation was started by the server.
+     * This value is inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string start_time = 37467274;</code>
@@ -5398,7 +5665,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The time that this operation was started by the server. This value is in RFC3339 text format.
+     * [Output Only] The time that this operation was started by the server.
+     * This value is inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string start_time = 37467274;</code>
@@ -5420,7 +5689,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The time that this operation was started by the server. This value is in RFC3339 text format.
+     * [Output Only] The time that this operation was started by the server.
+     * This value is inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string start_time = 37467274;</code>
@@ -5438,7 +5709,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The time that this operation was started by the server. This value is in RFC3339 text format.
+     * [Output Only] The time that this operation was started by the server.
+     * This value is inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string start_time = 37467274;</code>
@@ -5463,7 +5736,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the operation, which can be one of the following: `PENDING`, `RUNNING`, or `DONE`.
+     * [Output Only] The status of the operation, which can be one of the
+     * following:
+     * `PENDING`, `RUNNING`, or `DONE`.
      * </pre>
      *
      * <code>
@@ -5481,7 +5756,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the operation, which can be one of the following: `PENDING`, `RUNNING`, or `DONE`.
+     * [Output Only] The status of the operation, which can be one of the
+     * following:
+     * `PENDING`, `RUNNING`, or `DONE`.
      * </pre>
      *
      * <code>
@@ -5499,7 +5776,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the operation, which can be one of the following: `PENDING`, `RUNNING`, or `DONE`.
+     * [Output Only] The status of the operation, which can be one of the
+     * following:
+     * `PENDING`, `RUNNING`, or `DONE`.
      * </pre>
      *
      * <code>
@@ -5520,7 +5799,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the operation, which can be one of the following: `PENDING`, `RUNNING`, or `DONE`.
+     * [Output Only] The status of the operation, which can be one of the
+     * following:
+     * `PENDING`, `RUNNING`, or `DONE`.
      * </pre>
      *
      * <code>
@@ -5540,7 +5821,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the operation, which can be one of the following: `PENDING`, `RUNNING`, or `DONE`.
+     * [Output Only] The status of the operation, which can be one of the
+     * following:
+     * `PENDING`, `RUNNING`, or `DONE`.
      * </pre>
      *
      * <code>
@@ -5564,7 +5847,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the operation, which can be one of the following: `PENDING`, `RUNNING`, or `DONE`.
+     * [Output Only] The status of the operation, which can be one of the
+     * following:
+     * `PENDING`, `RUNNING`, or `DONE`.
      * </pre>
      *
      * <code>
@@ -5586,7 +5871,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional textual description of the current status of the operation.
+     * [Output Only] An optional textual description of the current status of the
+     * operation.
      * </pre>
      *
      * <code>optional string status_message = 297428154;</code>
@@ -5601,7 +5887,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional textual description of the current status of the operation.
+     * [Output Only] An optional textual description of the current status of the
+     * operation.
      * </pre>
      *
      * <code>optional string status_message = 297428154;</code>
@@ -5624,7 +5911,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional textual description of the current status of the operation.
+     * [Output Only] An optional textual description of the current status of the
+     * operation.
      * </pre>
      *
      * <code>optional string status_message = 297428154;</code>
@@ -5647,7 +5935,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional textual description of the current status of the operation.
+     * [Output Only] An optional textual description of the current status of the
+     * operation.
      * </pre>
      *
      * <code>optional string status_message = 297428154;</code>
@@ -5669,7 +5958,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional textual description of the current status of the operation.
+     * [Output Only] An optional textual description of the current status of the
+     * operation.
      * </pre>
      *
      * <code>optional string status_message = 297428154;</code>
@@ -5687,7 +5977,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional textual description of the current status of the operation.
+     * [Output Only] An optional textual description of the current status of the
+     * operation.
      * </pre>
      *
      * <code>optional string status_message = 297428154;</code>
@@ -5712,7 +6003,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique target ID, which identifies a specific incarnation of the target resource.
+     * [Output Only] The unique target ID, which identifies a specific incarnation
+     * of the target resource.
      * </pre>
      *
      * <code>optional uint64 target_id = 258165385;</code>
@@ -5728,7 +6020,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique target ID, which identifies a specific incarnation of the target resource.
+     * [Output Only] The unique target ID, which identifies a specific incarnation
+     * of the target resource.
      * </pre>
      *
      * <code>optional uint64 target_id = 258165385;</code>
@@ -5744,7 +6037,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique target ID, which identifies a specific incarnation of the target resource.
+     * [Output Only] The unique target ID, which identifies a specific incarnation
+     * of the target resource.
      * </pre>
      *
      * <code>optional uint64 target_id = 258165385;</code>
@@ -5764,7 +6058,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique target ID, which identifies a specific incarnation of the target resource.
+     * [Output Only] The unique target ID, which identifies a specific incarnation
+     * of the target resource.
      * </pre>
      *
      * <code>optional uint64 target_id = 258165385;</code>
@@ -5784,7 +6079,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the disk that the snapshot was created from.
+     * [Output Only] The URL of the resource that the operation modifies. For
+     * operations related to creating a snapshot, this points to the disk
+     * that the snapshot was created from.
      * </pre>
      *
      * <code>optional string target_link = 62671336;</code>
@@ -5799,7 +6096,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the disk that the snapshot was created from.
+     * [Output Only] The URL of the resource that the operation modifies. For
+     * operations related to creating a snapshot, this points to the disk
+     * that the snapshot was created from.
      * </pre>
      *
      * <code>optional string target_link = 62671336;</code>
@@ -5822,7 +6121,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the disk that the snapshot was created from.
+     * [Output Only] The URL of the resource that the operation modifies. For
+     * operations related to creating a snapshot, this points to the disk
+     * that the snapshot was created from.
      * </pre>
      *
      * <code>optional string target_link = 62671336;</code>
@@ -5845,7 +6146,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the disk that the snapshot was created from.
+     * [Output Only] The URL of the resource that the operation modifies. For
+     * operations related to creating a snapshot, this points to the disk
+     * that the snapshot was created from.
      * </pre>
      *
      * <code>optional string target_link = 62671336;</code>
@@ -5867,7 +6170,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the disk that the snapshot was created from.
+     * [Output Only] The URL of the resource that the operation modifies. For
+     * operations related to creating a snapshot, this points to the disk
+     * that the snapshot was created from.
      * </pre>
      *
      * <code>optional string target_link = 62671336;</code>
@@ -5885,7 +6190,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the disk that the snapshot was created from.
+     * [Output Only] The URL of the resource that the operation modifies. For
+     * operations related to creating a snapshot, this points to the disk
+     * that the snapshot was created from.
      * </pre>
      *
      * <code>optional string target_link = 62671336;</code>
@@ -5910,7 +6217,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] User who requested the operation, for example: `user&#64;example.com` or `alice_smith_identifier (global/workforcePools/example-com-us-employees)`.
+     * [Output Only] User who requested the operation, for example:
+     * `user&#64;example.com` or
+     * `alice_smith_identifier (global/workforcePools/example-com-us-employees)`.
      * </pre>
      *
      * <code>optional string user = 3599307;</code>
@@ -5925,7 +6234,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] User who requested the operation, for example: `user&#64;example.com` or `alice_smith_identifier (global/workforcePools/example-com-us-employees)`.
+     * [Output Only] User who requested the operation, for example:
+     * `user&#64;example.com` or
+     * `alice_smith_identifier (global/workforcePools/example-com-us-employees)`.
      * </pre>
      *
      * <code>optional string user = 3599307;</code>
@@ -5948,7 +6259,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] User who requested the operation, for example: `user&#64;example.com` or `alice_smith_identifier (global/workforcePools/example-com-us-employees)`.
+     * [Output Only] User who requested the operation, for example:
+     * `user&#64;example.com` or
+     * `alice_smith_identifier (global/workforcePools/example-com-us-employees)`.
      * </pre>
      *
      * <code>optional string user = 3599307;</code>
@@ -5971,7 +6284,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] User who requested the operation, for example: `user&#64;example.com` or `alice_smith_identifier (global/workforcePools/example-com-us-employees)`.
+     * [Output Only] User who requested the operation, for example:
+     * `user&#64;example.com` or
+     * `alice_smith_identifier (global/workforcePools/example-com-us-employees)`.
      * </pre>
      *
      * <code>optional string user = 3599307;</code>
@@ -5993,7 +6308,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] User who requested the operation, for example: `user&#64;example.com` or `alice_smith_identifier (global/workforcePools/example-com-us-employees)`.
+     * [Output Only] User who requested the operation, for example:
+     * `user&#64;example.com` or
+     * `alice_smith_identifier (global/workforcePools/example-com-us-employees)`.
      * </pre>
      *
      * <code>optional string user = 3599307;</code>
@@ -6011,7 +6328,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] User who requested the operation, for example: `user&#64;example.com` or `alice_smith_identifier (global/workforcePools/example-com-us-employees)`.
+     * [Output Only] User who requested the operation, for example:
+     * `user&#64;example.com` or
+     * `alice_smith_identifier (global/workforcePools/example-com-us-employees)`.
      * </pre>
      *
      * <code>optional string user = 3599307;</code>
@@ -6050,7 +6369,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
+     * [Output Only] If warning messages are generated during processing of the
+     * operation, this field will be populated.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -6067,7 +6387,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
+     * [Output Only] If warning messages are generated during processing of the
+     * operation, this field will be populated.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -6084,7 +6405,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
+     * [Output Only] If warning messages are generated during processing of the
+     * operation, this field will be populated.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -6101,7 +6423,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
+     * [Output Only] If warning messages are generated during processing of the
+     * operation, this field will be populated.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -6124,7 +6447,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
+     * [Output Only] If warning messages are generated during processing of the
+     * operation, this field will be populated.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -6145,7 +6469,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
+     * [Output Only] If warning messages are generated during processing of the
+     * operation, this field will be populated.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -6168,7 +6493,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
+     * [Output Only] If warning messages are generated during processing of the
+     * operation, this field will be populated.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -6191,7 +6517,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
+     * [Output Only] If warning messages are generated during processing of the
+     * operation, this field will be populated.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -6211,7 +6538,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
+     * [Output Only] If warning messages are generated during processing of the
+     * operation, this field will be populated.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -6232,7 +6560,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
+     * [Output Only] If warning messages are generated during processing of the
+     * operation, this field will be populated.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -6253,7 +6582,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
+     * [Output Only] If warning messages are generated during processing of the
+     * operation, this field will be populated.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -6273,7 +6603,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
+     * [Output Only] If warning messages are generated during processing of the
+     * operation, this field will be populated.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -6293,7 +6624,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
+     * [Output Only] If warning messages are generated during processing of the
+     * operation, this field will be populated.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -6306,7 +6638,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
+     * [Output Only] If warning messages are generated during processing of the
+     * operation, this field will be populated.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -6323,7 +6656,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
+     * [Output Only] If warning messages are generated during processing of the
+     * operation, this field will be populated.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -6341,7 +6675,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
+     * [Output Only] If warning messages are generated during processing of the
+     * operation, this field will be populated.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -6355,7 +6690,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
+     * [Output Only] If warning messages are generated during processing of the
+     * operation, this field will be populated.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -6369,7 +6705,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
+     * [Output Only] If warning messages are generated during processing of the
+     * operation, this field will be populated.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -6401,7 +6738,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the zone where the operation resides. Only applicable when performing per-zone operations.
+     * [Output Only] The URL of the zone where the operation resides. Only
+     * applicable when performing per-zone operations.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -6416,7 +6754,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the zone where the operation resides. Only applicable when performing per-zone operations.
+     * [Output Only] The URL of the zone where the operation resides. Only
+     * applicable when performing per-zone operations.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -6439,7 +6778,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the zone where the operation resides. Only applicable when performing per-zone operations.
+     * [Output Only] The URL of the zone where the operation resides. Only
+     * applicable when performing per-zone operations.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -6462,7 +6802,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the zone where the operation resides. Only applicable when performing per-zone operations.
+     * [Output Only] The URL of the zone where the operation resides. Only
+     * applicable when performing per-zone operations.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -6484,7 +6825,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the zone where the operation resides. Only applicable when performing per-zone operations.
+     * [Output Only] The URL of the zone where the operation resides. Only
+     * applicable when performing per-zone operations.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -6502,7 +6844,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the zone where the operation resides. Only applicable when performing per-zone operations.
+     * [Output Only] The URL of the zone where the operation resides. Only
+     * applicable when performing per-zone operations.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>

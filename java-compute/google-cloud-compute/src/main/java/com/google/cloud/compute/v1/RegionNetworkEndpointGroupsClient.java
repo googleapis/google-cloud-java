@@ -1043,7 +1043,7 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param region The name of the region where the network endpoint group is located. It should
+   * @param region The name of theregion where the network endpoint group is located. It should
    *     comply with RFC1035.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1207,7 +1207,7 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param region The name of the region where the network endpoint group is located. It should
+   * @param region The name of theregion where the network endpoint group is located. It should
    *     comply with RFC1035.
    * @param networkEndpointGroup The name of the network endpoint group from which you want to
    *     generate a list of included network endpoints. It should comply with RFC1035.

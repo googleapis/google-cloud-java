@@ -115,6 +115,7 @@ public class AttachedClustersClientTest {
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
+            .setSystemComponentsConfig(SystemComponentsConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -192,6 +193,7 @@ public class AttachedClustersClientTest {
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
+            .setSystemComponentsConfig(SystemComponentsConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -269,6 +271,7 @@ public class AttachedClustersClientTest {
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
+            .setSystemComponentsConfig(SystemComponentsConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -343,6 +346,7 @@ public class AttachedClustersClientTest {
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
+            .setSystemComponentsConfig(SystemComponentsConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -417,6 +421,7 @@ public class AttachedClustersClientTest {
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
+            .setSystemComponentsConfig(SystemComponentsConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -491,6 +496,7 @@ public class AttachedClustersClientTest {
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
+            .setSystemComponentsConfig(SystemComponentsConfig.newBuilder().build())
             .build();
     mockAttachedClusters.addResponse(expectedResponse);
 
@@ -554,6 +560,7 @@ public class AttachedClustersClientTest {
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .putAllTags(new HashMap<String, String>())
+            .setSystemComponentsConfig(SystemComponentsConfig.newBuilder().build())
             .build();
     mockAttachedClusters.addResponse(expectedResponse);
 

@@ -155,6 +155,46 @@ public interface SemanticSearchOrBuilder
    *
    *
    * <pre>
+   * Optional. A JSON filter expression, e.g. {"genre": {"$eq": "sci-fi"}},
+   * represented as a google.protobuf.Struct.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the filter field is set.
+   */
+  boolean hasFilter();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A JSON filter expression, e.g. {"genre": {"$eq": "sci-fi"}},
+   * represented as a google.protobuf.Struct.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
+   */
+  com.google.protobuf.Struct getFilter();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A JSON filter expression, e.g. {"genre": {"$eq": "sci-fi"}},
+   * represented as a google.protobuf.Struct.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  com.google.protobuf.StructOrBuilder getFilterOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The number of data objects to return.
    * </pre>
    *

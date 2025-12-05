@@ -3629,7 +3629,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         : codeExecution_;
   }
 
-  public static final int URL_CONTEXT_FIELD_NUMBER = 8;
+  public static final int URL_CONTEXT_FIELD_NUMBER = 10;
   private com.google.cloud.aiplatform.v1beta1.UrlContext urlContext_;
 
   /**
@@ -3640,7 +3640,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the urlContext field is set.
@@ -3658,7 +3658,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The urlContext.
@@ -3678,7 +3678,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -3789,7 +3789,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(7, getGoogleSearch());
     }
     if (((bitField0_ & 0x00000040) != 0)) {
-      output.writeMessage(8, getUrlContext());
+      output.writeMessage(10, getUrlContext());
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(11, getComputerUse());
@@ -3827,7 +3827,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getGoogleSearch());
     }
     if (((bitField0_ & 0x00000040) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getUrlContext());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getUrlContext());
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getComputerUse());
@@ -4405,12 +4405,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 58
-            case 66:
+            case 82:
               {
                 input.readMessage(getUrlContextFieldBuilder().getBuilder(), extensionRegistry);
                 bitField0_ |= 0x00000080;
                 break;
-              } // case 66
+              } // case 82
             case 90:
               {
                 input.readMessage(getComputerUseFieldBuilder().getBuilder(), extensionRegistry);
@@ -6401,7 +6401,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the urlContext field is set.
@@ -6418,7 +6418,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The urlContext.
@@ -6441,7 +6441,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setUrlContext(com.google.cloud.aiplatform.v1beta1.UrlContext value) {
@@ -6466,7 +6466,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setUrlContext(
@@ -6489,7 +6489,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeUrlContext(com.google.cloud.aiplatform.v1beta1.UrlContext value) {
@@ -6519,7 +6519,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearUrlContext() {
@@ -6541,7 +6541,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.UrlContext.Builder getUrlContextBuilder() {
@@ -6558,7 +6558,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.UrlContextOrBuilder getUrlContextOrBuilder() {
@@ -6579,7 +6579,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

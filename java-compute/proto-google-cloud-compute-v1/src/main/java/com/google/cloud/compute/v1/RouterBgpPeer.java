@@ -348,7 +348,13 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The status of the BGP peer connection. If set to FALSE, any active session with the peer is terminated and all associated routing information is removed. If set to TRUE, the peer connection can be established with routing information. The default is TRUE.
+   * The status of the BGP peer connection.
+   *
+   *
+   * If set to FALSE, any active session with the peer is terminated and
+   * all associated routing information is removed. If set to TRUE, the
+   * peer connection can be established with routing information. The default
+   * is TRUE.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.RouterBgpPeer.Enable}
@@ -475,7 +481,15 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted.
+   * [Output Only] The resource that configures and manages this BGP peer.
+   *
+   *    -  MANAGED_BY_USER is the default value and can be managed by you
+   *    or other users
+   *    - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed
+   *    by Cloud Interconnect, specifically by an InterconnectAttachment of type
+   *    PARTNER. Google automatically creates, updates, and deletes this type of
+   *    BGP peer when the PARTNER InterconnectAttachment is created, updated,
+   *    or deleted.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.RouterBgpPeer.ManagementType}
@@ -495,7 +509,13 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The BGP peer is automatically created for PARTNER type InterconnectAttachment; Google will automatically create/delete this BGP peer when the PARTNER InterconnectAttachment is created/deleted, and Google will update the ipAddress and peerIpAddress when the PARTNER InterconnectAttachment is provisioned. This type of BGP peer cannot be created or deleted, but can be modified for all fields except for name, ipAddress and peerIpAddress.
+     * The BGP peer is automatically created for PARTNER type
+     * InterconnectAttachment; Google will automatically create/delete
+     * this BGP peer when the PARTNER InterconnectAttachment is
+     * created/deleted, and Google will update the ipAddress and
+     * peerIpAddress when the PARTNER InterconnectAttachment is provisioned.
+     * This type of BGP peer cannot be created or deleted, but can be
+     * modified for all fields except for name, ipAddress and peerIpAddress.
      * </pre>
      *
      * <code>MANAGED_BY_ATTACHMENT = 458926411;</code>
@@ -529,7 +549,13 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The BGP peer is automatically created for PARTNER type InterconnectAttachment; Google will automatically create/delete this BGP peer when the PARTNER InterconnectAttachment is created/deleted, and Google will update the ipAddress and peerIpAddress when the PARTNER InterconnectAttachment is provisioned. This type of BGP peer cannot be created or deleted, but can be modified for all fields except for name, ipAddress and peerIpAddress.
+     * The BGP peer is automatically created for PARTNER type
+     * InterconnectAttachment; Google will automatically create/delete
+     * this BGP peer when the PARTNER InterconnectAttachment is
+     * created/deleted, and Google will update the ipAddress and
+     * peerIpAddress when the PARTNER InterconnectAttachment is provisioned.
+     * This type of BGP peer cannot be created or deleted, but can be
+     * modified for all fields except for name, ipAddress and peerIpAddress.
      * </pre>
      *
      * <code>MANAGED_BY_ATTACHMENT = 458926411;</code>
@@ -713,7 +739,18 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User-specified list of prefix groups to advertise in custom mode, which currently supports the following option: - ALL_SUBNETS: Advertises all of the router's own VPC subnets. This excludes any routes learned for subnets that use VPC Network Peering. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+   * User-specified list of prefix groups to advertise in custom mode,
+   * which currently supports the following option:
+   *
+   *    - ALL_SUBNETS: Advertises all of the router's own VPC subnets. This
+   *    excludes any routes learned for subnets that use
+   *    VPC Network Peering.
+   *
+   *
+   * Note that this field can only be populated if advertise_mode is CUSTOM
+   * and overrides the list defined for the router (in the "bgp" message).
+   * These groups are advertised in addition to any specified prefixes.
+   * Leave this field blank to advertise no custom groups.
    * Check the AdvertisedGroups enum for the list of possible values.
    * </pre>
    *
@@ -729,7 +766,18 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User-specified list of prefix groups to advertise in custom mode, which currently supports the following option: - ALL_SUBNETS: Advertises all of the router's own VPC subnets. This excludes any routes learned for subnets that use VPC Network Peering. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+   * User-specified list of prefix groups to advertise in custom mode,
+   * which currently supports the following option:
+   *
+   *    - ALL_SUBNETS: Advertises all of the router's own VPC subnets. This
+   *    excludes any routes learned for subnets that use
+   *    VPC Network Peering.
+   *
+   *
+   * Note that this field can only be populated if advertise_mode is CUSTOM
+   * and overrides the list defined for the router (in the "bgp" message).
+   * These groups are advertised in addition to any specified prefixes.
+   * Leave this field blank to advertise no custom groups.
    * Check the AdvertisedGroups enum for the list of possible values.
    * </pre>
    *
@@ -745,7 +793,18 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User-specified list of prefix groups to advertise in custom mode, which currently supports the following option: - ALL_SUBNETS: Advertises all of the router's own VPC subnets. This excludes any routes learned for subnets that use VPC Network Peering. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+   * User-specified list of prefix groups to advertise in custom mode,
+   * which currently supports the following option:
+   *
+   *    - ALL_SUBNETS: Advertises all of the router's own VPC subnets. This
+   *    excludes any routes learned for subnets that use
+   *    VPC Network Peering.
+   *
+   *
+   * Note that this field can only be populated if advertise_mode is CUSTOM
+   * and overrides the list defined for the router (in the "bgp" message).
+   * These groups are advertised in addition to any specified prefixes.
+   * Leave this field blank to advertise no custom groups.
    * Check the AdvertisedGroups enum for the list of possible values.
    * </pre>
    *
@@ -762,7 +821,18 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User-specified list of prefix groups to advertise in custom mode, which currently supports the following option: - ALL_SUBNETS: Advertises all of the router's own VPC subnets. This excludes any routes learned for subnets that use VPC Network Peering. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+   * User-specified list of prefix groups to advertise in custom mode,
+   * which currently supports the following option:
+   *
+   *    - ALL_SUBNETS: Advertises all of the router's own VPC subnets. This
+   *    excludes any routes learned for subnets that use
+   *    VPC Network Peering.
+   *
+   *
+   * Note that this field can only be populated if advertise_mode is CUSTOM
+   * and overrides the list defined for the router (in the "bgp" message).
+   * These groups are advertised in addition to any specified prefixes.
+   * Leave this field blank to advertise no custom groups.
    * Check the AdvertisedGroups enum for the list of possible values.
    * </pre>
    *
@@ -784,7 +854,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User-specified list of individual IP ranges to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These IP ranges are advertised in addition to any specified groups. Leave this field blank to advertise no custom IP ranges.
+   * User-specified list of individual IP ranges to advertise in custom mode.
+   * This field can only be populated if advertise_mode is CUSTOM and
+   * overrides the list defined for the router (in the "bgp" message).
+   * These IP ranges are advertised in addition to any specified groups.
+   * Leave this field blank to advertise no custom IP ranges.
    * </pre>
    *
    * <code>
@@ -801,7 +875,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User-specified list of individual IP ranges to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These IP ranges are advertised in addition to any specified groups. Leave this field blank to advertise no custom IP ranges.
+   * User-specified list of individual IP ranges to advertise in custom mode.
+   * This field can only be populated if advertise_mode is CUSTOM and
+   * overrides the list defined for the router (in the "bgp" message).
+   * These IP ranges are advertised in addition to any specified groups.
+   * Leave this field blank to advertise no custom IP ranges.
    * </pre>
    *
    * <code>
@@ -818,7 +896,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User-specified list of individual IP ranges to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These IP ranges are advertised in addition to any specified groups. Leave this field blank to advertise no custom IP ranges.
+   * User-specified list of individual IP ranges to advertise in custom mode.
+   * This field can only be populated if advertise_mode is CUSTOM and
+   * overrides the list defined for the router (in the "bgp" message).
+   * These IP ranges are advertised in addition to any specified groups.
+   * Leave this field blank to advertise no custom IP ranges.
    * </pre>
    *
    * <code>
@@ -834,7 +916,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User-specified list of individual IP ranges to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These IP ranges are advertised in addition to any specified groups. Leave this field blank to advertise no custom IP ranges.
+   * User-specified list of individual IP ranges to advertise in custom mode.
+   * This field can only be populated if advertise_mode is CUSTOM and
+   * overrides the list defined for the router (in the "bgp" message).
+   * These IP ranges are advertised in addition to any specified groups.
+   * Leave this field blank to advertise no custom IP ranges.
    * </pre>
    *
    * <code>
@@ -850,7 +936,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User-specified list of individual IP ranges to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These IP ranges are advertised in addition to any specified groups. Leave this field blank to advertise no custom IP ranges.
+   * User-specified list of individual IP ranges to advertise in custom mode.
+   * This field can only be populated if advertise_mode is CUSTOM and
+   * overrides the list defined for the router (in the "bgp" message).
+   * These IP ranges are advertised in addition to any specified groups.
+   * Leave this field blank to advertise no custom IP ranges.
    * </pre>
    *
    * <code>
@@ -870,7 +960,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The priority of routes advertised to this BGP peer. Where there is more than one matching route of maximum length, the routes with the lowest priority value win.
+   * The priority of routes advertised to this BGP peer. Where there is more
+   * than one matching route of maximum length, the routes with the lowest
+   * priority value win.
    * </pre>
    *
    * <code>optional uint32 advertised_route_priority = 186486332;</code>
@@ -886,7 +978,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The priority of routes advertised to this BGP peer. Where there is more than one matching route of maximum length, the routes with the lowest priority value win.
+   * The priority of routes advertised to this BGP peer. Where there is more
+   * than one matching route of maximum length, the routes with the lowest
+   * priority value win.
    * </pre>
    *
    * <code>optional uint32 advertised_route_priority = 186486332;</code>
@@ -957,7 +1051,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of user-defined custom learned route IP address ranges for a BGP session.
+   * A list of user-defined custom learned route IP address ranges for a BGP
+   * session.
    * </pre>
    *
    * <code>
@@ -974,7 +1069,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of user-defined custom learned route IP address ranges for a BGP session.
+   * A list of user-defined custom learned route IP address ranges for a BGP
+   * session.
    * </pre>
    *
    * <code>
@@ -992,7 +1088,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of user-defined custom learned route IP address ranges for a BGP session.
+   * A list of user-defined custom learned route IP address ranges for a BGP
+   * session.
    * </pre>
    *
    * <code>
@@ -1008,7 +1105,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of user-defined custom learned route IP address ranges for a BGP session.
+   * A list of user-defined custom learned route IP address ranges for a BGP
+   * session.
    * </pre>
    *
    * <code>
@@ -1025,7 +1123,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of user-defined custom learned route IP address ranges for a BGP session.
+   * A list of user-defined custom learned route IP address ranges for a BGP
+   * session.
    * </pre>
    *
    * <code>
@@ -1045,7 +1144,10 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The user-defined custom learned route priority for a BGP session. This value is applied to all custom learned route ranges for the session. You can choose a value from `0` to `65335`. If you don't provide a value, Google Cloud assigns a priority of `100` to the ranges.
+   * The user-defined custom learned route priority for a BGP session. This
+   * value is applied to all custom learned route ranges for the session.
+   * You can choose a value from `0` to `65335`. If you don't provide a
+   * value, Google Cloud assigns a priority of `100` to the ranges.
    * </pre>
    *
    * <code>optional int32 custom_learned_route_priority = 330412356;</code>
@@ -1061,7 +1163,10 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The user-defined custom learned route priority for a BGP session. This value is applied to all custom learned route ranges for the session. You can choose a value from `0` to `65335`. If you don't provide a value, Google Cloud assigns a priority of `100` to the ranges.
+   * The user-defined custom learned route priority for a BGP session. This
+   * value is applied to all custom learned route ranges for the session.
+   * You can choose a value from `0` to `65335`. If you don't provide a
+   * value, Google Cloud assigns a priority of `100` to the ranges.
    * </pre>
    *
    * <code>optional int32 custom_learned_route_priority = 330412356;</code>
@@ -1082,7 +1187,13 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The status of the BGP peer connection. If set to FALSE, any active session with the peer is terminated and all associated routing information is removed. If set to TRUE, the peer connection can be established with routing information. The default is TRUE.
+   * The status of the BGP peer connection.
+   *
+   *
+   * If set to FALSE, any active session with the peer is terminated and
+   * all associated routing information is removed. If set to TRUE, the
+   * peer connection can be established with routing information. The default
+   * is TRUE.
    * Check the Enable enum for the list of possible values.
    * </pre>
    *
@@ -1099,7 +1210,13 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The status of the BGP peer connection. If set to FALSE, any active session with the peer is terminated and all associated routing information is removed. If set to TRUE, the peer connection can be established with routing information. The default is TRUE.
+   * The status of the BGP peer connection.
+   *
+   *
+   * If set to FALSE, any active session with the peer is terminated and
+   * all associated routing information is removed. If set to TRUE, the
+   * peer connection can be established with routing information. The default
+   * is TRUE.
    * Check the Enable enum for the list of possible values.
    * </pre>
    *
@@ -1124,7 +1241,13 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The status of the BGP peer connection. If set to FALSE, any active session with the peer is terminated and all associated routing information is removed. If set to TRUE, the peer connection can be established with routing information. The default is TRUE.
+   * The status of the BGP peer connection.
+   *
+   *
+   * If set to FALSE, any active session with the peer is terminated and
+   * all associated routing information is removed. If set to TRUE, the
+   * peer connection can be established with routing information. The default
+   * is TRUE.
    * Check the Enable enum for the list of possible values.
    * </pre>
    *
@@ -1152,7 +1275,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Enable IPv4 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 4.
+   * Enable IPv4 traffic over BGP Peer. It is enabled by default if
+   * the peerIpAddress is version 4.
    * </pre>
    *
    * <code>optional bool enable_ipv4 = 181467937;</code>
@@ -1168,7 +1292,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Enable IPv4 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 4.
+   * Enable IPv4 traffic over BGP Peer. It is enabled by default if
+   * the peerIpAddress is version 4.
    * </pre>
    *
    * <code>optional bool enable_ipv4 = 181467937;</code>
@@ -1187,7 +1312,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Enable IPv6 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 6.
+   * Enable IPv6 traffic over BGP Peer. It is enabled by default if the
+   * peerIpAddress is version 6.
    * </pre>
    *
    * <code>optional bool enable_ipv6 = 181467939;</code>
@@ -1203,7 +1329,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Enable IPv6 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 6.
+   * Enable IPv6 traffic over BGP Peer. It is enabled by default if the
+   * peerIpAddress is version 6.
    * </pre>
    *
    * <code>optional bool enable_ipv6 = 181467939;</code>
@@ -1225,7 +1352,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type.
+   * List of export policies applied to this peer, in the order they must be
+   * evaluated. The name must correspond to an existing policy that has
+   * ROUTE_POLICY_TYPE_EXPORT type.
    * </pre>
    *
    * <code>repeated string export_policies = 134084987;</code>
@@ -1240,7 +1369,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type.
+   * List of export policies applied to this peer, in the order they must be
+   * evaluated. The name must correspond to an existing policy that has
+   * ROUTE_POLICY_TYPE_EXPORT type.
    * </pre>
    *
    * <code>repeated string export_policies = 134084987;</code>
@@ -1255,7 +1386,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type.
+   * List of export policies applied to this peer, in the order they must be
+   * evaluated. The name must correspond to an existing policy that has
+   * ROUTE_POLICY_TYPE_EXPORT type.
    * </pre>
    *
    * <code>repeated string export_policies = 134084987;</code>
@@ -1271,7 +1404,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type.
+   * List of export policies applied to this peer, in the order they must be
+   * evaluated. The name must correspond to an existing policy that has
+   * ROUTE_POLICY_TYPE_EXPORT type.
    * </pre>
    *
    * <code>repeated string export_policies = 134084987;</code>
@@ -1293,7 +1428,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type.
+   * List of import policies applied to this peer, in the order they must be
+   * evaluated. The name must correspond to an existing policy that has
+   * ROUTE_POLICY_TYPE_IMPORT type.
    * </pre>
    *
    * <code>repeated string import_policies = 451147946;</code>
@@ -1308,7 +1445,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type.
+   * List of import policies applied to this peer, in the order they must be
+   * evaluated. The name must correspond to an existing policy that has
+   * ROUTE_POLICY_TYPE_IMPORT type.
    * </pre>
    *
    * <code>repeated string import_policies = 451147946;</code>
@@ -1323,7 +1462,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type.
+   * List of import policies applied to this peer, in the order they must be
+   * evaluated. The name must correspond to an existing policy that has
+   * ROUTE_POLICY_TYPE_IMPORT type.
    * </pre>
    *
    * <code>repeated string import_policies = 451147946;</code>
@@ -1339,7 +1480,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type.
+   * List of import policies applied to this peer, in the order they must be
+   * evaluated. The name must correspond to an existing policy that has
+   * ROUTE_POLICY_TYPE_IMPORT type.
    * </pre>
    *
    * <code>repeated string import_policies = 451147946;</code>
@@ -1636,7 +1779,15 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted.
+   * [Output Only] The resource that configures and manages this BGP peer.
+   *
+   *    -  MANAGED_BY_USER is the default value and can be managed by you
+   *    or other users
+   *    - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed
+   *    by Cloud Interconnect, specifically by an InterconnectAttachment of type
+   *    PARTNER. Google automatically creates, updates, and deletes this type of
+   *    BGP peer when the PARTNER InterconnectAttachment is created, updated,
+   *    or deleted.
    * Check the ManagementType enum for the list of possible values.
    * </pre>
    *
@@ -1653,7 +1804,15 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted.
+   * [Output Only] The resource that configures and manages this BGP peer.
+   *
+   *    -  MANAGED_BY_USER is the default value and can be managed by you
+   *    or other users
+   *    - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed
+   *    by Cloud Interconnect, specifically by an InterconnectAttachment of type
+   *    PARTNER. Google automatically creates, updates, and deletes this type of
+   *    BGP peer when the PARTNER InterconnectAttachment is created, updated,
+   *    or deleted.
    * Check the ManagementType enum for the list of possible values.
    * </pre>
    *
@@ -1678,7 +1837,15 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted.
+   * [Output Only] The resource that configures and manages this BGP peer.
+   *
+   *    -  MANAGED_BY_USER is the default value and can be managed by you
+   *    or other users
+   *    - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed
+   *    by Cloud Interconnect, specifically by an InterconnectAttachment of type
+   *    PARTNER. Google automatically creates, updates, and deletes this type of
+   *    BGP peer when the PARTNER InterconnectAttachment is created, updated,
+   *    or deleted.
    * Check the ManagementType enum for the list of possible values.
    * </pre>
    *
@@ -1708,7 +1875,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Present if MD5 authentication is enabled for the peering. Must be the name of one of the entries in the Router.md5_authentication_keys. The field must comply with RFC1035.
+   * Present if MD5 authentication is enabled for the peering. Must be the
+   * name of one of the entries in the Router.md5_authentication_keys. The
+   * field must comply with RFC1035.
    * </pre>
    *
    * <code>optional string md5_authentication_key_name = 281075345;</code>
@@ -1724,7 +1893,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Present if MD5 authentication is enabled for the peering. Must be the name of one of the entries in the Router.md5_authentication_keys. The field must comply with RFC1035.
+   * Present if MD5 authentication is enabled for the peering. Must be the
+   * name of one of the entries in the Router.md5_authentication_keys. The
+   * field must comply with RFC1035.
    * </pre>
    *
    * <code>optional string md5_authentication_key_name = 281075345;</code>
@@ -1748,7 +1919,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Present if MD5 authentication is enabled for the peering. Must be the name of one of the entries in the Router.md5_authentication_keys. The field must comply with RFC1035.
+   * Present if MD5 authentication is enabled for the peering. Must be the
+   * name of one of the entries in the Router.md5_authentication_keys. The
+   * field must comply with RFC1035.
    * </pre>
    *
    * <code>optional string md5_authentication_key_name = 281075345;</code>
@@ -1777,7 +1950,12 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of this BGP peer. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of this BGP peer.
+   * The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63
+   * characters long and match the regular expression
+   * `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a
+   * lowercase letter, and all following characters must be a dash, lowercase
+   * letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1793,7 +1971,12 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of this BGP peer. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of this BGP peer.
+   * The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63
+   * characters long and match the regular expression
+   * `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a
+   * lowercase letter, and all following characters must be a dash, lowercase
+   * letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1817,7 +2000,12 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of this BGP peer. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of this BGP peer.
+   * The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63
+   * characters long and match the regular expression
+   * `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a
+   * lowercase letter, and all following characters must be a dash, lowercase
+   * letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1844,7 +2032,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Peer BGP Autonomous System Number (ASN). Each BGP interface may use a different value.
+   * Peer BGP Autonomous System Number (ASN). Each BGP interface may use
+   * a different value.
    * </pre>
    *
    * <code>optional uint32 peer_asn = 69573151;</code>
@@ -1860,7 +2049,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Peer BGP Autonomous System Number (ASN). Each BGP interface may use a different value.
+   * Peer BGP Autonomous System Number (ASN). Each BGP interface may use
+   * a different value.
    * </pre>
    *
    * <code>optional uint32 peer_asn = 69573151;</code>
@@ -2088,7 +2278,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance must be located in zones contained in the same region as this Cloud Router. The VM instance is the peer side of the BGP session.
+   * URI of the VM instance that is used as third-party router
+   * appliances such as Next Gen Firewalls, Virtual Routers, or Router
+   * Appliances. The VM instance must be located in zones contained in the
+   * same region as this Cloud Router.
+   * The VM instance is the peer side of the BGP session.
    * </pre>
    *
    * <code>optional string router_appliance_instance = 468312989;</code>
@@ -2104,7 +2298,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance must be located in zones contained in the same region as this Cloud Router. The VM instance is the peer side of the BGP session.
+   * URI of the VM instance that is used as third-party router
+   * appliances such as Next Gen Firewalls, Virtual Routers, or Router
+   * Appliances. The VM instance must be located in zones contained in the
+   * same region as this Cloud Router.
+   * The VM instance is the peer side of the BGP session.
    * </pre>
    *
    * <code>optional string router_appliance_instance = 468312989;</code>
@@ -2128,7 +2326,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance must be located in zones contained in the same region as this Cloud Router. The VM instance is the peer side of the BGP session.
+   * URI of the VM instance that is used as third-party router
+   * appliances such as Next Gen Firewalls, Virtual Routers, or Router
+   * Appliances. The VM instance must be located in zones contained in the
+   * same region as this Cloud Router.
+   * The VM instance is the peer side of the BGP session.
    * </pre>
    *
    * <code>optional string router_appliance_instance = 468312989;</code>
@@ -3465,7 +3667,18 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-specified list of prefix groups to advertise in custom mode, which currently supports the following option: - ALL_SUBNETS: Advertises all of the router's own VPC subnets. This excludes any routes learned for subnets that use VPC Network Peering. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+     * User-specified list of prefix groups to advertise in custom mode,
+     * which currently supports the following option:
+     *
+     *    - ALL_SUBNETS: Advertises all of the router's own VPC subnets. This
+     *    excludes any routes learned for subnets that use
+     *    VPC Network Peering.
+     *
+     *
+     * Note that this field can only be populated if advertise_mode is CUSTOM
+     * and overrides the list defined for the router (in the "bgp" message).
+     * These groups are advertised in addition to any specified prefixes.
+     * Leave this field blank to advertise no custom groups.
      * Check the AdvertisedGroups enum for the list of possible values.
      * </pre>
      *
@@ -3482,7 +3695,18 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-specified list of prefix groups to advertise in custom mode, which currently supports the following option: - ALL_SUBNETS: Advertises all of the router's own VPC subnets. This excludes any routes learned for subnets that use VPC Network Peering. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+     * User-specified list of prefix groups to advertise in custom mode,
+     * which currently supports the following option:
+     *
+     *    - ALL_SUBNETS: Advertises all of the router's own VPC subnets. This
+     *    excludes any routes learned for subnets that use
+     *    VPC Network Peering.
+     *
+     *
+     * Note that this field can only be populated if advertise_mode is CUSTOM
+     * and overrides the list defined for the router (in the "bgp" message).
+     * These groups are advertised in addition to any specified prefixes.
+     * Leave this field blank to advertise no custom groups.
      * Check the AdvertisedGroups enum for the list of possible values.
      * </pre>
      *
@@ -3498,7 +3722,18 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-specified list of prefix groups to advertise in custom mode, which currently supports the following option: - ALL_SUBNETS: Advertises all of the router's own VPC subnets. This excludes any routes learned for subnets that use VPC Network Peering. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+     * User-specified list of prefix groups to advertise in custom mode,
+     * which currently supports the following option:
+     *
+     *    - ALL_SUBNETS: Advertises all of the router's own VPC subnets. This
+     *    excludes any routes learned for subnets that use
+     *    VPC Network Peering.
+     *
+     *
+     * Note that this field can only be populated if advertise_mode is CUSTOM
+     * and overrides the list defined for the router (in the "bgp" message).
+     * These groups are advertised in addition to any specified prefixes.
+     * Leave this field blank to advertise no custom groups.
      * Check the AdvertisedGroups enum for the list of possible values.
      * </pre>
      *
@@ -3515,7 +3750,18 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-specified list of prefix groups to advertise in custom mode, which currently supports the following option: - ALL_SUBNETS: Advertises all of the router's own VPC subnets. This excludes any routes learned for subnets that use VPC Network Peering. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+     * User-specified list of prefix groups to advertise in custom mode,
+     * which currently supports the following option:
+     *
+     *    - ALL_SUBNETS: Advertises all of the router's own VPC subnets. This
+     *    excludes any routes learned for subnets that use
+     *    VPC Network Peering.
+     *
+     *
+     * Note that this field can only be populated if advertise_mode is CUSTOM
+     * and overrides the list defined for the router (in the "bgp" message).
+     * These groups are advertised in addition to any specified prefixes.
+     * Leave this field blank to advertise no custom groups.
      * Check the AdvertisedGroups enum for the list of possible values.
      * </pre>
      *
@@ -3532,7 +3778,18 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-specified list of prefix groups to advertise in custom mode, which currently supports the following option: - ALL_SUBNETS: Advertises all of the router's own VPC subnets. This excludes any routes learned for subnets that use VPC Network Peering. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+     * User-specified list of prefix groups to advertise in custom mode,
+     * which currently supports the following option:
+     *
+     *    - ALL_SUBNETS: Advertises all of the router's own VPC subnets. This
+     *    excludes any routes learned for subnets that use
+     *    VPC Network Peering.
+     *
+     *
+     * Note that this field can only be populated if advertise_mode is CUSTOM
+     * and overrides the list defined for the router (in the "bgp" message).
+     * These groups are advertised in addition to any specified prefixes.
+     * Leave this field blank to advertise no custom groups.
      * Check the AdvertisedGroups enum for the list of possible values.
      * </pre>
      *
@@ -3557,7 +3814,18 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-specified list of prefix groups to advertise in custom mode, which currently supports the following option: - ALL_SUBNETS: Advertises all of the router's own VPC subnets. This excludes any routes learned for subnets that use VPC Network Peering. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+     * User-specified list of prefix groups to advertise in custom mode,
+     * which currently supports the following option:
+     *
+     *    - ALL_SUBNETS: Advertises all of the router's own VPC subnets. This
+     *    excludes any routes learned for subnets that use
+     *    VPC Network Peering.
+     *
+     *
+     * Note that this field can only be populated if advertise_mode is CUSTOM
+     * and overrides the list defined for the router (in the "bgp" message).
+     * These groups are advertised in addition to any specified prefixes.
+     * Leave this field blank to advertise no custom groups.
      * Check the AdvertisedGroups enum for the list of possible values.
      * </pre>
      *
@@ -3581,7 +3849,18 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-specified list of prefix groups to advertise in custom mode, which currently supports the following option: - ALL_SUBNETS: Advertises all of the router's own VPC subnets. This excludes any routes learned for subnets that use VPC Network Peering. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+     * User-specified list of prefix groups to advertise in custom mode,
+     * which currently supports the following option:
+     *
+     *    - ALL_SUBNETS: Advertises all of the router's own VPC subnets. This
+     *    excludes any routes learned for subnets that use
+     *    VPC Network Peering.
+     *
+     *
+     * Note that this field can only be populated if advertise_mode is CUSTOM
+     * and overrides the list defined for the router (in the "bgp" message).
+     * These groups are advertised in addition to any specified prefixes.
+     * Leave this field blank to advertise no custom groups.
      * Check the AdvertisedGroups enum for the list of possible values.
      * </pre>
      *
@@ -3602,7 +3881,18 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-specified list of prefix groups to advertise in custom mode, which currently supports the following option: - ALL_SUBNETS: Advertises all of the router's own VPC subnets. This excludes any routes learned for subnets that use VPC Network Peering. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+     * User-specified list of prefix groups to advertise in custom mode,
+     * which currently supports the following option:
+     *
+     *    - ALL_SUBNETS: Advertises all of the router's own VPC subnets. This
+     *    excludes any routes learned for subnets that use
+     *    VPC Network Peering.
+     *
+     *
+     * Note that this field can only be populated if advertise_mode is CUSTOM
+     * and overrides the list defined for the router (in the "bgp" message).
+     * These groups are advertised in addition to any specified prefixes.
+     * Leave this field blank to advertise no custom groups.
      * Check the AdvertisedGroups enum for the list of possible values.
      * </pre>
      *
@@ -3622,7 +3912,18 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-specified list of prefix groups to advertise in custom mode, which currently supports the following option: - ALL_SUBNETS: Advertises all of the router's own VPC subnets. This excludes any routes learned for subnets that use VPC Network Peering. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+     * User-specified list of prefix groups to advertise in custom mode,
+     * which currently supports the following option:
+     *
+     *    - ALL_SUBNETS: Advertises all of the router's own VPC subnets. This
+     *    excludes any routes learned for subnets that use
+     *    VPC Network Peering.
+     *
+     *
+     * Note that this field can only be populated if advertise_mode is CUSTOM
+     * and overrides the list defined for the router (in the "bgp" message).
+     * These groups are advertised in addition to any specified prefixes.
+     * Leave this field blank to advertise no custom groups.
      * Check the AdvertisedGroups enum for the list of possible values.
      * </pre>
      *
@@ -3665,7 +3966,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-specified list of individual IP ranges to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These IP ranges are advertised in addition to any specified groups. Leave this field blank to advertise no custom IP ranges.
+     * User-specified list of individual IP ranges to advertise in custom mode.
+     * This field can only be populated if advertise_mode is CUSTOM and
+     * overrides the list defined for the router (in the "bgp" message).
+     * These IP ranges are advertised in addition to any specified groups.
+     * Leave this field blank to advertise no custom IP ranges.
      * </pre>
      *
      * <code>
@@ -3685,7 +3990,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-specified list of individual IP ranges to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These IP ranges are advertised in addition to any specified groups. Leave this field blank to advertise no custom IP ranges.
+     * User-specified list of individual IP ranges to advertise in custom mode.
+     * This field can only be populated if advertise_mode is CUSTOM and
+     * overrides the list defined for the router (in the "bgp" message).
+     * These IP ranges are advertised in addition to any specified groups.
+     * Leave this field blank to advertise no custom IP ranges.
      * </pre>
      *
      * <code>
@@ -3704,7 +4013,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-specified list of individual IP ranges to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These IP ranges are advertised in addition to any specified groups. Leave this field blank to advertise no custom IP ranges.
+     * User-specified list of individual IP ranges to advertise in custom mode.
+     * This field can only be populated if advertise_mode is CUSTOM and
+     * overrides the list defined for the router (in the "bgp" message).
+     * These IP ranges are advertised in addition to any specified groups.
+     * Leave this field blank to advertise no custom IP ranges.
      * </pre>
      *
      * <code>
@@ -3723,7 +4036,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-specified list of individual IP ranges to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These IP ranges are advertised in addition to any specified groups. Leave this field blank to advertise no custom IP ranges.
+     * User-specified list of individual IP ranges to advertise in custom mode.
+     * This field can only be populated if advertise_mode is CUSTOM and
+     * overrides the list defined for the router (in the "bgp" message).
+     * These IP ranges are advertised in addition to any specified groups.
+     * Leave this field blank to advertise no custom IP ranges.
      * </pre>
      *
      * <code>
@@ -3749,7 +4066,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-specified list of individual IP ranges to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These IP ranges are advertised in addition to any specified groups. Leave this field blank to advertise no custom IP ranges.
+     * User-specified list of individual IP ranges to advertise in custom mode.
+     * This field can only be populated if advertise_mode is CUSTOM and
+     * overrides the list defined for the router (in the "bgp" message).
+     * These IP ranges are advertised in addition to any specified groups.
+     * Leave this field blank to advertise no custom IP ranges.
      * </pre>
      *
      * <code>
@@ -3772,7 +4093,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-specified list of individual IP ranges to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These IP ranges are advertised in addition to any specified groups. Leave this field blank to advertise no custom IP ranges.
+     * User-specified list of individual IP ranges to advertise in custom mode.
+     * This field can only be populated if advertise_mode is CUSTOM and
+     * overrides the list defined for the router (in the "bgp" message).
+     * These IP ranges are advertised in addition to any specified groups.
+     * Leave this field blank to advertise no custom IP ranges.
      * </pre>
      *
      * <code>
@@ -3798,7 +4123,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-specified list of individual IP ranges to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These IP ranges are advertised in addition to any specified groups. Leave this field blank to advertise no custom IP ranges.
+     * User-specified list of individual IP ranges to advertise in custom mode.
+     * This field can only be populated if advertise_mode is CUSTOM and
+     * overrides the list defined for the router (in the "bgp" message).
+     * These IP ranges are advertised in addition to any specified groups.
+     * Leave this field blank to advertise no custom IP ranges.
      * </pre>
      *
      * <code>
@@ -3824,7 +4153,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-specified list of individual IP ranges to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These IP ranges are advertised in addition to any specified groups. Leave this field blank to advertise no custom IP ranges.
+     * User-specified list of individual IP ranges to advertise in custom mode.
+     * This field can only be populated if advertise_mode is CUSTOM and
+     * overrides the list defined for the router (in the "bgp" message).
+     * These IP ranges are advertised in addition to any specified groups.
+     * Leave this field blank to advertise no custom IP ranges.
      * </pre>
      *
      * <code>
@@ -3847,7 +4180,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-specified list of individual IP ranges to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These IP ranges are advertised in addition to any specified groups. Leave this field blank to advertise no custom IP ranges.
+     * User-specified list of individual IP ranges to advertise in custom mode.
+     * This field can only be populated if advertise_mode is CUSTOM and
+     * overrides the list defined for the router (in the "bgp" message).
+     * These IP ranges are advertised in addition to any specified groups.
+     * Leave this field blank to advertise no custom IP ranges.
      * </pre>
      *
      * <code>
@@ -3870,7 +4207,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-specified list of individual IP ranges to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These IP ranges are advertised in addition to any specified groups. Leave this field blank to advertise no custom IP ranges.
+     * User-specified list of individual IP ranges to advertise in custom mode.
+     * This field can only be populated if advertise_mode is CUSTOM and
+     * overrides the list defined for the router (in the "bgp" message).
+     * These IP ranges are advertised in addition to any specified groups.
+     * Leave this field blank to advertise no custom IP ranges.
      * </pre>
      *
      * <code>
@@ -3893,7 +4234,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-specified list of individual IP ranges to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These IP ranges are advertised in addition to any specified groups. Leave this field blank to advertise no custom IP ranges.
+     * User-specified list of individual IP ranges to advertise in custom mode.
+     * This field can only be populated if advertise_mode is CUSTOM and
+     * overrides the list defined for the router (in the "bgp" message).
+     * These IP ranges are advertised in addition to any specified groups.
+     * Leave this field blank to advertise no custom IP ranges.
      * </pre>
      *
      * <code>
@@ -3915,7 +4260,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-specified list of individual IP ranges to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These IP ranges are advertised in addition to any specified groups. Leave this field blank to advertise no custom IP ranges.
+     * User-specified list of individual IP ranges to advertise in custom mode.
+     * This field can only be populated if advertise_mode is CUSTOM and
+     * overrides the list defined for the router (in the "bgp" message).
+     * These IP ranges are advertised in addition to any specified groups.
+     * Leave this field blank to advertise no custom IP ranges.
      * </pre>
      *
      * <code>
@@ -3937,7 +4286,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-specified list of individual IP ranges to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These IP ranges are advertised in addition to any specified groups. Leave this field blank to advertise no custom IP ranges.
+     * User-specified list of individual IP ranges to advertise in custom mode.
+     * This field can only be populated if advertise_mode is CUSTOM and
+     * overrides the list defined for the router (in the "bgp" message).
+     * These IP ranges are advertised in addition to any specified groups.
+     * Leave this field blank to advertise no custom IP ranges.
      * </pre>
      *
      * <code>
@@ -3953,7 +4306,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-specified list of individual IP ranges to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These IP ranges are advertised in addition to any specified groups. Leave this field blank to advertise no custom IP ranges.
+     * User-specified list of individual IP ranges to advertise in custom mode.
+     * This field can only be populated if advertise_mode is CUSTOM and
+     * overrides the list defined for the router (in the "bgp" message).
+     * These IP ranges are advertised in addition to any specified groups.
+     * Leave this field blank to advertise no custom IP ranges.
      * </pre>
      *
      * <code>
@@ -3973,7 +4330,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-specified list of individual IP ranges to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These IP ranges are advertised in addition to any specified groups. Leave this field blank to advertise no custom IP ranges.
+     * User-specified list of individual IP ranges to advertise in custom mode.
+     * This field can only be populated if advertise_mode is CUSTOM and
+     * overrides the list defined for the router (in the "bgp" message).
+     * These IP ranges are advertised in addition to any specified groups.
+     * Leave this field blank to advertise no custom IP ranges.
      * </pre>
      *
      * <code>
@@ -3993,7 +4354,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-specified list of individual IP ranges to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These IP ranges are advertised in addition to any specified groups. Leave this field blank to advertise no custom IP ranges.
+     * User-specified list of individual IP ranges to advertise in custom mode.
+     * This field can only be populated if advertise_mode is CUSTOM and
+     * overrides the list defined for the router (in the "bgp" message).
+     * These IP ranges are advertised in addition to any specified groups.
+     * Leave this field blank to advertise no custom IP ranges.
      * </pre>
      *
      * <code>
@@ -4010,7 +4375,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-specified list of individual IP ranges to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These IP ranges are advertised in addition to any specified groups. Leave this field blank to advertise no custom IP ranges.
+     * User-specified list of individual IP ranges to advertise in custom mode.
+     * This field can only be populated if advertise_mode is CUSTOM and
+     * overrides the list defined for the router (in the "bgp" message).
+     * These IP ranges are advertised in addition to any specified groups.
+     * Leave this field blank to advertise no custom IP ranges.
      * </pre>
      *
      * <code>
@@ -4028,7 +4397,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-specified list of individual IP ranges to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These IP ranges are advertised in addition to any specified groups. Leave this field blank to advertise no custom IP ranges.
+     * User-specified list of individual IP ranges to advertise in custom mode.
+     * This field can only be populated if advertise_mode is CUSTOM and
+     * overrides the list defined for the router (in the "bgp" message).
+     * These IP ranges are advertised in addition to any specified groups.
+     * Leave this field blank to advertise no custom IP ranges.
      * </pre>
      *
      * <code>
@@ -4066,7 +4439,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The priority of routes advertised to this BGP peer. Where there is more than one matching route of maximum length, the routes with the lowest priority value win.
+     * The priority of routes advertised to this BGP peer. Where there is more
+     * than one matching route of maximum length, the routes with the lowest
+     * priority value win.
      * </pre>
      *
      * <code>optional uint32 advertised_route_priority = 186486332;</code>
@@ -4082,7 +4457,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The priority of routes advertised to this BGP peer. Where there is more than one matching route of maximum length, the routes with the lowest priority value win.
+     * The priority of routes advertised to this BGP peer. Where there is more
+     * than one matching route of maximum length, the routes with the lowest
+     * priority value win.
      * </pre>
      *
      * <code>optional uint32 advertised_route_priority = 186486332;</code>
@@ -4098,7 +4475,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The priority of routes advertised to this BGP peer. Where there is more than one matching route of maximum length, the routes with the lowest priority value win.
+     * The priority of routes advertised to this BGP peer. Where there is more
+     * than one matching route of maximum length, the routes with the lowest
+     * priority value win.
      * </pre>
      *
      * <code>optional uint32 advertised_route_priority = 186486332;</code>
@@ -4118,7 +4497,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The priority of routes advertised to this BGP peer. Where there is more than one matching route of maximum length, the routes with the lowest priority value win.
+     * The priority of routes advertised to this BGP peer. Where there is more
+     * than one matching route of maximum length, the routes with the lowest
+     * priority value win.
      * </pre>
      *
      * <code>optional uint32 advertised_route_priority = 186486332;</code>
@@ -4348,7 +4729,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * A list of user-defined custom learned route IP address ranges for a BGP
+     * session.
      * </pre>
      *
      * <code>
@@ -4368,7 +4750,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * A list of user-defined custom learned route IP address ranges for a BGP
+     * session.
      * </pre>
      *
      * <code>
@@ -4387,7 +4770,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * A list of user-defined custom learned route IP address ranges for a BGP
+     * session.
      * </pre>
      *
      * <code>
@@ -4407,7 +4791,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * A list of user-defined custom learned route IP address ranges for a BGP
+     * session.
      * </pre>
      *
      * <code>
@@ -4433,7 +4818,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * A list of user-defined custom learned route IP address ranges for a BGP
+     * session.
      * </pre>
      *
      * <code>
@@ -4457,7 +4843,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * A list of user-defined custom learned route IP address ranges for a BGP
+     * session.
      * </pre>
      *
      * <code>
@@ -4483,7 +4870,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * A list of user-defined custom learned route IP address ranges for a BGP
+     * session.
      * </pre>
      *
      * <code>
@@ -4509,7 +4897,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * A list of user-defined custom learned route IP address ranges for a BGP
+     * session.
      * </pre>
      *
      * <code>
@@ -4532,7 +4921,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * A list of user-defined custom learned route IP address ranges for a BGP
+     * session.
      * </pre>
      *
      * <code>
@@ -4556,7 +4946,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * A list of user-defined custom learned route IP address ranges for a BGP
+     * session.
      * </pre>
      *
      * <code>
@@ -4580,7 +4971,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * A list of user-defined custom learned route IP address ranges for a BGP
+     * session.
      * </pre>
      *
      * <code>
@@ -4602,7 +4994,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * A list of user-defined custom learned route IP address ranges for a BGP
+     * session.
      * </pre>
      *
      * <code>
@@ -4624,7 +5017,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * A list of user-defined custom learned route IP address ranges for a BGP
+     * session.
      * </pre>
      *
      * <code>
@@ -4640,7 +5034,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * A list of user-defined custom learned route IP address ranges for a BGP
+     * session.
      * </pre>
      *
      * <code>
@@ -4660,7 +5055,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * A list of user-defined custom learned route IP address ranges for a BGP
+     * session.
      * </pre>
      *
      * <code>
@@ -4681,7 +5077,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * A list of user-defined custom learned route IP address ranges for a BGP
+     * session.
      * </pre>
      *
      * <code>
@@ -4699,7 +5096,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * A list of user-defined custom learned route IP address ranges for a BGP
+     * session.
      * </pre>
      *
      * <code>
@@ -4718,7 +5116,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of user-defined custom learned route IP address ranges for a BGP session.
+     * A list of user-defined custom learned route IP address ranges for a BGP
+     * session.
      * </pre>
      *
      * <code>
@@ -4756,7 +5155,10 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The user-defined custom learned route priority for a BGP session. This value is applied to all custom learned route ranges for the session. You can choose a value from `0` to `65335`. If you don't provide a value, Google Cloud assigns a priority of `100` to the ranges.
+     * The user-defined custom learned route priority for a BGP session. This
+     * value is applied to all custom learned route ranges for the session.
+     * You can choose a value from `0` to `65335`. If you don't provide a
+     * value, Google Cloud assigns a priority of `100` to the ranges.
      * </pre>
      *
      * <code>optional int32 custom_learned_route_priority = 330412356;</code>
@@ -4772,7 +5174,10 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The user-defined custom learned route priority for a BGP session. This value is applied to all custom learned route ranges for the session. You can choose a value from `0` to `65335`. If you don't provide a value, Google Cloud assigns a priority of `100` to the ranges.
+     * The user-defined custom learned route priority for a BGP session. This
+     * value is applied to all custom learned route ranges for the session.
+     * You can choose a value from `0` to `65335`. If you don't provide a
+     * value, Google Cloud assigns a priority of `100` to the ranges.
      * </pre>
      *
      * <code>optional int32 custom_learned_route_priority = 330412356;</code>
@@ -4788,7 +5193,10 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The user-defined custom learned route priority for a BGP session. This value is applied to all custom learned route ranges for the session. You can choose a value from `0` to `65335`. If you don't provide a value, Google Cloud assigns a priority of `100` to the ranges.
+     * The user-defined custom learned route priority for a BGP session. This
+     * value is applied to all custom learned route ranges for the session.
+     * You can choose a value from `0` to `65335`. If you don't provide a
+     * value, Google Cloud assigns a priority of `100` to the ranges.
      * </pre>
      *
      * <code>optional int32 custom_learned_route_priority = 330412356;</code>
@@ -4808,7 +5216,10 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The user-defined custom learned route priority for a BGP session. This value is applied to all custom learned route ranges for the session. You can choose a value from `0` to `65335`. If you don't provide a value, Google Cloud assigns a priority of `100` to the ranges.
+     * The user-defined custom learned route priority for a BGP session. This
+     * value is applied to all custom learned route ranges for the session.
+     * You can choose a value from `0` to `65335`. If you don't provide a
+     * value, Google Cloud assigns a priority of `100` to the ranges.
      * </pre>
      *
      * <code>optional int32 custom_learned_route_priority = 330412356;</code>
@@ -4828,7 +5239,13 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The status of the BGP peer connection. If set to FALSE, any active session with the peer is terminated and all associated routing information is removed. If set to TRUE, the peer connection can be established with routing information. The default is TRUE.
+     * The status of the BGP peer connection.
+     *
+     *
+     * If set to FALSE, any active session with the peer is terminated and
+     * all associated routing information is removed. If set to TRUE, the
+     * peer connection can be established with routing information. The default
+     * is TRUE.
      * Check the Enable enum for the list of possible values.
      * </pre>
      *
@@ -4844,7 +5261,13 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The status of the BGP peer connection. If set to FALSE, any active session with the peer is terminated and all associated routing information is removed. If set to TRUE, the peer connection can be established with routing information. The default is TRUE.
+     * The status of the BGP peer connection.
+     *
+     *
+     * If set to FALSE, any active session with the peer is terminated and
+     * all associated routing information is removed. If set to TRUE, the
+     * peer connection can be established with routing information. The default
+     * is TRUE.
      * Check the Enable enum for the list of possible values.
      * </pre>
      *
@@ -4868,7 +5291,13 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The status of the BGP peer connection. If set to FALSE, any active session with the peer is terminated and all associated routing information is removed. If set to TRUE, the peer connection can be established with routing information. The default is TRUE.
+     * The status of the BGP peer connection.
+     *
+     *
+     * If set to FALSE, any active session with the peer is terminated and
+     * all associated routing information is removed. If set to TRUE, the
+     * peer connection can be established with routing information. The default
+     * is TRUE.
      * Check the Enable enum for the list of possible values.
      * </pre>
      *
@@ -4892,7 +5321,13 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The status of the BGP peer connection. If set to FALSE, any active session with the peer is terminated and all associated routing information is removed. If set to TRUE, the peer connection can be established with routing information. The default is TRUE.
+     * The status of the BGP peer connection.
+     *
+     *
+     * If set to FALSE, any active session with the peer is terminated and
+     * all associated routing information is removed. If set to TRUE, the
+     * peer connection can be established with routing information. The default
+     * is TRUE.
      * Check the Enable enum for the list of possible values.
      * </pre>
      *
@@ -4915,7 +5350,13 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The status of the BGP peer connection. If set to FALSE, any active session with the peer is terminated and all associated routing information is removed. If set to TRUE, the peer connection can be established with routing information. The default is TRUE.
+     * The status of the BGP peer connection.
+     *
+     *
+     * If set to FALSE, any active session with the peer is terminated and
+     * all associated routing information is removed. If set to TRUE, the
+     * peer connection can be established with routing information. The default
+     * is TRUE.
      * Check the Enable enum for the list of possible values.
      * </pre>
      *
@@ -4934,7 +5375,13 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The status of the BGP peer connection. If set to FALSE, any active session with the peer is terminated and all associated routing information is removed. If set to TRUE, the peer connection can be established with routing information. The default is TRUE.
+     * The status of the BGP peer connection.
+     *
+     *
+     * If set to FALSE, any active session with the peer is terminated and
+     * all associated routing information is removed. If set to TRUE, the
+     * peer connection can be established with routing information. The default
+     * is TRUE.
      * Check the Enable enum for the list of possible values.
      * </pre>
      *
@@ -4960,7 +5407,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable IPv4 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 4.
+     * Enable IPv4 traffic over BGP Peer. It is enabled by default if
+     * the peerIpAddress is version 4.
      * </pre>
      *
      * <code>optional bool enable_ipv4 = 181467937;</code>
@@ -4976,7 +5424,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable IPv4 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 4.
+     * Enable IPv4 traffic over BGP Peer. It is enabled by default if
+     * the peerIpAddress is version 4.
      * </pre>
      *
      * <code>optional bool enable_ipv4 = 181467937;</code>
@@ -4992,7 +5441,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable IPv4 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 4.
+     * Enable IPv4 traffic over BGP Peer. It is enabled by default if
+     * the peerIpAddress is version 4.
      * </pre>
      *
      * <code>optional bool enable_ipv4 = 181467937;</code>
@@ -5012,7 +5462,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable IPv4 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 4.
+     * Enable IPv4 traffic over BGP Peer. It is enabled by default if
+     * the peerIpAddress is version 4.
      * </pre>
      *
      * <code>optional bool enable_ipv4 = 181467937;</code>
@@ -5032,7 +5483,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable IPv6 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 6.
+     * Enable IPv6 traffic over BGP Peer. It is enabled by default if the
+     * peerIpAddress is version 6.
      * </pre>
      *
      * <code>optional bool enable_ipv6 = 181467939;</code>
@@ -5048,7 +5500,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable IPv6 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 6.
+     * Enable IPv6 traffic over BGP Peer. It is enabled by default if the
+     * peerIpAddress is version 6.
      * </pre>
      *
      * <code>optional bool enable_ipv6 = 181467939;</code>
@@ -5064,7 +5517,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable IPv6 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 6.
+     * Enable IPv6 traffic over BGP Peer. It is enabled by default if the
+     * peerIpAddress is version 6.
      * </pre>
      *
      * <code>optional bool enable_ipv6 = 181467939;</code>
@@ -5084,7 +5538,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable IPv6 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 6.
+     * Enable IPv6 traffic over BGP Peer. It is enabled by default if the
+     * peerIpAddress is version 6.
      * </pre>
      *
      * <code>optional bool enable_ipv6 = 181467939;</code>
@@ -5112,7 +5567,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type.
+     * List of export policies applied to this peer, in the order they must be
+     * evaluated. The name must correspond to an existing policy that has
+     * ROUTE_POLICY_TYPE_EXPORT type.
      * </pre>
      *
      * <code>repeated string export_policies = 134084987;</code>
@@ -5128,7 +5585,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type.
+     * List of export policies applied to this peer, in the order they must be
+     * evaluated. The name must correspond to an existing policy that has
+     * ROUTE_POLICY_TYPE_EXPORT type.
      * </pre>
      *
      * <code>repeated string export_policies = 134084987;</code>
@@ -5143,7 +5602,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type.
+     * List of export policies applied to this peer, in the order they must be
+     * evaluated. The name must correspond to an existing policy that has
+     * ROUTE_POLICY_TYPE_EXPORT type.
      * </pre>
      *
      * <code>repeated string export_policies = 134084987;</code>
@@ -5159,7 +5620,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type.
+     * List of export policies applied to this peer, in the order they must be
+     * evaluated. The name must correspond to an existing policy that has
+     * ROUTE_POLICY_TYPE_EXPORT type.
      * </pre>
      *
      * <code>repeated string export_policies = 134084987;</code>
@@ -5175,7 +5638,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type.
+     * List of export policies applied to this peer, in the order they must be
+     * evaluated. The name must correspond to an existing policy that has
+     * ROUTE_POLICY_TYPE_EXPORT type.
      * </pre>
      *
      * <code>repeated string export_policies = 134084987;</code>
@@ -5199,7 +5664,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type.
+     * List of export policies applied to this peer, in the order they must be
+     * evaluated. The name must correspond to an existing policy that has
+     * ROUTE_POLICY_TYPE_EXPORT type.
      * </pre>
      *
      * <code>repeated string export_policies = 134084987;</code>
@@ -5222,7 +5689,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type.
+     * List of export policies applied to this peer, in the order they must be
+     * evaluated. The name must correspond to an existing policy that has
+     * ROUTE_POLICY_TYPE_EXPORT type.
      * </pre>
      *
      * <code>repeated string export_policies = 134084987;</code>
@@ -5242,7 +5711,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type.
+     * List of export policies applied to this peer, in the order they must be
+     * evaluated. The name must correspond to an existing policy that has
+     * ROUTE_POLICY_TYPE_EXPORT type.
      * </pre>
      *
      * <code>repeated string export_policies = 134084987;</code>
@@ -5261,7 +5732,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of export policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_EXPORT type.
+     * List of export policies applied to this peer, in the order they must be
+     * evaluated. The name must correspond to an existing policy that has
+     * ROUTE_POLICY_TYPE_EXPORT type.
      * </pre>
      *
      * <code>repeated string export_policies = 134084987;</code>
@@ -5295,7 +5768,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type.
+     * List of import policies applied to this peer, in the order they must be
+     * evaluated. The name must correspond to an existing policy that has
+     * ROUTE_POLICY_TYPE_IMPORT type.
      * </pre>
      *
      * <code>repeated string import_policies = 451147946;</code>
@@ -5311,7 +5786,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type.
+     * List of import policies applied to this peer, in the order they must be
+     * evaluated. The name must correspond to an existing policy that has
+     * ROUTE_POLICY_TYPE_IMPORT type.
      * </pre>
      *
      * <code>repeated string import_policies = 451147946;</code>
@@ -5326,7 +5803,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type.
+     * List of import policies applied to this peer, in the order they must be
+     * evaluated. The name must correspond to an existing policy that has
+     * ROUTE_POLICY_TYPE_IMPORT type.
      * </pre>
      *
      * <code>repeated string import_policies = 451147946;</code>
@@ -5342,7 +5821,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type.
+     * List of import policies applied to this peer, in the order they must be
+     * evaluated. The name must correspond to an existing policy that has
+     * ROUTE_POLICY_TYPE_IMPORT type.
      * </pre>
      *
      * <code>repeated string import_policies = 451147946;</code>
@@ -5358,7 +5839,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type.
+     * List of import policies applied to this peer, in the order they must be
+     * evaluated. The name must correspond to an existing policy that has
+     * ROUTE_POLICY_TYPE_IMPORT type.
      * </pre>
      *
      * <code>repeated string import_policies = 451147946;</code>
@@ -5382,7 +5865,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type.
+     * List of import policies applied to this peer, in the order they must be
+     * evaluated. The name must correspond to an existing policy that has
+     * ROUTE_POLICY_TYPE_IMPORT type.
      * </pre>
      *
      * <code>repeated string import_policies = 451147946;</code>
@@ -5405,7 +5890,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type.
+     * List of import policies applied to this peer, in the order they must be
+     * evaluated. The name must correspond to an existing policy that has
+     * ROUTE_POLICY_TYPE_IMPORT type.
      * </pre>
      *
      * <code>repeated string import_policies = 451147946;</code>
@@ -5425,7 +5912,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type.
+     * List of import policies applied to this peer, in the order they must be
+     * evaluated. The name must correspond to an existing policy that has
+     * ROUTE_POLICY_TYPE_IMPORT type.
      * </pre>
      *
      * <code>repeated string import_policies = 451147946;</code>
@@ -5444,7 +5933,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of import policies applied to this peer, in the order they must be evaluated. The name must correspond to an existing policy that has ROUTE_POLICY_TYPE_IMPORT type.
+     * List of import policies applied to this peer, in the order they must be
+     * evaluated. The name must correspond to an existing policy that has
+     * ROUTE_POLICY_TYPE_IMPORT type.
      * </pre>
      *
      * <code>repeated string import_policies = 451147946;</code>
@@ -5974,7 +6465,15 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted.
+     * [Output Only] The resource that configures and manages this BGP peer.
+     *
+     *    -  MANAGED_BY_USER is the default value and can be managed by you
+     *    or other users
+     *    - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed
+     *    by Cloud Interconnect, specifically by an InterconnectAttachment of type
+     *    PARTNER. Google automatically creates, updates, and deletes this type of
+     *    BGP peer when the PARTNER InterconnectAttachment is created, updated,
+     *    or deleted.
      * Check the ManagementType enum for the list of possible values.
      * </pre>
      *
@@ -5990,7 +6489,15 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted.
+     * [Output Only] The resource that configures and manages this BGP peer.
+     *
+     *    -  MANAGED_BY_USER is the default value and can be managed by you
+     *    or other users
+     *    - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed
+     *    by Cloud Interconnect, specifically by an InterconnectAttachment of type
+     *    PARTNER. Google automatically creates, updates, and deletes this type of
+     *    BGP peer when the PARTNER InterconnectAttachment is created, updated,
+     *    or deleted.
      * Check the ManagementType enum for the list of possible values.
      * </pre>
      *
@@ -6014,7 +6521,15 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted.
+     * [Output Only] The resource that configures and manages this BGP peer.
+     *
+     *    -  MANAGED_BY_USER is the default value and can be managed by you
+     *    or other users
+     *    - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed
+     *    by Cloud Interconnect, specifically by an InterconnectAttachment of type
+     *    PARTNER. Google automatically creates, updates, and deletes this type of
+     *    BGP peer when the PARTNER InterconnectAttachment is created, updated,
+     *    or deleted.
      * Check the ManagementType enum for the list of possible values.
      * </pre>
      *
@@ -6038,7 +6553,15 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted.
+     * [Output Only] The resource that configures and manages this BGP peer.
+     *
+     *    -  MANAGED_BY_USER is the default value and can be managed by you
+     *    or other users
+     *    - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed
+     *    by Cloud Interconnect, specifically by an InterconnectAttachment of type
+     *    PARTNER. Google automatically creates, updates, and deletes this type of
+     *    BGP peer when the PARTNER InterconnectAttachment is created, updated,
+     *    or deleted.
      * Check the ManagementType enum for the list of possible values.
      * </pre>
      *
@@ -6061,7 +6584,15 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted.
+     * [Output Only] The resource that configures and manages this BGP peer.
+     *
+     *    -  MANAGED_BY_USER is the default value and can be managed by you
+     *    or other users
+     *    - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed
+     *    by Cloud Interconnect, specifically by an InterconnectAttachment of type
+     *    PARTNER. Google automatically creates, updates, and deletes this type of
+     *    BGP peer when the PARTNER InterconnectAttachment is created, updated,
+     *    or deleted.
      * Check the ManagementType enum for the list of possible values.
      * </pre>
      *
@@ -6080,7 +6611,15 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted.
+     * [Output Only] The resource that configures and manages this BGP peer.
+     *
+     *    -  MANAGED_BY_USER is the default value and can be managed by you
+     *    or other users
+     *    - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed
+     *    by Cloud Interconnect, specifically by an InterconnectAttachment of type
+     *    PARTNER. Google automatically creates, updates, and deletes this type of
+     *    BGP peer when the PARTNER InterconnectAttachment is created, updated,
+     *    or deleted.
      * Check the ManagementType enum for the list of possible values.
      * </pre>
      *
@@ -6106,7 +6645,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Present if MD5 authentication is enabled for the peering. Must be the name of one of the entries in the Router.md5_authentication_keys. The field must comply with RFC1035.
+     * Present if MD5 authentication is enabled for the peering. Must be the
+     * name of one of the entries in the Router.md5_authentication_keys. The
+     * field must comply with RFC1035.
      * </pre>
      *
      * <code>optional string md5_authentication_key_name = 281075345;</code>
@@ -6121,7 +6662,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Present if MD5 authentication is enabled for the peering. Must be the name of one of the entries in the Router.md5_authentication_keys. The field must comply with RFC1035.
+     * Present if MD5 authentication is enabled for the peering. Must be the
+     * name of one of the entries in the Router.md5_authentication_keys. The
+     * field must comply with RFC1035.
      * </pre>
      *
      * <code>optional string md5_authentication_key_name = 281075345;</code>
@@ -6144,7 +6687,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Present if MD5 authentication is enabled for the peering. Must be the name of one of the entries in the Router.md5_authentication_keys. The field must comply with RFC1035.
+     * Present if MD5 authentication is enabled for the peering. Must be the
+     * name of one of the entries in the Router.md5_authentication_keys. The
+     * field must comply with RFC1035.
      * </pre>
      *
      * <code>optional string md5_authentication_key_name = 281075345;</code>
@@ -6167,7 +6712,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Present if MD5 authentication is enabled for the peering. Must be the name of one of the entries in the Router.md5_authentication_keys. The field must comply with RFC1035.
+     * Present if MD5 authentication is enabled for the peering. Must be the
+     * name of one of the entries in the Router.md5_authentication_keys. The
+     * field must comply with RFC1035.
      * </pre>
      *
      * <code>optional string md5_authentication_key_name = 281075345;</code>
@@ -6189,7 +6736,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Present if MD5 authentication is enabled for the peering. Must be the name of one of the entries in the Router.md5_authentication_keys. The field must comply with RFC1035.
+     * Present if MD5 authentication is enabled for the peering. Must be the
+     * name of one of the entries in the Router.md5_authentication_keys. The
+     * field must comply with RFC1035.
      * </pre>
      *
      * <code>optional string md5_authentication_key_name = 281075345;</code>
@@ -6207,7 +6756,9 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Present if MD5 authentication is enabled for the peering. Must be the name of one of the entries in the Router.md5_authentication_keys. The field must comply with RFC1035.
+     * Present if MD5 authentication is enabled for the peering. Must be the
+     * name of one of the entries in the Router.md5_authentication_keys. The
+     * field must comply with RFC1035.
      * </pre>
      *
      * <code>optional string md5_authentication_key_name = 281075345;</code>
@@ -6232,7 +6783,12 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of this BGP peer. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of this BGP peer.
+     * The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63
+     * characters long and match the regular expression
+     * `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a
+     * lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -6247,7 +6803,12 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of this BGP peer. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of this BGP peer.
+     * The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63
+     * characters long and match the regular expression
+     * `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a
+     * lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -6270,7 +6831,12 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of this BGP peer. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of this BGP peer.
+     * The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63
+     * characters long and match the regular expression
+     * `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a
+     * lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -6293,7 +6859,12 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of this BGP peer. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of this BGP peer.
+     * The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63
+     * characters long and match the regular expression
+     * `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a
+     * lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -6315,7 +6886,12 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of this BGP peer. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of this BGP peer.
+     * The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63
+     * characters long and match the regular expression
+     * `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a
+     * lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -6333,7 +6909,12 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of this BGP peer. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of this BGP peer.
+     * The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63
+     * characters long and match the regular expression
+     * `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a
+     * lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -6358,7 +6939,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Peer BGP Autonomous System Number (ASN). Each BGP interface may use a different value.
+     * Peer BGP Autonomous System Number (ASN). Each BGP interface may use
+     * a different value.
      * </pre>
      *
      * <code>optional uint32 peer_asn = 69573151;</code>
@@ -6374,7 +6956,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Peer BGP Autonomous System Number (ASN). Each BGP interface may use a different value.
+     * Peer BGP Autonomous System Number (ASN). Each BGP interface may use
+     * a different value.
      * </pre>
      *
      * <code>optional uint32 peer_asn = 69573151;</code>
@@ -6390,7 +6973,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Peer BGP Autonomous System Number (ASN). Each BGP interface may use a different value.
+     * Peer BGP Autonomous System Number (ASN). Each BGP interface may use
+     * a different value.
      * </pre>
      *
      * <code>optional uint32 peer_asn = 69573151;</code>
@@ -6410,7 +6994,8 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Peer BGP Autonomous System Number (ASN). Each BGP interface may use a different value.
+     * Peer BGP Autonomous System Number (ASN). Each BGP interface may use
+     * a different value.
      * </pre>
      *
      * <code>optional uint32 peer_asn = 69573151;</code>
@@ -6808,7 +7393,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance must be located in zones contained in the same region as this Cloud Router. The VM instance is the peer side of the BGP session.
+     * URI of the VM instance that is used as third-party router
+     * appliances such as Next Gen Firewalls, Virtual Routers, or Router
+     * Appliances. The VM instance must be located in zones contained in the
+     * same region as this Cloud Router.
+     * The VM instance is the peer side of the BGP session.
      * </pre>
      *
      * <code>optional string router_appliance_instance = 468312989;</code>
@@ -6823,7 +7412,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance must be located in zones contained in the same region as this Cloud Router. The VM instance is the peer side of the BGP session.
+     * URI of the VM instance that is used as third-party router
+     * appliances such as Next Gen Firewalls, Virtual Routers, or Router
+     * Appliances. The VM instance must be located in zones contained in the
+     * same region as this Cloud Router.
+     * The VM instance is the peer side of the BGP session.
      * </pre>
      *
      * <code>optional string router_appliance_instance = 468312989;</code>
@@ -6846,7 +7439,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance must be located in zones contained in the same region as this Cloud Router. The VM instance is the peer side of the BGP session.
+     * URI of the VM instance that is used as third-party router
+     * appliances such as Next Gen Firewalls, Virtual Routers, or Router
+     * Appliances. The VM instance must be located in zones contained in the
+     * same region as this Cloud Router.
+     * The VM instance is the peer side of the BGP session.
      * </pre>
      *
      * <code>optional string router_appliance_instance = 468312989;</code>
@@ -6869,7 +7466,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance must be located in zones contained in the same region as this Cloud Router. The VM instance is the peer side of the BGP session.
+     * URI of the VM instance that is used as third-party router
+     * appliances such as Next Gen Firewalls, Virtual Routers, or Router
+     * Appliances. The VM instance must be located in zones contained in the
+     * same region as this Cloud Router.
+     * The VM instance is the peer side of the BGP session.
      * </pre>
      *
      * <code>optional string router_appliance_instance = 468312989;</code>
@@ -6891,7 +7492,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance must be located in zones contained in the same region as this Cloud Router. The VM instance is the peer side of the BGP session.
+     * URI of the VM instance that is used as third-party router
+     * appliances such as Next Gen Firewalls, Virtual Routers, or Router
+     * Appliances. The VM instance must be located in zones contained in the
+     * same region as this Cloud Router.
+     * The VM instance is the peer side of the BGP session.
      * </pre>
      *
      * <code>optional string router_appliance_instance = 468312989;</code>
@@ -6909,7 +7514,11 @@ public final class RouterBgpPeer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance must be located in zones contained in the same region as this Cloud Router. The VM instance is the peer side of the BGP session.
+     * URI of the VM instance that is used as third-party router
+     * appliances such as Next Gen Firewalls, Virtual Routers, or Router
+     * Appliances. The VM instance must be located in zones contained in the
+     * same region as this Cloud Router.
+     * The VM instance is the peer side of the BGP session.
      * </pre>
      *
      * <code>optional string router_appliance_instance = 468312989;</code>

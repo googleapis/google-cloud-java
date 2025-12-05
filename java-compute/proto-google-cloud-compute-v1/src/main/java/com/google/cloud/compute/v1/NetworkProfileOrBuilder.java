@@ -28,7 +28,8 @@ public interface NetworkProfileOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -41,7 +42,8 @@ public interface NetworkProfileOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -54,7 +56,8 @@ public interface NetworkProfileOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -146,7 +149,8 @@ public interface NetworkProfileOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -159,7 +163,8 @@ public interface NetworkProfileOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -172,7 +177,7 @@ public interface NetworkProfileOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#networkProfile for network profiles.
+   * [Output Only] Type of the resource. Alwayscompute#networkProfile for network profiles.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -185,7 +190,7 @@ public interface NetworkProfileOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#networkProfile for network profiles.
+   * [Output Only] Type of the resource. Alwayscompute#networkProfile for network profiles.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -198,7 +203,7 @@ public interface NetworkProfileOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#networkProfile for network profiles.
+   * [Output Only] Type of the resource. Alwayscompute#networkProfile for network profiles.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>

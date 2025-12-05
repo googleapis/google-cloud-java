@@ -70,7 +70,16 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
    *
    *
    * <pre>
-   * The action that a MIG performs on a failed or an unhealthy VM. A VM is marked as unhealthy when the application running on that VM fails a health check. Valid values are - REPAIR (default): MIG automatically repairs a failed or an unhealthy VM by recreating it. For more information, see About repairing VMs in a MIG. - DO_NOTHING: MIG does not repair a failed or an unhealthy VM.
+   * The action that a MIG performs on a failed or an unhealthy VM.
+   * A VM is marked as unhealthy when the application running on that
+   * VM fails a health check.
+   * Valid values are
+   *
+   *    - REPAIR (default): MIG automatically repairs a failed or
+   *    an unhealthy VM by recreating it. For more information, see About
+   *    repairing VMs in a MIG.
+   *    - DO_NOTHING: MIG does not repair a failed or an unhealthy
+   *    VM.
    * </pre>
    *
    * Protobuf enum {@code
@@ -101,7 +110,9 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
      *
      *
      * <pre>
-     * (Default) MIG automatically repairs a failed or an unhealthy VM by recreating it. For more information, see About repairing VMs in a MIG.
+     * (Default) MIG automatically repairs a failed or an unhealthy
+     * VM by recreating it. For more information, see About
+     * repairing VMs in a MIG.
      * </pre>
      *
      * <code>REPAIR = 266277773;</code>
@@ -136,7 +147,9 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
      *
      *
      * <pre>
-     * (Default) MIG automatically repairs a failed or an unhealthy VM by recreating it. For more information, see About repairing VMs in a MIG.
+     * (Default) MIG automatically repairs a failed or an unhealthy
+     * VM by recreating it. For more information, see About
+     * repairing VMs in a MIG.
      * </pre>
      *
      * <code>REPAIR = 266277773;</code>
@@ -235,7 +248,17 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
    *
    *
    * <pre>
-   * A bit indicating whether to forcefully apply the group's latest configuration when repairing a VM. Valid options are: - NO (default): If configuration updates are available, they are not forcefully applied during repair. Instead, configuration updates are applied according to the group's update policy. - YES: If configuration updates are available, they are applied during repair.
+   * A bit indicating whether to forcefully apply the group's latest
+   * configuration when repairing a VM. Valid options are:
+   *
+   *
+   *
+   *      -  NO (default): If configuration updates are available, they are not
+   *      forcefully applied during repair. Instead, configuration updates are
+   *      applied according to the group's update policy.
+   *
+   *      -  YES: If configuration updates are available, they are applied
+   *      during repair.
    * </pre>
    *
    * Protobuf enum {@code
@@ -374,7 +397,16 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
    *
    *
    * <pre>
-   * The action that a MIG performs on a failed or an unhealthy VM. A VM is marked as unhealthy when the application running on that VM fails a health check. Valid values are - REPAIR (default): MIG automatically repairs a failed or an unhealthy VM by recreating it. For more information, see About repairing VMs in a MIG. - DO_NOTHING: MIG does not repair a failed or an unhealthy VM.
+   * The action that a MIG performs on a failed or an unhealthy VM.
+   * A VM is marked as unhealthy when the application running on that
+   * VM fails a health check.
+   * Valid values are
+   *
+   *    - REPAIR (default): MIG automatically repairs a failed or
+   *    an unhealthy VM by recreating it. For more information, see About
+   *    repairing VMs in a MIG.
+   *    - DO_NOTHING: MIG does not repair a failed or an unhealthy
+   *    VM.
    * Check the DefaultActionOnFailure enum for the list of possible values.
    * </pre>
    *
@@ -391,7 +423,16 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
    *
    *
    * <pre>
-   * The action that a MIG performs on a failed or an unhealthy VM. A VM is marked as unhealthy when the application running on that VM fails a health check. Valid values are - REPAIR (default): MIG automatically repairs a failed or an unhealthy VM by recreating it. For more information, see About repairing VMs in a MIG. - DO_NOTHING: MIG does not repair a failed or an unhealthy VM.
+   * The action that a MIG performs on a failed or an unhealthy VM.
+   * A VM is marked as unhealthy when the application running on that
+   * VM fails a health check.
+   * Valid values are
+   *
+   *    - REPAIR (default): MIG automatically repairs a failed or
+   *    an unhealthy VM by recreating it. For more information, see About
+   *    repairing VMs in a MIG.
+   *    - DO_NOTHING: MIG does not repair a failed or an unhealthy
+   *    VM.
    * Check the DefaultActionOnFailure enum for the list of possible values.
    * </pre>
    *
@@ -416,7 +457,16 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
    *
    *
    * <pre>
-   * The action that a MIG performs on a failed or an unhealthy VM. A VM is marked as unhealthy when the application running on that VM fails a health check. Valid values are - REPAIR (default): MIG automatically repairs a failed or an unhealthy VM by recreating it. For more information, see About repairing VMs in a MIG. - DO_NOTHING: MIG does not repair a failed or an unhealthy VM.
+   * The action that a MIG performs on a failed or an unhealthy VM.
+   * A VM is marked as unhealthy when the application running on that
+   * VM fails a health check.
+   * Valid values are
+   *
+   *    - REPAIR (default): MIG automatically repairs a failed or
+   *    an unhealthy VM by recreating it. For more information, see About
+   *    repairing VMs in a MIG.
+   *    - DO_NOTHING: MIG does not repair a failed or an unhealthy
+   *    VM.
    * Check the DefaultActionOnFailure enum for the list of possible values.
    * </pre>
    *
@@ -446,7 +496,17 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
    *
    *
    * <pre>
-   * A bit indicating whether to forcefully apply the group's latest configuration when repairing a VM. Valid options are: - NO (default): If configuration updates are available, they are not forcefully applied during repair. Instead, configuration updates are applied according to the group's update policy. - YES: If configuration updates are available, they are applied during repair.
+   * A bit indicating whether to forcefully apply the group's latest
+   * configuration when repairing a VM. Valid options are:
+   *
+   *
+   *
+   *      -  NO (default): If configuration updates are available, they are not
+   *      forcefully applied during repair. Instead, configuration updates are
+   *      applied according to the group's update policy.
+   *
+   *      -  YES: If configuration updates are available, they are applied
+   *      during repair.
    * Check the ForceUpdateOnRepair enum for the list of possible values.
    * </pre>
    *
@@ -463,7 +523,17 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
    *
    *
    * <pre>
-   * A bit indicating whether to forcefully apply the group's latest configuration when repairing a VM. Valid options are: - NO (default): If configuration updates are available, they are not forcefully applied during repair. Instead, configuration updates are applied according to the group's update policy. - YES: If configuration updates are available, they are applied during repair.
+   * A bit indicating whether to forcefully apply the group's latest
+   * configuration when repairing a VM. Valid options are:
+   *
+   *
+   *
+   *      -  NO (default): If configuration updates are available, they are not
+   *      forcefully applied during repair. Instead, configuration updates are
+   *      applied according to the group's update policy.
+   *
+   *      -  YES: If configuration updates are available, they are applied
+   *      during repair.
    * Check the ForceUpdateOnRepair enum for the list of possible values.
    * </pre>
    *
@@ -488,7 +558,17 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
    *
    *
    * <pre>
-   * A bit indicating whether to forcefully apply the group's latest configuration when repairing a VM. Valid options are: - NO (default): If configuration updates are available, they are not forcefully applied during repair. Instead, configuration updates are applied according to the group's update policy. - YES: If configuration updates are available, they are applied during repair.
+   * A bit indicating whether to forcefully apply the group's latest
+   * configuration when repairing a VM. Valid options are:
+   *
+   *
+   *
+   *      -  NO (default): If configuration updates are available, they are not
+   *      forcefully applied during repair. Instead, configuration updates are
+   *      applied according to the group's update policy.
+   *
+   *      -  YES: If configuration updates are available, they are applied
+   *      during repair.
    * Check the ForceUpdateOnRepair enum for the list of possible values.
    * </pre>
    *
@@ -910,7 +990,16 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
      *
      *
      * <pre>
-     * The action that a MIG performs on a failed or an unhealthy VM. A VM is marked as unhealthy when the application running on that VM fails a health check. Valid values are - REPAIR (default): MIG automatically repairs a failed or an unhealthy VM by recreating it. For more information, see About repairing VMs in a MIG. - DO_NOTHING: MIG does not repair a failed or an unhealthy VM.
+     * The action that a MIG performs on a failed or an unhealthy VM.
+     * A VM is marked as unhealthy when the application running on that
+     * VM fails a health check.
+     * Valid values are
+     *
+     *    - REPAIR (default): MIG automatically repairs a failed or
+     *    an unhealthy VM by recreating it. For more information, see About
+     *    repairing VMs in a MIG.
+     *    - DO_NOTHING: MIG does not repair a failed or an unhealthy
+     *    VM.
      * Check the DefaultActionOnFailure enum for the list of possible values.
      * </pre>
      *
@@ -926,7 +1015,16 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
      *
      *
      * <pre>
-     * The action that a MIG performs on a failed or an unhealthy VM. A VM is marked as unhealthy when the application running on that VM fails a health check. Valid values are - REPAIR (default): MIG automatically repairs a failed or an unhealthy VM by recreating it. For more information, see About repairing VMs in a MIG. - DO_NOTHING: MIG does not repair a failed or an unhealthy VM.
+     * The action that a MIG performs on a failed or an unhealthy VM.
+     * A VM is marked as unhealthy when the application running on that
+     * VM fails a health check.
+     * Valid values are
+     *
+     *    - REPAIR (default): MIG automatically repairs a failed or
+     *    an unhealthy VM by recreating it. For more information, see About
+     *    repairing VMs in a MIG.
+     *    - DO_NOTHING: MIG does not repair a failed or an unhealthy
+     *    VM.
      * Check the DefaultActionOnFailure enum for the list of possible values.
      * </pre>
      *
@@ -950,7 +1048,16 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
      *
      *
      * <pre>
-     * The action that a MIG performs on a failed or an unhealthy VM. A VM is marked as unhealthy when the application running on that VM fails a health check. Valid values are - REPAIR (default): MIG automatically repairs a failed or an unhealthy VM by recreating it. For more information, see About repairing VMs in a MIG. - DO_NOTHING: MIG does not repair a failed or an unhealthy VM.
+     * The action that a MIG performs on a failed or an unhealthy VM.
+     * A VM is marked as unhealthy when the application running on that
+     * VM fails a health check.
+     * Valid values are
+     *
+     *    - REPAIR (default): MIG automatically repairs a failed or
+     *    an unhealthy VM by recreating it. For more information, see About
+     *    repairing VMs in a MIG.
+     *    - DO_NOTHING: MIG does not repair a failed or an unhealthy
+     *    VM.
      * Check the DefaultActionOnFailure enum for the list of possible values.
      * </pre>
      *
@@ -974,7 +1081,16 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
      *
      *
      * <pre>
-     * The action that a MIG performs on a failed or an unhealthy VM. A VM is marked as unhealthy when the application running on that VM fails a health check. Valid values are - REPAIR (default): MIG automatically repairs a failed or an unhealthy VM by recreating it. For more information, see About repairing VMs in a MIG. - DO_NOTHING: MIG does not repair a failed or an unhealthy VM.
+     * The action that a MIG performs on a failed or an unhealthy VM.
+     * A VM is marked as unhealthy when the application running on that
+     * VM fails a health check.
+     * Valid values are
+     *
+     *    - REPAIR (default): MIG automatically repairs a failed or
+     *    an unhealthy VM by recreating it. For more information, see About
+     *    repairing VMs in a MIG.
+     *    - DO_NOTHING: MIG does not repair a failed or an unhealthy
+     *    VM.
      * Check the DefaultActionOnFailure enum for the list of possible values.
      * </pre>
      *
@@ -997,7 +1113,16 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
      *
      *
      * <pre>
-     * The action that a MIG performs on a failed or an unhealthy VM. A VM is marked as unhealthy when the application running on that VM fails a health check. Valid values are - REPAIR (default): MIG automatically repairs a failed or an unhealthy VM by recreating it. For more information, see About repairing VMs in a MIG. - DO_NOTHING: MIG does not repair a failed or an unhealthy VM.
+     * The action that a MIG performs on a failed or an unhealthy VM.
+     * A VM is marked as unhealthy when the application running on that
+     * VM fails a health check.
+     * Valid values are
+     *
+     *    - REPAIR (default): MIG automatically repairs a failed or
+     *    an unhealthy VM by recreating it. For more information, see About
+     *    repairing VMs in a MIG.
+     *    - DO_NOTHING: MIG does not repair a failed or an unhealthy
+     *    VM.
      * Check the DefaultActionOnFailure enum for the list of possible values.
      * </pre>
      *
@@ -1016,7 +1141,16 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
      *
      *
      * <pre>
-     * The action that a MIG performs on a failed or an unhealthy VM. A VM is marked as unhealthy when the application running on that VM fails a health check. Valid values are - REPAIR (default): MIG automatically repairs a failed or an unhealthy VM by recreating it. For more information, see About repairing VMs in a MIG. - DO_NOTHING: MIG does not repair a failed or an unhealthy VM.
+     * The action that a MIG performs on a failed or an unhealthy VM.
+     * A VM is marked as unhealthy when the application running on that
+     * VM fails a health check.
+     * Valid values are
+     *
+     *    - REPAIR (default): MIG automatically repairs a failed or
+     *    an unhealthy VM by recreating it. For more information, see About
+     *    repairing VMs in a MIG.
+     *    - DO_NOTHING: MIG does not repair a failed or an unhealthy
+     *    VM.
      * Check the DefaultActionOnFailure enum for the list of possible values.
      * </pre>
      *
@@ -1042,7 +1176,17 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
      *
      *
      * <pre>
-     * A bit indicating whether to forcefully apply the group's latest configuration when repairing a VM. Valid options are: - NO (default): If configuration updates are available, they are not forcefully applied during repair. Instead, configuration updates are applied according to the group's update policy. - YES: If configuration updates are available, they are applied during repair.
+     * A bit indicating whether to forcefully apply the group's latest
+     * configuration when repairing a VM. Valid options are:
+     *
+     *
+     *
+     *      -  NO (default): If configuration updates are available, they are not
+     *      forcefully applied during repair. Instead, configuration updates are
+     *      applied according to the group's update policy.
+     *
+     *      -  YES: If configuration updates are available, they are applied
+     *      during repair.
      * Check the ForceUpdateOnRepair enum for the list of possible values.
      * </pre>
      *
@@ -1058,7 +1202,17 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
      *
      *
      * <pre>
-     * A bit indicating whether to forcefully apply the group's latest configuration when repairing a VM. Valid options are: - NO (default): If configuration updates are available, they are not forcefully applied during repair. Instead, configuration updates are applied according to the group's update policy. - YES: If configuration updates are available, they are applied during repair.
+     * A bit indicating whether to forcefully apply the group's latest
+     * configuration when repairing a VM. Valid options are:
+     *
+     *
+     *
+     *      -  NO (default): If configuration updates are available, they are not
+     *      forcefully applied during repair. Instead, configuration updates are
+     *      applied according to the group's update policy.
+     *
+     *      -  YES: If configuration updates are available, they are applied
+     *      during repair.
      * Check the ForceUpdateOnRepair enum for the list of possible values.
      * </pre>
      *
@@ -1082,7 +1236,17 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
      *
      *
      * <pre>
-     * A bit indicating whether to forcefully apply the group's latest configuration when repairing a VM. Valid options are: - NO (default): If configuration updates are available, they are not forcefully applied during repair. Instead, configuration updates are applied according to the group's update policy. - YES: If configuration updates are available, they are applied during repair.
+     * A bit indicating whether to forcefully apply the group's latest
+     * configuration when repairing a VM. Valid options are:
+     *
+     *
+     *
+     *      -  NO (default): If configuration updates are available, they are not
+     *      forcefully applied during repair. Instead, configuration updates are
+     *      applied according to the group's update policy.
+     *
+     *      -  YES: If configuration updates are available, they are applied
+     *      during repair.
      * Check the ForceUpdateOnRepair enum for the list of possible values.
      * </pre>
      *
@@ -1106,7 +1270,17 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
      *
      *
      * <pre>
-     * A bit indicating whether to forcefully apply the group's latest configuration when repairing a VM. Valid options are: - NO (default): If configuration updates are available, they are not forcefully applied during repair. Instead, configuration updates are applied according to the group's update policy. - YES: If configuration updates are available, they are applied during repair.
+     * A bit indicating whether to forcefully apply the group's latest
+     * configuration when repairing a VM. Valid options are:
+     *
+     *
+     *
+     *      -  NO (default): If configuration updates are available, they are not
+     *      forcefully applied during repair. Instead, configuration updates are
+     *      applied according to the group's update policy.
+     *
+     *      -  YES: If configuration updates are available, they are applied
+     *      during repair.
      * Check the ForceUpdateOnRepair enum for the list of possible values.
      * </pre>
      *
@@ -1129,7 +1303,17 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
      *
      *
      * <pre>
-     * A bit indicating whether to forcefully apply the group's latest configuration when repairing a VM. Valid options are: - NO (default): If configuration updates are available, they are not forcefully applied during repair. Instead, configuration updates are applied according to the group's update policy. - YES: If configuration updates are available, they are applied during repair.
+     * A bit indicating whether to forcefully apply the group's latest
+     * configuration when repairing a VM. Valid options are:
+     *
+     *
+     *
+     *      -  NO (default): If configuration updates are available, they are not
+     *      forcefully applied during repair. Instead, configuration updates are
+     *      applied according to the group's update policy.
+     *
+     *      -  YES: If configuration updates are available, they are applied
+     *      during repair.
      * Check the ForceUpdateOnRepair enum for the list of possible values.
      * </pre>
      *
@@ -1148,7 +1332,17 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
      *
      *
      * <pre>
-     * A bit indicating whether to forcefully apply the group's latest configuration when repairing a VM. Valid options are: - NO (default): If configuration updates are available, they are not forcefully applied during repair. Instead, configuration updates are applied according to the group's update policy. - YES: If configuration updates are available, they are applied during repair.
+     * A bit indicating whether to forcefully apply the group's latest
+     * configuration when repairing a VM. Valid options are:
+     *
+     *
+     *
+     *      -  NO (default): If configuration updates are available, they are not
+     *      forcefully applied during repair. Instead, configuration updates are
+     *      applied according to the group's update policy.
+     *
+     *      -  YES: If configuration updates are available, they are applied
+     *      during repair.
      * Check the ForceUpdateOnRepair enum for the list of possible values.
      * </pre>
      *

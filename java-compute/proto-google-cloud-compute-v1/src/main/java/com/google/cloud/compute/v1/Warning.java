@@ -70,7 +70,9 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+   * [Output Only] A warning code, if applicable. For example, Compute
+   * Engine returns NO_RESULTS_ON_PAGE if there
+   * are no results in the response.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Warning.Code}
@@ -90,7 +92,8 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Warning about failed cleanup of transient changes made by a failed operation.
+     * Warning about failed cleanup of transient changes made by a failed
+     * operation.
      * </pre>
      *
      * <code>CLEANUP_FAILED = 150308440;</code>
@@ -110,7 +113,8 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When deploying and at least one of the resources has a type marked as deprecated
+     * When deploying and at least one of the resources has a type marked as
+     * deprecated
      * </pre>
      *
      * <code>DEPRECATED_TYPE_USED = 346526230;</code>
@@ -130,7 +134,8 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When deploying and at least one of the resources has a type marked as experimental
+     * When deploying and at least one of the resources has a type marked as
+     * experimental
      * </pre>
      *
      * <code>EXPERIMENTAL_TYPE_USED = 451954443;</code>
@@ -150,7 +155,8 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Warning that value of a field has been overridden. Deprecated unused field.
+     * Warning that value of a field has been overridden.
+     * Deprecated unused field.
      * </pre>
      *
      * <code>FIELD_VALUE_OVERRIDEN = 329669423;</code>
@@ -170,7 +176,8 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A WEIGHTED_MAGLEV backend service is associated with a health check that is not of type HTTP/HTTPS/HTTP2.
+     * A WEIGHTED_MAGLEV backend service is associated with a health check that is
+     * not of type HTTP/HTTPS/HTTP2.
      * </pre>
      *
      * <code>INVALID_HEALTH_CHECK_FOR_DYNAMIC_WIEGHTED_LB = 401542606;</code>
@@ -190,7 +197,9 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource can't be retrieved due to list overhead quota exceed which captures the amount of resources filtered out by user-defined list filter.
+     * Resource can't be retrieved due to list overhead quota exceed
+     * which captures the amount of resources filtered out by
+     * user-defined list filter.
      * </pre>
      *
      * <code>LIST_OVERHEAD_QUOTA_EXCEED = 47618117;</code>
@@ -210,7 +219,8 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The route's nextHopIp address is not assigned to an instance on the network.
+     * The route's nextHopIp address is not assigned to an instance on the
+     * network.
      * </pre>
      *
      * <code>NEXT_HOP_ADDRESS_NOT_ASSIGNED = 324964999;</code>
@@ -230,7 +240,8 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The route's nextHopInstance URL refers to an instance that does not have an ipv6 interface on the same network as the route.
+     * The route's nextHopInstance URL refers to an instance that does not have an
+     * ipv6 interface on the same network as the route.
      * </pre>
      *
      * <code>NEXT_HOP_INSTANCE_HAS_NO_IPV6_INTERFACE = 146748434;</code>
@@ -250,7 +261,8 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The route's nextHopInstance URL refers to an instance that is not on the same network as the route.
+     * The route's nextHopInstance URL refers to an instance that is not on the
+     * same network as the route.
      * </pre>
      *
      * <code>NEXT_HOP_INSTANCE_NOT_ON_NETWORK = 243758146;</code>
@@ -270,7 +282,8 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Error which is not critical. We decided to continue the process despite the mentioned error.
+     * Error which is not critical. We decided to continue the process despite
+     * the mentioned error.
      * </pre>
      *
      * <code>NOT_CRITICAL_ERROR = 105763924;</code>
@@ -300,7 +313,8 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Quota information is not available to client requests (e.g: regions.list).
+     * Quota information is not available to client requests (e.g:
+     * regions.list).
      * </pre>
      *
      * <code>QUOTA_INFO_UNAVAILABLE = 304294182;</code>
@@ -310,7 +324,8 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The user attempted to use a resource that requires a TOS they have not accepted.
+     * The user attempted to use a resource that requires a TOS they have not
+     * accepted.
      * </pre>
      *
      * <code>REQUIRED_TOS_AGREEMENT = 3745539;</code>
@@ -330,7 +345,8 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more of the resources set to auto-delete could not be deleted because they were in use.
+     * One or more of the resources set to auto-delete could not be deleted
+     * because they were in use.
      * </pre>
      *
      * <code>RESOURCE_NOT_DELETED = 168598460;</code>
@@ -350,7 +366,9 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instance template used in instance group manager is valid as such, but its application does not make a lot of sense, because it allows only single instance in instance group.
+     * Instance template used in instance group manager is valid as such, but
+     * its application does not make a lot of sense, because it allows only
+     * single instance in instance group.
      * </pre>
      *
      * <code>SINGLE_INSTANCE_PROPERTY_TEMPLATE = 268305617;</code>
@@ -394,7 +412,8 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Warning about failed cleanup of transient changes made by a failed operation.
+     * Warning about failed cleanup of transient changes made by a failed
+     * operation.
      * </pre>
      *
      * <code>CLEANUP_FAILED = 150308440;</code>
@@ -416,7 +435,8 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When deploying and at least one of the resources has a type marked as deprecated
+     * When deploying and at least one of the resources has a type marked as
+     * deprecated
      * </pre>
      *
      * <code>DEPRECATED_TYPE_USED = 346526230;</code>
@@ -438,7 +458,8 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When deploying and at least one of the resources has a type marked as experimental
+     * When deploying and at least one of the resources has a type marked as
+     * experimental
      * </pre>
      *
      * <code>EXPERIMENTAL_TYPE_USED = 451954443;</code>
@@ -460,7 +481,8 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Warning that value of a field has been overridden. Deprecated unused field.
+     * Warning that value of a field has been overridden.
+     * Deprecated unused field.
      * </pre>
      *
      * <code>FIELD_VALUE_OVERRIDEN = 329669423;</code>
@@ -482,7 +504,8 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A WEIGHTED_MAGLEV backend service is associated with a health check that is not of type HTTP/HTTPS/HTTP2.
+     * A WEIGHTED_MAGLEV backend service is associated with a health check that is
+     * not of type HTTP/HTTPS/HTTP2.
      * </pre>
      *
      * <code>INVALID_HEALTH_CHECK_FOR_DYNAMIC_WIEGHTED_LB = 401542606;</code>
@@ -504,7 +527,9 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource can't be retrieved due to list overhead quota exceed which captures the amount of resources filtered out by user-defined list filter.
+     * Resource can't be retrieved due to list overhead quota exceed
+     * which captures the amount of resources filtered out by
+     * user-defined list filter.
      * </pre>
      *
      * <code>LIST_OVERHEAD_QUOTA_EXCEED = 47618117;</code>
@@ -526,7 +551,8 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The route's nextHopIp address is not assigned to an instance on the network.
+     * The route's nextHopIp address is not assigned to an instance on the
+     * network.
      * </pre>
      *
      * <code>NEXT_HOP_ADDRESS_NOT_ASSIGNED = 324964999;</code>
@@ -548,7 +574,8 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The route's nextHopInstance URL refers to an instance that does not have an ipv6 interface on the same network as the route.
+     * The route's nextHopInstance URL refers to an instance that does not have an
+     * ipv6 interface on the same network as the route.
      * </pre>
      *
      * <code>NEXT_HOP_INSTANCE_HAS_NO_IPV6_INTERFACE = 146748434;</code>
@@ -570,7 +597,8 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The route's nextHopInstance URL refers to an instance that is not on the same network as the route.
+     * The route's nextHopInstance URL refers to an instance that is not on the
+     * same network as the route.
      * </pre>
      *
      * <code>NEXT_HOP_INSTANCE_NOT_ON_NETWORK = 243758146;</code>
@@ -592,7 +620,8 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Error which is not critical. We decided to continue the process despite the mentioned error.
+     * Error which is not critical. We decided to continue the process despite
+     * the mentioned error.
      * </pre>
      *
      * <code>NOT_CRITICAL_ERROR = 105763924;</code>
@@ -625,7 +654,8 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Quota information is not available to client requests (e.g: regions.list).
+     * Quota information is not available to client requests (e.g:
+     * regions.list).
      * </pre>
      *
      * <code>QUOTA_INFO_UNAVAILABLE = 304294182;</code>
@@ -636,7 +666,8 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The user attempted to use a resource that requires a TOS they have not accepted.
+     * The user attempted to use a resource that requires a TOS they have not
+     * accepted.
      * </pre>
      *
      * <code>REQUIRED_TOS_AGREEMENT = 3745539;</code>
@@ -658,7 +689,8 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * One or more of the resources set to auto-delete could not be deleted because they were in use.
+     * One or more of the resources set to auto-delete could not be deleted
+     * because they were in use.
      * </pre>
      *
      * <code>RESOURCE_NOT_DELETED = 168598460;</code>
@@ -680,7 +712,9 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instance template used in instance group manager is valid as such, but its application does not make a lot of sense, because it allows only single instance in instance group.
+     * Instance template used in instance group manager is valid as such, but
+     * its application does not make a lot of sense, because it allows only
+     * single instance in instance group.
      * </pre>
      *
      * <code>SINGLE_INSTANCE_PROPERTY_TEMPLATE = 268305617;</code>
@@ -856,7 +890,9 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+   * [Output Only] A warning code, if applicable. For example, Compute
+   * Engine returns NO_RESULTS_ON_PAGE if there
+   * are no results in the response.
    * Check the Code enum for the list of possible values.
    * </pre>
    *
@@ -873,7 +909,9 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+   * [Output Only] A warning code, if applicable. For example, Compute
+   * Engine returns NO_RESULTS_ON_PAGE if there
+   * are no results in the response.
    * Check the Code enum for the list of possible values.
    * </pre>
    *
@@ -898,7 +936,9 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+   * [Output Only] A warning code, if applicable. For example, Compute
+   * Engine returns NO_RESULTS_ON_PAGE if there
+   * are no results in the response.
    * Check the Code enum for the list of possible values.
    * </pre>
    *
@@ -928,7 +968,14 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+   * [Output Only] Metadata about this warning in key:
+   * value format. For example:
+   *
+   * "data": [
+   *   {
+   *    "key": "scope",
+   *    "value": "zones/us-east1-d"
+   *   }
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -942,7 +989,14 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+   * [Output Only] Metadata about this warning in key:
+   * value format. For example:
+   *
+   * "data": [
+   *   {
+   *    "key": "scope",
+   *    "value": "zones/us-east1-d"
+   *   }
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -957,7 +1011,14 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+   * [Output Only] Metadata about this warning in key:
+   * value format. For example:
+   *
+   * "data": [
+   *   {
+   *    "key": "scope",
+   *    "value": "zones/us-east1-d"
+   *   }
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -971,7 +1032,14 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+   * [Output Only] Metadata about this warning in key:
+   * value format. For example:
+   *
+   * "data": [
+   *   {
+   *    "key": "scope",
+   *    "value": "zones/us-east1-d"
+   *   }
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -985,7 +1053,14 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+   * [Output Only] Metadata about this warning in key:
+   * value format. For example:
+   *
+   * "data": [
+   *   {
+   *    "key": "scope",
+   *    "value": "zones/us-east1-d"
+   *   }
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1517,7 +1592,9 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+     * [Output Only] A warning code, if applicable. For example, Compute
+     * Engine returns NO_RESULTS_ON_PAGE if there
+     * are no results in the response.
      * Check the Code enum for the list of possible values.
      * </pre>
      *
@@ -1533,7 +1610,9 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+     * [Output Only] A warning code, if applicable. For example, Compute
+     * Engine returns NO_RESULTS_ON_PAGE if there
+     * are no results in the response.
      * Check the Code enum for the list of possible values.
      * </pre>
      *
@@ -1557,7 +1636,9 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+     * [Output Only] A warning code, if applicable. For example, Compute
+     * Engine returns NO_RESULTS_ON_PAGE if there
+     * are no results in the response.
      * Check the Code enum for the list of possible values.
      * </pre>
      *
@@ -1581,7 +1662,9 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+     * [Output Only] A warning code, if applicable. For example, Compute
+     * Engine returns NO_RESULTS_ON_PAGE if there
+     * are no results in the response.
      * Check the Code enum for the list of possible values.
      * </pre>
      *
@@ -1604,7 +1687,9 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+     * [Output Only] A warning code, if applicable. For example, Compute
+     * Engine returns NO_RESULTS_ON_PAGE if there
+     * are no results in the response.
      * Check the Code enum for the list of possible values.
      * </pre>
      *
@@ -1623,7 +1708,9 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+     * [Output Only] A warning code, if applicable. For example, Compute
+     * Engine returns NO_RESULTS_ON_PAGE if there
+     * are no results in the response.
      * Check the Code enum for the list of possible values.
      * </pre>
      *
@@ -1663,7 +1750,14 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key:
+     * value format. For example:
+     *
+     * "data": [
+     *   {
+     *    "key": "scope",
+     *    "value": "zones/us-east1-d"
+     *   }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1680,7 +1774,14 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key:
+     * value format. For example:
+     *
+     * "data": [
+     *   {
+     *    "key": "scope",
+     *    "value": "zones/us-east1-d"
+     *   }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1697,7 +1798,14 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key:
+     * value format. For example:
+     *
+     * "data": [
+     *   {
+     *    "key": "scope",
+     *    "value": "zones/us-east1-d"
+     *   }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1714,7 +1822,14 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key:
+     * value format. For example:
+     *
+     * "data": [
+     *   {
+     *    "key": "scope",
+     *    "value": "zones/us-east1-d"
+     *   }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1737,7 +1852,14 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key:
+     * value format. For example:
+     *
+     * "data": [
+     *   {
+     *    "key": "scope",
+     *    "value": "zones/us-east1-d"
+     *   }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1757,7 +1879,14 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key:
+     * value format. For example:
+     *
+     * "data": [
+     *   {
+     *    "key": "scope",
+     *    "value": "zones/us-east1-d"
+     *   }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1780,7 +1909,14 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key:
+     * value format. For example:
+     *
+     * "data": [
+     *   {
+     *    "key": "scope",
+     *    "value": "zones/us-east1-d"
+     *   }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1803,7 +1939,14 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key:
+     * value format. For example:
+     *
+     * "data": [
+     *   {
+     *    "key": "scope",
+     *    "value": "zones/us-east1-d"
+     *   }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1823,7 +1966,14 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key:
+     * value format. For example:
+     *
+     * "data": [
+     *   {
+     *    "key": "scope",
+     *    "value": "zones/us-east1-d"
+     *   }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1843,7 +1993,14 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key:
+     * value format. For example:
+     *
+     * "data": [
+     *   {
+     *    "key": "scope",
+     *    "value": "zones/us-east1-d"
+     *   }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1864,7 +2021,14 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key:
+     * value format. For example:
+     *
+     * "data": [
+     *   {
+     *    "key": "scope",
+     *    "value": "zones/us-east1-d"
+     *   }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1884,7 +2048,14 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key:
+     * value format. For example:
+     *
+     * "data": [
+     *   {
+     *    "key": "scope",
+     *    "value": "zones/us-east1-d"
+     *   }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1904,7 +2075,14 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key:
+     * value format. For example:
+     *
+     * "data": [
+     *   {
+     *    "key": "scope",
+     *    "value": "zones/us-east1-d"
+     *   }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1917,7 +2095,14 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key:
+     * value format. For example:
+     *
+     * "data": [
+     *   {
+     *    "key": "scope",
+     *    "value": "zones/us-east1-d"
+     *   }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1934,7 +2119,14 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key:
+     * value format. For example:
+     *
+     * "data": [
+     *   {
+     *    "key": "scope",
+     *    "value": "zones/us-east1-d"
+     *   }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1952,7 +2144,14 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key:
+     * value format. For example:
+     *
+     * "data": [
+     *   {
+     *    "key": "scope",
+     *    "value": "zones/us-east1-d"
+     *   }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1966,7 +2165,14 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key:
+     * value format. For example:
+     *
+     * "data": [
+     *   {
+     *    "key": "scope",
+     *    "value": "zones/us-east1-d"
+     *   }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1980,7 +2186,14 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key:
+     * value format. For example:
+     *
+     * "data": [
+     *   {
+     *    "key": "scope",
+     *    "value": "zones/us-east1-d"
+     *   }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>

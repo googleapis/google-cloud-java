@@ -418,10 +418,13 @@ public final class AccountsServiceGrpc {
      * <pre>
      * Deletes the specified account regardless of its type: standalone, advanced
      * account or sub-account. Deleting an advanced account leads to the deletion
-     * of all of its sub-accounts. Executing this method requires admin access.
-     * The deletion succeeds only if the account does not provide services
-     * to any other account and has no processed offers. You can use the `force`
-     * parameter to override this.
+     * of all of its sub-accounts. This also deletes the account's [developer
+     * registration
+     * entity](/merchant/api/reference/rest/accounts_v1/accounts.developerRegistration)
+     * and any associated GCP project to the account. Executing this method
+     * requires admin access. The deletion succeeds only if the account does not
+     * provide services to any other account and has no processed offers. You can
+     * use the `force` parameter to override this.
      * </pre>
      */
     default void deleteAccount(
@@ -562,10 +565,13 @@ public final class AccountsServiceGrpc {
      * <pre>
      * Deletes the specified account regardless of its type: standalone, advanced
      * account or sub-account. Deleting an advanced account leads to the deletion
-     * of all of its sub-accounts. Executing this method requires admin access.
-     * The deletion succeeds only if the account does not provide services
-     * to any other account and has no processed offers. You can use the `force`
-     * parameter to override this.
+     * of all of its sub-accounts. This also deletes the account's [developer
+     * registration
+     * entity](/merchant/api/reference/rest/accounts_v1/accounts.developerRegistration)
+     * and any associated GCP project to the account. Executing this method
+     * requires admin access. The deletion succeeds only if the account does not
+     * provide services to any other account and has no processed offers. You can
+     * use the `force` parameter to override this.
      * </pre>
      */
     public void deleteAccount(
@@ -696,10 +702,13 @@ public final class AccountsServiceGrpc {
      * <pre>
      * Deletes the specified account regardless of its type: standalone, advanced
      * account or sub-account. Deleting an advanced account leads to the deletion
-     * of all of its sub-accounts. Executing this method requires admin access.
-     * The deletion succeeds only if the account does not provide services
-     * to any other account and has no processed offers. You can use the `force`
-     * parameter to override this.
+     * of all of its sub-accounts. This also deletes the account's [developer
+     * registration
+     * entity](/merchant/api/reference/rest/accounts_v1/accounts.developerRegistration)
+     * and any associated GCP project to the account. Executing this method
+     * requires admin access. The deletion succeeds only if the account does not
+     * provide services to any other account and has no processed offers. You can
+     * use the `force` parameter to override this.
      * </pre>
      */
     public com.google.protobuf.Empty deleteAccount(
@@ -815,10 +824,13 @@ public final class AccountsServiceGrpc {
      * <pre>
      * Deletes the specified account regardless of its type: standalone, advanced
      * account or sub-account. Deleting an advanced account leads to the deletion
-     * of all of its sub-accounts. Executing this method requires admin access.
-     * The deletion succeeds only if the account does not provide services
-     * to any other account and has no processed offers. You can use the `force`
-     * parameter to override this.
+     * of all of its sub-accounts. This also deletes the account's [developer
+     * registration
+     * entity](/merchant/api/reference/rest/accounts_v1/accounts.developerRegistration)
+     * and any associated GCP project to the account. Executing this method
+     * requires admin access. The deletion succeeds only if the account does not
+     * provide services to any other account and has no processed offers. You can
+     * use the `force` parameter to override this.
      * </pre>
      */
     public com.google.protobuf.Empty deleteAccount(
@@ -933,10 +945,13 @@ public final class AccountsServiceGrpc {
      * <pre>
      * Deletes the specified account regardless of its type: standalone, advanced
      * account or sub-account. Deleting an advanced account leads to the deletion
-     * of all of its sub-accounts. Executing this method requires admin access.
-     * The deletion succeeds only if the account does not provide services
-     * to any other account and has no processed offers. You can use the `force`
-     * parameter to override this.
+     * of all of its sub-accounts. This also deletes the account's [developer
+     * registration
+     * entity](/merchant/api/reference/rest/accounts_v1/accounts.developerRegistration)
+     * and any associated GCP project to the account. Executing this method
+     * requires admin access. The deletion succeeds only if the account does not
+     * provide services to any other account and has no processed offers. You can
+     * use the `force` parameter to override this.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>

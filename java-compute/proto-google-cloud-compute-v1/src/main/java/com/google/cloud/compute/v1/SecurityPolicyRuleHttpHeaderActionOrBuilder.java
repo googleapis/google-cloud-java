@@ -28,7 +28,8 @@ public interface SecurityPolicyRuleHttpHeaderActionOrBuilder
    *
    *
    * <pre>
-   * The list of request headers to add or overwrite if they're already present.
+   * The list of request headers to add or overwrite if they're already
+   * present.
    * </pre>
    *
    * <code>
@@ -42,7 +43,8 @@ public interface SecurityPolicyRuleHttpHeaderActionOrBuilder
    *
    *
    * <pre>
-   * The list of request headers to add or overwrite if they're already present.
+   * The list of request headers to add or overwrite if they're already
+   * present.
    * </pre>
    *
    * <code>
@@ -56,7 +58,8 @@ public interface SecurityPolicyRuleHttpHeaderActionOrBuilder
    *
    *
    * <pre>
-   * The list of request headers to add or overwrite if they're already present.
+   * The list of request headers to add or overwrite if they're already
+   * present.
    * </pre>
    *
    * <code>
@@ -69,7 +72,8 @@ public interface SecurityPolicyRuleHttpHeaderActionOrBuilder
    *
    *
    * <pre>
-   * The list of request headers to add or overwrite if they're already present.
+   * The list of request headers to add or overwrite if they're already
+   * present.
    * </pre>
    *
    * <code>
@@ -86,7 +90,8 @@ public interface SecurityPolicyRuleHttpHeaderActionOrBuilder
    *
    *
    * <pre>
-   * The list of request headers to add or overwrite if they're already present.
+   * The list of request headers to add or overwrite if they're already
+   * present.
    * </pre>
    *
    * <code>

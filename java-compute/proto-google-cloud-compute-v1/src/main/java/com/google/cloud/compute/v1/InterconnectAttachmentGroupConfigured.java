@@ -23,7 +23,9 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * [Output Only] The redundancy this group is configured to support. The way a user queries what SLA their Attachment gets is by looking at this field of the Attachment's AttachmentGroup.
+ * [Output Only] The redundancy this group is configured to support. The way a
+ * user queries what SLA their Attachment gets is by looking at this field of
+ * the Attachment's AttachmentGroup.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.InterconnectAttachmentGroupConfigured}
@@ -283,7 +285,9 @@ public final class InterconnectAttachmentGroupConfigured
    *
    *
    * <pre>
-   * [Output Only] The redundancy this group is configured to support. The way a user queries what SLA their Attachment gets is by looking at this field of the Attachment's AttachmentGroup.
+   * [Output Only] The redundancy this group is configured to support. The way a
+   * user queries what SLA their Attachment gets is by looking at this field of
+   * the Attachment's AttachmentGroup.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.InterconnectAttachmentGroupConfigured}

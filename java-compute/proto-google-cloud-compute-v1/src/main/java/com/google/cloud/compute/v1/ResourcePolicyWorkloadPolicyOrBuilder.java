@@ -28,7 +28,8 @@ public interface ResourcePolicyWorkloadPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the topology required to create a partition for VMs that have interconnected GPUs.
+   * Specifies the topology required to create a partition for VMs that have
+   * interconnected GPUs.
    * </pre>
    *
    * <code>optional string accelerator_topology = 389323203;</code>
@@ -41,7 +42,8 @@ public interface ResourcePolicyWorkloadPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the topology required to create a partition for VMs that have interconnected GPUs.
+   * Specifies the topology required to create a partition for VMs that have
+   * interconnected GPUs.
    * </pre>
    *
    * <code>optional string accelerator_topology = 389323203;</code>
@@ -54,7 +56,8 @@ public interface ResourcePolicyWorkloadPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the topology required to create a partition for VMs that have interconnected GPUs.
+   * Specifies the topology required to create a partition for VMs that have
+   * interconnected GPUs.
    * </pre>
    *
    * <code>optional string accelerator_topology = 389323203;</code>

@@ -28,7 +28,102 @@ public interface ShieldedInstanceIdentityOrBuilder
    *
    *
    * <pre>
-   * An Endorsement Key (EK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
+   * An Endorsement Key (EK) made by the ECC P256 algorithm
+   * issued to the Shielded Instance's vTPM.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry ecc_p256_encryption_key = 469607365;
+   * </code>
+   *
+   * @return Whether the eccP256EncryptionKey field is set.
+   */
+  boolean hasEccP256EncryptionKey();
+
+  /**
+   *
+   *
+   * <pre>
+   * An Endorsement Key (EK) made by the ECC P256 algorithm
+   * issued to the Shielded Instance's vTPM.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry ecc_p256_encryption_key = 469607365;
+   * </code>
+   *
+   * @return The eccP256EncryptionKey.
+   */
+  com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry getEccP256EncryptionKey();
+
+  /**
+   *
+   *
+   * <pre>
+   * An Endorsement Key (EK) made by the ECC P256 algorithm
+   * issued to the Shielded Instance's vTPM.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry ecc_p256_encryption_key = 469607365;
+   * </code>
+   */
+  com.google.cloud.compute.v1.ShieldedInstanceIdentityEntryOrBuilder
+      getEccP256EncryptionKeyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * An Attestation Key (AK) made by the ECC P256 algorithm
+   * issued to the Shielded Instance's vTPM.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry ecc_p256_signing_key = 477678403;
+   * </code>
+   *
+   * @return Whether the eccP256SigningKey field is set.
+   */
+  boolean hasEccP256SigningKey();
+
+  /**
+   *
+   *
+   * <pre>
+   * An Attestation Key (AK) made by the ECC P256 algorithm
+   * issued to the Shielded Instance's vTPM.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry ecc_p256_signing_key = 477678403;
+   * </code>
+   *
+   * @return The eccP256SigningKey.
+   */
+  com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry getEccP256SigningKey();
+
+  /**
+   *
+   *
+   * <pre>
+   * An Attestation Key (AK) made by the ECC P256 algorithm
+   * issued to the Shielded Instance's vTPM.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry ecc_p256_signing_key = 477678403;
+   * </code>
+   */
+  com.google.cloud.compute.v1.ShieldedInstanceIdentityEntryOrBuilder
+      getEccP256SigningKeyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * An Endorsement Key (EK) made by the RSA 2048 algorithm
+   * issued to the Shielded Instance's vTPM.
    * </pre>
    *
    * <code>
@@ -43,7 +138,8 @@ public interface ShieldedInstanceIdentityOrBuilder
    *
    *
    * <pre>
-   * An Endorsement Key (EK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
+   * An Endorsement Key (EK) made by the RSA 2048 algorithm
+   * issued to the Shielded Instance's vTPM.
    * </pre>
    *
    * <code>
@@ -58,7 +154,8 @@ public interface ShieldedInstanceIdentityOrBuilder
    *
    *
    * <pre>
-   * An Endorsement Key (EK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
+   * An Endorsement Key (EK) made by the RSA 2048 algorithm
+   * issued to the Shielded Instance's vTPM.
    * </pre>
    *
    * <code>
@@ -71,7 +168,8 @@ public interface ShieldedInstanceIdentityOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#shieldedInstanceIdentity for shielded Instance identity entry.
+   * [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
+   * identity entry.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -84,7 +182,8 @@ public interface ShieldedInstanceIdentityOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#shieldedInstanceIdentity for shielded Instance identity entry.
+   * [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
+   * identity entry.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -97,7 +196,8 @@ public interface ShieldedInstanceIdentityOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#shieldedInstanceIdentity for shielded Instance identity entry.
+   * [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
+   * identity entry.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -110,7 +210,8 @@ public interface ShieldedInstanceIdentityOrBuilder
    *
    *
    * <pre>
-   * An Attestation Key (AK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
+   * An Attestation Key (AK) made by the RSA 2048 algorithm
+   * issued to the Shielded Instance's vTPM.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 320948261;
@@ -124,7 +225,8 @@ public interface ShieldedInstanceIdentityOrBuilder
    *
    *
    * <pre>
-   * An Attestation Key (AK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
+   * An Attestation Key (AK) made by the RSA 2048 algorithm
+   * issued to the Shielded Instance's vTPM.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 320948261;
@@ -138,7 +240,8 @@ public interface ShieldedInstanceIdentityOrBuilder
    *
    *
    * <pre>
-   * An Attestation Key (AK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
+   * An Attestation Key (AK) made by the RSA 2048 algorithm
+   * issued to the Shielded Instance's vTPM.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 320948261;

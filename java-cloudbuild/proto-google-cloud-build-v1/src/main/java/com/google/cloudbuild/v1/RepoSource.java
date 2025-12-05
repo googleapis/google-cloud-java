@@ -140,11 +140,11 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * ID of the project that owns the Cloud Source Repository. If omitted, the
-   * project ID requesting the build is assumed.
+   * Optional. ID of the project that owns the Cloud Source Repository. If
+   * omitted, the project ID requesting the build is assumed.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The projectId.
    */
@@ -165,11 +165,11 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * ID of the project that owns the Cloud Source Repository. If omitted, the
-   * project ID requesting the build is assumed.
+   * Optional. ID of the project that owns the Cloud Source Repository. If
+   * omitted, the project ID requesting the build is assumed.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for projectId.
    */
@@ -195,10 +195,10 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the Cloud Source Repository.
+   * Required. Name of the Cloud Source Repository.
    * </pre>
    *
-   * <code>string repo_name = 2;</code>
+   * <code>string repo_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The repoName.
    */
@@ -219,10 +219,10 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the Cloud Source Repository.
+   * Required. Name of the Cloud Source Repository.
    * </pre>
    *
-   * <code>string repo_name = 2;</code>
+   * <code>string repo_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for repoName.
    */
@@ -485,13 +485,14 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Directory, relative to the source root, in which to run the build.
+   * Optional. Directory, relative to the source root, in which to run the
+   * build.
    *
    * This must be a relative path. If a step's `dir` is specified and is an
    * absolute path, this value is ignored for that step's execution.
    * </pre>
    *
-   * <code>string dir = 7;</code>
+   * <code>string dir = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The dir.
    */
@@ -512,13 +513,14 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Directory, relative to the source root, in which to run the build.
+   * Optional. Directory, relative to the source root, in which to run the
+   * build.
    *
    * This must be a relative path. If a step's `dir` is specified and is an
    * absolute path, this value is ignored for that step's execution.
    * </pre>
    *
-   * <code>string dir = 7;</code>
+   * <code>string dir = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for dir.
    */
@@ -542,11 +544,11 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Only trigger a build if the revision regex does NOT match the revision
-   * regex.
+   * Optional. Only trigger a build if the revision regex does NOT match the
+   * revision regex.
    * </pre>
    *
-   * <code>bool invert_regex = 8;</code>
+   * <code>bool invert_regex = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The invertRegex.
    */
@@ -588,11 +590,12 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Substitutions to use in a triggered build.
+   * Optional. Substitutions to use in a triggered build.
    * Should only be used with RunBuildTrigger
    * </pre>
    *
-   * <code>map&lt;string, string&gt; substitutions = 9;</code>
+   * <code>map&lt;string, string&gt; substitutions = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public boolean containsSubstitutions(java.lang.String key) {
@@ -613,11 +616,12 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Substitutions to use in a triggered build.
+   * Optional. Substitutions to use in a triggered build.
    * Should only be used with RunBuildTrigger
    * </pre>
    *
-   * <code>map&lt;string, string&gt; substitutions = 9;</code>
+   * <code>map&lt;string, string&gt; substitutions = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getSubstitutionsMap() {
@@ -628,11 +632,12 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Substitutions to use in a triggered build.
+   * Optional. Substitutions to use in a triggered build.
    * Should only be used with RunBuildTrigger
    * </pre>
    *
-   * <code>map&lt;string, string&gt; substitutions = 9;</code>
+   * <code>map&lt;string, string&gt; substitutions = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getSubstitutionsOrDefault(
@@ -650,11 +655,12 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Substitutions to use in a triggered build.
+   * Optional. Substitutions to use in a triggered build.
    * Should only be used with RunBuildTrigger
    * </pre>
    *
-   * <code>map&lt;string, string&gt; substitutions = 9;</code>
+   * <code>map&lt;string, string&gt; substitutions = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.lang.String getSubstitutionsOrThrow(java.lang.String key) {
@@ -1259,11 +1265,11 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * ID of the project that owns the Cloud Source Repository. If omitted, the
-     * project ID requesting the build is assumed.
+     * Optional. ID of the project that owns the Cloud Source Repository. If
+     * omitted, the project ID requesting the build is assumed.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The projectId.
      */
@@ -1283,11 +1289,11 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * ID of the project that owns the Cloud Source Repository. If omitted, the
-     * project ID requesting the build is assumed.
+     * Optional. ID of the project that owns the Cloud Source Repository. If
+     * omitted, the project ID requesting the build is assumed.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for projectId.
      */
@@ -1307,11 +1313,11 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * ID of the project that owns the Cloud Source Repository. If omitted, the
-     * project ID requesting the build is assumed.
+     * Optional. ID of the project that owns the Cloud Source Repository. If
+     * omitted, the project ID requesting the build is assumed.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The projectId to set.
      * @return This builder for chaining.
@@ -1330,11 +1336,11 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * ID of the project that owns the Cloud Source Repository. If omitted, the
-     * project ID requesting the build is assumed.
+     * Optional. ID of the project that owns the Cloud Source Repository. If
+     * omitted, the project ID requesting the build is assumed.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1349,11 +1355,11 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * ID of the project that owns the Cloud Source Repository. If omitted, the
-     * project ID requesting the build is assumed.
+     * Optional. ID of the project that owns the Cloud Source Repository. If
+     * omitted, the project ID requesting the build is assumed.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
@@ -1375,10 +1381,10 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the Cloud Source Repository.
+     * Required. Name of the Cloud Source Repository.
      * </pre>
      *
-     * <code>string repo_name = 2;</code>
+     * <code>string repo_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The repoName.
      */
@@ -1398,10 +1404,10 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the Cloud Source Repository.
+     * Required. Name of the Cloud Source Repository.
      * </pre>
      *
-     * <code>string repo_name = 2;</code>
+     * <code>string repo_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for repoName.
      */
@@ -1421,10 +1427,10 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the Cloud Source Repository.
+     * Required. Name of the Cloud Source Repository.
      * </pre>
      *
-     * <code>string repo_name = 2;</code>
+     * <code>string repo_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The repoName to set.
      * @return This builder for chaining.
@@ -1443,10 +1449,10 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the Cloud Source Repository.
+     * Required. Name of the Cloud Source Repository.
      * </pre>
      *
-     * <code>string repo_name = 2;</code>
+     * <code>string repo_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1461,10 +1467,10 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the Cloud Source Repository.
+     * Required. Name of the Cloud Source Repository.
      * </pre>
      *
-     * <code>string repo_name = 2;</code>
+     * <code>string repo_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for repoName to set.
      * @return This builder for chaining.
@@ -1939,13 +1945,14 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Directory, relative to the source root, in which to run the build.
+     * Optional. Directory, relative to the source root, in which to run the
+     * build.
      *
      * This must be a relative path. If a step's `dir` is specified and is an
      * absolute path, this value is ignored for that step's execution.
      * </pre>
      *
-     * <code>string dir = 7;</code>
+     * <code>string dir = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The dir.
      */
@@ -1965,13 +1972,14 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Directory, relative to the source root, in which to run the build.
+     * Optional. Directory, relative to the source root, in which to run the
+     * build.
      *
      * This must be a relative path. If a step's `dir` is specified and is an
      * absolute path, this value is ignored for that step's execution.
      * </pre>
      *
-     * <code>string dir = 7;</code>
+     * <code>string dir = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for dir.
      */
@@ -1991,13 +1999,14 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Directory, relative to the source root, in which to run the build.
+     * Optional. Directory, relative to the source root, in which to run the
+     * build.
      *
      * This must be a relative path. If a step's `dir` is specified and is an
      * absolute path, this value is ignored for that step's execution.
      * </pre>
      *
-     * <code>string dir = 7;</code>
+     * <code>string dir = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The dir to set.
      * @return This builder for chaining.
@@ -2016,13 +2025,14 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Directory, relative to the source root, in which to run the build.
+     * Optional. Directory, relative to the source root, in which to run the
+     * build.
      *
      * This must be a relative path. If a step's `dir` is specified and is an
      * absolute path, this value is ignored for that step's execution.
      * </pre>
      *
-     * <code>string dir = 7;</code>
+     * <code>string dir = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -2037,13 +2047,14 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Directory, relative to the source root, in which to run the build.
+     * Optional. Directory, relative to the source root, in which to run the
+     * build.
      *
      * This must be a relative path. If a step's `dir` is specified and is an
      * absolute path, this value is ignored for that step's execution.
      * </pre>
      *
-     * <code>string dir = 7;</code>
+     * <code>string dir = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for dir to set.
      * @return This builder for chaining.
@@ -2065,11 +2076,11 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Only trigger a build if the revision regex does NOT match the revision
-     * regex.
+     * Optional. Only trigger a build if the revision regex does NOT match the
+     * revision regex.
      * </pre>
      *
-     * <code>bool invert_regex = 8;</code>
+     * <code>bool invert_regex = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The invertRegex.
      */
@@ -2082,11 +2093,11 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Only trigger a build if the revision regex does NOT match the revision
-     * regex.
+     * Optional. Only trigger a build if the revision regex does NOT match the
+     * revision regex.
      * </pre>
      *
-     * <code>bool invert_regex = 8;</code>
+     * <code>bool invert_regex = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The invertRegex to set.
      * @return This builder for chaining.
@@ -2103,11 +2114,11 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Only trigger a build if the revision regex does NOT match the revision
-     * regex.
+     * Optional. Only trigger a build if the revision regex does NOT match the
+     * revision regex.
      * </pre>
      *
-     * <code>bool invert_regex = 8;</code>
+     * <code>bool invert_regex = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -2151,11 +2162,12 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Substitutions to use in a triggered build.
+     * Optional. Substitutions to use in a triggered build.
      * Should only be used with RunBuildTrigger
      * </pre>
      *
-     * <code>map&lt;string, string&gt; substitutions = 9;</code>
+     * <code>map&lt;string, string&gt; substitutions = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public boolean containsSubstitutions(java.lang.String key) {
@@ -2176,11 +2188,12 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Substitutions to use in a triggered build.
+     * Optional. Substitutions to use in a triggered build.
      * Should only be used with RunBuildTrigger
      * </pre>
      *
-     * <code>map&lt;string, string&gt; substitutions = 9;</code>
+     * <code>map&lt;string, string&gt; substitutions = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getSubstitutionsMap() {
@@ -2191,11 +2204,12 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Substitutions to use in a triggered build.
+     * Optional. Substitutions to use in a triggered build.
      * Should only be used with RunBuildTrigger
      * </pre>
      *
-     * <code>map&lt;string, string&gt; substitutions = 9;</code>
+     * <code>map&lt;string, string&gt; substitutions = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getSubstitutionsOrDefault(
@@ -2213,11 +2227,12 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Substitutions to use in a triggered build.
+     * Optional. Substitutions to use in a triggered build.
      * Should only be used with RunBuildTrigger
      * </pre>
      *
-     * <code>map&lt;string, string&gt; substitutions = 9;</code>
+     * <code>map&lt;string, string&gt; substitutions = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.lang.String getSubstitutionsOrThrow(java.lang.String key) {
@@ -2241,11 +2256,12 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Substitutions to use in a triggered build.
+     * Optional. Substitutions to use in a triggered build.
      * Should only be used with RunBuildTrigger
      * </pre>
      *
-     * <code>map&lt;string, string&gt; substitutions = 9;</code>
+     * <code>map&lt;string, string&gt; substitutions = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeSubstitutions(java.lang.String key) {
       if (key == null) {
@@ -2266,11 +2282,12 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Substitutions to use in a triggered build.
+     * Optional. Substitutions to use in a triggered build.
      * Should only be used with RunBuildTrigger
      * </pre>
      *
-     * <code>map&lt;string, string&gt; substitutions = 9;</code>
+     * <code>map&lt;string, string&gt; substitutions = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putSubstitutions(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -2288,11 +2305,12 @@ public final class RepoSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Substitutions to use in a triggered build.
+     * Optional. Substitutions to use in a triggered build.
      * Should only be used with RunBuildTrigger
      * </pre>
      *
-     * <code>map&lt;string, string&gt; substitutions = 9;</code>
+     * <code>map&lt;string, string&gt; substitutions = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAllSubstitutions(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableSubstitutions().getMutableMap().putAll(values);

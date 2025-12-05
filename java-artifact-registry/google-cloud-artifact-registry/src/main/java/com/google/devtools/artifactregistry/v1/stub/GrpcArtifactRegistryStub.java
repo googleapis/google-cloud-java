@@ -56,6 +56,9 @@ import com.google.devtools.artifactregistry.v1.DeleteRuleRequest;
 import com.google.devtools.artifactregistry.v1.DeleteTagRequest;
 import com.google.devtools.artifactregistry.v1.DeleteVersionRequest;
 import com.google.devtools.artifactregistry.v1.DockerImage;
+import com.google.devtools.artifactregistry.v1.ExportArtifactMetadata;
+import com.google.devtools.artifactregistry.v1.ExportArtifactRequest;
+import com.google.devtools.artifactregistry.v1.ExportArtifactResponse;
 import com.google.devtools.artifactregistry.v1.File;
 import com.google.devtools.artifactregistry.v1.GetAttachmentRequest;
 import com.google.devtools.artifactregistry.v1.GetDockerImageRequest;
@@ -683,6 +686,18 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<ExportArtifactRequest, Operation>
+      exportArtifactMethodDescriptor =
+          MethodDescriptor.<ExportArtifactRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1.ArtifactRegistry/ExportArtifact")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExportArtifactRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -803,6 +818,10 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
   private final UnaryCallable<DeleteAttachmentRequest, Operation> deleteAttachmentCallable;
   private final OperationCallable<DeleteAttachmentRequest, Empty, OperationMetadata>
       deleteAttachmentOperationCallable;
+  private final UnaryCallable<ExportArtifactRequest, Operation> exportArtifactCallable;
+  private final OperationCallable<
+          ExportArtifactRequest, ExportArtifactResponse, ExportArtifactMetadata>
+      exportArtifactOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1354,6 +1373,16 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ExportArtifactRequest, Operation> exportArtifactTransportSettings =
+        GrpcCallSettings.<ExportArtifactRequest, Operation>newBuilder()
+            .setMethodDescriptor(exportArtifactMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("repository", String.valueOf(request.getRepository()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -1635,6 +1664,15 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
         callableFactory.createOperationCallable(
             deleteAttachmentTransportSettings,
             settings.deleteAttachmentOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.exportArtifactCallable =
+        callableFactory.createUnaryCallable(
+            exportArtifactTransportSettings, settings.exportArtifactSettings(), clientContext);
+    this.exportArtifactOperationCallable =
+        callableFactory.createOperationCallable(
+            exportArtifactTransportSettings,
+            settings.exportArtifactOperationSettings(),
             clientContext,
             operationsStub);
     this.listLocationsCallable =
@@ -2027,6 +2065,17 @@ public class GrpcArtifactRegistryStub extends ArtifactRegistryStub {
   public OperationCallable<DeleteAttachmentRequest, Empty, OperationMetadata>
       deleteAttachmentOperationCallable() {
     return deleteAttachmentOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExportArtifactRequest, Operation> exportArtifactCallable() {
+    return exportArtifactCallable;
+  }
+
+  @Override
+  public OperationCallable<ExportArtifactRequest, ExportArtifactResponse, ExportArtifactMetadata>
+      exportArtifactOperationCallable() {
+    return exportArtifactOperationCallable;
   }
 
   @Override

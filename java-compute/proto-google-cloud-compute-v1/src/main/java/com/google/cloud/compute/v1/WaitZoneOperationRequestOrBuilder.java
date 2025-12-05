@@ -28,7 +28,8 @@ public interface WaitZoneOperationRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the Operations resource to return, or its unique numeric identifier.
+   * Name of the Operations resource to return, or its unique numeric
+   * identifier.
    * </pre>
    *
    * <code>string operation = 52090215 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -41,7 +42,8 @@ public interface WaitZoneOperationRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the Operations resource to return, or its unique numeric identifier.
+   * Name of the Operations resource to return, or its unique numeric
+   * identifier.
    * </pre>
    *
    * <code>string operation = 52090215 [(.google.api.field_behavior) = REQUIRED];</code>

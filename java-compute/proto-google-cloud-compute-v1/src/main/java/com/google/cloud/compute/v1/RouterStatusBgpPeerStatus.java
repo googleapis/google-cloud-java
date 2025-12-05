@@ -237,7 +237,8 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * BGP peer disabled because it requires IPv4 but the underlying connection is IPv6-only.
+     * BGP peer disabled because it requires IPv4 but the underlying
+     * connection is IPv6-only.
      * </pre>
      *
      * <code>IPV4_PEER_ON_IPV6_ONLY_CONNECTION = 435936662;</code>
@@ -247,7 +248,8 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * BGP peer disabled because it requires IPv6 but the underlying connection is IPv4-only.
+     * BGP peer disabled because it requires IPv6 but the underlying
+     * connection is IPv4-only.
      * </pre>
      *
      * <code>IPV6_PEER_ON_IPV4_ONLY_CONNECTION = 436304082;</code>
@@ -257,7 +259,9 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Indicates internal problems with configuration of MD5 authentication. This particular reason can only be returned when md5AuthEnabled is true and status is DOWN.
+     * Indicates internal problems with configuration of MD5 authentication.
+     * This particular reason can only be returned when md5AuthEnabled is true
+     * and status is DOWN.
      * </pre>
      *
      * <code>MD5_AUTH_INTERNAL_PROBLEM = 140462259;</code>
@@ -283,7 +287,8 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * BGP peer disabled because it requires IPv4 but the underlying connection is IPv6-only.
+     * BGP peer disabled because it requires IPv4 but the underlying
+     * connection is IPv6-only.
      * </pre>
      *
      * <code>IPV4_PEER_ON_IPV6_ONLY_CONNECTION = 435936662;</code>
@@ -294,7 +299,8 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * BGP peer disabled because it requires IPv6 but the underlying connection is IPv4-only.
+     * BGP peer disabled because it requires IPv6 but the underlying
+     * connection is IPv4-only.
      * </pre>
      *
      * <code>IPV6_PEER_ON_IPV4_ONLY_CONNECTION = 436304082;</code>
@@ -305,7 +311,9 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Indicates internal problems with configuration of MD5 authentication. This particular reason can only be returned when md5AuthEnabled is true and status is DOWN.
+     * Indicates internal problems with configuration of MD5 authentication.
+     * This particular reason can only be returned when md5AuthEnabled is true
+     * and status is DOWN.
      * </pre>
      *
      * <code>MD5_AUTH_INTERNAL_PROBLEM = 140462259;</code>
@@ -521,7 +529,8 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Enable IPv4 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 4.
+   * Enable IPv4 traffic over BGP Peer.
+   * It is enabled by default if the peerIpAddress is version 4.
    * </pre>
    *
    * <code>optional bool enable_ipv4 = 181467937;</code>
@@ -537,7 +546,8 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Enable IPv4 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 4.
+   * Enable IPv4 traffic over BGP Peer.
+   * It is enabled by default if the peerIpAddress is version 4.
    * </pre>
    *
    * <code>optional bool enable_ipv4 = 181467937;</code>
@@ -556,7 +566,8 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Enable IPv6 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 6.
+   * Enable IPv6 traffic over BGP Peer.
+   * It is enabled by default if the peerIpAddress is version 6.
    * </pre>
    *
    * <code>optional bool enable_ipv6 = 181467939;</code>
@@ -572,7 +583,8 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Enable IPv6 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 6.
+   * Enable IPv6 traffic over BGP Peer.
+   * It is enabled by default if the peerIpAddress is version 6.
    * </pre>
    *
    * <code>optional bool enable_ipv6 = 181467939;</code>
@@ -1215,7 +1227,10 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output only] URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance is the peer side of the BGP session.
+   * [Output only] URI of the VM instance that is used as third-party router
+   * appliances such as Next Gen Firewalls, Virtual Routers, or Router
+   * Appliances.
+   * The VM instance is the peer side of the BGP session.
    * </pre>
    *
    * <code>optional string router_appliance_instance = 468312989;</code>
@@ -1231,7 +1246,10 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output only] URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance is the peer side of the BGP session.
+   * [Output only] URI of the VM instance that is used as third-party router
+   * appliances such as Next Gen Firewalls, Virtual Routers, or Router
+   * Appliances.
+   * The VM instance is the peer side of the BGP session.
    * </pre>
    *
    * <code>optional string router_appliance_instance = 468312989;</code>
@@ -1255,7 +1273,10 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output only] URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance is the peer side of the BGP session.
+   * [Output only] URI of the VM instance that is used as third-party router
+   * appliances such as Next Gen Firewalls, Virtual Routers, or Router
+   * Appliances.
+   * The VM instance is the peer side of the BGP session.
    * </pre>
    *
    * <code>optional string router_appliance_instance = 468312989;</code>
@@ -1284,7 +1305,8 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The state of the BGP session. For a list of possible values for this field, see BGP session states.
+   * The state of the BGP session. For a list of possible values for this
+   * field, seeBGP session states.
    * </pre>
    *
    * <code>optional string state = 109757585;</code>
@@ -1300,7 +1322,8 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The state of the BGP session. For a list of possible values for this field, see BGP session states.
+   * The state of the BGP session. For a list of possible values for this
+   * field, seeBGP session states.
    * </pre>
    *
    * <code>optional string state = 109757585;</code>
@@ -1324,7 +1347,8 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The state of the BGP session. For a list of possible values for this field, see BGP session states.
+   * The state of the BGP session. For a list of possible values for this
+   * field, seeBGP session states.
    * </pre>
    *
    * <code>optional string state = 109757585;</code>
@@ -1497,7 +1521,9 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Time this session has been up. Format: 14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
+   * Time this session has been up.
+   * Format:
+   *  14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
    * </pre>
    *
    * <code>optional string uptime = 235379688;</code>
@@ -1513,7 +1539,9 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Time this session has been up. Format: 14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
+   * Time this session has been up.
+   * Format:
+   *  14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
    * </pre>
    *
    * <code>optional string uptime = 235379688;</code>
@@ -1537,7 +1565,9 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Time this session has been up. Format: 14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
+   * Time this session has been up.
+   * Format:
+   *  14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
    * </pre>
    *
    * <code>optional string uptime = 235379688;</code>
@@ -1566,7 +1596,9 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Time this session has been up, in seconds. Format: 145
+   * Time this session has been up, in seconds.
+   * Format:
+   *  145
    * </pre>
    *
    * <code>optional string uptime_seconds = 104736040;</code>
@@ -1582,7 +1614,9 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Time this session has been up, in seconds. Format: 145
+   * Time this session has been up, in seconds.
+   * Format:
+   *  145
    * </pre>
    *
    * <code>optional string uptime_seconds = 104736040;</code>
@@ -1606,7 +1640,9 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Time this session has been up, in seconds. Format: 145
+   * Time this session has been up, in seconds.
+   * Format:
+   *  145
    * </pre>
    *
    * <code>optional string uptime_seconds = 104736040;</code>
@@ -3108,7 +3144,8 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Enable IPv4 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 4.
+     * Enable IPv4 traffic over BGP Peer.
+     * It is enabled by default if the peerIpAddress is version 4.
      * </pre>
      *
      * <code>optional bool enable_ipv4 = 181467937;</code>
@@ -3124,7 +3161,8 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Enable IPv4 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 4.
+     * Enable IPv4 traffic over BGP Peer.
+     * It is enabled by default if the peerIpAddress is version 4.
      * </pre>
      *
      * <code>optional bool enable_ipv4 = 181467937;</code>
@@ -3140,7 +3178,8 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Enable IPv4 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 4.
+     * Enable IPv4 traffic over BGP Peer.
+     * It is enabled by default if the peerIpAddress is version 4.
      * </pre>
      *
      * <code>optional bool enable_ipv4 = 181467937;</code>
@@ -3160,7 +3199,8 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Enable IPv4 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 4.
+     * Enable IPv4 traffic over BGP Peer.
+     * It is enabled by default if the peerIpAddress is version 4.
      * </pre>
      *
      * <code>optional bool enable_ipv4 = 181467937;</code>
@@ -3180,7 +3220,8 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Enable IPv6 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 6.
+     * Enable IPv6 traffic over BGP Peer.
+     * It is enabled by default if the peerIpAddress is version 6.
      * </pre>
      *
      * <code>optional bool enable_ipv6 = 181467939;</code>
@@ -3196,7 +3237,8 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Enable IPv6 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 6.
+     * Enable IPv6 traffic over BGP Peer.
+     * It is enabled by default if the peerIpAddress is version 6.
      * </pre>
      *
      * <code>optional bool enable_ipv6 = 181467939;</code>
@@ -3212,7 +3254,8 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Enable IPv6 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 6.
+     * Enable IPv6 traffic over BGP Peer.
+     * It is enabled by default if the peerIpAddress is version 6.
      * </pre>
      *
      * <code>optional bool enable_ipv6 = 181467939;</code>
@@ -3232,7 +3275,8 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Enable IPv6 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 6.
+     * Enable IPv6 traffic over BGP Peer.
+     * It is enabled by default if the peerIpAddress is version 6.
      * </pre>
      *
      * <code>optional bool enable_ipv6 = 181467939;</code>
@@ -4404,7 +4448,10 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output only] URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance is the peer side of the BGP session.
+     * [Output only] URI of the VM instance that is used as third-party router
+     * appliances such as Next Gen Firewalls, Virtual Routers, or Router
+     * Appliances.
+     * The VM instance is the peer side of the BGP session.
      * </pre>
      *
      * <code>optional string router_appliance_instance = 468312989;</code>
@@ -4419,7 +4466,10 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output only] URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance is the peer side of the BGP session.
+     * [Output only] URI of the VM instance that is used as third-party router
+     * appliances such as Next Gen Firewalls, Virtual Routers, or Router
+     * Appliances.
+     * The VM instance is the peer side of the BGP session.
      * </pre>
      *
      * <code>optional string router_appliance_instance = 468312989;</code>
@@ -4442,7 +4492,10 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output only] URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance is the peer side of the BGP session.
+     * [Output only] URI of the VM instance that is used as third-party router
+     * appliances such as Next Gen Firewalls, Virtual Routers, or Router
+     * Appliances.
+     * The VM instance is the peer side of the BGP session.
      * </pre>
      *
      * <code>optional string router_appliance_instance = 468312989;</code>
@@ -4465,7 +4518,10 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output only] URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance is the peer side of the BGP session.
+     * [Output only] URI of the VM instance that is used as third-party router
+     * appliances such as Next Gen Firewalls, Virtual Routers, or Router
+     * Appliances.
+     * The VM instance is the peer side of the BGP session.
      * </pre>
      *
      * <code>optional string router_appliance_instance = 468312989;</code>
@@ -4487,7 +4543,10 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output only] URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance is the peer side of the BGP session.
+     * [Output only] URI of the VM instance that is used as third-party router
+     * appliances such as Next Gen Firewalls, Virtual Routers, or Router
+     * Appliances.
+     * The VM instance is the peer side of the BGP session.
      * </pre>
      *
      * <code>optional string router_appliance_instance = 468312989;</code>
@@ -4505,7 +4564,10 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output only] URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance is the peer side of the BGP session.
+     * [Output only] URI of the VM instance that is used as third-party router
+     * appliances such as Next Gen Firewalls, Virtual Routers, or Router
+     * Appliances.
+     * The VM instance is the peer side of the BGP session.
      * </pre>
      *
      * <code>optional string router_appliance_instance = 468312989;</code>
@@ -4530,7 +4592,8 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The state of the BGP session. For a list of possible values for this field, see BGP session states.
+     * The state of the BGP session. For a list of possible values for this
+     * field, seeBGP session states.
      * </pre>
      *
      * <code>optional string state = 109757585;</code>
@@ -4545,7 +4608,8 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The state of the BGP session. For a list of possible values for this field, see BGP session states.
+     * The state of the BGP session. For a list of possible values for this
+     * field, seeBGP session states.
      * </pre>
      *
      * <code>optional string state = 109757585;</code>
@@ -4568,7 +4632,8 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The state of the BGP session. For a list of possible values for this field, see BGP session states.
+     * The state of the BGP session. For a list of possible values for this
+     * field, seeBGP session states.
      * </pre>
      *
      * <code>optional string state = 109757585;</code>
@@ -4591,7 +4656,8 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The state of the BGP session. For a list of possible values for this field, see BGP session states.
+     * The state of the BGP session. For a list of possible values for this
+     * field, seeBGP session states.
      * </pre>
      *
      * <code>optional string state = 109757585;</code>
@@ -4613,7 +4679,8 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The state of the BGP session. For a list of possible values for this field, see BGP session states.
+     * The state of the BGP session. For a list of possible values for this
+     * field, seeBGP session states.
      * </pre>
      *
      * <code>optional string state = 109757585;</code>
@@ -4631,7 +4698,8 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The state of the BGP session. For a list of possible values for this field, see BGP session states.
+     * The state of the BGP session. For a list of possible values for this
+     * field, seeBGP session states.
      * </pre>
      *
      * <code>optional string state = 109757585;</code>
@@ -4920,7 +4988,9 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Time this session has been up. Format: 14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
+     * Time this session has been up.
+     * Format:
+     *  14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
      * </pre>
      *
      * <code>optional string uptime = 235379688;</code>
@@ -4935,7 +5005,9 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Time this session has been up. Format: 14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
+     * Time this session has been up.
+     * Format:
+     *  14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
      * </pre>
      *
      * <code>optional string uptime = 235379688;</code>
@@ -4958,7 +5030,9 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Time this session has been up. Format: 14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
+     * Time this session has been up.
+     * Format:
+     *  14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
      * </pre>
      *
      * <code>optional string uptime = 235379688;</code>
@@ -4981,7 +5055,9 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Time this session has been up. Format: 14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
+     * Time this session has been up.
+     * Format:
+     *  14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
      * </pre>
      *
      * <code>optional string uptime = 235379688;</code>
@@ -5003,7 +5079,9 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Time this session has been up. Format: 14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
+     * Time this session has been up.
+     * Format:
+     *  14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
      * </pre>
      *
      * <code>optional string uptime = 235379688;</code>
@@ -5021,7 +5099,9 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Time this session has been up. Format: 14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
+     * Time this session has been up.
+     * Format:
+     *  14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
      * </pre>
      *
      * <code>optional string uptime = 235379688;</code>
@@ -5046,7 +5126,9 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Time this session has been up, in seconds. Format: 145
+     * Time this session has been up, in seconds.
+     * Format:
+     *  145
      * </pre>
      *
      * <code>optional string uptime_seconds = 104736040;</code>
@@ -5061,7 +5143,9 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Time this session has been up, in seconds. Format: 145
+     * Time this session has been up, in seconds.
+     * Format:
+     *  145
      * </pre>
      *
      * <code>optional string uptime_seconds = 104736040;</code>
@@ -5084,7 +5168,9 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Time this session has been up, in seconds. Format: 145
+     * Time this session has been up, in seconds.
+     * Format:
+     *  145
      * </pre>
      *
      * <code>optional string uptime_seconds = 104736040;</code>
@@ -5107,7 +5193,9 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Time this session has been up, in seconds. Format: 145
+     * Time this session has been up, in seconds.
+     * Format:
+     *  145
      * </pre>
      *
      * <code>optional string uptime_seconds = 104736040;</code>
@@ -5129,7 +5217,9 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Time this session has been up, in seconds. Format: 145
+     * Time this session has been up, in seconds.
+     * Format:
+     *  145
      * </pre>
      *
      * <code>optional string uptime_seconds = 104736040;</code>
@@ -5147,7 +5237,9 @@ public final class RouterStatusBgpPeerStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Time this session has been up, in seconds. Format: 145
+     * Time this session has been up, in seconds.
+     * Format:
+     *  145
      * </pre>
      *
      * <code>optional string uptime_seconds = 104736040;</code>

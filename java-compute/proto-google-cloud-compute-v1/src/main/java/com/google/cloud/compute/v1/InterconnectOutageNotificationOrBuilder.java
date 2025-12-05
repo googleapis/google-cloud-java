@@ -28,7 +28,8 @@ public interface InterconnectOutageNotificationOrBuilder
    *
    *
    * <pre>
-   * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit IDs that will be affected.
+   * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit
+   * IDs that will be affected.
    * </pre>
    *
    * <code>repeated string affected_circuits = 177717013;</code>
@@ -41,7 +42,8 @@ public interface InterconnectOutageNotificationOrBuilder
    *
    *
    * <pre>
-   * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit IDs that will be affected.
+   * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit
+   * IDs that will be affected.
    * </pre>
    *
    * <code>repeated string affected_circuits = 177717013;</code>
@@ -54,7 +56,8 @@ public interface InterconnectOutageNotificationOrBuilder
    *
    *
    * <pre>
-   * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit IDs that will be affected.
+   * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit
+   * IDs that will be affected.
    * </pre>
    *
    * <code>repeated string affected_circuits = 177717013;</code>
@@ -68,7 +71,8 @@ public interface InterconnectOutageNotificationOrBuilder
    *
    *
    * <pre>
-   * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit IDs that will be affected.
+   * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit
+   * IDs that will be affected.
    * </pre>
    *
    * <code>repeated string affected_circuits = 177717013;</code>
@@ -121,7 +125,8 @@ public interface InterconnectOutageNotificationOrBuilder
    *
    *
    * <pre>
-   * Scheduled end time for the outage (milliseconds since Unix epoch).
+   * Scheduled end time for the outage (milliseconds since Unix
+   * epoch).
    * </pre>
    *
    * <code>optional int64 end_time = 114938801;</code>
@@ -134,7 +139,8 @@ public interface InterconnectOutageNotificationOrBuilder
    *
    *
    * <pre>
-   * Scheduled end time for the outage (milliseconds since Unix epoch).
+   * Scheduled end time for the outage (milliseconds since Unix
+   * epoch).
    * </pre>
    *
    * <code>optional int64 end_time = 114938801;</code>
@@ -147,7 +153,17 @@ public interface InterconnectOutageNotificationOrBuilder
    *
    *
    * <pre>
-   * Form this outage is expected to take, which can take one of the following values: - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window. - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+   * Form this outage is expected to take, which can take one of the following
+   * values:
+   *
+   *    - OUTAGE: The Interconnect may be completely out of service for
+   *    some or all of the specified window.
+   *    - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole
+   *    should remain up, but with reduced bandwidth.
+   *
+   *
+   * Note that the versions of this enum prefixed with "IT_" have been
+   * deprecated in favor of the unprefixed values.
    * Check the IssueType enum for the list of possible values.
    * </pre>
    *
@@ -161,7 +177,17 @@ public interface InterconnectOutageNotificationOrBuilder
    *
    *
    * <pre>
-   * Form this outage is expected to take, which can take one of the following values: - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window. - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+   * Form this outage is expected to take, which can take one of the following
+   * values:
+   *
+   *    - OUTAGE: The Interconnect may be completely out of service for
+   *    some or all of the specified window.
+   *    - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole
+   *    should remain up, but with reduced bandwidth.
+   *
+   *
+   * Note that the versions of this enum prefixed with "IT_" have been
+   * deprecated in favor of the unprefixed values.
    * Check the IssueType enum for the list of possible values.
    * </pre>
    *
@@ -175,7 +201,17 @@ public interface InterconnectOutageNotificationOrBuilder
    *
    *
    * <pre>
-   * Form this outage is expected to take, which can take one of the following values: - OUTAGE: The Interconnect may be completely out of service for some or all of the specified window. - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
+   * Form this outage is expected to take, which can take one of the following
+   * values:
+   *
+   *    - OUTAGE: The Interconnect may be completely out of service for
+   *    some or all of the specified window.
+   *    - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole
+   *    should remain up, but with reduced bandwidth.
+   *
+   *
+   * Note that the versions of this enum prefixed with "IT_" have been
+   * deprecated in favor of the unprefixed values.
    * Check the IssueType enum for the list of possible values.
    * </pre>
    *
@@ -228,7 +264,14 @@ public interface InterconnectOutageNotificationOrBuilder
    *
    *
    * <pre>
-   * The party that generated this notification, which can take the following value: - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+   * The party that generated this notification, which can take the following
+   * value:
+   *
+   *    - GOOGLE: this notification as generated by Google.
+   *
+   *
+   * Note that the value of NSRC_GOOGLE has been deprecated in favor of
+   * GOOGLE.
    * Check the Source enum for the list of possible values.
    * </pre>
    *
@@ -242,7 +285,14 @@ public interface InterconnectOutageNotificationOrBuilder
    *
    *
    * <pre>
-   * The party that generated this notification, which can take the following value: - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+   * The party that generated this notification, which can take the following
+   * value:
+   *
+   *    - GOOGLE: this notification as generated by Google.
+   *
+   *
+   * Note that the value of NSRC_GOOGLE has been deprecated in favor of
+   * GOOGLE.
    * Check the Source enum for the list of possible values.
    * </pre>
    *
@@ -256,7 +306,14 @@ public interface InterconnectOutageNotificationOrBuilder
    *
    *
    * <pre>
-   * The party that generated this notification, which can take the following value: - GOOGLE: this notification as generated by Google. Note that the value of NSRC_GOOGLE has been deprecated in favor of GOOGLE.
+   * The party that generated this notification, which can take the following
+   * value:
+   *
+   *    - GOOGLE: this notification as generated by Google.
+   *
+   *
+   * Note that the value of NSRC_GOOGLE has been deprecated in favor of
+   * GOOGLE.
    * Check the Source enum for the list of possible values.
    * </pre>
    *
@@ -270,7 +327,8 @@ public interface InterconnectOutageNotificationOrBuilder
    *
    *
    * <pre>
-   * Scheduled start time for the outage (milliseconds since Unix epoch).
+   * Scheduled start time for the outage (milliseconds since Unix
+   * epoch).
    * </pre>
    *
    * <code>optional int64 start_time = 37467274;</code>
@@ -283,7 +341,8 @@ public interface InterconnectOutageNotificationOrBuilder
    *
    *
    * <pre>
-   * Scheduled start time for the outage (milliseconds since Unix epoch).
+   * Scheduled start time for the outage (milliseconds since Unix
+   * epoch).
    * </pre>
    *
    * <code>optional int64 start_time = 37467274;</code>
@@ -296,7 +355,18 @@ public interface InterconnectOutageNotificationOrBuilder
    *
    *
    * <pre>
-   * State of this notification, which can take one of the following values: - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling. - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. - COMPLETED: The outage associated with this notification is complete. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+   * State of this notification, which can take one of the following values:
+   *
+   *    - ACTIVE: This outage notification is active. The event could be in
+   *    the past, present, or future. See start_time and end_time for
+   *    scheduling.
+   *    - CANCELLED: The outage associated with this notification was cancelled
+   *    before the outage was due to start.
+   *    - COMPLETED: The outage associated with this notification is complete.
+   *
+   *
+   * Note that the versions of this enum prefixed with "NS_" have been
+   * deprecated in favor of the unprefixed values.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -310,7 +380,18 @@ public interface InterconnectOutageNotificationOrBuilder
    *
    *
    * <pre>
-   * State of this notification, which can take one of the following values: - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling. - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. - COMPLETED: The outage associated with this notification is complete. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+   * State of this notification, which can take one of the following values:
+   *
+   *    - ACTIVE: This outage notification is active. The event could be in
+   *    the past, present, or future. See start_time and end_time for
+   *    scheduling.
+   *    - CANCELLED: The outage associated with this notification was cancelled
+   *    before the outage was due to start.
+   *    - COMPLETED: The outage associated with this notification is complete.
+   *
+   *
+   * Note that the versions of this enum prefixed with "NS_" have been
+   * deprecated in favor of the unprefixed values.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -324,7 +405,18 @@ public interface InterconnectOutageNotificationOrBuilder
    *
    *
    * <pre>
-   * State of this notification, which can take one of the following values: - ACTIVE: This outage notification is active. The event could be in the past, present, or future. See start_time and end_time for scheduling. - CANCELLED: The outage associated with this notification was cancelled before the outage was due to start. - COMPLETED: The outage associated with this notification is complete. Note that the versions of this enum prefixed with "NS_" have been deprecated in favor of the unprefixed values.
+   * State of this notification, which can take one of the following values:
+   *
+   *    - ACTIVE: This outage notification is active. The event could be in
+   *    the past, present, or future. See start_time and end_time for
+   *    scheduling.
+   *    - CANCELLED: The outage associated with this notification was cancelled
+   *    before the outage was due to start.
+   *    - COMPLETED: The outage associated with this notification is complete.
+   *
+   *
+   * Note that the versions of this enum prefixed with "NS_" have been
+   * deprecated in favor of the unprefixed values.
    * Check the State enum for the list of possible values.
    * </pre>
    *

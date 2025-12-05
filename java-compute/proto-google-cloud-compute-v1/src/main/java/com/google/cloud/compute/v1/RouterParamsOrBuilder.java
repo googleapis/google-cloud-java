@@ -28,7 +28,19 @@ public interface RouterParamsOrBuilder
    *
    *
    * <pre>
-   * Tag keys/values directly bound to this resource. The field is allowed for INSERT only. The keys/values to set on the resource should be specified in either ID { : } or Namespaced format { : }. For example the following are valid inputs: * {"tagKeys/333" : "tagValues/444", "tagKeys/123" : "tagValues/456"} * {"123/environment" : "production", "345/abc" : "xyz"} Note: * Invalid combinations of ID &amp; namespaced format is not supported. For instance: {"123/environment" : "tagValues/444"} is invalid. * Inconsistent format is not supported. For instance: {"tagKeys/333" : "tagValues/444", "123/env" : "prod"} is invalid.
+   * Tag keys/values directly bound to this resource.
+   * The field is allowed for INSERT
+   * only. The keys/values to set on the resource should be specified in
+   * either ID { : } or Namespaced format
+   * { : }.
+   * For example the following are valid inputs:
+   * * {"tagKeys/333" : "tagValues/444", "tagKeys/123" : "tagValues/456"}
+   * * {"123/environment" : "production", "345/abc" : "xyz"}
+   * Note:
+   * * Invalid combinations of ID &amp; namespaced format is not supported. For
+   *   instance: {"123/environment" : "tagValues/444"} is invalid.
+   * * Inconsistent format is not supported. For instance:
+   *   {"tagKeys/333" : "tagValues/444", "123/env" : "prod"} is invalid.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -39,7 +51,19 @@ public interface RouterParamsOrBuilder
    *
    *
    * <pre>
-   * Tag keys/values directly bound to this resource. The field is allowed for INSERT only. The keys/values to set on the resource should be specified in either ID { : } or Namespaced format { : }. For example the following are valid inputs: * {"tagKeys/333" : "tagValues/444", "tagKeys/123" : "tagValues/456"} * {"123/environment" : "production", "345/abc" : "xyz"} Note: * Invalid combinations of ID &amp; namespaced format is not supported. For instance: {"123/environment" : "tagValues/444"} is invalid. * Inconsistent format is not supported. For instance: {"tagKeys/333" : "tagValues/444", "123/env" : "prod"} is invalid.
+   * Tag keys/values directly bound to this resource.
+   * The field is allowed for INSERT
+   * only. The keys/values to set on the resource should be specified in
+   * either ID { : } or Namespaced format
+   * { : }.
+   * For example the following are valid inputs:
+   * * {"tagKeys/333" : "tagValues/444", "tagKeys/123" : "tagValues/456"}
+   * * {"123/environment" : "production", "345/abc" : "xyz"}
+   * Note:
+   * * Invalid combinations of ID &amp; namespaced format is not supported. For
+   *   instance: {"123/environment" : "tagValues/444"} is invalid.
+   * * Inconsistent format is not supported. For instance:
+   *   {"tagKeys/333" : "tagValues/444", "123/env" : "prod"} is invalid.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -54,7 +78,19 @@ public interface RouterParamsOrBuilder
    *
    *
    * <pre>
-   * Tag keys/values directly bound to this resource. The field is allowed for INSERT only. The keys/values to set on the resource should be specified in either ID { : } or Namespaced format { : }. For example the following are valid inputs: * {"tagKeys/333" : "tagValues/444", "tagKeys/123" : "tagValues/456"} * {"123/environment" : "production", "345/abc" : "xyz"} Note: * Invalid combinations of ID &amp; namespaced format is not supported. For instance: {"123/environment" : "tagValues/444"} is invalid. * Inconsistent format is not supported. For instance: {"tagKeys/333" : "tagValues/444", "123/env" : "prod"} is invalid.
+   * Tag keys/values directly bound to this resource.
+   * The field is allowed for INSERT
+   * only. The keys/values to set on the resource should be specified in
+   * either ID { : } or Namespaced format
+   * { : }.
+   * For example the following are valid inputs:
+   * * {"tagKeys/333" : "tagValues/444", "tagKeys/123" : "tagValues/456"}
+   * * {"123/environment" : "production", "345/abc" : "xyz"}
+   * Note:
+   * * Invalid combinations of ID &amp; namespaced format is not supported. For
+   *   instance: {"123/environment" : "tagValues/444"} is invalid.
+   * * Inconsistent format is not supported. For instance:
+   *   {"tagKeys/333" : "tagValues/444", "123/env" : "prod"} is invalid.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -65,7 +101,19 @@ public interface RouterParamsOrBuilder
    *
    *
    * <pre>
-   * Tag keys/values directly bound to this resource. The field is allowed for INSERT only. The keys/values to set on the resource should be specified in either ID { : } or Namespaced format { : }. For example the following are valid inputs: * {"tagKeys/333" : "tagValues/444", "tagKeys/123" : "tagValues/456"} * {"123/environment" : "production", "345/abc" : "xyz"} Note: * Invalid combinations of ID &amp; namespaced format is not supported. For instance: {"123/environment" : "tagValues/444"} is invalid. * Inconsistent format is not supported. For instance: {"tagKeys/333" : "tagValues/444", "123/env" : "prod"} is invalid.
+   * Tag keys/values directly bound to this resource.
+   * The field is allowed for INSERT
+   * only. The keys/values to set on the resource should be specified in
+   * either ID { : } or Namespaced format
+   * { : }.
+   * For example the following are valid inputs:
+   * * {"tagKeys/333" : "tagValues/444", "tagKeys/123" : "tagValues/456"}
+   * * {"123/environment" : "production", "345/abc" : "xyz"}
+   * Note:
+   * * Invalid combinations of ID &amp; namespaced format is not supported. For
+   *   instance: {"123/environment" : "tagValues/444"} is invalid.
+   * * Inconsistent format is not supported. For instance:
+   *   {"tagKeys/333" : "tagValues/444", "123/env" : "prod"} is invalid.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -80,7 +128,19 @@ public interface RouterParamsOrBuilder
    *
    *
    * <pre>
-   * Tag keys/values directly bound to this resource. The field is allowed for INSERT only. The keys/values to set on the resource should be specified in either ID { : } or Namespaced format { : }. For example the following are valid inputs: * {"tagKeys/333" : "tagValues/444", "tagKeys/123" : "tagValues/456"} * {"123/environment" : "production", "345/abc" : "xyz"} Note: * Invalid combinations of ID &amp; namespaced format is not supported. For instance: {"123/environment" : "tagValues/444"} is invalid. * Inconsistent format is not supported. For instance: {"tagKeys/333" : "tagValues/444", "123/env" : "prod"} is invalid.
+   * Tag keys/values directly bound to this resource.
+   * The field is allowed for INSERT
+   * only. The keys/values to set on the resource should be specified in
+   * either ID { : } or Namespaced format
+   * { : }.
+   * For example the following are valid inputs:
+   * * {"tagKeys/333" : "tagValues/444", "tagKeys/123" : "tagValues/456"}
+   * * {"123/environment" : "production", "345/abc" : "xyz"}
+   * Note:
+   * * Invalid combinations of ID &amp; namespaced format is not supported. For
+   *   instance: {"123/environment" : "tagValues/444"} is invalid.
+   * * Inconsistent format is not supported. For instance:
+   *   {"tagKeys/333" : "tagValues/444", "123/env" : "prod"} is invalid.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>

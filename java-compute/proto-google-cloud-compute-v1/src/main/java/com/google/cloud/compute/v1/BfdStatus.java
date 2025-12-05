@@ -71,7 +71,11 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The BFD session initialization mode for this BGP peer. If set to ACTIVE, the Cloud Router will initiate the BFD session for this BGP peer. If set to PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP peer.
+   * The BFD session initialization mode for this BGP peer.
+   * If set to ACTIVE, the Cloud Router will initiate the BFD session for
+   * this BGP peer. If set to PASSIVE, the Cloud Router will wait for the
+   * peer router to initiate the BFD session for this BGP peer. If set to
+   * DISABLED, BFD is disabled for this BGP peer.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.BfdStatus.BfdSessionInitializationMode}
@@ -208,7 +212,10 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The diagnostic code specifies the local system's reason for the last change in session state. This allows remote systems to determine the reason that the previous session failed, for example. These diagnostic codes are specified in section 4.1 of RFC5880
+   * The diagnostic code specifies the local system's reason for the last change
+   * in session state. This allows remote systems to determine the reason that
+   * the previous session failed, for example. These diagnostic codes are
+   * specified in section 4.1 ofRFC5880
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.BfdStatus.LocalDiagnostic}
@@ -393,7 +400,8 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The current BFD session state as seen by the transmitting system. These states are specified in section 4.1 of RFC5880
+   * The current BFD session state as seen by the transmitting system. These
+   * states are specified in section 4.1 ofRFC5880
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.BfdStatus.LocalState}
@@ -547,7 +555,11 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The BFD session initialization mode for this BGP peer. If set to ACTIVE, the Cloud Router will initiate the BFD session for this BGP peer. If set to PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP peer.
+   * The BFD session initialization mode for this BGP peer.
+   * If set to ACTIVE, the Cloud Router will initiate the BFD session for
+   * this BGP peer. If set to PASSIVE, the Cloud Router will wait for the
+   * peer router to initiate the BFD session for this BGP peer. If set to
+   * DISABLED, BFD is disabled for this BGP peer.
    * Check the BfdSessionInitializationMode enum for the list of possible values.
    * </pre>
    *
@@ -564,7 +576,11 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The BFD session initialization mode for this BGP peer. If set to ACTIVE, the Cloud Router will initiate the BFD session for this BGP peer. If set to PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP peer.
+   * The BFD session initialization mode for this BGP peer.
+   * If set to ACTIVE, the Cloud Router will initiate the BFD session for
+   * this BGP peer. If set to PASSIVE, the Cloud Router will wait for the
+   * peer router to initiate the BFD session for this BGP peer. If set to
+   * DISABLED, BFD is disabled for this BGP peer.
    * Check the BfdSessionInitializationMode enum for the list of possible values.
    * </pre>
    *
@@ -589,7 +605,11 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The BFD session initialization mode for this BGP peer. If set to ACTIVE, the Cloud Router will initiate the BFD session for this BGP peer. If set to PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP peer.
+   * The BFD session initialization mode for this BGP peer.
+   * If set to ACTIVE, the Cloud Router will initiate the BFD session for
+   * this BGP peer. If set to PASSIVE, the Cloud Router will wait for the
+   * peer router to initiate the BFD session for this BGP peer. If set to
+   * DISABLED, BFD is disabled for this BGP peer.
    * Check the BfdSessionInitializationMode enum for the list of possible values.
    * </pre>
    *
@@ -797,7 +817,10 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The diagnostic code specifies the local system's reason for the last change in session state. This allows remote systems to determine the reason that the previous session failed, for example. These diagnostic codes are specified in section 4.1 of RFC5880
+   * The diagnostic code specifies the local system's reason for the last change
+   * in session state. This allows remote systems to determine the reason that
+   * the previous session failed, for example. These diagnostic codes are
+   * specified in section 4.1 ofRFC5880
    * Check the LocalDiagnostic enum for the list of possible values.
    * </pre>
    *
@@ -814,7 +837,10 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The diagnostic code specifies the local system's reason for the last change in session state. This allows remote systems to determine the reason that the previous session failed, for example. These diagnostic codes are specified in section 4.1 of RFC5880
+   * The diagnostic code specifies the local system's reason for the last change
+   * in session state. This allows remote systems to determine the reason that
+   * the previous session failed, for example. These diagnostic codes are
+   * specified in section 4.1 ofRFC5880
    * Check the LocalDiagnostic enum for the list of possible values.
    * </pre>
    *
@@ -839,7 +865,10 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The diagnostic code specifies the local system's reason for the last change in session state. This allows remote systems to determine the reason that the previous session failed, for example. These diagnostic codes are specified in section 4.1 of RFC5880
+   * The diagnostic code specifies the local system's reason for the last change
+   * in session state. This allows remote systems to determine the reason that
+   * the previous session failed, for example. These diagnostic codes are
+   * specified in section 4.1 ofRFC5880
    * Check the LocalDiagnostic enum for the list of possible values.
    * </pre>
    *
@@ -869,7 +898,8 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The current BFD session state as seen by the transmitting system. These states are specified in section 4.1 of RFC5880
+   * The current BFD session state as seen by the transmitting system. These
+   * states are specified in section 4.1 ofRFC5880
    * Check the LocalState enum for the list of possible values.
    * </pre>
    *
@@ -886,7 +916,8 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The current BFD session state as seen by the transmitting system. These states are specified in section 4.1 of RFC5880
+   * The current BFD session state as seen by the transmitting system. These
+   * states are specified in section 4.1 ofRFC5880
    * Check the LocalState enum for the list of possible values.
    * </pre>
    *
@@ -911,7 +942,8 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The current BFD session state as seen by the transmitting system. These states are specified in section 4.1 of RFC5880
+   * The current BFD session state as seen by the transmitting system. These
+   * states are specified in section 4.1 ofRFC5880
    * Check the LocalState enum for the list of possible values.
    * </pre>
    *
@@ -1804,7 +1836,11 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The BFD session initialization mode for this BGP peer. If set to ACTIVE, the Cloud Router will initiate the BFD session for this BGP peer. If set to PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP peer.
+     * The BFD session initialization mode for this BGP peer.
+     * If set to ACTIVE, the Cloud Router will initiate the BFD session for
+     * this BGP peer. If set to PASSIVE, the Cloud Router will wait for the
+     * peer router to initiate the BFD session for this BGP peer. If set to
+     * DISABLED, BFD is disabled for this BGP peer.
      * Check the BfdSessionInitializationMode enum for the list of possible values.
      * </pre>
      *
@@ -1820,7 +1856,11 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The BFD session initialization mode for this BGP peer. If set to ACTIVE, the Cloud Router will initiate the BFD session for this BGP peer. If set to PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP peer.
+     * The BFD session initialization mode for this BGP peer.
+     * If set to ACTIVE, the Cloud Router will initiate the BFD session for
+     * this BGP peer. If set to PASSIVE, the Cloud Router will wait for the
+     * peer router to initiate the BFD session for this BGP peer. If set to
+     * DISABLED, BFD is disabled for this BGP peer.
      * Check the BfdSessionInitializationMode enum for the list of possible values.
      * </pre>
      *
@@ -1844,7 +1884,11 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The BFD session initialization mode for this BGP peer. If set to ACTIVE, the Cloud Router will initiate the BFD session for this BGP peer. If set to PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP peer.
+     * The BFD session initialization mode for this BGP peer.
+     * If set to ACTIVE, the Cloud Router will initiate the BFD session for
+     * this BGP peer. If set to PASSIVE, the Cloud Router will wait for the
+     * peer router to initiate the BFD session for this BGP peer. If set to
+     * DISABLED, BFD is disabled for this BGP peer.
      * Check the BfdSessionInitializationMode enum for the list of possible values.
      * </pre>
      *
@@ -1868,7 +1912,11 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The BFD session initialization mode for this BGP peer. If set to ACTIVE, the Cloud Router will initiate the BFD session for this BGP peer. If set to PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP peer.
+     * The BFD session initialization mode for this BGP peer.
+     * If set to ACTIVE, the Cloud Router will initiate the BFD session for
+     * this BGP peer. If set to PASSIVE, the Cloud Router will wait for the
+     * peer router to initiate the BFD session for this BGP peer. If set to
+     * DISABLED, BFD is disabled for this BGP peer.
      * Check the BfdSessionInitializationMode enum for the list of possible values.
      * </pre>
      *
@@ -1891,7 +1939,11 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The BFD session initialization mode for this BGP peer. If set to ACTIVE, the Cloud Router will initiate the BFD session for this BGP peer. If set to PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP peer.
+     * The BFD session initialization mode for this BGP peer.
+     * If set to ACTIVE, the Cloud Router will initiate the BFD session for
+     * this BGP peer. If set to PASSIVE, the Cloud Router will wait for the
+     * peer router to initiate the BFD session for this BGP peer. If set to
+     * DISABLED, BFD is disabled for this BGP peer.
      * Check the BfdSessionInitializationMode enum for the list of possible values.
      * </pre>
      *
@@ -1910,7 +1962,11 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The BFD session initialization mode for this BGP peer. If set to ACTIVE, the Cloud Router will initiate the BFD session for this BGP peer. If set to PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP peer.
+     * The BFD session initialization mode for this BGP peer.
+     * If set to ACTIVE, the Cloud Router will initiate the BFD session for
+     * this BGP peer. If set to PASSIVE, the Cloud Router will wait for the
+     * peer router to initiate the BFD session for this BGP peer. If set to
+     * DISABLED, BFD is disabled for this BGP peer.
      * Check the BfdSessionInitializationMode enum for the list of possible values.
      * </pre>
      *
@@ -2621,7 +2677,10 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The diagnostic code specifies the local system's reason for the last change in session state. This allows remote systems to determine the reason that the previous session failed, for example. These diagnostic codes are specified in section 4.1 of RFC5880
+     * The diagnostic code specifies the local system's reason for the last change
+     * in session state. This allows remote systems to determine the reason that
+     * the previous session failed, for example. These diagnostic codes are
+     * specified in section 4.1 ofRFC5880
      * Check the LocalDiagnostic enum for the list of possible values.
      * </pre>
      *
@@ -2637,7 +2696,10 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The diagnostic code specifies the local system's reason for the last change in session state. This allows remote systems to determine the reason that the previous session failed, for example. These diagnostic codes are specified in section 4.1 of RFC5880
+     * The diagnostic code specifies the local system's reason for the last change
+     * in session state. This allows remote systems to determine the reason that
+     * the previous session failed, for example. These diagnostic codes are
+     * specified in section 4.1 ofRFC5880
      * Check the LocalDiagnostic enum for the list of possible values.
      * </pre>
      *
@@ -2661,7 +2723,10 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The diagnostic code specifies the local system's reason for the last change in session state. This allows remote systems to determine the reason that the previous session failed, for example. These diagnostic codes are specified in section 4.1 of RFC5880
+     * The diagnostic code specifies the local system's reason for the last change
+     * in session state. This allows remote systems to determine the reason that
+     * the previous session failed, for example. These diagnostic codes are
+     * specified in section 4.1 ofRFC5880
      * Check the LocalDiagnostic enum for the list of possible values.
      * </pre>
      *
@@ -2685,7 +2750,10 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The diagnostic code specifies the local system's reason for the last change in session state. This allows remote systems to determine the reason that the previous session failed, for example. These diagnostic codes are specified in section 4.1 of RFC5880
+     * The diagnostic code specifies the local system's reason for the last change
+     * in session state. This allows remote systems to determine the reason that
+     * the previous session failed, for example. These diagnostic codes are
+     * specified in section 4.1 ofRFC5880
      * Check the LocalDiagnostic enum for the list of possible values.
      * </pre>
      *
@@ -2708,7 +2776,10 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The diagnostic code specifies the local system's reason for the last change in session state. This allows remote systems to determine the reason that the previous session failed, for example. These diagnostic codes are specified in section 4.1 of RFC5880
+     * The diagnostic code specifies the local system's reason for the last change
+     * in session state. This allows remote systems to determine the reason that
+     * the previous session failed, for example. These diagnostic codes are
+     * specified in section 4.1 ofRFC5880
      * Check the LocalDiagnostic enum for the list of possible values.
      * </pre>
      *
@@ -2727,7 +2798,10 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The diagnostic code specifies the local system's reason for the last change in session state. This allows remote systems to determine the reason that the previous session failed, for example. These diagnostic codes are specified in section 4.1 of RFC5880
+     * The diagnostic code specifies the local system's reason for the last change
+     * in session state. This allows remote systems to determine the reason that
+     * the previous session failed, for example. These diagnostic codes are
+     * specified in section 4.1 ofRFC5880
      * Check the LocalDiagnostic enum for the list of possible values.
      * </pre>
      *
@@ -2753,7 +2827,8 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The current BFD session state as seen by the transmitting system. These states are specified in section 4.1 of RFC5880
+     * The current BFD session state as seen by the transmitting system. These
+     * states are specified in section 4.1 ofRFC5880
      * Check the LocalState enum for the list of possible values.
      * </pre>
      *
@@ -2769,7 +2844,8 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The current BFD session state as seen by the transmitting system. These states are specified in section 4.1 of RFC5880
+     * The current BFD session state as seen by the transmitting system. These
+     * states are specified in section 4.1 ofRFC5880
      * Check the LocalState enum for the list of possible values.
      * </pre>
      *
@@ -2793,7 +2869,8 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The current BFD session state as seen by the transmitting system. These states are specified in section 4.1 of RFC5880
+     * The current BFD session state as seen by the transmitting system. These
+     * states are specified in section 4.1 ofRFC5880
      * Check the LocalState enum for the list of possible values.
      * </pre>
      *
@@ -2817,7 +2894,8 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The current BFD session state as seen by the transmitting system. These states are specified in section 4.1 of RFC5880
+     * The current BFD session state as seen by the transmitting system. These
+     * states are specified in section 4.1 ofRFC5880
      * Check the LocalState enum for the list of possible values.
      * </pre>
      *
@@ -2840,7 +2918,8 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The current BFD session state as seen by the transmitting system. These states are specified in section 4.1 of RFC5880
+     * The current BFD session state as seen by the transmitting system. These
+     * states are specified in section 4.1 ofRFC5880
      * Check the LocalState enum for the list of possible values.
      * </pre>
      *
@@ -2859,7 +2938,8 @@ public final class BfdStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The current BFD session state as seen by the transmitting system. These states are specified in section 4.1 of RFC5880
+     * The current BFD session state as seen by the transmitting system. These
+     * states are specified in section 4.1 ofRFC5880
      * Check the LocalState enum for the list of possible values.
      * </pre>
      *

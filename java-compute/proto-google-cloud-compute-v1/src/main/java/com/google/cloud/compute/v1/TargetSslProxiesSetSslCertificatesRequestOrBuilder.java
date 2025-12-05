@@ -28,7 +28,9 @@ public interface TargetSslProxiesSetSslCertificatesRequestOrBuilder
    *
    *
    * <pre>
-   * New set of URLs to SslCertificate resources to associate with this TargetSslProxy. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
+   * New set of URLs to SslCertificate resources to associate with this
+   * TargetSslProxy. At least one SSL certificate must be specified.
+   * Currently, you may specify up to 15 SSL certificates.
    * </pre>
    *
    * <code>repeated string ssl_certificates = 366006543;</code>
@@ -41,7 +43,9 @@ public interface TargetSslProxiesSetSslCertificatesRequestOrBuilder
    *
    *
    * <pre>
-   * New set of URLs to SslCertificate resources to associate with this TargetSslProxy. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
+   * New set of URLs to SslCertificate resources to associate with this
+   * TargetSslProxy. At least one SSL certificate must be specified.
+   * Currently, you may specify up to 15 SSL certificates.
    * </pre>
    *
    * <code>repeated string ssl_certificates = 366006543;</code>
@@ -54,7 +58,9 @@ public interface TargetSslProxiesSetSslCertificatesRequestOrBuilder
    *
    *
    * <pre>
-   * New set of URLs to SslCertificate resources to associate with this TargetSslProxy. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
+   * New set of URLs to SslCertificate resources to associate with this
+   * TargetSslProxy. At least one SSL certificate must be specified.
+   * Currently, you may specify up to 15 SSL certificates.
    * </pre>
    *
    * <code>repeated string ssl_certificates = 366006543;</code>
@@ -68,7 +74,9 @@ public interface TargetSslProxiesSetSslCertificatesRequestOrBuilder
    *
    *
    * <pre>
-   * New set of URLs to SslCertificate resources to associate with this TargetSslProxy. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
+   * New set of URLs to SslCertificate resources to associate with this
+   * TargetSslProxy. At least one SSL certificate must be specified.
+   * Currently, you may specify up to 15 SSL certificates.
    * </pre>
    *
    * <code>repeated string ssl_certificates = 366006543;</code>

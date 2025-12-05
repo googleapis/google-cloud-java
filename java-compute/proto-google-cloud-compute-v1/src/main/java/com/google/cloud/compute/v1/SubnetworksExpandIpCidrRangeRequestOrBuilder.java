@@ -28,7 +28,10 @@ public interface SubnetworksExpandIpCidrRangeRequestOrBuilder
    *
    *
    * <pre>
-   * The IP (in CIDR format or netmask) of internal addresses that are legal on this Subnetwork. This range should be disjoint from other subnetworks within this network. This range can only be larger than (i.e. a superset of) the range previously defined before the update.
+   * The IP (in CIDR format or netmask) of internal addresses that are legal on
+   * this Subnetwork. This range should be disjoint from other subnetworks
+   * within this network. This range can only be larger than (i.e. a superset
+   * of) the range previously defined before the update.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -41,7 +44,10 @@ public interface SubnetworksExpandIpCidrRangeRequestOrBuilder
    *
    *
    * <pre>
-   * The IP (in CIDR format or netmask) of internal addresses that are legal on this Subnetwork. This range should be disjoint from other subnetworks within this network. This range can only be larger than (i.e. a superset of) the range previously defined before the update.
+   * The IP (in CIDR format or netmask) of internal addresses that are legal on
+   * this Subnetwork. This range should be disjoint from other subnetworks
+   * within this network. This range can only be larger than (i.e. a superset
+   * of) the range previously defined before the update.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -54,7 +60,10 @@ public interface SubnetworksExpandIpCidrRangeRequestOrBuilder
    *
    *
    * <pre>
-   * The IP (in CIDR format or netmask) of internal addresses that are legal on this Subnetwork. This range should be disjoint from other subnetworks within this network. This range can only be larger than (i.e. a superset of) the range previously defined before the update.
+   * The IP (in CIDR format or netmask) of internal addresses that are legal on
+   * this Subnetwork. This range should be disjoint from other subnetworks
+   * within this network. This range can only be larger than (i.e. a superset
+   * of) the range previously defined before the update.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>

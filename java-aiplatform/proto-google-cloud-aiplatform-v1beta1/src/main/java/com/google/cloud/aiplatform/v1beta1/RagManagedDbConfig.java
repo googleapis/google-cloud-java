@@ -72,7 +72,6 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Deprecated: Please use `Scaled` tier instead.
    * Enterprise tier offers production grade performance along with
    * autoscaling functionality. It is suitable for customers with large
    * amounts of data or performance sensitive workloads.
@@ -273,7 +272,6 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Deprecated: Please use `Scaled` tier instead.
      * Enterprise tier offers production grade performance along with
      * autoscaling functionality. It is suitable for customers with large
      * amounts of data or performance sensitive workloads.
@@ -1897,9 +1895,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Deprecated: Please use `Scaled` tier instead.
-   * Sets the RagManagedDb to the Enterprise tier. This is the default tier
-   * if not explicitly chosen.
+   * Sets the RagManagedDb to the Enterprise tier.
    * </pre>
    *
    * <code>
@@ -1907,7 +1903,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.enterprise is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=796
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=814
    * @return Whether the enterprise field is set.
    */
   @java.lang.Override
@@ -1920,9 +1916,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Deprecated: Please use `Scaled` tier instead.
-   * Sets the RagManagedDb to the Enterprise tier. This is the default tier
-   * if not explicitly chosen.
+   * Sets the RagManagedDb to the Enterprise tier.
    * </pre>
    *
    * <code>
@@ -1930,7 +1924,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.enterprise is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=796
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=814
    * @return The enterprise.
    */
   @java.lang.Override
@@ -1946,9 +1940,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Deprecated: Please use `Scaled` tier instead.
-   * Sets the RagManagedDb to the Enterprise tier. This is the default tier
-   * if not explicitly chosen.
+   * Sets the RagManagedDb to the Enterprise tier.
    * </pre>
    *
    * <code>
@@ -1971,7 +1963,8 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Sets the RagManagedDb to the Scaled tier.
+   * Sets the RagManagedDb to the Scaled tier. This is the default tier
+   * if not explicitly chosen.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled scaled = 4;</code>
@@ -1987,7 +1980,8 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Sets the RagManagedDb to the Scaled tier.
+   * Sets the RagManagedDb to the Scaled tier. This is the default tier
+   * if not explicitly chosen.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled scaled = 4;</code>
@@ -2006,7 +2000,8 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Sets the RagManagedDb to the Scaled tier.
+   * Sets the RagManagedDb to the Scaled tier. This is the default tier
+   * if not explicitly chosen.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled scaled = 4;</code>
@@ -2631,9 +2626,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Deprecated: Please use `Scaled` tier instead.
-     * Sets the RagManagedDb to the Enterprise tier. This is the default tier
-     * if not explicitly chosen.
+     * Sets the RagManagedDb to the Enterprise tier.
      * </pre>
      *
      * <code>
@@ -2641,7 +2634,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.enterprise is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=796
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=814
      * @return Whether the enterprise field is set.
      */
     @java.lang.Override
@@ -2654,9 +2647,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Deprecated: Please use `Scaled` tier instead.
-     * Sets the RagManagedDb to the Enterprise tier. This is the default tier
-     * if not explicitly chosen.
+     * Sets the RagManagedDb to the Enterprise tier.
      * </pre>
      *
      * <code>
@@ -2664,7 +2655,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.enterprise is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=796
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=814
      * @return The enterprise.
      */
     @java.lang.Override
@@ -2689,9 +2680,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Deprecated: Please use `Scaled` tier instead.
-     * Sets the RagManagedDb to the Enterprise tier. This is the default tier
-     * if not explicitly chosen.
+     * Sets the RagManagedDb to the Enterprise tier.
      * </pre>
      *
      * <code>
@@ -2718,9 +2707,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Deprecated: Please use `Scaled` tier instead.
-     * Sets the RagManagedDb to the Enterprise tier. This is the default tier
-     * if not explicitly chosen.
+     * Sets the RagManagedDb to the Enterprise tier.
      * </pre>
      *
      * <code>
@@ -2744,9 +2731,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Deprecated: Please use `Scaled` tier instead.
-     * Sets the RagManagedDb to the Enterprise tier. This is the default tier
-     * if not explicitly chosen.
+     * Sets the RagManagedDb to the Enterprise tier.
      * </pre>
      *
      * <code>
@@ -2785,9 +2770,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Deprecated: Please use `Scaled` tier instead.
-     * Sets the RagManagedDb to the Enterprise tier. This is the default tier
-     * if not explicitly chosen.
+     * Sets the RagManagedDb to the Enterprise tier.
      * </pre>
      *
      * <code>
@@ -2816,9 +2799,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Deprecated: Please use `Scaled` tier instead.
-     * Sets the RagManagedDb to the Enterprise tier. This is the default tier
-     * if not explicitly chosen.
+     * Sets the RagManagedDb to the Enterprise tier.
      * </pre>
      *
      * <code>
@@ -2835,9 +2816,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Deprecated: Please use `Scaled` tier instead.
-     * Sets the RagManagedDb to the Enterprise tier. This is the default tier
-     * if not explicitly chosen.
+     * Sets the RagManagedDb to the Enterprise tier.
      * </pre>
      *
      * <code>
@@ -2863,9 +2842,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Deprecated: Please use `Scaled` tier instead.
-     * Sets the RagManagedDb to the Enterprise tier. This is the default tier
-     * if not explicitly chosen.
+     * Sets the RagManagedDb to the Enterprise tier.
      * </pre>
      *
      * <code>
@@ -2908,7 +2885,8 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Sets the RagManagedDb to the Scaled tier.
+     * Sets the RagManagedDb to the Scaled tier. This is the default tier
+     * if not explicitly chosen.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled scaled = 4;</code>
@@ -2924,7 +2902,8 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Sets the RagManagedDb to the Scaled tier.
+     * Sets the RagManagedDb to the Scaled tier. This is the default tier
+     * if not explicitly chosen.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled scaled = 4;</code>
@@ -2950,7 +2929,8 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Sets the RagManagedDb to the Scaled tier.
+     * Sets the RagManagedDb to the Scaled tier. This is the default tier
+     * if not explicitly chosen.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled scaled = 4;</code>
@@ -2973,7 +2953,8 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Sets the RagManagedDb to the Scaled tier.
+     * Sets the RagManagedDb to the Scaled tier. This is the default tier
+     * if not explicitly chosen.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled scaled = 4;</code>
@@ -2994,7 +2975,8 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Sets the RagManagedDb to the Scaled tier.
+     * Sets the RagManagedDb to the Scaled tier. This is the default tier
+     * if not explicitly chosen.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled scaled = 4;</code>
@@ -3030,7 +3012,8 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Sets the RagManagedDb to the Scaled tier.
+     * Sets the RagManagedDb to the Scaled tier. This is the default tier
+     * if not explicitly chosen.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled scaled = 4;</code>
@@ -3056,7 +3039,8 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Sets the RagManagedDb to the Scaled tier.
+     * Sets the RagManagedDb to the Scaled tier. This is the default tier
+     * if not explicitly chosen.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled scaled = 4;</code>
@@ -3070,7 +3054,8 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Sets the RagManagedDb to the Scaled tier.
+     * Sets the RagManagedDb to the Scaled tier. This is the default tier
+     * if not explicitly chosen.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled scaled = 4;</code>
@@ -3092,7 +3077,8 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Sets the RagManagedDb to the Scaled tier.
+     * Sets the RagManagedDb to the Scaled tier. This is the default tier
+     * if not explicitly chosen.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled scaled = 4;</code>

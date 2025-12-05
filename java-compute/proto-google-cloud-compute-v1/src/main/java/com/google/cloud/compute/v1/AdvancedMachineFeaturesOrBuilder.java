@@ -122,7 +122,10 @@ public interface AdvancedMachineFeaturesOrBuilder
    *
    *
    * <pre>
-   * The number of threads per physical core. To disable simultaneous multithreading (SMT) set this to 1. If unset, the maximum number of threads supported per core by the underlying processor is assumed.
+   * The number of threads per physical core. To disable simultaneous
+   * multithreading (SMT) set this to 1. If unset, the maximum number
+   * of threads supported per core by the underlying processor is
+   * assumed.
    * </pre>
    *
    * <code>optional int32 threads_per_core = 352611671;</code>
@@ -135,7 +138,10 @@ public interface AdvancedMachineFeaturesOrBuilder
    *
    *
    * <pre>
-   * The number of threads per physical core. To disable simultaneous multithreading (SMT) set this to 1. If unset, the maximum number of threads supported per core by the underlying processor is assumed.
+   * The number of threads per physical core. To disable simultaneous
+   * multithreading (SMT) set this to 1. If unset, the maximum number
+   * of threads supported per core by the underlying processor is
+   * assumed.
    * </pre>
    *
    * <code>optional int32 threads_per_core = 352611671;</code>
@@ -148,7 +154,12 @@ public interface AdvancedMachineFeaturesOrBuilder
    *
    *
    * <pre>
-   * Turbo frequency mode to use for the instance. Supported modes include: * ALL_CORE_MAX Using empty string or not setting this field will use the platform-specific default turbo mode.
+   * Turbo frequency mode to use for the instance.
+   * Supported modes include:
+   * * ALL_CORE_MAX
+   *
+   * Using empty string or not setting this field will use the platform-specific
+   * default turbo mode.
    * </pre>
    *
    * <code>optional string turbo_mode = 432965412;</code>
@@ -161,7 +172,12 @@ public interface AdvancedMachineFeaturesOrBuilder
    *
    *
    * <pre>
-   * Turbo frequency mode to use for the instance. Supported modes include: * ALL_CORE_MAX Using empty string or not setting this field will use the platform-specific default turbo mode.
+   * Turbo frequency mode to use for the instance.
+   * Supported modes include:
+   * * ALL_CORE_MAX
+   *
+   * Using empty string or not setting this field will use the platform-specific
+   * default turbo mode.
    * </pre>
    *
    * <code>optional string turbo_mode = 432965412;</code>
@@ -174,7 +190,12 @@ public interface AdvancedMachineFeaturesOrBuilder
    *
    *
    * <pre>
-   * Turbo frequency mode to use for the instance. Supported modes include: * ALL_CORE_MAX Using empty string or not setting this field will use the platform-specific default turbo mode.
+   * Turbo frequency mode to use for the instance.
+   * Supported modes include:
+   * * ALL_CORE_MAX
+   *
+   * Using empty string or not setting this field will use the platform-specific
+   * default turbo mode.
    * </pre>
    *
    * <code>optional string turbo_mode = 432965412;</code>
@@ -187,7 +208,11 @@ public interface AdvancedMachineFeaturesOrBuilder
    *
    *
    * <pre>
-   * The number of physical cores to expose to an instance. Multiply by the number of threads per core to compute the total number of virtual CPUs to expose to the instance. If unset, the number of cores is inferred from the instance's nominal CPU count and the underlying platform's SMT width.
+   * The number of physical cores to expose to an instance. Multiply by
+   * the number of threads per core to compute the total number of virtual
+   * CPUs to expose to the instance. If unset, the number of cores is
+   * inferred from the instance's nominal CPU count and the underlying
+   * platform's SMT width.
    * </pre>
    *
    * <code>optional int32 visible_core_count = 193198684;</code>
@@ -200,7 +225,11 @@ public interface AdvancedMachineFeaturesOrBuilder
    *
    *
    * <pre>
-   * The number of physical cores to expose to an instance. Multiply by the number of threads per core to compute the total number of virtual CPUs to expose to the instance. If unset, the number of cores is inferred from the instance's nominal CPU count and the underlying platform's SMT width.
+   * The number of physical cores to expose to an instance. Multiply by
+   * the number of threads per core to compute the total number of virtual
+   * CPUs to expose to the instance. If unset, the number of cores is
+   * inferred from the instance's nominal CPU count and the underlying
+   * platform's SMT width.
    * </pre>
    *
    * <code>optional int32 visible_core_count = 193198684;</code>

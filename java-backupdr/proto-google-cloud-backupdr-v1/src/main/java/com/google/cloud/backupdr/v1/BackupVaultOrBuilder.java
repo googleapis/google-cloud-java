@@ -308,6 +308,55 @@ public interface BackupVaultOrBuilder
    *
    *
    * <pre>
+   * Optional. Setting for how a backup's enforced retention end time is
+   * inherited.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.backupdr.v1.BackupVault.BackupRetentionInheritance backup_retention_inheritance = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the backupRetentionInheritance field is set.
+   */
+  boolean hasBackupRetentionInheritance();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Setting for how a backup's enforced retention end time is
+   * inherited.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.backupdr.v1.BackupVault.BackupRetentionInheritance backup_retention_inheritance = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for backupRetentionInheritance.
+   */
+  int getBackupRetentionInheritanceValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Setting for how a backup's enforced retention end time is
+   * inherited.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.backupdr.v1.BackupVault.BackupRetentionInheritance backup_retention_inheritance = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The backupRetentionInheritance.
+   */
+  com.google.cloud.backupdr.v1.BackupVault.BackupRetentionInheritance
+      getBackupRetentionInheritance();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Set to true when there are no backups nested under this
    * resource.
    * </pre>
@@ -643,4 +692,47 @@ public interface BackupVaultOrBuilder
    * @return The accessRestriction.
    */
   com.google.cloud.backupdr.v1.BackupVault.AccessRestriction getAccessRestriction();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The encryption config of the backup vault.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.backupdr.v1.BackupVault.EncryptionConfig encryption_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the encryptionConfig field is set.
+   */
+  boolean hasEncryptionConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The encryption config of the backup vault.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.backupdr.v1.BackupVault.EncryptionConfig encryption_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The encryptionConfig.
+   */
+  com.google.cloud.backupdr.v1.BackupVault.EncryptionConfig getEncryptionConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The encryption config of the backup vault.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.backupdr.v1.BackupVault.EncryptionConfig encryption_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.backupdr.v1.BackupVault.EncryptionConfigOrBuilder getEncryptionConfigOrBuilder();
 }

@@ -231,6 +231,51 @@ public interface RagVectorDbConfigOrBuilder
    *
    *
    * <pre>
+   * The config for the RAG-managed Vertex Vector Search 2.0.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch rag_managed_vertex_vector_search = 8;
+   * </code>
+   *
+   * @return Whether the ragManagedVertexVectorSearch field is set.
+   */
+  boolean hasRagManagedVertexVectorSearch();
+
+  /**
+   *
+   *
+   * <pre>
+   * The config for the RAG-managed Vertex Vector Search 2.0.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch rag_managed_vertex_vector_search = 8;
+   * </code>
+   *
+   * @return The ragManagedVertexVectorSearch.
+   */
+  com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch
+      getRagManagedVertexVectorSearch();
+
+  /**
+   *
+   *
+   * <pre>
+   * The config for the RAG-managed Vertex Vector Search 2.0.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearch rag_managed_vertex_vector_search = 8;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RagVectorDbConfig.RagManagedVertexVectorSearchOrBuilder
+      getRagManagedVertexVectorSearchOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Authentication config for the chosen Vector DB.
    * </pre>
    *

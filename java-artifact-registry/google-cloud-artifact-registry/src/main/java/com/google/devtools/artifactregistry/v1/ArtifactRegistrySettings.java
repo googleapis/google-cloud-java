@@ -466,6 +466,18 @@ public class ArtifactRegistrySettings extends ClientSettings<ArtifactRegistrySet
     return ((ArtifactRegistryStubSettings) getStubSettings()).deleteAttachmentOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to exportArtifact. */
+  public UnaryCallSettings<ExportArtifactRequest, Operation> exportArtifactSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).exportArtifactSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportArtifact. */
+  public OperationCallSettings<
+          ExportArtifactRequest, ExportArtifactResponse, ExportArtifactMetadata>
+      exportArtifactOperationSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).exportArtifactOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -928,6 +940,18 @@ public class ArtifactRegistrySettings extends ClientSettings<ArtifactRegistrySet
     public OperationCallSettings.Builder<DeleteAttachmentRequest, Empty, OperationMetadata>
         deleteAttachmentOperationSettings() {
       return getStubSettingsBuilder().deleteAttachmentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportArtifact. */
+    public UnaryCallSettings.Builder<ExportArtifactRequest, Operation> exportArtifactSettings() {
+      return getStubSettingsBuilder().exportArtifactSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportArtifact. */
+    public OperationCallSettings.Builder<
+            ExportArtifactRequest, ExportArtifactResponse, ExportArtifactMetadata>
+        exportArtifactOperationSettings() {
+      return getStubSettingsBuilder().exportArtifactOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

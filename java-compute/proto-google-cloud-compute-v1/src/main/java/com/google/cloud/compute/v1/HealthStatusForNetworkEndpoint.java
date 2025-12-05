@@ -69,7 +69,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Health state of the network endpoint determined based on the health checks configured.
+   * Health state of the network endpoint determined based on the health checks
+   * configured.
    * Additional supported values which may be not listed in the enum directly due to technical reasons:
    * DRAINING
    * HEALTHY
@@ -217,7 +218,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Health state of the ipv6 network endpoint determined based on the health checks configured.
+   * Health state of the ipv6 network endpoint determined based on the health
+   * checks configured.
    * Additional supported values which may be not listed in the enum directly due to technical reasons:
    * DRAINING
    * HEALTHY
@@ -343,7 +345,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * URL of the backend service associated with the health state of the network endpoint.
+   * URL of the backend service associated with the health state of the network
+   * endpoint.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.BackendServiceReference backend_service = 306946058;
@@ -360,7 +363,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * URL of the backend service associated with the health state of the network endpoint.
+   * URL of the backend service associated with the health state of the network
+   * endpoint.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.BackendServiceReference backend_service = 306946058;
@@ -379,7 +383,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * URL of the backend service associated with the health state of the network endpoint.
+   * URL of the backend service associated with the health state of the network
+   * endpoint.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.BackendServiceReference backend_service = 306946058;
@@ -399,7 +404,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * URL of the forwarding rule associated with the health state of the network endpoint.
+   * URL of the forwarding rule associated with the health state of the network
+   * endpoint.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 269964030;
@@ -416,7 +422,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * URL of the forwarding rule associated with the health state of the network endpoint.
+   * URL of the forwarding rule associated with the health state of the network
+   * endpoint.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 269964030;
@@ -435,7 +442,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * URL of the forwarding rule associated with the health state of the network endpoint.
+   * URL of the forwarding rule associated with the health state of the network
+   * endpoint.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 269964030;
@@ -455,7 +463,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * URL of the health check associated with the health state of the network endpoint.
+   * URL of the health check associated with the health state of the network
+   * endpoint.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.HealthCheckReference health_check = 308876645;</code>
@@ -471,7 +480,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * URL of the health check associated with the health state of the network endpoint.
+   * URL of the health check associated with the health state of the network
+   * endpoint.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.HealthCheckReference health_check = 308876645;</code>
@@ -489,7 +499,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * URL of the health check associated with the health state of the network endpoint.
+   * URL of the health check associated with the health state of the network
+   * endpoint.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.HealthCheckReference health_check = 308876645;</code>
@@ -508,7 +519,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * URL of the health check service associated with the health state of the network endpoint.
+   * URL of the health check service associated with the health state of the
+   * network endpoint.
    * </pre>
    *
    * <code>
@@ -526,7 +538,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * URL of the health check service associated with the health state of the network endpoint.
+   * URL of the health check service associated with the health state of the
+   * network endpoint.
    * </pre>
    *
    * <code>
@@ -546,7 +559,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * URL of the health check service associated with the health state of the network endpoint.
+   * URL of the health check service associated with the health state of the
+   * network endpoint.
    * </pre>
    *
    * <code>
@@ -570,7 +584,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Health state of the network endpoint determined based on the health checks configured.
+   * Health state of the network endpoint determined based on the health checks
+   * configured.
    * Check the HealthState enum for the list of possible values.
    * </pre>
    *
@@ -587,7 +602,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Health state of the network endpoint determined based on the health checks configured.
+   * Health state of the network endpoint determined based on the health checks
+   * configured.
    * Check the HealthState enum for the list of possible values.
    * </pre>
    *
@@ -612,7 +628,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Health state of the network endpoint determined based on the health checks configured.
+   * Health state of the network endpoint determined based on the health checks
+   * configured.
    * Check the HealthState enum for the list of possible values.
    * </pre>
    *
@@ -642,7 +659,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Health state of the ipv6 network endpoint determined based on the health checks configured.
+   * Health state of the ipv6 network endpoint determined based on the health
+   * checks configured.
    * Check the Ipv6HealthState enum for the list of possible values.
    * </pre>
    *
@@ -659,7 +677,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Health state of the ipv6 network endpoint determined based on the health checks configured.
+   * Health state of the ipv6 network endpoint determined based on the health
+   * checks configured.
    * Check the Ipv6HealthState enum for the list of possible values.
    * </pre>
    *
@@ -684,7 +703,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Health state of the ipv6 network endpoint determined based on the health checks configured.
+   * Health state of the ipv6 network endpoint determined based on the health
+   * checks configured.
    * Check the Ipv6HealthState enum for the list of possible values.
    * </pre>
    *
@@ -1248,7 +1268,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the backend service associated with the health state of the network endpoint.
+     * URL of the backend service associated with the health state of the network
+     * endpoint.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.BackendServiceReference backend_service = 306946058;
@@ -1264,7 +1285,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the backend service associated with the health state of the network endpoint.
+     * URL of the backend service associated with the health state of the network
+     * endpoint.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.BackendServiceReference backend_service = 306946058;
@@ -1286,7 +1308,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the backend service associated with the health state of the network endpoint.
+     * URL of the backend service associated with the health state of the network
+     * endpoint.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.BackendServiceReference backend_service = 306946058;
@@ -1310,7 +1333,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the backend service associated with the health state of the network endpoint.
+     * URL of the backend service associated with the health state of the network
+     * endpoint.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.BackendServiceReference backend_service = 306946058;
@@ -1332,7 +1356,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the backend service associated with the health state of the network endpoint.
+     * URL of the backend service associated with the health state of the network
+     * endpoint.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.BackendServiceReference backend_service = 306946058;
@@ -1362,7 +1387,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the backend service associated with the health state of the network endpoint.
+     * URL of the backend service associated with the health state of the network
+     * endpoint.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.BackendServiceReference backend_service = 306946058;
@@ -1383,7 +1409,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the backend service associated with the health state of the network endpoint.
+     * URL of the backend service associated with the health state of the network
+     * endpoint.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.BackendServiceReference backend_service = 306946058;
@@ -1399,7 +1426,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the backend service associated with the health state of the network endpoint.
+     * URL of the backend service associated with the health state of the network
+     * endpoint.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.BackendServiceReference backend_service = 306946058;
@@ -1420,7 +1448,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the backend service associated with the health state of the network endpoint.
+     * URL of the backend service associated with the health state of the network
+     * endpoint.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.BackendServiceReference backend_service = 306946058;
@@ -1454,7 +1483,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the forwarding rule associated with the health state of the network endpoint.
+     * URL of the forwarding rule associated with the health state of the network
+     * endpoint.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 269964030;
@@ -1470,7 +1500,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the forwarding rule associated with the health state of the network endpoint.
+     * URL of the forwarding rule associated with the health state of the network
+     * endpoint.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 269964030;
@@ -1492,7 +1523,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the forwarding rule associated with the health state of the network endpoint.
+     * URL of the forwarding rule associated with the health state of the network
+     * endpoint.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 269964030;
@@ -1516,7 +1548,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the forwarding rule associated with the health state of the network endpoint.
+     * URL of the forwarding rule associated with the health state of the network
+     * endpoint.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 269964030;
@@ -1538,7 +1571,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the forwarding rule associated with the health state of the network endpoint.
+     * URL of the forwarding rule associated with the health state of the network
+     * endpoint.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 269964030;
@@ -1568,7 +1602,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the forwarding rule associated with the health state of the network endpoint.
+     * URL of the forwarding rule associated with the health state of the network
+     * endpoint.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 269964030;
@@ -1589,7 +1624,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the forwarding rule associated with the health state of the network endpoint.
+     * URL of the forwarding rule associated with the health state of the network
+     * endpoint.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 269964030;
@@ -1605,7 +1641,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the forwarding rule associated with the health state of the network endpoint.
+     * URL of the forwarding rule associated with the health state of the network
+     * endpoint.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 269964030;
@@ -1626,7 +1663,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the forwarding rule associated with the health state of the network endpoint.
+     * URL of the forwarding rule associated with the health state of the network
+     * endpoint.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ForwardingRuleReference forwarding_rule = 269964030;
@@ -1660,7 +1698,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the health check associated with the health state of the network endpoint.
+     * URL of the health check associated with the health state of the network
+     * endpoint.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HealthCheckReference health_check = 308876645;</code>
@@ -1675,7 +1714,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the health check associated with the health state of the network endpoint.
+     * URL of the health check associated with the health state of the network
+     * endpoint.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HealthCheckReference health_check = 308876645;</code>
@@ -1696,7 +1736,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the health check associated with the health state of the network endpoint.
+     * URL of the health check associated with the health state of the network
+     * endpoint.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HealthCheckReference health_check = 308876645;</code>
@@ -1719,7 +1760,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the health check associated with the health state of the network endpoint.
+     * URL of the health check associated with the health state of the network
+     * endpoint.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HealthCheckReference health_check = 308876645;</code>
@@ -1740,7 +1782,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the health check associated with the health state of the network endpoint.
+     * URL of the health check associated with the health state of the network
+     * endpoint.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HealthCheckReference health_check = 308876645;</code>
@@ -1769,7 +1812,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the health check associated with the health state of the network endpoint.
+     * URL of the health check associated with the health state of the network
+     * endpoint.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HealthCheckReference health_check = 308876645;</code>
@@ -1789,7 +1833,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the health check associated with the health state of the network endpoint.
+     * URL of the health check associated with the health state of the network
+     * endpoint.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HealthCheckReference health_check = 308876645;</code>
@@ -1804,7 +1849,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the health check associated with the health state of the network endpoint.
+     * URL of the health check associated with the health state of the network
+     * endpoint.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HealthCheckReference health_check = 308876645;</code>
@@ -1823,7 +1869,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the health check associated with the health state of the network endpoint.
+     * URL of the health check associated with the health state of the network
+     * endpoint.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.HealthCheckReference health_check = 308876645;</code>
@@ -1856,7 +1903,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the health check service associated with the health state of the network endpoint.
+     * URL of the health check service associated with the health state of the
+     * network endpoint.
      * </pre>
      *
      * <code>
@@ -1873,7 +1921,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the health check service associated with the health state of the network endpoint.
+     * URL of the health check service associated with the health state of the
+     * network endpoint.
      * </pre>
      *
      * <code>
@@ -1896,7 +1945,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the health check service associated with the health state of the network endpoint.
+     * URL of the health check service associated with the health state of the
+     * network endpoint.
      * </pre>
      *
      * <code>
@@ -1922,7 +1972,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the health check service associated with the health state of the network endpoint.
+     * URL of the health check service associated with the health state of the
+     * network endpoint.
      * </pre>
      *
      * <code>
@@ -1945,7 +1996,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the health check service associated with the health state of the network endpoint.
+     * URL of the health check service associated with the health state of the
+     * network endpoint.
      * </pre>
      *
      * <code>
@@ -1977,7 +2029,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the health check service associated with the health state of the network endpoint.
+     * URL of the health check service associated with the health state of the
+     * network endpoint.
      * </pre>
      *
      * <code>
@@ -1999,7 +2052,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the health check service associated with the health state of the network endpoint.
+     * URL of the health check service associated with the health state of the
+     * network endpoint.
      * </pre>
      *
      * <code>
@@ -2017,7 +2071,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the health check service associated with the health state of the network endpoint.
+     * URL of the health check service associated with the health state of the
+     * network endpoint.
      * </pre>
      *
      * <code>
@@ -2039,7 +2094,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL of the health check service associated with the health state of the network endpoint.
+     * URL of the health check service associated with the health state of the
+     * network endpoint.
      * </pre>
      *
      * <code>
@@ -2069,7 +2125,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Health state of the network endpoint determined based on the health checks configured.
+     * Health state of the network endpoint determined based on the health checks
+     * configured.
      * Check the HealthState enum for the list of possible values.
      * </pre>
      *
@@ -2085,7 +2142,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Health state of the network endpoint determined based on the health checks configured.
+     * Health state of the network endpoint determined based on the health checks
+     * configured.
      * Check the HealthState enum for the list of possible values.
      * </pre>
      *
@@ -2109,7 +2167,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Health state of the network endpoint determined based on the health checks configured.
+     * Health state of the network endpoint determined based on the health checks
+     * configured.
      * Check the HealthState enum for the list of possible values.
      * </pre>
      *
@@ -2133,7 +2192,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Health state of the network endpoint determined based on the health checks configured.
+     * Health state of the network endpoint determined based on the health checks
+     * configured.
      * Check the HealthState enum for the list of possible values.
      * </pre>
      *
@@ -2156,7 +2216,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Health state of the network endpoint determined based on the health checks configured.
+     * Health state of the network endpoint determined based on the health checks
+     * configured.
      * Check the HealthState enum for the list of possible values.
      * </pre>
      *
@@ -2175,7 +2236,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Health state of the network endpoint determined based on the health checks configured.
+     * Health state of the network endpoint determined based on the health checks
+     * configured.
      * Check the HealthState enum for the list of possible values.
      * </pre>
      *
@@ -2201,7 +2263,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Health state of the ipv6 network endpoint determined based on the health checks configured.
+     * Health state of the ipv6 network endpoint determined based on the health
+     * checks configured.
      * Check the Ipv6HealthState enum for the list of possible values.
      * </pre>
      *
@@ -2217,7 +2280,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Health state of the ipv6 network endpoint determined based on the health checks configured.
+     * Health state of the ipv6 network endpoint determined based on the health
+     * checks configured.
      * Check the Ipv6HealthState enum for the list of possible values.
      * </pre>
      *
@@ -2241,7 +2305,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Health state of the ipv6 network endpoint determined based on the health checks configured.
+     * Health state of the ipv6 network endpoint determined based on the health
+     * checks configured.
      * Check the Ipv6HealthState enum for the list of possible values.
      * </pre>
      *
@@ -2265,7 +2330,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Health state of the ipv6 network endpoint determined based on the health checks configured.
+     * Health state of the ipv6 network endpoint determined based on the health
+     * checks configured.
      * Check the Ipv6HealthState enum for the list of possible values.
      * </pre>
      *
@@ -2288,7 +2354,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Health state of the ipv6 network endpoint determined based on the health checks configured.
+     * Health state of the ipv6 network endpoint determined based on the health
+     * checks configured.
      * Check the Ipv6HealthState enum for the list of possible values.
      * </pre>
      *
@@ -2307,7 +2374,8 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Health state of the ipv6 network endpoint determined based on the health checks configured.
+     * Health state of the ipv6 network endpoint determined based on the health
+     * checks configured.
      * Check the Ipv6HealthState enum for the list of possible values.
      * </pre>
      *

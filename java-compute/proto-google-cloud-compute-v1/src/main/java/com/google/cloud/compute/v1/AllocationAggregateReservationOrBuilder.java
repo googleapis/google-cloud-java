@@ -172,7 +172,8 @@ public interface AllocationAggregateReservationOrBuilder
    *
    *
    * <pre>
-   * The VM family that all instances scheduled against this reservation must belong to.
+   * The VM family that all instances scheduled against this reservation must
+   * belong to.
    * Check the VmFamily enum for the list of possible values.
    * </pre>
    *
@@ -186,7 +187,8 @@ public interface AllocationAggregateReservationOrBuilder
    *
    *
    * <pre>
-   * The VM family that all instances scheduled against this reservation must belong to.
+   * The VM family that all instances scheduled against this reservation must
+   * belong to.
    * Check the VmFamily enum for the list of possible values.
    * </pre>
    *
@@ -200,7 +202,8 @@ public interface AllocationAggregateReservationOrBuilder
    *
    *
    * <pre>
-   * The VM family that all instances scheduled against this reservation must belong to.
+   * The VM family that all instances scheduled against this reservation must
+   * belong to.
    * Check the VmFamily enum for the list of possible values.
    * </pre>
    *

@@ -28,7 +28,8 @@ public interface InstancesBulkInsertOperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Status information per location (location name is key). Example key: zones/us-central1-a
+   * Status information per location (location name is key).
+   * Example key: zones/us-central1-a
    * </pre>
    *
    * <code>
@@ -41,7 +42,8 @@ public interface InstancesBulkInsertOperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Status information per location (location name is key). Example key: zones/us-central1-a
+   * Status information per location (location name is key).
+   * Example key: zones/us-central1-a
    * </pre>
    *
    * <code>
@@ -59,7 +61,8 @@ public interface InstancesBulkInsertOperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Status information per location (location name is key). Example key: zones/us-central1-a
+   * Status information per location (location name is key).
+   * Example key: zones/us-central1-a
    * </pre>
    *
    * <code>
@@ -73,7 +76,8 @@ public interface InstancesBulkInsertOperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Status information per location (location name is key). Example key: zones/us-central1-a
+   * Status information per location (location name is key).
+   * Example key: zones/us-central1-a
    * </pre>
    *
    * <code>
@@ -90,7 +94,8 @@ public interface InstancesBulkInsertOperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Status information per location (location name is key). Example key: zones/us-central1-a
+   * Status information per location (location name is key).
+   * Example key: zones/us-central1-a
    * </pre>
    *
    * <code>

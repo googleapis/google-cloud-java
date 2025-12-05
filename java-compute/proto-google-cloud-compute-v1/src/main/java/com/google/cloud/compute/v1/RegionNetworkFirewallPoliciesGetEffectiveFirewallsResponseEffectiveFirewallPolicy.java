@@ -80,7 +80,8 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
    *
    *
    * <pre>
-   * [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
+   * [Output Only] The type of the firewall policy. Can be one of HIERARCHY,
+   * NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
    * </pre>
    *
    * Protobuf enum {@code
@@ -465,7 +466,8 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
    *
    *
    * <pre>
-   * [Output only] Priority of firewall policy association. Not applicable for type=HIERARCHY.
+   * [Output only] Priority of firewall policy association. Not applicable for
+   * type=HIERARCHY.
    * </pre>
    *
    * <code>optional int32 priority = 445151652;</code>
@@ -481,7 +483,8 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
    *
    *
    * <pre>
-   * [Output only] Priority of firewall policy association. Not applicable for type=HIERARCHY.
+   * [Output only] Priority of firewall policy association. Not applicable for
+   * type=HIERARCHY.
    * </pre>
    *
    * <code>optional int32 priority = 445151652;</code>
@@ -578,7 +581,8 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
    *
    *
    * <pre>
-   * [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
+   * [Output Only] The type of the firewall policy. Can be one of HIERARCHY,
+   * NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -595,7 +599,8 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
    *
    *
    * <pre>
-   * [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
+   * [Output Only] The type of the firewall policy. Can be one of HIERARCHY,
+   * NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -620,7 +625,8 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
    *
    *
    * <pre>
-   * [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
+   * [Output Only] The type of the firewall policy. Can be one of HIERARCHY,
+   * NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -1957,7 +1963,8 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
      *
      *
      * <pre>
-     * [Output only] Priority of firewall policy association. Not applicable for type=HIERARCHY.
+     * [Output only] Priority of firewall policy association. Not applicable for
+     * type=HIERARCHY.
      * </pre>
      *
      * <code>optional int32 priority = 445151652;</code>
@@ -1973,7 +1980,8 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
      *
      *
      * <pre>
-     * [Output only] Priority of firewall policy association. Not applicable for type=HIERARCHY.
+     * [Output only] Priority of firewall policy association. Not applicable for
+     * type=HIERARCHY.
      * </pre>
      *
      * <code>optional int32 priority = 445151652;</code>
@@ -1989,7 +1997,8 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
      *
      *
      * <pre>
-     * [Output only] Priority of firewall policy association. Not applicable for type=HIERARCHY.
+     * [Output only] Priority of firewall policy association. Not applicable for
+     * type=HIERARCHY.
      * </pre>
      *
      * <code>optional int32 priority = 445151652;</code>
@@ -2009,7 +2018,8 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
      *
      *
      * <pre>
-     * [Output only] Priority of firewall policy association. Not applicable for type=HIERARCHY.
+     * [Output only] Priority of firewall policy association. Not applicable for
+     * type=HIERARCHY.
      * </pre>
      *
      * <code>optional int32 priority = 445151652;</code>
@@ -2396,7 +2406,8 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
      *
      *
      * <pre>
-     * [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
+     * [Output Only] The type of the firewall policy. Can be one of HIERARCHY,
+     * NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -2412,7 +2423,8 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
      *
      *
      * <pre>
-     * [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
+     * [Output Only] The type of the firewall policy. Can be one of HIERARCHY,
+     * NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -2436,7 +2448,8 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
      *
      *
      * <pre>
-     * [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
+     * [Output Only] The type of the firewall policy. Can be one of HIERARCHY,
+     * NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -2460,7 +2473,8 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
      *
      *
      * <pre>
-     * [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
+     * [Output Only] The type of the firewall policy. Can be one of HIERARCHY,
+     * NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -2483,7 +2497,8 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
      *
      *
      * <pre>
-     * [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
+     * [Output Only] The type of the firewall policy. Can be one of HIERARCHY,
+     * NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -2502,7 +2517,8 @@ public final class RegionNetworkFirewallPoliciesGetEffectiveFirewallsResponseEff
      *
      *
      * <pre>
-     * [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
+     * [Output Only] The type of the firewall policy. Can be one of HIERARCHY,
+     * NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
