@@ -285,20 +285,20 @@ public class ReadChangeStreamMergingAcceptanceTest {
 
   private static boolean expectsError(ReadChangeStreamTest testCase) {
     List<ReadChangeStreamTest.Result> results = testCase.getResultsList();
-    return results != null && !results.isEmpty() && results.get(results.size() - 1).getError();
+    return !results.isEmpty() && results.get(results.size() - 1).getError();
   }
 
   private static List<ReadChangeStreamTest.Result> getNonExceptionResults(
       ReadChangeStreamTest testCase) {
     List<ReadChangeStreamTest.Result> results = testCase.getResultsList();
     List<ReadChangeStreamTest.Result> response = new ArrayList<>();
-    if (results != null) {
-      for (ReadChangeStreamTest.Result result : results) {
-        if (!result.getError()) {
-          response.add(result);
-        }
+
+    for (ReadChangeStreamTest.Result result : results) {
+      if (!result.getError()) {
+        response.add(result);
       }
     }
+
     return response;
   }
 }
