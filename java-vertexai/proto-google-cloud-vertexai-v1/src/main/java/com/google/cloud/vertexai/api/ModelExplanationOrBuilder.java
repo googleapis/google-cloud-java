@@ -57,7 +57,6 @@ public interface ModelExplanationOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vertexai.api.Attribution> getMeanAttributionsList();
-
   /**
    *
    *
@@ -91,7 +90,6 @@ public interface ModelExplanationOrBuilder
    * </code>
    */
   com.google.cloud.vertexai.api.Attribution getMeanAttributions(int index);
-
   /**
    *
    *
@@ -125,7 +123,6 @@ public interface ModelExplanationOrBuilder
    * </code>
    */
   int getMeanAttributionsCount();
-
   /**
    *
    *
@@ -160,7 +157,6 @@ public interface ModelExplanationOrBuilder
    */
   java.util.List<? extends com.google.cloud.vertexai.api.AttributionOrBuilder>
       getMeanAttributionsOrBuilderList();
-
   /**
    *
    *
