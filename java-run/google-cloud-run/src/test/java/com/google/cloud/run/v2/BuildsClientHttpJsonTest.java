@@ -16,6 +16,7 @@
 
 package com.google.cloud.run.v2;
 
+import com.google.api.LaunchStage;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.testing.MockHttpService;
@@ -90,6 +91,9 @@ public class BuildsClientHttpJsonTest {
             .setWorkerPool(
                 BuildWorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString())
             .addAllTags(new ArrayList<String>())
+            .setMachineType("machineType-218117087")
+            .setReleaseTrack(LaunchStage.forNumber(0))
+            .setClient("client-1357712437")
             .build();
 
     SubmitBuildResponse actualResponse = client.submitBuild(request);
@@ -126,6 +130,9 @@ public class BuildsClientHttpJsonTest {
               .setWorkerPool(
                   BuildWorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString())
               .addAllTags(new ArrayList<String>())
+              .setMachineType("machineType-218117087")
+              .setReleaseTrack(LaunchStage.forNumber(0))
+              .setClient("client-1357712437")
               .build();
       client.submitBuild(request);
       Assert.fail("No exception raised");
