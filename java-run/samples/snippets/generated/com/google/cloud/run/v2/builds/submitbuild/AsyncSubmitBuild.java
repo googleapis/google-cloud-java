@@ -17,6 +17,7 @@
 package com.google.cloud.run.v2.samples;
 
 // [START run_v2_generated_Builds_SubmitBuild_async]
+import com.google.api.LaunchStage;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.run.v2.BuildWorkerPoolName;
 import com.google.cloud.run.v2.BuildsClient;
@@ -45,6 +46,9 @@ public class AsyncSubmitBuild {
               .setWorkerPool(
                   BuildWorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString())
               .addAllTags(new ArrayList<String>())
+              .setMachineType("machineType-218117087")
+              .setReleaseTrack(LaunchStage.forNumber(0))
+              .setClient("client-1357712437")
               .build();
       ApiFuture<SubmitBuildResponse> future =
           buildsClient.submitBuildCallable().futureCall(request);

@@ -321,6 +321,90 @@ public interface SubmitBuildRequestOrBuilder
    */
   com.google.protobuf.ByteString getTagsBytes(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The machine type from default pool to use for the build. If left
+   * blank, cloudbuild will use a sensible default. Currently only E2_HIGHCPU_8
+   * is supported. If worker_pool is set, this field will be ignored.
+   * </pre>
+   *
+   * <code>string machine_type = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The machineType.
+   */
+  java.lang.String getMachineType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The machine type from default pool to use for the build. If left
+   * blank, cloudbuild will use a sensible default. Currently only E2_HIGHCPU_8
+   * is supported. If worker_pool is set, this field will be ignored.
+   * </pre>
+   *
+   * <code>string machine_type = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for machineType.
+   */
+  com.google.protobuf.ByteString getMachineTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The release track of the client that initiated the build request.
+   * </pre>
+   *
+   * <code>.google.api.LaunchStage release_track = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for releaseTrack.
+   */
+  int getReleaseTrackValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The release track of the client that initiated the build request.
+   * </pre>
+   *
+   * <code>.google.api.LaunchStage release_track = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The releaseTrack.
+   */
+  com.google.api.LaunchStage getReleaseTrack();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The client that initiated the build request.
+   * </pre>
+   *
+   * <code>string client = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The client.
+   */
+  java.lang.String getClient();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The client that initiated the build request.
+   * </pre>
+   *
+   * <code>string client = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for client.
+   */
+  com.google.protobuf.ByteString getClientBytes();
+
   com.google.cloud.run.v2.SubmitBuildRequest.SourceCase getSourceCase();
 
   com.google.cloud.run.v2.SubmitBuildRequest.BuildTypeCase getBuildTypeCase();

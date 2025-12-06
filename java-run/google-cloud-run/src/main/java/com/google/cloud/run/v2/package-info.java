@@ -40,6 +40,9 @@
  *           .setWorkerPool(
  *               BuildWorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString())
  *           .addAllTags(new ArrayList<String>())
+ *           .setMachineType("machineType-218117087")
+ *           .setReleaseTrack(LaunchStage.forNumber(0))
+ *           .setClient("client-1357712437")
  *           .build();
  *   SubmitBuildResponse response = buildsClient.submitBuild(request);
  * }

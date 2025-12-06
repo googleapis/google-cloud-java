@@ -73,6 +73,21 @@ public interface ServiceScalingOrBuilder
    *
    *
    * <pre>
+   * Optional. total max instances for the service. This number of instances is
+   * divided among all revisions with specified traffic based on the percent
+   * of traffic they are receiving.
+   * </pre>
+   *
+   * <code>int32 max_instance_count = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The maxInstanceCount.
+   */
+  int getMaxInstanceCount();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. total instance count for the service in manual scaling mode. This
    * number of instances is divided among all revisions with specified traffic
    * based on the percent of traffic they are receiving.

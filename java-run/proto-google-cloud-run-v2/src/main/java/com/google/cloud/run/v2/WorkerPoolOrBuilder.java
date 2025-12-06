@@ -895,7 +895,7 @@ public interface WorkerPoolOrBuilder
    *
    *
    * <pre>
-   * Output only. The generation of this WorkerPool currently serving traffic.
+   * Output only. The generation of this WorkerPool currently serving workloads.
    * See comments in `reconciling` for additional information on reconciliation
    * process in Cloud Run. Please note that unlike v1, this is an int64 value.
    * As with most Google APIs, its JSON representation will be a `string`
@@ -1044,7 +1044,7 @@ public interface WorkerPoolOrBuilder
    *
    *
    * <pre>
-   * Output only. Name of the latest revision that is serving traffic. See
+   * Output only. Name of the latest revision that is serving workloads. See
    * comments in `reconciling` for additional information on reconciliation
    * process in Cloud Run.
    * </pre>
@@ -1061,7 +1061,7 @@ public interface WorkerPoolOrBuilder
    *
    *
    * <pre>
-   * Output only. Name of the latest revision that is serving traffic. See
+   * Output only. Name of the latest revision that is serving workloads. See
    * comments in `reconciling` for additional information on reconciliation
    * process in Cloud Run.
    * </pre>
@@ -1188,11 +1188,21 @@ public interface WorkerPoolOrBuilder
    *
    *
    * <pre>
-   * One or more custom audiences that you want this worker pool to support.
-   * Specify each custom audience as the full URL in a string. The custom
-   * audiences are encoded in the token and used to authenticate requests. For
-   * more information, see
-   * https://cloud.google.com/run/docs/configuring/custom-audiences.
+   * Output only. Indicates whether Cloud Run Threat Detection monitoring is
+   * enabled for the parent project of this worker pool.
+   * </pre>
+   *
+   * <code>bool threat_detection_enabled = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The threatDetectionEnabled.
+   */
+  boolean getThreatDetectionEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Not supported, and ignored by Cloud Run.
    * </pre>
    *
    * <code>repeated string custom_audiences = 37;</code>
@@ -1205,11 +1215,7 @@ public interface WorkerPoolOrBuilder
    *
    *
    * <pre>
-   * One or more custom audiences that you want this worker pool to support.
-   * Specify each custom audience as the full URL in a string. The custom
-   * audiences are encoded in the token and used to authenticate requests. For
-   * more information, see
-   * https://cloud.google.com/run/docs/configuring/custom-audiences.
+   * Not supported, and ignored by Cloud Run.
    * </pre>
    *
    * <code>repeated string custom_audiences = 37;</code>
@@ -1222,11 +1228,7 @@ public interface WorkerPoolOrBuilder
    *
    *
    * <pre>
-   * One or more custom audiences that you want this worker pool to support.
-   * Specify each custom audience as the full URL in a string. The custom
-   * audiences are encoded in the token and used to authenticate requests. For
-   * more information, see
-   * https://cloud.google.com/run/docs/configuring/custom-audiences.
+   * Not supported, and ignored by Cloud Run.
    * </pre>
    *
    * <code>repeated string custom_audiences = 37;</code>
@@ -1240,11 +1242,7 @@ public interface WorkerPoolOrBuilder
    *
    *
    * <pre>
-   * One or more custom audiences that you want this worker pool to support.
-   * Specify each custom audience as the full URL in a string. The custom
-   * audiences are encoded in the token and used to authenticate requests. For
-   * more information, see
-   * https://cloud.google.com/run/docs/configuring/custom-audiences.
+   * Not supported, and ignored by Cloud Run.
    * </pre>
    *
    * <code>repeated string custom_audiences = 37;</code>
@@ -1278,21 +1276,21 @@ public interface WorkerPoolOrBuilder
    * will asynchronously perform all necessary steps to bring the WorkerPool to
    * the desired serving state. This process is called reconciliation. While
    * reconciliation is in process, `observed_generation`,
-   * `latest_ready_revison`, `traffic_statuses`, and `uri` will have transient
-   * values that might mismatch the intended state: Once reconciliation is over
-   * (and this field is false), there are two possible outcomes: reconciliation
-   * succeeded and the serving state matches the WorkerPool, or there was an
-   * error, and reconciliation failed. This state can be found in
-   * `terminal_condition.state`.
+   * `latest_ready_revison`, `instance_split_statuses`, and `uri` will have
+   * transient values that might mismatch the intended state: Once
+   * reconciliation is over (and this field is false), there are two possible
+   * outcomes: reconciliation succeeded and the serving state matches the
+   * WorkerPool, or there was an error, and reconciliation failed. This state
+   * can be found in `terminal_condition.state`.
    *
-   * If reconciliation succeeded, the following fields will match: `traffic` and
-   * `traffic_statuses`, `observed_generation` and `generation`,
-   * `latest_ready_revision` and `latest_created_revision`.
+   * If reconciliation succeeded, the following fields will match:
+   * `instance_splits` and `instance_split_statuses`, `observed_generation` and
+   * `generation`, `latest_ready_revision` and `latest_created_revision`.
    *
-   * If reconciliation failed, `traffic_statuses`, `observed_generation`, and
-   * `latest_ready_revision` will have the state of the last serving revision,
-   * or empty for newly created WorkerPools. Additional information on the
-   * failure can be found in `terminal_condition` and `conditions`.
+   * If reconciliation failed, `instance_split_statuses`, `observed_generation`,
+   * and `latest_ready_revision` will have the state of the last serving
+   * revision, or empty for newly created WorkerPools. Additional information on
+   * the failure can be found in `terminal_condition` and `conditions`.
    * </pre>
    *
    * <code>bool reconciling = 98 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1305,11 +1303,11 @@ public interface WorkerPoolOrBuilder
    *
    *
    * <pre>
-   * Output only. A system-generated fingerprint for this version of the
+   * Optional. A system-generated fingerprint for this version of the
    * resource. May be used to detect modification conflict during updates.
    * </pre>
    *
-   * <code>string etag = 99 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string etag = 99 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The etag.
    */
@@ -1319,11 +1317,11 @@ public interface WorkerPoolOrBuilder
    *
    *
    * <pre>
-   * Output only. A system-generated fingerprint for this version of the
+   * Optional. A system-generated fingerprint for this version of the
    * resource. May be used to detect modification conflict during updates.
    * </pre>
    *
-   * <code>string etag = 99 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string etag = 99 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for etag.
    */

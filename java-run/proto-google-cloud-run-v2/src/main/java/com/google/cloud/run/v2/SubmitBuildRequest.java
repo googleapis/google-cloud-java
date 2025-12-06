@@ -45,6 +45,9 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
     serviceAccount_ = "";
     workerPool_ = "";
     tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    machineType_ = "";
+    releaseTrack_ = 0;
+    client_ = "";
   }
 
   @java.lang.Override
@@ -509,7 +512,7 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
      * <code>string runtime = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.run.v2.SubmitBuildRequest.BuildpacksBuild.runtime is deprecated. See
-     *     google/cloud/run/v2/build.proto;l=56
+     *     google/cloud/run/v2/build.proto;l=57
      * @return The runtime.
      */
     @java.lang.Deprecated
@@ -525,7 +528,7 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
      * <code>string runtime = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.run.v2.SubmitBuildRequest.BuildpacksBuild.runtime is deprecated. See
-     *     google/cloud/run/v2/build.proto;l=56
+     *     google/cloud/run/v2/build.proto;l=57
      * @return The bytes for runtime.
      */
     @java.lang.Deprecated
@@ -814,7 +817,7 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
      * <code>string runtime = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.run.v2.SubmitBuildRequest.BuildpacksBuild.runtime is deprecated. See
-     *     google/cloud/run/v2/build.proto;l=56
+     *     google/cloud/run/v2/build.proto;l=57
      * @return The runtime.
      */
     @java.lang.Override
@@ -841,7 +844,7 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
      * <code>string runtime = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.run.v2.SubmitBuildRequest.BuildpacksBuild.runtime is deprecated. See
-     *     google/cloud/run/v2/build.proto;l=56
+     *     google/cloud/run/v2/build.proto;l=57
      * @return The bytes for runtime.
      */
     @java.lang.Override
@@ -1769,7 +1772,7 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
        * <code>string runtime = 1 [deprecated = true];</code>
        *
        * @deprecated google.cloud.run.v2.SubmitBuildRequest.BuildpacksBuild.runtime is deprecated.
-       *     See google/cloud/run/v2/build.proto;l=56
+       *     See google/cloud/run/v2/build.proto;l=57
        * @return The runtime.
        */
       @java.lang.Deprecated
@@ -1795,7 +1798,7 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
        * <code>string runtime = 1 [deprecated = true];</code>
        *
        * @deprecated google.cloud.run.v2.SubmitBuildRequest.BuildpacksBuild.runtime is deprecated.
-       *     See google/cloud/run/v2/build.proto;l=56
+       *     See google/cloud/run/v2/build.proto;l=57
        * @return The bytes for runtime.
        */
       @java.lang.Deprecated
@@ -1821,7 +1824,7 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
        * <code>string runtime = 1 [deprecated = true];</code>
        *
        * @deprecated google.cloud.run.v2.SubmitBuildRequest.BuildpacksBuild.runtime is deprecated.
-       *     See google/cloud/run/v2/build.proto;l=56
+       *     See google/cloud/run/v2/build.proto;l=57
        * @param value The runtime to set.
        * @return This builder for chaining.
        */
@@ -1846,7 +1849,7 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
        * <code>string runtime = 1 [deprecated = true];</code>
        *
        * @deprecated google.cloud.run.v2.SubmitBuildRequest.BuildpacksBuild.runtime is deprecated.
-       *     See google/cloud/run/v2/build.proto;l=56
+       *     See google/cloud/run/v2/build.proto;l=57
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -1867,7 +1870,7 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
        * <code>string runtime = 1 [deprecated = true];</code>
        *
        * @deprecated google.cloud.run.v2.SubmitBuildRequest.BuildpacksBuild.runtime is deprecated.
-       *     See google/cloud/run/v2/build.proto;l=56
+       *     See google/cloud/run/v2/build.proto;l=57
        * @param value The bytes for runtime to set.
        * @return This builder for chaining.
        */
@@ -3251,6 +3254,154 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
     return tags_.getByteString(index);
   }
 
+  public static final int MACHINE_TYPE_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object machineType_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The machine type from default pool to use for the build. If left
+   * blank, cloudbuild will use a sensible default. Currently only E2_HIGHCPU_8
+   * is supported. If worker_pool is set, this field will be ignored.
+   * </pre>
+   *
+   * <code>string machine_type = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The machineType.
+   */
+  @java.lang.Override
+  public java.lang.String getMachineType() {
+    java.lang.Object ref = machineType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      machineType_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The machine type from default pool to use for the build. If left
+   * blank, cloudbuild will use a sensible default. Currently only E2_HIGHCPU_8
+   * is supported. If worker_pool is set, this field will be ignored.
+   * </pre>
+   *
+   * <code>string machine_type = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for machineType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getMachineTypeBytes() {
+    java.lang.Object ref = machineType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      machineType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int RELEASE_TRACK_FIELD_NUMBER = 10;
+  private int releaseTrack_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The release track of the client that initiated the build request.
+   * </pre>
+   *
+   * <code>.google.api.LaunchStage release_track = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for releaseTrack.
+   */
+  @java.lang.Override
+  public int getReleaseTrackValue() {
+    return releaseTrack_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The release track of the client that initiated the build request.
+   * </pre>
+   *
+   * <code>.google.api.LaunchStage release_track = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The releaseTrack.
+   */
+  @java.lang.Override
+  public com.google.api.LaunchStage getReleaseTrack() {
+    com.google.api.LaunchStage result = com.google.api.LaunchStage.forNumber(releaseTrack_);
+    return result == null ? com.google.api.LaunchStage.UNRECOGNIZED : result;
+  }
+
+  public static final int CLIENT_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object client_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The client that initiated the build request.
+   * </pre>
+   *
+   * <code>string client = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The client.
+   */
+  @java.lang.Override
+  public java.lang.String getClient() {
+    java.lang.Object ref = client_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      client_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The client that initiated the build request.
+   * </pre>
+   *
+   * <code>string client = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for client.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getClientBytes() {
+    java.lang.Object ref = client_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      client_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3289,6 +3440,15 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
     }
     for (int i = 0; i < tags_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, tags_.getRaw(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(machineType_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, machineType_);
+    }
+    if (releaseTrack_ != com.google.api.LaunchStage.LAUNCH_STAGE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(10, releaseTrack_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(client_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, client_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -3334,6 +3494,15 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       size += dataSize;
       size += 1 * getTagsList().size();
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(machineType_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, machineType_);
+    }
+    if (releaseTrack_ != com.google.api.LaunchStage.LAUNCH_STAGE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, releaseTrack_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(client_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, client_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3355,6 +3524,9 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
     if (!getServiceAccount().equals(other.getServiceAccount())) return false;
     if (!getWorkerPool().equals(other.getWorkerPool())) return false;
     if (!getTagsList().equals(other.getTagsList())) return false;
+    if (!getMachineType().equals(other.getMachineType())) return false;
+    if (releaseTrack_ != other.releaseTrack_) return false;
+    if (!getClient().equals(other.getClient())) return false;
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 2:
@@ -3397,6 +3569,12 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + TAGS_FIELD_NUMBER;
       hash = (53 * hash) + getTagsList().hashCode();
     }
+    hash = (37 * hash) + MACHINE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getMachineType().hashCode();
+    hash = (37 * hash) + RELEASE_TRACK_FIELD_NUMBER;
+    hash = (53 * hash) + releaseTrack_;
+    hash = (37 * hash) + CLIENT_FIELD_NUMBER;
+    hash = (53 * hash) + getClient().hashCode();
     switch (sourceCase_) {
       case 2:
         hash = (37 * hash) + STORAGE_SOURCE_FIELD_NUMBER;
@@ -3571,6 +3749,9 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       serviceAccount_ = "";
       workerPool_ = "";
       tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      machineType_ = "";
+      releaseTrack_ = 0;
+      client_ = "";
       sourceCase_ = 0;
       source_ = null;
       buildTypeCase_ = 0;
@@ -3627,6 +3808,15 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00000080) != 0)) {
         tags_.makeImmutable();
         result.tags_ = tags_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.machineType_ = machineType_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.releaseTrack_ = releaseTrack_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.client_ = client_;
       }
     }
 
@@ -3719,6 +3909,19 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
           ensureTagsIsMutable();
           tags_.addAll(other.tags_);
         }
+        onChanged();
+      }
+      if (!other.getMachineType().isEmpty()) {
+        machineType_ = other.machineType_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      if (other.releaseTrack_ != 0) {
+        setReleaseTrackValue(other.getReleaseTrackValue());
+      }
+      if (!other.getClient().isEmpty()) {
+        client_ = other.client_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       switch (other.getSourceCase()) {
@@ -3823,6 +4026,24 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
                 tags_.add(s);
                 break;
               } // case 66
+            case 74:
+              {
+                machineType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
+            case 80:
+              {
+                releaseTrack_ = input.readEnum();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 80
+            case 90:
+              {
+                client_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5226,6 +5447,337 @@ public final class SubmitBuildRequest extends com.google.protobuf.GeneratedMessa
       ensureTagsIsMutable();
       tags_.add(value);
       bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object machineType_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The machine type from default pool to use for the build. If left
+     * blank, cloudbuild will use a sensible default. Currently only E2_HIGHCPU_8
+     * is supported. If worker_pool is set, this field will be ignored.
+     * </pre>
+     *
+     * <code>string machine_type = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The machineType.
+     */
+    public java.lang.String getMachineType() {
+      java.lang.Object ref = machineType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        machineType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The machine type from default pool to use for the build. If left
+     * blank, cloudbuild will use a sensible default. Currently only E2_HIGHCPU_8
+     * is supported. If worker_pool is set, this field will be ignored.
+     * </pre>
+     *
+     * <code>string machine_type = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for machineType.
+     */
+    public com.google.protobuf.ByteString getMachineTypeBytes() {
+      java.lang.Object ref = machineType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        machineType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The machine type from default pool to use for the build. If left
+     * blank, cloudbuild will use a sensible default. Currently only E2_HIGHCPU_8
+     * is supported. If worker_pool is set, this field will be ignored.
+     * </pre>
+     *
+     * <code>string machine_type = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The machineType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMachineType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      machineType_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The machine type from default pool to use for the build. If left
+     * blank, cloudbuild will use a sensible default. Currently only E2_HIGHCPU_8
+     * is supported. If worker_pool is set, this field will be ignored.
+     * </pre>
+     *
+     * <code>string machine_type = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMachineType() {
+      machineType_ = getDefaultInstance().getMachineType();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The machine type from default pool to use for the build. If left
+     * blank, cloudbuild will use a sensible default. Currently only E2_HIGHCPU_8
+     * is supported. If worker_pool is set, this field will be ignored.
+     * </pre>
+     *
+     * <code>string machine_type = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for machineType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMachineTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      machineType_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private int releaseTrack_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The release track of the client that initiated the build request.
+     * </pre>
+     *
+     * <code>.google.api.LaunchStage release_track = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for releaseTrack.
+     */
+    @java.lang.Override
+    public int getReleaseTrackValue() {
+      return releaseTrack_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The release track of the client that initiated the build request.
+     * </pre>
+     *
+     * <code>.google.api.LaunchStage release_track = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for releaseTrack to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReleaseTrackValue(int value) {
+      releaseTrack_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The release track of the client that initiated the build request.
+     * </pre>
+     *
+     * <code>.google.api.LaunchStage release_track = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The releaseTrack.
+     */
+    @java.lang.Override
+    public com.google.api.LaunchStage getReleaseTrack() {
+      com.google.api.LaunchStage result = com.google.api.LaunchStage.forNumber(releaseTrack_);
+      return result == null ? com.google.api.LaunchStage.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The release track of the client that initiated the build request.
+     * </pre>
+     *
+     * <code>.google.api.LaunchStage release_track = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The releaseTrack to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReleaseTrack(com.google.api.LaunchStage value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000200;
+      releaseTrack_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The release track of the client that initiated the build request.
+     * </pre>
+     *
+     * <code>.google.api.LaunchStage release_track = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReleaseTrack() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      releaseTrack_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object client_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The client that initiated the build request.
+     * </pre>
+     *
+     * <code>string client = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The client.
+     */
+    public java.lang.String getClient() {
+      java.lang.Object ref = client_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        client_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The client that initiated the build request.
+     * </pre>
+     *
+     * <code>string client = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for client.
+     */
+    public com.google.protobuf.ByteString getClientBytes() {
+      java.lang.Object ref = client_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        client_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The client that initiated the build request.
+     * </pre>
+     *
+     * <code>string client = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The client to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClient(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      client_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The client that initiated the build request.
+     * </pre>
+     *
+     * <code>string client = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearClient() {
+      client_ = getDefaultInstance().getClient();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The client that initiated the build request.
+     * </pre>
+     *
+     * <code>string client = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for client to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClientBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      client_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }

@@ -681,4 +681,34 @@ public interface WorkerPoolRevisionTemplateOrBuilder
    * </code>
    */
   com.google.cloud.run.v2.NodeSelectorOrBuilder getNodeSelectorOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. True if GPU zonal redundancy is disabled on this worker pool.
+   * </pre>
+   *
+   * <code>
+   * optional bool gpu_zonal_redundancy_disabled = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the gpuZonalRedundancyDisabled field is set.
+   */
+  boolean hasGpuZonalRedundancyDisabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. True if GPU zonal redundancy is disabled on this worker pool.
+   * </pre>
+   *
+   * <code>
+   * optional bool gpu_zonal_redundancy_disabled = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The gpuZonalRedundancyDisabled.
+   */
+  boolean getGpuZonalRedundancyDisabled();
 }
