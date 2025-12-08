@@ -293,6 +293,7 @@ public class PublicDelegatedPrefixesClientTest {
             .setFingerprint("fingerprint-1375934236")
             .setId(3355)
             .setIpCidrRange("ipCidrRange-866375486")
+            .setIpv6AccessType("ipv6AccessType606780421")
             .setIsLiveMigration(true)
             .setKind("kind3292052")
             .setMode("mode3357091")

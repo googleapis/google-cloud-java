@@ -23,6 +23,7 @@ import com.google.cloud.backupdr.v1.BackupName;
 import com.google.cloud.backupdr.v1.OperationMetadata;
 import com.google.cloud.backupdr.v1.RestoreBackupRequest;
 import com.google.cloud.backupdr.v1.RestoreBackupResponse;
+import com.google.protobuf.FieldMask;
 
 public class AsyncRestoreBackupLRO {
 
@@ -44,6 +45,7 @@ public class AsyncRestoreBackupLRO {
                           "[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]", "[BACKUP]")
                       .toString())
               .setRequestId("requestId693933066")
+              .setClearOverridesFieldMask(FieldMask.newBuilder().build())
               .build();
       OperationFuture<RestoreBackupResponse, OperationMetadata> future =
           backupDRClient.restoreBackupOperationCallable().futureCall(request);

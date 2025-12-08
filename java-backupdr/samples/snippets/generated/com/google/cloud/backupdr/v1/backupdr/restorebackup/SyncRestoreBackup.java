@@ -21,6 +21,7 @@ import com.google.cloud.backupdr.v1.BackupDRClient;
 import com.google.cloud.backupdr.v1.BackupName;
 import com.google.cloud.backupdr.v1.RestoreBackupRequest;
 import com.google.cloud.backupdr.v1.RestoreBackupResponse;
+import com.google.protobuf.FieldMask;
 
 public class SyncRestoreBackup {
 
@@ -42,6 +43,7 @@ public class SyncRestoreBackup {
                           "[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]", "[BACKUP]")
                       .toString())
               .setRequestId("requestId693933066")
+              .setClearOverridesFieldMask(FieldMask.newBuilder().build())
               .build();
       RestoreBackupResponse response = backupDRClient.restoreBackupAsync(request).get();
     }

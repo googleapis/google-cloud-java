@@ -118,6 +118,11 @@ public class ReservationBlocksSettings extends ClientSettings<ReservationBlocksS
     return ((ReservationBlocksStubSettings) getStubSettings()).getSettings();
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyReservationBlockRequest, Policy> getIamPolicySettings() {
+    return ((ReservationBlocksStubSettings) getStubSettings()).getIamPolicySettings();
+  }
+
   /** Returns the object with the settings used for calls to list. */
   public PagedCallSettings<
           ListReservationBlocksRequest, ReservationBlocksListResponse, ListPagedResponse>
@@ -136,6 +141,17 @@ public class ReservationBlocksSettings extends ClientSettings<ReservationBlocksS
       performMaintenanceOperationSettings() {
     return ((ReservationBlocksStubSettings) getStubSettings())
         .performMaintenanceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyReservationBlockRequest, Policy> setIamPolicySettings() {
+    return ((ReservationBlocksStubSettings) getStubSettings()).setIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsReservationBlockRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((ReservationBlocksStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
   public static final ReservationBlocksSettings create(ReservationBlocksStubSettings stub)
@@ -241,6 +257,12 @@ public class ReservationBlocksSettings extends ClientSettings<ReservationBlocksS
       return getStubSettingsBuilder().getSettings();
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyReservationBlockRequest, Policy>
+        getIamPolicySettings() {
+      return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
     /** Returns the builder for the settings used for calls to list. */
     public PagedCallSettings.Builder<
             ListReservationBlocksRequest, ReservationBlocksListResponse, ListPagedResponse>
@@ -259,6 +281,19 @@ public class ReservationBlocksSettings extends ClientSettings<ReservationBlocksS
             PerformMaintenanceReservationBlockRequest, Operation, Operation>
         performMaintenanceOperationSettings() {
       return getStubSettingsBuilder().performMaintenanceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyReservationBlockRequest, Policy>
+        setIamPolicySettings() {
+      return getStubSettingsBuilder().setIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsReservationBlockRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

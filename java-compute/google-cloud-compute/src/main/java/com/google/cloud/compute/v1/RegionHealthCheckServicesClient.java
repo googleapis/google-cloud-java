@@ -145,7 +145,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Patch</td>
- *      <td><p> Updates the specified regional HealthCheckService resource with the data included in the request. This method supports PATCH semantics and uses the JSON merge patch format and processing rules.</td>
+ *      <td><p> Updates the specified regional HealthCheckService resource with the data included in the request.  This method supportsPATCH semantics and uses theJSON merge patch format and processing rules.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -800,8 +800,8 @@ public class RegionHealthCheckServicesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified regional HealthCheckService resource with the data included in the
-   * request. This method supports PATCH semantics and uses the JSON merge patch format and
-   * processing rules.
+   * request. This method supportsPATCH semantics and uses theJSON merge patch format and processing
+   * rules.
    *
    * <p>Sample code:
    *
@@ -849,8 +849,8 @@ public class RegionHealthCheckServicesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified regional HealthCheckService resource with the data included in the
-   * request. This method supports PATCH semantics and uses the JSON merge patch format and
-   * processing rules.
+   * request. This method supportsPATCH semantics and uses theJSON merge patch format and processing
+   * rules.
    *
    * <p>Sample code:
    *
@@ -885,8 +885,8 @@ public class RegionHealthCheckServicesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified regional HealthCheckService resource with the data included in the
-   * request. This method supports PATCH semantics and uses the JSON merge patch format and
-   * processing rules.
+   * request. This method supportsPATCH semantics and uses theJSON merge patch format and processing
+   * rules.
    *
    * <p>Sample code:
    *
@@ -921,8 +921,8 @@ public class RegionHealthCheckServicesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified regional HealthCheckService resource with the data included in the
-   * request. This method supports PATCH semantics and uses the JSON merge patch format and
-   * processing rules.
+   * request. This method supportsPATCH semantics and uses theJSON merge patch format and processing
+   * rules.
    *
    * <p>Sample code:
    *
