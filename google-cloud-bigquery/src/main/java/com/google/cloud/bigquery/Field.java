@@ -25,6 +25,7 @@ import com.google.api.client.util.Data;
 import com.google.api.services.bigquery.model.TableFieldSchema;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import java.io.Serializable;
 import java.util.List;
@@ -62,6 +63,7 @@ public final class Field implements Serializable {
   private final Long maxLength;
   private final Long scale;
   private final Long precision;
+  private final Long timestampPrecision;
   private final String defaultValueExpression;
   private final String collation;
   private final FieldElementType rangeElementType;
@@ -88,6 +90,7 @@ public final class Field implements Serializable {
     private Long maxLength;
     private Long scale;
     private Long precision;
+    private Long timestampPrecision;
     private String defaultValueExpression;
     private String collation;
     private FieldElementType rangeElementType;
@@ -104,6 +107,7 @@ public final class Field implements Serializable {
       this.maxLength = field.maxLength;
       this.scale = field.scale;
       this.precision = field.precision;
+      this.timestampPrecision = field.timestampPrecision;
       this.defaultValueExpression = field.defaultValueExpression;
       this.collation = field.collation;
       this.rangeElementType = field.rangeElementType;
@@ -255,6 +259,19 @@ public final class Field implements Serializable {
     }
 
     /**
+     * Specifies the precision for TIMESTAMP types.
+     *
+     * <p>The default value is 6. Possible values are 6 (microsecond) or 12 (picosecond).
+     */
+    public Builder setTimestampPrecision(Long timestampPrecision) {
+      Preconditions.checkArgument(
+          timestampPrecision == 6L || timestampPrecision == 12L,
+          "Timestamp Precision must be 6 (microsecond) or 12 (picosecond)");
+      this.timestampPrecision = timestampPrecision;
+      return this;
+    }
+
+    /**
      * DefaultValueExpression is used to specify the default value of a field using a SQL
      * expression. It can only be set for top level fields (columns).
      *
@@ -317,6 +334,7 @@ public final class Field implements Serializable {
     this.maxLength = builder.maxLength;
     this.scale = builder.scale;
     this.precision = builder.precision;
+    this.timestampPrecision = builder.timestampPrecision;
     this.defaultValueExpression = builder.defaultValueExpression;
     this.collation = builder.collation;
     this.rangeElementType = builder.rangeElementType;
@@ -370,6 +388,11 @@ public final class Field implements Serializable {
     return precision;
   }
 
+  /** Returns the precision for TIMESTAMP type. */
+  public Long getTimestampPrecision() {
+    return timestampPrecision;
+  }
+
   /** Return the default value of the field. */
   public String getDefaultValueExpression() {
     return defaultValueExpression;
@@ -408,6 +431,7 @@ public final class Field implements Serializable {
         .add("maxLength", maxLength)
         .add("scale", scale)
         .add("precision", precision)
+        .add("timestampPrecision", timestampPrecision)
         .add("defaultValueExpression", defaultValueExpression)
         .add("collation", collation)
         .add("rangeElementType", rangeElementType)
@@ -416,7 +440,19 @@ public final class Field implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, type, mode, description, policyTags, rangeElementType);
+    return Objects.hash(
+        name,
+        type,
+        mode,
+        description,
+        policyTags,
+        maxLength,
+        scale,
+        precision,
+        timestampPrecision,
+        defaultValueExpression,
+        collation,
+        rangeElementType);
   }
 
   @Override
@@ -490,6 +526,9 @@ public final class Field implements Serializable {
     if (precision != null) {
       fieldSchemaPb.setPrecision(precision);
     }
+    if (timestampPrecision != null) {
+      fieldSchemaPb.setTimestampPrecision(timestampPrecision);
+    }
     if (defaultValueExpression != null) {
       fieldSchemaPb.setDefaultValueExpression(defaultValueExpression);
     }
@@ -526,6 +565,9 @@ public final class Field implements Serializable {
     }
     if (fieldSchemaPb.getPrecision() != null) {
       fieldBuilder.setPrecision(fieldSchemaPb.getPrecision());
+    }
+    if (fieldSchemaPb.getTimestampPrecision() != null) {
+      fieldBuilder.setTimestampPrecision(fieldSchemaPb.getTimestampPrecision());
     }
     if (fieldSchemaPb.getDefaultValueExpression() != null) {
       fieldBuilder.setDefaultValueExpression(fieldSchemaPb.getDefaultValueExpression());
