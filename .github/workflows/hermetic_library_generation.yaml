@@ -15,7 +15,7 @@
 # downstream client libraries before they are released.
 name: Hermetic library generation upon generation config change through pull requests
 on:
-  pull_request:
+  #pull_request:
 
 env:
   REPO_FULL_NAME: ${{ github.event.pull_request.head.repo.full_name }}
