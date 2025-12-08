@@ -46,7 +46,8 @@ final class QueryRequestInfo {
   private final DataFormatOptions formatOptions;
   private final String reservation;
 
-  QueryRequestInfo(QueryJobConfiguration config, Boolean useInt64Timestamps) {
+  QueryRequestInfo(
+      QueryJobConfiguration config, com.google.cloud.bigquery.DataFormatOptions dataFormatOptions) {
     this.config = config;
     this.connectionProperties = config.getConnectionProperties();
     this.defaultDataset = config.getDefaultDataset();
@@ -61,7 +62,7 @@ final class QueryRequestInfo {
     this.useLegacySql = config.useLegacySql();
     this.useQueryCache = config.useQueryCache();
     this.jobCreationMode = config.getJobCreationMode();
-    this.formatOptions = new DataFormatOptions().setUseInt64Timestamp(useInt64Timestamps);
+    this.formatOptions = dataFormatOptions.toPb();
     this.reservation = config.getReservation();
   }
 

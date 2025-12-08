@@ -71,6 +71,7 @@ import com.google.cloud.bigquery.ConnectionProperty;
 import com.google.cloud.bigquery.ConnectionSettings;
 import com.google.cloud.bigquery.CopyJobConfiguration;
 import com.google.cloud.bigquery.CsvOptions;
+import com.google.cloud.bigquery.DataFormatOptions;
 import com.google.cloud.bigquery.Dataset;
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.DatasetInfo;
@@ -3462,8 +3463,11 @@ public class ITBigQueryTest {
     // Create new BQ object to toggle lossless timestamps without affecting
     // other tests.
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
-    BigQuery bigqueryLossless = bigqueryHelper.getOptions().getService();
-    bigqueryLossless.getOptions().setUseInt64Timestamps(true);
+    DataFormatOptions dataFormatOptions =
+        DataFormatOptions.newBuilder().useInt64Timestamp(true).build();
+    BigQueryOptions options =
+        bigqueryHelper.getOptions().toBuilder().setDataFormatOptions(dataFormatOptions).build();
+    BigQuery bigqueryLossless = options.getService();
 
     TableResult resultLossless =
         bigqueryLossless.query(

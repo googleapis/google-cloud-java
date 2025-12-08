@@ -140,7 +140,8 @@ public class QueryRequestInfoTest {
           .setJobCreationMode(jobCreationModeRequired)
           .setReservation(RESERVATION)
           .build();
-  QueryRequestInfo REQUEST_INFO = new QueryRequestInfo(QUERY_JOB_CONFIGURATION, false);
+  QueryRequestInfo REQUEST_INFO =
+      new QueryRequestInfo(QUERY_JOB_CONFIGURATION, DataFormatOptions.newBuilder().build());
   private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION_SUPPORTED =
       QueryJobConfiguration.newBuilder(QUERY)
           .setUseQueryCache(USE_QUERY_CACHE)
@@ -156,7 +157,8 @@ public class QueryRequestInfoTest {
           .setReservation(RESERVATION)
           .build();
   QueryRequestInfo REQUEST_INFO_SUPPORTED =
-      new QueryRequestInfo(QUERY_JOB_CONFIGURATION_SUPPORTED, false);
+      new QueryRequestInfo(
+          QUERY_JOB_CONFIGURATION_SUPPORTED, DataFormatOptions.newBuilder().build());
 
   @Test
   public void testIsFastQuerySupported() {
@@ -177,17 +179,25 @@ public class QueryRequestInfoTest {
   @Test
   public void equalTo() {
     compareQueryRequestInfo(
-        new QueryRequestInfo(QUERY_JOB_CONFIGURATION_SUPPORTED, false), REQUEST_INFO_SUPPORTED);
-    compareQueryRequestInfo(new QueryRequestInfo(QUERY_JOB_CONFIGURATION, false), REQUEST_INFO);
+        new QueryRequestInfo(
+            QUERY_JOB_CONFIGURATION_SUPPORTED, DataFormatOptions.newBuilder().build()),
+        REQUEST_INFO_SUPPORTED);
+    compareQueryRequestInfo(
+        new QueryRequestInfo(QUERY_JOB_CONFIGURATION, DataFormatOptions.newBuilder().build()),
+        REQUEST_INFO);
   }
 
   @Test
   public void testInt64Timestamp() {
-    QueryRequestInfo requestInfo = new QueryRequestInfo(QUERY_JOB_CONFIGURATION, false);
+    QueryRequestInfo requestInfo =
+        new QueryRequestInfo(QUERY_JOB_CONFIGURATION, DataFormatOptions.newBuilder().build());
     QueryRequest requestPb = requestInfo.toPb();
     assertFalse(requestPb.getFormatOptions().getUseInt64Timestamp());
 
-    QueryRequestInfo requestInfoLosslessTs = new QueryRequestInfo(QUERY_JOB_CONFIGURATION, true);
+    QueryRequestInfo requestInfoLosslessTs =
+        new QueryRequestInfo(
+            QUERY_JOB_CONFIGURATION,
+            DataFormatOptions.newBuilder().useInt64Timestamp(true).build());
     QueryRequest requestLosslessTsPb = requestInfoLosslessTs.toPb();
     assertTrue(requestLosslessTsPb.getFormatOptions().getUseInt64Timestamp());
   }

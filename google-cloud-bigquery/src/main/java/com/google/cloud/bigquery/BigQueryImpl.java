@@ -1731,7 +1731,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           new PageImpl<>(
               new TableDataPageFetcher(tableId, schema, serviceOptions, cursor, pageOptionMap),
               cursor,
-              transformTableData(result.getRows(), schema, serviceOptions.getUseInt64Timestamps())),
+              transformTableData(
+                  result.getRows(),
+                  schema,
+                  serviceOptions.getDataFormatOptions().useInt64Timestamp())),
           result.getTotalRows());
     } catch (BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
@@ -2007,7 +2010,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                   new QueryPageFetcher(jobId, schema, getOptions(), cursor, optionMap(options)),
                   cursor,
                   transformTableData(
-                      results.getRows(), schema, getOptions().getUseInt64Timestamps())))
+                      results.getRows(),
+                      schema,
+                      getOptions().getDataFormatOptions().useInt64Timestamp())))
           .setJobId(jobId)
           .setQueryId(results.getQueryId())
           .build();
@@ -2021,7 +2026,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                 new TableDataPageFetcher(null, schema, getOptions(), null, optionMap(options)),
                 null,
                 transformTableData(
-                    results.getRows(), schema, getOptions().getUseInt64Timestamps())))
+                    results.getRows(),
+                    schema,
+                    getOptions().getDataFormatOptions().useInt64Timestamp())))
         // Return the JobID of the successful job
         .setJobId(
             results.getJobReference() != null ? JobId.fromPb(results.getJobReference()) : null)
@@ -2066,10 +2073,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
     try (Scope queryScope = querySpan != null ? querySpan.makeCurrent() : null) {
       // If all parameters passed in configuration are supported by the query() method on the
-      // backend,
-      // put on fast path
+      // backend, put on fast path
       QueryRequestInfo requestInfo =
-          new QueryRequestInfo(configuration, getOptions().getUseInt64Timestamps());
+          new QueryRequestInfo(configuration, getOptions().getDataFormatOptions());
       if (requestInfo.isFastQuerySupported(jobId)) {
         // Be careful when setting the projectID in JobId, if a projectID is specified in the JobId,
         // the job created by the query method will use that project. This may cause the query to
