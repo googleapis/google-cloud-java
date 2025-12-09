@@ -6560,7 +6560,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. Initial user to setup during cluster creation. Required.
+   * Input only. Initial user to setup during cluster creation.
    * If used in `RestoreCluster` this is ignored.
    * </pre>
    *
@@ -6579,7 +6579,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. Initial user to setup during cluster creation. Required.
+   * Input only. Initial user to setup during cluster creation.
    * If used in `RestoreCluster` this is ignored.
    * </pre>
    *
@@ -6600,7 +6600,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. Initial user to setup during cluster creation. Required.
+   * Input only. Initial user to setup during cluster creation.
    * If used in `RestoreCluster` this is ignored.
    * </pre>
    *
@@ -11936,7 +11936,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Initial user to setup during cluster creation. Required.
+     * Input only. Initial user to setup during cluster creation.
      * If used in `RestoreCluster` this is ignored.
      * </pre>
      *
@@ -11954,7 +11954,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Initial user to setup during cluster creation. Required.
+     * Input only. Initial user to setup during cluster creation.
      * If used in `RestoreCluster` this is ignored.
      * </pre>
      *
@@ -11978,7 +11978,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Initial user to setup during cluster creation. Required.
+     * Input only. Initial user to setup during cluster creation.
      * If used in `RestoreCluster` this is ignored.
      * </pre>
      *
@@ -12004,7 +12004,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Initial user to setup during cluster creation. Required.
+     * Input only. Initial user to setup during cluster creation.
      * If used in `RestoreCluster` this is ignored.
      * </pre>
      *
@@ -12028,7 +12028,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Initial user to setup during cluster creation. Required.
+     * Input only. Initial user to setup during cluster creation.
      * If used in `RestoreCluster` this is ignored.
      * </pre>
      *
@@ -12059,7 +12059,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Initial user to setup during cluster creation. Required.
+     * Input only. Initial user to setup during cluster creation.
      * If used in `RestoreCluster` this is ignored.
      * </pre>
      *
@@ -12082,7 +12082,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Initial user to setup during cluster creation. Required.
+     * Input only. Initial user to setup during cluster creation.
      * If used in `RestoreCluster` this is ignored.
      * </pre>
      *
@@ -12100,7 +12100,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Initial user to setup during cluster creation. Required.
+     * Input only. Initial user to setup during cluster creation.
      * If used in `RestoreCluster` this is ignored.
      * </pre>
      *
@@ -12122,7 +12122,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Initial user to setup during cluster creation. Required.
+     * Input only. Initial user to setup during cluster creation.
      * If used in `RestoreCluster` this is ignored.
      * </pre>
      *

@@ -290,6 +290,27 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int MAX_INSTANCE_COUNT_FIELD_NUMBER = 4;
+  private int maxInstanceCount_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. total max instances for the service. This number of instances is
+   * divided among all revisions with specified traffic based on the percent
+   * of traffic they are receiving.
+   * </pre>
+   *
+   * <code>int32 max_instance_count = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The maxInstanceCount.
+   */
+  @java.lang.Override
+  public int getMaxInstanceCount() {
+    return maxInstanceCount_;
+  }
+
   public static final int MANUAL_INSTANCE_COUNT_FIELD_NUMBER = 6;
   private int manualInstanceCount_ = 0;
 
@@ -353,6 +374,9 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(3, scalingMode_);
     }
+    if (maxInstanceCount_ != 0) {
+      output.writeInt32(4, maxInstanceCount_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt32(6, manualInstanceCount_);
     }
@@ -372,6 +396,9 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.run.v2.ServiceScaling.ScalingMode.SCALING_MODE_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, scalingMode_);
+    }
+    if (maxInstanceCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, maxInstanceCount_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(6, manualInstanceCount_);
@@ -393,6 +420,7 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
 
     if (getMinInstanceCount() != other.getMinInstanceCount()) return false;
     if (scalingMode_ != other.scalingMode_) return false;
+    if (getMaxInstanceCount() != other.getMaxInstanceCount()) return false;
     if (hasManualInstanceCount() != other.hasManualInstanceCount()) return false;
     if (hasManualInstanceCount()) {
       if (getManualInstanceCount() != other.getManualInstanceCount()) return false;
@@ -412,6 +440,8 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getMinInstanceCount();
     hash = (37 * hash) + SCALING_MODE_FIELD_NUMBER;
     hash = (53 * hash) + scalingMode_;
+    hash = (37 * hash) + MAX_INSTANCE_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getMaxInstanceCount();
     if (hasManualInstanceCount()) {
       hash = (37 * hash) + MANUAL_INSTANCE_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getManualInstanceCount();
@@ -559,6 +589,7 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       minInstanceCount_ = 0;
       scalingMode_ = 0;
+      maxInstanceCount_ = 0;
       manualInstanceCount_ = 0;
       return this;
     }
@@ -602,8 +633,11 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.scalingMode_ = scalingMode_;
       }
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.maxInstanceCount_ = maxInstanceCount_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.manualInstanceCount_ = manualInstanceCount_;
         to_bitField0_ |= 0x00000001;
       }
@@ -661,6 +695,9 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
       if (other.scalingMode_ != 0) {
         setScalingModeValue(other.getScalingModeValue());
       }
+      if (other.getMaxInstanceCount() != 0) {
+        setMaxInstanceCount(other.getMaxInstanceCount());
+      }
       if (other.hasManualInstanceCount()) {
         setManualInstanceCount(other.getManualInstanceCount());
       }
@@ -702,10 +739,16 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 24
+            case 32:
+              {
+                maxInstanceCount_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
             case 48:
               {
                 manualInstanceCount_ = input.readInt32();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 48
             default:
@@ -896,6 +939,68 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int maxInstanceCount_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. total max instances for the service. This number of instances is
+     * divided among all revisions with specified traffic based on the percent
+     * of traffic they are receiving.
+     * </pre>
+     *
+     * <code>int32 max_instance_count = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The maxInstanceCount.
+     */
+    @java.lang.Override
+    public int getMaxInstanceCount() {
+      return maxInstanceCount_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. total max instances for the service. This number of instances is
+     * divided among all revisions with specified traffic based on the percent
+     * of traffic they are receiving.
+     * </pre>
+     *
+     * <code>int32 max_instance_count = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The maxInstanceCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaxInstanceCount(int value) {
+
+      maxInstanceCount_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. total max instances for the service. This number of instances is
+     * divided among all revisions with specified traffic based on the percent
+     * of traffic they are receiving.
+     * </pre>
+     *
+     * <code>int32 max_instance_count = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaxInstanceCount() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      maxInstanceCount_ = 0;
+      onChanged();
+      return this;
+    }
+
     private int manualInstanceCount_;
 
     /**
@@ -914,7 +1019,7 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasManualInstanceCount() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -954,7 +1059,7 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
     public Builder setManualInstanceCount(int value) {
 
       manualInstanceCount_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -974,7 +1079,7 @@ public final class ServiceScaling extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearManualInstanceCount() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       manualInstanceCount_ = 0;
       onChanged();
       return this;

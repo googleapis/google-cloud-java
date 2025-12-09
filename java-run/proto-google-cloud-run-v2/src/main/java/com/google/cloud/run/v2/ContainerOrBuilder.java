@@ -84,6 +84,49 @@ public interface ContainerOrBuilder
    *
    *
    * <pre>
+   * Optional. Location of the source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.SourceCode source_code = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sourceCode field is set.
+   */
+  boolean hasSourceCode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Location of the source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.SourceCode source_code = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sourceCode.
+   */
+  com.google.cloud.run.v2.SourceCode getSourceCode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Location of the source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.SourceCode source_code = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.run.v2.SourceCodeOrBuilder getSourceCodeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Entrypoint array. Not executed within a shell.
    * The docker image's ENTRYPOINT is used if this is not provided.
    * </pre>

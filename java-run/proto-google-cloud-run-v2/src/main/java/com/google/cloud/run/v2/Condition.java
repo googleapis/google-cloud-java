@@ -1386,6 +1386,16 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETED = 5;</code>
      */
     DELETED(5),
+    /**
+     *
+     *
+     * <pre>
+     * A delayed execution is waiting for a start time.
+     * </pre>
+     *
+     * <code>DELAYED_START_PENDING = 6;</code>
+     */
+    DELAYED_START_PENDING(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -1456,6 +1466,17 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int DELETED_VALUE = 5;
 
+    /**
+     *
+     *
+     * <pre>
+     * A delayed execution is waiting for a start time.
+     * </pre>
+     *
+     * <code>DELAYED_START_PENDING = 6;</code>
+     */
+    public static final int DELAYED_START_PENDING_VALUE = 6;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -1492,6 +1513,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
           return CANCELLING;
         case 5:
           return DELETED;
+        case 6:
+          return DELAYED_START_PENDING;
         default:
           return null;
       }

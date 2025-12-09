@@ -65,30 +65,34 @@ public final class BuildProto {
           + "\037google/cloud/run/v2/build.proto\022\023googl"
           + "e.cloud.run.v2\032\034google/api/annotations.p"
           + "roto\032\027google/api/client.proto\032\037google/ap"
-          + "i/field_behavior.proto\032\031google/api/resou"
-          + "rce.proto\032#google/longrunning/operations.proto\"\277\006\n"
+          + "i/field_behavior.proto\032\035google/api/launc"
+          + "h_stage.proto\032\031google/api/resource.proto"
+          + "\032#google/longrunning/operations.proto\"\244\007\n"
           + "\022SubmitBuildRequest\022\023\n"
           + "\006parent\030\001 \001(\tB\003\340A\002\022A\n"
           + "\016storage_source\030\002"
           + " \001(\0132\".google.cloud.run.v2.StorageSourceB\003\340A\002H\000\022\026\n"
           + "\timage_uri\030\003 \001(\tB\003\340A\002\022R\n"
-          + "\017buildpack_build\030\004"
-          + " \001(\01327.google.cloud.run.v2.SubmitBuildRequest.BuildpacksBuildH\001\022K\n"
-          + "\014docker_build\030\005"
-          + " \001(\01323.google.cloud.run.v2.SubmitBuildRequest.DockerBuildH\001\022\034\n"
+          + "\017buildpack_build\030\004 \001(\01327."
+          + "google.cloud.run.v2.SubmitBuildRequest.BuildpacksBuildH\001\022K\n"
+          + "\014docker_build\030\005 \001(\01323"
+          + ".google.cloud.run.v2.SubmitBuildRequest.DockerBuildH\001\022\034\n"
           + "\017service_account\030\006 \001(\tB\003\340A\001\022F\n"
           + "\013worker_pool\030\007 \001(\tB1\340A\001\372A+\n"
           + ")cloudbuild.googleapis.com/BuildWorkerPool\022\021\n"
-          + "\004tags\030\010 \003(\tB\003\340A\001\032\r\n"
+          + "\004tags\030\010 \003(\tB\003\340A\001\022\031\n"
+          + "\014machine_type\030\t \001(\tB\003\340A\001\0223\n\r"
+          + "release_track\030\n"
+          + " \001(\0162\027.google.api.LaunchStageB\003\340A\001\022\023\n"
+          + "\006client\030\013 \001(\tB\003\340A\001\032\r\n"
           + "\013DockerBuild\032\367\002\n"
           + "\017BuildpacksBuild\022\023\n"
           + "\007runtime\030\001 \001(\tB\002\030\001\022\034\n"
           + "\017function_target\030\002 \001(\tB\003\340A\001\022\034\n"
           + "\017cache_image_uri\030\003 \001(\tB\003\340A\001\022\027\n\n"
           + "base_image\030\004 \001(\tB\003\340A\001\022u\n"
-          + "\025environment_variables\030\005 \003(\0132Q.go"
-          + "ogle.cloud.run.v2.SubmitBuildRequest.Bui"
-          + "ldpacksBuild.EnvironmentVariablesEntryB\003\340A\001\022%\n"
+          + "\025environment_variables\030\005 \003(\0132Q.google.cloud.run.v2.SubmitBuil"
+          + "dRequest.BuildpacksBuild.EnvironmentVariablesEntryB\003\340A\001\022%\n"
           + "\030enable_automatic_updates\030\006 \001(\010B\003\340A\001\022\037\n"
           + "\022project_descriptor\030\007 \001(\tB\003\340A\001\032;\n"
           + "\031EnvironmentVariablesEntry\022\013\n"
@@ -105,15 +109,15 @@ public final class BuildProto {
           + "\006object\030\002 \001(\tB\003\340A\002\022\027\n\n"
           + "generation\030\003 \001(\003B\003\340A\0012\361\001\n"
           + "\006Builds\022\236\001\n"
-          + "\013SubmitBuild\022\'.google.cloud.run.v2.SubmitBuildReq"
-          + "uest\032(.google.cloud.run.v2.SubmitBuildRe"
-          + "sponse\"<\202\323\344\223\0026\"1/v2/{parent=projects/*/l"
-          + "ocations/*}/builds:submit:\001*\032F\312A\022run.goo"
-          + "gleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\303\001\n"
+          + "\013SubmitBuild\022\'.google.cloud.run.v2.Su"
+          + "bmitBuildRequest\032(.google.cloud.run.v2.S"
+          + "ubmitBuildResponse\"<\202\323\344\223\0026\"1/v2/{parent="
+          + "projects/*/locations/*}/builds:submit:\001*"
+          + "\032F\312A\022run.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\303\001\n"
           + "\027com.google.cloud.run.v2B\n"
           + "BuildProtoP\001Z)cloud.google.com/go/run/apiv2/runpb;runpb\352An\n"
-          + ")cloudbuild.googleapis.com/BuildWorkerPool\022Aproject"
-          + "s/{project}/locations/{location}/workerPools/{worker_pool}b\006proto3"
+          + ")cloudbuild.googleapis.com/BuildWorkerPool\022Aprojects/{project}/locations/{locat"
+          + "ion}/workerPools/{worker_pool}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -122,6 +126,7 @@ public final class BuildProto {
               com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.LaunchStageProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
             });
@@ -139,6 +144,9 @@ public final class BuildProto {
               "ServiceAccount",
               "WorkerPool",
               "Tags",
+              "MachineType",
+              "ReleaseTrack",
+              "Client",
               "Source",
               "BuildType",
             });
@@ -201,6 +209,7 @@ public final class BuildProto {
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.LaunchStageProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
   }
